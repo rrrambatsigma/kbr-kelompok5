@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-10-27T14:44:13Z",
+  "pipeline": {
+    "name": "kbr-pdf-extraction",
+    "version": "1.0.0",
+    "extractor": "PyMuPDF",
+    "extractor_version": "1.28.2"
+  },
+  "settings": {
+    "reading_order": "native",
+    "tables_enabled": true,
+    "printed_page_detection_enabled": true,
+    "ocr_enabled": false,
+    "dehyphenation": "disabled"
+  },
+  "notes": [],
+  "documents": [
+    {
+      "document_id": "DOC001",
+      "document_name": "PenyakitTanamanHortikultura.pdf",
+      "source_path": "01_knowledge_sources/pdf_original/PenyakitTanamanHortikultura.pdf",
+      "source_sha256": "620bd3443f8d25510829b7e56bfac967df55c0f633fbc609d790bc351ee3477e",
+      "source_sha256_after": "620bd3443f8d25510829b7e56bfac967df55c0f633fbc609d790bc351ee3477e",
+      "file_size_bytes": 34032925,
+      "title": null,
+      "authors": [],
+      "publication_year": null,
+      "publisher": null,
+      "language": null,
+      "total_pdf_pages": 874,
+      "document_type": "pdf",
+      "extraction_status": "no_text_extracted",
+      "notes": [
+        "pdf_page_labels_available",
+        "no_text_layer_detected",
+        "ocr_not_performed"
+      ],
+      "pdf_metadata": {
+        "format": "PDF 1.7",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "",
+        "producer": "Foxit PhantomPDF Printer Version 7.3.4.0308",
+        "creationDate": "",
+        "modDate": "D:20191102112815+07'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "metadata_source": {
+        "title": null,
+        "authors": null,
+        "publication_year": null,
+        "publisher": null,
+        "language": null
+      },
+      "statistics": {
+        "pages_with_text": 0,
+        "pages_without_text": 874,
+        "pages_with_errors": 0,
+        "pages_flagged": 874,
+        "blocks_total": 0,
+        "blocks_by_content_type": {},
+        "tables_detected": 0,
+        "tables_needs_review": 0,
+        "headings_detected": 0,
+        "printed_page_numbers_detected": 874,
+        "characters_total": 0
+      },
+      "output_files": {
+        "blocks": "02_extraction/extracted_text/DOC001.blocks.jsonl",
+        "pages": "02_extraction/extracted_text/DOC001.pages.jsonl",
+        "notes": "02_extraction/extraction_notes/DOC001.extraction_notes.json"
+      }
+    },
+    {
+      "document_id": "DOC002",
+      "document_name": "PenyakitTanamanPangan.pdf",
+      "source_path": "01_knowledge_sources/pdf_original/PenyakitTanamanPangan.pdf",
+      "source_sha256": "fb503f92c2bbad7b2605bf7e037ec6756613c33b7f82fb04ed7f58e6a050c466",
+      "source_sha256_after": "fb503f92c2bbad7b2605bf7e037ec6756613c33b7f82fb04ed7f58e6a050c466",
+      "file_size_bytes": 4627226,
+      "title": null,
+      "authors": [],
+      "publication_year": null,
+      "publisher": null,
+      "language": null,
+      "total_pdf_pages": 274,
+      "document_type": "pdf",
+      "extraction_status": "completed_with_warnings",
+      "notes": [
+        "ocr_not_performed",
+        "printed_page_numbers_not_detected",
+        "unclassified_headings_present"
+      ],
+      "pdf_metadata": {
+        "format": "PDF 1.7",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "",
+        "producer": "iLovePDF",
+        "creationDate": "",
+        "modDate": "D:20211109042608Z",
+        "trapped": "",
+        "encryption": null
+      },
+      "metadata_source": {
+        "title": null,
+        "authors": null,
+        "publication_year": null,
+        "publisher": null,
+        "language": null
+      },
+      "statistics": {
+        "pages_with_text": 273,
+        "pages_without_text": 1,
+        "pages_with_errors": 0,
+        "pages_flagged": 4,
+        "blocks_total": 2408,
+        "blocks_by_content_type": {
+          "chapter_heading": 100,
+          "heading_unclassified": 71,
+          "list_item": 160,
+          "paragraph": 1932,
+          "section_heading": 72,
+          "subsection_heading": 68,
+          "table": 5
+        },
+        "tables_detected": 5,
+        "tables_needs_review": 1,
+        "headings_detected": 311,
+        "printed_page_numbers_detected": 0,
+        "characters_total": 455527
+      },
+      "output_files": {
+        "blocks": "02_extraction/extracted_text/DOC002.blocks.jsonl",
+        "pages": "02_extraction/extracted_text/DOC002.pages.jsonl",
+        "notes": "02_extraction/extraction_notes/DOC002.extraction_notes.json"
+      }
+    }
+  ]
+}

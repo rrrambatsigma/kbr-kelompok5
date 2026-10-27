@@ -1,0 +1,11 @@
+
+# Temporary extraction artifacts
+*.tmp
+*.bak
+*.log
+
+# Temporary OCR output
+ocr_temp/
+
+# Temporary processing files
+temp/

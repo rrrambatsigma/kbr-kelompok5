@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "validated_at": "2026-10-27T14:49:01Z",
+  "strict": false,
+  "summary": {
+    "documents": 2,
+    "errors": 0,
+    "warnings": 14
+  },
+  "manifest_errors": [],
+  "manifest_warnings": [],
+  "documents": [
+    {
+      "document_id": "DOC001",
+      "status": "warn",
+      "errors": [],
+      "warnings": [
+        "pages_without_text: DOC001: 874",
+        "ocr_candidates: DOC001: 874",
+        "document_title_not_available: DOC001",
+        "document_authors_not_available: DOC001",
+        "document_publication_year_not_available: DOC001"
+      ],
+      "checks": {
+        "pages": 874,
+        "blocks": 0,
+        "has_text": false,
+        "source_hash_verified": true
+      }
+    },
+    {
+      "document_id": "DOC002",
+      "status": "warn",
+      "errors": [],
+      "warnings": [
+        "pages_without_text: DOC002: 1",
+        "ocr_candidates: DOC002: 1",
+        "possible_multi_column_layout: DOC002: 3 halaman (92, 94, 95)",
+        "unclassified_headings: DOC002: 71",
+        "tables_need_review: DOC002: 1",
+        "blocks_need_manual_review: DOC002: 71",
+        "document_title_not_available: DOC002",
+        "document_authors_not_available: DOC002",
+        "document_publication_year_not_available: DOC002"
+      ],
+      "checks": {
+        "pages": 274,
+        "blocks": 2408,
+        "has_text": true,
+        "source_hash_verified": true
+      }
+    }
+  ]
+}

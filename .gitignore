@@ -1,0 +1,53 @@
+
+# ==========================================
+# PYTHON CACHE
+# ==========================================
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ==========================================
+# VIRTUAL ENVIRONMENT
+# ==========================================
+.venv/
+venv/
+env/
+
+# ==========================================
+# ENVIRONMENT VARIABLES / SECRETS
+# ==========================================
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# PDF ORIGINAL - JANGAN MASUK GIT
+# ==========================================
+/01_knowledge_sources/pdf_original/*.pdf
+
+# ==========================================
+# GENERATED EXTRACTION OUTPUTS
+# Kode pipeline dan tests tetap masuk Git
+# ==========================================
+/02_extraction/extracted_text/*.jsonl
+/02_extraction/extraction_notes/*.log
+
+# Jika nanti ada output OCR sementara
+/02_extraction/ocr_temp/
+/02_extraction/temp/
+
+# ==========================================
+# TEMPORARY FILES
+# ==========================================
+*.tmp
+*.bak
+*.log
+
+# ==========================================
+# EDITOR / OPERATING SYSTEM
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

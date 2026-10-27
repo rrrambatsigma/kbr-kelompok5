@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "_instructions": "Isi hanya dari halaman judul, kolofon, atau sumber bibliografis yang benar-benar tersedia. Jangan menebak. Gunakan null atau [] jika tidak tersedia.",
+  "documents": {
+    "DOC001": {
+      "title": null,
+      "authors": [],
+      "publication_year": null,
+      "publisher": null,
+      "language": null,
+      "notes": []
+    },
+    "DOC002": {
+      "title": null,
+      "authors": [],
+      "publication_year": null,
+      "publisher": null,
+      "language": null,
+      "notes": []
+    }
+  }
+}
