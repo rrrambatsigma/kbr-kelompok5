@@ -1,0 +1,16 @@
+plant_id,plant_name_id,plant_name_en,scientific_name,scientific_name_page,chapter_number,chapter_title,page_start,page_end,evidence_chunk_id
+PLANT_001,Padi,,,,1,Bab 1 — Penyakit Padi,25,36,DOC002_C025_01
+PLANT_002,Kedelai,,Glycine max L. Merril,37,2,Bab 2 — Penyakit Kedelai,37,62,DOC002_C037_02
+PLANT_003,Kacang tanah,,,,3,Bab 3 — Penyakit Kacang Tanah,63,78,DOC002_C063_01
+PLANT_004,Ubi jalar,,Ipomoea batatas L. (Lam),79,4,Bab 4 — Penyakit Tanaman Ubi Jalar,79,88,DOC002_C079_02
+PLANT_005,Ubi kayu,,Manihot esculenta Crantz,89,5,Bab 5 — Penyakit Pada Tanaman Ubi Kayu,89,97,DOC002_C089_02
+PLANT_006,Jagung,,,,6,Bab 6 — Penyakit Jagung,98,110,DOC002_C098_01
+PLANT_007,Kentang,,Solanum tuberosum,112,7,Bab 7 — Penyakit Kentang,112,122,DOC002_C112_02
+PLANT_008,Kubis,,Brassica oleracea,124,8,Bab 8 — Penyakit Kubis,124,133,DOC002_C124_02
+PLANT_009,Cabai,,,,9,Bab 9 — Penyakit Cabai,134,146,DOC002_C134_01
+PLANT_010,Tomat,,Lycopersicon esculentum Mill.,148,10,Bab 10 — Penyakit Tomat,148,157,DOC002_C148_02
+PLANT_011,Kacang panjang,Yardlong Beans/Cow Peas,Vigna sinensis L,158,11,Bab 11 — Penyakit Kacang Panjang,158,166,DOC002_C158_02
+PLANT_012,Apel,,,,12,Bab 12 — Penyakit Apel,168,177,DOC002_C168_01
+PLANT_013,Lada,,,,13,Bab 13 — Penyakit Lada,178,195,DOC002_C178_01
+PLANT_014,Kopi,,,,14,Bab 14 — Penyakit Kopi,196,211,DOC002_C196_01
+PLANT_015,Kelapa sawit,,Elaeis guineensis,212,15,Bab 15 — Penyakit Kelapa Sawit,212,223,DOC002_C212_02
