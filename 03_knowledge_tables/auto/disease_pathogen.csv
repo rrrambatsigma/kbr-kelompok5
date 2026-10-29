@@ -1,0 +1,141 @@
+disease_id,pathogen_id,evidence_chunk_id,relation_note,review_status
+DIS_001,PAT_001,DOC002_C026_02,Penyebab penyakit HDB yaitu Xanthomonas oryzae pv.,auto_ok
+DIS_002,PAT_002,DOC002_C029_02,Penyakit blas disebabkan oleh cendawan Pyricularia grisea atau pada stadia teleomorph atau fase seksual dikenal juga sebagai Magnaporthe grisea (Rossman et al.,auto_ok
+DIS_002,PAT_003,DOC002_C029_02,Penyakit blas disebabkan oleh cendawan Pyricularia grisea atau pada stadia teleomorph atau fase seksual dikenal juga sebagai Magnaporthe grisea (Rossman et al.,auto_ok
+DIS_002,PAT_004,DOC002_C029_02,"Sedangkan untuk konidia Pyricularia oryzae berbentuk oval dan tidak runcing, memiliki 2 sekat dan biasanya lebih pendek dari P.",auto_ok
+DIS_003,PAT_005,DOC002_C032_01,Penyebab penyakit HPD adalah cendawan Rhizoctonia solani.,auto_ok
+DIS_004,PAT_006,DOC002_C033_02,Penyakit tungro disebabkan oleh serangan dua virus berbeda yaitu Rice tungro bacillifor virus (RTBV atau virus batang tungro padi) dan Rice tungro spherical virus (RTSV atau virus sferikal tungro padi).,auto_ok
+DIS_004,PAT_007,DOC002_C033_02,Penyakit tungro disebabkan oleh serangan dua virus berbeda yaitu Rice tungro bacillifor virus (RTBV atau virus batang tungro padi) dan Rice tungro spherical virus (RTSV atau virus sferikal tungro padi).,auto_ok
+DIS_006,PAT_008,DOC002_C038_03,"Patogen yang menginfeksi kedelai pada persemaian salah satunya oleh jamur Sclerotium rolfsii (Abidin et al., 2015).",auto_ok
+DIS_007,PAT_005,DOC002_C040_02,Penyakit rebah kecambah pada tanaman kedelai disebabkan oleh jamur Rhizoctonia solani.,auto_ok
+DIS_008,PAT_009,DOC002_C042_01,Penyakit disebabkan oleh patogen Fusarium spp.,auto_ok
+DIS_009,PAT_010,DOC002_C043_03,Penyakit karat daun yang disebabkan oleh patogen Phakopspora pachyrhizi merupakan penyakit penting pada tanaman kedelai.,auto_ok
+DIS_010,PAT_011,DOC002_C045_01,Penyakit ini disebabkan oleh cendawan Erysiphae diffusa yang menginfeksi tanaman kedelai.,auto_ok
+DIS_011,PAT_012,DOC002_C046_02,"Penyakit embun madu atau downy mildew atau disebut juga dengan penyakit bulai disebabkan oleh patogen dari jamur Peronospora manshurica (Inayati and Yusnawan, 2017).",auto_ok
+DIS_012,PAT_013,DOC002_C047_02,Penyakit bercak daun mata katak (frogeye leaf spot) disebabkan oleh patogen Cercospora sojina K.,auto_ok
+DIS_013,PAT_014,DOC002_C049_02,Penyakit antraknosa disebabkan oleh patogen Colletotrichum dengan spesies yang berbeda-beda.,auto_ok
+DIS_014,PAT_015,DOC002_C051_02,Penyakit bercak target (target spot) disebabkan oleh patogen jamur Corynespora cassiicola.,auto_ok
+DIS_015,PAT_016,DOC002_C053_01,Penyakit bercak biji ungu atau juga dikenal dengan hawar daun Cercospora merupakan penyakit pada tanaman kedelai yang disebabkan oleh patogen Cercospora kikuchii.,auto_ok
+DIS_016,PAT_017,DOC002_C054_03,Pen penyakit hawar bakteri (bacterial blight) disebabkan oleh patogen bakteri Pseudomonas syringae pv.,auto_ok
+DIS_017,PAT_018,DOC002_C056_02,Penyakit ini disebabkan oleh patogen Xanthomonas axonopodis pv.,auto_ok
+DIS_018,PAT_019,,heading subsection: Penyakit Mosaik Kedelai (Soybean Mosaic Virus),needs_review
+DIS_019,PAT_020,DOC002_C059_01,Penyakit samar kacang tunggak disebabkan oleh virus Cowpea Mild Mottle Virus (CMMV).,auto_ok
+DIS_020,PAT_021,DOC002_C060_02,Penyakit kerdil kedelai disebabkan oleh partikel virus Soybean Stunt Virus atau SSV yang menginfeksi tanaman kedelai.,auto_ok
+DIS_021,PAT_022,DOC002_C065_01,Penyakit bercak daun merupakan penyakit tular udara yang disebabkan oleh patogen (Cercospora arachidicola dan C.,auto_ok
+DIS_021,PAT_023,DOC002_C068_03,"Penyakit ini disebabkan oleh cendawan Puccinia arachidis yang termasuk ke dalam ordo Uredinales, kelas Basidiomycetes.",auto_ok
+DIS_021,PAT_024,DOC002_C068_03,"Lebih lanjut Semangun, 2003 menyatakan bahwa Massa yang berwarna coklat tadi dapat berubah menjadi coklat tua gelap dan ini disebabkan karena perkembangan jamur penyebab penyakit berada pada keadaan yang cocok untuk berkembang.",auto_ok
+DIS_023,PAT_025,DOC002_C074_01,Patogen penyebab penyakit layu adalah bakteri Ralstonia solanacearum.,auto_ok
+DIS_023,PAT_026,DOC002_C076_03,Perubahan ketahanan tersebut disebabkan faktor perbedaan strain ataupun karena perbedaan lingkungan sehingga sifat ketahanan tidak terekspresi.,needs_review
+DIS_024,PAT_027,DOC002_C080_01,Fusarium oxysporum dikenal sebagai penyebab penyakit busuk permukaan (surface root) atau layu fusarium F.,needs_review
+DIS_025,PAT_028,DOC002_C083_01,"Penyakit kudis pada ubi jalar disebabkan oleh Spaceloma batatas Saw yang merupakan bentuk aseksual dari Elsinoe batatas (Listiyowati, 1998).",auto_ok
+DIS_025,PAT_029,DOC002_C083_01,"Penyakit kudis pada ubi jalar disebabkan oleh Spaceloma batatas Saw yang merupakan bentuk aseksual dari Elsinoe batatas (Listiyowati, 1998).",auto_ok
+DIS_026,PAT_030,DOC002_C085_01,"Beberapa virus sudah dilaporkan dapat menginfeksi ubi jalar di antaranya Sweet Potato Feathery Mottle Virus (SPFMV), Sweet Potato Mild Mottle Virus (SPMMV), Sweet Potato Chlorotic Fleck Virus (SPCFV), Sweet Potato Latent Potyvirus (SPLV), S",auto_ok
+DIS_026,PAT_031,DOC002_C085_01,"Beberapa virus sudah dilaporkan dapat menginfeksi ubi jalar di antaranya Sweet Potato Feathery Mottle Virus (SPFMV), Sweet Potato Mild Mottle Virus (SPMMV), Sweet Potato Chlorotic Fleck Virus (SPCFV), Sweet Potato Latent Potyvirus (SPLV), S",auto_ok
+DIS_026,PAT_032,DOC002_C085_01,"Beberapa virus sudah dilaporkan dapat menginfeksi ubi jalar di antaranya Sweet Potato Feathery Mottle Virus (SPFMV), Sweet Potato Mild Mottle Virus (SPMMV), Sweet Potato Chlorotic Fleck Virus (SPCFV), Sweet Potato Latent Potyvirus (SPLV), S",auto_ok
+DIS_027,PAT_033,DOC002_C087_01,"Penyakit busuk hitam (black rot) disebabkan oleh jamur Ceratocystis fimbriata menjadi salah satu ancaman produksi pada ubi jalar di dunia (Muramoto et al., 2012) dan menyebabkan kerusakan parah selama penyimpanan pascapanen (Baker et al., 2",auto_ok
+DIS_044,PAT_034,DOC002_C100_02,Pen penyakit hawar daun pada jagung disebabkan oleh jamur patogen Helminthosporium maydis Y.,auto_ok
+DIS_045,PAT_035,DOC002_C103_01,Penyakit karat daun pada tanaman jagung disebabkan oleh Puccinia polysora Underw.,auto_ok
+DIS_046,PAT_036,DOC002_C104_02,Penyakit bulai disebabkan oleh jamur patogen Peronosclerospora sp.,auto_ok
+DIS_046,PAT_037,DOC002_C104_02,"(Rustiani et al., 2015) melaporkan bahwa jamur patogen penyebab penyakit bulai di Indonesia ada tiga jenis yaitu Peronosclerospora maydis, P.",auto_ok
+DIS_047,PAT_038,DOC002_C107_02,Penyakit layu stewart disebabkan oleh bakteri Pantoea stewartii subsp.,auto_ok
+DIS_048,PAT_005,DOC002_C109_01,Penyakit busuk pelepah disebabkan oleh jamur patogen Rhizoctonia solani.,auto_ok
+DIS_049,PAT_025,DOC002_C114_03,Penyakit layu bakteri (Gambar 7.1) disebabkan oleh bakteri Ralstonia solanacearum (Pseudomonas solanacearum).,auto_ok
+DIS_049,PAT_039,DOC002_C114_03,Penyakit layu bakteri (Gambar 7.1) disebabkan oleh bakteri Ralstonia solanacearum (Pseudomonas solanacearum).,auto_ok
+DIS_050,PAT_027,DOC002_C116_02,Penyakit layu fusarium (Gambar 7.2) disebabkan oleh cendawan Fusarium oxysporum Patogen ditularkan melalui udara dan air.,auto_ok
+DIS_051,PAT_040,DOC002_C117_02,"Salah satu penyakit utama yang menyerang kentang adalah penyakit busuk daun atau biasa disebut hawar daun (late blight), yang disebabkan oleh Phytophthora infestans (Gambar 7.3).",auto_ok
+DIS_052,PAT_041,DOC002_C118_02,Penyakit lain yang menyerang tanaman kentang adalah penyakit bercak daun Alternaria atau penyakit bercak kering (Gambar 7.4) yang disebabkan oleh cendawan Alternaria sp.,auto_ok
+DIS_053,PAT_042,DOC002_C119_02,Penyakit ini disebabkan oleh bakteri Clavibacter michiganensis subsp.,auto_ok
+DIS_054,PAT_043,DOC002_C120_02,Jenis virus yang menyebabkan penyakit pada tanaman kentang yaitu Potato Virus X (PVX) menyebabkan mosaik laten pada daun;,auto_ok
+DIS_055,PAT_044,DOC002_C121_01,Penyakit Nematoda Bengkak Akar (NBA) disebabkan oleh nematoda Meloidogyne.,auto_ok
+DIS_056,PAT_045,DOC002_C122_01,Penyakit ini disebabkan oleh nematoda yaitu spesies Globodera rostochiensisda dan Globodera pallida.,auto_ok
+DIS_056,PAT_046,DOC002_C122_01,Penyakit ini disebabkan oleh nematoda yaitu spesies Globodera rostochiensisda dan Globodera pallida.,auto_ok
+DIS_057,PAT_047,DOC002_C125_01,Penyakit busuk kaki hitam disebabkan organisme jamur Leptosphaeria maculans.,auto_ok
+DIS_058,PAT_048,DOC002_C126_01,Penyakit busuk hitam disebabkan bakteri Xanthomonas campestris pv.,auto_ok
+DIS_058,PAT_049,DOC002_C127_01,Gejala penyakit busuk hitam sering kali mirip dengan penyakit menguning yang disebabkan oleh Fusarium.,auto_ok
+DIS_059,PAT_050,DOC002_C128_01,Penyakit akar gada pada tanaman kubis disebabkan jamur Plasmodiophora brassicae.,auto_ok
+DIS_060,PAT_051,DOC002_C129_02,Penyakit antraknosa pada kubis disebabkan patogen Colletotrichum higginsianum yang dapat bertahan selama musim dingin pada sisa daun dan gulma.,auto_ok
+DIS_061,PAT_052,DOC002_C129_01,Penyakit bercak daun Alternaria atau disebut juga bercak hitam dan bercak abu pada kubis disebabkan jamur Alternaria brassicae.,auto_ok
+DIS_062,PAT_005,DOC002_C130_01,Penyakit damping-off pada tanaman kubis disebabkan jamur Rhizoctonia solani yang dapat menyebabkan kematian pada persemaian setelah terjadi perkecambahan.,auto_ok
+DIS_063,PAT_053,DOC002_C130_02,"Penyakit embun tepung pada kubis disebabkan jamur Erysiphe cruciferarum yang dapat menyebabkan penyakit pada kondisi lingkungan kering, temperatur sedang, serta kelembaban dan curah hujan rendah.",auto_ok
+DIS_064,PAT_054,DOC002_C131_02,Penyakit busuk batang pada kubis disebabkan jamur Sclerotinia sclerotiorum.,auto_ok
+DIS_065,PAT_055,DOC002_C131_01,Penyakit embun bulu disebabkan oleh jamur dari kelompok Oomycetes yaitu Peronospora parasitica.,auto_ok
+DIS_066,PAT_054,DOC002_C132_01,Penyakit ini disebabkan jamur yang sama seperti penyebab penyakit busuk batang yaitu Sclerotinia sclerotiorum.,auto_ok
+DIS_067,PAT_056,DOC002_C132_02,Penyakit busuk lunak pada kubis dapat juga disebabkan oleh bakteri Erwinia carotovora.,auto_ok
+DIS_068,PAT_057,DOC002_C133_02,Penyakit bercak cincin pada kubis disebabkan oleh jamur Mycosphaerella brassicicola yang mampu bertahan pada kondisi lingkungan dingin dan lembab.,auto_ok
+DIS_069,PAT_058,DOC002_C133_01,Penyakit karat putih pada kubis disebabkan jamur Albugi candida yang dapat bertahan dalam periode waktu yang lama pada kondisi kering.,auto_ok
+DIS_070,PAT_059,DOC002_C135_02,Penyakit bercak daun cabai merupakan penyakit yang menyerang daun yang disebabkan oleh Jamur Cescospora capsici.,auto_ok
+DIS_071,PAT_060,DOC002_C136_02,Penyakit antraknos pada tanaman cabai disebabkan oleh jamur Colletotrichum sp.,auto_ok
+DIS_072,PAT_061,DOC002_C138_02,Busuk buah pada tanaman cabai yang disebabkan oleh patogen Phytophthora sp.,auto_ok
+DIS_073,PAT_025,DOC002_C139_03,"Patogen yang menyebabkan layu bakteri pada tanaman cabai yaitu, Ralstonia solanacearum.",auto_ok
+DIS_074,PAT_062,DOC002_C141_02,"Virus-virus yang dapat menyebabkan penyakit virus pada tanaman cabai yaitu, Cucumber mosaic virus (CMV), Tobacco mosaic virus (TMV) dan Pepper leaf curl geminivirus (PepLCV).",auto_ok
+DIS_074,PAT_063,DOC002_C141_02,"Virus-virus yang dapat menyebabkan penyakit virus pada tanaman cabai yaitu, Cucumber mosaic virus (CMV), Tobacco mosaic virus (TMV) dan Pepper leaf curl geminivirus (PepLCV).",auto_ok
+DIS_075,PAT_064,DOC002_C143_05,Penyakit layu fusarium yang disebabkan oleh penyakit Fussarium oxysporum.,auto_ok
+DIS_076,PAT_008,DOC002_C145_01,Penyebab penyakit rebah kecambah yang disebabkan oleh jamur Sclerotium rolfsii.,auto_ok
+DIS_077,PAT_040,,heading subsection: Penyakit Busuk Daun (Phytophthora infestans),needs_review
+DIS_078,PAT_065,,heading subsection: Bercak Coklat (Alternaria solani),needs_review
+DIS_079,PAT_066,,heading subsection: Kapang Daun (Fulvia fulva),needs_review
+DIS_080,PAT_027,DOC002_C153_01,Penyakit ini disebabkan oleh patogen Fusarium oxysporum f.sp lycopersici.,auto_ok
+DIS_081,PAT_025,DOC002_C154_01,Penyakit layu bakteri ini disebabkan oleh bakteri Ralstonia solanacearum.,auto_ok
+DIS_082,PAT_067,DOC002_C155_02,Penyebab penyakit ini adalah Septoria lycopersici.,needs_review
+DIS_083,PAT_068,DOC002_C156_02,Penyakit ini disebabkan oleh jamur Colletotrichum coccoides.,auto_ok
+DIS_084,PAT_069,DOC002_C157_01,Penyakit ini disebabkan oleh Tomato Yellow Leaf Curl Virus.,auto_ok
+DIS_085,PAT_070,DOC002_C159_02,"Penyakit mosaic pada tanaman kacang panjang disebabkan oleh virus Bean common mosaic virus (Damayanti et al., 2009).",auto_ok
+DIS_085,PAT_062,DOC002_C160_01,"Selain disebabkan oleh virus Bean common mosaic virus, penyakit virus mosaic pada kacang panjang juga disebabkan oleh Cucumber Mosaic Virus (CMV) dan Begomovirus.",auto_ok
+DIS_086,PAT_060,DOC002_C162_02,Penyakit antraknos pada tanaman kacang panjang disebabkan oleh Colletotrichum sp.,needs_review
+DIS_087,PAT_048,DOC002_C164_03,Penyakit hawar daun pada tanaman kacang panjang disebabkan oleh bakteri Xanthomonas campestris.,auto_ok
+DIS_089,PAT_071,DOC002_C169_02,"Penyakit ini dikenal secara internasional dengan sebutan Powdery Mildew yang disebabkan cendawan Podosphaera leucotricha (Yarwood, 1957).",auto_ok
+DIS_091,PAT_072,DOC002_C172_03,Penyakit ini disebabkan oleh Corticium salmonicolor atau Erythricium salmonicolor.,auto_ok
+DIS_091,PAT_073,DOC002_C172_03,Penyakit ini disebabkan oleh Corticium salmonicolor atau Erythricium salmonicolor.,auto_ok
+DIS_092,PAT_074,DOC002_C173_01,Penyakit kanker pada tanaman apel disebabkan oleh Botryosphaeria dothidea.,needs_review
+DIS_093,PAT_075,DOC002_C175_02,Busuk buah dapat disebabkan oleh cendawan Gloeosporium Sp.,auto_ok
+DIS_094,PAT_076,DOC002_C176_02,Busuk akar disebabkan oleh Armillaria mellea.,auto_ok
+DIS_095,PAT_077,DOC002_C183_03,Penyakit ini disebabkan oleh nematoda Radopholus similis dan Meloidogyne incognita.,auto_ok
+DIS_095,PAT_078,DOC002_C183_03,Penyakit ini disebabkan oleh nematoda Radopholus similis dan Meloidogyne incognita.,auto_ok
+DIS_095,PAT_079,DOC002_C184_01,Similis menimbulkan gejala berupa bintik-bintik coklat pada akar akibat tusukan menggunakan stiletnya.,auto_ok
+DIS_095,PAT_009,DOC002_C184_01,Kerusakan tanaman sering kali diperparah oleh Fusarium spp.,auto_ok
+DIS_095,PAT_080,DOC002_C184_01,"dan jamur lain seperti Phytium spp., serta Rigidoporus lignosus yang memanfaatkan bekas luka oleh nematoda sebagai jalan penetrasi.",auto_ok
+DIS_095,PAT_081,DOC002_C184_01,"dan jamur lain seperti Phytium spp., serta Rigidoporus lignosus yang memanfaatkan bekas luka oleh nematoda sebagai jalan penetrasi.",auto_ok
+DIS_095,PAT_082,DOC002_C184_01,"Kerusakan parah menyebabkan daun-daun berguguran, bahkan tinggal tersisa batang dan ranting berwarna coklat.",auto_ok
+DIS_095,PAT_083,DOC002_C184_03,Bekas tusukan pada akar sering menjadi jalan infeksi Fusarium spp.,auto_ok
+DIS_096,PAT_084,DOC002_C187_03,Penyakit hawar beludru disebabkan oleh Septobasidium pseudocellatum.,auto_ok
+DIS_096,PAT_085,DOC002_C187_05,"Label Deskripsi ----- ------------------------ A Spora B Basidium dengan sterigma Misalnya pemberian pupuk N yang berlebihan, dapat menyebabkan jaringan tanaman mudah terinfeksi patogen.",needs_review
+DIS_097,PAT_086,DOC002_C190_03,(2016) menunjukkan bahwa penyebabnya adalah Piper Yellow Mottle Virus (PYMV) dan Cucumber Mosaic Virus (CMV).,auto_ok
+DIS_097,PAT_062,DOC002_C190_03,(2016) menunjukkan bahwa penyebabnya adalah Piper Yellow Mottle Virus (PYMV) dan Cucumber Mosaic Virus (CMV).,auto_ok
+DIS_098,PAT_087,DOC002_C193_03,Memangkas bagian tanaman terinfeksi.,needs_review
+DIS_099,PAT_088,DOC002_C194_03,Penyebab penyakit ini adalah Colletotrichum gloeosporioides.,needs_review
+DIS_100,PAT_089,DOC002_C197_02,Penyakit karat daun pada tanaman kopi disebabkan oleh cendawan Hemileia vastatrix.,auto_ok
+DIS_101,PAT_090,DOC002_C200_02,Penyakit bercak daun kopi atau sering disebut sebagai brown eye spot disebabkan oleh infeksi cendawan fitopatogen Cercospora coffeicola.,auto_ok
+DIS_102,PAT_091,DOC002_C203_01,Penyakit jamur upas sering kali disebut sebagai pink disease merupakan penyakit pada tanaman kopi yang disebabkan oleh infeksi cendawan fitopatogen Upasia salmonicolor.,auto_ok
+DIS_103,PAT_092,DOC002_C205_03,Hasil identifikasi secara mikroskopis dan molekuler menunjukkan gejala tersebut disebabkan oleh infeksi Fusarium solani.,needs_review
+DIS_104,PAT_081,DOC002_C206_01,"Jamur akar putih disebabkan oleh infeksi cendawan Rigidoporus lignosus, jamur akar cokelat disebabkan oleh infeksi Phellinus noxius, sedangkan jamur akar hitam disebabkan oleh infeksi Roselina bunodes.",auto_ok
+DIS_104,PAT_093,DOC002_C206_01,"Jamur akar putih disebabkan oleh infeksi cendawan Rigidoporus lignosus, jamur akar cokelat disebabkan oleh infeksi Phellinus noxius, sedangkan jamur akar hitam disebabkan oleh infeksi Roselina bunodes.",auto_ok
+DIS_105,PAT_005,DOC002_C208_01,Penyakit ini disebabkan oleh infeksi cendawan fitopatogen Rhizoctonia solani pada tanaman kopi.,auto_ok
+DIS_106,PAT_094,DOC002_C209_02,"Nematoda yang umum menginfeksi kopi adalah Pratylenchus coffeae, Radopholus similis, dan Meloidogyne spp (Kumar dan Samuel, 1990, Onkendi et al., 2014).",auto_ok
+DIS_106,PAT_077,DOC002_C209_02,"Nematoda yang umum menginfeksi kopi adalah Pratylenchus coffeae, Radopholus similis, dan Meloidogyne spp (Kumar dan Samuel, 1990, Onkendi et al., 2014).",auto_ok
+DIS_106,PAT_095,DOC002_C209_02,"Nematoda yang umum menginfeksi kopi adalah Pratylenchus coffeae, Radopholus similis, dan Meloidogyne spp (Kumar dan Samuel, 1990, Onkendi et al., 2014).",auto_ok
+DIS_107,PAT_096,,heading section: Ganoderma boninense,needs_review
+DIS_108,PAT_097,,heading section: Phytophthora palmivora,needs_review
+DIS_028,PAT_098,,sel tabel T5.1_DAUN baris 1,needs_review
+DIS_028,PAT_099,,sel tabel T5.1_DAUN baris 1,needs_review
+DIS_029,PAT_100,,sel tabel T5.1_DAUN baris 2,needs_review
+DIS_030,PAT_101,,sel tabel T5.1_DAUN baris 4,needs_review
+DIS_031,PAT_102,,sel tabel T5.1_DAUN baris 5,needs_review
+DIS_032,PAT_103,,sel tabel T5.1_DAUN baris 6,needs_review
+DIS_033,PAT_104,,sel tabel T5.1_DAUN baris 8,needs_review
+DIS_034,PAT_105,,sel tabel T5.1_DAUN baris 9,needs_review
+DIS_035,PAT_106,,sel tabel T5.1_DAUN baris 10,needs_review
+DIS_036,PAT_107,,sel tabel T5.2_BATANG baris 2,needs_review
+DIS_037,PAT_108,,sel tabel T5.2_BATANG baris 3,needs_review
+DIS_038,PAT_105,,sel tabel T5.2_BATANG baris 4,needs_review
+DIS_040,PAT_009,,sel tabel T5.2_BATANG baris ,needs_review
+DIS_040,PAT_109,,sel tabel T5.2_BATANG baris ,needs_review
+DIS_040,PAT_110,,sel tabel T5.2_BATANG baris ,needs_review
+DIS_040,PAT_008,,sel tabel T5.2_BATANG baris ,needs_review
+DIS_040,PAT_111,,sel tabel T5.2_BATANG baris ,needs_review
+DIS_041,PAT_109,,sel tabel T5.3_AKAR baris 1,needs_review
+DIS_041,PAT_110,,sel tabel T5.3_AKAR baris 1,needs_review
+DIS_041,PAT_008,,sel tabel T5.3_AKAR baris 1,needs_review
+DIS_041,PAT_111,,sel tabel T5.3_AKAR baris 1,needs_review
+DIS_042,PAT_009,,sel tabel T5.3_AKAR baris 2,needs_review
+DIS_043,PAT_112,,sel tabel T5.3_AKAR baris 3,needs_review
+DIS_110,PAT_113,,sel tabel T5.2_BATANG baris 1,needs_review

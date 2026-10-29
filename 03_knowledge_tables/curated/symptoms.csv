@@ -1,0 +1,602 @@
+symptom_id,disease_id,plant_id,verbatim_text,chunk_id,page_start,page_end,char_start,char_end,review_status
+SYM_001,DIS_001,PLANT_001,"Xoo dapat menyerang semua fase tanaman padi melalui pori-pori air yang berada di tepi daun, sehingga lesi akan muncul mulai dari tepi daun.",DOC002_C027_01,27,27,58,197,auto_ok
+SYM_002,DIS_001,PLANT_001,Lesi yang muncul akan tampak berupa garis bercak kebasahan pada tepi daun (Gambar 1.2).,DOC002_C027_01,27,27,198,285,auto_ok
+SYM_003,DIS_001,PLANT_001,Kemudian akan berubah warna menjadi putih kekuningan dan meluas di satu sisi atau dua sisi daun.,DOC002_C027_01,27,27,286,382,auto_ok
+SYM_004,DIS_001,PLANT_001,"Seluruh daun kemudian akan keriput, dan layu menyerupai daun tersiram air panas.",DOC002_C027_01,27,27,383,463,auto_ok
+SYM_005,DIS_001,PLANT_001,Gejala khas dari penyakit ini adalah tepi bergelombang atau penggulungan yang terlihat jelas pada helaian daun.,DOC002_C027_01,27,27,464,575,auto_ok
+SYM_006,DIS_001,PLANT_001,"Penyakit ini dapat di karakterisasi menjadi dua fase yang berbeda; fase hawar daun, dan fase Kresek yang merupakan fase destruktif bagi wabah penyakit (Mukko et al.",DOC002_C027_01,27,27,576,740,auto_ok
+SYM_007,DIS_001,PLANT_001,"Pada fase hawar daun gejala berupa perubahan warna daun menjadi kuning pucat (Mizukami dan Wakimoto, 1969).",DOC002_C027_03,27,27,0,107,auto_ok
+SYM_008,DIS_001,PLANT_001,Saat serangan tinggi gejala berupa garis-garis kuning menjadi putih muncul tepat di dalam tepi bilah daun.,DOC002_C027_03,27,27,108,214,auto_ok
+SYM_009,DIS_001,PLANT_001,"Kemudian akan berubah menjadi kuning pucat dan nekrotik (Ou, 1985).",DOC002_C027_03,27,27,215,282,auto_ok
+SYM_010,DIS_001,PLANT_001,"Sementara itu, fase kresek ditandai terutama oleh infeksi sistemis karena pada fase ini gejala penyakit biasanya muncul 1-2 minggu setelah transplantasi persemaian ke lapangan.",DOC002_C027_03,27,27,283,459,auto_ok
+SYM_011,DIS_001,PLANT_001,"Dalam kondisi yang parah daun tanaman padi menjadi hijau keabu-abuan hingga keputihan dan tiba-tiba layu dan terkadang fase ""kresek"" penyakit terjadi pada tanaman dewasa.",DOC002_C027_03,27,27,460,630,auto_ok
+SYM_012,DIS_001,PLANT_001,"Istilah kresek sendiri diambil dari bahasa Jawa yang berarti suara daun-daun yang mati yang bergesekan satu sama lain menyerupai suara kresek (Goto, 1992).",DOC002_C027_03,27,27,631,786,auto_ok
+SYM_013,DIS_002,PLANT_001,Gejala penyakit blas dapat ditandai dengan bercak pada daun berbentuk belah ketupat (Gambar 1.4).,DOC002_C029_04,29,29,27,124,auto_ok
+SYM_014,DIS_002,PLANT_001,Bercak berwarna abu-abu atau putih pada bagian tengahnya dan dikelilingi warna coklat.,DOC002_C029_04,29,29,125,211,auto_ok
+SYM_015,DIS_002,PLANT_001,"Adapun bentuk, warna dan ukuran dari bercak dapat bervariasi tergantung dari umur dan ketahanan varietas tanaman serta umur dari bercak (Ou 1985).",DOC002_C029_04,29,29,212,358,auto_ok
+SYM_016,DIS_002,PLANT_001,"Gejala khas dari penyakit ini, yaitu blas daun dan blas malai.",DOC002_C029_04,29,29,359,421,auto_ok
+SYM_017,DIS_002,PLANT_001,Blas daun menunjukkan bercak berwarna coklat kehitaman dengan bentuk menyerupai belah ketupat dengan pusat bercak berwarna putih.,DOC002_C029_04,29,29,422,551,auto_ok
+SYM_018,DIS_002,PLANT_001,"Sementara itu, blas malai menunjukkan gejala bercak coklat kehitaman pada pangkal leher.",DOC002_C029_04,29,29,552,640,auto_ok
+SYM_019,DIS_002,PLANT_001,"Akibatnya leher malai tidak akan mampu lagi menopang malai, bahkan menjadi patah (Tebeest et al., 2007).",DOC002_C029_04,29,29,641,745,auto_ok
+SYM_020,DIS_003,PLANT_001,Gejala penyakit HDP dapat dilihat pada selubung daun.,DOC002_C032_02,32,32,41,94,auto_ok
+SYM_021,DIS_003,PLANT_001,Pada bagian tersebut akan terdapat bercak berwarna coklat kemerahan.,DOC002_C032_02,32,32,95,163,auto_ok
+SYM_022,DIS_003,PLANT_001,Bercak akan berubah menjadi putih kelabu dan tepi bercak akan berwarna coklat.,DOC002_C032_02,32,32,164,242,auto_ok
+SYM_023,DIS_003,PLANT_001,Adapun bentuk bercak sendiri dapat berupa bulat lonjong dengan panjang 2 – 3 cm yang kemudian akan meluas.,DOC002_C032_02,32,32,243,349,auto_ok
+SYM_024,DIS_003,PLANT_001,"Pada saat kondisi lembab, bercak juga akan ditemukan pada daun padi dan pelepah daun membusuk sehingga padi menjadi rebah dan gabah menjadi kopong (Harahap & Tjahjono, 1992) seperti pada Gambar 1.6.",DOC002_C032_02,32,32,350,548,auto_ok
+SYM_025,DIS_003,PLANT_001,Gejala tersebut dapat ditemukan pada padi fase anakan sampai fase matang susu.,DOC002_C032_02,32,32,549,627,auto_ok
+SYM_026,DIS_004,PLANT_001,Indikasi adanya infeksi virus tungro pada tanaman padi dapat dilihat dari daun perubahan warna daun (diskolorasi) menjadi kuning hingga oranye.,DOC002_C034_01,34,34,29,172,auto_ok
+SYM_027,DIS_004,PLANT_001,"Kemudian pada beberapa helai daun muda akan terpelintir, kerdil, dan jumlah anakan sedikit seperti pada Gambar 1.7 (Muhsin dan Widiarta 2009 Praptana et al.",DOC002_C034_01,34,34,173,329,auto_ok
+SYM_028,DIS_004,PLANT_001,"Tanaman padi yang terserang virus tungro umumnya hanya hidup hingga stadia pemasakan dengan gejala terhambatnya proses pembungaan, tidak sempurnanya malai dengan bulir yang tertutup bercak coklat (Puslitbang 2005).",DOC002_C034_01,34,34,337,551,auto_ok
+SYM_029,DIS_005,PLANT_001,"Gejala yang khas dari penyakit kerdil rumput yaitu kerdil dengan jumlah anakan banyak, bentuk daun pendek dan sempit, bagian batang tumbuh menjadi tegak dan kaku, serta diskolorasi daun (Gambar 1.7).",DOC002_C035_01,35,35,53,252,auto_ok
+SYM_030,DIS_005,PLANT_001,"Selain perubahan warna, tampak pula bintik-bintik atau bercak coklat tua pada daun yang bergejala kerdil hampa bila pupuk nitrogen yang diberikan tidak berimbang (Sari, 2019).",DOC002_C035_01,35,35,253,428,auto_ok
+SYM_031,DIS_005,PLANT_001,"Sementara itu, gejala penyakit kerdil hampa yaitu selain kerdil, pada tanaman padi yang masih muda daun akan bergigi, tidak rata, klorotik, dan pecah-pecah.",DOC002_C035_01,35,35,429,585,auto_ok
+SYM_032,DIS_005,PLANT_001,Infeksi pada daun bendera dapat menyebabkan daun menjadi abnormal di mana daun akan terpelintir dan memendek seperti pada Gambar 1.8.,DOC002_C035_01,35,35,586,719,auto_ok
+SYM_033,DIS_006,PLANT_002,rolfsii menyebabkan busuk batang atau rebah semai (dumping off).,DOC002_C038_03,38,38,343,407,auto_ok
+SYM_034,DIS_006,PLANT_002,Gejala yang muncul pada tanaman yang terserang S.,DOC002_C038_03,38,38,496,545,auto_ok
+SYM_035,DIS_006,PLANT_002,"rolfsii adalah tanaman akan layu, kemudian daun menjadi layu dan menguning, kemudian pada bagian pangkal akar akan muncul tanda berupa kumpulan hifa jamur yang berwarna putih (Gambar 2.1).",DOC002_C038_03,38,38,546,734,auto_ok
+SYM_036,DIS_006,PLANT_002,"Gejala selanjutnya adalah batang tanaman menjadi busuk dan lama-lama tanaman akan mati (Astiko et al., 2017).",DOC002_C038_03,38,38,735,844,auto_ok
+SYM_037,DIS_006,PLANT_002,Penyakit busuk batang yang disebabkan oleh S.,DOC002_C039_02,39,39,0,45,auto_ok
+SYM_038,DIS_006,PLANT_002,"Patogen ini mampu menginfeksi tanaman pada saat tanaman kedelai berumur 2-3 minggu setelah tanam yang ditandai dengan gejala bercak coklat pada bagian pangkal batang tanaman kedelai (Sofiani et al., 2016).",DOC002_C039_02,39,39,93,298,auto_ok
+SYM_039,DIS_007,PLANT_002,solani maka benih tidak akan berkecambah atau mati.,DOC002_C040_02,40,40,231,282,auto_ok
+SYM_040,DIS_007,PLANT_002,Akibatnya tanaman mati sebelum muncul pada permukaan tanah atau yang disebut dengan pre emergence damping off.,DOC002_C040_02,40,40,283,393,auto_ok
+SYM_041,DIS_007,PLANT_002,Gejala yang muncul adalah benih membusuk akibat infeksi R.,DOC002_C040_02,40,40,394,452,auto_ok
+SYM_042,DIS_007,PLANT_002,Gejala yang muncul setelah benih tumbuh pada permukaan tanah kemudian tanaman mati akibat pangkal batang pada permukaan tanah terdapat bercak coklat akibat terinfeksi patogen (post emergence damping off).,DOC002_C040_02,40,40,461,665,auto_ok
+SYM_043,DIS_007,PLANT_002,"Tanaman akan layu akibat akar tanaman busuk dan terinfeksi patogen kemudian menyebar pada pangkal batang sehingga menyebabkan rebah semai atau rebah kecambah (Gambar 2.3) (Hidayah and Yulianti, 2015).",DOC002_C040_02,40,40,666,866,auto_ok
+SYM_044,DIS_007,PLANT_002,"solani akan menunjukkan gejala adanya lekukan coklat dan berkembang menjadi warna hitam pada pangkal akar muda yang terinfeksi (Muslim et al., 2019).",DOC002_C040_02,40,40,899,1048,auto_ok
+SYM_045,DIS_008,PLANT_002,"Penyakit layu Fusarium dikenal dengan penyakit busuk akar yang menginfeksi tanaman kedelai dan menyebabkan kematian (Bawa et al., 2018).",DOC002_C042_01,42,42,29,165,auto_ok
+SYM_046,DIS_008,PLANT_002,Gejala penyakit yang disebabkan oleh patogen Fusarium spp.,DOC002_C042_01,42,42,527,585,auto_ok
+SYM_047,DIS_008,PLANT_002,yaitu adanya nekrosis pada bagian akar tanaman yang menyebabkan busuk pada bagian akar tanaman.,DOC002_C042_01,42,42,586,681,auto_ok
+SYM_048,DIS_008,PLANT_002,"Akibat dari infeksi ini maka tanaman menunjukkan gejala kematian mendadak pada tanaman kedelai (Chang et al., 2018).",DOC002_C042_01,42,42,682,798,auto_ok
+SYM_049,DIS_008,PLANT_002,menginfeksi tanaman sejak tanaman berada di persemaian yang menyebabkan tanaman layu atau yang disebut dengan penyakit rebah kecambah yang disebabkan oleh jamur F.,DOC002_C042_01,42,42,813,976,auto_ok
+SYM_050,DIS_008,PLANT_002,"Akibat infeksi pada akar menyebabkan terganggunya proses translokasi unsur hara sehingga menyebabkan tanaman layu dan mati (Gambar 2.4) (Musdalifa et al., 2017).",DOC002_C042_01,42,42,1285,1446,auto_ok
+SYM_051,DIS_009,PLANT_002,Akibat serangan oleh patogen ini menyebabkan penurunan produksi polong kedelai mencapai 30-60%.,DOC002_C043_03,43,43,147,242,auto_ok
+SYM_052,DIS_009,PLANT_002,Kemudian tanaman menunjukkan gejala adanya bercak berukuran kecil.,DOC002_C043_03,43,43,1163,1229,auto_ok
+SYM_053,DIS_009,PLANT_002,Pada awalnya bercak berwarna kuning kemudian lama kelamaan bercak berkembang dan berwarna coklat kemerahan seperti karat.,DOC002_C043_03,43,43,1230,1351,auto_ok
+SYM_054,DIS_009,PLANT_002,Bercak tersebut adalah kumpulan dari uredia patogen P.,DOC002_C043_03,43,43,1352,1406,auto_ok
+SYM_055,DIS_009,PLANT_002,Intensitas serangan berat pada saat pengisian polong.,DOC002_C043_03,43,43,1448,1501,auto_ok
+SYM_056,DIS_009,PLANT_002,"Pada serangan berat daun menjadi rontok sehingga pengisian polong tidak maksimal dan menyebabkan penurunan berat polong kedelai yang dihasilkan dan berpengaruh terhadap ukuran polong atau biji (Gambar 2.5) (Susanti et al., 2018).",DOC002_C043_03,43,43,1502,1731,auto_ok
+SYM_057,DIS_010,PLANT_002,diffusa menginfeksi daun kedelai bagian bawah sehingga pada permukaan daun bagian bawah terdapat bercak berwarna putih seperti tepung yang merupakan kumpulan dari konidia dan konidiofor patogen E.,DOC002_C045_01,45,45,146,342,auto_ok
+SYM_058,DIS_010,PLANT_002,Bercak kemudian menyebar ke bagian atas permukaan daun.,DOC002_C045_01,45,45,365,420,auto_ok
+SYM_059,DIS_011,PLANT_002,Gejala yang muncul pada tanaman yang terinfeksi P.,DOC002_C046_02,46,46,394,444,auto_ok
+SYM_060,DIS_011,PLANT_002,manshurica pada awalnya terdapat adanya bercak.,DOC002_C046_02,46,46,445,492,auto_ok
+SYM_061,DIS_011,PLANT_002,Bercak muncul pada permukaan daun berwarna kuning kehijauan (Gambar 2.7).,DOC002_C046_02,46,46,493,566,auto_ok
+SYM_062,DIS_011,PLANT_002,Bercak kemudian berkembang menjadi berwarna kuning ke abuan dan kuning kecokelatan.,DOC002_C046_02,46,46,567,650,auto_ok
+SYM_063,DIS_011,PLANT_002,Penyakit downy mildew juga pada awal munculnya bercak berukuran kecil yang ditandai adanya nekrosis pada jaringan daun.,DOC002_C046_02,46,46,651,770,auto_ok
+SYM_064,DIS_011,PLANT_002,"Kemudian bercak akan berkembang menjadi berukuran besar dan mengikuti tulang daun dan membentuk bercak dengan ukuran yang lebih besar (Susanti et al., 2021); (Anggraini et al., 2019).",DOC002_C046_02,46,46,771,954,auto_ok
+SYM_065,DIS_011,PLANT_002,Pada tingkat serangan yang tinggi menyebabkan daun memiliki bentuk yang tidak normal.,DOC002_C046_02,46,46,955,1040,auto_ok
+SYM_066,DIS_011,PLANT_002,Daun menjadi kaku seperti gejala tanaman yang terinfeksi virus.,DOC002_C046_02,46,46,1041,1104,auto_ok
+SYM_067,DIS_012,PLANT_002,Penyakit bercak daun mata katak (frogeye leaf spot) disebabkan oleh patogen Cercospora sojina K.,DOC002_C047_02,47,47,58,154,auto_ok
+SYM_068,DIS_012,PLANT_002,Konidia merupakan sumber inokulum primer dan sekunder untuk perkembangan penyakit bercak daun mata katak.,DOC002_C047_02,47,47,435,540,auto_ok
+SYM_069,DIS_012,PLANT_002,Gejala yang muncul pada tanaman adalah adanya bercak atau bintik-bintik kecil dengan bagian tengah pada bintik berwarna lebih terang.,DOC002_C047_02,47,47,541,674,auto_ok
+SYM_070,DIS_012,PLANT_002,Bintik pada daun kemudian berkembang menjadi bercak yang lebih lebar dengan pinggiran berwarna lebih coklat sampai kemerahan (Gambar 2.8).,DOC002_C047_02,47,47,675,813,auto_ok
+SYM_071,DIS_012,PLANT_002,Pada intensitas serangan yang bintik menjadi berkembang pada bagian daun hingga menutupi 30% bagian permukaan daun.,DOC002_C047_02,47,47,814,929,auto_ok
+SYM_072,DIS_012,PLANT_002,Penyakit bercak daun katak oleh patogen C.,DOC002_C047_02,47,47,1140,1182,auto_ok
+SYM_073,DIS_012,PLANT_002,Pengaturan jarak tanam pada beberapa varietas kedelai tidak memengaruhi terhadap intensitas serangan C.,DOC002_C048_02,48,48,1302,1405,auto_ok
+SYM_074,DIS_013,PLANT_002,Gejala diawali dengan munculnya lekukan bercak berwarna hitam dengan bentuk bercak yang tidak beraturan.,DOC002_C049_02,49,49,1000,1104,auto_ok
+SYM_075,DIS_013,PLANT_002,"Bercak biasanya muncul pada bagian batang, tangkai daun, daun, dan polong tanaman kedelai.",DOC002_C049_02,49,49,1105,1195,auto_ok
+SYM_076,DIS_013,PLANT_002,Pada bagian daun biasanya bercak menyebabkan daun menjadi menggulung dan adanya nekrotik dan bercak coklat gelap pada daun (Gambar 2.10).,DOC002_C049_02,49,49,1196,1333,auto_ok
+SYM_077,DIS_013,PLANT_002,truncatum dengan cara melakukan penetrasi pada jaringan tanaman dengan membentuk hifa primer dan diikuti dengan fase nekrotik di mana patogen memproduksi hifa sekunder yang menginfeksi jaringan tanaman secara intra dan interseluler sehingga menyebabkan kematian jaringan sel.,DOC002_C050_02,50,50,27,302,auto_ok
+SYM_078,DIS_013,PLANT_002,Pada bercak terbentuk acervuli yang memiliki banyak konidia.,DOC002_C050_02,50,50,303,363,auto_ok
+SYM_079,DIS_013,PLANT_002,"Pada jaringan yang terinfeksi maka akan ada bercak yang ditutupi oleh acervuli berwarna hitam berbentuk lonjong sampai memanjang seperti jarum (Jahan et al., 2015).",DOC002_C050_02,50,50,519,683,auto_ok
+SYM_080,DIS_014,PLANT_002,Penyakit bercak target (target spot) disebabkan oleh patogen jamur Corynespora cassiicola.,DOC002_C051_02,51,51,29,119,auto_ok
+SYM_081,DIS_014,PLANT_002,cassiicola khas yaitu adanya bercak berwarna coklat kemerahan dengan ukuran bercak antara 10-15 mm pada permukaan daun.,DOC002_C051_02,51,51,314,433,auto_ok
+SYM_082,DIS_014,PLANT_002,Di sekitar bercak akan ada halo yaitu lingkaran berwarna kuning (Gambar 2.12).,DOC002_C051_02,51,51,434,512,auto_ok
+SYM_083,DIS_014,PLANT_002,"Bercak memiliki bentuk tidak beraturan dan adanya lingkaran bercak seperti cincin konsentris (Molina et al., 2019).",DOC002_C051_02,51,51,513,628,auto_ok
+SYM_084,DIS_014,PLANT_002,Gejala juga dapat muncul pada bagian tanaman seperti batang dan polong yang terinfeksi patogen C.,DOC002_C051_02,51,51,629,726,auto_ok
+SYM_085,DIS_015,PLANT_002,Penyakit bercak biji ungu atau juga dikenal dengan hawar daun Cercospora merupakan penyakit pada tanaman kedelai yang disebabkan oleh patogen Cercospora kikuchii.,DOC002_C053_01,53,53,33,195,auto_ok
+SYM_086,DIS_015,PLANT_002,Penyakit bercak biji ungu atau hawar daun Cercospora merupakan penyakit yang penting juga pada tanaman kedelai karena dapat menyebabkan kehilangan hasil.,DOC002_C053_01,53,53,196,349,auto_ok
+SYM_087,DIS_015,PLANT_002,Gejala pada tanaman kedelai yang terinfeksi patogen C.,DOC002_C053_01,53,53,470,524,auto_ok
+SYM_088,DIS_015,PLANT_002,Gejala ini biasanya dianggap sebagai gejala karena pengaruh cahaya matahari.,DOC002_C053_01,53,53,761,837,auto_ok
+SYM_089,DIS_015,PLANT_002,Pada intensitas serangan yang tinggi akan terjadi nekrosis pada bagian daun sehingga jaringan daun mudah terjadi defoliasi.,DOC002_C053_01,53,53,838,961,auto_ok
+SYM_090,DIS_015,PLANT_002,Pada batang yang terinfeksi adanya bercak ungu kemerahan pada bagian batang.,DOC002_C053_01,53,53,962,1038,auto_ok
+SYM_091,DIS_015,PLANT_002,Bercak ungu pada biji menutupi sebagian atau seluruh permukaan biji.,DOC002_C053_01,53,53,1137,1205,auto_ok
+SYM_092,DIS_015,PLANT_002,Pada gejala awal tanaman tidak terlihat sakit karena gejala yang disebabkan oleh C.,DOC002_C054_01,54,54,99,182,auto_ok
+SYM_093,DIS_015,PLANT_002,Budidaya tanaman kedelai juga dihadapkan dengan adanya serangan dari bakteri penyebab penyakit.,DOC002_C054_02,54,54,34,129,auto_ok
+SYM_094,DIS_016,PLANT_002,Gejala tanaman yang disebabkan oleh patogen P.,DOC002_C054_03,54,54,269,315,auto_ok
+SYM_095,DIS_016,PLANT_002,glycine diawali dengan munculnya bercak yang awalnya berwarna coklat kekuningan dengan ukuran bercak kecil.,DOC002_C054_03,54,54,329,436,auto_ok
+SYM_096,DIS_016,PLANT_002,Pada tingkat serangan yang tinggi bercak kemudian menjadi hawar yang ditandai dengan warna kecokelatan dilingkari dengan lingkaran kuning dan menyebar tidak beraturan (Gambar 2.14).,DOC002_C054_03,54,54,437,618,auto_ok
+SYM_097,DIS_016,PLANT_002,Lama kelamaan bercak menjadi berlubang pada tingkat serangan yang parah daun akan rontok karena daun yang mengering .,DOC002_C054_03,54,54,619,736,auto_ok
+SYM_098,DIS_016,PLANT_002,syringae pada gejala tidak ada pustul pada bagian bercak daun.,DOC002_C054_03,54,54,772,834,auto_ok
+SYM_099,DIS_016,PLANT_002,Polong yang terinfeksi patogen akan menunjukkan gejala bercak berwarna hitam pada bagian kulit polong dan menutupi bagian permukaan polong.,DOC002_C054_03,54,54,1141,1280,auto_ok
+SYM_100,DIS_016,PLANT_002,akibat serangan patogen ini maka benih yang dihasilkan menjadi berukuran kecil dan warnanya akan berubah.,DOC002_C054_03,54,54,1281,1386,auto_ok
+SYM_101,DIS_017,PLANT_002,Gejala yang muncul akibat serangan patogen X.,DOC002_C056_02,56,56,239,284,auto_ok
+SYM_102,DIS_017,PLANT_002,glycines diawali dengan adanya bercak-bercak pada bagian daun.,DOC002_C056_02,56,56,300,362,auto_ok
+SYM_103,DIS_017,PLANT_002,Kemudian bercak berkembang menjadi berwarna kuning kecokelatan.,DOC002_C056_02,56,56,397,460,auto_ok
+SYM_104,DIS_017,PLANT_002,Pada awal munculnya bercak berukuran kecil.,DOC002_C056_02,56,56,461,504,auto_ok
+SYM_105,DIS_017,PLANT_002,Kemudian pada serangan yang tinggi maka bercak menjadi berukuran besar (Gambar 2.16).,DOC002_C056_02,56,56,505,590,auto_ok
+SYM_106,DIS_017,PLANT_002,Secara sepintas gejala yang ditunjukkan hampir menyerupai penyakit karat tetapi pada bercak bakteri pustul ini tidak adanya spora pada bagian tengah bercak.,DOC002_C056_02,56,56,591,747,auto_ok
+SYM_107,DIS_017,PLANT_002,Gejala selanjutnya adalah daun yang terinfeksi akan rontok akibat intensitas serangan yang tinggi sehingga akan mengganggu proses fotosintesis dan berpengaruh terhadap pengisian polong.,DOC002_C056_02,56,56,748,933,auto_ok
+SYM_108,DIS_018,PLANT_002,Penyakit mosaik kedelai (soybean mosaic virus) atau SMV disebabkan oleh infeksi patogen dari golongan virus.,DOC002_C057_03,57,57,53,161,auto_ok
+SYM_109,DIS_018,PLANT_002,Tanaman dapat menunjukkan gejala yang sama atau berbeda akibat patogen SMV.,DOC002_C057_03,57,57,631,706,auto_ok
+SYM_110,DIS_018,PLANT_002,"Hal ini dipengaruhi oleh beberapa faktor seperti umur tanaman saat terinfeksi patogen SMV, kondisi lingkungan pada saat adanya infeksi, virus yang menginfeksi benih dan sumber inokulum di lapangan menunjukkan gejala yang beragam.",DOC002_C057_03,57,57,707,936,auto_ok
+SYM_111,DIS_018,PLANT_002,"Secara umum infeksi patogen SMV pada tanaman akan menunjukkan gejala pada daun adanya mosaik, ukuran daun menjadi kecil, permukaannya tidak rata, daun seperti menggulung ke dalam dan adanya klorosis pada bagian tepi daun dan tanaman kadang-kadang menjadi terhambat pertumbuhannya atau kerdil (Gambar 2.17) (Andayanie, 2012).",DOC002_C057_03,57,57,937,1261,auto_ok
+SYM_112,DIS_018,PLANT_002,Pada benih yang terinfeksi SMV menunjukkan gejala belang atau mottle.,DOC002_C057_03,57,57,1262,1331,auto_ok
+SYM_113,DIS_019,PLANT_002,"Gejala yang ditunjukkan oleh patogen CMMV pada tanaman kedelai adalah pada daun tanaman terdapat belang secara sistemik, bagian tulang daun terdapat klorosis serta daun yang terinfeksi CMMV mengalami malformasi (Gambar 2.18).",DOC002_C059_01,59,59,298,523,auto_ok
+SYM_114,DIS_019,PLANT_002,"Pada intensitas serangan yang tinggi maka gejala yang muncul pada tanaman kedelai adalah terdapat mosaik pada daun yang diikuti dengan tonjolan pada permukaan daun dan terdapat blister di mana helai daun berwarna hijau tua, bentuk daun keriting, adanya mosaik kuning dan tanaman kedelai menjadi kerdil.",DOC002_C059_01,59,59,1424,1726,auto_ok
+SYM_115,DIS_019,PLANT_002,Gejala akan semakin berkembang seiring dengan meningkatnya umur tanaman.,DOC002_C059_01,59,59,1727,1799,auto_ok
+SYM_116,DIS_019,PLANT_002,"Pada gejala yang parah maka tanaman kedelai akan menunjukkan gejala yang semakin beragam dan kompleks serta diikuti dengan gejala mal formasi pada daun tanaman kedelai (Sulandari et al., 2014).",DOC002_C059_01,59,59,1800,1993,auto_ok
+SYM_117,DIS_020,PLANT_002,Penyakit kerdil kedelai disebabkan oleh partikel virus Soybean Stunt Virus atau SSV yang menginfeksi tanaman kedelai.,DOC002_C060_02,60,60,52,169,auto_ok
+SYM_118,DIS_020,PLANT_002,Tanaman yang terinfeksi akan menunjukkan gejala terhambatnya pertumbuhan tanaman kedelai.,DOC002_C060_02,60,60,170,259,auto_ok
+SYM_119,DIS_020,PLANT_002,"Pada daun yang terinfeksi ukurannya menjadi lebih kecil dibandingkan pada daun yang normal, yang diikuti dengan adanya mosaik pada daun (Gambar 2.19).",DOC002_C060_02,60,60,292,442,auto_ok
+SYM_120,DIS_020,PLANT_002,yang menusukkan alat mulut stylet pada tanaman sehat sehingga virus akan memperbanyak diri dan membentuk partikel virus yang baru pada tanaman yang sehat sehingga tanaman yang sehat akan terinfeksi dan menunjukkan gejala sesuai dengan virus yang ditularkan oleh serangga vektor.,DOC002_C061_02,61,61,458,736,auto_ok
+SYM_121,DIS_021,PLANT_003,Penyakit bercak daun merupakan penyakit tular udara yang disebabkan oleh patogen (Cercospora arachidicola dan C.,DOC002_C065_01,65,65,25,137,auto_ok
+SYM_122,DIS_021,PLANT_003,"Gejala pertama muncul 10 hari setelah inokulasi berupa lesio kecil klorotik, selanjutnya lesio semakin meluas hingga diameter 1 – 10 mm berwarna semakin gelap.",DOC002_C065_01,65,65,150,309,auto_ok
+SYM_123,DIS_021,PLANT_003,Sporulasi patogen terjadi pada bercak yang telah berkembang penuh biasanya 15 hari setelah inokulasi.,DOC002_C065_01,65,65,310,411,auto_ok
+SYM_124,DIS_021,PLANT_003,Gejala berbeda-beda tergantung dari spesies patogennya (Cercospora arachidicola dan C.,DOC002_C065_01,65,65,412,498,auto_ok
+SYM_125,DIS_021,PLANT_003,"Inang kedua patogen ini hanya kacang tanah, Cercospora personata bercak relatif lambat muncul, berukuran lebih kecil, berwarna coklat gelap sampai hitam, sporulasi cendawan lebih banyak di permukaan bawah daun.",DOC002_C065_01,65,65,511,721,auto_ok
+SYM_126,DIS_021,PLANT_003,"C personata membentuk konidia lebih pendek dan gemuk bersekat 1 – 7, C arachidicola bercak relatif lebih dulu muncul, berukuran lebih besar, berwarna kekuningan, sporulasi cendawan lebih banyak di permukaan atas daun.",DOC002_C065_01,65,65,722,939,auto_ok
+SYM_127,DIS_021,PLANT_003,"Menurut Semangun, 1991 gejala tanaman yang terinfeksi oleh penyakit terdapat bercak coklat kecil pada daun bawah yang memiliki bentuk bulat yang tidak beraturan.",DOC002_C065_01,65,65,1016,1177,auto_ok
+SYM_128,DIS_021,PLANT_003,Serangan penyakit berdampak pada pengurangan jumlah polong dan berat biji per tanaman sehingga dapat mengakibatkan penurunan hasil dan produksi sebesar 50%.,DOC002_C065_01,65,65,1178,1334,auto_ok
+SYM_129,DIS_021,PLANT_003,Secara umum pengamatan makroskopis daun kacang tanah yang terinfeksi C arachidicola penyebab penyakit bercak pada kacang tanah menunjukkan gejala bercak coklat yang tidak teratur.,DOC002_C065_02,65,65,0,179,auto_ok
+SYM_130,DIS_021,PLANT_003,"Gejala muncul pada permukaan daun kacang tanah dengan warna coklat, terdapat lingkaran halo kuning sampai coklat kehitaman tergantung dari tingkat keparahan penyakit.",DOC002_C065_02,65,65,180,346,auto_ok
+SYM_131,DIS_021,PLANT_003,"lebih lanjut Semangun, 2007 menyatakan bahwa pada gejala lanjut penyakit ini dapat menyebabkan daun berlubang kemudian kering dan mati.",DOC002_C065_02,65,65,347,482,auto_ok
+SYM_132,DIS_021,PLANT_003,Penyakit karat merupakan penyakit penting kedua pada kacang tanah setelah bercak daun.,DOC002_C068_03,68,68,15,101,auto_ok
+SYM_133,DIS_021,PLANT_003,"Pada umumnya, gejala terdapat pada permukaan daun bawah yang berupa pustule atau bintik-bintik kecil berwarna coklat pucat seperti karat besi (Gambar 3A).",DOC002_C068_03,68,68,763,917,auto_ok
+SYM_134,DIS_021,PLANT_003,Dalam perkembangannya bintik-bintik ini berubah menjadi bercak coklat agak menonjol pada permukaan bawah dan atas daun.,DOC002_C068_03,68,68,918,1037,auto_ok
+SYM_135,DIS_021,PLANT_003,"Pada umumnya bintik-bintik kecil tersebut dikelilingi oleh bagian yang klorosis, walaupun ada yang hanya berupa bintik coklat (Abadi, 2003, Semangun, 2004).",DOC002_C068_03,68,68,1109,1265,auto_ok
+SYM_136,DIS_022,PLANT_003,Gejala serangannya tampak pada daun muda berupa belang (mottle) atau mosaik hijau tua tidak teratur.,DOC002_C072_01,72,72,621,721,auto_ok
+SYM_137,DIS_022,PLANT_003,Kadang-kadang gejala oleh PStV berupa garis putus-putus berwarna hijau gelap (stripe).,DOC002_C072_01,72,72,756,842,auto_ok
+SYM_138,DIS_022,PLANT_003,Tetapi umumnya gejala kedua virus ini sukar dibedakan.,DOC002_C072_01,72,72,843,897,auto_ok
+SYM_139,DIS_022,PLANT_003,"Gejala lanjut helaian daun terdapat bentuk belang-belang yang tidak beraturan, berwarna hijau tua dan hijau muda.",DOC002_C072_01,72,72,898,1011,auto_ok
+SYM_140,DIS_022,PLANT_003,Perbedaan tampak pada warna daun terinfeksi mengalami klorosis dan di lapangan akan tampak lebih kekuningan.,DOC002_C072_01,72,72,1144,1252,auto_ok
+SYM_141,DIS_022,PLANT_003,Infeksi yang terjadi saat tanaman masih muda sering menyebabkan timbulnya gejala berupa belang dengan cincin-cincin klorosis.,DOC002_C072_01,72,72,1253,1378,auto_ok
+SYM_142,DIS_022,PLANT_003,Gejala serangan dan makroskopis ditunjukkan Gambar 4.,DOC002_C072_01,72,72,1379,1432,auto_ok
+SYM_143,DIS_023,PLANT_003,"Gejala awal berupa kelayuan tidak permanen, tanaman segar kembali malam atau pagi hari.",DOC002_C074_01,74,74,198,285,auto_ok
+SYM_144,DIS_023,PLANT_003,Gejala ini diikuti oleh kematian sebagian atau seluruh cabang dalam satu tanaman.,DOC002_C074_01,74,74,321,402,auto_ok
+SYM_145,DIS_023,PLANT_003,Pada kondisi ini sistem perakaran tidak berfungsi sehingga tanaman layu dan mati.,DOC002_C074_01,74,74,454,535,auto_ok
+SYM_146,DIS_023,PLANT_003,Patogen penyebab penyakit layu adalah bakteri Ralstonia solanacearum.,DOC002_C074_01,74,74,536,605,auto_ok
+SYM_147,DIS_023,PLANT_003,"Selain kacang tanah yang menjadi tempat hidup bakteri layu, komoditas lain yang bernilai ekonomis tinggi seperti terong, kentang, tomat, pisang, dan tembakau merupakan inang utama R.",DOC002_C075_02,75,75,0,182,auto_ok
+SYM_148,DIS_023,PLANT_003,Gulma yang tumbuh bersama kacang tanah memiliki peran penting dalam daur penyakit layu.,DOC002_C075_02,75,75,330,417,auto_ok
+SYM_149,DIS_023,PLANT_003,"Sering kali, gulma yang terinfeksi bakteri tersebut tidak menunjukkan gejala layu.",DOC002_C075_02,75,75,587,669,auto_ok
+SYM_150,DIS_023,PLANT_003,Hasil penelitian di China menunjukkan bahwa penularan bakteri layu berkisar 3–6% dan viabilitas bakteri dalam biji kacang tanah akan menurun dengan semakin rendahnya kadar air benih (Tan et al.,DOC002_C076_02,76,76,70,263,auto_ok
+SYM_151,DIS_023,PLANT_003,Mengeringkan kacang tanah hingga kadar air biji kurang dari 8% dilaporkan efektif untuk mencegah penularan penyakit layu bakteri.,DOC002_C076_02,76,76,350,479,auto_ok
+SYM_152,DIS_023,PLANT_003,"Ekspresi ketahanan terhadap penyakit layu sering kali tidak stabil, di agroekologi yang berbeda sifat tahan tersebut kadang tidak muncul.",DOC002_C076_03,76,76,395,532,auto_ok
+SYM_153,DIS_023,PLANT_003,solanacearum di lahan setempat sehingga mengurangi kejadian penyakit layu.,DOC002_C077_01,77,77,572,646,auto_ok
+SYM_154,DIS_024,PLANT_004,Fusarium oxysporum dikenal sebagai penyebab penyakit busuk permukaan (surface root) atau layu fusarium F.,DOC002_C080_01,80,80,536,641,auto_ok
+SYM_155,DIS_024,PLANT_004,"(2018) menjelaskan bahwa gejala awal ditandai dengan daun yang terinfeksi berwarna kuning pada bagian atas, diikuti menguningnya pada bagian bawah dan lebih cepat pada daun tua.",DOC002_C080_01,80,80,755,932,auto_ok
+SYM_156,DIS_024,PLANT_004,"Gejala berikutnya daun layu, kerdil dan akhirnya tanaman mati.",DOC002_C080_01,80,80,933,995,auto_ok
+SYM_157,DIS_024,PLANT_004,"Selain itu, terjadi nekrosis pada bagian vaskular batang dengan perubahan warna coklat menjadi ungu yang disertai pecahnya korteks batang dan miselium tumbuh pada permukaan batang yang terinfeksi (Gambar 1G dan F).",DOC002_C080_01,80,80,996,1210,auto_ok
+SYM_158,DIS_024,PLANT_004,"Tanaman merambat berwarna kecokelatan (1B dan E), tanaman yang mati sering terdapat miselium berwarna merah muda dengan makrokonidia dan mikrokonidia patogen (1C dan F).",DOC002_C080_01,80,80,1211,1380,auto_ok
+SYM_159,DIS_024,PLANT_004,"Gejala serangan Fusarium pada umbi ubi jalar berupa kanker melingkar permukaan yang minimal memengaruhi jaringan di bawahnya, berwarna coklat pucat sampai kehitaman kering, rerata diameter awalnya 2-4 mm, luka dapat tumbuh dan berkembang menghasilkan area gelap yang lebih luas (Gambar 2A).",DOC002_C080_01,80,80,1381,1671,auto_ok
+SYM_160,DIS_025,PLANT_004,"Gejala yang timbul akibat serangan penyakit kudis pada bagian batang yaitu terdapat bercak berwarna coklat, berbentuk cekung atau bulat tidak beraturan, satu bercak dapat meluas dan akan bersatu dengan bercak yang lain (Gambar 3A), sedangkan pada bagian daun terutama tulang daun pucuk terdapat bercak kecil, cekung dan berwarna coklat (Gambar 3B, Martanto, 2010).",DOC002_C083_01,83,83,466,830,auto_ok
+SYM_161,DIS_025,PLANT_004,"Pada awalnya bercak berwarna kuning coklat kekuningan, coklat kemerahan dan akhirnya menjadi coklat kehitaman (Martanto, Tanati and Baan, 2016).",DOC002_C083_01,83,83,831,975,auto_ok
+SYM_162,DIS_025,PLANT_004,"Daun menjadi tidak produktif dalam fotosintesis jika pada tingkat serangan berat, sehingga hasil ubi rendah dan bahkan tidak menghasilkan sama sekali (Rukmana, 1997).",DOC002_C083_01,83,83,976,1142,auto_ok
+SYM_163,DIS_025,PLANT_004,"Sumber inokulum penyakit kudis biasanya berasal dari bahan tanam (setek) yang terinfeksi jamur, penyakit ini menyebar lebih cepat ke tanaman yang sehat percikan air hujan yang disertai angin, lebih banyak terjadi serangan pada musim hujan (Saleh and Rahayuningsih, 2013).",DOC002_C083_01,83,83,1280,1551,auto_ok
+SYM_164,DIS_025,PLANT_004,"Selain itu, faktor lingkungan juga memengaruhi perubahan ketahanan ubi jalar terhadap penyakit kudis (Roosda et al., 20013), sehingga kultivar yang tahan dapat berubah menjadi tidak tahan dan periode inkubasi juga memengaruhi munculnya gejala penyakit (Samiyarsih, Juwarno and Muljowati, 2018).",DOC002_C083_01,83,83,1672,1966,auto_ok
+SYM_165,DIS_025,PLANT_004,Hasil penelitian Martanto (2010) menjelaskan bahwa tanaman ubi jalar membentuk lapisan gabus untuk mempertahankan diri dari serangan penyakit kudis (Gambar 3A dan B).,DOC002_C083_02,83,83,476,642,auto_ok
+SYM_166,DIS_026,PLANT_004,"Informasi penelitian di Indonesia terkait virus pada ubi jalar masih sedikit, namun yang paling dominan adalah serangan SPFMV.",DOC002_C085_01,85,85,517,643,auto_ok
+SYM_167,DIS_026,PLANT_004,"Penyakit bercak kuning pada ubi jalar disebabkan oleh Sweet Potato Feathery Mottle Virus (SPFMV) termasuk ke dalam genus Potyvirus, famili Potyviridae (Tugume, Mukasa and Valkonen, 2008).",DOC002_C085_01,85,85,644,831,auto_ok
+SYM_168,DIS_026,PLANT_004,"Gejala yang timbul akibat serangan penyakit ini pada planlet yang belum mengalami kultur meristem tunas pucuk berupa klorotik, nekrosis, daun kecil dan terlipat (Barahima and Purnomo, 2003).",DOC002_C085_01,85,85,1551,1741,auto_ok
+SYM_169,DIS_026,PLANT_004,"Adapun gejala di lapangan pada daun yaitu kadang-kadang tidak tampak atau mottling, klorosis, bercak klorotik (Tugume, Mukasa and Valkonen, 2008), dan bercak kuning (Hondo et al., 2018).",DOC002_C086_01,86,86,0,186,auto_ok
+SYM_170,DIS_026,PLANT_004,"Menurut Cooper and Jones (2006) bahwa variabilitas dalam ekspresi gejala disebabkan karena beberapa faktor seperti kondisi lingkungan, strain virus, spesies atau genotipe tanaman inang, umur dan fisiologi inang.",DOC002_C086_01,86,86,187,398,auto_ok
+SYM_171,DIS_027,PLANT_004,"Penyakit busuk hitam (black rot) disebabkan oleh jamur Ceratocystis fimbriata menjadi salah satu ancaman produksi pada ubi jalar di dunia (Muramoto et al., 2012) dan menyebabkan kerusakan parah selama penyimpanan pascapanen (Baker et al., 2003).",DOC002_C087_01,87,87,27,272,auto_ok
+SYM_172,DIS_027,PLANT_004,(2018) menjelaskan bahwa gejala serangan C.,DOC002_C087_01,87,87,400,443,auto_ok
+SYM_173,DIS_027,PLANT_004,"fimbriata pada umbi ubi jalar pada tahap awal terdapat lesio atau bintik hitam, kecil, melingkar, dan sedikit cekung, kemudian bintik hitam tersebut membesar dan perithecia dengan leher panjang, pada tahap selanjutnya muncul bulu gelap pada akar penyimpanan (Gambar 6a dan b).",DOC002_C087_01,87,87,444,720,auto_ok
+SYM_174,DIS_027,PLANT_004,"Penyebaran penyakit busuk hitam melalui luka, setek propagativ, cangkok akar sehingga pohon yang berdekatan akan mudah terinfeksi, serangga vektor kumbang nitidulid (Glischrochilus quadrisignatus) pemakan jamur dan cairan tanaman, melalui kotoran serangga, dan alat-alat pertanian, sedangkan penyebaran konidium melalui udara tidak mungkin terjadi (Soesanto, 2020).",DOC002_C087_02,87,87,76,441,auto_ok
+SYM_175,DIS_027,PLANT_004,Gambar 4.6: Gejala dan bentuk mikroskopis C.,DOC002_C088_02,88,88,0,44,auto_ok
+SYM_176,DIS_027,PLANT_004,"fimbriata, (a&b) gejala pascapanen pada ubi jalar (c&d) Anterior dan posterior koloni SPL17100 pada media PDA yang diinkubasi selama 7 hari pada 25 °C, e,g,h) aleurokonidiophore dengan aleurokonidia, f) perithecium dengan leher panjang (i&j) konidia silinder (Sumber: Paul et al., 2018) Hasil penelitian Zhang et al.",DOC002_C088_02,88,88,45,361,auto_ok
+SYM_177,DIS_044,PLANT_006,Gejala hawar daun mulai terlihat pada umur 25 hari setelah tanam dan biasanya diawali dari daun bagian bawah dan menular ke daun bagian atas.,DOC002_C101_02,101,101,0,141,auto_ok
+SYM_178,DIS_044,PLANT_006,Ditandai dengan adanya bercak kecil berwarna coklat kehijauan dan basah.,DOC002_C101_02,101,101,142,214,auto_ok
+SYM_179,DIS_044,PLANT_006,"Selanjutnya bercak berkembang menjadi berbentuk lonjong kecokelatan, infeksi lebih lanjut bercak akan melebar dan bergabung dengan bercak lain dan menyebabkan jaringan daun mengalami nekrosis.",DOC002_C101_02,101,101,215,407,auto_ok
+SYM_180,DIS_044,PLANT_006,"Ukuran bercak beragam antara 5-15 cm (Faizah, 2017).",DOC002_C101_02,101,101,408,460,auto_ok
+SYM_181,DIS_045,PLANT_006,Gejala karat daun berupa bintil kecil timbul berwarna kuning kecokelatan (oranye) yang terdapat pada permukaan atas daun.,DOC002_C103_03,103,103,0,121,auto_ok
+SYM_182,DIS_045,PLANT_006,Bintil berbentuk bulat atau oval dan dapat saling bergabung.,DOC002_C103_03,103,103,122,182,auto_ok
+SYM_183,DIS_045,PLANT_006,"Jika bintil pecah, spora akan keluar dan terbawa angin maupun percikan air hujan sehingga menjadi sumber inokulum baru dan dapat menginfeksi tanaman lain.",DOC002_C103_03,103,103,183,337,auto_ok
+SYM_184,DIS_045,PLANT_006,"Gejala karat biasanya diawali dari daun bagian bawah dan berkembang ke daun bagian atas, umumnya muncul pada masa generatif (Puspawati and Sudarma, 2016).",DOC002_C103_03,103,103,338,492,auto_ok
+SYM_185,DIS_045,PLANT_006,Keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%.,DOC002_C103_03,103,103,493,582,auto_ok
+SYM_186,DIS_045,PLANT_006,Perkembangan penyakit dipengaruhi oleh kondisi lingkungan seperti suhu dan kelembaban.,DOC002_C103_03,103,103,583,669,auto_ok
+SYM_187,DIS_045,PLANT_006,Suhu 25.2°C – 28.8°C merupakan suhu optimum perkembangan penyakit karat.,DOC002_C103_03,103,103,670,742,auto_ok
+SYM_188,DIS_045,PLANT_006,Semakin tinggi kelembaban maka laju infeksi akan meningkat pada batas tertentu.,DOC002_C103_03,103,103,743,822,auto_ok
+SYM_189,DIS_045,PLANT_006,"Laju infeksi ditentukan oleh kenaikan suhu dan kelembaban, meningkatnya suhu dapat menurunkan laju infeksi dan sebaliknya meningkatnya kelembaban dapat meningkatkan laju infeksi (Puspawati and Sudarma, 2016).",DOC002_C103_03,103,103,823,1031,auto_ok
+SYM_190,DIS_045,PLANT_006,"Menurut Hamidson et al., (2019) keparahan penyakit karat jagung dapat mencapai 79.9% hingga 83.15%.",DOC002_C103_03,103,103,1032,1131,auto_ok
+SYM_191,DIS_045,PLANT_006,Penyakit karat akan berkembang lebih baik pada suhu yang rendah dan kelembaban tinggi.,DOC002_C103_03,103,103,1295,1381,auto_ok
+SYM_192,DIS_046,PLANT_006,"Gejala bulai pada tanaman jagung ditandai dengan daun mengalami klorosis sejajar dengan tulang daun, pertumbuhan terhambat (kerdil), berbentuk kipas dan adanya lapisan tepung berwarna putih pada permukaan daun bagian bawah, yang biasanya hanya terlihat di pagi hari.",DOC002_C105_02,105,105,0,266,auto_ok
+SYM_193,DIS_046,PLANT_006,"Penyakit jagung mulai muncul antara 15 hingga 17 hari setelah infeksi (Habibi et al., 2017).",DOC002_C105_02,105,105,267,359,auto_ok
+SYM_194,DIS_046,PLANT_006,"Kecepatan angin, kelembaban yang tinggi lebih dari 90% dan suhu di bawah 24°C dapat meningkatkan laju infeksi penyakit bulai.",DOC002_C105_02,105,105,400,525,auto_ok
+SYM_195,DIS_046,PLANT_006,"Penyakit bulai menyerang tanaman pada fase vegetatif dan infeksi akan berkurang saat tanaman semakin tua karena semakin dewasa tanaman akan lebih tahan terhadap penyakit bulai (Purwanto et al., 2016).",DOC002_C105_02,105,105,526,726,auto_ok
+SYM_196,DIS_046,PLANT_006,"Kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37% dan bergantung pada kondisi lingkungan tiap wilayah (Kurniawan et al., 2017).",DOC002_C105_02,105,105,727,892,auto_ok
+SYM_197,DIS_047,PLANT_006,Penyakit layu stewart disebabkan oleh bakteri Pantoea stewartii subsp.,DOC002_C107_02,107,107,28,98,auto_ok
+SYM_198,DIS_047,PLANT_006,Gejala layu stewart hampir mirip dengan penyakit bulai.,DOC002_C107_02,107,107,469,524,auto_ok
+SYM_199,DIS_047,PLANT_006,"Daun bergejala layu stewart berwarna hijau pucat hingga kekuningan dengan garis linier dengan tepi lurus maupun bergelombang yang sejajar tulang daun, layu dan kerdil (Rahma et al., 2014).",DOC002_C107_02,107,107,525,713,auto_ok
+SYM_200,DIS_047,PLANT_006,Penyakit layu stewart sudah banyak dilaporkan ada di beberapa wilayah di Indonesia.,DOC002_C107_02,107,107,714,797,auto_ok
+SYM_201,DIS_047,PLANT_006,"Djatmiko et al., (2019) mengatakan bahwa kejadian penyakit akibat penyakit layu stewart di Banyumas sekitar 0.15% sampai 1.67% yang masih tergolong ringan.",DOC002_C107_02,107,107,798,953,auto_ok
+SYM_202,DIS_047,PLANT_006,"Temaja et al., (2017) melaporkan kejadian penyakit layu stewart di Bali antara 11% hingga 23%, dengan keparahan penyakit antara 3% hingga 10% yang dapat dikatakan masih ringan.",DOC002_C107_02,107,107,954,1130,auto_ok
+SYM_203,DIS_048,PLANT_006,Penyakit busuk pelepah disebabkan oleh jamur patogen Rhizoctonia solani.,DOC002_C109_01,109,109,29,101,auto_ok
+SYM_204,DIS_048,PLANT_006,Gejala busuk pelepah ditandai adanya bercak berwarna kemerahan yang selanjutnya akan berubah menjadi abu-abu.,DOC002_C109_01,109,109,529,638,auto_ok
+SYM_205,DIS_048,PLANT_006,Infeksi lebih lanjut bercak dapat melebar ke arah tongkol buah.,DOC002_C109_01,109,109,639,702,auto_ok
+SYM_206,DIS_048,PLANT_006,"Gambar 6.7: Gejala busuk pelepah pada batang (a) dan daun (b) (Soenartiningsih, 2012)",DOC002_C109_01,109,109,1970,2055,auto_ok
+SYM_207,DIS_049,PLANT_007,Penyakit layu bakteri (Gambar 7.1) disebabkan oleh bakteri Ralstonia solanacearum (Pseudomonas solanacearum).,DOC002_C114_03,114,114,28,137,auto_ok
+SYM_208,DIS_049,PLANT_007,Gejala awal yang terlihat adalah tanaman menjadi layu yang dimulai dari pucuk kemudian menjalar ke bagian bawah tanaman sampai seluruh daun layu dan akhirnya tanaman mati.,DOC002_C114_03,114,114,192,363,auto_ok
+SYM_209,DIS_049,PLANT_007,"Atau gejala awal bisa berupa beberapa daun muda pada pucuk tanaman layu dan daun menjadi tua, serta daun bagian bawah menguning.",DOC002_C114_03,114,114,364,492,auto_ok
+SYM_210,DIS_049,PLANT_007,"Penyakit layu bakteri dapat mengurangi kehilangan hasil pada tanaman kentang, terutama pada fase pembibitan.",DOC002_C114_03,114,114,547,655,auto_ok
+SYM_211,DIS_049,PLANT_007,"Patogen ini selain menyebabkan penyakit layu bakteri pada kentang juga menyerang tanaman inang lain, seperti tanaman tomat, terong, cabai, paprika, kacang dan jahe.",DOC002_C114_03,114,114,729,893,auto_ok
+SYM_212,DIS_049,PLANT_007,"Gejala penyakit layu bakteri pada kentang ditandai dengan daun tanaman kentang yang layu dimulai dari daun muda dan pada umumnya terjadi pada tanaman yang berumur kurang dari 6 minggu, pembuluh batang kentang menjadi berwarna cokelat, bila potongan batang ditekan maka batang akan mengeluarkan lendir berwarna keabu – abuan.",DOC002_C114_03,114,114,1431,1755,auto_ok
+SYM_213,DIS_049,PLANT_007,"Gejala pada umbi, terdapat bagian yang mengendap berwarna hitam.",DOC002_C114_03,114,114,2001,2065,auto_ok
+SYM_214,DIS_049,PLANT_007,"Jika umbi dipotong akan tampak jaringan busuk berwarna coklat, sedang pada lingkaran berkas di pembuluh umbi terdapat lendir yang berwarna krem sampai kelabu.",DOC002_C115_01,115,115,0,158,auto_ok
+SYM_215,DIS_049,PLANT_007,"Gejala penyakit di atas permukaan tanah, meliputi layu, rontok, kerdil dan penguningan daun.",DOC002_C115_01,115,115,199,291,auto_ok
+SYM_216,DIS_049,PLANT_007,"Layu yang diakibatkan oleh bakteri ini mirip dengan tanaman yang diakibatkan karena kekurangan air, kemudian gejala penyakit lain yang diakibatkan patogen lain seperti Fusarium spp.",DOC002_C115_01,115,115,292,473,auto_ok
+SYM_217,DIS_049,PLANT_007,"Ciri – ciri penyakit diawali dengan layunya daun – daun kentang pada salah satu bagian tanaman, atau hanya sebagian daun atau batang tanaman kentang yang layu.",DOC002_C115_01,115,115,626,785,auto_ok
+SYM_218,DIS_049,PLANT_007,Tanaman kentang akan layu dengan cepat seiring dengan perkembangan penyakit layu bakteri.,DOC002_C115_01,115,115,786,875,auto_ok
+SYM_219,DIS_050,PLANT_007,Penyakit layu fusarium (Gambar 7.2) disebabkan oleh cendawan Fusarium oxysporum Patogen ditularkan melalui udara dan air.,DOC002_C116_02,116,116,29,150,auto_ok
+SYM_220,DIS_050,PLANT_007,Gejala serangan ditandai tanaman tiba-tiba menjadi layu dari daun muda hingga daun tua.,DOC002_C116_02,116,116,151,238,auto_ok
+SYM_221,DIS_051,PLANT_007,"Salah satu penyakit utama yang menyerang kentang adalah penyakit busuk daun atau biasa disebut hawar daun (late blight), yang disebabkan oleh Phytophthora infestans (Gambar 7.3).",DOC002_C117_02,117,117,39,217,auto_ok
+SYM_222,DIS_051,PLANT_007,Pada saat awal munculnya gejala pada daun yaitu pada bagian tepi dan tengah daun terdapat bercak kebasah-basahan.,DOC002_C117_02,117,117,326,439,auto_ok
+SYM_223,DIS_051,PLANT_007,Selanjutnya bercak melebar dan terbentuk daerah nekrotik yang berwarna coklat.,DOC002_C117_02,117,117,440,518,auto_ok
+SYM_224,DIS_051,PLANT_007,Bercak dikelilingi oleh masa sporangium yang berwarna putih dengan latar belakang hijau kelabu.,DOC002_C117_02,117,117,519,614,auto_ok
+SYM_225,DIS_051,PLANT_007,"Serangan dapat menyebar ke batang, tangkai, umbi dan buah.",DOC002_C117_02,117,117,615,673,auto_ok
+SYM_226,DIS_051,PLANT_007,Serangan penyakit ini dapat berkembang dengan cepat pada musim hujan dengan kelembaban di sekitar kanopi >95% dengan suhu sekitar 20° C.,DOC002_C117_02,117,117,674,810,auto_ok
+SYM_227,DIS_051,PLANT_007,"infestans sampai ke daun kentang yang basah, maka spora patogen akan berkecambah dengan mengeluarkan zoospora atau langsung membentuk tabung kecambah, kemudian masuk ke bagian tanaman, dan akhirnya terjadilah infeksi busuk daun pada daun tanaman kentang.",DOC002_C117_02,117,117,1111,1365,auto_ok
+SYM_228,DIS_051,PLANT_007,"Spora yang jatuh ke tanah akan menginfeksi bagian umbi kentang, dan pembusukannya dapat terjadi di dalam tanah atau pada tempat penyimpanan kentang.",DOC002_C117_02,117,117,1366,1514,auto_ok
+SYM_229,DIS_051,PLANT_007,Penyakit busuk daun pada kentang biasanya sering terjadi di daerah sentra tanaman kentang dataran tinggi yang bersuhu rendah dengan kelembaban yang tinggi.,DOC002_C117_02,117,117,1515,1670,auto_ok
+SYM_230,DIS_051,PLANT_007,Penyakit busuk daun kentang yang disebabkan patogen P.,DOC002_C117_03,117,117,0,54,auto_ok
+SYM_231,DIS_051,PLANT_007,"Berdasarkan kebiasaan dan pengalaman petani kentang, biasanya penyakit busuk daun kentang timbul setelah tanaman berumur 5 -6 minggu setelah tanam.",DOC002_C117_03,117,117,212,359,auto_ok
+SYM_232,DIS_052,PLANT_007,Penyakit lain yang menyerang tanaman kentang adalah penyakit bercak daun Alternaria atau penyakit bercak kering (Gambar 7.4) yang disebabkan oleh cendawan Alternaria sp.,DOC002_C118_02,118,118,38,207,auto_ok
+SYM_233,DIS_052,PLANT_007,"Gejala awal yang muncul ditandai dengan timbulnya bercak kecil pada permukaan daun bagian bawah, selanjutnya dapat berkembang sampai mencapai diameter ± 15 mm.",DOC002_C118_02,118,118,257,416,auto_ok
+SYM_234,DIS_052,PLANT_007,Gejala awal terlihat saat tanaman berumur 6 minggu.,DOC002_C118_02,118,118,751,802,auto_ok
+SYM_235,DIS_052,PLANT_007,Bercak juga terdapat pada daun yang agak muda.,DOC002_C118_02,118,118,803,849,auto_ok
+SYM_236,DIS_052,PLANT_007,"Bercak yang telah meluas berwarna coklat tua, kering, dan mudah dibedakan dari becak yang disebabkan oleh penyakit Jamur bisa bertahan pada sisa-sisa tanaman dan pada tumbuhan inang lainnya.",DOC002_C118_02,118,118,850,1040,auto_ok
+SYM_237,DIS_052,PLANT_007,Upaya teknis untuk memutus siklus penyakit dengan menghindari lahan yang pernah terserang bercak kering Alternaria untuk ditanami tanaman yang sama dengan tanaman yang terserang sebelumnya.,DOC002_C118_02,118,118,1041,1230,auto_ok
+SYM_238,DIS_053,PLANT_007,Penyakit yang menyerang tanaman kentang salah satunya adalah penyakit busuk cincin.,DOC002_C119_02,119,119,28,111,auto_ok
+SYM_239,DIS_053,PLANT_007,Umumnya gejala muncul pada pertengahan atau akhir musim yang diikuti dengan layu (sering kali hanya beberapa batang tanaman saja).,DOC002_C119_02,119,119,195,325,auto_ok
+SYM_240,DIS_053,PLANT_007,"Gejala awal berupa layu yang terdapat pada pinggiran daun, terutama pada daun bagian bawah dan warna daun menjadi hijau pucat, terlihat juga pada pangkal batang daun jika dipotong dan diperas akan mengeluarkan eksudat seperti susu.",DOC002_C119_02,119,119,326,557,auto_ok
+SYM_241,DIS_053,PLANT_007,"Pada bagian bawah daun-daun melemah dengan warna kuning pucat serta ujung daun menggulung ke atas, dan diikuti dengan matinya tanaman secara cepat.",DOC002_C119_02,119,119,558,705,auto_ok
+SYM_242,DIS_053,PLANT_007,"Pada umbi jika terserang oleh bakteri ini akan terbentuk cincin dengan warna kuning pucat sampai coklat muda (Anonim, 2014 dan Motica,2013).",DOC002_C119_02,119,119,706,846,auto_ok
+SYM_243,DIS_054,PLANT_007,Jenis virus yang menyebabkan penyakit pada tanaman kentang yaitu Potato Virus X (PVX) menyebabkan mosaik laten pada daun;,DOC002_C120_02,120,120,70,191,auto_ok
+SYM_244,DIS_054,PLANT_007,Potato Virus Y (PVY) menyebabkan mosaik atau nekrosis lokal;,DOC002_C120_02,120,120,192,252,auto_ok
+SYM_245,DIS_054,PLANT_007,Potato Virus A (PVA) menyebabkan mosaik lunak;,DOC002_C120_02,120,120,253,299,auto_ok
+SYM_246,DIS_054,PLANT_007,Potato Virus M (PVM) menyebabkan mosaik menggulung;,DOC002_C120_02,120,120,300,351,auto_ok
+SYM_247,DIS_054,PLANT_007,Potato Virus S (PVS) menyebabkan mosaik lemas.,DOC002_C120_02,120,120,352,398,auto_ok
+SYM_248,DIS_054,PLANT_007,Gejala yang terlihat jika tanaman diserang virus ini bisa terlihat dari penampakan morfologi daun dan umbinya.,DOC002_C120_02,120,120,544,654,auto_ok
+SYM_249,DIS_054,PLANT_007,Pada organ daun terdapat gambaran mosaik (Gambar 7.5) serta mempunyai beberapa corak.,DOC002_C120_02,120,120,655,740,auto_ok
+SYM_250,DIS_054,PLANT_007,"Pada daun terdapat bercak hijau muda sampai kuning dan putih, seringkali permukaan daun menjadi tidak rata atau tampak mempunyai lekuk-lekuk hijau tua.",DOC002_C120_02,120,120,741,892,auto_ok
+SYM_251,DIS_054,PLANT_007,"Infeksi virus ini pada tanaman kentang berupa nekrosis, mosaik, klorosis, penebalan warna hijau di sekitar pertulangan daun (vein banding), pemucatan tulang daun (vein clearing), belang (mottle), pengerutan (crinkle) daun, hingga pengerdilan tanaman (Shikata et al.",DOC002_C120_02,120,120,1063,1328,auto_ok
+SYM_252,DIS_055,PLANT_007,"Gejala serangan nematoda yang tampak pada tanaman kentang menyebabkan pertumbuhan tanaman kentang tidak normal, merana, kerdil dan cenderung layu, dengan kondisi lingkungan yaitu kelembaban tanah atau udara harian relatif kering.",DOC002_C121_01,121,121,299,528,auto_ok
+SYM_253,DIS_055,PLANT_007,Serangan yang parah menyebabkan pembentukan umbi terganggu dan umbi yang terbentuk menjadi cacat.,DOC002_C121_01,121,121,687,784,auto_ok
+SYM_254,DIS_056,PLANT_007,"Gejala penyakit NSK adalah pertumbuhan tanaman terhambat, tanaman tumbuh tidak sehat.",DOC002_C122_01,122,122,778,863,auto_ok
+SYM_255,DIS_057,PLANT_008,Penyakit busuk kaki hitam disebabkan organisme jamur Leptosphaeria maculans.,DOC002_C125_01,125,125,30,106,auto_ok
+SYM_256,DIS_057,PLANT_008,"Keberadaan patogen ditandai dengan lesio cekung berbentuk bulat atau tidak beraturan, berwarna keabuan dan tepi keunguan pada batang di atas permukaan tanah.",DOC002_C125_01,125,125,107,264,auto_ok
+SYM_257,DIS_057,PLANT_008,Lesio dapat tertutup massa pink pada kondisi lingkungan yang mendukung.,DOC002_C125_01,125,125,265,336,auto_ok
+SYM_258,DIS_057,PLANT_008,Ukuran lesio bertambah hingga batang seperti terikat.,DOC002_C125_01,125,125,337,390,auto_ok
+SYM_259,DIS_057,PLANT_008,"Ketika jaringan terinfeksi mati, bintik hitam kecil yang disebut piknidia, terbentuk pada bintik cekung.",DOC002_C125_01,125,125,502,606,auto_ok
+SYM_260,DIS_057,PLANT_008,"Perkembangan gejala akan terlihat lebih jelas pada kondisi lingkungan yang hangat dan basah, serta temperatur tinggi.",DOC002_C125_01,125,125,607,724,auto_ok
+SYM_261,DIS_057,PLANT_008,Belum ditemukan varietas kubis yang memiliki tingkat ketahanan yang tinggi terhadap patogen busuk kaki hitam.,DOC002_C125_01,125,125,1109,1218,auto_ok
+SYM_262,DIS_058,PLANT_008,Penyakit busuk hitam disebabkan bakteri Xanthomonas campestris pv.,DOC002_C126_01,126,126,25,91,auto_ok
+SYM_263,DIS_058,PLANT_008,"Kembang kol, kubis, dan kale merupakan tanaman yang Cruciferae yang paling rentan terhadap busuk hitam.",DOC002_C126_01,126,126,196,299,auto_ok
+SYM_264,DIS_058,PLANT_008,Beberapa gulma pada tanaman Cruciferae juga merupakan inang patogen penyebab busuk hitam.,DOC002_C126_01,126,126,300,389,auto_ok
+SYM_265,DIS_058,PLANT_008,"Patogen penyebab busuk hitam menginfeksi tanaman pada semua tahap perkembangan tanaman, baik pada persemaian maupun di lahan.",DOC002_C126_01,126,126,494,619,auto_ok
+SYM_266,DIS_058,PLANT_008,"Saat penyakit menyebar dari pusat infeksi melalui pertulangan daun kubis, maka daun menjadi menguning dan tulang daun menghitam.",DOC002_C126_01,126,126,724,852,auto_ok
+SYM_267,DIS_058,PLANT_008,Pada kondisi yang mendukung tanaman akan mengalami layu dan mati hanya dalam beberapa hari.,DOC002_C126_01,126,126,969,1060,auto_ok
+SYM_268,DIS_058,PLANT_008,Penyakit busuk hitam berkembang lebih cepat hingga menyebabkan kehilangan 50% pada kondisi lingkungan hangat dan basah.,DOC002_C126_01,126,126,1061,1180,auto_ok
+SYM_269,DIS_058,PLANT_008,Tanaman dapat terkena penyakit busuk hitam pada berbagai tahap pertumbuhan.,DOC002_C126_01,126,126,1545,1620,auto_ok
+SYM_270,DIS_058,PLANT_008,"Persemaian yang terinfeksi menjadi menguning hingga coklat, layu, dan mati.",DOC002_C126_01,126,126,1807,1882,auto_ok
+SYM_271,DIS_058,PLANT_008,"Hal ini mengawali terbentuknya bercak kecil berbentuk V yang layu, dan meluas dari tepi daun menuju tulang daun.",DOC002_C126_01,126,126,1957,2069,auto_ok
+SYM_272,DIS_058,PLANT_008,"Bagian bercak meluas dan menyebar ke pangkal daun, menjadi menguning hingga coklat dan kering.",DOC002_C127_01,127,127,55,149,auto_ok
+SYM_273,DIS_058,PLANT_008,"Pada kembang kol, penyakit busuk hitam umumnya muncul berupa gejala banyak bintik coklat kecil pada daun.",DOC002_C127_01,127,127,260,365,auto_ok
+SYM_274,DIS_058,PLANT_008,"Daun bagian bawah pada kubis dan kembang kol yang terinfeksi umumnya menjadi kerdil, menguning hingga coklat, layu, dan rebah lebih cepat.",DOC002_C127_01,127,127,366,504,auto_ok
+SYM_275,DIS_058,PLANT_008,"Pada gejala parah, tanaman terinfeksi hanya tersisa batang dengan daun kecil.",DOC002_C127_01,127,127,505,582,auto_ok
+SYM_276,DIS_058,PLANT_008,Gejala juga dapat berupa salah satu daun atau seluruh tanaman menjadi berukuran lebih kecil.,DOC002_C127_01,127,127,785,877,auto_ok
+SYM_277,DIS_058,PLANT_008,Tanaman sakit akan cepat membusuk sebelum atau setelah panen karena adanya organisme pembusuk.,DOC002_C127_01,127,127,878,972,auto_ok
+SYM_278,DIS_058,PLANT_008,Bakteri busuk lunak umumnya menyebabkan lesio busuk hitam yang berlendir dan berbau busuk.,DOC002_C127_01,127,127,973,1063,auto_ok
+SYM_279,DIS_058,PLANT_008,Gejala penyakit busuk hitam sering kali mirip dengan penyakit menguning yang disebabkan oleh Fusarium.,DOC002_C127_01,127,127,1193,1295,auto_ok
+SYM_280,DIS_058,PLANT_008,Jamur Fusarium juga menghasilkan gejala berupa adanya bercak cincin gelap di dalam batang dan petiol yang terinfeksi.,DOC002_C127_01,127,127,1296,1413,auto_ok
+SYM_281,DIS_058,PLANT_008,"Perubahan warna pada penyakit menguning Fusarium lebih mendekati warna coklat gelap, sedangkan penyakit busuk hitam lebih berwarna hitam.",DOC002_C127_01,127,127,1414,1551,auto_ok
+SYM_282,DIS_058,PLANT_008,Bercak berbentuk V pada tepi daun jarang terjadi pada penyakit menguning.,DOC002_C127_01,127,127,1552,1625,auto_ok
+SYM_283,DIS_058,PLANT_008,Adanya tulang daun menghitam pada lesio kuning sepanjang tepi daun merupakan ciri utama penyakit busuk hitam.,DOC002_C127_01,127,127,1626,1735,auto_ok
+SYM_284,DIS_058,PLANT_008,Gejala awal dan paling mencolok dari penyakit menguning yaitu berupa perubahan warna kuning pucat hingga hijau kekuningan pada daun terinfeksi.,DOC002_C127_01,127,127,1736,1879,auto_ok
+SYM_285,DIS_058,PLANT_008,Pengamatan mikroskop diperlukan untuk membedakan lebih teliti antara penyakit menguning atau busuk hitam,DOC002_C127_01,127,127,1880,1984,auto_ok
+SYM_286,DIS_058,PLANT_008,Sedikitnya tiga dari 10.000 benih terinfeksi dapat menyebabkan wabah busuk hitam di suatu lahan.,DOC002_C127_02,127,127,461,557,auto_ok
+SYM_287,DIS_058,PLANT_008,"Pada kondisi optimum, gejala akan tampak pada tanaman selama 7-14 hari setelah infeksi.",DOC002_C127_02,127,127,1338,1425,auto_ok
+SYM_288,DIS_058,PLANT_008,"Pada kondisi temperatur rendah, gejala berkembang lebih lambat.",DOC002_C127_02,127,127,1426,1489,auto_ok
+SYM_289,DIS_059,PLANT_008,Jika tanaman terinfeksi ketika masih muda maka kemungkinan besar tanaman akan mati dalam waktu yang singkat.,DOC002_C128_01,128,128,496,604,auto_ok
+SYM_290,DIS_059,PLANT_008,Sementara apabila tanaman terinfeksi ketika berumur dewasa maka daun akan menguning dan layu.,DOC002_C128_01,128,128,605,698,auto_ok
+SYM_291,DIS_060,PLANT_008,Gejala penyakit berupa bintik kering berukuran kecil berbentuk sirkuler atau tidak beraturan berwarna ke abuan pada daun kubis.,DOC002_C129_02,129,129,286,413,auto_ok
+SYM_292,DIS_060,PLANT_008,Bintik yang bertambah hingga berjumlah sangat banyak dapat menyebabkan daun mati.,DOC002_C129_02,129,129,414,495,auto_ok
+SYM_293,DIS_060,PLANT_008,Bintik berkembang menjadi lesio nekrotik berukuran besar yang menyebabkan daun menjadi menguning dan layu.,DOC002_C129_02,129,129,496,602,auto_ok
+SYM_294,DIS_060,PLANT_008,Lesio juga dapat menjadi berlubang pada daun yang sudah mengering.,DOC002_C129_02,129,129,603,669,auto_ok
+SYM_295,DIS_061,PLANT_008,Penyakit bercak daun Alternaria atau disebut juga bercak hitam dan bercak abu pada kubis disebabkan jamur Alternaria brassicae.,DOC002_C129_01,129,129,36,163,auto_ok
+SYM_296,DIS_061,PLANT_008,"Gejala berupa bintik hitam kecil pada daun yang berwarna coklat hingga ke abuan, lesio berbentuk bulat atau bersudut dengan tepi berwarna ungu kehitaman.",DOC002_C129_01,129,129,164,317,auto_ok
+SYM_297,DIS_061,PLANT_008,Lesio dapat berbentuk cincin konsentris dengan bagian tengah berlubang.,DOC002_C129_01,129,129,318,389,auto_ok
+SYM_298,DIS_061,PLANT_008,Lesio berbentuk memanjang berwarna coklat gelap dapat berkembang pada batang dan petiol.,DOC002_C129_01,129,129,390,478,auto_ok
+SYM_299,DIS_062,PLANT_008,Penyakit damping-off pada tanaman kubis disebabkan jamur Rhizoctonia solani yang dapat menyebabkan kematian pada persemaian setelah terjadi perkecambahan.,DOC002_C130_01,130,130,25,179,auto_ok
+SYM_300,DIS_062,PLANT_008,Gejala penyakit berupa batang busuk hitam atau coklat.,DOC002_C130_01,130,130,180,234,auto_ok
+SYM_301,DIS_062,PLANT_008,Pada pertanaman kubis yang sudah berumur tua sering ditemukan adanya lesion berwarna coklat pada permukaan bawah daun.,DOC002_C130_01,130,130,330,448,auto_ok
+SYM_302,DIS_062,PLANT_008,Lesion akan meluas dan menyebabkan daun menjadi layu dan gugur.,DOC002_C130_01,130,130,449,512,auto_ok
+SYM_303,DIS_063,PLANT_008,Gejala penyakit berupa adanya bercak putih berukuran kecil pada permukaan atas dan bawah daun.,DOC002_C130_02,130,130,222,316,auto_ok
+SYM_304,DIS_063,PLANT_008,Bercak dapat juga berwarna keunguan dan membentuk adanya bubuk seperti tepung melapisi daun.,DOC002_C130_02,130,130,317,409,auto_ok
+SYM_305,DIS_063,PLANT_008,"Pada kondisi lebih parah, daun akan mengalami klorosis dan gugur.",DOC002_C130_02,130,130,410,475,auto_ok
+SYM_306,DIS_064,PLANT_008,Penyakit busuk batang pada kubis disebabkan jamur Sclerotinia sclerotiorum.,DOC002_C131_02,131,131,27,102,auto_ok
+SYM_307,DIS_064,PLANT_008,"Penyakit ini dapat diamati berupa adanya gejala lesio nekrotik berwarna ke abuan tidak beraturan pada daun, lesio berwarna putih ke abuan pada batang kubis, berkurangnya jumlah benih, dan kerusakan benih.",DOC002_C131_02,131,131,103,307,auto_ok
+SYM_308,DIS_065,PLANT_008,Gejala penyakit berupa bercak pada daun berwarna kuning dan tidak beraturan yang akan berwarna semakin gelap hingga kecokelatan.,DOC002_C131_01,131,131,120,248,auto_ok
+SYM_309,DIS_066,PLANT_008,Penyakit ini disebabkan jamur yang sama seperti penyebab penyakit busuk batang yaitu Sclerotinia sclerotiorum.,DOC002_C132_01,132,132,26,136,auto_ok
+SYM_310,DIS_066,PLANT_008,Kubis menunjukkan gejala berupa adanya area pangkal batang yang busuk dan lunak.,DOC002_C132_01,132,132,137,217,auto_ok
+SYM_311,DIS_066,PLANT_008,Gejala ini menyebar ke daun bagian atas tanaman atau daun muda hingga mati dan gugur.,DOC002_C132_01,132,132,218,303,auto_ok
+SYM_312,DIS_066,PLANT_008,Ketika jamur mencapai bagian krop kubis maka segera muncul gejala busuk lunak dan berair.,DOC002_C132_01,132,132,367,456,auto_ok
+SYM_313,DIS_067,PLANT_008,Penyakit busuk lunak pada kubis dapat juga disebabkan oleh bakteri Erwinia carotovora.,DOC002_C132_02,132,132,34,120,auto_ok
+SYM_314,DIS_067,PLANT_008,Gejala penyakit berupa adanya lesio basah berair pada krop yang dapat meluas dan membentuk massa jaringan membusuk dan basah.,DOC002_C132_02,132,132,191,316,auto_ok
+SYM_315,DIS_067,PLANT_008,Permukaan lesio biasanya berlubang dan mengeluarkan cairan lengket berwarna coklat gelap atau hitam.,DOC002_C132_02,132,132,317,417,auto_ok
+SYM_316,DIS_068,PLANT_008,Penyakit bercak cincin pada kubis disebabkan oleh jamur Mycosphaerella brassicicola yang mampu bertahan pada kondisi lingkungan dingin dan lembab.,DOC002_C133_02,133,133,28,174,auto_ok
+SYM_317,DIS_068,PLANT_008,Gejala penyakit berupa adanya bintik kecil berwarna ungu yang dikelilingi jaringan basah berair membentuk cincin pada daun.,DOC002_C133_02,133,133,175,298,auto_ok
+SYM_318,DIS_068,PLANT_008,Kemudian bercak cincin berkembang menjadi berwarna coklat dengan tepi berwarna hijau berukuran 1-2 cm.,DOC002_C133_02,133,133,299,401,auto_ok
+SYM_319,DIS_068,PLANT_008,Bercak berkembang membentuk tubuh buah berwarna hitam dan berkembang membentuk pola konsentris.,DOC002_C133_02,133,133,402,497,auto_ok
+SYM_320,DIS_069,PLANT_008,"Gejala penyakit berupa adanya pustul putih pada kotiledon, daun, batang dan/atau bunga yang membentuk area infeksi.",DOC002_C133_01,133,133,206,321,auto_ok
+SYM_321,DIS_069,PLANT_008,Gejala berkembang ditunjukkan dengan perubahan bentuk daun menjadi menggulung dan menebal.,DOC002_C133_01,133,133,322,412,auto_ok
+SYM_322,DIS_070,PLANT_009,Penyakit bercak daun cabai merupakan penyakit yang menyerang daun yang disebabkan oleh Jamur Cescospora capsici.,DOC002_C135_02,135,135,38,150,auto_ok
+SYM_323,DIS_070,PLANT_009,"Gejala yang pertama terdapat bintik warna putih pada daun yang terserang, kemudian bintik tersebut akan meluas menjadi besar dengan sekeliling berwarna hitam atau agak kecokelatan.",DOC002_C135_02,135,135,241,421,auto_ok
+SYM_324,DIS_070,PLANT_009,Daun-daun yang terserang akan mengalami kerontokan sebelum menguning.,DOC002_C135_02,135,135,482,551,auto_ok
+SYM_325,DIS_070,PLANT_009,Serangan yang berat dapat membuat daun menjadi berwarna kuning.,DOC002_C135_02,135,135,552,615,auto_ok
+SYM_326,DIS_070,PLANT_009,Gejala serangan pada daun tanaman cabai menyebar pada seluruh bagian daun.,DOC002_C135_02,135,135,616,690,auto_ok
+SYM_327,DIS_070,PLANT_009,Bercak-bercak tersebut akan berhenti membesar apabila bersentuhan dengan tulang-tulang daun.,DOC002_C135_02,135,135,691,783,auto_ok
+SYM_328,DIS_070,PLANT_009,Bercak-bercak tersebut akan membentuk lubang pada daun tanaman cabai.,DOC002_C135_02,135,135,784,853,auto_ok
+SYM_329,DIS_070,PLANT_009,Apabila serangan berat dapat menyebabkan daun-daun tanaman cabai akan gugur dan bahkan hanya meninggalkan ranting saja.,DOC002_C135_02,135,135,854,973,auto_ok
+SYM_330,DIS_070,PLANT_009,Gejala ini akan parah apabila bila suhu rendah dan kelembaban tinggi.,DOC002_C135_02,135,135,974,1043,auto_ok
+SYM_331,DIS_070,PLANT_009,"Bercak-bercak ini akan menyerang tanaman cabai pada daun tidak terpusat pada daun muda saja dan bercak menyebar keseluruhan daun cabai (Hartati et al., 2019).",DOC002_C135_02,135,135,1044,1202,auto_ok
+SYM_332,DIS_071,PLANT_009,Tanaman cabai rawit sangat ganas sekali serangan jamur ini.,DOC002_C136_02,136,136,157,216,auto_ok
+SYM_333,DIS_071,PLANT_009,Dalam waktu beberapa hari gejala mulai muncul pada buah cabai.,DOC002_C136_02,136,136,370,432,auto_ok
+SYM_334,DIS_072,PLANT_009,Busuk buah pada tanaman cabai yang disebabkan oleh patogen Phytophthora sp.,DOC002_C138_02,138,138,26,101,auto_ok
+SYM_335,DIS_072,PLANT_009,Phytophthora capsici menyerang tanaman cabai dengan gejala tanaman tersebut akan mulai mengalami layu.,DOC002_C138_02,138,138,284,386,auto_ok
+SYM_336,DIS_072,PLANT_009,Daun-daun yang berwarna coklat akan berubah menjadi warna hitam dan tanaman cabai akan mati akibat bertambah parahnya penyakit ini.,DOC002_C138_02,138,138,697,828,auto_ok
+SYM_337,DIS_072,PLANT_009,Buah cabai mengalami busuk basah dan akan menyebar pada buah cabai tersebut.,DOC002_C138_02,138,138,1299,1375,auto_ok
+SYM_338,DIS_072,PLANT_009,"Buah cabai yang terserang akan rontok, karena buah cabai tersebut menjadi busuk (Dewi dan Saptadi, 2016).",DOC002_C138_02,138,138,1376,1481,auto_ok
+SYM_339,DIS_073,PLANT_009,"Patogen yang menyebabkan layu bakteri pada tanaman cabai yaitu, Ralstonia solanacearum.",DOC002_C139_03,139,139,28,115,auto_ok
+SYM_340,DIS_073,PLANT_009,"Penyakit layu ini menyukai suhu yang lembab, serangan semakin parah apabila lingkungan yang lembab, inang yang rentan dan penyakit yang virulen.",DOC002_C139_03,139,139,116,260,auto_ok
+SYM_341,DIS_073,PLANT_009,Penyakit ini menyerang tanaman cabai dengan tanaman mengalami layu.,DOC002_C139_03,139,139,261,328,auto_ok
+SYM_342,DIS_073,PLANT_009,Tanaman layu dengan daun-daun tidak mengalami perubahan warna.,DOC002_C139_03,139,139,329,391,auto_ok
+SYM_343,DIS_073,PLANT_009,Pada tanaman yang muda yang layu akan mengalami pertumbuhan yang terhambat.,DOC002_C139_03,139,139,392,467,auto_ok
+SYM_344,DIS_073,PLANT_009,"Akan tetapi, ada tanaman layu yang kekurangan air dan apabila tanaman tersebut disiram akan segar kembali.",DOC002_C139_03,139,139,468,574,auto_ok
+SYM_345,DIS_073,PLANT_009,Layu bakteri ini akan menimbulkan kerugian pada budidaya tanaman cabai di lapangan.,DOC002_C139_03,139,139,575,658,auto_ok
+SYM_346,DIS_073,PLANT_009,"Gejala penyakit menyerang tanaman cabai tergantung dari varietas yang ditanam oleh petani (Korlina et al., 2019).",DOC002_C139_03,139,139,659,772,auto_ok
+SYM_347,DIS_073,PLANT_009,Tanaman yang terserang layu bakteri sulit untuk dideteksi dari awal.,DOC002_C139_03,139,139,773,841,auto_ok
+SYM_348,DIS_073,PLANT_009,Karena tanaman yang terserang tidak menimbulkan gejala yang timbul seperti penyakit lain.,DOC002_C139_03,139,139,842,931,auto_ok
+SYM_349,DIS_073,PLANT_009,Tanaman-tanaman yang terserang akan mengalami layu tanpa ada perubahan secara fisiologi tanaman.,DOC002_C139_03,139,139,932,1028,auto_ok
+SYM_350,DIS_073,PLANT_009,Layu bakteri dapat menyerang tanaman cabai baik tanaman belum menghasilkan buah maupun tanaman yang sudah menghasilkan buah.,DOC002_C139_03,139,139,1029,1153,auto_ok
+SYM_351,DIS_074,PLANT_009,"Gejala mosaik virus pada tanaman cabai hampir 60,00 % disebabkan oleh 3 jenis virus tersebut.",DOC002_C141_02,141,141,120,213,auto_ok
+SYM_352,DIS_074,PLANT_009,"Hasil uji RT-PCR pada tanaman cabai yang memiliki gejala ber klorosis pada daun ditemukan 3 jenis virus tersebut (Putra et al., 2015).",DOC002_C141_02,141,141,389,523,auto_ok
+SYM_353,DIS_074,PLANT_009,Gejala penyakit ini menyerang tanaman yang kecil sampai tanaman besar.,DOC002_C141_02,141,141,731,801,auto_ok
+SYM_354,DIS_074,PLANT_009,Gejala ini apabila menyerang tanaman cabai maka pertumbuhan dan perkembangan tanaman mengalami pertumbuhan yang tidak normal.,DOC002_C141_02,141,141,869,994,auto_ok
+SYM_355,DIS_074,PLANT_009,Serangan memiliki gejala serangan yang berbeda-beda pada tanaman cabai.,DOC002_C141_02,141,141,1761,1832,auto_ok
+SYM_356,DIS_074,PLANT_009,Gejala yang berbeda-beda tersebut dapat disebabkan oleh virus yang berbeda yang menyerang tanaman cabai.,DOC002_C141_02,141,141,1833,1937,auto_ok
+SYM_357,DIS_074,PLANT_009,Pada tanaman cabai yang terserang virus ada yang gejala tanaman menjadi pendek atau kerdil.,DOC002_C142_01,142,142,0,91,auto_ok
+SYM_358,DIS_074,PLANT_009,Daun-daun tanaman menjadi menguning akibat serangan virus tersebut.,DOC002_C142_01,142,142,168,235,auto_ok
+SYM_359,DIS_074,PLANT_009,Ada gejala tanaman yang tidak mengalami perkembangan karena tanaman cabai tidak bertunas dan pucuk-pucuk tanaman tidak tumbuh juga.,DOC002_C142_01,142,142,283,414,auto_ok
+SYM_360,DIS_074,PLANT_009,Sehingga tanaman tersebut juga ikut kerdil dan tidak mengalami pertumbuhan dan perkembangan.,DOC002_C142_01,142,142,415,507,auto_ok
+SYM_361,DIS_075,PLANT_009,Gejala penyakit layu fusarium yang menyerang tanaman cabai kemudian diambil untuk di isolasi.,DOC002_C144_01,144,144,0,93,auto_ok
+SYM_362,DIS_075,PLANT_009,Bagian-bagian yang terserang diambil kemudian dipotong untuk ditanaman pada media.,DOC002_C144_01,144,144,94,176,auto_ok
+SYM_363,DIS_075,PLANT_009,Jamur fusarium memiliki ciri yang berwarna putih yang kekuningan pada media tersebut.,DOC002_C144_01,144,144,177,262,auto_ok
+SYM_364,DIS_075,PLANT_009,"Koloni ini memiliki miselium banyak, tumbuh di media secara merata dan berbentuk kapas.",DOC002_C144_01,144,144,263,350,auto_ok
+SYM_365,DIS_075,PLANT_009,Spora pada jamur ini berbentuk bulat sabit dan terdapat sekat.,DOC002_C144_01,144,144,351,413,auto_ok
+SYM_366,DIS_075,PLANT_009,"Setiap sekat tersebut pada spora terdiri dari 3 sekat atau lebih (Herwanti et al., 2019).",DOC002_C144_01,144,144,414,503,auto_ok
+SYM_367,DIS_076,PLANT_009,Pada tanaman cabai yang masih kecil bagian pangkal batang tanaman cabai akan mengalami busuk.,DOC002_C145_01,145,145,191,284,auto_ok
+SYM_368,DIS_076,PLANT_009,"Pada tanaman cabai yang sudah besar tanaman akan menyerang bagian pangkal batang, apabila serangan berat pada bagian pangkal batang akan keluar hifa-hifa yang berwarna putih.",DOC002_C145_01,145,145,397,571,auto_ok
+SYM_369,DIS_076,PLANT_009,"Serangan jamur ini membuat pertumbuhan dan perkembangan tanaman terganggu baik batang, jumlah dan bentuk daun yang dihasilkan serta dapat memengaruhi tinggi tanaman cabai.",DOC002_C145_01,145,145,692,863,auto_ok
+SYM_370,DIS_076,PLANT_009,"Tanaman cabai yang terserang akan mengalami layu, karena jamur ini menyerang bagian akar tanaman dan pangkal batang.",DOC002_C145_01,145,145,864,980,auto_ok
+SYM_371,DIS_076,PLANT_009,"Tanaman cabai yang terserang pertama tanaman layu, lalu daun-daun menjadi rontok dan buah-buah ikut rontok.",DOC002_C145_01,145,145,981,1088,auto_ok
+SYM_372,DIS_076,PLANT_009,"Akibat serangan ini tanaman cabai lama-lama akan mati dan apabila tanaman mulai mati patogen ini akan mengeluar sklerotia yang berbentuk bulat-bulat (Uruilal et al., 2017).",DOC002_C145_01,145,145,1208,1380,auto_ok
+SYM_373,DIS_077,PLANT_010,Jamur ini merupakan jamur yang sama dengan patogen penyakit busuk daun pada kentang.,DOC002_C149_03,149,149,52,136,auto_ok
+SYM_374,DIS_077,PLANT_010,"Gejala yang khas dari penyakit ini adalah akan muncul pada anak daun, tangkai atau pun juga batang dengan warna bercak hitam kecokelatan atau keunguan.",DOC002_C149_03,149,149,292,443,auto_ok
+SYM_375,DIS_077,PLANT_010,Jika dalam infeksinya didukung oleh kondisi lingkungan yang cocok maka akan cepat meluas dan mengakibatkan kematian.,DOC002_C149_03,149,149,444,560,auto_ok
+SYM_376,DIS_077,PLANT_010,"Bagian terluar akan mengekspresikan gejala berwarna kuning pucat dan gejala yang parah akan semakin mudah diketahui dengan melihat permukaan bawah daun yang akan muncul fruktifikasi jamur yang warnanya putih seperti beledu di daerah batas antara bagian yang ungu dan pucat (Semangun, 2007).",DOC002_C149_03,149,149,561,851,auto_ok
+SYM_377,DIS_077,PLANT_010,Akan muncul bercak dengan warna hijau kelabu dan juga sedikit agak basah yang kemudian meluas menjadi bercak yang luas dan tak tentu besarnya.,DOC002_C149_03,149,149,972,1114,auto_ok
+SYM_378,DIS_077,PLANT_010,"Saat buah masih hijau bercak akan berwarna coklat tua, cenderung keras dan mengerut.",DOC002_C149_03,149,149,1115,1199,auto_ok
+SYM_379,DIS_077,PLANT_010,"Bercak ini pun terkadang membentuk bulatan seperti cincin (Semangun, 2007).",DOC002_C149_03,149,149,1200,1275,auto_ok
+SYM_380,DIS_077,PLANT_010,"Patogen ini berkembang dengan baik pada suhu sekitar 70oF dengan kelembaban yang tinggi (Joey Williamson, 2020) dengan membentuk sporangiofor pada permukaan bercak.",DOC002_C149_03,149,149,1276,1440,auto_ok
+SYM_381,DIS_078,PLANT_010,"Gejala awal penyakit ini ditandai dengan adanya bercak kecil berbentuk bulat atau bersudut dengan warna gelap coklat tua sampai hitam (Semangun, 2007).",DOC002_C151_01,151,151,183,334,auto_ok
+SYM_382,DIS_078,PLANT_010,"Jaringan tanaman akan tampak kuning di sekeliling bercak coklat (Joey Williamson, 2020).",DOC002_C151_01,151,151,388,476,auto_ok
+SYM_383,DIS_078,PLANT_010,Ukuran bercak kira-kira sebesar bulatan ujung jarum hingga sebesar 4 mm.,DOC002_C151_01,151,151,572,644,auto_ok
+SYM_384,DIS_078,PLANT_010,"Semakin parah serangan maka akan semakin cepat daun mengalami layu dan gugur (Semangun, 2007).",DOC002_C151_01,151,151,645,739,auto_ok
+SYM_385,DIS_078,PLANT_010,Gejala yang ditimbulkan hampir sama dengan yang terjadi pada daun.,DOC002_C151_03,151,151,75,141,auto_ok
+SYM_386,DIS_078,PLANT_010,"Selain itu penyakit ini juga dapat ditemukan di persemaian yaitu busuk pada pangkal batang hingga setinggi permukaan tanah dan kanker yang mengelilingi pangkal batang (Semangun, 2007).",DOC002_C151_03,151,151,226,410,auto_ok
+SYM_387,DIS_078,PLANT_010,"Infeksi pada buah juga menimbulkan gejala yang mirip dengan gejala pada daun dan batang (Joey Williamson, 2020).",DOC002_C151_03,151,151,450,562,auto_ok
+SYM_388,DIS_078,PLANT_010,Konidium akan dibentuk pada bercak dengan ukuran lebih kurang 3 mm.,DOC002_C151_03,151,151,1068,1135,auto_ok
+SYM_389,DIS_079,PLANT_010,"Gejala khas akan terlihat di atas permukaan daun yang akan menguning (Joey Williamson, 2020).",DOC002_C152_01,152,152,224,317,auto_ok
+SYM_390,DIS_079,PLANT_010,Semangun (2007) menyatakan bahwa gejala akan tampak pada permukaan daun dengan membentu bercak tanpa batas yang jelas berwarna kuning dan juga pada permukaan bawah daun tampak seperti lapisan yang berwarna ungu kehijauan.,DOC002_C152_01,152,152,318,539,auto_ok
+SYM_391,DIS_079,PLANT_010,Bercak akan melebar dan menyebabkan daun cepat mengering.,DOC002_C152_01,152,152,540,597,auto_ok
+SYM_392,DIS_080,PLANT_010,"Awal mula gejala infeksi terlihat pada tulang daun yang menjadi pucat, terutama terlihat pada daun sebelah atas, kemudian tangkai akan merujuk dan membuat tanaman menjadi layu hingga ke seluruh tanaman.",DOC002_C153_01,153,153,203,405,auto_ok
+SYM_393,DIS_080,PLANT_010,Gejala kelayuan awalnya tampak pada daun-daun bagian bawah.,DOC002_C153_01,153,153,406,465,auto_ok
+SYM_394,DIS_080,PLANT_010,"Tanaman yang terinfeksi akan terlihat kerdil dan jika kita buka bagian pangkal batang akan muncul seperti lingkaran berwarna coklat di dalamnya (Semangun, 2007).",DOC002_C153_01,153,153,466,627,auto_ok
+SYM_395,DIS_080,PLANT_010,"Layu yang terlihat pada tanaman adalah ekspresi karena adanya transportasi air dan hara yang terhambat karena patogen ini (Semangun, 2007).",DOC002_C153_01,153,153,1019,1158,auto_ok
+SYM_396,DIS_081,PLANT_010,Penyakit layu bakteri ini disebabkan oleh bakteri Ralstonia solanacearum.,DOC002_C154_01,154,154,383,456,auto_ok
+SYM_397,DIS_081,PLANT_010,Bakteri ini menyerang pada fase vegetatif sebelum generatif yang dapat menyebabkan tanaman tidak memproduksi buah dan dapat menyebabkan tanaman mati sebelum reproduksi.,DOC002_C154_01,154,154,457,625,auto_ok
+SYM_398,DIS_081,PLANT_010,"Gejala pada tanaman tomat, di lapangan tanaman akan tampak seperti tanaman sehat namun sudah kehilangan turgornya terlihat dari daun bawah yang layu dengan warna tetap hijau.",DOC002_C154_01,154,154,887,1061,auto_ok
+SYM_399,DIS_081,PLANT_010,"Gejala cepat sekali berkembang, dalam dua hari sampai satu minggu, semua daun akan menjadi layu.",DOC002_C154_01,154,154,1062,1158,auto_ok
+SYM_400,DIS_081,PLANT_010,"Akar yang terinfeksi bisa saja terlihat masih seperti akar yang sehat, namun pada saat batang dibelah dan dimasukkan ke dalam air maka akan keluar nenes bakteri yang merupakan ciri khas layu yang disebabkan bakteri.",DOC002_C154_01,154,154,1159,1374,auto_ok
+SYM_401,DIS_081,PLANT_010,Hal ini yang dapat membedakan gejala layu oleh bakteri atau karena kekurangan air dan lain sebagainya.,DOC002_C154_01,154,154,1375,1477,auto_ok
+SYM_402,DIS_082,PLANT_010,Gejala khas yaitu bercak kecil bulat dengan pinggiran yang berwarna gelap.,DOC002_C155_02,155,155,270,344,auto_ok
+SYM_403,DIS_082,PLANT_010,Pada daun yang terserang akan terlihat massa spora pada tengah bercak.,DOC002_C155_02,155,155,345,415,auto_ok
+SYM_404,DIS_082,PLANT_010,"Infeksi yang parah akan membuat daun berguguran dan menguning (Joey Williamson, 2020).",DOC002_C155_02,155,155,416,502,auto_ok
+SYM_405,DIS_083,PLANT_010,Gejala penyakit ini akan semakin menjadi seiring dengan kematangan buah.,DOC002_C156_02,156,156,141,213,auto_ok
+SYM_406,DIS_083,PLANT_010,Pada awal serangan muncul bercak gelap kecil yang akan meluas dan menebal ke dalam jaringan serta membentuk lingkaran.,DOC002_C156_02,156,156,214,332,auto_ok
+SYM_407,DIS_083,PLANT_010,"Di dalam bercak akan ditemui massa spora berwarna oranye yang siap dipencarkan (Joey Williamson, 2020).",DOC002_C156_02,156,156,333,436,auto_ok
+SYM_408,DIS_084,PLANT_010,"Gejala penyakit ini terdapat pada daun yang keriting, menguning dan juga ukuran daun yang lebih kecil dari normalnya.",DOC002_C157_01,157,157,641,758,auto_ok
+SYM_409,DIS_084,PLANT_010,Tanaman akan menjadi kerdil dan bunga akan berguguran.,DOC002_C157_01,157,157,759,813,auto_ok
+SYM_410,DIS_084,PLANT_010,Biasanya gejala ini akan ditemukan di areal pertanaman secara acak sehingga akan tampak warna kuning yang mencolok jika dilihat secara keseluruhan kebun.,DOC002_C157_01,157,157,814,967,auto_ok
+SYM_411,DIS_085,PLANT_011,Gejala serangan penyakit ini ditandai dengan adanya gejala mozaik dengan gejala kuning cerah dan vena yang lebih cerah pada daun.,DOC002_C159_02,159,159,141,270,auto_ok
+SYM_412,DIS_085,PLANT_011,Penyakit ini juga ditandai dengan polong berubah warna menguning.,DOC002_C159_02,159,159,271,336,auto_ok
+SYM_413,DIS_085,PLANT_011,Gejala juga ditandai dengan nekrosis dan kematian jaringan yang terinfeksi (Gambar 11.1).,DOC002_C159_02,159,159,337,426,auto_ok
+SYM_414,DIS_085,PLANT_011,"Gejala utama yang ditemukan pada tanaman yang terinfeksi kedua jenis virus tersebut adalah menguning, menguning dengan titik hijau dan jalur vena mosaik(Nurulita et al., 2015).",DOC002_C160_01,160,160,163,339,auto_ok
+SYM_415,DIS_085,PLANT_011,Keparahan penyakit mosaik pada tanaman kacang dipengaruhi oleh faktor internal dan eksternal.,DOC002_C160_01,160,160,340,433,auto_ok
+SYM_416,DIS_085,PLANT_011,"Hasil penelitian Booker, Umaharan and McDavid, (2005) menunjukkan bahwa tanaman kacang panjang yang terserang penyakit mosaik pada fase pembibitan dapat menyebabkan kehilangan hasil tertinggi yaitu antara 50-85%.",DOC002_C160_01,160,160,644,856,auto_ok
+SYM_417,DIS_085,PLANT_011,Kehilangan hasil tanaman kacang panjang yang terserang penyakit virus mosaik pada 24 dan 36 hari setelah tanam ialah 66% dan 36%.,DOC002_C160_01,160,160,1078,1207,auto_ok
+SYM_418,DIS_085,PLANT_011,Hal itu menunjukkan bahwa semakin muda tanaman kacang panjang terinfeksi penyakit virus mosaik maka semakin tinggi keparahan penyakit dan semakin tinggi kehilangan hasil.,DOC002_C160_01,160,160,1208,1378,auto_ok
+SYM_419,DIS_085,PLANT_011,Kehilangan hasil pada tanaman kacang panjang yang diakibatkan oleh penyakit virus mosaik diakibatkan oleh berkurangnya jumlah polong per tanaman dan penurunan bobot kering polong rata-rata.,DOC002_C160_01,160,160,1379,1568,auto_ok
+SYM_420,DIS_085,PLANT_011,Selanjutnya faktor eksternal yang memengaruhi keparahan penyakit mosaik pada tanaman kacang panjang ialah iklim.,DOC002_C160_01,160,160,1569,1681,auto_ok
+SYM_421,DIS_085,PLANT_011,"Hasil penelitian Booker, Umaharan and McDavid, (2005) menunjukkan bahwa keparahan penyakit mosaik pada tanaman kacang panjang lebih tinggi pada musim kemarau daripada musim hujan.",DOC002_C160_01,160,160,1682,1861,auto_ok
+SYM_422,DIS_085,PLANT_011,Sehingga dapat meningkatkan keparahan penyakit mosaik pada tanaman kacang panjang.,DOC002_C160_01,160,160,1959,2041,auto_ok
+SYM_423,DIS_085,PLANT_011,Vektor serangga (Kutu daun dan Thrips) menularkan penyakit virus mosaik dari tanaman sakit ke tanaman sehat.,DOC002_C160_02,160,160,90,198,auto_ok
+SYM_424,DIS_085,PLANT_011,Patogen virus mosaik selanjutnya berpindah dari tubuh serangga ke tanaman yang sehat.,DOC002_C160_02,160,160,614,699,auto_ok
+SYM_425,DIS_085,PLANT_011,Identifikasi secara visual dilakukan dengan mengamati gejala serangan pada tanaman kacang panjang.,DOC002_C161_02,161,161,97,195,auto_ok
+SYM_426,DIS_086,PLANT_011,Gejala serangan penyakit tersebut ditandai dengan adanya lesi yang tidak teratur pada daun tanaman.,DOC002_C162_02,162,162,238,337,auto_ok
+SYM_427,DIS_086,PLANT_011,Gejala lesi pada daun tanaman tersebut berwarna coklat (Gambar 11.4).,DOC002_C162_02,162,162,338,407,auto_ok
+SYM_428,DIS_086,PLANT_011,Lesi pada daun dimulai dari bagian tangkai daun dan di bagian bawah permukaan dan urat daun.,DOC002_C162_04,162,162,0,92,auto_ok
+SYM_429,DIS_086,PLANT_011,Gejala awal ditandai dengan warna merah bata menjadi merah keunguan.,DOC002_C162_04,162,162,93,161,auto_ok
+SYM_430,DIS_086,PLANT_011,Gejala selanjutnya berkembang ke permukaan daun bagian atas (Gambar 11.5).,DOC002_C162_04,162,162,162,236,auto_ok
+SYM_431,DIS_086,PLANT_011,Serangan jamur tersebut pada batang ditandai dengan bintik mata berwarna coklat.,DOC002_C162_04,162,162,309,389,auto_ok
+SYM_432,DIS_086,PLANT_011,"Pada pusat lesi umumnya memiliki pusat kanker yang berbentuk cekung (Mohammed, 2013).",DOC002_C162_04,162,162,463,548,auto_ok
+SYM_433,DIS_086,PLANT_011,Gejala serangan penyakit pada polong ditandai dengan bintik-bintik kecil berwarna coklat yang berkarat.,DOC002_C163_02,163,163,75,178,auto_ok
+SYM_434,DIS_086,PLANT_011,Lesi pada polong tersebut memiliki ukuran diameter 5-8 mm.,DOC002_C163_02,163,163,386,444,auto_ok
+SYM_435,DIS_086,PLANT_011,Lesi akan membentuk cekungan di tengahnya dengan tepi coklat hingga coklat keunguan (Gambar 11.,DOC002_C163_02,163,163,445,540,auto_ok
+SYM_436,DIS_087,PLANT_011,Serangan yang diakibatkan oleh bakteri tersebut dapat mengakibatkan kehilangan hasil hingga 60%.,DOC002_C164_03,164,164,115,211,auto_ok
+SYM_437,DIS_087,PLANT_011,Gejala serangan bakteri tersebut ditunjukkan dengan daun kacang panjang terlihat bercak basah dan tembus air.,DOC002_C164_03,164,164,274,383,auto_ok
+SYM_438,DIS_087,PLANT_011,Bercak kemudian membesar menjadi nekrotik.,DOC002_C164_03,164,164,384,426,auto_ok
+SYM_439,DIS_087,PLANT_011,Bercak kadang disertai dengan lingkaran kuning (Gambar 11.8).,DOC002_C164_03,164,164,427,488,auto_ok
+SYM_440,DIS_087,PLANT_011,Serangan bakteri dapat mengakibatkan gugurnya daun muda.,DOC002_C164_03,164,164,489,545,auto_ok
+SYM_441,DIS_087,PLANT_011,Serangan bakteri pada batang ditandai dengan retak dan garis-garis coklat pada batang.,DOC002_C164_03,164,164,592,678,auto_ok
+SYM_442,DIS_087,PLANT_011,Serangan bakteri pada polong ditandai dengan adanya perubahan warna pada polong.,DOC002_C164_03,164,164,679,759,auto_ok
+SYM_443,DIS_088,PLANT_011,"Pada awal serangan, muncul gejala adanya bercak kecokelatan di bagian daun yang semakin lama semakin menyebar.",DOC002_C165_02,165,165,107,217,auto_ok
+SYM_444,DIS_088,PLANT_011,"Pada serangan yang sudah parah, daun akan mengering yang dimulai dari daun tua.",DOC002_C165_02,165,165,218,297,auto_ok
+SYM_445,DIS_088,PLANT_011,Gejala serangan penyakit bercak daun pada tanaman kacang panjang ini ditandai dengan munculnya bercak kecil pada daun.,DOC002_C165_02,165,165,605,723,auto_ok
+SYM_446,DIS_088,PLANT_011,Bercak kecil tersebut selanjutnya membesar dan berwarna coklat.,DOC002_C165_02,165,165,724,787,auto_ok
+SYM_447,DIS_088,PLANT_011,Di sekeliling bercak dikelilingi cincin berwarna kuning (Gambar 11.9).,DOC002_C165_02,165,165,788,858,auto_ok
+SYM_448,DIS_088,PLANT_011,"Berbeda dengan karat daun, penyakit ini menimbulkan gejala adanya bercak kuning bulat di bagian daun.",DOC002_C166_02,166,166,354,455,auto_ok
+SYM_449,DIS_088,PLANT_011,Biasanya ada beberapa bercak dalam satu daun.,DOC002_C166_02,166,166,456,501,auto_ok
+SYM_450,DIS_088,PLANT_011,"Semakin lama bercak akan berubah menjadi coklat kekuningan, tetapi bentuknya masih bulat.",DOC002_C166_02,166,166,502,591,auto_ok
+SYM_451,DIS_089,PLANT_012,leucotricha adalah: Infeksi pada daun mengakibatkan permukaan daun terlihat putih;,DOC002_C170_01,170,170,39,121,auto_ok
+SYM_452,DIS_089,PLANT_012,Infeksi pada tunas mengakibatkan tanaman apel menjadi kerdil dan tidak berbuah;,DOC002_C170_01,170,170,122,201,auto_ok
+SYM_453,DIS_089,PLANT_012,"Infeksi pada buah muda mengakibatkan buah terlihat kecokelatan, sementara pada buah tua menyerupai warnanya menyerupai buah sawo.",DOC002_C170_01,170,170,202,331,auto_ok
+SYM_454,DIS_090,PLANT_012,Marssonina coronaria merupakan cendawan penyebab bercak pada bagian daun tanaman apel.,DOC002_C171_01,171,171,17,103,auto_ok
+SYM_455,DIS_090,PLANT_012,coronaria awalnya memperlihatkan bercak putih tidak teratur pada daun.,DOC002_C171_01,171,171,210,280,auto_ok
+SYM_456,DIS_090,PLANT_012,"Lama kelamaan, bercak putih tersebut berubah menjadi coklat.",DOC002_C171_01,171,171,281,341,auto_ok
+SYM_457,DIS_091,PLANT_012,Gejala penyakit ini terbagi atas empat stadium: Stadium pertama yang dikenal di Indonesia dengan sebutan stadium laba-laba.,DOC002_C172_03,172,172,142,265,auto_ok
+SYM_458,DIS_091,PLANT_012,Stadium ini ditandai dengan terbentuknya miselium halus berbentuk mirip sarang laba-laba;,DOC002_C172_03,172,172,365,454,auto_ok
+SYM_459,DIS_091,PLANT_012,Stadium cortisium ditandai dengan terbentuknya kerak berwarna merah jambu lama kelamaan warna kerak memudar menjadi cerah bahkan putih.,DOC002_C172_03,172,172,604,739,auto_ok
+SYM_460,DIS_091,PLANT_012,Kulit kayu yang ditumbuhi kerak mulai membusuk dan mengering;,DOC002_C172_03,172,172,836,897,auto_ok
+SYM_461,DIS_091,PLANT_012,Gejala khusus ini dapat ditemukan di pinggiran kayu yang telah membusuk dan atau mengering.,DOC002_C172_03,172,172,1017,1108,auto_ok
+SYM_462,DIS_092,PLANT_012,Gejala kanker pada tanaman apel: Batang atau cabang yang terserang kanker mengalami perubahan warna menjadi coklat kehitaman.,DOC002_C173_01,173,173,145,270,auto_ok
+SYM_463,DIS_092,PLANT_012,"Selain itu, batang yang berubah warna tersebut mengeluarkan cairan yang berbau busuk;",DOC002_C173_01,173,173,271,356,auto_ok
+SYM_464,DIS_092,PLANT_012,Buah yang terinfeksi kanker ditandai dengan adanya bercak kecil berwarna coklat muda.,DOC002_C173_01,173,173,357,442,auto_ok
+SYM_465,DIS_092,PLANT_012,Bercak ini berisi air yang berbau busuk;,DOC002_C173_01,173,173,443,483,auto_ok
+SYM_466,DIS_093,PLANT_012,Busuk buah dapat disebabkan oleh cendawan Gloeosporium Sp.,DOC002_C175_02,175,175,16,74,auto_ok
+SYM_467,DIS_093,PLANT_012,Gejala awal ditandai dengan timbulnya bercak berukuran kecil dan berbentuk bulat yang berwarna kehijauan.,DOC002_C175_02,175,175,75,180,auto_ok
+SYM_468,DIS_093,PLANT_012,"Gejala selanjutnya, perubahan warna terjadi pada bercak tersebut.",DOC002_C175_02,175,175,181,246,auto_ok
+SYM_469,DIS_093,PLANT_012,Bercak menjadi berwarna coklat dengan bintik hitam.,DOC002_C175_02,175,175,247,298,auto_ok
+SYM_470,DIS_093,PLANT_012,Buah menjadi warna oranye sebelum akhirnya membusuk.,DOC002_C175_02,175,175,299,351,auto_ok
+SYM_471,DIS_094,PLANT_012,Busuk akar disebabkan oleh Armillaria mellea.,DOC002_C176_02,176,176,16,61,auto_ok
+SYM_472,DIS_094,PLANT_012,"Gejala busuk akar dapat diketahui dengan adanya dan layu yang kemudian gugur, kulit akar yang mengalami pembusukan dan adanya jamur yang tumbuh di pangkal batang.",DOC002_C176_02,176,176,116,278,auto_ok
+SYM_473,DIS_095,PLANT_013,Similis menimbulkan gejala berupa bintik-bintik coklat pada akar akibat tusukan menggunakan stiletnya.,DOC002_C184_01,184,184,19,121,auto_ok
+SYM_474,DIS_095,PLANT_013,Sedangkan gejala yang ditimbulkan oleh M.,DOC002_C184_01,184,184,122,163,auto_ok
+SYM_475,DIS_096,PLANT_013,"menginfeksi ranting, terutama tepat di percabangan.",DOC002_C188_01,188,188,38,89,auto_ok
+SYM_476,DIS_096,PLANT_013,"Kadang-kadang juga dijumpai pada batang di sekitar akar rekat, cabang, tangkai daun, bahkan buah.",DOC002_C188_01,188,188,90,187,auto_ok
+SYM_477,DIS_096,PLANT_013,"Bagian tanaman yang terinfeksi mula-mula tampak koloni berwarna putih ke abuan, berkembang menjadi putih kecokelatan, kemudian berubah warna menjadi coklat berlubang-lubang disertai rambut-rambut berwarna hitam seperti beludru disertai ""jonjot"" miselium yang tumbuh ke atas.",DOC002_C188_01,188,188,188,462,auto_ok
+SYM_478,DIS_096,PLANT_013,Gejala lanjut ditandai koloni berwarna hitam melekat seperti diselimuti oli.,DOC002_C188_01,188,188,463,539,auto_ok
+SYM_479,DIS_096,PLANT_013,"Apabila dikelupas, tersisa pembuluh kayu.",DOC002_C188_01,188,188,540,581,auto_ok
+SYM_480,DIS_096,PLANT_013,Infeksi pada tangkai daun diikuti koloni yang menjari ke anak daun.,DOC002_C188_01,188,188,582,649,auto_ok
+SYM_481,DIS_096,PLANT_013,"Serangan berat menyebabkan ranting dan daun-daun rontok, sehingga mengakibatkan kematian tanaman.",DOC002_C188_01,188,188,650,747,auto_ok
+SYM_482,DIS_096,PLANT_013,"Menurut Rianto (2014), patogen hawar beludru dapat bertahan dengan membentuk tubuh buah pada jaringan tanaman mati di dalam tanah dalam waktu 90-100 hari.",DOC002_C188_01,188,188,748,902,auto_ok
+SYM_483,DIS_096,PLANT_013,"Patogen dapat bersifat saprofit pada jaringan tanaman atau ranting yang patah dan jatuh ke tanah, atau terbawa pada serangga yang berasosiasi dengan patogen.",DOC002_C188_01,188,188,903,1060,auto_ok
+SYM_484,DIS_097,PLANT_013,"Gejala penyakit kerdil diawali dari daun-daun yang terbentuk tak sempurna, kecil, dan mengalami mal formasi terutama di bagian pucuk.",DOC002_C191_02,191,191,7,140,auto_ok
+SYM_485,DIS_097,PLANT_013,"Gejala lanjut memperlihatkan daun-daun tersebut menguning (mozaik) dengan bentuk semakin tak teratur, sempit, kaku, keriput, dan keriting sehingga proses fotosintesis terganggu.",DOC002_C191_02,191,191,141,318,auto_ok
+SYM_486,DIS_097,PLANT_013,"Pertumbuhan tanaman menjadi kerdil, tandan buah pendek, jumlah buah yang dihasilkan sedikit dengan ukuran sangat kecil.",DOC002_C191_02,191,191,319,438,auto_ok
+SYM_487,DIS_098,PLANT_013,"Namun demikian, penyakit ini cukup mematikan.",DOC002_C192_02,192,192,182,227,auto_ok
+SYM_488,DIS_098,PLANT_013,"Gejala Mula-mula ranting ditumbuhi miselia jamur memanjang berwarna putih, bercabang mengikuti arah pertumbuhan cabang, ranting, dan tangkai daun.",DOC002_C193_01,193,193,0,146,auto_ok
+SYM_489,DIS_098,PLANT_013,Pada ranting yang dilewati miselia tersebut menyebabkan daun-daun menguning (klorosis) dan akhirnya lapuk (berwarna coklat-kering).,DOC002_C193_01,193,193,147,278,auto_ok
+SYM_490,DIS_098,PLANT_013,Gejala lanjut menyebabkan daun-daun mati menggantung disertai perubahan miselia menjadi hitam seperti rambut.,DOC002_C193_01,193,193,279,388,auto_ok
+SYM_491,DIS_099,PLANT_013,"Mula-mula terbentuk bercak kecil berwarna coklat muda, kemudian membesar berwarna coklat tua diikuti zona konsentris di bagian bercak.",DOC002_C194_04,194,194,7,141,auto_ok
+SYM_492,DIS_099,PLANT_013,Gejala lanjut memperlihatkan pusat bercak menjadi kaku/keras disertai masa spora di sekelilingnya.,DOC002_C194_04,194,194,142,240,auto_ok
+SYM_493,DIS_099,PLANT_013,"Jika infeksi bermula dari ujung daun, tampak daun seperti gosong dan terkadang sedikit menggulung.",DOC002_C194_04,194,194,241,339,auto_ok
+SYM_494,DIS_099,PLANT_013,Tidak memakai bibit dari tanaman yang terinfeksi.,DOC002_C195_01,195,195,78,127,auto_ok
+SYM_495,DIS_099,PLANT_013,Tidak memakai gunting stek bekas tanaman sakit.,DOC002_C195_01,195,195,186,233,auto_ok
+SYM_496,DIS_100,PLANT_014,Vastatrix adalah munculnya bercak kuning-jingga seperti serbuk pada bagian atas dan bawah daun tanaman kopi.,DOC002_C197_02,197,197,587,695,auto_ok
+SYM_497,DIS_100,PLANT_014,"Bagian daun yang terinfeksi dan muncul gejala bercak kuning-jingga lama kelamaan akan berubah menjadi cokelat, mengalami nekrosis, dan mengakibatkan kematian sel.",DOC002_C197_02,197,197,696,858,auto_ok
+SYM_498,DIS_100,PLANT_014,"Proses tersebut diawali dengan munculnya bercak berwarna kuning muda pada bagian bawah daun, selanjutnya berubah menjadi kuning tua, dan seiring berjalannya waktu akan muncul tepung berwarna jingga pada daerah yang terinfeksi.",DOC002_C197_02,197,197,859,1085,auto_ok
+SYM_499,DIS_100,PLANT_014,"vastatrix 0,5 cm (b) gejala karat daun kopi pada bagian bawah daun 0,5 cm (c) detail uredospora H.",DOC002_C197_02,197,197,1527,1625,auto_ok
+SYM_500,DIS_100,PLANT_014,Gambar 14.1: Gejala dan morfologi penyakit karat daun kopi akibat infeksi H.,DOC002_C198_01,198,198,0,76,auto_ok
+SYM_501,DIS_100,PLANT_014,"vastatrix (bar = 0,5 cm); (b) gejala karat daun kopi pada bagian bawah daun (bar = 0,5 cm); (c) detail uredospora H.",DOC002_C198_01,198,198,142,258,auto_ok
+SYM_502,DIS_100,PLANT_014,"Pada tahap lebih lanjut, daerah berwarna jingga tersebut akan berubah warna menjadi cokelat, diikuti oleh mengeringnya seluruh bagian daun, dan akhirnya menyebabkan daun menjadi gugur.",DOC002_C198_01,198,198,529,713,auto_ok
+SYM_503,DIS_100,PLANT_014,Tanaman yang terkena sinar matahari lebih banyak pada permukaan daunnya cenderung memiliki intensitas serangan H.,DOC002_C199_01,199,199,581,694,auto_ok
+SYM_504,DIS_101,PLANT_014,Penyakit bercak daun kopi atau sering disebut sebagai brown eye spot disebabkan oleh infeksi cendawan fitopatogen Cercospora coffeicola.,DOC002_C200_02,200,200,22,158,auto_ok
+SYM_505,DIS_101,PLANT_014,Penyakit bercak daun kopi pertama kali ditemukan di Jamaika.,DOC002_C200_02,200,200,223,283,auto_ok
+SYM_506,DIS_101,PLANT_014,"Meskipun penyakit ini dikenal sebagai bercak daun kopi, namun pada faktanya di lapangan infeksi C.",DOC002_C200_02,200,200,284,382,auto_ok
+SYM_507,DIS_101,PLANT_014,coffeicola pada daun diawali dengan munculnya bercak bulat dengan warna kemerahan atau cokelat tua.,DOC002_C200_02,200,200,687,786,auto_ok
+SYM_508,DIS_101,PLANT_014,Bercak memiliki batas yang jelas antara warna kemerahan atau cokelat dengan warna hijau pada daun.,DOC002_C200_02,200,200,787,885,auto_ok
+SYM_509,DIS_101,PLANT_014,"Pada bercak yang sudah tua, akan terdapat pusat berwarna putih ke abuan.",DOC002_C200_02,200,200,886,958,auto_ok
+SYM_510,DIS_101,PLANT_014,Pada bagian bercak juga sering ditemui warna seperti tepung hitam.,DOC002_C200_02,200,200,959,1025,auto_ok
+SYM_511,DIS_101,PLANT_014,Gejala bercak daun kopi akan tampak jelas jika dilihat dari bagian atas daun.,DOC002_C200_02,200,200,1097,1174,auto_ok
+SYM_512,DIS_101,PLANT_014,Pada umumnya garis tengah bercak kurang dari 5 mm dan bercincin-cincin.,DOC002_C200_02,200,200,1175,1246,auto_ok
+SYM_513,DIS_101,PLANT_014,"Lebih lanjut, gambar gejala bercak daun kopi terdapat pada Gambar 14.2.",DOC002_C200_02,200,200,1403,1474,auto_ok
+SYM_514,DIS_101,PLANT_014,coffeicola pada jaringan daun dengan gejala nekrosis,DOC002_C200_02,200,200,1904,1956,auto_ok
+SYM_515,DIS_101,PLANT_014,"(a) gejala bercak daun pada daun kopi, bercak berwarna kecokelatan dikelilingi hallo berwarna kuning; (b) gejala nekrosis pada daun kopi yang terkena bercak daun; (c) sporulasi cendawan C.",DOC002_C201_01,201,201,31,219,auto_ok
+SYM_516,DIS_101,PLANT_014,"coffeicola pada jaringan daun dengan gejala nekrosis (Souza et al., 2011).",DOC002_C201_01,201,201,220,294,auto_ok
+SYM_517,DIS_101,PLANT_014,coffeicola adalah kulit buah mengering dan mengeras (Gambar 14.3).,DOC002_C201_01,201,201,456,522,auto_ok
+SYM_518,DIS_101,PLANT_014,"Gejala tersebut mirip seperti gejala yang ditimbulkan oleh faktor abiotik, yang petani sering sebut sebagai gejala “terbakar matahari”.",DOC002_C201_01,201,201,581,716,auto_ok
+SYM_519,DIS_101,PLANT_014,"Gejala tersebut hanya dapat dibedakan melalui penelitian mikroskopis (Silva et al., 2016).",DOC002_C201_01,201,201,717,807,auto_ok
+SYM_520,DIS_101,PLANT_014,"Sebagai contoh, pada lahan dengan naungan yang terlalu rimbun akan menyebabkan gejala pada daun semakin parah.",DOC002_C202_02,202,202,205,315,auto_ok
+SYM_521,DIS_101,PLANT_014,"Namun demikian pada lahan dengan penyinaran matahari yang kuat justru akan menyebabkan gejala pada buah semakin parah (DaMatta, 2004, Durand-Bessart et al., 2020).",DOC002_C202_02,202,202,316,479,auto_ok
+SYM_522,DIS_101,PLANT_014,"Jika ditemukan daun yang bergejala, sebaiknya dilakukan pengguntingan dan dibakar atau dibenamkan di tanah.",DOC002_C202_02,202,202,890,997,auto_ok
+SYM_523,DIS_102,PLANT_014,salmonicolor umumnya akan menunjukkan gejala cabang atau ranting layu mendadak.,DOC002_C203_01,203,203,417,496,auto_ok
+SYM_524,DIS_102,PLANT_014,"Serangan cendawan ini dapat terjadi di berbagai bagian pohon, mulai dari bagian cabang bawah, cabang tengah, ujung pohon, bahkan pada batang utama tanaman kopi (Muliani dan Nildayanti, 2018).",DOC002_C203_01,203,203,497,688,auto_ok
+SYM_525,DIS_102,PLANT_014,Penyakit jamur upas ditandai dengan stadium laba-laba di mana terdapat lapisan tipis seperti sarang laba-laba pada bagian tanaman yang terinfeksi.,DOC002_C203_01,203,203,689,835,auto_ok
+SYM_526,DIS_102,PLANT_014,Pada umumnya bagian tanaman yang telah menunjukkan gejala tersebut telah mati atau kering karena infeksi U.,DOC002_C203_01,203,203,1647,1754,auto_ok
+SYM_527,DIS_102,PLANT_014,"Selain pada batang, cendawan ini juga dapat menginfeksi buah dengan gejala awal berupa nekrosis dari pangkal buah yang terdapat di sekitar tangkai terinfeksi.",DOC002_C203_01,203,203,1769,1927,auto_ok
+SYM_528,DIS_102,PLANT_014,"Nekrosis tersebut kemudian meluas ke seluruh permukaan dan mencapai endosperma (Tjokrosoedarmo, 1996).",DOC002_C203_01,203,203,1928,2030,auto_ok
+SYM_529,DIS_102,PLANT_014,"Pada tanaman yang teridentifikasi mengalami gejala penyakit jamur upas maka perlu dipotong sampai batas cabang yang sehat, ditambah 30 cm.",DOC002_C204_02,204,204,596,734,auto_ok
+SYM_530,DIS_102,PLANT_014,"Jika terdapat gejala pada buah maka perlu dilakukan pemetikan dan buah bergejala tersebut dibakar atau dipendam (Akrofi et al., 2014).",DOC002_C204_02,204,204,1170,1304,auto_ok
+SYM_531,DIS_103,PLANT_014,Tanaman kopi yang terkena penyakit kanker batang kopi akan mengalami gejala daunnya menguning dan layu.,DOC002_C205_01,205,205,672,775,auto_ok
+SYM_532,DIS_103,PLANT_014,Gejala tersebut kemudian diikuti dengan gugurnya daun dan cabang-cabang pohon kopi menjadi mati.,DOC002_C205_01,205,205,776,872,auto_ok
+SYM_533,DIS_103,PLANT_014,Gejala ini mirip seperti batang yang terbelah.,DOC002_C205_01,205,205,966,1012,auto_ok
+SYM_534,DIS_103,PLANT_014,"Oleh karena itu, kanker batang kopi juga dikenal sebagai kanker belah karena gejalanya yang membuat batang muncul belahan.",DOC002_C205_01,205,205,1013,1135,auto_ok
+SYM_535,DIS_103,PLANT_014,"Pada infeksi lanjut, akar-akar tanaman yang terinfeksi akan membusuk dan mati.",DOC002_C205_01,205,205,1136,1214,auto_ok
+SYM_536,DIS_103,PLANT_014,"Namun demikian, sebelum pohon kopi mati sering kali ditemui fenomena tanaman kopi membentuk akar adventif baru yang tampak sehat.",DOC002_C205_01,205,205,1215,1344,auto_ok
+SYM_537,DIS_103,PLANT_014,(2019) melaporkan adanya gejala kanker batang kopi di Lampung.,DOC002_C205_03,205,205,35,97,auto_ok
+SYM_538,DIS_103,PLANT_014,"Gejala yang tampak adalah bagian tajuk tanaman kopi menguning dan agak layu, mengalami dieback, dan batang pecah-pecah.",DOC002_C205_03,205,205,165,284,auto_ok
+SYM_539,DIS_103,PLANT_014,Hasil identifikasi secara mikroskopis dan molekuler menunjukkan gejala tersebut disebabkan oleh infeksi Fusarium solani.,DOC002_C205_03,205,205,388,508,auto_ok
+SYM_540,DIS_103,PLANT_014,Lebih lanjut gejala yang ditemukan oleh Wiyono et al disajikan pada Gambar 14.5.,DOC002_C205_03,205,205,509,589,auto_ok
+SYM_541,DIS_104,PLANT_014,"Terdapat tiga gejala jamur akar yang sering ditemui menginfeksi tanaman kopi, yaitu jamur akar putih, jamur akar cokelat, dan jamur akar hitam.",DOC002_C206_01,206,206,171,314,auto_ok
+SYM_542,DIS_104,PLANT_014,Terdapat gejala yang serupa pada ketiga penyakit jamur akar di atas.,DOC002_C206_01,206,206,565,633,auto_ok
+SYM_543,DIS_104,PLANT_014,"Tanaman kopi yang terkena penyakit jamur akar pada umumnya akan menunjukkan gejala daun tanaman terlihat menguning, layu, pertumbuhannya merana, dan pada infeksi lanjut akan terjadi kerontokan daun.",DOC002_C206_01,206,206,634,832,auto_ok
+SYM_544,DIS_104,PLANT_014,Untuk mengetahui gejala ini perlu dilakukan pengambilan sampel akar dan mengamati di bawah kaca pembesar atau alat bantu lainnya.,DOC002_C206_01,206,206,1230,1359,auto_ok
+SYM_545,DIS_104,PLANT_014,Umumnya pada akar tanaman yang terinfeksi jamur cokelat akan membusuk dan lama kelamaan akan kering.,DOC002_C207_01,207,207,292,392,auto_ok
+SYM_546,DIS_105,PLANT_014,Penyakit rebah batang di awal dari munculnya gejala memar pada pangkal batang kopi.,DOC002_C208_01,208,208,560,643,auto_ok
+SYM_547,DIS_105,PLANT_014,Gejala muncul pada tanaman kopi yang masih muda.,DOC002_C208_01,208,208,644,692,auto_ok
+SYM_548,DIS_105,PLANT_014,"Selanjutnya, gejala memar tersebut kemudian berubah menjadi busuk dan lama kelamaan mengering.",DOC002_C208_01,208,208,693,787,auto_ok
+SYM_549,DIS_105,PLANT_014,Batang yang mengering akhirnya tampak berlekuk (Gambar 14.6).,DOC002_C208_01,208,208,788,849,auto_ok
+SYM_550,DIS_105,PLANT_014,Pada kondisi batang yang masih lunak penyakit ini dapat menyebabkan kematian bibit.,DOC002_C208_01,208,208,1047,1130,auto_ok
+SYM_551,DIS_106,PLANT_014,Nematoda dikenal sebagai silent killer karena gejalanya yang jarang disadari oleh petani kopi.,DOC002_C209_02,209,209,30,124,auto_ok
+SYM_552,DIS_106,PLANT_014,Gangguan tersebut menyebabkan pada bagian di atas permukaan tanah tanaman menunjukkan gejala yang serupa dengan kekurangan hara dan air.,DOC002_C209_02,209,209,755,891,auto_ok
+SYM_553,DIS_106,PLANT_014,"Umumnya gejala di atas permukaan tanah adalah daun tanaman menguning, layu, terjadi klorosis, bahkan pada infeksi yang parah dapat menyebabkan kematian (Ghini et al., 2008).",DOC002_C209_02,209,209,892,1065,auto_ok
+SYM_554,DIS_106,PLANT_014,Aktivitas makan kedua nematoda tersebut menyebabkan kematian sel pada jaringan akar kopi.,DOC002_C210_01,210,210,292,381,auto_ok
+SYM_555,DIS_106,PLANT_014,"similis disajikan pada Gambar 14.7, sedangkan gejala infeksi Meloidogyne spp.",DOC002_C210_01,210,210,589,666,auto_ok
+SYM_556,DIS_106,PLANT_014,coffeae per cm3 tanah dan Gejala infeksi R.,DOC002_C210_01,210,210,822,865,auto_ok
+SYM_557,DIS_106,PLANT_014,Image 2 Gambar 14.8: Gejala infeksi Meloidogyne izalcoensis pada tanaman kopi.,DOC002_C210_01,210,210,990,1068,auto_ok
+SYM_558,DIS_106,PLANT_014,"(a) seluruh bagian akar yang terinfeksi; (b) puru dan massa telur pada akar kopi yang terinfeksi; (c) panah menunjukkan adanya nekrosis pada bagian akar yang terinfeksi (Stefanelo et al., 2019).",DOC002_C210_01,210,210,1069,1263,auto_ok
+SYM_559,DIS_106,PLANT_014,"Jika terdapat tanaman yang terinfeksi dan mati, maka perlu dilakukan pencabutan dan pembersihan sampai bagian-bagian akarnya.",DOC002_C210_01,210,210,1634,1759,auto_ok
+SYM_560,DIS_107,PLANT_015,Busuk pangkal batang pada kelapa sawit (E.,DOC002_C213_01,213,213,25,67,auto_ok
+SYM_561,DIS_107,PLANT_015,"Penyakit busuk putih Ganoderma diperkirakan menimbulkan kerugian ekonomi sebesar USD 50 juta per tahun di Malaysia (Murphy, 2007).",DOC002_C213_01,213,213,311,441,auto_ok
+SYM_562,DIS_107,PLANT_015,"Jamur busuk pangkal batang menyebabkan infeksi dan pembusukan pada jaringan akar dan batang bawah, menyebabkan berbagai gejala pada daun secara umum seperti fraktur daun, daun muda berwarna kuning dan berukuran kecil (Singh, 1991).",DOC002_C213_01,213,213,626,857,auto_ok
+SYM_563,DIS_107,PLANT_015,"Pada kasus yang tingkatannya lebih parah akan terbentuk basidiokarp pada batang bawah, serta tanda kunci lainnya berupa batang rebah.",DOC002_C213_01,213,213,858,991,auto_ok
+SYM_564,DIS_107,PLANT_015,"yang sering diisolasi dari kelapa sawit penyebab busuk pangkal batang, spesies Ganoderma boninense Pat.",DOC002_C213_01,213,213,1016,1119,auto_ok
+SYM_565,DIS_107,PLANT_015,"boninense hanya ditemukan pada tanaman yang lebih tua, tetapi seiring dengan perkembangannya, spesies ini juga menyerang pada batang tanaman yang masih dalam proses persemaian dan pohon yang lebih muda dengan gejala yang muncul lebih awal dan lebih parah (Suryanto et al., 2012).",DOC002_C213_01,213,213,1350,1629,auto_ok
+SYM_566,DIS_107,PLANT_015,Jamur busuk pangkal batang ini menyebar melalui akar yang berdekatan atau dengan menyebarkan spora jamurnya ke tanaman lain yang sehat.,DOC002_C213_01,213,213,1630,1765,auto_ok
+SYM_567,DIS_107,PLANT_015,Jamur ini mulai menginfeksi tanaman muda umur 12-24 bulan dan menunjukkan serangan yang serius pada umur tanaman 4-5 tahun.,DOC002_C214_01,214,214,618,741,auto_ok
+SYM_568,DIS_107,PLANT_015,Insiden serangan pada tanaman ini bervariasi tergantung dari lahan yang digunakan untuk penanaman kelapa sawit.,DOC002_C214_01,214,214,742,853,auto_ok
+SYM_569,DIS_107,PLANT_015,"Insiden serangan tertinggi terjadi pada lahan bekas penanaman kelapa mencapai 60% setelah 16 tahun, 25% pada lahan bekas tanaman hutan atau karet dan 33% lahan bekas penanaman kelapa sawit sebelumnya.",DOC002_C214_01,214,214,854,1054,auto_ok
+SYM_570,DIS_107,PLANT_015,"Selain itu, insiden serangan juga dipengaruhi oleh ukuran dan kekuatan kelapa sawit saat terinfeksi dan ukuran serta jumlah inokulum G.",DOC002_C214_01,214,214,1200,1335,auto_ok
+SYM_571,DIS_107,PLANT_015,"Bibit berukuran kecil akan mati dengan cepat jika berada dekat dengan sumber inokulum, berbanding terbalik dengan tanaman yang berukuran lebih besar akan lebih sulit mati dengan cepat, kecuali mendapatkan serangan inokulum dalam jumlah yang besar.",DOC002_C214_01,214,214,1347,1594,auto_ok
+SYM_572,DIS_107,PLANT_015,Gejala daun hanya secara visual diamati ketika jamur telah membunuh setengah dari pangkal batang dan secara serius mengganggu pasokan air dan nutrisi.,DOC002_C214_01,214,214,1595,1745,auto_ok
+SYM_573,DIS_107,PLANT_015,Tubuh buah atau lesi penyakit (busuk kering) di pangkal batang kelapa sawit tanpa kematian pohon (Gambar 15.1).,DOC002_C214_01,214,214,1746,1857,auto_ok
+SYM_574,DIS_108,PLANT_015,Gejala yang terlihat jelas pada tahap awal busuk pucuk ini dikenal oleh banyak petani sebagai busuk tombak.,DOC002_C218_01,218,218,0,107,auto_ok
+SYM_575,DIS_108,PLANT_015,Perkembangan jamur ini menjadi sangat signifikan jika di bawah kondisi lingkungan dengan curah hujan dan kelembaban tinggi.,DOC002_C218_01,218,218,108,231,auto_ok
+SYM_576,DIS_108,PLANT_015,Infeksi sekuensial menyebabkan lesi yang lebih banyak dan lebih besar sehingga mempengaruhi pelebaran serangan di bagian yang terkena infeksi.,DOC002_C218_01,218,218,232,374,auto_ok
+SYM_577,DIS_108,PLANT_015,"Pada stadium lanjut, penyakit ini menyebabkan kekeringan pada bagian luar daun, sedangkan jaringan sentral putih tidak akan muncul dan jaringan tepat diatas meristem akan mengalami hancur total (Torres et al., 2016).",DOC002_C218_01,218,218,375,591,auto_ok
+SYM_578,DIS_108,PLANT_015,"Meskipun gejala busuk pucuk yang muncul sangat beragam, gejala paling akhir dari serangan jamur ini berupa kerusakan jaringan muda yang sedang berkembang.",DOC002_C218_01,218,218,592,746,auto_ok
+SYM_579,DIS_108,PLANT_015,Adanya jaringan meristem yang dihancurkan oleh P.,DOC002_C218_01,218,218,747,796,auto_ok
+SYM_580,DIS_108,PLANT_015,palmivora menyebabkan tidak ada lagi daun muda yang berkembang dan kuncup daun akan membusuk akibat invasi mikroorganisme saprofit lainnya dan serangga.,DOC002_C218_01,218,218,797,949,auto_ok
+SYM_581,DIS_108,PLANT_015,"Akibatnya, adanya kesalahan identifikasi penyerang sekunder dan menyebabkan kesalahan pengembangan strategi manajemen yang efektif selama beberapa dekade.",DOC002_C218_01,218,218,950,1104,auto_ok
+SYM_582,DIS_108,PLANT_015,Gambar 15.2: Gejala penyakit busuk pucuk pada daun.,DOC002_C218_01,218,218,1105,1156,auto_ok
+SYM_583,DIS_108,PLANT_015,Lesi muncul pada jaringan daun muda atau belum terbuka (daun tombak) (A dan B).,DOC002_C218_01,218,218,1157,1236,auto_ok
+SYM_584,DIS_108,PLANT_015,Infeksi sekunder ditunjukkan sebagai peningkatan jumlah lesi yang lebih besar pada daun baru (C).,DOC002_C218_01,218,218,1237,1334,auto_ok
+SYM_585,DIS_108,PLANT_015,Lesi akan mempengaruhi jaringan lain di sekitarnya sehingga menyebabkan infeksi baru (D).,DOC002_C218_01,218,218,1335,1424,auto_ok
+SYM_586,DIS_108,PLANT_015,"Ketika daun tombak terbuka, jaringan nekrotik akan terlepas (E).",DOC002_C218_01,218,218,1425,1489,auto_ok
+SYM_587,DIS_108,PLANT_015,"Tahap lanjut penyakit, daun luar kering (F).",DOC002_C218_01,218,218,1490,1534,auto_ok
+SYM_588,DIS_108,PLANT_015,Kuncup daun yang mengalami lesi tidak terbuka (G).,DOC002_C218_01,218,218,1535,1585,auto_ok
+SYM_589,DIS_108,PLANT_015,Pembusukan basah pada daun tombak yang terkena serangan (H).,DOC002_C218_01,218,218,1586,1646,auto_ok
+SYM_590,DIS_108,PLANT_015,Lesi internal pada jaringan termuda (I-J).,DOC002_C218_01,218,218,1647,1689,auto_ok
+SYM_591,DIS_108,PLANT_015,"palmivora di daerah tropis sangat kompleks karena banyaknya jumlah inang dan banyak jaringan dari tumbuhan inang yang sama telah terkena serangannya seperti akar, batang, daun, bunga dan buah.",DOC002_C218_01,218,218,1727,1919,auto_ok
+SYM_592,DIS_108,PLANT_015,"Jamur ini mampu membentuk spora yang berbeda seperti zoospora, sporangiospora, klamidospora dan oospora.",DOC002_C218_01,218,218,1920,2024,auto_ok
+SYM_593,DIS_108,PLANT_015,"Spora ini menyebar dalam bentuk propagul melalui udara, tanah, air dan vektor yang memungkinkan (Drenth and Guest, 2013).",DOC002_C218_01,218,218,2025,2146,auto_ok
+SYM_594,DIS_109,PLANT_015,menyebabkan penyakit bercak daun dan merupakan penyakit utama selama proses pembibitan.,DOC002_C221_02,221,221,157,244,auto_ok
+SYM_595,DIS_109,PLANT_015,oryzae menunjukkan gejala bercak pada daun muda dan berkembang membentuk warna kuning di sekitar bercak yang ditimbulkan.,DOC002_C221_02,221,221,248,369,auto_ok
+SYM_596,DIS_109,PLANT_015,"Dalam keadaan kelembaban yang mendukung, lesi ini berkembang dengan sangat cepat dan melebar serta berubah warna menjadi hitam kecokelatan atau lesi berwarna hitam (Gambar 15.3).",DOC002_C221_02,221,221,370,548,auto_ok
+SYM_597,DIS_109,PLANT_015,"Kerusakan pada daun tersebut semakin berkembang seiring dengan pelebaran nekrosis berupa lesi sehingga mematikan daun muda yang diserang atau bahkan seluruh daun muda yang sedang tumbuh (Pornsuriya et al., 2013).",DOC002_C221_02,221,221,549,761,auto_ok
+SYM_598,DIS_109,PLANT_015,Penyakit bercak daun merupakan penyakit yang paling parah bagi kelapa sawit pada tahap pembibitan.,DOC002_C221_02,221,221,762,860,auto_ok
+SYM_599,DIS_109,PLANT_015,"affinis yang mampu menyebabkan bercak daun pada pembibitan tanaman kelapa sawit hingga menyebabkan nilai ekonomi (Asril, Mubarik and Wahyudi, 2014).",DOC002_C221_02,221,221,1233,1381,auto_ok
+SYM_600,DIS_109,PLANT_015,"Di Indonesia laporan terkait serangan jamur patogen ini masih digolongkan sebagai serangan sekunder, tetapi di Thailand, serangan jamur patogen ini sudah dikategorikan sebagai serangan yang sangat serius karena mencapai 61.01% kerusakan pada pembibitan tanaman kelapa sawit (Kittimorakul et al., 2013).",DOC002_C221_02,221,221,1382,1684,auto_ok
+SYM_601,DIS_109,PLANT_015,"eragrostidis (Aderungboye, 1977) juga dilaporkan sebagai jamur patogen penyebab bercak daun.",DOC002_C221_02,221,221,1734,1826,auto_ok

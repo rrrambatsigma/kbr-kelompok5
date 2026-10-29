@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "document_id": "DOC002",
   "description": "Skema knowledge table Tahap 2. Setiap nilai teks wajib verbatim dari chunk yang dirujuk.",
   "tables": {
@@ -21,6 +21,7 @@
     },
     "diseases": {
       "file": "auto/diseases.csv",
+      "curated_file": "curated/diseases.csv",
       "primary_key": "disease_id",
       "columns": {
         "disease_id": {"type": "string", "pattern": "^DIS_\\d{3}$"},
@@ -45,11 +46,14 @@
       "primary_key": "pathogen_id",
       "columns": {
         "pathogen_id": {"type": "string", "pattern": "^PAT_\\d{3}$"},
-        "scientific_name": {"type": "string"},
-        "taxon_group": {"type": "enum", "values": ["jamur", "bakteri", "virus", "nematoda", "fitoplasma", "oomycete", "unknown"]},
-        "verbatim_text": {"type": "string"},
+        "scientific_name": {"type": "string", "note": "Dipertahankan verbatim, termasuk salah eja yang tercetak di sumber."},
+        "verbatim_text": {"type": "string", "note": "Nama seperti tercetak pada sumber."},
+        "taxon_group": {"type": "enum", "values": ["jamur", "bakteri", "virus", "nematoda", "fitoplasma", "oomycete", "unknown"], "note": "Hanya diisi bila sumber menyebut kelompoknya; jika tidak, unknown."},
+        "taxon_evidence_chunk_id": {"type": "string", "nullable": true, "note": "Chunk bukti untuk taxon_group hasil kurasi."},
+        "taxon_evidence_quote": {"type": "string", "nullable": true, "note": "Kutipan verbatim yang menyebut kelompok takson."},
         "page": {"type": "integer"},
         "chunk_id": {"type": "string"},
+        "note": {"type": "string", "nullable": true, "note": "Catatan salah eja, sinonim, atau nama tingkat genus."},
         "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
       }
     },
@@ -70,6 +74,7 @@
       "columns": {
         "symptom_id": {"type": "string", "pattern": "^SYM_\\d{3}$"},
         "disease_id": {"type": "string", "foreign_key": "diseases.disease_id"},
+        "plant_id": {"type": "string", "foreign_key": "plants.plant_id"},
         "verbatim_text": {"type": "string", "note": "Satu kalimat utuh dari sumber, tanpa parafrase."},
         "chunk_id": {"type": "string"},
         "page_start": {"type": "integer"},
@@ -84,7 +89,8 @@
       "primary_key": "control_id",
       "columns": {
         "control_id": {"type": "string", "pattern": "^CTL_\\d{3}$"},
-        "disease_id": {"type": "string", "foreign_key": "diseases.disease_id"},
+        "disease_id": {"type": "string", "nullable": true, "foreign_key": "diseases.disease_id", "note": "Kosong untuk pengendalian tingkat bab (scope=chapter)."},
+        "plant_id": {"type": "string", "foreign_key": "plants.plant_id", "note": "Selalu terisi, termasuk untuk pengendalian tingkat bab."},
         "verbatim_text": {"type": "string"},
         "chunk_id": {"type": "string"},
         "page_start": {"type": "integer"},
@@ -98,8 +104,7 @@
     },
     "ubi_kayu_tabel_5": {
       "file": "curated/ubi_kayu_tabel_5.csv",
-      "primary_key": ["table_id", "row_no"],
-      "columns": {
+      "primary_key": ["table_id", "row_no"],      "columns": {
         "table_id": {"type": "enum", "values": ["T5.1_DAUN", "T5.2_BATANG", "T5.3_AKAR"]},
         "table_title": {"type": "string", "note": "Judul tabel seperti tercetak; jangan dinormalkan."},
         "row_no": {"type": "string"},

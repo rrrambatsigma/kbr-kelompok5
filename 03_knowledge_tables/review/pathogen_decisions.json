@@ -1,0 +1,334 @@
+{
+  "curation_round": "pathogen-1",
+  "description": "Keputusan kurasi manual untuk auto/pathogens.csv. Setiap penolakan dan setiap perubahan takson wajib menyertakan kutipan verbatim dari chunk sumber. Nama patogen yang salah eja tetap dipertahankan apa adanya; koreksi hanya dicatat di kolom note.",
+  "rejects": [
+    {
+      "pathogen_id": "PAT_024",
+      "scientific_name": "Lebih lanjut",
+      "evidence_ref": "DOC002_C068_03",
+      "evidence_quote": "Lebih lanjut Semangun, 2003 menyatakan bahwa Massa yang berwarna coklat tadi dapat berubah menjadi coklat tua gelap",
+      "reason": "Kata sambung antarkalimat, bukan nama patogen."
+    },
+    {
+      "pathogen_id": "PAT_026",
+      "scientific_name": "Perubahan ketahanan",
+      "evidence_ref": "DOC002_C076_03",
+      "evidence_quote": "Perubahan ketahanan tersebut disebabkan faktor perbedaan strain ataupun karena perbedaan lingkungan sehingga sifat ketahanan tidak terekspresi.",
+      "reason": "Frasa sifat tanaman, bukan nama patogen."
+    },
+    {
+      "pathogen_id": "PAT_079",
+      "scientific_name": "Similis menimbulkan",
+      "evidence_ref": "DOC002_C184_01",
+      "evidence_quote": "Similis menimbulkan gejala berupa bintik-bintik coklat pada akar akibat tusukan menggunakan stiletnya.",
+      "reason": "Potongan nama Radopholus similis pada awal kalimat; bukan nama patogen baru."
+    },
+    {
+      "pathogen_id": "PAT_082",
+      "scientific_name": "Kerusakan parah",
+      "evidence_ref": "DOC002_C184_01",
+      "evidence_quote": "Kerusakan parah menyebabkan daun-daun berguguran, bahkan tinggal tersisa batang dan ranting berwarna coklat.",
+      "reason": "Frasa gejala, bukan nama patogen."
+    },
+    {
+      "pathogen_id": "PAT_083",
+      "scientific_name": "Bekas tusukan",
+      "evidence_ref": "DOC002_C184_03",
+      "evidence_quote": "Bekas tusukan pada akar sering menjadi jalan infeksi Fusarium spp.",
+      "reason": "Frasa gejala, bukan nama patogen."
+    },
+    {
+      "pathogen_id": "PAT_085",
+      "scientific_name": "Misalnya pemberian",
+      "evidence_ref": "DOC002_C187_05",
+      "evidence_quote": "Misalnya pemberian pupuk N yang berlebihan, dapat menyebabkan jaringan tanaman mudah terinfeksi patogen.",
+      "reason": "Frasa pengelolaan/pemupukan, bukan nama patogen."
+    },
+    {
+      "pathogen_id": "PAT_087",
+      "scientific_name": "Memangkas bagian",
+      "evidence_ref": "DOC002_C193_03",
+      "evidence_quote": "Memangkas bagian tanaman terinfeksi.",
+      "reason": "Tindakan pengendalian, bukan nama patogen."
+    },
+    {
+      "pathogen_id": "PAT_049",
+      "scientific_name": "Fusarium",
+      "evidence_ref": "DOC002_C127_01",
+      "evidence_quote": "Gejala penyakit busuk hitam sering kali mirip dengan penyakit menguning yang disebabkan oleh Fusarium.",
+      "reason": "Disebut sebagai pembanding gejala penyakit lain, bukan patogen penyakit busuk hitam."
+    }
+  ],
+  "taxon_fixes": [
+    {
+      "pathogen_id": "PAT_064",
+      "scientific_name": "Fussarium oxysporum",
+      "taxon_group": "jamur",
+      "evidence_ref": "DOC002_C143_05",
+      "evidence_quote": "Tanaman cabai yang terserang akan mengalami busuk pada pangkal batang, kemudian jamur tersebut akan menyebar ke seluruh akar tanaman.",
+      "reason": "Kalimat lanjutan menyebut patogen yang sama sebagai jamur; takson sebelumnya salah terbaca bakteri."
+    },
+    {
+      "pathogen_id": "PAT_065",
+      "scientific_name": "Alternaria solani",
+      "taxon_group": "jamur",
+      "evidence_ref": "DOC002_C151_01",
+      "evidence_quote": "Penyakit ini disebabkan oleh jamur A. solani.",
+      "reason": "Sumber menyebut jamur secara eksplisit."
+    },
+    {
+      "pathogen_id": "PAT_066",
+      "scientific_name": "Fulvia fulva",
+      "taxon_group": "jamur",
+      "evidence_ref": "DOC002_C152_03",
+      "evidence_quote": "Spora jamur ini dapat dipencarkan oleh angin, air maupun alat-alat pertanian",
+      "reason": "Sumber menyebut jamur secara eksplisit."
+    },
+    {
+      "pathogen_id": "PAT_080",
+      "scientific_name": "Phytium spp",
+      "taxon_group": "jamur",
+      "evidence_ref": "DOC002_C184_01",
+      "evidence_quote": "dan jamur lain seperti Phytium spp., serta Rigidoporus lignosus",
+      "reason": "Sumber menyebut jamur secara eksplisit; takson sebelumnya salah terbaca nematoda."
+    },
+    {
+      "pathogen_id": "PAT_081",
+      "scientific_name": "Rigidoporus lignosus",
+      "taxon_group": "jamur",
+      "evidence_ref": "DOC002_C206_01",
+      "evidence_quote": "Jamur akar putih disebabkan oleh infeksi cendawan Rigidoporus lignosus",
+      "reason": "Sumber menyebut cendawan secara eksplisit; takson sebelumnya salah terbaca nematoda."
+    },
+    {
+      "pathogen_id": "PAT_096",
+      "scientific_name": "Ganoderma boninense",
+      "taxon_group": "jamur",
+      "evidence_ref": "DOC002_C213_01",
+      "evidence_quote": "yang disebabkan oleh Ganoderma adalah salah satu jenis jamur patogen yang paling merusak di Asia Tenggara",
+      "reason": "Sumber menyebut jamur patogen secara eksplisit."
+    },
+    {
+      "pathogen_id": "PAT_097",
+      "scientific_name": "Phytophthora palmivora",
+      "taxon_group": "oomycete",
+      "evidence_ref": "DOC002_C217_02",
+      "evidence_quote": "Patogen genus Oomycete ini disebut sebagai jamur patogen yang memiliki dampak yang besar.",
+      "reason": "Sumber menyebut genus Oomycete secara eksplisit."
+    }
+  ],
+  "notes": [
+    {
+      "pathogen_id": "PAT_010",
+      "scientific_name": "Phakopspora pachyrhizi",
+      "note": "Salah eja di sumber (Phakopsora pachyrhizi); dipertahankan verbatim."
+    },
+    {
+      "pathogen_id": "PAT_045",
+      "scientific_name": "Globodera rostochiensisda",
+      "note": "Akhiran 'da' menempel di sumber (Globodera rostochiensis); dipertahankan verbatim."
+    },
+    {
+      "pathogen_id": "PAT_058",
+      "scientific_name": "Albugi candida",
+      "note": "Salah eja di sumber (Albugo candida); dipertahankan verbatim."
+    },
+    {
+      "pathogen_id": "PAT_059",
+      "scientific_name": "Cescospora capsici",
+      "note": "Salah eja di sumber (Cercospora capsici); dipertahankan verbatim."
+    },
+    {
+      "pathogen_id": "PAT_064",
+      "scientific_name": "Fussarium oxysporum",
+      "note": "Salah eja di sumber (Fusarium oxysporum); dipertahankan verbatim."
+    },
+    {
+      "pathogen_id": "PAT_100",
+      "scientific_name": "Cercospora. viscosae",
+      "note": "Tanda titik setelah genus tercetak di sumber; dipertahankan verbatim."
+    },
+    {
+      "pathogen_id": "PAT_102",
+      "scientific_name": "Colletotricum spp",
+      "note": "Salah eja di sumber (Colletotrichum spp.); dipertahankan verbatim."
+    },
+    {
+      "pathogen_id": "PAT_103",
+      "scientific_name": "Xanthomonas Campestrispv. Manihotis",
+      "note": "Spasi hilang di sumber; varian dari Xanthomonas campestris pv. manihotis pada tabel 5.2."
+    },
+    {
+      "pathogen_id": "PAT_002",
+      "scientific_name": "Pyricularia grisea",
+      "note": "Nama anamorf; sumber juga mencantumkan Magnaporthe grisea dan Pyricularia oryzae untuk penyakit yang sama."
+    },
+    {
+      "pathogen_id": "PAT_003",
+      "scientific_name": "Magnaporthe grisea",
+      "note": "Nama teleomorf; sumber juga mencantumkan Pyricularia grisea dan Pyricularia oryzae."
+    },
+    {
+      "pathogen_id": "PAT_004",
+      "scientific_name": "Pyricularia oryzae",
+      "note": "Varian nama untuk patogen blas; lihat Pyricularia grisea dan Magnaporthe grisea."
+    },
+    {
+      "pathogen_id": "PAT_028",
+      "scientific_name": "Spaceloma batatas",
+      "note": "Sinonim dari Elsinoe batatas menurut sumber."
+    },
+    {
+      "pathogen_id": "PAT_029",
+      "scientific_name": "Elsinoe batatas",
+      "note": "Sinonim dari Spaceloma batatas menurut sumber."
+    },
+    {
+      "pathogen_id": "PAT_072",
+      "scientific_name": "Corticium salmonicolor",
+      "note": "Sinonim; sumber juga menyebut Erythricium salmonicolor dan Upasia salmonicolor."
+    },
+    {
+      "pathogen_id": "PAT_073",
+      "scientific_name": "Erythricium salmonicolor",
+      "note": "Sinonim; sumber juga menyebut Corticium salmonicolor dan Upasia salmonicolor."
+    },
+    {
+      "pathogen_id": "PAT_091",
+      "scientific_name": "Upasia salmonicolor",
+      "note": "Sinonim; sumber juga menyebut Corticium salmonicolor dan Erythricium salmonicolor."
+    },
+    {
+      "pathogen_id": "PAT_098",
+      "scientific_name": "Cercospora henningsii",
+      "note": "Sumber mencantumkan Cercosporidium henningsii sebagai sinonim."
+    },
+    {
+      "pathogen_id": "PAT_099",
+      "scientific_name": "Cercosporidium henningsii",
+      "note": "Sinonim dari Cercospora henningsii menurut sumber."
+    },
+    {
+      "pathogen_id": "PAT_036",
+      "scientific_name": "Peronosclerospora sp",
+      "note": "Nama tingkat genus; sumber juga menyebut Peronosclerospora maydis pada kalimat berikutnya."
+    },
+    {
+      "pathogen_id": "PAT_037",
+      "scientific_name": "Peronosclerospora maydis",
+      "note": "Nama tingkat spesies; sumber juga menyebut Peronosclerospora sp."
+    },
+    {
+      "pathogen_id": "PAT_009",
+      "scientific_name": "Fusarium spp",
+      "note": "Nama tingkat genus; sumber tidak menyebut spesiesnya."
+    },
+    {
+      "pathogen_id": "PAT_095",
+      "scientific_name": "Meloidogyne spp",
+      "note": "Nama tingkat genus; sumber tidak menyebut spesiesnya."
+    },
+    {
+      "pathogen_id": "PAT_104",
+      "scientific_name": "Fitoplasma",
+      "note": "Nama kelompok pada sel tabel, bukan binomial; dipertahankan verbatim."
+    },
+    {
+      "pathogen_id": "PAT_105",
+      "scientific_name": "Begomovirus",
+      "note": "Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel."
+    },
+    {
+      "pathogen_id": "PAT_106",
+      "scientific_name": "Ipomovirus",
+      "note": "Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel."
+    }
+  ],
+  "verifications": [
+    {
+      "pathogen_id": "PAT_027",
+      "scientific_name": "Fusarium oxysporum",
+      "reason": "Nama pada heading dan prosa 4.2; sumber menyebut Fusarium sebagai jamur patogen. Takson jamur sudah sesuai."
+    },
+    {
+      "pathogen_id": "PAT_065",
+      "scientific_name": "Alternaria solani",
+      "reason": "Nama pada heading subbab 10.2.2; prosa menyebut jamur A. solani. Takson jamur sudah sesuai."
+    },
+    {
+      "pathogen_id": "PAT_066",
+      "scientific_name": "Fulvia fulva",
+      "reason": "Nama pada heading subbab 10.2.3; prosa menyebut spora jamur. Takson jamur sudah sesuai."
+    },
+    {
+      "pathogen_id": "PAT_067",
+      "scientific_name": "Septoria lycopersici",
+      "reason": "Nama pada prosa 10.2.6; teks tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_074",
+      "scientific_name": "Botryosphaeria dothidea",
+      "reason": "Nama pada prosa 12.5; teks tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_088",
+      "scientific_name": "Colletotrichum gloeosporioides",
+      "reason": "Nama pada subbab Penyebab 13.6; teks tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_092",
+      "scientific_name": "Fusarium solani",
+      "reason": "Nama pada prosa 14.5; teks tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_096",
+      "scientific_name": "Ganoderma boninense",
+      "reason": "Nama pada heading dan prosa 15.2; prosa menyebut jamur patogen. Takson jamur sudah sesuai."
+    },
+    {
+      "pathogen_id": "PAT_097",
+      "scientific_name": "Phytophthora palmivora",
+      "reason": "Nama pada heading dan prosa 15.3; sumber menyebut genus Oomycete. Takson oomycete sudah sesuai."
+    },
+    {
+      "pathogen_id": "PAT_101",
+      "scientific_name": "Phaeoramularia manihotis",
+      "reason": "Nama pada sel tabel 5.1 baris 4 (daun); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_107",
+      "scientific_name": "Xanthomonas campestris pv. Manihotis",
+      "reason": "Nama pada sel tabel 5.2 baris 2 (batang); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_108",
+      "scientific_name": "Elsinoe brasiliensis",
+      "reason": "Nama pada sel tabel 5.2 baris 3 (batang); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_109",
+      "scientific_name": "Diplodia spp",
+      "reason": "Nama pada sel tabel 5.3 (akar/umbi); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_110",
+      "scientific_name": "Botryodiplodia spp",
+      "reason": "Nama pada sel tabel 5.3 (akar/umbi); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_111",
+      "scientific_name": "Phytophthora spp",
+      "reason": "Nama pada sel tabel 5.3 (akar/umbi); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_112",
+      "scientific_name": "Polyporus sulphureus",
+      "reason": "Nama pada sel tabel 5.3 (akar/umbi); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+    },
+    {
+      "pathogen_id": "PAT_113",
+      "scientific_name": "Collectothricum gloeosporioides",
+      "reason": "Nama pada sel tabel 5.2 baris 1 (batang); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+    }
+  ]
+}

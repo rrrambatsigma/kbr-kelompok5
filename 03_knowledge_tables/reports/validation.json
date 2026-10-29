@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.1.0",
+  "document_id": "DOC002",
+  "generated_by": "build_reports.py",
+  "gate_passed": true,
+  "gates": {
+    "G1_plants_complete": {
+      "passed": true,
+      "detail": "plants=15 chapters=15 plants_without_disease=[]"
+    },
+    "G2_disease_uniqueness": {
+      "passed": true,
+      "detail": "diseases=110 duplicates=[] unnamed_duplicates=[]"
+    },
+    "G3_pathogen_integrity": {
+      "passed": true,
+      "detail": "pathogens=105 links=132 orphans=[]"
+    },
+    "G4_pathogen_verbatim": {
+      "passed": true,
+      "detail": "violations=[]"
+    },
+    "G5_sentence_offsets": {
+      "passed": true,
+      "detail": "symptoms=601 controls=528 mismatches=[]"
+    },
+    "G6_sentence_foreign_keys": {
+      "passed": true,
+      "detail": "problems=[]"
+    },
+    "G7_taxon_evidence": {
+      "passed": true,
+      "detail": "unknown=19 problems=[]"
+    }
+  },
+  "counts": {
+    "plants": 15,
+    "diseases": 110,
+    "pathogens": 105,
+    "disease_pathogen_links": 132,
+    "symptom_rows": 601,
+    "control_rows": 528,
+    "control_rows_disease_scope": 448,
+    "control_rows_chapter_scope": 80,
+    "ubi_kayu_table_rows": 19,
+    "diseases_with_pathogen": 103,
+    "diseases_with_symptom": 110,
+    "diseases_with_control": 81
+  }
+}

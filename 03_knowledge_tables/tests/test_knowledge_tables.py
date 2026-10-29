@@ -279,5 +279,253 @@ class KnowledgeTableTest(unittest.TestCase):
             self.assertEqual(len(values), len(set(values)), msg=f"{table_name} duplikat")
 
 
+class CuratedTableTest(unittest.TestCase):
+    """Lapisan curated harus bersih dari baris yang belum diputuskan."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.diseases = read_csv(TABLE_DIR / "curated" / "diseases.csv")
+        cls.table_rows = read_csv(TABLE_DIR / "curated" / "ubi_kayu_tabel_5.csv")
+        cls.log = read_csv(TABLE_DIR / "review" / "curation_log.csv")
+        cls.chunks = read_jsonl(CHUNKS_PATH)
+        cls.chunk_text = {
+            chunk["chunk_id"]: norm(chunk["plain_text"]) for chunk in cls.chunks
+        }
+        cls.block_text = {}
+        for block in read_jsonl(
+            PROJECT_ROOT / "02_extraction" / "extracted_text" / "DOC002.blocks.jsonl"
+        ):
+            cells = []
+            for row in (block.get("table") or {}).get("cells") or []:
+                if isinstance(row, list):
+                    cells.extend(norm(cell) for cell in row if cell)
+            cls.block_text[block["block_id"]] = " | ".join(cells)
+
+    def test_all_rows_decided(self) -> None:
+        self.assertEqual(len(self.diseases), 110)
+        flagged = [
+            row["disease_id"]
+            for row in self.diseases
+            if row["review_status"] not in {"verified", "auto_ok"}
+        ]
+        self.assertEqual(flagged, [])
+
+    def test_no_row_left_without_name(self) -> None:
+        empty = [
+            row["disease_id"]
+            for row in self.diseases
+            if not row["disease_name_verbatim"]
+        ]
+        self.assertEqual(empty, [])
+
+    def test_curated_names_verbatim(self) -> None:
+        violations = []
+        for row in self.diseases:
+            name = row["disease_name_verbatim"]
+            if row["heading_level"] == "table":
+                source = " | ".join(
+                    self.block_text.get(block_id, "")
+                    for block_id in row["source_block_ids"].split(";")
+                    if block_id
+                )
+            else:
+                source = " | ".join(
+                    self.chunk_text.get(chunk_id, "")
+                    for chunk_id in row["evidence_chunk_ids"].split(";")
+                    if chunk_id
+                )
+            if norm(name) not in source:
+                violations.append(row["disease_id"])
+        self.assertEqual(violations, [])
+
+    def test_every_verified_row_has_log_entry(self) -> None:
+        logged = {
+            entry["record_id"]
+            for entry in self.log
+            if entry["record_type"] == "disease"
+        }
+        for row in self.diseases:
+            if row["review_status"] == "verified":
+                self.assertIn(
+                    row["disease_id"],
+                    logged,
+                    msg=f"{row['disease_id']} diverifikasi tanpa catatan log",
+                )
+
+    def test_table_gaps_kept(self) -> None:
+        self.assertEqual(len(self.table_rows), 19)
+        missing = sorted(
+            (row["table_id"], row["row_no"])
+            for row in self.table_rows
+            if row["status"] == "missing_row"
+        )
+        self.assertEqual(missing, [("T5.1_DAUN", "3"), ("T5.1_DAUN", "7")])
+
+
+class ExtendedTableTest(unittest.TestCase):
+    """Tabel patogen, gejala, dan pengendalian (Blok B/C/D)."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+        cls.plants = read_csv(AUTO_DIR / "plants.csv")
+        cls.diseases = read_csv(TABLE_DIR / "curated" / "diseases.csv")
+        cls.pathogens = read_csv(TABLE_DIR / "curated" / "pathogens.csv")
+        cls.links = read_csv(TABLE_DIR / "curated" / "disease_pathogen.csv")
+        cls.symptoms = read_csv(TABLE_DIR / "curated" / "symptoms.csv")
+        cls.controls = read_csv(TABLE_DIR / "curated" / "controls.csv")
+        cls.table_rows = read_csv(TABLE_DIR / "curated" / "ubi_kayu_tabel_5.csv")
+        cls.chunks = {
+            row["chunk_id"]: norm(row["plain_text"])
+            for row in read_jsonl(CHUNKS_PATH)
+        }
+        cls.block_text = {}
+        for block in read_jsonl(
+            PROJECT_ROOT / "02_extraction" / "extracted_text" / "DOC002.blocks.jsonl"
+        ):
+            cells = []
+            for row in (block.get("table") or {}).get("cells") or []:
+                if isinstance(row, list):
+                    cells.extend(norm(cell) for cell in row if cell)
+            cls.block_text[block["block_id"]] = " | ".join(cells)
+        cls.disease_by_id = {row["disease_id"]: row for row in cls.diseases}
+        cls.pathogen_by_id = {row["pathogen_id"]: row for row in cls.pathogens}
+
+    def test_table_sizes(self) -> None:
+        self.assertEqual(len(self.diseases), 110)
+        self.assertEqual(len(self.pathogens), 105)
+        self.assertEqual(len(self.links), 132)
+        self.assertEqual(len(self.symptoms), 601)
+        self.assertEqual(len(self.controls), 528)
+
+    def test_pathogen_review_status_final(self) -> None:
+        pending = [
+            row["pathogen_id"]
+            for row in self.pathogens
+            if row["review_status"] not in {"auto_ok", "verified"}
+        ]
+        self.assertEqual(pending, [])
+
+    def test_pathogen_names_verbatim(self) -> None:
+        violations = []
+        for pathogen in self.pathogens:
+            sources = []
+            chunk_id = pathogen["chunk_id"]
+            if chunk_id in self.chunks:
+                sources.append(self.chunks[chunk_id])
+            for link in self.links:
+                if link["pathogen_id"] != pathogen["pathogen_id"]:
+                    continue
+                disease = self.disease_by_id[link["disease_id"]]
+                heading = norm(disease["subsection"] or disease["section"])
+                if heading:
+                    sources.append(heading)
+                for block_id in disease["source_block_ids"].split(";"):
+                    if block_id in self.block_text:
+                        sources.append(self.block_text[block_id])
+            if not any(norm(pathogen["verbatim_text"]) in source for source in sources):
+                violations.append(pathogen["pathogen_id"])
+        self.assertEqual(violations, [])
+
+    def test_pathogen_foreign_keys_and_orphans(self) -> None:
+        disease_ids = set(self.disease_by_id)
+        pathogen_ids = set(self.pathogen_by_id)
+        for link in self.links:
+            self.assertIn(link["disease_id"], disease_ids)
+            self.assertIn(link["pathogen_id"], pathogen_ids)
+        self.assertEqual(pathogen_ids, {link["pathogen_id"] for link in self.links})
+
+    def test_taxon_evidence_verbatim(self) -> None:
+        for pathogen in self.pathogens:
+            self.assertIn(
+                pathogen["taxon_group"], self.schema["tables"]["pathogens"]["columns"]["taxon_group"]["values"]
+            )
+            quote = pathogen["taxon_evidence_quote"]
+            if not quote:
+                continue
+            ref = pathogen["taxon_evidence_chunk_id"]
+            self.assertIn(ref, self.chunks)
+            self.assertIn(norm(quote), self.chunks[ref])
+
+    def test_rejected_pathogens_absent(self) -> None:
+        names = {row["scientific_name"] for row in self.pathogens}
+        for rejected in (
+            "Lebih lanjut",
+            "Perubahan ketahanan",
+            "Similis menimbulkan",
+            "Kerusakan parah",
+            "Bekas tusukan",
+            "Misalnya pemberian",
+            "Memangkas bagian",
+            "Fusarium",
+        ):
+            self.assertNotIn(rejected, names)
+
+    def test_sentence_offsets_exact(self) -> None:
+        for name, rows in (("symptoms", self.symptoms), ("controls", self.controls)):
+            for row in rows:
+                text = self.chunks[row["chunk_id"]]
+                start = int(row["char_start"])
+                end = int(row["char_end"])
+                self.assertEqual(
+                    text[start:end],
+                    row["verbatim_text"],
+                    msg=f"{name} {row['chunk_id']}@{start} tidak cocok",
+                )
+
+    def test_sentence_foreign_keys(self) -> None:
+        disease_ids = set(self.disease_by_id)
+        plant_ids = {row["plant_id"] for row in self.plants}
+        for row in self.symptoms:
+            self.assertIn(row["disease_id"], disease_ids)
+            self.assertIn(row["plant_id"], plant_ids)
+        for row in self.controls:
+            self.assertIn(row["plant_id"], plant_ids)
+            if row["scope"] == "disease":
+                self.assertIn(row["disease_id"], disease_ids)
+            else:
+                self.assertEqual(row["scope"], "chapter")
+                self.assertEqual(row["disease_id"], "")
+
+    def test_every_disease_has_symptom(self) -> None:
+        symptom_diseases = {row["disease_id"] for row in self.symptoms}
+        table_keys = {
+            (row["table_id"], row["disease_name"])
+            for row in self.table_rows
+            if row["symptom_text"].strip() and row["status"] != "missing_row"
+        }
+        missing = [
+            row["disease_id"]
+            for row in self.diseases
+            if row["disease_id"] not in symptom_diseases
+            and (row["section"], row["disease_name_verbatim"]) not in table_keys
+        ]
+        self.assertEqual(missing, [])
+
+    def test_validation_report_passes(self) -> None:
+        validation = json.loads(
+            (TABLE_DIR / "reports" / "validation.json").read_text(encoding="utf-8")
+        )
+        self.assertTrue(validation["gate_passed"])
+        self.assertEqual(len(validation["gates"]), 7)
+        for name, gate in validation["gates"].items():
+            self.assertTrue(gate["passed"], msg=name)
+
+    def test_schema_headers_match_extended_tables(self) -> None:
+        pairs = {
+            "pathogens": self.pathogens,
+            "disease_pathogen": self.links,
+            "symptoms": self.symptoms,
+            "controls": self.controls,
+        }
+        for table_name, rows in pairs.items():
+            expected = list(self.schema["tables"][table_name]["columns"])
+            self.assertEqual(
+                list(rows[0].keys()),
+                expected,
+                msg=f"kolom {table_name} tidak cocok dengan skema",
+            )
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -32,25 +32,103 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | Path | Isi |
 |---|---|
 | `config/chapter_map.json` | 15 bab → tanaman, level heading penyakit, nama ilmiah terverifikasi, grup tabel Bab 5 |
-| `build_knowledge_tables.py` | builder deterministik + gate verbatim |
+| `build_knowledge_tables.py` | builder deterministik + gate verbatim (tanaman, penyakit, tabel 5) |
+| `curate.py` | menerapkan keputusan manual penyakit + verifikasi kutipan |
+| `build_extended_tables.py` | builder patogen, relasi penyakit-patogen, gejala, pengendalian |
+| `curate_pathogens.py` | menerapkan keputusan manual patogen + verifikasi kutipan |
+| `curate_sentences.py` | memverifikasi offset lalu menyalin gejala/pengendalian ke `curated/` |
+| `build_reports.py` | laporan cakupan + gate validasi G1–G7 |
 | `schema/knowledge_tables.schema.json` | skema 7 tabel + invarian |
 | `auto/plants.csv` | 15 tanaman |
 | `auto/diseases.csv` | inventaris penyakit dari heading/tabel |
+| `auto/pathogens.csv` | kandidat patogen (belum dikurasi) |
+| `auto/disease_pathogen.csv` | relasi penyakit-patogen sebelum kurasi |
+| `auto/symptoms.csv` | kalimat gejala + offset |
+| `auto/controls.csv` | kalimat pengendalian + offset |
 | `auto/ubi_kayu_table_rows.csv` | baris tabel 5.1–5.3 termasuk penanda celah |
-| `reports/build_report.json` / `.md` | ringkasan build |
-| `tests/test_knowledge_tables.py` | gate G1, G2, G3, G5 |
+| `review/curation_decisions.json` | keputusan manusia penyakit: kutipan + alasan |
+| `review/pathogen_decisions.json` | keputusan manusia patogen: tolak, takson, catatan |
+| `review/curation_log.csv` / `pathogen_log.csv` | log per field yang berubah |
+| `review/ambiguous_sentences.csv` | kalimat yang memuat isyarat gejala dan kendali sekaligus |
+| `review/unresolved.csv` | gabungan butir yang belum tuntas |
+| `curated/diseases.csv` | otoritas akhir inventaris penyakit |
+| `curated/pathogens.csv` | otoritas akhir patogen |
+| `curated/disease_pathogen.csv` | otoritas akhir relasi penyakit-patogen |
+| `curated/symptoms.csv` | otoritas akhir gejala |
+| `curated/controls.csv` | otoritas akhir pengendalian |
+| `curated/ubi_kayu_tabel_5.csv` | otoritas akhir tabel ubi kayu |
+| `reports/build_report.json` / `.md` | ringkasan build penyakit |
+| `reports/coverage.md` / `.json` | cakupan per tanaman |
+| `reports/validation.json` | gate G1–G7 |
+| `tests/test_knowledge_tables.py` | 33 gate test |
 
 ## Menjalankan
 
 ```powershell
-# dari root repo
+# dari root repo — urutan lengkap
 python 03_knowledge_tables/build_knowledge_tables.py
+python 03_knowledge_tables/curate.py
+python 03_knowledge_tables/build_extended_tables.py
+python 03_knowledge_tables/curate_pathogens.py
+python 03_knowledge_tables/curate_sentences.py
+python 03_knowledge_tables/build_reports.py
 
 # dari folder ini
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
 Builder keluar dengan kode `2` bila ada pelanggaran verbatim, `0` bila bersih.
+`curate.py`/`curate_pathogens.py` keluar dengan kode `2` bila ada kutipan yang
+tidak ditemukan atau nama baru yang tidak verbatim, dan kode `1` bila masih ada
+baris yang menggantung. `build_reports.py` keluar `2` bila salah satu gate G1–G7
+gagal.
+
+## Blok B/C — patogen, gejala, pengendalian
+
+- **Patogen** hanya diambil dari bagian penyebab/patogen atau kalimat dengan
+  penanda sebab-akibat tegas (`disebabkan oleh`, `patogen penyebab`,
+  `menginfeksi`, `menyebabkan penyakit`, `patogen yang menyebabkan`).
+  Kalimat pengendalian, agens hayati, dan vektor serangga ditolak; kandidat yang
+  ditolak tetap tercatat di `review/pathogen_candidates.csv`.
+- **Takson** hanya diisi bila sumber menyebutnya (`jamur`, `cendawan`, `bakteri`,
+  `virus`, `nematoda`, `fitoplasma`, `Oomycete`). Tanpa sebutan → `unknown`.
+  Perubahan takson manual wajib punya kutipan di `taxon_evidence_quote`.
+- **Nama patogen** disimpan verbatim, termasuk salah eja yang tercetak
+  (`Phakopspora pachyrhizi`, `Fussarium oxysporum`, `Collectothricum
+  gloeosporioides`); koreksi hanya di kolom `note`.
+- **Gejala dan pengendalian** disimpan sebagai satu kalimat utuh dengan offset
+  `char_start`/`char_end` pada `plain_text` chunk yang spasinya dinormalisasi.
+  Tidak ada pemotongan frasa atau parafrase.
+- **Pengendalian tingkat bab** (mis. Bab 5.3) disimpan dengan `scope=chapter`,
+  `plant_id` terisi, dan `disease_id` kosong.
+- Kalimat yang memuat isyarat gejala sekaligus pengendalian tidak dipaksakan ke
+  salah satu tabel; barisnya masuk `review/ambiguous_sentences.csv`.
+
+## Gate validasi (G1–G7)
+
+| Gate | Isi |
+|---|---|
+| G1 | 15 tanaman, 15 bab, setiap tanaman punya penyakit |
+| G2 | tidak ada duplikat penyakit per tanaman/tabel; nama tidak kosong |
+| G3 | id patogen unik, semua relasi valid, tidak ada patogen yatim |
+| G4 | nama patogen verbatim di chunk/blok/heading bukti |
+| G5 | offset gejala dan pengendalian cocok persis |
+| G6 | foreign key penyakit/tanaman valid; aturan `scope` pengendalian |
+| G7 | takson dalam enum; kutipan bukti takson verbatim |
+
+## Cara mengoreksi hasil kurasi
+
+1. Tambah atau ubah entri di `review/curation_decisions.json` untuk penyakit
+   atau `review/pathogen_decisions.json` untuk patogen. Wajib ada
+   `evidence_ref` (id chunk `DOC002_C…` atau blok `DOC002_P…`) dan
+   `evidence_quote` yang tercetak persis di sumber (khusus `verifications`,
+   bukti diambil dari `verbatim_text` dan chunk/tabel patogen itu sendiri).
+2. Jalankan `python 03_knowledge_tables/curate.py` lalu
+   `python 03_knowledge_tables/curate_pathogens.py`.
+3. Periksa `review/curation_log.csv` dan `review/pathogen_log.csv`; satu baris =
+   satu field yang berubah.
+4. Jalankan test. Jangan mengedit `curated/*.csv` langsung — perubahan akan
+   hilang pada eksekusi berikutnya.
 
 ## Cara membaca kolom penting
 
@@ -65,6 +143,18 @@ Builder keluar dengan kode `2` bila ada pelanggaran verbatim, `0` bila bersih.
   atau dari tabel), `needs_curation` (heading berisi patogen, nama penyakit harus
   dibaca dari prosa).
 
+**`pathogens.csv`**
+
+- `scientific_name` / `verbatim_text` — nama seperti tercetak; salah eja sumber
+  tidak dibetulkan.
+- `taxon_group` — hanya diisi bila sumber menyebut kelompoknya; jika tidak,
+  `unknown` dan masuk `review/unresolved.csv`.
+- `taxon_evidence_chunk_id` / `taxon_evidence_quote` — bukti kutipan untuk
+  takson hasil koreksi manual.
+- `note` — catatan salah eja, sinonim, atau nama tingkat genus.
+- `review_status` — `auto_ok` (pola deterministik yakin), `verified` (dibaca
+  manusia), `needs_review` (belum diperiksa; saat ini tidak ada).
+
 **`ubi_kayu_table_rows.csv`**
 
 - `status=complete` — baris bernomor lengkap.
@@ -73,13 +163,35 @@ Builder keluar dengan kode `2` bila ada pelanggaran verbatim, `0` bila bersih.
 
 ## Kondisi saat ini
 
-- 15 tanaman, 109 penyakit, 19 baris tabel ubi kayu.
-- Status review: 85 `auto_ok`, 7 `needs_curation`, 17 `needs_review`.
-- Celah tabel: nomor 3 dan 7 pada T5.1 (daun).
-- Pelanggaran verbatim: 0.
+- 15 tanaman, 110 penyakit, 105 patogen, 132 relasi penyakit-patogen.
+- 601 baris gejala, 528 baris pengendalian (448 tingkat penyakit, 80 tingkat bab).
+- Status penyakit setelah kurasi: 84 `auto_ok`, 26 `verified`; tidak ada baris
+  yang masih menggantung.
+- Status patogen: 63 `auto_ok`, 42 `verified`, tidak ada `needs_review`.
+- 8 kandidat patogen ditolak, 7 takson dikoreksi, 25 catatan salah eja/sinonim,
+  17 nama diverifikasi manual; 19 patogen tetap `unknown` karena sumber tidak
+  menyebut kelompoknya.
+- Celah tabel: nomor 3 dan 7 pada T5.1 (daun), tidak diisi.
+- Pelanggaran verbatim: 0; gate G1–G7 lulus.
+
+Keputusan kurasi yang perlu diketahui pembaca:
+
+- Bab 4 dan 15: heading berisi nama patogen, nama penyakit diambil dari prosa
+  (`layu fusarium`, `Penyakit kudis`, `Penyakit bercak kuning`,
+  `Penyakit busuk hitam (black rot)`, `Busuk pangkal batang`, `busuk pucuk`,
+  `bercak daun`).
+- `Hawar daun bakteri` (daun) dan `Hawar bakteri` (batang) tetap dua baris;
+  patogen sama, bagian tanaman berbeda.
+- `Antraknosa` muncul di tabel 5.1 (daun) dan 5.2 (batang) dengan penulisan
+  patogen berbeda; penyakit dipisah mengikuti tabel. Baris 5.2 ditambahkan
+  lewat `additions` karena builder awal menduplikasi nama.
+- `Penyakit Antraknos` (Bab 11) terpotong di sumber dan dibiarkan apa adanya.
+- Nama ilmiah hanya diisi untuk 8 tanaman yang mencetaknya di badan bab.
+- Gejala ubi kayu tidak diduplikasi ke `symptoms.csv`; sumbernya tabel 5.1–5.3
+  di `curated/ubi_kayu_tabel_5.csv`, dan laporan cakupan menghitungnya dari sana.
 
 ## Batas tahap ini
 
-Belum ada patogen, gejala, pengendalian, RAG, embedding, basis vektor, backend,
-frontend, atau ontologi. Tahap berikutnya menambah tabel tersebut di atas skema
-yang sudah dibekukan.
+Tidak ada model bahasa di dalam pipeline, RAG, embedding, basis vektor, backend,
+frontend, atau ontologi. Seluruh nilai berasal dari chunk/blok DOC002 dan dapat
+ditelusuri lewat `chunk_id`/`source_block_ids` serta offset karakter.

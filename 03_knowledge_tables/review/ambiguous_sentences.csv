@@ -1,0 +1,33 @@
+disease_id,chunk_id,sentence
+DIS_011,DOC002_C046_02,"Benih yang akan ditanam diberi perlakuan benih dengan fungisida yang mengandung bahan aktif thiram ataupun kaptan, dan melakukan penyemprotan dengan fungisida apabila tingkat serangan tinggi dengan fungisida berbahan aktif metalaksil (Inayati and Yusnawan, 2017)."
+DIS_012,DOC002_C048_02,Selain menanam varietas tahan pengelolaan tanaman seperti melakukan rotasi tanam selama 2 tahun dan pengolahan lahan dengan membajak lahan dan membersihkan sumber inokulum dapat mencegah terjadinya perkembangan penyakit bercak daun mata katak.
+DIS_015,DOC002_C054_01,"kikuchii dapat dilakukan dengan menggunakan metanol dari ekstrak daun Prosopis nigra yang dicampurkan dengan difenokonazol merupakan strategi pengendalian yang dapat dilakukan untuk menekan penyakit bercak biji ungu atau hawar daun Cercospora (Sequín et al., 2020)."
+DIS_015,DOC002_C054_01,Melakukan eradikasi pada sisa-sisa tanaman yang terinfeksi di lahan dapat mengurangi terjadinya penyakit bercak biji ungu pada kedelai.
+DIS_015,DOC002_C054_01,"Jika intensitas serangan sudah ada di lahan maka dilakukan penyemprotan dengan fungisida berbahan aktif mankozeb (Inayati and Yusnawan, 2017)."
+DIS_018,DOC002_C058_01,"Gambar 2.17: Gejala Penyakit Mosaik Kedelai (Soybean Mosaic Virus) pada Tanaman Kedelai Menyebabkan Daun Berukuran Kecil dan Klorosis, Permukaan Daun tidak Rata (a), Ukuran Daun Kecil dan Melengkung ke Atas (b), Penebalan Tulang Daun dan Terjadi Klorosis (c), dan Daun Melengkung dan Melepuh (d) (Andayanie, 2012) Pengendalian penyakit dapat dilakukan dengan melakukan tindakan seperti penggunaan benih yang terjamin bebas dari SMV agar tidak menjadi sumber inokulum primer, melakukan penanaman kedelai di daerah yang bukan daerah endemik terjadi penyakit SMV."
+DIS_023,DOC002_C076_03,"Sering kali suatu varietas yang dikembangkan sebagai varietas tahan layu di suatu daerah, menjadi rentan di daerah lain."
+DIS_023,DOC002_C077_01,"Pergiliran kacang tanah dengan tanaman lain yang tidak termasuk inang bakteri, dapat mengurangi intensitas penyakit layu."
+DIS_023,DOC002_C077_01,"Kacang tanah yang ditanam bergilir dengan padi gogo selama dua tahun, ternyata dapat menekan intensitas penyakit layu dari 72,6% menjadi 30,7% (Machmud."
+DIS_048,DOC002_C109_01,"Pengendalian busuk pelepah menurut Chaudhary et al., (2016) dapat dilakukan dengan mekanis seperti pemotongan dua hingga tiga daun bagian bawah tanaman jagung serta melakukan tumpang sari dengan menggunakan tanaman lain."
+DIS_048,DOC002_C109_01,"Soenartiningsih et al., (2015) menambahkan bahwa pembersihan lahan dari sisa tanaman bergejala maupun terinfeksi juga efektif menekan perkembangan busuk pelepah."
+DIS_048,DOC002_C109_01,"dan Acaulospora mellea untuk menekan busuk pelepah, keduanya bersifat efektif masing- masing menekan penyakit sebesar 21.9 sampai 40.98% dan 21.48% hingga 39.93%."
+DIS_048,DOC002_C109_01,"Djaenuddin et al., (2017) melaporkan bahwa pengendalian busuk pelepah menggunakan agens hayati Bacillus subtilis TM4 dapat menekan keparahan penyakit sebesar 63.4% dibandingkan dengan kontrol positif sebesar 83.5%."
+DIS_051,DOC002_C117_03,Cara pengendalian penyakit busuk daun pada kentang dengan melakukan sanitasi pada perkebunan tanaman kentang dan juga pada bagian – bagian tanaman kentang yang terserang penyakit.
+DIS_052,DOC002_C118_02,"Perlu dilakukan solarisasi tanah untuk mematikan bibit penyakit serta pemberian agens hayati yang mengandung Trihcoderma sp dan Gliocladium sp sebagai pengendalian hayati berbagai jamur tular tanah, termasuk Alternaria sp."
+DIS_058,DOC002_C126_01,Pengendalian penyakit dapat dilakukan seperti usaha pengendalian penyakit busuk kaki hitam.
+DIS_058,DOC002_C127_02,Metode yang paling utama untuk pengendalian penyakit busuk hitam yaitu dengan memperhatikan sanitasi dan melaksanakan sistem budidaya yang baik.
+DIS_062,DOC002_C130_01,"Apabila pengendalian lain tidak berhasil dilakukan, aplikasi fungisida juga dapat dilakukan pada benih untuk mematikan jamur patogen."
+DIS_065,DOC002_C131_01,Apabila gejala terus berkembang maka dapat diaplikasikan fungisida dengan dosis dan prosedur yang tepat.
+DIS_066,DOC002_C132_01,Pengendalian penyakit busuk lunak kubis lebih diarahkan untuk mengurangi sclerotia di tanah dengan pengelolaan tanah terutama sisa pertanaman sebelumnya.
+DIS_067,DOC002_C132_02,Pengendalian dengan perlakuan kimiawi tidak tersedia untuk busuk lunak bakteri.
+DIS_081,DOC002_C155_01,"Choiriyah; and Nurcahyanti, (2019) menyatakan bahwa penyambungan varietas tahan Rewako F1 dengan varietas rentan Betavila F1 berhasil menekan perkembangan penyakit layu bakteri ini."
+DIS_088,DOC002_C166_02,"Sama halnya dengan penyakit karat daun, untuk penyakit bercak daun pencegahannya dengan melakukan sanitasi lingkungan dan kontrol saluran drainase."
+DIS_089,DOC002_C170_04,"Jika ditemukan serangan 5% dari jumlah daun, dapat dilakukan aplikasi fungisida dengan bahan aktif dinokap dengan dosis sesuai anjuran kemasan nama dagang."
+DIS_089,DOC002_C170_04,"Fungisida berbahan aktif pyraclostrobin 50 g per kg + metiram 550 g per kg dengan konsentrasi 0,5-2 g per liter air efektif mengendalikan penyakit embun tepung pada tanaman apel varietas Manalagi berumur 8-10 tahun dengan penekanan serangan sebesar 44,42-54,73%."
+DIS_090,DOC002_C172_02,Bercak daun pada tanaman apel dapat dikendalikan melalui: Pengaturan jarak tanam yang tidak terlalu rapat;
+DIS_093,DOC002_C176_01,Cara pengendalian busuk buah pada tanaman apel: Memetik buah sebelum masak optimal;
+DIS_094,DOC002_C176_04,Cara pengendalian busuk akar pada tanaman apel: Pemusnahan pohon apel hingga ke akar.
+DIS_102,DOC002_C204_02,"Teknik budidaya yang benar mengikuti standar Good Agricultural Practices (GAP) tanaman kopi merupakan faktor esensial dalam pengendalian berbagai penyakit kopi, termasuk jamur upas."
+DIS_102,DOC002_C204_02,Pengendalian menggunakan fungisida sintetik juga dapat dilakukan dengan cara mengolesi bagian tanaman yang sakit menggunakan fungisida dengan bahan aktif tembaga.
+DIS_106,DOC002_C211_01,"Selanjutnya, pada daerah di mana pernah terjadi infeksi dapat dilakukan pengendalian seperti menggunakan agens hayati atau nematisida sintetik."
+DIS_107,DOC002_C213_01,Infeksi basidiospora melalui potongan permukaan batang atau pemangkasan pelepah dan saat panen tandan.

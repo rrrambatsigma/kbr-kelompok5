@@ -1,0 +1,54 @@
+{
+  "generated_by": "curate_sentences.py",
+  "tables": {
+    "symptoms": {
+      "rows": 601,
+      "offset_mismatches": 0,
+      "diseases": 93,
+      "plants": 14,
+      "by_plant": {
+        "PLANT_001": 32,
+        "PLANT_002": 88,
+        "PLANT_003": 33,
+        "PLANT_004": 23,
+        "PLANT_006": 30,
+        "PLANT_007": 48,
+        "PLANT_008": 67,
+        "PLANT_009": 51,
+        "PLANT_010": 38,
+        "PLANT_011": 40,
+        "PLANT_012": 22,
+        "PLANT_013": 23,
+        "PLANT_014": 64,
+        "PLANT_015": 42
+      }
+    },
+    "controls": {
+      "rows": 528,
+      "offset_mismatches": 0,
+      "diseases": 81,
+      "plants": 15,
+      "by_plant": {
+        "PLANT_001": 29,
+        "PLANT_002": 72,
+        "PLANT_003": 121,
+        "PLANT_004": 14,
+        "PLANT_006": 36,
+        "PLANT_007": 5,
+        "PLANT_008": 26,
+        "PLANT_009": 18,
+        "PLANT_010": 17,
+        "PLANT_011": 4,
+        "PLANT_012": 13,
+        "PLANT_013": 60,
+        "PLANT_014": 29,
+        "PLANT_015": 79,
+        "PLANT_005": 5
+      },
+      "chapter_scope_rows": 80,
+      "disease_scope_rows": 448
+    }
+  },
+  "ambiguous_sentences": 32,
+  "policy": "Kalimat yang memuat isyarat gejala sekaligus pengendalian tidak dimasukkan ke tabel mana pun; barisnya disimpan di review/ambiguous_sentences.csv untuk ditinjau."
+}

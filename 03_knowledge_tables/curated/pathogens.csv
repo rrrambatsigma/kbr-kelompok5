@@ -1,0 +1,106 @@
+pathogen_id,scientific_name,verbatim_text,taxon_group,taxon_evidence_chunk_id,taxon_evidence_quote,page,chunk_id,note,review_status
+PAT_001,Xanthomonas oryzae,Xanthomonas oryzae,bakteri,,,26,DOC002_C026_02,,auto_ok
+PAT_002,Pyricularia grisea,Pyricularia grisea,jamur,,,29,DOC002_C029_02,Nama anamorf; sumber juga mencantumkan Magnaporthe grisea dan Pyricularia oryzae untuk penyakit yang sama.,verified
+PAT_003,Magnaporthe grisea,Magnaporthe grisea,jamur,,,29,DOC002_C029_02,Nama teleomorf; sumber juga mencantumkan Pyricularia grisea dan Pyricularia oryzae.,verified
+PAT_004,Pyricularia oryzae,Pyricularia oryzae,jamur,,,29,DOC002_C029_02,Varian nama untuk patogen blas; lihat Pyricularia grisea dan Magnaporthe grisea.,verified
+PAT_005,Rhizoctonia solani,Rhizoctonia solani,jamur,,,32,DOC002_C032_01,,auto_ok
+PAT_006,Rice tungro bacillifor virus,Rice tungro bacillifor virus,virus,,,33,DOC002_C033_02,,auto_ok
+PAT_007,Rice tungro spherical virus,Rice tungro spherical virus,virus,,,33,DOC002_C033_02,,auto_ok
+PAT_008,Sclerotium rolfsii,Sclerotium rolfsii,jamur,,,38,DOC002_C038_03,,auto_ok
+PAT_009,Fusarium spp,Fusarium spp,jamur,,,42,DOC002_C042_01,Nama tingkat genus; sumber tidak menyebut spesiesnya.,verified
+PAT_010,Phakopspora pachyrhizi,Phakopspora pachyrhizi,jamur,,,43,DOC002_C043_03,Salah eja di sumber (Phakopsora pachyrhizi); dipertahankan verbatim.,verified
+PAT_011,Erysiphae diffusa,Erysiphae diffusa,jamur,,,45,DOC002_C045_01,,auto_ok
+PAT_012,Peronospora manshurica,Peronospora manshurica,jamur,,,46,DOC002_C046_02,,auto_ok
+PAT_013,Cercospora sojina,Cercospora sojina,jamur,,,47,DOC002_C047_02,,auto_ok
+PAT_014,Colletotrichum,Colletotrichum,jamur,,,49,DOC002_C049_02,,auto_ok
+PAT_015,Corynespora cassiicola,Corynespora cassiicola,jamur,,,51,DOC002_C051_02,,auto_ok
+PAT_016,Cercospora kikuchii,Cercospora kikuchii,jamur,,,53,DOC002_C053_01,,auto_ok
+PAT_017,Pseudomonas syringae,Pseudomonas syringae,bakteri,,,54,DOC002_C054_03,,auto_ok
+PAT_018,Xanthomonas axonopodis,Xanthomonas axonopodis,bakteri,,,56,DOC002_C056_02,,auto_ok
+PAT_019,Soybean Mosaic Virus,Soybean Mosaic Virus,virus,,,57,,,auto_ok
+PAT_020,Cowpea Mild Mottle Virus,Cowpea Mild Mottle Virus,virus,,,59,DOC002_C059_01,,auto_ok
+PAT_021,Soybean Stunt Virus,Soybean Stunt Virus,virus,,,60,DOC002_C060_02,,auto_ok
+PAT_022,Cercospora arachidicola,Cercospora arachidicola,jamur,,,65,DOC002_C065_01,,auto_ok
+PAT_023,Puccinia arachidis,Puccinia arachidis,jamur,,,68,DOC002_C068_03,,auto_ok
+PAT_025,Ralstonia solanacearum,Ralstonia solanacearum,bakteri,,,74,DOC002_C074_01,,auto_ok
+PAT_027,Fusarium oxysporum,Fusarium oxysporum,jamur,,,80,DOC002_C080_01,,verified
+PAT_028,Spaceloma batatas,Spaceloma batatas,jamur,,,83,DOC002_C083_01,Sinonim dari Elsinoe batatas menurut sumber.,verified
+PAT_029,Elsinoe batatas,Elsinoe batatas,jamur,,,83,DOC002_C083_01,Sinonim dari Spaceloma batatas menurut sumber.,verified
+PAT_030,Sweet Potato Feathery Mottle Virus,Sweet Potato Feathery Mottle Virus,virus,,,85,DOC002_C085_01,,auto_ok
+PAT_031,Sweet Potato Mild Mottle Virus,Sweet Potato Mild Mottle Virus,virus,,,85,DOC002_C085_01,,auto_ok
+PAT_032,Sweet Potato Chlorotic Fleck Virus,Sweet Potato Chlorotic Fleck Virus,virus,,,85,DOC002_C085_01,,auto_ok
+PAT_033,Ceratocystis fimbriata,Ceratocystis fimbriata,jamur,,,87,DOC002_C087_01,,auto_ok
+PAT_034,Helminthosporium maydis,Helminthosporium maydis,jamur,,,100,DOC002_C100_02,,auto_ok
+PAT_035,Puccinia polysora,Puccinia polysora,jamur,,,103,DOC002_C103_01,,auto_ok
+PAT_036,Peronosclerospora sp,Peronosclerospora sp,jamur,,,104,DOC002_C104_02,Nama tingkat genus; sumber juga menyebut Peronosclerospora maydis pada kalimat berikutnya.,verified
+PAT_037,Peronosclerospora maydis,Peronosclerospora maydis,jamur,,,104,DOC002_C104_02,Nama tingkat spesies; sumber juga menyebut Peronosclerospora sp.,verified
+PAT_038,Pantoea stewartii,Pantoea stewartii,bakteri,,,107,DOC002_C107_02,,auto_ok
+PAT_039,Pseudomonas solanacearum,Pseudomonas solanacearum,bakteri,,,114,DOC002_C114_03,,auto_ok
+PAT_040,Phytophthora infestans,Phytophthora infestans,jamur,,,117,DOC002_C117_02,,auto_ok
+PAT_041,Alternaria sp,Alternaria sp,jamur,,,118,DOC002_C118_02,,auto_ok
+PAT_042,Clavibacter michiganensis,Clavibacter michiganensis,bakteri,,,119,DOC002_C119_02,,auto_ok
+PAT_043,Potato Virus X,Potato Virus X,virus,,,120,DOC002_C120_02,,auto_ok
+PAT_044,Meloidogyne,Meloidogyne,nematoda,,,121,DOC002_C121_01,,auto_ok
+PAT_045,Globodera rostochiensisda,Globodera rostochiensisda,nematoda,,,122,DOC002_C122_01,Akhiran 'da' menempel di sumber (Globodera rostochiensis); dipertahankan verbatim.,verified
+PAT_046,Globodera pallida,Globodera pallida,nematoda,,,122,DOC002_C122_01,,auto_ok
+PAT_047,Leptosphaeria maculans,Leptosphaeria maculans,jamur,,,125,DOC002_C125_01,,auto_ok
+PAT_048,Xanthomonas campestris,Xanthomonas campestris,bakteri,,,126,DOC002_C126_01,,auto_ok
+PAT_050,Plasmodiophora brassicae,Plasmodiophora brassicae,jamur,,,128,DOC002_C128_01,,auto_ok
+PAT_051,Colletotrichum higginsianum,Colletotrichum higginsianum,jamur,,,129,DOC002_C129_02,,auto_ok
+PAT_052,Alternaria brassicae,Alternaria brassicae,jamur,,,129,DOC002_C129_01,,auto_ok
+PAT_053,Erysiphe cruciferarum,Erysiphe cruciferarum,jamur,,,130,DOC002_C130_02,,auto_ok
+PAT_054,Sclerotinia sclerotiorum,Sclerotinia sclerotiorum,jamur,,,131,DOC002_C131_02,,auto_ok
+PAT_055,Peronospora parasitica,Peronospora parasitica,oomycete,,,131,DOC002_C131_01,,auto_ok
+PAT_056,Erwinia carotovora,Erwinia carotovora,bakteri,,,132,DOC002_C132_02,,auto_ok
+PAT_057,Mycosphaerella brassicicola,Mycosphaerella brassicicola,jamur,,,133,DOC002_C133_02,,auto_ok
+PAT_058,Albugi candida,Albugi candida,jamur,,,133,DOC002_C133_01,Salah eja di sumber (Albugo candida); dipertahankan verbatim.,verified
+PAT_059,Cescospora capsici,Cescospora capsici,jamur,,,135,DOC002_C135_02,Salah eja di sumber (Cercospora capsici); dipertahankan verbatim.,verified
+PAT_060,Colletotrichum sp,Colletotrichum sp,jamur,,,136,DOC002_C136_02,,auto_ok
+PAT_061,Phytophthora sp,Phytophthora sp,jamur,,,138,DOC002_C138_02,,auto_ok
+PAT_062,Cucumber mosaic virus,Cucumber mosaic virus,virus,,,141,DOC002_C141_02,,auto_ok
+PAT_063,Tobacco mosaic virus,Tobacco mosaic virus,virus,,,141,DOC002_C141_02,,auto_ok
+PAT_064,Fussarium oxysporum,Fussarium oxysporum,jamur,DOC002_C143_05,"Tanaman cabai yang terserang akan mengalami busuk pada pangkal batang, kemudian jamur tersebut akan menyebar ke seluruh akar tanaman.",143,DOC002_C143_05,Salah eja di sumber (Fusarium oxysporum); dipertahankan verbatim.,verified
+PAT_065,Alternaria solani,Alternaria solani,jamur,DOC002_C151_01,Penyakit ini disebabkan oleh jamur A. solani.,151,,,verified
+PAT_066,Fulvia fulva,Fulvia fulva,jamur,DOC002_C152_03,"Spora jamur ini dapat dipencarkan oleh angin, air maupun alat-alat pertanian",152,,,verified
+PAT_067,Septoria lycopersici,Septoria lycopersici,unknown,,,155,DOC002_C155_02,,verified
+PAT_068,Colletotrichum coccoides,Colletotrichum coccoides,jamur,,,156,DOC002_C156_02,,auto_ok
+PAT_069,Tomato Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus,virus,,,157,DOC002_C157_01,,auto_ok
+PAT_070,Bean common mosaic virus,Bean common mosaic virus,virus,,,159,DOC002_C159_02,,auto_ok
+PAT_071,Podosphaera leucotricha,Podosphaera leucotricha,jamur,,,169,DOC002_C169_02,,auto_ok
+PAT_072,Corticium salmonicolor,Corticium salmonicolor,jamur,,,172,DOC002_C172_03,Sinonim; sumber juga menyebut Erythricium salmonicolor dan Upasia salmonicolor.,verified
+PAT_073,Erythricium salmonicolor,Erythricium salmonicolor,jamur,,,172,DOC002_C172_03,Sinonim; sumber juga menyebut Corticium salmonicolor dan Upasia salmonicolor.,verified
+PAT_074,Botryosphaeria dothidea,Botryosphaeria dothidea,unknown,,,173,DOC002_C173_01,,verified
+PAT_075,Gloeosporium Sp,Gloeosporium Sp,jamur,,,175,DOC002_C175_02,,auto_ok
+PAT_076,Armillaria mellea,Armillaria mellea,jamur,,,176,DOC002_C176_02,,auto_ok
+PAT_077,Radopholus similis,Radopholus similis,nematoda,,,183,DOC002_C183_03,,auto_ok
+PAT_078,Meloidogyne incognita,Meloidogyne incognita,nematoda,,,183,DOC002_C183_03,,auto_ok
+PAT_080,Phytium spp,Phytium spp,jamur,DOC002_C184_01,"dan jamur lain seperti Phytium spp., serta Rigidoporus lignosus",184,DOC002_C184_01,,auto_ok
+PAT_081,Rigidoporus lignosus,Rigidoporus lignosus,jamur,DOC002_C206_01,Jamur akar putih disebabkan oleh infeksi cendawan Rigidoporus lignosus,184,DOC002_C184_01,,auto_ok
+PAT_084,Septobasidium pseudocellatum,Septobasidium pseudocellatum,jamur,,,187,DOC002_C187_03,,auto_ok
+PAT_086,Piper Yellow Mottle Virus,Piper Yellow Mottle Virus,virus,,,190,DOC002_C190_03,,auto_ok
+PAT_088,Colletotrichum gloeosporioides,Colletotrichum gloeosporioides,unknown,,,194,DOC002_C194_03,,verified
+PAT_089,Hemileia vastatrix,Hemileia vastatrix,jamur,,,197,DOC002_C197_02,,auto_ok
+PAT_090,Cercospora coffeicola,Cercospora coffeicola,jamur,,,200,DOC002_C200_02,,auto_ok
+PAT_091,Upasia salmonicolor,Upasia salmonicolor,jamur,,,203,DOC002_C203_01,Sinonim; sumber juga menyebut Corticium salmonicolor dan Erythricium salmonicolor.,verified
+PAT_092,Fusarium solani,Fusarium solani,unknown,,,205,DOC002_C205_03,,verified
+PAT_093,Phellinus noxius,Phellinus noxius,jamur,,,206,DOC002_C206_01,,auto_ok
+PAT_094,Pratylenchus coffeae,Pratylenchus coffeae,nematoda,,,209,DOC002_C209_02,,auto_ok
+PAT_095,Meloidogyne spp,Meloidogyne spp,nematoda,,,209,DOC002_C209_02,Nama tingkat genus; sumber tidak menyebut spesiesnya.,verified
+PAT_096,Ganoderma boninense,Ganoderma boninense,jamur,DOC002_C213_01,yang disebabkan oleh Ganoderma adalah salah satu jenis jamur patogen yang paling merusak di Asia Tenggara,213,,,verified
+PAT_097,Phytophthora palmivora,Phytophthora palmivora,oomycete,DOC002_C217_02,Patogen genus Oomycete ini disebut sebagai jamur patogen yang memiliki dampak yang besar.,217,,,verified
+PAT_098,Cercospora henningsii,Cercospora henningsii,unknown,,,91,,Sumber mencantumkan Cercosporidium henningsii sebagai sinonim.,verified
+PAT_099,Cercosporidium henningsii,Cercosporidium henningsii,unknown,,,91,,Sinonim dari Cercospora henningsii menurut sumber.,verified
+PAT_100,Cercospora. viscosae,Cercospora. viscosae,unknown,,,92,,Tanda titik setelah genus tercetak di sumber; dipertahankan verbatim.,verified
+PAT_101,Phaeoramularia manihotis,Phaeoramularia manihotis,unknown,,,92,,,verified
+PAT_102,Colletotricum spp,Colletotricum spp,unknown,,,92,,Salah eja di sumber (Colletotrichum spp.); dipertahankan verbatim.,verified
+PAT_103,Xanthomonas Campestrispv. Manihotis,Xanthomonas Campestrispv. Manihotis,unknown,,,92,,Spasi hilang di sumber; varian dari Xanthomonas campestris pv. manihotis pada tabel 5.2.,verified
+PAT_104,Fitoplasma,Fitoplasma,fitoplasma,,,92,,"Nama kelompok pada sel tabel, bukan binomial; dipertahankan verbatim.",verified
+PAT_105,Begomovirus,Begomovirus,unknown,,,92,,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.,verified
+PAT_106,Ipomovirus,Ipomovirus,unknown,,,92,,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.,verified
+PAT_107,Xanthomonas campestris pv. Manihotis,Xanthomonas campestris pv. Manihotis,unknown,,,94,,,verified
+PAT_108,Elsinoe brasiliensis,Elsinoe brasiliensis,unknown,,,94,,,verified
+PAT_109,Diplodia spp,Diplodia spp,unknown,,,94,,,verified
+PAT_110,Botryodiplodia spp,Botryodiplodia spp,unknown,,,94,,,verified
+PAT_111,Phytophthora spp,Phytophthora spp,unknown,,,94,,,verified
+PAT_112,Polyporus sulphureus,Polyporus sulphureus,unknown,,,95,,,verified
+PAT_113,Collectothricum gloeosporioides,Collectothricum gloeosporioides,unknown,,,93,,,verified
