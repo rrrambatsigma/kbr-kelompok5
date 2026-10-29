@@ -1,0 +1,52 @@
+kind,entity_id,plant_id,label,detail
+disease_without_pathogen,DIS_005,PLANT_001,Penyakit Kerdil Rumput dan Kerdil Hampa,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_022,PLANT_003,Penyakit Belang (Mottle),Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_039,PLANT_005,Nekrosis pada titik tunas (Cassava bud necrosis),Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_088,PLANT_011,Penyakit Karat Daun,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_090,PLANT_012,Bercak Daun,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_098,PLANT_013,Hawar Rambut Kuda,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_109,PLANT_015,bercak daun,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+pathogen_variant,PAT_002,,Pyricularia grisea,Nama anamorf; sumber juga mencantumkan Magnaporthe grisea dan Pyricularia oryzae untuk penyakit yang sama.
+pathogen_variant,PAT_003,,Magnaporthe grisea,Nama teleomorf; sumber juga mencantumkan Pyricularia grisea dan Pyricularia oryzae.
+pathogen_variant,PAT_004,,Pyricularia oryzae,Varian nama untuk patogen blas; lihat Pyricularia grisea dan Magnaporthe grisea.
+pathogen_variant,PAT_009,,Fusarium spp,Nama tingkat genus; sumber tidak menyebut spesiesnya.
+pathogen_variant,PAT_010,,Phakopspora pachyrhizi,Salah eja di sumber (Phakopsora pachyrhizi); dipertahankan verbatim.
+pathogen_variant,PAT_028,,Spaceloma batatas,Sinonim dari Elsinoe batatas menurut sumber.
+pathogen_variant,PAT_029,,Elsinoe batatas,Sinonim dari Spaceloma batatas menurut sumber.
+pathogen_variant,PAT_036,,Peronosclerospora sp,Nama tingkat genus; sumber juga menyebut Peronosclerospora maydis pada kalimat berikutnya.
+pathogen_variant,PAT_037,,Peronosclerospora maydis,Nama tingkat spesies; sumber juga menyebut Peronosclerospora sp.
+pathogen_variant,PAT_045,,Globodera rostochiensisda,Akhiran 'da' menempel di sumber (Globodera rostochiensis); dipertahankan verbatim.
+pathogen_variant,PAT_058,,Albugi candida,Salah eja di sumber (Albugo candida); dipertahankan verbatim.
+pathogen_variant,PAT_059,,Cescospora capsici,Salah eja di sumber (Cercospora capsici); dipertahankan verbatim.
+pathogen_variant,PAT_064,,Fussarium oxysporum,Salah eja di sumber (Fusarium oxysporum); dipertahankan verbatim.
+pathogen_taxon_unknown,PAT_067,,Septoria lycopersici,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_072,,Corticium salmonicolor,Sinonim; sumber juga menyebut Erythricium salmonicolor dan Upasia salmonicolor.
+pathogen_variant,PAT_073,,Erythricium salmonicolor,Sinonim; sumber juga menyebut Corticium salmonicolor dan Upasia salmonicolor.
+pathogen_taxon_unknown,PAT_074,,Botryosphaeria dothidea,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_088,,Colletotrichum gloeosporioides,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_091,,Upasia salmonicolor,Sinonim; sumber juga menyebut Corticium salmonicolor dan Erythricium salmonicolor.
+pathogen_taxon_unknown,PAT_092,,Fusarium solani,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_095,,Meloidogyne spp,Nama tingkat genus; sumber tidak menyebut spesiesnya.
+pathogen_taxon_unknown,PAT_098,,Cercospora henningsii,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_098,,Cercospora henningsii,Sumber mencantumkan Cercosporidium henningsii sebagai sinonim.
+pathogen_taxon_unknown,PAT_099,,Cercosporidium henningsii,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_099,,Cercosporidium henningsii,Sinonim dari Cercospora henningsii menurut sumber.
+pathogen_taxon_unknown,PAT_100,,Cercospora. viscosae,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_100,,Cercospora. viscosae,Tanda titik setelah genus tercetak di sumber; dipertahankan verbatim.
+pathogen_taxon_unknown,PAT_101,,Phaeoramularia manihotis,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_102,,Colletotricum spp,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_102,,Colletotricum spp,Salah eja di sumber (Colletotrichum spp.); dipertahankan verbatim.
+pathogen_taxon_unknown,PAT_103,,Xanthomonas Campestrispv. Manihotis,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_103,,Xanthomonas Campestrispv. Manihotis,Spasi hilang di sumber; varian dari Xanthomonas campestris pv. manihotis pada tabel 5.2.
+pathogen_variant,PAT_104,,Fitoplasma,"Nama kelompok pada sel tabel, bukan binomial; dipertahankan verbatim."
+pathogen_taxon_unknown,PAT_105,,Begomovirus,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_105,,Begomovirus,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.
+pathogen_taxon_unknown,PAT_106,,Ipomovirus,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_106,,Ipomovirus,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.
+pathogen_taxon_unknown,PAT_107,,Xanthomonas campestris pv. Manihotis,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_108,,Elsinoe brasiliensis,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_109,,Diplodia spp,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_110,,Botryodiplodia spp,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_111,,Phytophthora spp,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_112,,Polyporus sulphureus,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_113,,Collectothricum gloeosporioides,Sumber tidak menyebut kelompok takson patogen ini.

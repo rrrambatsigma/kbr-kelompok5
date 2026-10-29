@@ -1,51 +1,53 @@
 {
   "schema_version": "1.0.0",
-  "validated_at": "2026-10-27T14:49:01Z",
+  "validated_at": "2026-10-28T03:21:50Z",
   "strict": false,
   "summary": {
-    "documents": 2,
+    "documents": 1,
     "errors": 0,
-    "warnings": 14
+    "warnings": 29
   },
   "manifest_errors": [],
   "manifest_warnings": [],
   "documents": [
     {
-      "document_id": "DOC001",
-      "status": "warn",
-      "errors": [],
-      "warnings": [
-        "pages_without_text: DOC001: 874",
-        "ocr_candidates: DOC001: 874",
-        "document_title_not_available: DOC001",
-        "document_authors_not_available: DOC001",
-        "document_publication_year_not_available: DOC001"
-      ],
-      "checks": {
-        "pages": 874,
-        "blocks": 0,
-        "has_text": false,
-        "source_hash_verified": true
-      }
-    },
-    {
       "document_id": "DOC002",
       "status": "warn",
       "errors": [],
       "warnings": [
-        "pages_without_text: DOC002: 1",
-        "ocr_candidates: DOC002: 1",
-        "possible_multi_column_layout: DOC002: 3 halaman (92, 94, 95)",
-        "unclassified_headings: DOC002: 71",
-        "tables_need_review: DOC002: 1",
-        "blocks_need_manual_review: DOC002: 71",
-        "document_title_not_available: DOC002",
-        "document_authors_not_available: DOC002",
-        "document_publication_year_not_available: DOC002"
+        "pages_without_text: DOC002: 9",
+        "repeated_header_candidates: DOC002: 246 halaman",
+        "repeated_footer_candidates: DOC002: 3 halaman",
+        "unexpected_table_payload: DOC002_P001_B003",
+        "unexpected_table_payload: DOC002_P006_B009",
+        "unexpected_table_payload: DOC002_P031_B005",
+        "unexpected_table_payload: DOC002_P036_B002",
+        "unexpected_table_payload: DOC002_P041_B003",
+        "unexpected_table_payload: DOC002_P049_B002",
+        "unexpected_table_payload: DOC002_P051_B003",
+        "unexpected_table_payload: DOC002_P058_B002",
+        "unexpected_table_payload: DOC002_P059_B004",
+        "unexpected_table_payload: DOC002_P061_B002",
+        "unexpected_table_payload: DOC002_P072_B004",
+        "unexpected_table_payload: DOC002_P079_B006",
+        "unexpected_table_payload: DOC002_P081_B002",
+        "unexpected_table_payload: DOC002_P103_B004",
+        "unexpected_table_payload: DOC002_P105_B002",
+        "unexpected_table_payload: DOC002_P121_B006",
+        "unexpected_table_payload: DOC002_P144_B005",
+        "unexpected_table_payload: DOC002_P159_B005",
+        "unexpected_table_payload: DOC002_P161_B002",
+        "unexpected_table_payload: DOC002_P162_B001",
+        "unexpected_table_payload: DOC002_P187_B008",
+        "unexpected_table_payload: DOC002_P198_B003",
+        "unexpected_table_payload: DOC002_P201_B003",
+        "unexpected_table_payload: DOC002_P274_B005",
+        "unclassified_headings: DOC002: 13",
+        "blocks_need_manual_review: DOC002: 29"
       ],
       "checks": {
         "pages": 274,
-        "blocks": 2408,
+        "blocks": 1578,
         "has_text": true,
         "source_hash_verified": true
       }

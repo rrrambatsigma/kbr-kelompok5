@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC002",
+  "generated_at": "2026-10-28T03:07:24Z",
+  "pages": 274,
+  "blocks": 1578,
+  "chunks": 566,
+  "text_sources": {
+    "llamaparse": 165,
+    "llamaparse+baseline": 108,
+    "pymupdf_text_layer": 1
+  },
+  "errors": [],
+  "warnings": [],
+  "status": "pass",
+  "normalized_pages": "E:\\kbr-kelompok5\\02_extraction\\llamaparse\\normalized\\DOC002.pages.jsonl"
+}

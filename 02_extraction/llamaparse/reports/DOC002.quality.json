@@ -1,0 +1,2549 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC002",
+  "run_id": "DOC002_cost_effective_full-fb503f92_fbfce257",
+  "generated_at": "2026-10-28T03:22:00Z",
+  "tier": "cost_effective",
+  "version": "2026-09-28",
+  "job_status": "COMPLETED",
+  "job_error": null,
+  "credits_used": 822.0,
+  "pages_expected": 274,
+  "pages_present": 274,
+  "pages_missing": [],
+  "pages_unexpected": [],
+  "pages_failed": 0,
+  "pages_empty": 9,
+  "pages_short": 10,
+  "blocks_total": 1578,
+  "blocks_needs_review": 29,
+  "blocks_context_missing": 0,
+  "chunks_total": 566,
+  "chunks_needs_review": 158,
+  "tables_detected": 5,
+  "characters_total": 442397,
+  "confidence": {
+    "count": 274,
+    "mean": 0.9839,
+    "min": 0.6,
+    "median": 0.995
+  },
+  "printed_page_numbers_detected": 232,
+  "printed_page_number_coverage": 0.8467,
+  "printed_page_offset_distribution": {
+    "24": 68,
+    "25": 164
+  },
+  "dominant_printed_page_offset": 25,
+  "expected_printed_page_offset": 24,
+  "issues": [],
+  "status": "warning",
+  "page_stats": [
+    {
+      "page_number": 1,
+      "extraction_status": "text_extracted",
+      "char_count": 334,
+      "block_count": 7,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 2,
+      "extraction_status": "text_extracted",
+      "char_count": 355,
+      "block_count": 3,
+      "confidence": 0.968,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 3,
+      "extraction_status": "text_extracted",
+      "char_count": 36,
+      "block_count": 1,
+      "confidence": 0.8,
+      "printed_page_number": null,
+      "reasons": [
+        "page_text_too_short"
+      ]
+    },
+    {
+      "page_number": 4,
+      "extraction_status": "text_extracted",
+      "char_count": 1806,
+      "block_count": 11,
+      "confidence": 0.966,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 5,
+      "extraction_status": "text_extracted",
+      "char_count": 366,
+      "block_count": 4,
+      "confidence": 0.933,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 6,
+      "extraction_status": "text_extracted",
+      "char_count": 997,
+      "block_count": 11,
+      "confidence": 0.982,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 7,
+      "extraction_status": "text_extracted",
+      "char_count": 1713,
+      "block_count": 6,
+      "confidence": 0.978,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 8,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 9,
+      "extraction_status": "text_extracted",
+      "char_count": 1841,
+      "block_count": 6,
+      "confidence": 0.995,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 10,
+      "extraction_status": "text_extracted",
+      "char_count": 2011,
+      "block_count": 7,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 11,
+      "extraction_status": "text_extracted",
+      "char_count": 3707,
+      "block_count": 7,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 12,
+      "extraction_status": "text_extracted",
+      "char_count": 1892,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 13,
+      "extraction_status": "text_extracted",
+      "char_count": 1308,
+      "block_count": 8,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 14,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 15,
+      "extraction_status": "text_extracted",
+      "char_count": 1810,
+      "block_count": 2,
+      "confidence": 0.996,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 16,
+      "extraction_status": "text_extracted",
+      "char_count": 2341,
+      "block_count": 12,
+      "confidence": 0.99,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 17,
+      "extraction_status": "text_extracted",
+      "char_count": 2456,
+      "block_count": 13,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 18,
+      "extraction_status": "text_extracted",
+      "char_count": 2474,
+      "block_count": 19,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 19,
+      "extraction_status": "text_extracted",
+      "char_count": 2883,
+      "block_count": 1,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 20,
+      "extraction_status": "text_extracted",
+      "char_count": 2759,
+      "block_count": 21,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 21,
+      "extraction_status": "text_extracted",
+      "char_count": 2460,
+      "block_count": 12,
+      "confidence": 0.986,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 22,
+      "extraction_status": "text_extracted",
+      "char_count": 1331,
+      "block_count": 4,
+      "confidence": 0.991,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 23,
+      "extraction_status": "text_extracted",
+      "char_count": 170,
+      "block_count": 2,
+      "confidence": 0.971,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 24,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 0.833,
+      "printed_page_number": null,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 25,
+      "extraction_status": "text_extracted",
+      "char_count": 1153,
+      "block_count": 5,
+      "confidence": 0.991,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 26,
+      "extraction_status": "text_extracted",
+      "char_count": 1543,
+      "block_count": 6,
+      "confidence": 0.995,
+      "printed_page_number": 2,
+      "reasons": []
+    },
+    {
+      "page_number": 27,
+      "extraction_status": "text_extracted",
+      "char_count": 1627,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 3,
+      "reasons": []
+    },
+    {
+      "page_number": 28,
+      "extraction_status": "text_extracted",
+      "char_count": 1547,
+      "block_count": 3,
+      "confidence": 0.955,
+      "printed_page_number": 4,
+      "reasons": []
+    },
+    {
+      "page_number": 29,
+      "extraction_status": "text_extracted",
+      "char_count": 1435,
+      "block_count": 8,
+      "confidence": 0.974,
+      "printed_page_number": 5,
+      "reasons": []
+    },
+    {
+      "page_number": 30,
+      "extraction_status": "text_extracted",
+      "char_count": 1342,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 6,
+      "reasons": []
+    },
+    {
+      "page_number": 31,
+      "extraction_status": "text_extracted",
+      "char_count": 1237,
+      "block_count": 6,
+      "confidence": 0.968,
+      "printed_page_number": 7,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 32,
+      "extraction_status": "text_extracted",
+      "char_count": 1931,
+      "block_count": 7,
+      "confidence": 1.0,
+      "printed_page_number": 8,
+      "reasons": []
+    },
+    {
+      "page_number": 33,
+      "extraction_status": "text_extracted",
+      "char_count": 1595,
+      "block_count": 6,
+      "confidence": 0.996,
+      "printed_page_number": 9,
+      "reasons": []
+    },
+    {
+      "page_number": 34,
+      "extraction_status": "text_extracted",
+      "char_count": 1870,
+      "block_count": 8,
+      "confidence": 0.994,
+      "printed_page_number": 10,
+      "reasons": []
+    },
+    {
+      "page_number": 35,
+      "extraction_status": "text_extracted",
+      "char_count": 1223,
+      "block_count": 7,
+      "confidence": 0.995,
+      "printed_page_number": 11,
+      "reasons": []
+    },
+    {
+      "page_number": 36,
+      "extraction_status": "text_extracted",
+      "char_count": 666,
+      "block_count": 3,
+      "confidence": 0.964,
+      "printed_page_number": 12,
+      "reasons": []
+    },
+    {
+      "page_number": 37,
+      "extraction_status": "text_extracted",
+      "char_count": 1415,
+      "block_count": 5,
+      "confidence": 0.987,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 38,
+      "extraction_status": "text_extracted",
+      "char_count": 2216,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 14,
+      "reasons": []
+    },
+    {
+      "page_number": 39,
+      "extraction_status": "text_extracted",
+      "char_count": 1209,
+      "block_count": 5,
+      "confidence": 0.989,
+      "printed_page_number": 15,
+      "reasons": []
+    },
+    {
+      "page_number": 40,
+      "extraction_status": "text_extracted",
+      "char_count": 2522,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 16,
+      "reasons": []
+    },
+    {
+      "page_number": 41,
+      "extraction_status": "text_extracted",
+      "char_count": 1774,
+      "block_count": 5,
+      "confidence": 0.963,
+      "printed_page_number": 17,
+      "reasons": []
+    },
+    {
+      "page_number": 42,
+      "extraction_status": "text_extracted",
+      "char_count": 2366,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 18,
+      "reasons": []
+    },
+    {
+      "page_number": 43,
+      "extraction_status": "text_extracted",
+      "char_count": 1725,
+      "block_count": 5,
+      "confidence": 0.984,
+      "printed_page_number": 19,
+      "reasons": []
+    },
+    {
+      "page_number": 44,
+      "extraction_status": "text_extracted",
+      "char_count": 1694,
+      "block_count": 4,
+      "confidence": 0.987,
+      "printed_page_number": 20,
+      "reasons": []
+    },
+    {
+      "page_number": 45,
+      "extraction_status": "text_extracted",
+      "char_count": 1659,
+      "block_count": 4,
+      "confidence": 0.933,
+      "printed_page_number": 21,
+      "reasons": []
+    },
+    {
+      "page_number": 46,
+      "extraction_status": "text_extracted",
+      "char_count": 2369,
+      "block_count": 6,
+      "confidence": 0.995,
+      "printed_page_number": 22,
+      "reasons": []
+    },
+    {
+      "page_number": 47,
+      "extraction_status": "text_extracted",
+      "char_count": 1301,
+      "block_count": 5,
+      "confidence": 0.964,
+      "printed_page_number": 23,
+      "reasons": []
+    },
+    {
+      "page_number": 48,
+      "extraction_status": "text_extracted",
+      "char_count": 1641,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 24,
+      "reasons": []
+    },
+    {
+      "page_number": 49,
+      "extraction_status": "text_extracted",
+      "char_count": 1509,
+      "block_count": 5,
+      "confidence": 0.862,
+      "printed_page_number": 25,
+      "reasons": []
+    },
+    {
+      "page_number": 50,
+      "extraction_status": "text_extracted",
+      "char_count": 1275,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 26,
+      "reasons": []
+    },
+    {
+      "page_number": 51,
+      "extraction_status": "text_extracted",
+      "char_count": 1663,
+      "block_count": 6,
+      "confidence": 0.969,
+      "printed_page_number": 27,
+      "reasons": []
+    },
+    {
+      "page_number": 52,
+      "extraction_status": "text_extracted",
+      "char_count": 1290,
+      "block_count": 3,
+      "confidence": 0.999,
+      "printed_page_number": 28,
+      "reasons": []
+    },
+    {
+      "page_number": 53,
+      "extraction_status": "text_extracted",
+      "char_count": 1729,
+      "block_count": 5,
+      "confidence": 0.988,
+      "printed_page_number": 29,
+      "reasons": []
+    },
+    {
+      "page_number": 54,
+      "extraction_status": "text_extracted",
+      "char_count": 2149,
+      "block_count": 7,
+      "confidence": 0.99,
+      "printed_page_number": 30,
+      "reasons": []
+    },
+    {
+      "page_number": 55,
+      "extraction_status": "text_extracted",
+      "char_count": 1460,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 31,
+      "reasons": []
+    },
+    {
+      "page_number": 56,
+      "extraction_status": "text_extracted",
+      "char_count": 1805,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 32,
+      "reasons": []
+    },
+    {
+      "page_number": 57,
+      "extraction_status": "text_extracted",
+      "char_count": 1381,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 33,
+      "reasons": []
+    },
+    {
+      "page_number": 58,
+      "extraction_status": "text_extracted",
+      "char_count": 1778,
+      "block_count": 3,
+      "confidence": 0.978,
+      "printed_page_number": 34,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 59,
+      "extraction_status": "text_extracted",
+      "char_count": 1805,
+      "block_count": 6,
+      "confidence": 0.995,
+      "printed_page_number": 35,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 60,
+      "extraction_status": "text_extracted",
+      "char_count": 2311,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 36,
+      "reasons": []
+    },
+    {
+      "page_number": 61,
+      "extraction_status": "text_extracted",
+      "char_count": 1315,
+      "block_count": 4,
+      "confidence": 0.995,
+      "printed_page_number": 37,
+      "reasons": []
+    },
+    {
+      "page_number": 62,
+      "extraction_status": "text_extracted",
+      "char_count": 619,
+      "block_count": 2,
+      "confidence": 0.982,
+      "printed_page_number": 38,
+      "reasons": []
+    },
+    {
+      "page_number": 63,
+      "extraction_status": "text_extracted",
+      "char_count": 1351,
+      "block_count": 5,
+      "confidence": 0.994,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 64,
+      "extraction_status": "text_extracted",
+      "char_count": 2211,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 40,
+      "reasons": []
+    },
+    {
+      "page_number": 65,
+      "extraction_status": "text_extracted",
+      "char_count": 2303,
+      "block_count": 4,
+      "confidence": 0.995,
+      "printed_page_number": 41,
+      "reasons": []
+    },
+    {
+      "page_number": 66,
+      "extraction_status": "text_extracted",
+      "char_count": 1073,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 42,
+      "reasons": []
+    },
+    {
+      "page_number": 67,
+      "extraction_status": "text_extracted",
+      "char_count": 2378,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": 43,
+      "reasons": []
+    },
+    {
+      "page_number": 68,
+      "extraction_status": "text_extracted",
+      "char_count": 2368,
+      "block_count": 6,
+      "confidence": 0.99,
+      "printed_page_number": 44,
+      "reasons": []
+    },
+    {
+      "page_number": 69,
+      "extraction_status": "text_extracted",
+      "char_count": 1629,
+      "block_count": 4,
+      "confidence": 0.977,
+      "printed_page_number": 45,
+      "reasons": []
+    },
+    {
+      "page_number": 70,
+      "extraction_status": "text_extracted",
+      "char_count": 2148,
+      "block_count": 9,
+      "confidence": 0.995,
+      "printed_page_number": 46,
+      "reasons": []
+    },
+    {
+      "page_number": 71,
+      "extraction_status": "text_extracted",
+      "char_count": 2054,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 47,
+      "reasons": []
+    },
+    {
+      "page_number": 72,
+      "extraction_status": "text_extracted",
+      "char_count": 1768,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 48,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 73,
+      "extraction_status": "text_extracted",
+      "char_count": 2140,
+      "block_count": 8,
+      "confidence": 1.0,
+      "printed_page_number": 49,
+      "reasons": []
+    },
+    {
+      "page_number": 74,
+      "extraction_status": "text_extracted",
+      "char_count": 1859,
+      "block_count": 7,
+      "confidence": 0.994,
+      "printed_page_number": 50,
+      "reasons": []
+    },
+    {
+      "page_number": 75,
+      "extraction_status": "text_extracted",
+      "char_count": 1771,
+      "block_count": 5,
+      "confidence": 0.992,
+      "printed_page_number": 51,
+      "reasons": []
+    },
+    {
+      "page_number": 76,
+      "extraction_status": "text_extracted",
+      "char_count": 2343,
+      "block_count": 7,
+      "confidence": 1.0,
+      "printed_page_number": 52,
+      "reasons": []
+    },
+    {
+      "page_number": 77,
+      "extraction_status": "text_extracted",
+      "char_count": 2328,
+      "block_count": 6,
+      "confidence": 0.981,
+      "printed_page_number": 53,
+      "reasons": []
+    },
+    {
+      "page_number": 78,
+      "extraction_status": "text_extracted",
+      "char_count": 802,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 54,
+      "reasons": []
+    },
+    {
+      "page_number": 79,
+      "extraction_status": "text_extracted",
+      "char_count": 1442,
+      "block_count": 6,
+      "confidence": 0.981,
+      "printed_page_number": null,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 80,
+      "extraction_status": "text_extracted",
+      "char_count": 2325,
+      "block_count": 6,
+      "confidence": 0.996,
+      "printed_page_number": 56,
+      "reasons": []
+    },
+    {
+      "page_number": 81,
+      "extraction_status": "text_extracted",
+      "char_count": 1257,
+      "block_count": 4,
+      "confidence": 0.98,
+      "printed_page_number": 57,
+      "reasons": []
+    },
+    {
+      "page_number": 82,
+      "extraction_status": "text_extracted",
+      "char_count": 1097,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 58,
+      "reasons": []
+    },
+    {
+      "page_number": 83,
+      "extraction_status": "text_extracted",
+      "char_count": 2415,
+      "block_count": 6,
+      "confidence": 0.991,
+      "printed_page_number": 59,
+      "reasons": []
+    },
+    {
+      "page_number": 84,
+      "extraction_status": "text_extracted",
+      "char_count": 1225,
+      "block_count": 6,
+      "confidence": 0.979,
+      "printed_page_number": 60,
+      "reasons": []
+    },
+    {
+      "page_number": 85,
+      "extraction_status": "text_extracted",
+      "char_count": 2180,
+      "block_count": 6,
+      "confidence": 0.986,
+      "printed_page_number": 61,
+      "reasons": []
+    },
+    {
+      "page_number": 86,
+      "extraction_status": "text_extracted",
+      "char_count": 1207,
+      "block_count": 4,
+      "confidence": 0.986,
+      "printed_page_number": 62,
+      "reasons": []
+    },
+    {
+      "page_number": 87,
+      "extraction_status": "text_extracted",
+      "char_count": 2435,
+      "block_count": 5,
+      "confidence": 0.969,
+      "printed_page_number": 63,
+      "reasons": []
+    },
+    {
+      "page_number": 88,
+      "extraction_status": "text_extracted",
+      "char_count": 1296,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 64,
+      "reasons": []
+    },
+    {
+      "page_number": 89,
+      "extraction_status": "text_extracted",
+      "char_count": 1131,
+      "block_count": 5,
+      "confidence": 0.993,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 90,
+      "extraction_status": "text_extracted",
+      "char_count": 2125,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 66,
+      "reasons": []
+    },
+    {
+      "page_number": 91,
+      "extraction_status": "text_extracted",
+      "char_count": 1630,
+      "block_count": 7,
+      "confidence": 0.968,
+      "printed_page_number": 67,
+      "reasons": []
+    },
+    {
+      "page_number": 92,
+      "extraction_status": "text_extracted",
+      "char_count": 2048,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 68,
+      "reasons": []
+    },
+    {
+      "page_number": 93,
+      "extraction_status": "text_extracted",
+      "char_count": 1696,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": 69,
+      "reasons": []
+    },
+    {
+      "page_number": 94,
+      "extraction_status": "text_extracted",
+      "char_count": 2071,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 70,
+      "reasons": []
+    },
+    {
+      "page_number": 95,
+      "extraction_status": "text_extracted",
+      "char_count": 2203,
+      "block_count": 4,
+      "confidence": 0.989,
+      "printed_page_number": 71,
+      "reasons": []
+    },
+    {
+      "page_number": 96,
+      "extraction_status": "text_extracted",
+      "char_count": 1337,
+      "block_count": 5,
+      "confidence": 0.98,
+      "printed_page_number": 72,
+      "reasons": []
+    },
+    {
+      "page_number": 97,
+      "extraction_status": "text_extracted",
+      "char_count": 864,
+      "block_count": 1,
+      "confidence": 1.0,
+      "printed_page_number": 73,
+      "reasons": []
+    },
+    {
+      "page_number": 98,
+      "extraction_status": "text_extracted",
+      "char_count": 1211,
+      "block_count": 5,
+      "confidence": 0.991,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 99,
+      "extraction_status": "text_extracted",
+      "char_count": 2087,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 74,
+      "reasons": []
+    },
+    {
+      "page_number": 100,
+      "extraction_status": "text_extracted",
+      "char_count": 2008,
+      "block_count": 6,
+      "confidence": 0.995,
+      "printed_page_number": 75,
+      "reasons": []
+    },
+    {
+      "page_number": 101,
+      "extraction_status": "text_extracted",
+      "char_count": 781,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 76,
+      "reasons": []
+    },
+    {
+      "page_number": 102,
+      "extraction_status": "text_extracted",
+      "char_count": 2415,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 77,
+      "reasons": []
+    },
+    {
+      "page_number": 103,
+      "extraction_status": "text_extracted",
+      "char_count": 1597,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 78,
+      "reasons": []
+    },
+    {
+      "page_number": 104,
+      "extraction_status": "text_extracted",
+      "char_count": 2446,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 79,
+      "reasons": []
+    },
+    {
+      "page_number": 105,
+      "extraction_status": "text_extracted",
+      "char_count": 1484,
+      "block_count": 5,
+      "confidence": 0.987,
+      "printed_page_number": 80,
+      "reasons": []
+    },
+    {
+      "page_number": 106,
+      "extraction_status": "text_extracted",
+      "char_count": 1731,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 81,
+      "reasons": []
+    },
+    {
+      "page_number": 107,
+      "extraction_status": "text_extracted",
+      "char_count": 2405,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 82,
+      "reasons": []
+    },
+    {
+      "page_number": 108,
+      "extraction_status": "text_extracted",
+      "char_count": 1179,
+      "block_count": 4,
+      "confidence": 0.976,
+      "printed_page_number": 83,
+      "reasons": []
+    },
+    {
+      "page_number": 109,
+      "extraction_status": "text_extracted",
+      "char_count": 2375,
+      "block_count": 6,
+      "confidence": 0.995,
+      "printed_page_number": 84,
+      "reasons": []
+    },
+    {
+      "page_number": 110,
+      "extraction_status": "text_extracted",
+      "char_count": 652,
+      "block_count": 3,
+      "confidence": 0.6,
+      "printed_page_number": 85,
+      "reasons": [
+        "low_parser_confidence"
+      ]
+    },
+    {
+      "page_number": 111,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 0.833,
+      "printed_page_number": 86,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 112,
+      "extraction_status": "text_extracted",
+      "char_count": 1334,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 113,
+      "extraction_status": "text_extracted",
+      "char_count": 2592,
+      "block_count": 4,
+      "confidence": 0.987,
+      "printed_page_number": 88,
+      "reasons": []
+    },
+    {
+      "page_number": 114,
+      "extraction_status": "text_extracted",
+      "char_count": 2092,
+      "block_count": 6,
+      "confidence": 0.99,
+      "printed_page_number": 89,
+      "reasons": []
+    },
+    {
+      "page_number": 115,
+      "extraction_status": "text_extracted",
+      "char_count": 2533,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 90,
+      "reasons": []
+    },
+    {
+      "page_number": 116,
+      "extraction_status": "text_extracted",
+      "char_count": 878,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 91,
+      "reasons": []
+    },
+    {
+      "page_number": 117,
+      "extraction_status": "text_extracted",
+      "char_count": 2487,
+      "block_count": 5,
+      "confidence": 0.996,
+      "printed_page_number": 92,
+      "reasons": []
+    },
+    {
+      "page_number": 118,
+      "extraction_status": "text_extracted",
+      "char_count": 1506,
+      "block_count": 5,
+      "confidence": 0.999,
+      "printed_page_number": 93,
+      "reasons": []
+    },
+    {
+      "page_number": 119,
+      "extraction_status": "text_extracted",
+      "char_count": 1543,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 94,
+      "reasons": []
+    },
+    {
+      "page_number": 120,
+      "extraction_status": "text_extracted",
+      "char_count": 1537,
+      "block_count": 5,
+      "confidence": 0.99,
+      "printed_page_number": 95,
+      "reasons": []
+    },
+    {
+      "page_number": 121,
+      "extraction_status": "text_extracted",
+      "char_count": 1528,
+      "block_count": 6,
+      "confidence": 0.949,
+      "printed_page_number": 96,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 122,
+      "extraction_status": "text_extracted",
+      "char_count": 1063,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 97,
+      "reasons": []
+    },
+    {
+      "page_number": 123,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 1.0,
+      "printed_page_number": 98,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 124,
+      "extraction_status": "text_extracted",
+      "char_count": 1325,
+      "block_count": 5,
+      "confidence": 0.957,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 125,
+      "extraction_status": "text_extracted",
+      "char_count": 2266,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 100,
+      "reasons": []
+    },
+    {
+      "page_number": 126,
+      "extraction_status": "text_extracted",
+      "char_count": 2196,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 101,
+      "reasons": []
+    },
+    {
+      "page_number": 127,
+      "extraction_status": "text_extracted",
+      "char_count": 2545,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 102,
+      "reasons": []
+    },
+    {
+      "page_number": 128,
+      "extraction_status": "text_extracted",
+      "char_count": 2288,
+      "block_count": 5,
+      "confidence": 0.942,
+      "printed_page_number": 103,
+      "reasons": []
+    },
+    {
+      "page_number": 129,
+      "extraction_status": "text_extracted",
+      "char_count": 2055,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 104,
+      "reasons": []
+    },
+    {
+      "page_number": 130,
+      "extraction_status": "text_extracted",
+      "char_count": 1905,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 105,
+      "reasons": []
+    },
+    {
+      "page_number": 131,
+      "extraction_status": "text_extracted",
+      "char_count": 1754,
+      "block_count": 8,
+      "confidence": 0.994,
+      "printed_page_number": 106,
+      "reasons": []
+    },
+    {
+      "page_number": 132,
+      "extraction_status": "text_extracted",
+      "char_count": 1843,
+      "block_count": 7,
+      "confidence": 1.0,
+      "printed_page_number": 107,
+      "reasons": []
+    },
+    {
+      "page_number": 133,
+      "extraction_status": "text_extracted",
+      "char_count": 1468,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 108,
+      "reasons": []
+    },
+    {
+      "page_number": 134,
+      "extraction_status": "text_extracted",
+      "char_count": 1376,
+      "block_count": 5,
+      "confidence": 0.987,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 135,
+      "extraction_status": "text_extracted",
+      "char_count": 2157,
+      "block_count": 6,
+      "confidence": 0.99,
+      "printed_page_number": 110,
+      "reasons": []
+    },
+    {
+      "page_number": 136,
+      "extraction_status": "text_extracted",
+      "char_count": 1436,
+      "block_count": 5,
+      "confidence": 0.969,
+      "printed_page_number": 111,
+      "reasons": []
+    },
+    {
+      "page_number": 137,
+      "extraction_status": "text_extracted",
+      "char_count": 1295,
+      "block_count": 6,
+      "confidence": 0.976,
+      "printed_page_number": 112,
+      "reasons": []
+    },
+    {
+      "page_number": 138,
+      "extraction_status": "text_extracted",
+      "char_count": 2320,
+      "block_count": 6,
+      "confidence": 0.996,
+      "printed_page_number": 113,
+      "reasons": []
+    },
+    {
+      "page_number": 139,
+      "extraction_status": "text_extracted",
+      "char_count": 1332,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 114,
+      "reasons": []
+    },
+    {
+      "page_number": 140,
+      "extraction_status": "text_extracted",
+      "char_count": 1589,
+      "block_count": 4,
+      "confidence": 0.996,
+      "printed_page_number": 115,
+      "reasons": []
+    },
+    {
+      "page_number": 141,
+      "extraction_status": "text_extracted",
+      "char_count": 1634,
+      "block_count": 5,
+      "confidence": 0.999,
+      "printed_page_number": 116,
+      "reasons": []
+    },
+    {
+      "page_number": 142,
+      "extraction_status": "text_extracted",
+      "char_count": 1197,
+      "block_count": 4,
+      "confidence": 0.968,
+      "printed_page_number": 117,
+      "reasons": []
+    },
+    {
+      "page_number": 143,
+      "extraction_status": "text_extracted",
+      "char_count": 905,
+      "block_count": 6,
+      "confidence": 0.936,
+      "printed_page_number": 118,
+      "reasons": []
+    },
+    {
+      "page_number": 144,
+      "extraction_status": "text_extracted",
+      "char_count": 1896,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": 119,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 145,
+      "extraction_status": "text_extracted",
+      "char_count": 1516,
+      "block_count": 5,
+      "confidence": 0.991,
+      "printed_page_number": 120,
+      "reasons": []
+    },
+    {
+      "page_number": 146,
+      "extraction_status": "text_extracted",
+      "char_count": 918,
+      "block_count": 2,
+      "confidence": 1.0,
+      "printed_page_number": 121,
+      "reasons": []
+    },
+    {
+      "page_number": 147,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 1.0,
+      "printed_page_number": 122,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 148,
+      "extraction_status": "text_extracted",
+      "char_count": 1333,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 149,
+      "extraction_status": "text_extracted",
+      "char_count": 1146,
+      "block_count": 7,
+      "confidence": 0.986,
+      "printed_page_number": 124,
+      "reasons": []
+    },
+    {
+      "page_number": 150,
+      "extraction_status": "text_extracted",
+      "char_count": 2276,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 125,
+      "reasons": []
+    },
+    {
+      "page_number": 151,
+      "extraction_status": "text_extracted",
+      "char_count": 1601,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 126,
+      "reasons": []
+    },
+    {
+      "page_number": 152,
+      "extraction_status": "text_extracted",
+      "char_count": 1793,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": 127,
+      "reasons": []
+    },
+    {
+      "page_number": 153,
+      "extraction_status": "text_extracted",
+      "char_count": 2032,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 128,
+      "reasons": []
+    },
+    {
+      "page_number": 154,
+      "extraction_status": "text_extracted",
+      "char_count": 1566,
+      "block_count": 4,
+      "confidence": 0.995,
+      "printed_page_number": 129,
+      "reasons": []
+    },
+    {
+      "page_number": 155,
+      "extraction_status": "text_extracted",
+      "char_count": 1770,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 130,
+      "reasons": []
+    },
+    {
+      "page_number": 156,
+      "extraction_status": "text_extracted",
+      "char_count": 845,
+      "block_count": 5,
+      "confidence": 0.98,
+      "printed_page_number": 131,
+      "reasons": []
+    },
+    {
+      "page_number": 157,
+      "extraction_status": "text_extracted",
+      "char_count": 1253,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 132,
+      "reasons": []
+    },
+    {
+      "page_number": 158,
+      "extraction_status": "text_extracted",
+      "char_count": 1325,
+      "block_count": 5,
+      "confidence": 0.994,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 159,
+      "extraction_status": "text_extracted",
+      "char_count": 1375,
+      "block_count": 6,
+      "confidence": 0.805,
+      "printed_page_number": 134,
+      "reasons": []
+    },
+    {
+      "page_number": 160,
+      "extraction_status": "text_extracted",
+      "char_count": 2476,
+      "block_count": 5,
+      "confidence": 0.916,
+      "printed_page_number": 135,
+      "reasons": []
+    },
+    {
+      "page_number": 161,
+      "extraction_status": "text_extracted",
+      "char_count": 1293,
+      "block_count": 4,
+      "confidence": 0.885,
+      "printed_page_number": 136,
+      "reasons": []
+    },
+    {
+      "page_number": 162,
+      "extraction_status": "text_extracted",
+      "char_count": 1032,
+      "block_count": 6,
+      "confidence": 0.987,
+      "printed_page_number": 137,
+      "reasons": []
+    },
+    {
+      "page_number": 163,
+      "extraction_status": "text_extracted",
+      "char_count": 1046,
+      "block_count": 6,
+      "confidence": 0.974,
+      "printed_page_number": 138,
+      "reasons": []
+    },
+    {
+      "page_number": 164,
+      "extraction_status": "text_extracted",
+      "char_count": 1265,
+      "block_count": 5,
+      "confidence": 0.955,
+      "printed_page_number": 139,
+      "reasons": []
+    },
+    {
+      "page_number": 165,
+      "extraction_status": "text_extracted",
+      "char_count": 955,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 140,
+      "reasons": []
+    },
+    {
+      "page_number": 166,
+      "extraction_status": "text_extracted",
+      "char_count": 1068,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 141,
+      "reasons": []
+    },
+    {
+      "page_number": 167,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 1.0,
+      "printed_page_number": 142,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 168,
+      "extraction_status": "text_extracted",
+      "char_count": 1281,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 169,
+      "extraction_status": "text_extracted",
+      "char_count": 1316,
+      "block_count": 5,
+      "confidence": 0.993,
+      "printed_page_number": 144,
+      "reasons": []
+    },
+    {
+      "page_number": 170,
+      "extraction_status": "text_extracted",
+      "char_count": 1004,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 145,
+      "reasons": []
+    },
+    {
+      "page_number": 171,
+      "extraction_status": "text_extracted",
+      "char_count": 1332,
+      "block_count": 4,
+      "confidence": 0.944,
+      "printed_page_number": 146,
+      "reasons": []
+    },
+    {
+      "page_number": 172,
+      "extraction_status": "text_extracted",
+      "char_count": 962,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 147,
+      "reasons": []
+    },
+    {
+      "page_number": 173,
+      "extraction_status": "text_extracted",
+      "char_count": 1587,
+      "block_count": 7,
+      "confidence": 1.0,
+      "printed_page_number": 148,
+      "reasons": []
+    },
+    {
+      "page_number": 174,
+      "extraction_status": "text_extracted",
+      "char_count": 195,
+      "block_count": 2,
+      "confidence": 1.0,
+      "printed_page_number": 149,
+      "reasons": []
+    },
+    {
+      "page_number": 175,
+      "extraction_status": "text_extracted",
+      "char_count": 996,
+      "block_count": 5,
+      "confidence": 0.997,
+      "printed_page_number": 150,
+      "reasons": []
+    },
+    {
+      "page_number": 176,
+      "extraction_status": "text_extracted",
+      "char_count": 1037,
+      "block_count": 8,
+      "confidence": 0.954,
+      "printed_page_number": 151,
+      "reasons": []
+    },
+    {
+      "page_number": 177,
+      "extraction_status": "text_extracted",
+      "char_count": 130,
+      "block_count": 1,
+      "confidence": 1.0,
+      "printed_page_number": 152,
+      "reasons": []
+    },
+    {
+      "page_number": 178,
+      "extraction_status": "text_extracted",
+      "char_count": 1232,
+      "block_count": 6,
+      "confidence": 0.985,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 179,
+      "extraction_status": "text_extracted",
+      "char_count": 1124,
+      "block_count": 10,
+      "confidence": 1.0,
+      "printed_page_number": 154,
+      "reasons": []
+    },
+    {
+      "page_number": 180,
+      "extraction_status": "text_extracted",
+      "char_count": 988,
+      "block_count": 6,
+      "confidence": 0.986,
+      "printed_page_number": 155,
+      "reasons": []
+    },
+    {
+      "page_number": 181,
+      "extraction_status": "text_extracted",
+      "char_count": 1164,
+      "block_count": 5,
+      "confidence": 0.993,
+      "printed_page_number": 156,
+      "reasons": []
+    },
+    {
+      "page_number": 182,
+      "extraction_status": "text_extracted",
+      "char_count": 1730,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 157,
+      "reasons": []
+    },
+    {
+      "page_number": 183,
+      "extraction_status": "text_extracted",
+      "char_count": 1075,
+      "block_count": 8,
+      "confidence": 0.962,
+      "printed_page_number": 158,
+      "reasons": []
+    },
+    {
+      "page_number": 184,
+      "extraction_status": "text_extracted",
+      "char_count": 1596,
+      "block_count": 5,
+      "confidence": 0.996,
+      "printed_page_number": 159,
+      "reasons": []
+    },
+    {
+      "page_number": 185,
+      "extraction_status": "text_extracted",
+      "char_count": 1101,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 160,
+      "reasons": []
+    },
+    {
+      "page_number": 186,
+      "extraction_status": "text_extracted",
+      "char_count": 1602,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 161,
+      "reasons": []
+    },
+    {
+      "page_number": 187,
+      "extraction_status": "text_extracted",
+      "char_count": 1539,
+      "block_count": 8,
+      "confidence": 0.886,
+      "printed_page_number": 162,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 188,
+      "extraction_status": "text_extracted",
+      "char_count": 1555,
+      "block_count": 5,
+      "confidence": 0.994,
+      "printed_page_number": 163,
+      "reasons": []
+    },
+    {
+      "page_number": 189,
+      "extraction_status": "text_extracted",
+      "char_count": 886,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 164,
+      "reasons": []
+    },
+    {
+      "page_number": 190,
+      "extraction_status": "text_extracted",
+      "char_count": 1589,
+      "block_count": 8,
+      "confidence": 1.0,
+      "printed_page_number": 165,
+      "reasons": []
+    },
+    {
+      "page_number": 191,
+      "extraction_status": "text_extracted",
+      "char_count": 1165,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 166,
+      "reasons": []
+    },
+    {
+      "page_number": 192,
+      "extraction_status": "text_extracted",
+      "char_count": 1209,
+      "block_count": 8,
+      "confidence": 0.993,
+      "printed_page_number": 167,
+      "reasons": []
+    },
+    {
+      "page_number": 193,
+      "extraction_status": "text_extracted",
+      "char_count": 1322,
+      "block_count": 5,
+      "confidence": 0.988,
+      "printed_page_number": 168,
+      "reasons": []
+    },
+    {
+      "page_number": 194,
+      "extraction_status": "text_extracted",
+      "char_count": 888,
+      "block_count": 10,
+      "confidence": 0.979,
+      "printed_page_number": 169,
+      "reasons": []
+    },
+    {
+      "page_number": 195,
+      "extraction_status": "text_extracted",
+      "char_count": 682,
+      "block_count": 2,
+      "confidence": 1.0,
+      "printed_page_number": 170,
+      "reasons": []
+    },
+    {
+      "page_number": 196,
+      "extraction_status": "text_extracted",
+      "char_count": 1313,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 197,
+      "extraction_status": "text_extracted",
+      "char_count": 2195,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 172,
+      "reasons": []
+    },
+    {
+      "page_number": 198,
+      "extraction_status": "text_extracted",
+      "char_count": 2063,
+      "block_count": 4,
+      "confidence": 0.97,
+      "printed_page_number": 173,
+      "reasons": [
+        "layout_conflict_table_text"
+      ]
+    },
+    {
+      "page_number": 199,
+      "extraction_status": "text_extracted",
+      "char_count": 2407,
+      "block_count": 5,
+      "confidence": 0.991,
+      "printed_page_number": 174,
+      "reasons": []
+    },
+    {
+      "page_number": 200,
+      "extraction_status": "text_extracted",
+      "char_count": 2156,
+      "block_count": 6,
+      "confidence": 0.99,
+      "printed_page_number": 175,
+      "reasons": []
+    },
+    {
+      "page_number": 201,
+      "extraction_status": "text_extracted",
+      "char_count": 1871,
+      "block_count": 4,
+      "confidence": 0.995,
+      "printed_page_number": 176,
+      "reasons": []
+    },
+    {
+      "page_number": 202,
+      "extraction_status": "text_extracted",
+      "char_count": 1686,
+      "block_count": 4,
+      "confidence": 0.995,
+      "printed_page_number": 177,
+      "reasons": []
+    },
+    {
+      "page_number": 203,
+      "extraction_status": "text_extracted",
+      "char_count": 2104,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 178,
+      "reasons": []
+    },
+    {
+      "page_number": 204,
+      "extraction_status": "text_extracted",
+      "char_count": 1387,
+      "block_count": 4,
+      "confidence": 0.98,
+      "printed_page_number": 179,
+      "reasons": []
+    },
+    {
+      "page_number": 205,
+      "extraction_status": "text_extracted",
+      "char_count": 1670,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": 180,
+      "reasons": []
+    },
+    {
+      "page_number": 206,
+      "extraction_status": "text_extracted",
+      "char_count": 2126,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 181,
+      "reasons": []
+    },
+    {
+      "page_number": 207,
+      "extraction_status": "text_extracted",
+      "char_count": 2293,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": 182,
+      "reasons": []
+    },
+    {
+      "page_number": 208,
+      "extraction_status": "text_extracted",
+      "char_count": 1389,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 183,
+      "reasons": []
+    },
+    {
+      "page_number": 209,
+      "extraction_status": "text_extracted",
+      "char_count": 2268,
+      "block_count": 5,
+      "confidence": 0.995,
+      "printed_page_number": 184,
+      "reasons": []
+    },
+    {
+      "page_number": 210,
+      "extraction_status": "text_extracted",
+      "char_count": 1267,
+      "block_count": 5,
+      "confidence": 0.947,
+      "printed_page_number": 185,
+      "reasons": []
+    },
+    {
+      "page_number": 211,
+      "extraction_status": "text_extracted",
+      "char_count": 949,
+      "block_count": 2,
+      "confidence": 0.989,
+      "printed_page_number": 186,
+      "reasons": []
+    },
+    {
+      "page_number": 212,
+      "extraction_status": "text_extracted",
+      "char_count": 1192,
+      "block_count": 5,
+      "confidence": 0.982,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 213,
+      "extraction_status": "text_extracted",
+      "char_count": 2187,
+      "block_count": 6,
+      "confidence": 1.0,
+      "printed_page_number": 188,
+      "reasons": []
+    },
+    {
+      "page_number": 214,
+      "extraction_status": "text_extracted",
+      "char_count": 2570,
+      "block_count": 4,
+      "confidence": 1.0,
+      "printed_page_number": 189,
+      "reasons": []
+    },
+    {
+      "page_number": 215,
+      "extraction_status": "text_extracted",
+      "char_count": 1815,
+      "block_count": 6,
+      "confidence": 0.992,
+      "printed_page_number": 190,
+      "reasons": []
+    },
+    {
+      "page_number": 216,
+      "extraction_status": "text_extracted",
+      "char_count": 2475,
+      "block_count": 4,
+      "confidence": 0.995,
+      "printed_page_number": 191,
+      "reasons": []
+    },
+    {
+      "page_number": 217,
+      "extraction_status": "text_extracted",
+      "char_count": 2295,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 192,
+      "reasons": []
+    },
+    {
+      "page_number": 218,
+      "extraction_status": "text_extracted",
+      "char_count": 2266,
+      "block_count": 4,
+      "confidence": 0.995,
+      "printed_page_number": 193,
+      "reasons": []
+    },
+    {
+      "page_number": 219,
+      "extraction_status": "text_extracted",
+      "char_count": 1622,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 194,
+      "reasons": []
+    },
+    {
+      "page_number": 220,
+      "extraction_status": "text_extracted",
+      "char_count": 2373,
+      "block_count": 6,
+      "confidence": 0.99,
+      "printed_page_number": 195,
+      "reasons": []
+    },
+    {
+      "page_number": 221,
+      "extraction_status": "text_extracted",
+      "char_count": 1956,
+      "block_count": 5,
+      "confidence": 1.0,
+      "printed_page_number": 196,
+      "reasons": []
+    },
+    {
+      "page_number": 222,
+      "extraction_status": "text_extracted",
+      "char_count": 1342,
+      "block_count": 4,
+      "confidence": 0.989,
+      "printed_page_number": 197,
+      "reasons": []
+    },
+    {
+      "page_number": 223,
+      "extraction_status": "text_extracted",
+      "char_count": 1240,
+      "block_count": 3,
+      "confidence": 1.0,
+      "printed_page_number": 198,
+      "reasons": []
+    },
+    {
+      "page_number": 224,
+      "extraction_status": "text_extracted",
+      "char_count": 1492,
+      "block_count": 9,
+      "confidence": 0.922,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 225,
+      "extraction_status": "text_extracted",
+      "char_count": 1944,
+      "block_count": 10,
+      "confidence": 1.0,
+      "printed_page_number": 200,
+      "reasons": []
+    },
+    {
+      "page_number": 226,
+      "extraction_status": "text_extracted",
+      "char_count": 2099,
+      "block_count": 9,
+      "confidence": 0.991,
+      "printed_page_number": 201,
+      "reasons": []
+    },
+    {
+      "page_number": 227,
+      "extraction_status": "text_extracted",
+      "char_count": 1997,
+      "block_count": 9,
+      "confidence": 0.978,
+      "printed_page_number": 202,
+      "reasons": []
+    },
+    {
+      "page_number": 228,
+      "extraction_status": "text_extracted",
+      "char_count": 1906,
+      "block_count": 10,
+      "confidence": 1.0,
+      "printed_page_number": 203,
+      "reasons": []
+    },
+    {
+      "page_number": 229,
+      "extraction_status": "text_extracted",
+      "char_count": 1945,
+      "block_count": 9,
+      "confidence": 0.989,
+      "printed_page_number": 204,
+      "reasons": []
+    },
+    {
+      "page_number": 230,
+      "extraction_status": "text_extracted",
+      "char_count": 1805,
+      "block_count": 9,
+      "confidence": 0.977,
+      "printed_page_number": 205,
+      "reasons": []
+    },
+    {
+      "page_number": 231,
+      "extraction_status": "text_extracted",
+      "char_count": 2042,
+      "block_count": 9,
+      "confidence": 0.98,
+      "printed_page_number": 206,
+      "reasons": []
+    },
+    {
+      "page_number": 232,
+      "extraction_status": "text_extracted",
+      "char_count": 2032,
+      "block_count": 11,
+      "confidence": 1.0,
+      "printed_page_number": 207,
+      "reasons": []
+    },
+    {
+      "page_number": 233,
+      "extraction_status": "text_extracted",
+      "char_count": 1949,
+      "block_count": 10,
+      "confidence": 0.984,
+      "printed_page_number": 208,
+      "reasons": []
+    },
+    {
+      "page_number": 234,
+      "extraction_status": "text_extracted",
+      "char_count": 1976,
+      "block_count": 10,
+      "confidence": 0.995,
+      "printed_page_number": 209,
+      "reasons": []
+    },
+    {
+      "page_number": 235,
+      "extraction_status": "text_extracted",
+      "char_count": 2006,
+      "block_count": 11,
+      "confidence": 0.975,
+      "printed_page_number": 210,
+      "reasons": []
+    },
+    {
+      "page_number": 236,
+      "extraction_status": "text_extracted",
+      "char_count": 1783,
+      "block_count": 10,
+      "confidence": 0.976,
+      "printed_page_number": 211,
+      "reasons": []
+    },
+    {
+      "page_number": 237,
+      "extraction_status": "text_extracted",
+      "char_count": 2024,
+      "block_count": 9,
+      "confidence": 1.0,
+      "printed_page_number": 212,
+      "reasons": []
+    },
+    {
+      "page_number": 238,
+      "extraction_status": "text_extracted",
+      "char_count": 1851,
+      "block_count": 11,
+      "confidence": 0.976,
+      "printed_page_number": 213,
+      "reasons": []
+    },
+    {
+      "page_number": 239,
+      "extraction_status": "text_extracted",
+      "char_count": 1864,
+      "block_count": 10,
+      "confidence": 1.0,
+      "printed_page_number": 214,
+      "reasons": []
+    },
+    {
+      "page_number": 240,
+      "extraction_status": "text_extracted",
+      "char_count": 1922,
+      "block_count": 9,
+      "confidence": 0.958,
+      "printed_page_number": 215,
+      "reasons": []
+    },
+    {
+      "page_number": 241,
+      "extraction_status": "text_extracted",
+      "char_count": 1924,
+      "block_count": 11,
+      "confidence": 0.995,
+      "printed_page_number": 216,
+      "reasons": []
+    },
+    {
+      "page_number": 242,
+      "extraction_status": "text_extracted",
+      "char_count": 2073,
+      "block_count": 10,
+      "confidence": 0.971,
+      "printed_page_number": 217,
+      "reasons": []
+    },
+    {
+      "page_number": 243,
+      "extraction_status": "text_extracted",
+      "char_count": 2020,
+      "block_count": 11,
+      "confidence": 0.995,
+      "printed_page_number": 218,
+      "reasons": []
+    },
+    {
+      "page_number": 244,
+      "extraction_status": "text_extracted",
+      "char_count": 2001,
+      "block_count": 10,
+      "confidence": 0.987,
+      "printed_page_number": 219,
+      "reasons": []
+    },
+    {
+      "page_number": 245,
+      "extraction_status": "text_extracted",
+      "char_count": 2131,
+      "block_count": 9,
+      "confidence": 0.974,
+      "printed_page_number": 220,
+      "reasons": []
+    },
+    {
+      "page_number": 246,
+      "extraction_status": "text_extracted",
+      "char_count": 1977,
+      "block_count": 10,
+      "confidence": 1.0,
+      "printed_page_number": 221,
+      "reasons": []
+    },
+    {
+      "page_number": 247,
+      "extraction_status": "text_extracted",
+      "char_count": 1954,
+      "block_count": 9,
+      "confidence": 0.992,
+      "printed_page_number": 222,
+      "reasons": []
+    },
+    {
+      "page_number": 248,
+      "extraction_status": "text_extracted",
+      "char_count": 2025,
+      "block_count": 9,
+      "confidence": 1.0,
+      "printed_page_number": 223,
+      "reasons": []
+    },
+    {
+      "page_number": 249,
+      "extraction_status": "text_extracted",
+      "char_count": 2026,
+      "block_count": 12,
+      "confidence": 0.976,
+      "printed_page_number": 224,
+      "reasons": []
+    },
+    {
+      "page_number": 250,
+      "extraction_status": "text_extracted",
+      "char_count": 2020,
+      "block_count": 11,
+      "confidence": 0.964,
+      "printed_page_number": 225,
+      "reasons": []
+    },
+    {
+      "page_number": 251,
+      "extraction_status": "text_extracted",
+      "char_count": 1921,
+      "block_count": 11,
+      "confidence": 0.95,
+      "printed_page_number": 226,
+      "reasons": []
+    },
+    {
+      "page_number": 252,
+      "extraction_status": "text_extracted",
+      "char_count": 1941,
+      "block_count": 10,
+      "confidence": 0.976,
+      "printed_page_number": 227,
+      "reasons": []
+    },
+    {
+      "page_number": 253,
+      "extraction_status": "text_extracted",
+      "char_count": 2067,
+      "block_count": 11,
+      "confidence": 0.995,
+      "printed_page_number": 228,
+      "reasons": []
+    },
+    {
+      "page_number": 254,
+      "extraction_status": "text_extracted",
+      "char_count": 2023,
+      "block_count": 10,
+      "confidence": 0.985,
+      "printed_page_number": 229,
+      "reasons": []
+    },
+    {
+      "page_number": 255,
+      "extraction_status": "text_extracted",
+      "char_count": 1878,
+      "block_count": 12,
+      "confidence": 1.0,
+      "printed_page_number": 230,
+      "reasons": []
+    },
+    {
+      "page_number": 256,
+      "extraction_status": "text_extracted",
+      "char_count": 1976,
+      "block_count": 11,
+      "confidence": 1.0,
+      "printed_page_number": 231,
+      "reasons": []
+    },
+    {
+      "page_number": 257,
+      "extraction_status": "text_extracted",
+      "char_count": 2126,
+      "block_count": 11,
+      "confidence": 0.991,
+      "printed_page_number": 232,
+      "reasons": []
+    },
+    {
+      "page_number": 258,
+      "extraction_status": "text_extracted",
+      "char_count": 2033,
+      "block_count": 11,
+      "confidence": 1.0,
+      "printed_page_number": 233,
+      "reasons": []
+    },
+    {
+      "page_number": 259,
+      "extraction_status": "text_extracted",
+      "char_count": 1945,
+      "block_count": 10,
+      "confidence": 1.0,
+      "printed_page_number": 234,
+      "reasons": []
+    },
+    {
+      "page_number": 260,
+      "extraction_status": "text_extracted",
+      "char_count": 1938,
+      "block_count": 10,
+      "confidence": 1.0,
+      "printed_page_number": 235,
+      "reasons": []
+    },
+    {
+      "page_number": 261,
+      "extraction_status": "text_extracted",
+      "char_count": 1796,
+      "block_count": 9,
+      "confidence": 0.946,
+      "printed_page_number": 236,
+      "reasons": []
+    },
+    {
+      "page_number": 262,
+      "extraction_status": "text_extracted",
+      "char_count": 1897,
+      "block_count": 8,
+      "confidence": 0.995,
+      "printed_page_number": 237,
+      "reasons": []
+    },
+    {
+      "page_number": 263,
+      "extraction_status": "text_extracted",
+      "char_count": 1970,
+      "block_count": 10,
+      "confidence": 0.963,
+      "printed_page_number": 238,
+      "reasons": []
+    },
+    {
+      "page_number": 264,
+      "extraction_status": "text_extracted",
+      "char_count": 1385,
+      "block_count": 7,
+      "confidence": 1.0,
+      "printed_page_number": 239,
+      "reasons": []
+    },
+    {
+      "page_number": 265,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 1.0,
+      "printed_page_number": 240,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 266,
+      "extraction_status": "text_extracted",
+      "char_count": 1064,
+      "block_count": 3,
+      "confidence": 0.984,
+      "printed_page_number": null,
+      "reasons": []
+    },
+    {
+      "page_number": 267,
+      "extraction_status": "text_extracted",
+      "char_count": 1345,
+      "block_count": 2,
+      "confidence": 0.96,
+      "printed_page_number": 242,
+      "reasons": []
+    },
+    {
+      "page_number": 268,
+      "extraction_status": "text_extracted",
+      "char_count": 1481,
+      "block_count": 2,
+      "confidence": 1.0,
+      "printed_page_number": 243,
+      "reasons": []
+    },
+    {
+      "page_number": 269,
+      "extraction_status": "text_extracted",
+      "char_count": 1773,
+      "block_count": 2,
+      "confidence": 0.974,
+      "printed_page_number": 244,
+      "reasons": []
+    },
+    {
+      "page_number": 270,
+      "extraction_status": "text_extracted",
+      "char_count": 1425,
+      "block_count": 3,
+      "confidence": 0.983,
+      "printed_page_number": 245,
+      "reasons": []
+    },
+    {
+      "page_number": 271,
+      "extraction_status": "text_extracted",
+      "char_count": 1678,
+      "block_count": 3,
+      "confidence": 0.993,
+      "printed_page_number": 246,
+      "reasons": []
+    },
+    {
+      "page_number": 272,
+      "extraction_status": "text_extracted",
+      "char_count": 1147,
+      "block_count": 3,
+      "confidence": 0.991,
+      "printed_page_number": 247,
+      "reasons": []
+    },
+    {
+      "page_number": 273,
+      "extraction_status": "no_text_extracted",
+      "char_count": 0,
+      "block_count": 0,
+      "confidence": 1.0,
+      "printed_page_number": 248,
+      "reasons": [
+        "no_text_extracted"
+      ]
+    },
+    {
+      "page_number": 274,
+      "extraction_status": "text_extracted",
+      "char_count": 1197,
+      "block_count": 6,
+      "confidence": 0.979,
+      "printed_page_number": null,
+      "reasons": []
+    }
+  ]
+}

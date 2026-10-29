@@ -1,80 +1,31 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-10-27T14:44:13Z",
+  "generated_at": "2026-10-28T03:07:24Z",
   "pipeline": {
     "name": "kbr-pdf-extraction",
     "version": "1.0.0",
-    "extractor": "PyMuPDF",
-    "extractor_version": "1.28.2"
+    "extractor": "LlamaParse",
+    "extractor_version": "2026-09-28"
   },
   "settings": {
     "reading_order": "native",
     "tables_enabled": true,
     "printed_page_detection_enabled": true,
     "ocr_enabled": false,
-    "dehyphenation": "disabled"
+    "dehyphenation": "disabled",
+    "llamaparse": {
+      "run_id": "DOC002_cost_effective_full-fb503f92_fbfce257",
+      "tier": "cost_effective",
+      "version": "2026-09-28",
+      "job_id": "pjb-q033fibyemtchtcih7z0ki3zey4b",
+      "credits_used": 822.0
+    }
   },
-  "notes": [],
+  "notes": [
+    "DOC002 dipromosikan dari LlamaParse setelah gate perbandingan lolos",
+    "backup_baseline:02_extraction/extraction_notes/_backups/pre_llamaparse_20261028T030724Z"
+  ],
   "documents": [
-    {
-      "document_id": "DOC001",
-      "document_name": "PenyakitTanamanHortikultura.pdf",
-      "source_path": "01_knowledge_sources/pdf_original/PenyakitTanamanHortikultura.pdf",
-      "source_sha256": "620bd3443f8d25510829b7e56bfac967df55c0f633fbc609d790bc351ee3477e",
-      "source_sha256_after": "620bd3443f8d25510829b7e56bfac967df55c0f633fbc609d790bc351ee3477e",
-      "file_size_bytes": 34032925,
-      "title": null,
-      "authors": [],
-      "publication_year": null,
-      "publisher": null,
-      "language": null,
-      "total_pdf_pages": 874,
-      "document_type": "pdf",
-      "extraction_status": "no_text_extracted",
-      "notes": [
-        "pdf_page_labels_available",
-        "no_text_layer_detected",
-        "ocr_not_performed"
-      ],
-      "pdf_metadata": {
-        "format": "PDF 1.7",
-        "title": "",
-        "author": "",
-        "subject": "",
-        "keywords": "",
-        "creator": "",
-        "producer": "Foxit PhantomPDF Printer Version 7.3.4.0308",
-        "creationDate": "",
-        "modDate": "D:20191102112815+07'00'",
-        "trapped": "",
-        "encryption": null
-      },
-      "metadata_source": {
-        "title": null,
-        "authors": null,
-        "publication_year": null,
-        "publisher": null,
-        "language": null
-      },
-      "statistics": {
-        "pages_with_text": 0,
-        "pages_without_text": 874,
-        "pages_with_errors": 0,
-        "pages_flagged": 874,
-        "blocks_total": 0,
-        "blocks_by_content_type": {},
-        "tables_detected": 0,
-        "tables_needs_review": 0,
-        "headings_detected": 0,
-        "printed_page_numbers_detected": 874,
-        "characters_total": 0
-      },
-      "output_files": {
-        "blocks": "02_extraction/extracted_text/DOC001.blocks.jsonl",
-        "pages": "02_extraction/extracted_text/DOC001.pages.jsonl",
-        "notes": "02_extraction/extraction_notes/DOC001.extraction_notes.json"
-      }
-    },
     {
       "document_id": "DOC002",
       "document_name": "PenyakitTanamanPangan.pdf",
@@ -82,18 +33,36 @@
       "source_sha256": "fb503f92c2bbad7b2605bf7e037ec6756613c33b7f82fb04ed7f58e6a050c466",
       "source_sha256_after": "fb503f92c2bbad7b2605bf7e037ec6756613c33b7f82fb04ed7f58e6a050c466",
       "file_size_bytes": 4627226,
-      "title": null,
-      "authors": [],
-      "publication_year": null,
-      "publisher": null,
-      "language": null,
+      "title": "Penyakit Tanaman dan Pengendaliannya",
+      "authors": [
+        "Evan Purnama Ramdan",
+        "Lina Budiarti",
+        "Nur Kholida Wulansari",
+        "Resti Fajarfika",
+        "Riana Murti Handayani",
+        "Ratna Dwi Hirma Windriyati",
+        "Junairiah",
+        "Dwiwiyati Nurul Septariani",
+        "Arsi",
+        "Muzayyanah Rahmiyah",
+        "Wenni Tania Defriyanti",
+        "Muh. Adiwena",
+        "Akhmad Faisal Malik",
+        "Ankardiansyah Pandu Pradana",
+        "Muhammad Asril"
+      ],
+      "publication_year": 2021,
+      "publisher": "Yayasan Kita Menulis",
+      "language": "id",
       "total_pdf_pages": 274,
       "document_type": "pdf",
       "extraction_status": "completed_with_warnings",
       "notes": [
-        "ocr_not_performed",
-        "printed_page_numbers_not_detected",
-        "unclassified_headings_present"
+        "extracted_with_llamaparse",
+        "parser_tier:cost_effective",
+        "parser_version:2026-09-28",
+        "parser_run_id:DOC002_cost_effective_full-fb503f92_fbfce257",
+        "quality_status:warning"
       ],
       "pdf_metadata": {
         "format": "PDF 1.7",
@@ -109,36 +78,38 @@
         "encryption": null
       },
       "metadata_source": {
-        "title": null,
-        "authors": null,
-        "publication_year": null,
-        "publisher": null,
-        "language": null
+        "title": "manual_metadata.json",
+        "authors": "manual_metadata.json",
+        "publication_year": "manual_metadata.json",
+        "publisher": "manual_metadata.json",
+        "language": "manual_metadata.json"
       },
       "statistics": {
-        "pages_with_text": 273,
-        "pages_without_text": 1,
+        "pages_with_text": 265,
+        "pages_without_text": 9,
         "pages_with_errors": 0,
-        "pages_flagged": 4,
-        "blocks_total": 2408,
+        "pages_flagged": 248,
+        "blocks_total": 1578,
         "blocks_by_content_type": {
-          "chapter_heading": 100,
-          "heading_unclassified": 71,
-          "list_item": 160,
-          "paragraph": 1932,
-          "section_heading": 72,
-          "subsection_heading": 68,
+          "chapter_heading": 44,
+          "figure_caption": 176,
+          "heading_unclassified": 13,
+          "list_item": 34,
+          "paragraph": 1124,
+          "section_heading": 104,
+          "subsection_heading": 78,
           "table": 5
         },
         "tables_detected": 5,
-        "tables_needs_review": 1,
-        "headings_detected": 311,
-        "printed_page_numbers_detected": 0,
-        "characters_total": 455527
+        "tables_needs_review": 0,
+        "headings_detected": 239,
+        "printed_page_numbers_detected": 232,
+        "characters_total": 442397
       },
       "output_files": {
-        "blocks": "02_extraction/extracted_text/DOC002.blocks.jsonl",
         "pages": "02_extraction/extracted_text/DOC002.pages.jsonl",
+        "blocks": "02_extraction/extracted_text/DOC002.blocks.jsonl",
+        "chunks": "02_extraction/extracted_text/DOC002.chunks.jsonl",
         "notes": "02_extraction/extraction_notes/DOC002.extraction_notes.json"
       }
     }

@@ -1,0 +1,12 @@
+{
+  "run_id": "DOC002_cost_effective_full-fb503f92_fbfce257",
+  "generated_at": "2026-10-28T02:02:17Z",
+  "tier": "cost_effective",
+  "version": "2026-09-28",
+  "pages_expected": 274,
+  "credits_used": 822.0,
+  "usd_per_1000_credits": 1.25,
+  "estimated_usd": 1.0275,
+  "job_status": "COMPLETED",
+  "job_error": null
+}

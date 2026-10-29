@@ -1,0 +1,212 @@
+{
+  "generated_by": "build_reports.py",
+  "denominator": {
+    "diseases": "109 baris penyakit dari 15 tanaman; gejala ubi kayu dihitung dari tabel 5.1-5.3, bukan dari symptoms.csv",
+    "controls": "kendali tingkat penyakit dihitung dari controls.csv scope=disease; kendali tingkat bab dilaporkan terpisah"
+  },
+  "totals": {
+    "plants": 15,
+    "diseases": 110,
+    "pathogens": 105,
+    "disease_pathogen_links": 132,
+    "symptom_rows": 601,
+    "control_rows": 528,
+    "control_rows_disease_scope": 448,
+    "control_rows_chapter_scope": 80,
+    "ubi_kayu_table_rows": 19,
+    "diseases_with_pathogen": 103,
+    "diseases_with_symptom": 110,
+    "diseases_with_control": 81
+  },
+  "per_plant": [
+    {
+      "plant_id": "PLANT_001",
+      "plant_name": "Padi",
+      "diseases": 5,
+      "with_pathogen": 4,
+      "with_symptom": 5,
+      "with_control": 5,
+      "has_chapter_control": false,
+      "pathogen_pct": 80.0,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_002",
+      "plant_name": "Kedelai",
+      "diseases": 15,
+      "with_pathogen": 15,
+      "with_symptom": 15,
+      "with_control": 15,
+      "has_chapter_control": false,
+      "pathogen_pct": 100.0,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_003",
+      "plant_name": "Kacang tanah",
+      "diseases": 3,
+      "with_pathogen": 2,
+      "with_symptom": 3,
+      "with_control": 3,
+      "has_chapter_control": true,
+      "pathogen_pct": 66.7,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_004",
+      "plant_name": "Ubi jalar",
+      "diseases": 4,
+      "with_pathogen": 4,
+      "with_symptom": 4,
+      "with_control": 4,
+      "has_chapter_control": false,
+      "pathogen_pct": 100.0,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_005",
+      "plant_name": "Ubi kayu",
+      "diseases": 17,
+      "with_pathogen": 16,
+      "with_symptom": 17,
+      "with_control": 0,
+      "has_chapter_control": true,
+      "pathogen_pct": 94.1,
+      "symptom_pct": 100.0,
+      "control_pct": 0.0
+    },
+    {
+      "plant_id": "PLANT_006",
+      "plant_name": "Jagung",
+      "diseases": 5,
+      "with_pathogen": 5,
+      "with_symptom": 5,
+      "with_control": 5,
+      "has_chapter_control": false,
+      "pathogen_pct": 100.0,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_007",
+      "plant_name": "Kentang",
+      "diseases": 8,
+      "with_pathogen": 8,
+      "with_symptom": 8,
+      "with_control": 4,
+      "has_chapter_control": false,
+      "pathogen_pct": 100.0,
+      "symptom_pct": 100.0,
+      "control_pct": 50.0
+    },
+    {
+      "plant_id": "PLANT_008",
+      "plant_name": "Kubis",
+      "diseases": 13,
+      "with_pathogen": 13,
+      "with_symptom": 13,
+      "with_control": 13,
+      "has_chapter_control": false,
+      "pathogen_pct": 100.0,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_009",
+      "plant_name": "Cabai",
+      "diseases": 7,
+      "with_pathogen": 7,
+      "with_symptom": 7,
+      "with_control": 3,
+      "has_chapter_control": true,
+      "pathogen_pct": 100.0,
+      "symptom_pct": 100.0,
+      "control_pct": 42.9
+    },
+    {
+      "plant_id": "PLANT_010",
+      "plant_name": "Tomat",
+      "diseases": 8,
+      "with_pathogen": 8,
+      "with_symptom": 8,
+      "with_control": 7,
+      "has_chapter_control": false,
+      "pathogen_pct": 100.0,
+      "symptom_pct": 100.0,
+      "control_pct": 87.5
+    },
+    {
+      "plant_id": "PLANT_011",
+      "plant_name": "Kacang panjang",
+      "diseases": 4,
+      "with_pathogen": 3,
+      "with_symptom": 4,
+      "with_control": 1,
+      "has_chapter_control": false,
+      "pathogen_pct": 75.0,
+      "symptom_pct": 100.0,
+      "control_pct": 25.0
+    },
+    {
+      "plant_id": "PLANT_012",
+      "plant_name": "Apel",
+      "diseases": 6,
+      "with_pathogen": 5,
+      "with_symptom": 6,
+      "with_control": 6,
+      "has_chapter_control": false,
+      "pathogen_pct": 83.3,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_013",
+      "plant_name": "Lada",
+      "diseases": 5,
+      "with_pathogen": 4,
+      "with_symptom": 5,
+      "with_control": 5,
+      "has_chapter_control": true,
+      "pathogen_pct": 80.0,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_014",
+      "plant_name": "Kopi",
+      "diseases": 7,
+      "with_pathogen": 7,
+      "with_symptom": 7,
+      "with_control": 7,
+      "has_chapter_control": false,
+      "pathogen_pct": 100.0,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    },
+    {
+      "plant_id": "PLANT_015",
+      "plant_name": "Kelapa sawit",
+      "diseases": 3,
+      "with_pathogen": 2,
+      "with_symptom": 3,
+      "with_control": 3,
+      "has_chapter_control": false,
+      "pathogen_pct": 66.7,
+      "symptom_pct": 100.0,
+      "control_pct": 100.0
+    }
+  ],
+  "taxon_groups": {
+    "bakteri": 9,
+    "fitoplasma": 1,
+    "jamur": 53,
+    "nematoda": 7,
+    "oomycete": 2,
+    "unknown": 19,
+    "virus": 14
+  }
+}

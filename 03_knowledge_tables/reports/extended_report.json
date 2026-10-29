@@ -1,0 +1,22 @@
+{
+  "generated_by": "build_extended_tables.py",
+  "pathogen_rows": 113,
+  "disease_pathogen_rows": 140,
+  "pathogen_candidates": 145,
+  "diseases_with_pathogen": 104,
+  "symptom_rows": 601,
+  "diseases_with_symptom": 93,
+  "control_rows": 528,
+  "control_rows_chapter_scope": 80,
+  "diseases_with_control": 81,
+  "ambiguous_sentences": 32,
+  "taxon_groups": {
+    "bakteri": 11,
+    "jamur": 48,
+    "virus": 14,
+    "unknown": 26,
+    "nematoda": 12,
+    "oomycete": 1,
+    "fitoplasma": 1
+  }
+}

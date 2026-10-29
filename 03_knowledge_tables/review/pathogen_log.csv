@@ -1,0 +1,58 @@
+record_type,record_id,field,old_value,new_value,evidence_ref,evidence_quote,reason
+pathogen,PAT_024,scientific_name,Lebih lanjut,,DOC002_C068_03,"Lebih lanjut Semangun, 2003 menyatakan bahwa Massa yang berwarna coklat tadi dapat berubah menjadi coklat tua gelap","Kata sambung antarkalimat, bukan nama patogen."
+pathogen,PAT_026,scientific_name,Perubahan ketahanan,,DOC002_C076_03,Perubahan ketahanan tersebut disebabkan faktor perbedaan strain ataupun karena perbedaan lingkungan sehingga sifat ketahanan tidak terekspresi.,"Frasa sifat tanaman, bukan nama patogen."
+pathogen,PAT_079,scientific_name,Similis menimbulkan,,DOC002_C184_01,Similis menimbulkan gejala berupa bintik-bintik coklat pada akar akibat tusukan menggunakan stiletnya.,Potongan nama Radopholus similis pada awal kalimat; bukan nama patogen baru.
+pathogen,PAT_082,scientific_name,Kerusakan parah,,DOC002_C184_01,"Kerusakan parah menyebabkan daun-daun berguguran, bahkan tinggal tersisa batang dan ranting berwarna coklat.","Frasa gejala, bukan nama patogen."
+pathogen,PAT_083,scientific_name,Bekas tusukan,,DOC002_C184_03,Bekas tusukan pada akar sering menjadi jalan infeksi Fusarium spp.,"Frasa gejala, bukan nama patogen."
+pathogen,PAT_085,scientific_name,Misalnya pemberian,,DOC002_C187_05,"Misalnya pemberian pupuk N yang berlebihan, dapat menyebabkan jaringan tanaman mudah terinfeksi patogen.","Frasa pengelolaan/pemupukan, bukan nama patogen."
+pathogen,PAT_087,scientific_name,Memangkas bagian,,DOC002_C193_03,Memangkas bagian tanaman terinfeksi.,"Tindakan pengendalian, bukan nama patogen."
+pathogen,PAT_049,scientific_name,Fusarium,,DOC002_C127_01,Gejala penyakit busuk hitam sering kali mirip dengan penyakit menguning yang disebabkan oleh Fusarium.,"Disebut sebagai pembanding gejala penyakit lain, bukan patogen penyakit busuk hitam."
+pathogen,PAT_064,taxon_group,bakteri,jamur,DOC002_C143_05,"Tanaman cabai yang terserang akan mengalami busuk pada pangkal batang, kemudian jamur tersebut akan menyebar ke seluruh akar tanaman.",Kalimat lanjutan menyebut patogen yang sama sebagai jamur; takson sebelumnya salah terbaca bakteri.
+pathogen,PAT_065,taxon_group,unknown,jamur,DOC002_C151_01,Penyakit ini disebabkan oleh jamur A. solani.,Sumber menyebut jamur secara eksplisit.
+pathogen,PAT_066,taxon_group,unknown,jamur,DOC002_C152_03,"Spora jamur ini dapat dipencarkan oleh angin, air maupun alat-alat pertanian",Sumber menyebut jamur secara eksplisit.
+pathogen,PAT_080,taxon_group,nematoda,jamur,DOC002_C184_01,"dan jamur lain seperti Phytium spp., serta Rigidoporus lignosus",Sumber menyebut jamur secara eksplisit; takson sebelumnya salah terbaca nematoda.
+pathogen,PAT_081,taxon_group,nematoda,jamur,DOC002_C206_01,Jamur akar putih disebabkan oleh infeksi cendawan Rigidoporus lignosus,Sumber menyebut cendawan secara eksplisit; takson sebelumnya salah terbaca nematoda.
+pathogen,PAT_096,taxon_group,unknown,jamur,DOC002_C213_01,yang disebabkan oleh Ganoderma adalah salah satu jenis jamur patogen yang paling merusak di Asia Tenggara,Sumber menyebut jamur patogen secara eksplisit.
+pathogen,PAT_097,taxon_group,unknown,oomycete,DOC002_C217_02,Patogen genus Oomycete ini disebut sebagai jamur patogen yang memiliki dampak yang besar.,Sumber menyebut genus Oomycete secara eksplisit.
+pathogen,PAT_010,note,,Salah eja di sumber (Phakopsora pachyrhizi); dipertahankan verbatim.,,,catatan kurasi
+pathogen,PAT_045,note,,Akhiran 'da' menempel di sumber (Globodera rostochiensis); dipertahankan verbatim.,,,catatan kurasi
+pathogen,PAT_058,note,,Salah eja di sumber (Albugo candida); dipertahankan verbatim.,,,catatan kurasi
+pathogen,PAT_059,note,,Salah eja di sumber (Cercospora capsici); dipertahankan verbatim.,,,catatan kurasi
+pathogen,PAT_064,note,,Salah eja di sumber (Fusarium oxysporum); dipertahankan verbatim.,,,catatan kurasi
+pathogen,PAT_100,note,,Tanda titik setelah genus tercetak di sumber; dipertahankan verbatim.,,,catatan kurasi
+pathogen,PAT_102,note,,Salah eja di sumber (Colletotrichum spp.); dipertahankan verbatim.,,,catatan kurasi
+pathogen,PAT_103,note,,Spasi hilang di sumber; varian dari Xanthomonas campestris pv. manihotis pada tabel 5.2.,,,catatan kurasi
+pathogen,PAT_002,note,,Nama anamorf; sumber juga mencantumkan Magnaporthe grisea dan Pyricularia oryzae untuk penyakit yang sama.,,,catatan kurasi
+pathogen,PAT_003,note,,Nama teleomorf; sumber juga mencantumkan Pyricularia grisea dan Pyricularia oryzae.,,,catatan kurasi
+pathogen,PAT_004,note,,Varian nama untuk patogen blas; lihat Pyricularia grisea dan Magnaporthe grisea.,,,catatan kurasi
+pathogen,PAT_028,note,,Sinonim dari Elsinoe batatas menurut sumber.,,,catatan kurasi
+pathogen,PAT_029,note,,Sinonim dari Spaceloma batatas menurut sumber.,,,catatan kurasi
+pathogen,PAT_072,note,,Sinonim; sumber juga menyebut Erythricium salmonicolor dan Upasia salmonicolor.,,,catatan kurasi
+pathogen,PAT_073,note,,Sinonim; sumber juga menyebut Corticium salmonicolor dan Upasia salmonicolor.,,,catatan kurasi
+pathogen,PAT_091,note,,Sinonim; sumber juga menyebut Corticium salmonicolor dan Erythricium salmonicolor.,,,catatan kurasi
+pathogen,PAT_098,note,,Sumber mencantumkan Cercosporidium henningsii sebagai sinonim.,,,catatan kurasi
+pathogen,PAT_099,note,,Sinonim dari Cercospora henningsii menurut sumber.,,,catatan kurasi
+pathogen,PAT_036,note,,Nama tingkat genus; sumber juga menyebut Peronosclerospora maydis pada kalimat berikutnya.,,,catatan kurasi
+pathogen,PAT_037,note,,Nama tingkat spesies; sumber juga menyebut Peronosclerospora sp.,,,catatan kurasi
+pathogen,PAT_009,note,,Nama tingkat genus; sumber tidak menyebut spesiesnya.,,,catatan kurasi
+pathogen,PAT_095,note,,Nama tingkat genus; sumber tidak menyebut spesiesnya.,,,catatan kurasi
+pathogen,PAT_104,note,,"Nama kelompok pada sel tabel, bukan binomial; dipertahankan verbatim.",,,catatan kurasi
+pathogen,PAT_105,note,,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.,,,catatan kurasi
+pathogen,PAT_106,note,,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.,,,catatan kurasi
+pathogen,PAT_027,review_status,needs_review,verified,DOC002_C080_01,Fusarium oxysporum,Nama pada heading dan prosa 4.2; sumber menyebut Fusarium sebagai jamur patogen. Takson jamur sudah sesuai.
+pathogen,PAT_065,review_status,needs_review,verified,,Alternaria solani,Nama pada heading subbab 10.2.2; prosa menyebut jamur A. solani. Takson jamur sudah sesuai.
+pathogen,PAT_066,review_status,needs_review,verified,,Fulvia fulva,Nama pada heading subbab 10.2.3; prosa menyebut spora jamur. Takson jamur sudah sesuai.
+pathogen,PAT_067,review_status,needs_review,verified,DOC002_C155_02,Septoria lycopersici,"Nama pada prosa 10.2.6; teks tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_074,review_status,needs_review,verified,DOC002_C173_01,Botryosphaeria dothidea,"Nama pada prosa 12.5; teks tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_088,review_status,needs_review,verified,DOC002_C194_03,Colletotrichum gloeosporioides,"Nama pada subbab Penyebab 13.6; teks tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_092,review_status,needs_review,verified,DOC002_C205_03,Fusarium solani,"Nama pada prosa 14.5; teks tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_096,review_status,needs_review,verified,,Ganoderma boninense,Nama pada heading dan prosa 15.2; prosa menyebut jamur patogen. Takson jamur sudah sesuai.
+pathogen,PAT_097,review_status,needs_review,verified,,Phytophthora palmivora,Nama pada heading dan prosa 15.3; sumber menyebut genus Oomycete. Takson oomycete sudah sesuai.
+pathogen,PAT_101,review_status,needs_review,verified,DOC002_P092_B001,Phaeoramularia manihotis,"Nama pada sel tabel 5.1 baris 4 (daun); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_107,review_status,needs_review,verified,DOC002_P094_B001,Xanthomonas campestris pv. Manihotis,"Nama pada sel tabel 5.2 baris 2 (batang); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_108,review_status,needs_review,verified,DOC002_P094_B001,Elsinoe brasiliensis,"Nama pada sel tabel 5.2 baris 3 (batang); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_109,review_status,needs_review,verified,DOC002_P094_B001,Diplodia spp,"Nama pada sel tabel 5.3 (akar/umbi); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_110,review_status,needs_review,verified,DOC002_P094_B001,Botryodiplodia spp,"Nama pada sel tabel 5.3 (akar/umbi); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_111,review_status,needs_review,verified,DOC002_P094_B001,Phytophthora spp,"Nama pada sel tabel 5.3 (akar/umbi); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_112,review_status,needs_review,verified,DOC002_P095_B004,Polyporus sulphureus,"Nama pada sel tabel 5.3 (akar/umbi); baris tabel tidak menyebut kelompok takson, sehingga unknown."
+pathogen,PAT_113,review_status,needs_review,verified,DOC002_P093_B005,Collectothricum gloeosporioides,"Nama pada sel tabel 5.2 baris 1 (batang); baris tabel tidak menyebut kelompok takson, sehingga unknown."

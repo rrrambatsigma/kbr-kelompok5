@@ -1,0 +1,19 @@
+{
+  "curation_round": "pathogen-1",
+  "auto_pathogen_rows": 113,
+  "rejected_pathogen_rows": 8,
+  "curated_pathogen_rows": 105,
+  "taxon_fixes": 7,
+  "notes": 25,
+  "verifications": 17,
+  "pathogen_review_status": {
+    "auto_ok": 63,
+    "verified": 42
+  },
+  "curated_link_rows": 132,
+  "diseases_with_pathogen": 103,
+  "diseases_without_pathogen": 7,
+  "pathogens_taxon_unknown": 19,
+  "log_rows": 57,
+  "verbatim_violations": 0
+}

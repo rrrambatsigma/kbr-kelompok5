@@ -4,8 +4,11 @@ Pipeline lokal untuk mengubah PDF sumber proyek KBR menjadi data teks terstruktu
 yang mempertahankan identitas dokumen, nomor halaman PDF, konteks bab/subbab,
 dan catatan masalah ekstraksi.
 
-Pipeline ini **belum dijalankan** saat dokumentasi ini dibuat. Semua perintah di
-bawah harus dijalankan sendiri oleh pengguna.
+Status: `DOC002` (`PenyakitTanamanPangan.pdf`) sudah diekstrak dengan LlamaParse
+(lihat bagian 15) dan menggantikan output PyMuPDF setelah gate perbandingan
+lolos. `DOC001` (hortikultura) berada di luar lingkup proyek dan sudah dihapus
+dari registry, sehingga pipeline hanya memproses satu dokumen. Perintah di bawah
+tetap dijalankan manual oleh pengguna; pipeline tidak berjalan otomatis.
 
 ---
 
@@ -52,15 +55,14 @@ PyMuPDF, tetapi ekstraksi PDF memerlukannya.
 
 ```text
 01_knowledge_sources/pdf_original/
-├── PenyakitTanamanHortikultura.pdf     -> DOC001
 └── PenyakitTanamanPangan.pdf           -> DOC002
 
 01_knowledge_sources/source_metadata/
 └── manual_metadata.json                -> opsional, diisi manual
 ```
 
-Registry dokumen ada di `02_extraction/pdf_pipeline/config.py`. PDF yang tidak
-terdaftar akan dilaporkan dan dilewati.
+Registry dokumen ada di `02_extraction/pdf_pipeline/config.py` dan saat ini hanya
+memuat `DOC002`. PDF yang tidak terdaftar akan dilaporkan dan dilewati.
 
 `manual_metadata.json` hanya boleh diisi dari halaman judul, kolofon, atau
 sumber bibliografis yang benar-benar tersedia. Jangan menebak.
@@ -72,13 +74,11 @@ sumber bibliografis yang benar-benar tersedia. Jangan menebak.
 └── manifest.json
 
 02_extraction/extracted_text/
-├── DOC001.blocks.jsonl
-├── DOC001.pages.jsonl
 ├── DOC002.blocks.jsonl
+├── DOC002.chunks.jsonl
 └── DOC002.pages.jsonl
 
 02_extraction/extraction_notes/
-├── DOC001.extraction_notes.json
 ├── DOC002.extraction_notes.json
 ├── extraction_report.md
 └── validation_report.json
@@ -105,7 +105,7 @@ Field utama:
 
 | Field | Tipe | Keterangan |
 |---|---|---|
-| `document_id` | string | `DOC001` atau `DOC002`. |
+| `document_id` | string | `DOC002`. |
 | `document_name` | string | Nama file PDF. |
 | `source_path` | string | Path relatif terhadap root proyek. |
 | `source_sha256` | string | Hash sebelum ekstraksi. |
@@ -315,8 +315,8 @@ apakah hyphen merupakan soft hyphen atau bagian istilah majemuk.
   ditulis.
 - `--dry-run`: ekstraksi dan parsing dijalankan di memori, tetapi tidak ada file
   yang ditulis.
-- `--doc DOC001` atau `--doc DOC002`: memproses satu dokumen; manifest lama
-  digabung agar entri dokumen lain tidak hilang.
+- `--doc DOC002`: memproses satu dokumen; manifest lama digabung agar entri
+  dokumen lain tidak hilang.
 - Output ditulis secara atomik per file (`.tmp` lalu `os.replace`).
 - PDF dibuka read-only. Hash sebelum dan sesudah ekstraksi dicatat.
 - `validation_report.json` lama tidak dihapus otomatis saat ekstraksi ulang.
@@ -431,7 +431,7 @@ mengimpor PyMuPDF secara lazy.
 ```powershell
 Get-Content 01_knowledge_sources\source_metadata\manifest.json -Encoding UTF8
 Get-Content 02_extraction\extracted_text\DOC002.blocks.jsonl -TotalCount 3 -Encoding UTF8
-Get-Content 02_extraction\extraction_notes\DOC001.extraction_notes.json -Encoding UTF8
+Get-Content 02_extraction\extraction_notes\DOC002.extraction_notes.json -Encoding UTF8
 Get-Content 02_extraction\extraction_notes\extraction_report.md -Encoding UTF8
 Get-Content 02_extraction\extraction_notes\validation_report.json -Encoding UTF8
 ```
@@ -455,12 +455,11 @@ Get-Content 01_knowledge_sources\source_metadata\manifest.json -Encoding UTF8 |
 ## 12. Checklist pemeriksaan manual
 
 1. Cocokkan `total_pdf_pages` di manifest dengan jumlah halaman di PDF reader.
-2. Periksa `DOC001.extraction_notes.json`:
-   - apakah semua halaman `no_text_extracted`;
-   - apakah ada `likely_scanned_image_only`;
-   - putuskan apakah OCR diperlukan.
-3. Untuk `DOC002`, bandingkan halaman sampel 1, 5, 20, 50, 100, dan terakhir
-   antara `blocks.jsonl` dan PDF asli.
+2. Periksa `DOC002.extraction_notes.json`:
+   - apakah ada halaman yang gagal diekstrak;
+   - apakah ada catatan rekonsiliasi yang perlu ditinjau.
+3. Bandingkan halaman sampel 1, 5, 20, 50, 100, dan terakhir antara
+   `blocks.jsonl` dan PDF asli.
 4. Periksa heading bab/subbab dan konteksnya.
 5. Periksa blok tabel, terutama `review_required: true`.
 6. Periksa `printed_page_number` terhadap nomor halaman tercetak.
@@ -478,8 +477,8 @@ Get-Content 01_knowledge_sources\source_metadata\manifest.json -Encoding UTF8 |
 
 ## 13. Keterbatasan yang diketahui
 
-- `DOC001` kemungkinan besar berupa PDF hasil scan. Tanpa OCR, hasil teksnya
-  mungkin kosong. Ini akan dikonfirmasi saat pipeline dijalankan.
+- Lingkup proyek hanya `DOC002`; PDF hortikultura tidak dipakai sehingga
+  keterbatasan khusus dokumen hasil scan tidak lagi relevan.
 - Deteksi heading bergantung pada font, bold, dan pola penomoran. Heading yang
   tidak memenuhi kriteria akan menjadi paragraf atau `heading_unclassified`.
 - Deteksi tabel best-effort dan bisa memperlambat pemrosesan pada PDF yang
@@ -493,7 +492,8 @@ Get-Content 01_knowledge_sources\source_metadata\manifest.json -Encoding UTF8 |
 - Metadata bibliografis hanya diisi jika tersedia di PDF atau diisi manual.
 - PDF terenkripsi yang memerlukan password tidak didukung dan akan dilaporkan
   sebagai kegagalan.
-- Pipeline tidak menggunakan OCR, LLM, atau API eksternal.
+- Pipeline native (PyMuPDF) tidak menggunakan OCR, LLM, atau API eksternal.
+  Jalur LlamaParse bersifat opsional dan terpisah; lihat bagian 15.
 
 ---
 
@@ -505,3 +505,195 @@ Get-Content 01_knowledge_sources\source_metadata\manifest.json -Encoding UTF8 |
   pada tahap ini.
 - Jika menemukan masalah parsing, perbaiki parser dan jalankan ulang dengan
   `--overwrite`, lalu bandingkan hasilnya dengan output lama di folder backup.
+
+---
+
+## 15. Pipeline LlamaParse untuk DOC002
+
+Jalur ini khusus `DOC002` (`PenyakitTanamanPangan.pdf`), satu-satunya dokumen
+dalam lingkup proyek, dan tidak menyentuh `03_knowledge_tables` atau folder
+setelahnya.
+
+### 15.1 Pemisahan namespace
+
+- Output mentah, normalisasi, dan laporan berada di `02_extraction/llamaparse/`.
+- Output canonical `02_extraction/extracted_text/DOC002.*` hanya ditimpa
+  setelah full run 274 halaman lolos gate perbandingan dengan baseline PyMuPDF.
+- Sebelum penimpaan, baseline dibackup ke
+  `02_extraction/extraction_notes/_backups/pre_llamaparse_<stamp>/`.
+
+### 15.2 Konfigurasi API key
+
+`.env` di root proyek boleh memakai `LLAMA_CLOUD_API_KEY` atau alias lama
+`LLAMA_KEY`. Nilai key tidak pernah dicetak; `env-check` hanya melaporkan
+apakah key terdeteksi.
+
+### 15.3 Perintah
+
+```powershell
+# cek key tanpa memanggil API
+python 02_extraction\run_llamaparse.py env-check
+
+# daftar versi parser per tier (tanpa kredit)
+python 02_extraction\run_llamaparse.py versions
+
+# uji 1 halaman (murah) sebelum pilot
+python 02_extraction\run_llamaparse.py smoke --page 25 --tier cost_effective
+
+# pilot 20 halaman pada beberapa tier
+python 02_extraction\run_llamaparse.py pilot --tiers fast,cost_effective,agentic
+
+# full run + normalisasi + chunking + quality + perbandingan
+python 02_extraction\run_llamaparse.py full --tier cost_effective --version 2026-09-28
+
+# full run tanpa menimpa output canonical (review dulu)
+python 02_extraction\run_llamaparse.py full --tier cost_effective --version 2026-09-28 --no-promote
+
+# promosikan run yang sudah lolos gate (tanpa memanggil API lagi)
+python 02_extraction\run_llamaparse.py promote --run <run_id>
+```
+
+Perintah lain: `build`, `quality`, `compare`, `images`, dan `runs` (dengan
+`--run <run_id>` opsional; default run selesai terakhir). `quality` dan
+`compare` menolak berjalan bila `normalized/DOC002.*.jsonl` berasal dari run
+lain; jalankan `build --run <run_id>` lebih dulu.
+
+`images --run <run_id>` mengambil ulang gambar yang gagal diunduh saat parsing
+(presigned URL kedaluwarsa) lewat `parsing.get` tanpa membuat job baru sehingga
+tidak memakai kredit. `--dry-run` hanya menampilkan daftar nama yang belum ada.
+
+### 15.4 Artefak
+
+| Path | Isi |
+|---|---|
+| `llamaparse/raw/DOC002/<run_id>/response.json` | respons API lengkap (audit) |
+| `.../pages/page_XXXX.md` | markdown mentah per halaman |
+| `.../pages/page_XXXX.items.json` | heading, teks, tabel, gambar, bbox |
+| `.../pages/page_XXXX.meta.json` | confidence, header/footer, nomor cetak |
+| `.../tables/*.csv` | tabel hasil parser |
+| `.../images/` | gambar embedded + `index.json` |
+| `.../run_manifest.json` | file_id, job_id, opsi, kredit, status |
+| `llamaparse/normalized/DOC002.*.jsonl` | pages, blocks, chunks |
+| `llamaparse/baseline/DOC002.*.jsonl` | snapshot beku baseline PyMuPDF + `baseline_manifest.json` (hash & asal) |
+| `llamaparse/reports/DOC002.*.json` | quality, manual review, comparison, cost, validation |
+| `llamaparse/reports/DOC002.reconciliations.json` | ringkasan rekonsiliasi verbatim per run |
+| `llamaparse/reports/DOC002.reconciliations.jsonl` | audit setiap token/blok yang dipulihkan |
+| `llamaparse/reports/DOC002.pilot.json` | ringkasan perbandingan tier |
+
+### 15.5 Pembersihan dan struktur
+
+- Markdown emphasis (`*...*`, `**...**`, backtick) dibuang dari teks blok;
+  isi kata tidak diubah dan dibandingkan lewat `substance_tokens`.
+- Sintaks markdown/HTML dibuang tanpa menyentuh isi: tautan disimpan sebagai
+  labelnya, tag seperti `<u>` dihapus. Hanya tag bernama yang dikenali, jadi
+  polaritas angka (`<30 °C`) tidak berubah. Teks asli tetap tersimpan di
+  `raw_text` blok.
+- Running header/footer dibuang hanya bila berada di tepi halaman dan memuat
+  nomor halaman; bila parser menggabungkan header ke paragraf (tier `fast`),
+  header dipisahkan dan dipakai untuk memulihkan konteks bab.
+- Caption `Gambar N.N` yang salah diklasifikasi sebagai heading diubah menjadi
+  `figure_caption`; caption `Tabel N.N` menjadi paragraf bertipe chunk `table`.
+- Level heading ditentukan ulang dari pola nomor (`1.2` section, `1.2.1`
+  subsection) karena level dari parser tidak konsisten.
+- Nomor halaman cetak diambil dari metadata parser; bila kosong, diturunkan dari
+  header/footer yang memuat angka halaman (`source: header|footer`).
+- Tabel yang oleh model layout justru dinyatakan bukan tabel
+  (`no table/form`, mis. diagram alur halaman 41) tidak diklaim sebagai tabel:
+  `content_type` menjadi `paragraph`, teksnya diratakan, diberi catatan
+  `spurious_table_reclassified`, dan masuk review manual. Data tabel asli tetap
+  tersimpan di field `table` blok.
+- Halaman dengan tabel yang bertumpuk dengan blok teks diberi flag
+  `layout_conflict_table_text` dan masuk antrean review manual.
+
+### 15.6 Rekonsiliasi verbatim
+
+DOC002 adalah PDF born-digital, sehingga text layer PyMuPDF menjadi otoritas
+kata. LlamaParse tetap dipakai untuk struktur (urutan baca, tabel, caption,
+nomor halaman cetak), tetapi kata yang ditulis ulang atau dihilangkan parser
+dikembalikan dari baseline. Setiap perubahan dapat dilacak di
+`reports/DOC002.reconciliations.jsonl`.
+
+Baseline dibekukan di `llamaparse/baseline/` (dibuat sekali dari backup
+`pre_llamaparse_*`, lengkap dengan hash di `baseline_manifest.json`). Tanpa
+snapshot ini, build berikutnya akan membandingkan keluaran parser dengan
+dirinya sendiri karena `extracted_text/` sudah berisi hasil promosi.
+
+- Substitusi 1:1 hanya dipulihkan bila blok masih sejajar dengan baseline
+  (>= 50% token) dan bentuk katanya wajar: huruf awal sama atau kemiripan
+  >= 0,75. Pasangan seperti `jember` → `image` dari blok yang salah posisi
+  tidak diterapkan.
+- Kandidat pembanding diambil dari blok terdekat, jendela tiga blok, dan
+  seluruh halaman; kandidat dengan pasangan valid terbanyak dipilih agar blok
+  parser yang menggabungkan beberapa blok baseline tetap tertangani.
+- Halaman yang kehilangan hampir seluruh teks (< 25% karakter baseline)
+  dibangun ulang dari blok baseline dan ditandai `text_source:
+  pymupdf_text_layer`.
+- Blok di ujung halaman yang hilang seluruhnya dipulihkan bila blok sebelumnya
+  sudah terwakili, sehingga entri daftar pustaka yang terpotong tidak hilang.
+- Placeholder `Image` (alt-text gambar bawaan parser) dibuang karena bukan isi
+  dokumen.
+- Sel tabel juga direkonsiliasi, tetapi dengan syarat lebih ketat: sel harus
+  sejajar dengan sel baseline (>= 50% token) dan kata pengganti harus berbeda
+  tepat satu huruf dengan huruf awal sama. Perubahan diterapkan serentak ke
+  `cells`, `rows`, `md`, `csv`, dan teks blok agar tidak ada dua versi isi
+  tabel; struktur baris/kolom tidak diubah.
+- Metadata DOC002 diisi dari halaman hak cipta PDF (halaman 6), bukan tebakan:
+  judul, 15 penulis, tahun 2021, penerbit, dan bahasa `id`; ISBN dicatat di
+  `notes`.
+- Saat promosi, record diselaraskan dengan skema canonical: teks final menjadi
+  `raw_text` (teks parser asli disimpan di `parser_raw_text`), `sequence_number`
+  unik global, `printed_page_number` berupa string, bbox yang tidak tersedia
+  diisi `[0, 0, 0, 0]` dan diberi catatan `bbox_unavailable`, serta payload
+  tabel mendapat `cells`, `row_count`, `column_count`, dan `review_required`.
+- `figure_caption` dan flag `layout_conflict_table_text` didaftarkan sebagai
+  tipe/flag resmi agar lolos validator lintas-pipeline.
+
+### 15.7 Gate promosi
+
+Promosi ke `extracted_text/` hanya terjadi bila seluruh gate pada
+`reports/DOC002.comparison.json` lolos:
+
+- 274 halaman lengkap.
+- `content_recall` rata-rata <= 1%. Metrik ini mengukur **kehilangan isi**
+  tanpa terpengaruh urutan blok: urutan baca yang lebih baik (mis. tabel
+  dipindah ke tempat semestinya) bukan kehilangan informasi. Token yang hanya
+  muncul di keluaran LlamaParse (mis. label diagram) juga tidak dihitung.
+  CER simetris dan noise-adjusted tetap dilaporkan sebagai pembanding.
+- `content_loss_max_page` <= 10%: tidak ada satu halaman pun yang kehilangan
+  lebih dari 10% isinya. Batas per halaman ini mencegah rata-rata yang bagus
+  menutupi satu halaman yang rusak.
+- Dua jenis halaman dikecualikan dari rata-rata dan dicatat di laporan:
+  baseline < 100 karakter (mis. sampul belakang) dan halaman non-isi
+  (`excluded_non_content_pages`, mis. sampul ResearchGate halaman 1).
+- 15 bab terdeteksi. Hitungan memakai bab yang punya blok isi, sehingga daftar
+  bab di sampul belakang tidak menambah hitungan.
+- Nomor halaman cetak terdeteksi (dari metadata parser atau diturunkan dari
+  header/footer).
+- Tabel minimal sebanyak baseline pada rentang halaman yang diproses.
+- Semua blok non-heading di halaman body punya konteks bab.
+
+Skor `confidence` parser hanya dipakai untuk triase review, bukan bukti
+akurasi. Halaman dengan kehilangan isi >= 2% atau tambahan isi >= 20 token
+otomatis masuk `reports/DOC002.manual_review.jsonl`.
+
+### 15.8 Versi parser
+
+Versi LlamaParse berbeda per tier. Pilot DOC002 memakai `latest` yang saat itu
+berarti `cost_effective` versi `2026-09-28` (dikonfirmasi dengan perintah
+`versions`); full run memakai versi yang sama agar hasil pilot tetap berlaku.
+Versi `2026-07-24` hanya tersedia untuk tier `agentic`, bukan `cost_effective`.
+
+```powershell
+python 02_extraction\run_llamaparse.py versions
+python 02_extraction\run_llamaparse.py full --tier cost_effective --version 2026-09-28
+```
+
+Nilai `--version` divalidasi sebagai `latest` atau `YYYY-MM-DD`; tanggal yang
+tidak tersedia untuk tier tersebut akan ditolak API saat parse.
+
+### 15.9 Biaya
+
+Tarif acuan $1,25 per 1.000 kredit. Perkiraan DOC002: `fast` 274 kredit,
+`cost_effective` 822 kredit, `agentic` 2.740 kredit. Pilot 20 halaman pada tiga
+tier memakai sekitar 280 kredit. Run yang sudah selesai tidak diulang karena
+`run_id` diturunkan dari hash PDF + opsi + rentang halaman.

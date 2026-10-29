@@ -1,0 +1,113 @@
+kind,entity_id,plant_id,label,detail
+disease_without_pathogen,DIS_005,PLANT_001,Penyakit Kerdil Rumput dan Kerdil Hampa,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_022,PLANT_003,Penyakit Belang (Mottle),Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_039,PLANT_005,Nekrosis pada titik tunas (Cassava bud necrosis),Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_088,PLANT_011,Penyakit Karat Daun,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_090,PLANT_012,Bercak Daun,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_098,PLANT_013,Hawar Rambut Kuda,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+disease_without_pathogen,DIS_109,PLANT_015,bercak daun,Tidak ada nama patogen yang dapat diekstraksi dari bagian penyakit ini; lihat diseases.csv untuk bukti halaman.
+pathogen_variant,PAT_002,,Pyricularia grisea,Nama anamorf; sumber juga mencantumkan Magnaporthe grisea dan Pyricularia oryzae untuk penyakit yang sama.
+pathogen_variant,PAT_003,,Magnaporthe grisea,Nama teleomorf; sumber juga mencantumkan Pyricularia grisea dan Pyricularia oryzae.
+pathogen_variant,PAT_004,,Pyricularia oryzae,Varian nama untuk patogen blas; lihat Pyricularia grisea dan Magnaporthe grisea.
+pathogen_variant,PAT_009,,Fusarium spp,Nama tingkat genus; sumber tidak menyebut spesiesnya.
+pathogen_variant,PAT_010,,Phakopspora pachyrhizi,Salah eja di sumber (Phakopsora pachyrhizi); dipertahankan verbatim.
+pathogen_variant,PAT_028,,Spaceloma batatas,Sinonim dari Elsinoe batatas menurut sumber.
+pathogen_variant,PAT_029,,Elsinoe batatas,Sinonim dari Spaceloma batatas menurut sumber.
+pathogen_variant,PAT_036,,Peronosclerospora sp,Nama tingkat genus; sumber juga menyebut Peronosclerospora maydis pada kalimat berikutnya.
+pathogen_variant,PAT_037,,Peronosclerospora maydis,Nama tingkat spesies; sumber juga menyebut Peronosclerospora sp.
+pathogen_variant,PAT_045,,Globodera rostochiensisda,Akhiran 'da' menempel di sumber (Globodera rostochiensis); dipertahankan verbatim.
+pathogen_variant,PAT_058,,Albugi candida,Salah eja di sumber (Albugo candida); dipertahankan verbatim.
+pathogen_variant,PAT_059,,Cescospora capsici,Salah eja di sumber (Cercospora capsici); dipertahankan verbatim.
+pathogen_variant,PAT_064,,Fussarium oxysporum,Salah eja di sumber (Fusarium oxysporum); dipertahankan verbatim.
+pathogen_taxon_unknown,PAT_067,,Septoria lycopersici,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_072,,Corticium salmonicolor,Sinonim; sumber juga menyebut Erythricium salmonicolor dan Upasia salmonicolor.
+pathogen_variant,PAT_073,,Erythricium salmonicolor,Sinonim; sumber juga menyebut Corticium salmonicolor dan Upasia salmonicolor.
+pathogen_taxon_unknown,PAT_074,,Botryosphaeria dothidea,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_088,,Colletotrichum gloeosporioides,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_091,,Upasia salmonicolor,Sinonim; sumber juga menyebut Corticium salmonicolor dan Erythricium salmonicolor.
+pathogen_taxon_unknown,PAT_092,,Fusarium solani,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_095,,Meloidogyne spp,Nama tingkat genus; sumber tidak menyebut spesiesnya.
+pathogen_taxon_unknown,PAT_098,,Cercospora henningsii,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_098,,Cercospora henningsii,Sumber mencantumkan Cercosporidium henningsii sebagai sinonim.
+pathogen_taxon_unknown,PAT_099,,Cercosporidium henningsii,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_099,,Cercosporidium henningsii,Sinonim dari Cercospora henningsii menurut sumber.
+pathogen_taxon_unknown,PAT_100,,Cercospora. viscosae,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_100,,Cercospora. viscosae,Tanda titik setelah genus tercetak di sumber; dipertahankan verbatim.
+pathogen_taxon_unknown,PAT_101,,Phaeoramularia manihotis,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_102,,Colletotricum spp,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_102,,Colletotricum spp,Salah eja di sumber (Colletotrichum spp.); dipertahankan verbatim.
+pathogen_taxon_unknown,PAT_103,,Xanthomonas Campestrispv. Manihotis,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_103,,Xanthomonas Campestrispv. Manihotis,Spasi hilang di sumber; varian dari Xanthomonas campestris pv. manihotis pada tabel 5.2.
+pathogen_variant,PAT_104,,Fitoplasma,"Nama kelompok pada sel tabel, bukan binomial; dipertahankan verbatim."
+pathogen_taxon_unknown,PAT_105,,Begomovirus,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_105,,Begomovirus,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.
+pathogen_taxon_unknown,PAT_106,,Ipomovirus,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_variant,PAT_106,,Ipomovirus,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.
+pathogen_taxon_unknown,PAT_107,,Xanthomonas campestris pv. Manihotis,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_108,,Elsinoe brasiliensis,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_109,,Diplodia spp,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_110,,Botryodiplodia spp,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_111,,Phytophthora spp,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_112,,Polyporus sulphureus,Sumber tidak menyebut kelompok takson patogen ini.
+pathogen_taxon_unknown,PAT_113,,Collectothricum gloeosporioides,Sumber tidak menyebut kelompok takson patogen ini.
+disease_without_control,DIS_028,PLANT_005,Bercak daun Coklat,Ada pengendalian tingkat bab.
+disease_without_control,DIS_029,PLANT_005,Bercak daun baur,Ada pengendalian tingkat bab.
+disease_without_control,DIS_030,PLANT_005,Bercak daun putih,Ada pengendalian tingkat bab.
+disease_without_control,DIS_031,PLANT_005,Antraknosa,Ada pengendalian tingkat bab.
+disease_without_control,DIS_032,PLANT_005,Hawar daun bakteri,Ada pengendalian tingkat bab.
+disease_without_control,DIS_033,PLANT_005,Sapu setan (Witches broom),Ada pengendalian tingkat bab.
+disease_without_control,DIS_034,PLANT_005,Cassava Mosaic Begomovirus (CMBs),Ada pengendalian tingkat bab.
+disease_without_control,DIS_035,PLANT_005,Cassava Brown Streak Disease (CBSD),Ada pengendalian tingkat bab.
+disease_without_control,DIS_036,PLANT_005,Hawar bakteri,Ada pengendalian tingkat bab.
+disease_without_control,DIS_037,PLANT_005,Superelongasi,Ada pengendalian tingkat bab.
+disease_without_control,DIS_038,PLANT_005,Tanaman kerdil (stunt),Ada pengendalian tingkat bab.
+disease_without_control,DIS_039,PLANT_005,Nekrosis pada titik tunas (Cassava bud necrosis),Ada pengendalian tingkat bab.
+disease_without_control,DIS_040,PLANT_005,Busuk pangkal batang,Ada pengendalian tingkat bab.
+disease_without_control,DIS_041,PLANT_005,Busuk akar dan umbi,Ada pengendalian tingkat bab.
+disease_without_control,DIS_042,PLANT_005,Busuk Umbi,Ada pengendalian tingkat bab.
+disease_without_control,DIS_043,PLANT_005,Busuk akar,Ada pengendalian tingkat bab.
+disease_without_control,DIS_050,PLANT_007,Penyakit Layu Fusarium,Tidak ada teks pengendalian pada bagian penyakit maupun bab.
+disease_without_control,DIS_053,PLANT_007,Penyakit Busuk Cincin,Tidak ada teks pengendalian pada bagian penyakit maupun bab.
+disease_without_control,DIS_054,PLANT_007,Penyakit Virus Kompleks,Tidak ada teks pengendalian pada bagian penyakit maupun bab.
+disease_without_control,DIS_055,PLANT_007,Penyakit Nematoda Bengkak Akar,Tidak ada teks pengendalian pada bagian penyakit maupun bab.
+disease_without_control,DIS_070,PLANT_009,Penyakit Bercak Daun pada Cabai,Ada pengendalian tingkat bab.
+disease_without_control,DIS_073,PLANT_009,Penyakit Layu Bakteri,Ada pengendalian tingkat bab.
+disease_without_control,DIS_074,PLANT_009,Penyakit Mosaik Virus,Ada pengendalian tingkat bab.
+disease_without_control,DIS_075,PLANT_009,Penyakit Layu Fussarium,Ada pengendalian tingkat bab.
+disease_without_control,DIS_082,PLANT_010,Penyakit Bercak Daun Septoria,Tidak ada teks pengendalian pada bagian penyakit maupun bab.
+disease_without_control,DIS_085,PLANT_011,Penyakit Mosaic,Tidak ada teks pengendalian pada bagian penyakit maupun bab.
+disease_without_control,DIS_086,PLANT_011,Penyakit Antraknos,Tidak ada teks pengendalian pada bagian penyakit maupun bab.
+disease_without_control,DIS_087,PLANT_011,Hawar Daun,Tidak ada teks pengendalian pada bagian penyakit maupun bab.
+disease_without_control,DIS_110,PLANT_005,Antraknosa,Ada pengendalian tingkat bab.
+ambiguous_sentence,DOC002_C046_02,,"Benih yang akan ditanam diberi perlakuan benih dengan fungisida yang mengandung bahan aktif thiram ataupun kaptan, dan melakukan penyemprotan dengan fungisida a",Penyakit DIS_011: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C048_02,,Selain menanam varietas tahan pengelolaan tanaman seperti melakukan rotasi tanam selama 2 tahun dan pengolahan lahan dengan membajak lahan dan membersihkan sumb,Penyakit DIS_012: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C054_01,,kikuchii dapat dilakukan dengan menggunakan metanol dari ekstrak daun Prosopis nigra yang dicampurkan dengan difenokonazol merupakan strategi pengendalian yang ,Penyakit DIS_015: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C054_01,,Melakukan eradikasi pada sisa-sisa tanaman yang terinfeksi di lahan dapat mengurangi terjadinya penyakit bercak biji ungu pada kedelai.,Penyakit DIS_015: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C054_01,,"Jika intensitas serangan sudah ada di lahan maka dilakukan penyemprotan dengan fungisida berbahan aktif mankozeb (Inayati and Yusnawan, 2017).",Penyakit DIS_015: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C058_01,,"Gambar 2.17: Gejala Penyakit Mosaik Kedelai (Soybean Mosaic Virus) pada Tanaman Kedelai Menyebabkan Daun Berukuran Kecil dan Klorosis, Permukaan Daun tidak Rata",Penyakit DIS_018: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C076_03,,"Sering kali suatu varietas yang dikembangkan sebagai varietas tahan layu di suatu daerah, menjadi rentan di daerah lain.",Penyakit DIS_023: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C077_01,,"Pergiliran kacang tanah dengan tanaman lain yang tidak termasuk inang bakteri, dapat mengurangi intensitas penyakit layu.",Penyakit DIS_023: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C077_01,,"Kacang tanah yang ditanam bergilir dengan padi gogo selama dua tahun, ternyata dapat menekan intensitas penyakit layu dari 72,6% menjadi 30,7% (Machmud.",Penyakit DIS_023: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C109_01,,"Pengendalian busuk pelepah menurut Chaudhary et al., (2016) dapat dilakukan dengan mekanis seperti pemotongan dua hingga tiga daun bagian bawah tanaman jagung s",Penyakit DIS_048: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C109_01,,"Soenartiningsih et al., (2015) menambahkan bahwa pembersihan lahan dari sisa tanaman bergejala maupun terinfeksi juga efektif menekan perkembangan busuk pelepah",Penyakit DIS_048: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C109_01,,"dan Acaulospora mellea untuk menekan busuk pelepah, keduanya bersifat efektif masing- masing menekan penyakit sebesar 21.9 sampai 40.98% dan 21.48% hingga 39.93",Penyakit DIS_048: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C109_01,,"Djaenuddin et al., (2017) melaporkan bahwa pengendalian busuk pelepah menggunakan agens hayati Bacillus subtilis TM4 dapat menekan keparahan penyakit sebesar 63",Penyakit DIS_048: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C117_03,,Cara pengendalian penyakit busuk daun pada kentang dengan melakukan sanitasi pada perkebunan tanaman kentang dan juga pada bagian – bagian tanaman kentang yang ,Penyakit DIS_051: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C118_02,,Perlu dilakukan solarisasi tanah untuk mematikan bibit penyakit serta pemberian agens hayati yang mengandung Trihcoderma sp dan Gliocladium sp sebagai pengendal,Penyakit DIS_052: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C126_01,,Pengendalian penyakit dapat dilakukan seperti usaha pengendalian penyakit busuk kaki hitam.,Penyakit DIS_058: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C127_02,,Metode yang paling utama untuk pengendalian penyakit busuk hitam yaitu dengan memperhatikan sanitasi dan melaksanakan sistem budidaya yang baik.,Penyakit DIS_058: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C130_01,,"Apabila pengendalian lain tidak berhasil dilakukan, aplikasi fungisida juga dapat dilakukan pada benih untuk mematikan jamur patogen.",Penyakit DIS_062: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C131_01,,Apabila gejala terus berkembang maka dapat diaplikasikan fungisida dengan dosis dan prosedur yang tepat.,Penyakit DIS_065: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C132_01,,Pengendalian penyakit busuk lunak kubis lebih diarahkan untuk mengurangi sclerotia di tanah dengan pengelolaan tanah terutama sisa pertanaman sebelumnya.,Penyakit DIS_066: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C132_02,,Pengendalian dengan perlakuan kimiawi tidak tersedia untuk busuk lunak bakteri.,Penyakit DIS_067: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C155_01,,"Choiriyah; and Nurcahyanti, (2019) menyatakan bahwa penyambungan varietas tahan Rewako F1 dengan varietas rentan Betavila F1 berhasil menekan perkembangan penya",Penyakit DIS_081: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C166_02,,"Sama halnya dengan penyakit karat daun, untuk penyakit bercak daun pencegahannya dengan melakukan sanitasi lingkungan dan kontrol saluran drainase.",Penyakit DIS_088: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C170_04,,"Jika ditemukan serangan 5% dari jumlah daun, dapat dilakukan aplikasi fungisida dengan bahan aktif dinokap dengan dosis sesuai anjuran kemasan nama dagang.",Penyakit DIS_089: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C170_04,,"Fungisida berbahan aktif pyraclostrobin 50 g per kg + metiram 550 g per kg dengan konsentrasi 0,5-2 g per liter air efektif mengendalikan penyakit embun tepung ",Penyakit DIS_089: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C172_02,,Bercak daun pada tanaman apel dapat dikendalikan melalui: Pengaturan jarak tanam yang tidak terlalu rapat;,Penyakit DIS_090: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C176_01,,Cara pengendalian busuk buah pada tanaman apel: Memetik buah sebelum masak optimal;,Penyakit DIS_093: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C176_04,,Cara pengendalian busuk akar pada tanaman apel: Pemusnahan pohon apel hingga ke akar.,Penyakit DIS_094: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C204_02,,"Teknik budidaya yang benar mengikuti standar Good Agricultural Practices (GAP) tanaman kopi merupakan faktor esensial dalam pengendalian berbagai penyakit kopi,",Penyakit DIS_102: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C204_02,,Pengendalian menggunakan fungisida sintetik juga dapat dilakukan dengan cara mengolesi bagian tanaman yang sakit menggunakan fungisida dengan bahan aktif tembag,Penyakit DIS_102: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C211_01,,"Selanjutnya, pada daerah di mana pernah terjadi infeksi dapat dilakukan pengendalian seperti menggunakan agens hayati atau nematisida sintetik.",Penyakit DIS_106: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.
+ambiguous_sentence,DOC002_C213_01,,Infeksi basidiospora melalui potongan permukaan batang atau pemangkasan pelepah dan saat panen tandan.,Penyakit DIS_107: kalimat memuat isyarat gejala dan pengendalian sekaligus; tidak dimasukkan ke tabel.

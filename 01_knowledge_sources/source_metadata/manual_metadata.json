@@ -2,21 +2,31 @@
   "schema_version": "1.0.0",
   "_instructions": "Isi hanya dari halaman judul, kolofon, atau sumber bibliografis yang benar-benar tersedia. Jangan menebak. Gunakan null atau [] jika tidak tersedia.",
   "documents": {
-    "DOC001": {
-      "title": null,
-      "authors": [],
-      "publication_year": null,
-      "publisher": null,
-      "language": null,
-      "notes": []
-    },
     "DOC002": {
-      "title": null,
-      "authors": [],
-      "publication_year": null,
-      "publisher": null,
-      "language": null,
-      "notes": []
+      "title": "Penyakit Tanaman dan Pengendaliannya",
+      "authors": [
+        "Evan Purnama Ramdan",
+        "Lina Budiarti",
+        "Nur Kholida Wulansari",
+        "Resti Fajarfika",
+        "Riana Murti Handayani",
+        "Ratna Dwi Hirma Windriyati",
+        "Junairiah",
+        "Dwiwiyati Nurul Septariani",
+        "Arsi",
+        "Muzayyanah Rahmiyah",
+        "Wenni Tania Defriyanti",
+        "Muh. Adiwena",
+        "Akhmad Faisal Malik",
+        "Ankardiansyah Pandu Pradana",
+        "Muhammad Asril"
+      ],
+      "publication_year": 2021,
+      "publisher": "Yayasan Kita Menulis",
+      "language": "id",
+      "notes": [
+        "Disalin dari halaman hak cipta PDF (halaman 6); ISBN 978-623-342-079-2; Cetakan 1, Mei 2021"
+      ]
     }
   }
 }

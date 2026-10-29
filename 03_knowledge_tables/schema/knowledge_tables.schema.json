@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.1.0",
+  "document_id": "DOC002",
+  "description": "Skema knowledge table Tahap 2. Setiap nilai teks wajib verbatim dari chunk yang dirujuk.",
+  "tables": {
+    "plants": {
+      "file": "auto/plants.csv",
+      "primary_key": "plant_id",
+      "columns": {
+        "plant_id": {"type": "string", "pattern": "^PLANT_\\d{3}$"},
+        "plant_name_id": {"type": "string"},
+        "plant_name_en": {"type": "string", "nullable": true, "note": "Hanya bila buku mencetak nama Inggrisnya."},
+        "scientific_name": {"type": "string", "nullable": true, "note": "Hanya bila tercetak di dalam bab; daftar pustaka tidak dihitung."},
+        "scientific_name_page": {"type": "integer", "nullable": true},
+        "chapter_number": {"type": "integer", "minimum": 1, "maximum": 15},
+        "chapter_title": {"type": "string"},
+        "page_start": {"type": "integer"},
+        "page_end": {"type": "integer"},
+        "evidence_chunk_id": {"type": "string"}
+      }
+    },
+    "diseases": {
+      "file": "auto/diseases.csv",
+      "curated_file": "curated/diseases.csv",
+      "primary_key": "disease_id",
+      "columns": {
+        "disease_id": {"type": "string", "pattern": "^DIS_\\d{3}$"},
+        "plant_id": {"type": "string", "foreign_key": "plants.plant_id"},
+        "disease_name_verbatim": {"type": "string", "nullable": true, "note": "Kosong bila heading berisi nama patogen dan nama penyakit belum dikurasi."},
+        "disease_name_key": {"type": "string", "note": "Slug untuk deteksi duplikat, bukan nama tampilan."},
+        "name_en_verbatim": {"type": "string", "nullable": true},
+        "chapter_title": {"type": "string"},
+        "heading_level": {"type": "enum", "values": ["section", "subsection", "table"]},
+        "section": {"type": "string"},
+        "subsection": {"type": "string"},
+        "page_start": {"type": "integer"},
+        "page_end": {"type": "integer"},
+        "evidence_chunk_ids": {"type": "string", "note": "Dipisah titik koma."},
+        "source_block_ids": {"type": "string", "note": "Dipakai untuk penyakit yang berasal dari tabel."},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "needs_curation", "verified"]},
+        "notes": {"type": "string"}
+      }
+    },
+    "pathogens": {
+      "file": "curated/pathogens.csv",
+      "primary_key": "pathogen_id",
+      "columns": {
+        "pathogen_id": {"type": "string", "pattern": "^PAT_\\d{3}$"},
+        "scientific_name": {"type": "string", "note": "Dipertahankan verbatim, termasuk salah eja yang tercetak di sumber."},
+        "verbatim_text": {"type": "string", "note": "Nama seperti tercetak pada sumber."},
+        "taxon_group": {"type": "enum", "values": ["jamur", "bakteri", "virus", "nematoda", "fitoplasma", "oomycete", "unknown"], "note": "Hanya diisi bila sumber menyebut kelompoknya; jika tidak, unknown."},
+        "taxon_evidence_chunk_id": {"type": "string", "nullable": true, "note": "Chunk bukti untuk taxon_group hasil kurasi."},
+        "taxon_evidence_quote": {"type": "string", "nullable": true, "note": "Kutipan verbatim yang menyebut kelompok takson."},
+        "page": {"type": "integer"},
+        "chunk_id": {"type": "string"},
+        "note": {"type": "string", "nullable": true, "note": "Catatan salah eja, sinonim, atau nama tingkat genus."},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
+      }
+    },
+    "disease_pathogen": {
+      "file": "curated/disease_pathogen.csv",
+      "primary_key": ["disease_id", "pathogen_id"],
+      "columns": {
+        "disease_id": {"type": "string", "foreign_key": "diseases.disease_id"},
+        "pathogen_id": {"type": "string", "foreign_key": "pathogens.pathogen_id"},
+        "evidence_chunk_id": {"type": "string"},
+        "relation_note": {"type": "string"},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
+      }
+    },
+    "symptoms": {
+      "file": "curated/symptoms.csv",
+      "primary_key": "symptom_id",
+      "columns": {
+        "symptom_id": {"type": "string", "pattern": "^SYM_\\d{3}$"},
+        "disease_id": {"type": "string", "foreign_key": "diseases.disease_id"},
+        "plant_id": {"type": "string", "foreign_key": "plants.plant_id"},
+        "verbatim_text": {"type": "string", "note": "Satu kalimat utuh dari sumber, tanpa parafrase."},
+        "chunk_id": {"type": "string"},
+        "page_start": {"type": "integer"},
+        "page_end": {"type": "integer"},
+        "char_start": {"type": "integer", "note": "Offset pada teks chunk yang sudah dinormalisasi spasinya."},
+        "char_end": {"type": "integer"},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
+      }
+    },
+    "controls": {
+      "file": "curated/controls.csv",
+      "primary_key": "control_id",
+      "columns": {
+        "control_id": {"type": "string", "pattern": "^CTL_\\d{3}$"},
+        "disease_id": {"type": "string", "nullable": true, "foreign_key": "diseases.disease_id", "note": "Kosong untuk pengendalian tingkat bab (scope=chapter)."},
+        "plant_id": {"type": "string", "foreign_key": "plants.plant_id", "note": "Selalu terisi, termasuk untuk pengendalian tingkat bab."},
+        "verbatim_text": {"type": "string"},
+        "chunk_id": {"type": "string"},
+        "page_start": {"type": "integer"},
+        "page_end": {"type": "integer"},
+        "char_start": {"type": "integer"},
+        "char_end": {"type": "integer"},
+        "control_category": {"type": "string", "nullable": true, "note": "Hanya diisi bila kategori disebut sumber."},
+        "scope": {"type": "enum", "values": ["disease", "chapter"]},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
+      }
+    },
+    "ubi_kayu_tabel_5": {
+      "file": "curated/ubi_kayu_tabel_5.csv",
+      "primary_key": ["table_id", "row_no"],      "columns": {
+        "table_id": {"type": "enum", "values": ["T5.1_DAUN", "T5.2_BATANG", "T5.3_AKAR"]},
+        "table_title": {"type": "string", "note": "Judul tabel seperti tercetak; jangan dinormalkan."},
+        "row_no": {"type": "string"},
+        "disease_name": {"type": "string"},
+        "pathogen_name": {"type": "string"},
+        "symptom_text": {"type": "string"},
+        "page": {"type": "integer"},
+        "source_block_id": {"type": "string"},
+        "status": {"type": "enum", "values": ["complete", "unnumbered", "missing_row"]},
+        "note": {"type": "string"}
+      }
+    }
+  },
+  "invariants": [
+    "Semua teks bebas harus substring dari plain_text chunk yang dirujuk setelah normalisasi spasi.",
+    "Tidak ada nilai yang diisi dari pengetahuan umum; field tanpa bukti dibiarkan kosong.",
+    "Nama penyakit yang terpotong di sumber tidak dibetulkan.",
+    "Satu penyakit hanya boleh muncul sekali per tanaman kecuali sumber memang memisahkannya (mis. bagian tanaman berbeda) dan diberi catatan."
+  ]
+}

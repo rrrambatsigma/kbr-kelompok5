@@ -1,0 +1,114 @@
+pathogen_id,scientific_name,taxon_group,verbatim_text,page,chunk_id,review_status
+PAT_001,Xanthomonas oryzae,bakteri,Xanthomonas oryzae,26,DOC002_C026_02,auto_ok
+PAT_002,Pyricularia grisea,jamur,Pyricularia grisea,29,DOC002_C029_02,auto_ok
+PAT_003,Magnaporthe grisea,jamur,Magnaporthe grisea,29,DOC002_C029_02,auto_ok
+PAT_004,Pyricularia oryzae,jamur,Pyricularia oryzae,29,DOC002_C029_02,auto_ok
+PAT_005,Rhizoctonia solani,jamur,Rhizoctonia solani,32,DOC002_C032_01,auto_ok
+PAT_006,Rice tungro bacillifor virus,virus,Rice tungro bacillifor virus,33,DOC002_C033_02,auto_ok
+PAT_007,Rice tungro spherical virus,virus,Rice tungro spherical virus,33,DOC002_C033_02,auto_ok
+PAT_008,Sclerotium rolfsii,jamur,Sclerotium rolfsii,38,DOC002_C038_03,auto_ok
+PAT_009,Fusarium spp,jamur,Fusarium spp,42,DOC002_C042_01,auto_ok
+PAT_010,Phakopspora pachyrhizi,jamur,Phakopspora pachyrhizi,43,DOC002_C043_03,auto_ok
+PAT_011,Erysiphae diffusa,jamur,Erysiphae diffusa,45,DOC002_C045_01,auto_ok
+PAT_012,Peronospora manshurica,jamur,Peronospora manshurica,46,DOC002_C046_02,auto_ok
+PAT_013,Cercospora sojina,jamur,Cercospora sojina,47,DOC002_C047_02,auto_ok
+PAT_014,Colletotrichum,jamur,Colletotrichum,49,DOC002_C049_02,auto_ok
+PAT_015,Corynespora cassiicola,jamur,Corynespora cassiicola,51,DOC002_C051_02,auto_ok
+PAT_016,Cercospora kikuchii,jamur,Cercospora kikuchii,53,DOC002_C053_01,auto_ok
+PAT_017,Pseudomonas syringae,bakteri,Pseudomonas syringae,54,DOC002_C054_03,auto_ok
+PAT_018,Xanthomonas axonopodis,bakteri,Xanthomonas axonopodis,56,DOC002_C056_02,auto_ok
+PAT_019,Soybean Mosaic Virus,virus,Soybean Mosaic Virus,57,,auto_ok
+PAT_020,Cowpea Mild Mottle Virus,virus,Cowpea Mild Mottle Virus,59,DOC002_C059_01,auto_ok
+PAT_021,Soybean Stunt Virus,virus,Soybean Stunt Virus,60,DOC002_C060_02,auto_ok
+PAT_022,Cercospora arachidicola,jamur,Cercospora arachidicola,65,DOC002_C065_01,auto_ok
+PAT_023,Puccinia arachidis,jamur,Puccinia arachidis,68,DOC002_C068_03,auto_ok
+PAT_024,Lebih lanjut,jamur,Lebih lanjut,68,DOC002_C068_03,auto_ok
+PAT_025,Ralstonia solanacearum,bakteri,Ralstonia solanacearum,74,DOC002_C074_01,auto_ok
+PAT_026,Perubahan ketahanan,unknown,Perubahan ketahanan,76,DOC002_C076_03,needs_review
+PAT_027,Fusarium oxysporum,jamur,Fusarium oxysporum,80,DOC002_C080_01,needs_review
+PAT_028,Spaceloma batatas,jamur,Spaceloma batatas,83,DOC002_C083_01,auto_ok
+PAT_029,Elsinoe batatas,jamur,Elsinoe batatas,83,DOC002_C083_01,auto_ok
+PAT_030,Sweet Potato Feathery Mottle Virus,virus,Sweet Potato Feathery Mottle Virus,85,DOC002_C085_01,auto_ok
+PAT_031,Sweet Potato Mild Mottle Virus,virus,Sweet Potato Mild Mottle Virus,85,DOC002_C085_01,auto_ok
+PAT_032,Sweet Potato Chlorotic Fleck Virus,virus,Sweet Potato Chlorotic Fleck Virus,85,DOC002_C085_01,auto_ok
+PAT_033,Ceratocystis fimbriata,jamur,Ceratocystis fimbriata,87,DOC002_C087_01,auto_ok
+PAT_034,Helminthosporium maydis,jamur,Helminthosporium maydis,100,DOC002_C100_02,auto_ok
+PAT_035,Puccinia polysora,jamur,Puccinia polysora,103,DOC002_C103_01,auto_ok
+PAT_036,Peronosclerospora sp,jamur,Peronosclerospora sp,104,DOC002_C104_02,auto_ok
+PAT_037,Peronosclerospora maydis,jamur,Peronosclerospora maydis,104,DOC002_C104_02,auto_ok
+PAT_038,Pantoea stewartii,bakteri,Pantoea stewartii,107,DOC002_C107_02,auto_ok
+PAT_039,Pseudomonas solanacearum,bakteri,Pseudomonas solanacearum,114,DOC002_C114_03,auto_ok
+PAT_040,Phytophthora infestans,jamur,Phytophthora infestans,117,DOC002_C117_02,auto_ok
+PAT_041,Alternaria sp,jamur,Alternaria sp,118,DOC002_C118_02,auto_ok
+PAT_042,Clavibacter michiganensis,bakteri,Clavibacter michiganensis,119,DOC002_C119_02,auto_ok
+PAT_043,Potato Virus X,virus,Potato Virus X,120,DOC002_C120_02,auto_ok
+PAT_044,Meloidogyne,nematoda,Meloidogyne,121,DOC002_C121_01,auto_ok
+PAT_045,Globodera rostochiensisda,nematoda,Globodera rostochiensisda,122,DOC002_C122_01,auto_ok
+PAT_046,Globodera pallida,nematoda,Globodera pallida,122,DOC002_C122_01,auto_ok
+PAT_047,Leptosphaeria maculans,jamur,Leptosphaeria maculans,125,DOC002_C125_01,auto_ok
+PAT_048,Xanthomonas campestris,bakteri,Xanthomonas campestris,126,DOC002_C126_01,auto_ok
+PAT_049,Fusarium,bakteri,Fusarium,127,DOC002_C127_01,auto_ok
+PAT_050,Plasmodiophora brassicae,jamur,Plasmodiophora brassicae,128,DOC002_C128_01,auto_ok
+PAT_051,Colletotrichum higginsianum,jamur,Colletotrichum higginsianum,129,DOC002_C129_02,auto_ok
+PAT_052,Alternaria brassicae,jamur,Alternaria brassicae,129,DOC002_C129_01,auto_ok
+PAT_053,Erysiphe cruciferarum,jamur,Erysiphe cruciferarum,130,DOC002_C130_02,auto_ok
+PAT_054,Sclerotinia sclerotiorum,jamur,Sclerotinia sclerotiorum,131,DOC002_C131_02,auto_ok
+PAT_055,Peronospora parasitica,oomycete,Peronospora parasitica,131,DOC002_C131_01,auto_ok
+PAT_056,Erwinia carotovora,bakteri,Erwinia carotovora,132,DOC002_C132_02,auto_ok
+PAT_057,Mycosphaerella brassicicola,jamur,Mycosphaerella brassicicola,133,DOC002_C133_02,auto_ok
+PAT_058,Albugi candida,jamur,Albugi candida,133,DOC002_C133_01,auto_ok
+PAT_059,Cescospora capsici,jamur,Cescospora capsici,135,DOC002_C135_02,auto_ok
+PAT_060,Colletotrichum sp,jamur,Colletotrichum sp,136,DOC002_C136_02,auto_ok
+PAT_061,Phytophthora sp,jamur,Phytophthora sp,138,DOC002_C138_02,auto_ok
+PAT_062,Cucumber mosaic virus,virus,Cucumber mosaic virus,141,DOC002_C141_02,auto_ok
+PAT_063,Tobacco mosaic virus,virus,Tobacco mosaic virus,141,DOC002_C141_02,auto_ok
+PAT_064,Fussarium oxysporum,bakteri,Fussarium oxysporum,143,DOC002_C143_05,auto_ok
+PAT_065,Alternaria solani,unknown,Alternaria solani,151,,needs_review
+PAT_066,Fulvia fulva,unknown,Fulvia fulva,152,,needs_review
+PAT_067,Septoria lycopersici,unknown,Septoria lycopersici,155,DOC002_C155_02,needs_review
+PAT_068,Colletotrichum coccoides,jamur,Colletotrichum coccoides,156,DOC002_C156_02,auto_ok
+PAT_069,Tomato Yellow Leaf Curl Virus,virus,Tomato Yellow Leaf Curl Virus,157,DOC002_C157_01,auto_ok
+PAT_070,Bean common mosaic virus,virus,Bean common mosaic virus,159,DOC002_C159_02,auto_ok
+PAT_071,Podosphaera leucotricha,jamur,Podosphaera leucotricha,169,DOC002_C169_02,auto_ok
+PAT_072,Corticium salmonicolor,jamur,Corticium salmonicolor,172,DOC002_C172_03,auto_ok
+PAT_073,Erythricium salmonicolor,jamur,Erythricium salmonicolor,172,DOC002_C172_03,auto_ok
+PAT_074,Botryosphaeria dothidea,unknown,Botryosphaeria dothidea,173,DOC002_C173_01,needs_review
+PAT_075,Gloeosporium Sp,jamur,Gloeosporium Sp,175,DOC002_C175_02,auto_ok
+PAT_076,Armillaria mellea,jamur,Armillaria mellea,176,DOC002_C176_02,auto_ok
+PAT_077,Radopholus similis,nematoda,Radopholus similis,183,DOC002_C183_03,auto_ok
+PAT_078,Meloidogyne incognita,nematoda,Meloidogyne incognita,183,DOC002_C183_03,auto_ok
+PAT_079,Similis menimbulkan,nematoda,Similis menimbulkan,184,DOC002_C184_01,auto_ok
+PAT_080,Phytium spp,nematoda,Phytium spp,184,DOC002_C184_01,auto_ok
+PAT_081,Rigidoporus lignosus,nematoda,Rigidoporus lignosus,184,DOC002_C184_01,auto_ok
+PAT_082,Kerusakan parah,nematoda,Kerusakan parah,184,DOC002_C184_01,auto_ok
+PAT_083,Bekas tusukan,nematoda,Bekas tusukan,184,DOC002_C184_03,auto_ok
+PAT_084,Septobasidium pseudocellatum,jamur,Septobasidium pseudocellatum,187,DOC002_C187_03,auto_ok
+PAT_085,Misalnya pemberian,unknown,Misalnya pemberian,187,DOC002_C187_05,needs_review
+PAT_086,Piper Yellow Mottle Virus,virus,Piper Yellow Mottle Virus,190,DOC002_C190_03,auto_ok
+PAT_087,Memangkas bagian,unknown,Memangkas bagian,193,DOC002_C193_03,needs_review
+PAT_088,Colletotrichum gloeosporioides,unknown,Colletotrichum gloeosporioides,194,DOC002_C194_03,needs_review
+PAT_089,Hemileia vastatrix,jamur,Hemileia vastatrix,197,DOC002_C197_02,auto_ok
+PAT_090,Cercospora coffeicola,jamur,Cercospora coffeicola,200,DOC002_C200_02,auto_ok
+PAT_091,Upasia salmonicolor,jamur,Upasia salmonicolor,203,DOC002_C203_01,auto_ok
+PAT_092,Fusarium solani,unknown,Fusarium solani,205,DOC002_C205_03,needs_review
+PAT_093,Phellinus noxius,jamur,Phellinus noxius,206,DOC002_C206_01,auto_ok
+PAT_094,Pratylenchus coffeae,nematoda,Pratylenchus coffeae,209,DOC002_C209_02,auto_ok
+PAT_095,Meloidogyne spp,nematoda,Meloidogyne spp,209,DOC002_C209_02,auto_ok
+PAT_096,Ganoderma boninense,unknown,Ganoderma boninense,213,,needs_review
+PAT_097,Phytophthora palmivora,unknown,Phytophthora palmivora,217,,needs_review
+PAT_098,Cercospora henningsii,unknown,Cercospora henningsii,91,,needs_review
+PAT_099,Cercosporidium henningsii,unknown,Cercosporidium henningsii,91,,needs_review
+PAT_100,Cercospora. viscosae,unknown,Cercospora. viscosae,92,,needs_review
+PAT_101,Phaeoramularia manihotis,unknown,Phaeoramularia manihotis,92,,needs_review
+PAT_102,Colletotricum spp,unknown,Colletotricum spp,92,,needs_review
+PAT_103,Xanthomonas Campestrispv. Manihotis,unknown,Xanthomonas Campestrispv. Manihotis,92,,needs_review
+PAT_104,Fitoplasma,fitoplasma,Fitoplasma,92,,auto_ok
+PAT_105,Begomovirus,unknown,Begomovirus,92,,needs_review
+PAT_106,Ipomovirus,unknown,Ipomovirus,92,,needs_review
+PAT_107,Xanthomonas campestris pv. Manihotis,unknown,Xanthomonas campestris pv. Manihotis,94,,needs_review
+PAT_108,Elsinoe brasiliensis,unknown,Elsinoe brasiliensis,94,,needs_review
+PAT_109,Diplodia spp,unknown,Diplodia spp,94,,needs_review
+PAT_110,Botryodiplodia spp,unknown,Botryodiplodia spp,94,,needs_review
+PAT_111,Phytophthora spp,unknown,Phytophthora spp,94,,needs_review
+PAT_112,Polyporus sulphureus,unknown,Polyporus sulphureus,95,,needs_review
+PAT_113,Collectothricum gloeosporioides,unknown,Collectothricum gloeosporioides,93,,needs_review

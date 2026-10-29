@@ -1,45 +1,17 @@
 # Extraction Report
 
-- Generated at: `2026-10-27T14:44:13Z`
+- Generated at: `2026-10-28T03:07:24Z`
 - Schema: `1.0.0`
 - Pipeline: `1.0.0`
-- Extractor: `PyMuPDF` `1.28.2`
+- Extractor: `LlamaParse` `2026-09-28`
 
 ## Ringkasan dokumen
 
 | Dokumen | Halaman | Halaman berteks | Blok | Tabel | Status |
 |---|---:|---:|---:|---:|---|
-| DOC001 | 874 | 0 | 0 | 0 | no_text_extracted |
-| DOC002 | 274 | 273 | 2408 | 5 | completed_with_warnings |
+| DOC002 | 274 | 265 | 1578 | 5 | completed_with_warnings |
 
 ## Detail dokumen
-
-### DOC001 — PenyakitTanamanHortikultura.pdf
-
-- Source: `01_knowledge_sources/pdf_original/PenyakitTanamanHortikultura.pdf`
-- SHA-256: `620bd3443f8d25510829b7e56bfac967df55c0f633fbc609d790bc351ee3477e`
-- Total halaman PDF: 874
-- Status ekstraksi: `no_text_extracted`
-- Halaman berteks: 0
-- Halaman tanpa teks: 874
-- Halaman error: 0
-- Blok: 0
-- Tabel: 0 (review: 0)
-- Judul: None
-- Penulis: null
-- Tahun: None
-- Penerbit: None
-- Bahasa: None
-
-Output:
-- `blocks`: `02_extraction/extracted_text/DOC001.blocks.jsonl`
-- `pages`: `02_extraction/extracted_text/DOC001.pages.jsonl`
-- `notes`: `02_extraction/extraction_notes/DOC001.extraction_notes.json`
-
-Catatan:
-- `pdf_page_labels_available`
-- `no_text_layer_detected`
-- `ocr_not_performed`
 
 ### DOC002 — PenyakitTanamanPangan.pdf
 
@@ -47,16 +19,16 @@ Catatan:
 - SHA-256: `fb503f92c2bbad7b2605bf7e037ec6756613c33b7f82fb04ed7f58e6a050c466`
 - Total halaman PDF: 274
 - Status ekstraksi: `completed_with_warnings`
-- Halaman berteks: 273
-- Halaman tanpa teks: 1
+- Halaman berteks: 265
+- Halaman tanpa teks: 9
 - Halaman error: 0
-- Blok: 2408
-- Tabel: 5 (review: 1)
-- Judul: None
-- Penulis: null
-- Tahun: None
-- Penerbit: None
-- Bahasa: None
+- Blok: 1578
+- Tabel: 5 (review: 0)
+- Judul: Penyakit Tanaman dan Pengendaliannya
+- Penulis: Evan Purnama Ramdan, Lina Budiarti, Nur Kholida Wulansari, Resti Fajarfika, Riana Murti Handayani, Ratna Dwi Hirma Windriyati, Junairiah, Dwiwiyati Nurul Septariani, Arsi, Muzayyanah Rahmiyah, Wenni Tania Defriyanti, Muh. Adiwena, Akhmad Faisal Malik, Ankardiansyah Pandu Pradana, Muhammad Asril
+- Tahun: 2021
+- Penerbit: Yayasan Kita Menulis
+- Bahasa: id
 
 Output:
 - `blocks`: `02_extraction/extracted_text/DOC002.blocks.jsonl`
@@ -64,9 +36,16 @@ Output:
 - `notes`: `02_extraction/extraction_notes/DOC002.extraction_notes.json`
 
 Catatan:
-- `ocr_not_performed`
-- `printed_page_numbers_not_detected`
-- `unclassified_headings_present`
+- `extracted_with_llamaparse`
+- `parser_tier:cost_effective`
+- `parser_version:2026-09-28`
+- `parser_run_id:DOC002_cost_effective_full-fb503f92_fbfce257`
+- `quality_status:warning`
+
+## Catatan pipeline
+
+- `DOC002 dipromosikan dari LlamaParse setelah gate perbandingan lolos`
+- `backup_baseline:02_extraction/extraction_notes/_backups/pre_llamaparse_20261028T030724Z`
 
 ## Langkah berikutnya
 

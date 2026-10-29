@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC002",
+  "generated_at": "2026-10-28T01:14:35Z",
+  "version": "latest",
+  "pages": [
+    1,
+    9,
+    23,
+    25,
+    27,
+    40,
+    41,
+    91,
+    92,
+    94,
+    95,
+    134,
+    148,
+    158,
+    168,
+    178,
+    196,
+    212,
+    224,
+    274
+  ],
+  "results": [
+    {
+      "tier": "fast",
+      "run_id": "DOC002_fast_pilot-fb503f92_1e1c2c2f",
+      "status": "ok",
+      "pages": 20,
+      "blocks": 130,
+      "chunks": 39,
+      "credits": 20.0,
+      "quality_status": "warning",
+      "quality_issues": [],
+      "cer_mean": 0.02357,
+      "cer_noise_adjusted_mean": 0.03808,
+      "chapter_count": 9,
+      "printed_page_numbers": 0,
+      "tables": 4,
+      "gate_passed": false,
+      "tables_pages": [
+        91,
+        92,
+        94,
+        95
+      ]
+    },
+    {
+      "tier": "cost_effective",
+      "run_id": "DOC002_cost_effective_pilot-fb503f92_d77c1832",
+      "status": "ok",
+      "pages": 20,
+      "blocks": 102,
+      "chunks": 42,
+      "credits": 60.0,
+      "quality_status": "warning",
+      "quality_issues": [
+        "tables_with_concerns:3"
+      ],
+      "cer_mean": 0.01731,
+      "cer_noise_adjusted_mean": 0.00904,
+      "chapter_count": 9,
+      "printed_page_numbers": 7,
+      "tables": 7,
+      "gate_passed": true,
+      "tables_pages": [
+        1,
+        41,
+        91,
+        92,
+        94,
+        95,
+        274
+      ]
+    },
+    {
+      "tier": "agentic",
+      "run_id": "DOC002_agentic_pilot-fb503f92_2e0de6ec",
+      "status": "ok",
+      "pages": 20,
+      "blocks": 99,
+      "chunks": 47,
+      "credits": 200.0,
+      "quality_status": "warning",
+      "quality_issues": [
+        "tables_with_concerns:3"
+      ],
+      "cer_mean": 0.0301,
+      "cer_noise_adjusted_mean": 0.0221,
+      "chapter_count": 8,
+      "printed_page_numbers": 7,
+      "tables": 7,
+      "gate_passed": false,
+      "tables_pages": [
+        1,
+        9,
+        23,
+        91,
+        92,
+        94,
+        95
+      ]
+    }
+  ],
+  "recommended_tier": "cost_effective",
+  "recommendation_basis": "CER terendah (noise-adjusted), lalu kredit terendah"
+}

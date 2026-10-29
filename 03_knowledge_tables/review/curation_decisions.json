@@ -1,0 +1,322 @@
+{
+  "document_id": "DOC002",
+  "curation_round": "2.2",
+  "notes": [
+    "Setiap keputusan wajib menyertakan kutipan sumber; curate.py menolak kutipan yang tidak ditemukan verbatim.",
+    "Nama penyakit yang heading-nya berisi patogen diambil dari kalimat prosa, bukan dari pengetahuan umum.",
+    "Nama yang terpotong di sumber tidak dibetulkan."
+  ],
+  "additions": [
+    {
+      "record_type": "disease",
+      "plant_id": "PLANT_005",
+      "disease_name_verbatim": "Antraknosa",
+      "disease_name_key": "antraknosa",
+      "name_en_verbatim": "",
+      "chapter_title": "Bab 5 — Penyakit Pada Tanaman Ubi Kayu",
+      "heading_level": "table",
+      "section": "T5.2_BATANG",
+      "subsection": "Penyakit pada batang muda dan bahan perbanyakan vegetatif",
+      "page_start": 93,
+      "page_end": 93,
+      "evidence_chunk_ids": "",
+      "source_block_ids": "DOC002_P093_B005",
+      "notes": "Baris tabel 5.2 nomor 1; namanya sama dengan Antraknosa pada tabel 5.1, tetapi sumber memisahkan bagian tanaman (batang vs daun), sehingga dicatat sebagai penyakit terpisah.",
+      "reason": "Deduplikasi otomatis pada build_knowledge_tables.py hanya memakai nama penyakit, sehingga baris tabel 5.2 ini tergabung dengan baris 5.1. Baris ditambahkan lewat kurasi karena sumber mencetaknya terpisah.",
+      "evidence_ref": "DOC002_P093_B005",
+      "evidence_quote": "Antraknosa | Collectothricum gloeosporioides"
+    }
+  ],
+  "decisions": [
+    {
+      "record_type": "disease",
+      "record_id": "DIS_024",
+      "evidence_ref": "DOC002_C080_01",
+      "evidence_quote": "Fusarium oxysporum dikenal sebagai penyebab penyakit busuk permukaan (surface root) atau layu fusarium",
+      "reason": "Heading 4.2 berisi nama patogen. Kalimat prosa menyebut dua nama penyakit; dipilih 'layu fusarium' sebagai nama utama, alias 'penyakit busuk permukaan (surface root)' dicatat.",
+      "changes": {
+        "disease_name_verbatim": "layu fusarium",
+        "disease_name_key": "layu_fusarium",
+        "review_status": "verified",
+        "notes": "dari prosa 4.2; sumber juga menyebut 'penyakit busuk permukaan (surface root)' pada kalimat yang sama"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_025",
+      "evidence_ref": "DOC002_C083_01",
+      "evidence_quote": "Penyakit kudis pada ubi jalar disebabkan oleh Spaceloma batatas Saw",
+      "reason": "Heading 4.3 berisi nama patogen; nama penyakit disebut langsung pada kalimat pertama subbab.",
+      "changes": {
+        "disease_name_verbatim": "Penyakit kudis",
+        "disease_name_key": "penyakit_kudis",
+        "review_status": "verified",
+        "notes": "dari prosa 4.3; patogen pada heading: Spaceloma batatas"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_026",
+      "evidence_ref": "DOC002_C085_01",
+      "evidence_quote": "Penyakit bercak kuning pada ubi jalar disebabkan oleh Sweet Potato Feathery Mottle Virus (SPFMV)",
+      "reason": "Heading 4.4 berisi nama virus; nama penyakit diambil dari kalimat yang menghubungkan virus dengan penyakit.",
+      "changes": {
+        "disease_name_verbatim": "Penyakit bercak kuning",
+        "disease_name_key": "penyakit_bercak_kuning",
+        "review_status": "verified",
+        "notes": "dari prosa 4.4; patogen pada heading: Sweet Potato Feathery Mottle Virus"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_027",
+      "evidence_ref": "DOC002_C087_01",
+      "evidence_quote": "Penyakit busuk hitam (black rot) disebabkan oleh jamur Ceratocystis fimbriata",
+      "reason": "Heading 4.5 berisi nama jamur; nama penyakit dan nama Inggrisnya tercetak di kalimat pertama.",
+      "changes": {
+        "disease_name_verbatim": "Penyakit busuk hitam (black rot)",
+        "disease_name_key": "penyakit_busuk_hitam",
+        "name_en_verbatim": "black rot",
+        "review_status": "verified",
+        "notes": "dari prosa 4.5; patogen pada heading: Ceratocystis Fimbriata"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_107",
+      "evidence_ref": "DOC002_C213_01",
+      "evidence_quote": "Busuk pangkal batang pada kelapa sawit (E. Guineensis Jacq.) yang disebabkan oleh Ganoderma",
+      "reason": "Heading 15.2 berisi nama jamur; nama penyakit tercetak di awal paragraf.",
+      "changes": {
+        "disease_name_verbatim": "Busuk pangkal batang",
+        "disease_name_key": "busuk_pangkal_batang",
+        "review_status": "verified",
+        "notes": "dari prosa 15.2; patogen pada heading: Ganoderma boninense"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_108",
+      "evidence_ref": "DOC002_C217_02",
+      "evidence_quote": "P. palmivora merupakan agen penyebab busuk pucuk pada tanaman kelapa sawit.",
+      "reason": "Heading 15.3 berisi nama patogen; nama penyakit tercetak di paragraf kedua. Petani menyebutnya busuk tombak (C218_01).",
+      "changes": {
+        "disease_name_verbatim": "busuk pucuk",
+        "disease_name_key": "busuk_pucuk",
+        "review_status": "verified",
+        "notes": "dari prosa 15.3; sumber menyebut gejala awalnya dikenal petani sebagai 'busuk tombak' (C218_01)"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_109",
+      "evidence_ref": "DOC002_C221_02",
+      "evidence_quote": "Beberapa spesies Curvularia sp. menyebabkan penyakit bercak daun",
+      "reason": "Heading 15.4 berisi nama genus patogen; nama penyakit tercetak pada kalimat kedua subbab.",
+      "changes": {
+        "disease_name_verbatim": "bercak daun",
+        "disease_name_key": "bercak_daun",
+        "review_status": "verified",
+        "notes": "dari prosa 15.4; patogen pada heading: Curvularia sp"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_092",
+      "evidence_ref": "DOC002_C173_01",
+      "evidence_quote": "Penyakit kanker pada tanaman apel disebabkan oleh Botryosphaeria dothidea.",
+      "reason": "Heading 12.5 hanya 'Kanker'; prosa menegaskan ini penyakit pada apel, bukan heading grup.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "heading 12.5 tanpa kata 'Penyakit'; prosa: 'Penyakit kanker pada tanaman apel disebabkan oleh Botryosphaeria dothidea.'"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_086",
+      "evidence_ref": "DOC002_C162_02",
+      "evidence_quote": "11.2.2. Penyakit Antraknos",
+      "reason": "Nama terpotong di sumber; dipertahankan apa adanya, tidak dibetulkan menjadi 'Antraknosa'.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "nama terpotong di sumber (heading 11.2.2.); dipertahankan verbatim, tidak dikoreksi"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_028",
+      "evidence_ref": "DOC002_P091_B007",
+      "evidence_quote": "Bercak daun Coklat",
+      "reason": "Baris tabel 5.1 nomor 1; nama dan sel lain sudah verbatim dari sel tabel.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.1 daun baris 1 (halaman 91); penulisan 'Coklat' dipertahankan seperti dicetak"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_029",
+      "evidence_ref": "DOC002_P092_B001",
+      "evidence_quote": "Bercak daun baur",
+      "reason": "Baris tabel 5.1 nomor 2; tabel berlanjut dari halaman 91 ke 92.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.1 daun baris 2 (halaman 92)"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_030",
+      "evidence_ref": "DOC002_P092_B001",
+      "evidence_quote": "Bercak daun putih",
+      "reason": "Baris tabel 5.1 nomor 4; nomor 3 tidak tercetak di sumber.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.1 daun baris 4 (halaman 92); nomor 3 tidak tercetak"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_031",
+      "evidence_ref": "DOC002_P092_B001",
+      "evidence_quote": "Antraknosa",
+      "reason": "Baris tabel 5.1 nomor 5. Nama sama muncul lagi di tabel 5.2 batang baris 1 dengan patogen berbeda penulisan; sesuai keputusan, penyakit dipisah karena bagian tanaman berbeda.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.1 daun baris 5 (halaman 92); nama sama juga muncul di tabel 5.2 batang baris 1 (Collectothricum gloeosporioides) - dipertahankan terpisah karena bagian tanaman berbeda"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_032",
+      "evidence_ref": "DOC002_P092_B001",
+      "evidence_quote": "Hawar daun bakteri",
+      "reason": "Baris tabel 5.1 nomor 6, menyerang daun. Berbeda dari 'Hawar bakteri' pada tabel 5.2 batang, walau patogennya sama.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.1 daun baris 6 (halaman 92); Xanthomonas campestris pv. Manihotis; possible_same_pathogen dengan 'Hawar bakteri' tabel 5.2 baris 2"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_033",
+      "evidence_ref": "DOC002_P092_B001",
+      "evidence_quote": "Sapu setan (Witches broom)",
+      "reason": "Baris tabel 5.1 nomor 8; nomor 7 tidak tercetak di sumber.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.1 daun baris 8 (halaman 92); nomor 7 tidak tercetak"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_034",
+      "evidence_ref": "DOC002_P092_B001",
+      "evidence_quote": "Cassava Mosaic Begomovirus (CMBs)",
+      "reason": "Baris tabel 5.1 nomor 9; nama Inggris dipertahankan seperti dicetak.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.1 daun baris 9 (halaman 92); nama Inggris dipertahankan seperti dicetak"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_035",
+      "evidence_ref": "DOC002_P092_B001",
+      "evidence_quote": "Cassava Brown Streak Disease (CBSD)",
+      "reason": "Baris tabel 5.1 nomor 10; nama Inggris dipertahankan seperti dicetak.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.1 daun baris 10 (halaman 92); nama Inggris dipertahankan seperti dicetak"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_036",
+      "evidence_ref": "DOC002_P094_B001",
+      "evidence_quote": "Hawar bakteri",
+      "reason": "Baris tabel 5.2 nomor 2, menyerang batang muda. Pemisahan dari 'Hawar daun bakteri' dipertahankan.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.2 batang baris 2 (halaman 94); possible_same_pathogen dengan 'Hawar daun bakteri' tabel 5.1 baris 6"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_037",
+      "evidence_ref": "DOC002_P094_B001",
+      "evidence_quote": "Superelongasi",
+      "reason": "Baris tabel 5.2 nomor 3; tabel berlanjut dari halaman 93 ke 94.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.2 batang baris 3 (halaman 94)"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_038",
+      "evidence_ref": "DOC002_P094_B001",
+      "evidence_quote": "Tanaman kerdil (stunt)",
+      "reason": "Baris tabel 5.2 nomor 4.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.2 batang baris 4 (halaman 94)"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_039",
+      "evidence_ref": "DOC002_P094_B001",
+      "evidence_quote": "Nekrosis pada titik tunas (Cassava bud necrosis)",
+      "reason": "Baris tabel 5.2 tanpa nomor di sumber; dipertahankan sebagai baris tidak bernomor.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.2 batang baris tanpa nomor (halaman 94)"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_040",
+      "evidence_ref": "DOC002_P094_B001",
+      "evidence_quote": "Busuk pangkal batang",
+      "reason": "Baris tabel 5.2 tanpa nomor di sumber; patogen berupa kompleks beberapa jamur seperti tercetak.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.2 batang baris tanpa nomor (halaman 94); patogen kompleks Fusarium/Diplodia/Botryodiplodia"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_041",
+      "evidence_ref": "DOC002_P095_B004",
+      "evidence_quote": "Busuk akar dan umbi",
+      "reason": "Baris tabel 5.3 nomor 1.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.3 akar baris 1 (halaman 95)"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_042",
+      "evidence_ref": "DOC002_P095_B004",
+      "evidence_quote": "Busuk Umbi",
+      "reason": "Baris tabel 5.3 nomor 2; kapitalisasi 'Umbi' dipertahankan seperti dicetak.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.3 akar baris 2 (halaman 95); penulisan 'Busuk Umbi' dipertahankan seperti dicetak"
+      }
+    },
+    {
+      "record_type": "disease",
+      "record_id": "DIS_043",
+      "evidence_ref": "DOC002_P095_B004",
+      "evidence_quote": "Busuk akar",
+      "reason": "Baris tabel 5.3 nomor 3.",
+      "changes": {
+        "review_status": "verified",
+        "notes": "tabel 5.3 akar baris 3 (halaman 95)"
+      }
+    }
+  ]
+}

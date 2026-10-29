@@ -9,3 +9,8 @@ ocr_temp/
 
 # Temporary processing files
 temp/
+
+# LlamaParse raw/normalized output (besar, dapat dibuat ulang dari API)
+llamaparse/raw/
+llamaparse/normalized/
+
