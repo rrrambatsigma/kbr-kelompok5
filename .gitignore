@@ -32,6 +32,9 @@ env/
 /02_extraction/extracted_text/*.jsonl
 /02_extraction/extraction_notes/*.log
 
+# Cadangan otomatis dari promote/validasi (besar, lokal saja)
+/02_extraction/extraction_notes/_backups/
+
 # Jika nanti ada output OCR sementara
 /02_extraction/ocr_temp/
 /02_extraction/temp/

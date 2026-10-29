@@ -1,0 +1,152 @@
+{"scope":"page","page_number":3,"reason":"page_text_too_short","detail":"char=36 confidence=0.8","source":"quality"}
+{"scope":"page","page_number":8,"reason":"no_text_extracted","detail":"char=0 confidence=1.0","source":"quality"}
+{"scope":"page","page_number":14,"reason":"no_text_extracted","detail":"char=0 confidence=1.0","source":"quality"}
+{"scope":"page","page_number":24,"reason":"no_text_extracted","detail":"char=0 confidence=0.833","source":"quality"}
+{"scope":"page","page_number":31,"reason":"layout_conflict_table_text","detail":"char=1237 confidence=0.968","source":"quality"}
+{"scope":"page","page_number":58,"reason":"layout_conflict_table_text","detail":"char=1778 confidence=0.978","source":"quality"}
+{"scope":"page","page_number":59,"reason":"layout_conflict_table_text","detail":"char=1805 confidence=0.995","source":"quality"}
+{"scope":"page","page_number":72,"reason":"layout_conflict_table_text","detail":"char=1768 confidence=1.0","source":"quality"}
+{"scope":"page","page_number":79,"reason":"layout_conflict_table_text","detail":"char=1442 confidence=0.981","source":"quality"}
+{"scope":"page","page_number":110,"reason":"low_parser_confidence","detail":"char=652 confidence=0.6","source":"quality"}
+{"scope":"page","page_number":111,"reason":"no_text_extracted","detail":"char=0 confidence=0.833","source":"quality"}
+{"scope":"page","page_number":121,"reason":"layout_conflict_table_text","detail":"char=1528 confidence=0.949","source":"quality"}
+{"scope":"page","page_number":123,"reason":"no_text_extracted","detail":"char=0 confidence=1.0","source":"quality"}
+{"scope":"page","page_number":144,"reason":"layout_conflict_table_text","detail":"char=1896 confidence=0.995","source":"quality"}
+{"scope":"page","page_number":147,"reason":"no_text_extracted","detail":"char=0 confidence=1.0","source":"quality"}
+{"scope":"page","page_number":167,"reason":"no_text_extracted","detail":"char=0 confidence=1.0","source":"quality"}
+{"scope":"page","page_number":187,"reason":"layout_conflict_table_text","detail":"char=1539 confidence=0.886","source":"quality"}
+{"scope":"page","page_number":198,"reason":"layout_conflict_table_text","detail":"char=2063 confidence=0.97","source":"quality"}
+{"scope":"page","page_number":265,"reason":"no_text_extracted","detail":"char=0 confidence=1.0","source":"quality"}
+{"scope":"page","page_number":273,"reason":"no_text_extracted","detail":"char=0 confidence=1.0","source":"quality"}
+{"scope":"page","page_number":26,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":27,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":28,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":29,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":30,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":31,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":32,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":33,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":34,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":35,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":36,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":38,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":39,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":40,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":41,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":42,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":43,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":44,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":45,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":46,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":47,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":48,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":49,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":50,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":51,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":52,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":53,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":54,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":55,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":56,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":57,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":58,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":59,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":60,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":61,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":62,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":64,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":65,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":66,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":67,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":68,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":69,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":70,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":71,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":72,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":73,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":74,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":75,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":76,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":77,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":78,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":80,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":81,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":82,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":83,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":84,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":85,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":86,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":87,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":88,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":90,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":91,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":92,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":93,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":94,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":95,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":96,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"page","page_number":97,"reason":"printed_page_offset_mismatch","detail":"offset=24 dominan=25","source":"quality"}
+{"scope":"block","page_number":1,"block_id":"DOC002_P001_B003","reason":"spurious_table_reclassified","detail":"CITATIONS 0 --------- ------ READS 13,387","source":"quality"}
+{"scope":"block","page_number":6,"block_id":"DOC002_P006_B009","reason":"spurious_table_reclassified","detail":"Evan Purnama Ramdan, dkk. --------------------------------------- Penyakit Tanaman dan Pengendaliannya Yayasan Kita Menulis, 2021 xxii; 248 hlm; 16 x 23 cm ISBN","source":"quality"}
+{"scope":"block","page_number":31,"block_id":"DOC002_P031_B005","reason":"spurious_table_reclassified","detail":"Label Deskripsi ----- ------------------------------ a bercak coklat b padi rebah pada serangan berat","source":"quality"}
+{"scope":"block","page_number":36,"block_id":"DOC002_P036_B002","reason":"spurious_table_reclassified","detail":"Label Deskripsi ----- ------------------------ a daun muda bergerigi b daun bendera terpelintir","source":"quality"}
+{"scope":"block","page_number":41,"block_id":"DOC002_P041_B003","reason":"spurious_table_reclassified","detail":"Category Item ---------------- ---------------------------------------------------------- DISEASE SYMPTOMS Hypocotyl rot Post-emergence damping off Root rot Pre","source":"quality"}
+{"scope":"block","page_number":49,"block_id":"DOC002_P049_B002","reason":"bbox_unavailable","detail":"Stage Description ----------------- ------------------------------- Spore Germination Spores land on leaf surface Infection Pathogen enters through stomata Spor","source":"quality"}
+{"scope":"block","page_number":49,"block_id":"DOC002_P049_B002","reason":"spurious_table_reclassified","detail":"Stage Description ----------------- ------------------------------- Spore Germination Spores land on leaf surface Infection Pathogen enters through stomata Spor","source":"quality"}
+{"scope":"block","page_number":51,"block_id":"DOC002_P051_B003","reason":"spurious_table_reclassified","detail":"Stage Description ---------------- ---------------------------------------- SURVIVAL infected seeds, debris, primary inoculum PRIMARY CYCLE symptoms on stems, l","source":"quality"}
+{"scope":"block","page_number":58,"block_id":"DOC002_P058_B002","reason":"spurious_table_reclassified","detail":"Label Deskripsi ----- ------------------------------------------------------------- A Tanaman Kedelai Menyebabkan Daun Berukuran Kecil dan Klorosis B Permukaan ","source":"quality"}
+{"scope":"block","page_number":59,"block_id":"DOC002_P059_B004","reason":"spurious_table_reclassified","detail":"Skor Gejala ---- ---------------------------------------------------- 0 Tidak Ada Hejala Serangan 1 Tulang Daun Memucat dan Daun Melengkug ke Arah Bawah 2 Belan","source":"quality"}
+{"scope":"block","page_number":61,"block_id":"DOC002_P061_B002","reason":"spurious_table_reclassified","detail":"A - B C D","source":"quality"}
+{"scope":"block","page_number":72,"block_id":"DOC002_P072_B004","reason":"spurious_table_reclassified","detail":"A B C ------------- ---------------------------------------------- ------------------------------ Gejala belang Zarah PmoV berbentuk benang lentur (13x800 nm) B","source":"quality"}
+{"scope":"block","page_number":79,"block_id":"DOC002_P079_B006","reason":"spurious_table_reclassified","detail":"Tahun Produksi (ton) ----- -------------- 2014 2.382.658 2015 2.297.634 2016 2.169.386 2017 2.029.353 2018 1.914.244","source":"quality"}
+{"scope":"block","page_number":81,"block_id":"DOC002_P081_B002","reason":"spurious_table_reclassified","detail":"Label Deskripsi ----- --------------------------------------------------------------------- A defoliasi dan daun-daun mati B penampang pembuluh batang terjadi p","source":"quality"}
+{"scope":"block","page_number":103,"block_id":"DOC002_P103_B004","reason":"spurious_table_reclassified","detail":"A B ----------------------------- ---------- Gejala karat pada daun jagung uredospora","source":"quality"}
+{"scope":"block","page_number":105,"block_id":"DOC002_P105_B002","reason":"spurious_table_reclassified","detail":"(A) 100 µm --- ---------------------------- (B) 50 µm (C) 50 µm Rustiani, US. 2014","source":"quality"}
+{"scope":"block","page_number":110,"block_id":"DOC002_P110_B001","reason":"page_text_recovered_from_baseline","detail":"Soenartiningsih (2012) menggunakan mikoriza Glomus sp. dan Acaulospora mellea untuk menekan busuk pelepah, keduanya bersifat efektif masing- masing menekan peny","source":"quality"}
+{"scope":"block","page_number":110,"block_id":"DOC002_P110_B001","reason":"parser_lost_page_text","detail":"Soenartiningsih (2012) menggunakan mikoriza Glomus sp. dan Acaulospora mellea untuk menekan busuk pelepah, keduanya bersifat efektif masing- masing menekan peny","source":"quality"}
+{"scope":"block","page_number":110,"block_id":"DOC002_P110_B002","reason":"page_text_recovered_from_baseline","detail":"Gambar 6.7: Gejala busuk pelepah pada batang (a) dan daun (b)","source":"quality"}
+{"scope":"block","page_number":110,"block_id":"DOC002_P110_B002","reason":"parser_lost_page_text","detail":"Gambar 6.7: Gejala busuk pelepah pada batang (a) dan daun (b)","source":"quality"}
+{"scope":"block","page_number":110,"block_id":"DOC002_P110_B003","reason":"page_text_recovered_from_baseline","detail":"(Soenartiningsih, 2012)","source":"quality"}
+{"scope":"block","page_number":110,"block_id":"DOC002_P110_B003","reason":"parser_lost_page_text","detail":"(Soenartiningsih, 2012)","source":"quality"}
+{"scope":"block","page_number":121,"block_id":"DOC002_P121_B006","reason":"spurious_table_reclassified","detail":"Image Description ---------------------------- Nematoda spiral Nematoda kecil Perakaran tanaman Umbi kentang yang terinfeksi","source":"quality"}
+{"scope":"block","page_number":144,"block_id":"DOC002_P144_B005","reason":"spurious_table_reclassified","detail":"(a) (b) (c) ----------------------------------- ------ ------------------------ Bagian tanaman cabai yang terserang koloni spora jamur Fusarium sp.","source":"quality"}
+{"scope":"block","page_number":159,"block_id":"DOC002_P159_B005","reason":"bbox_unavailable","detail":"Image Description ------------ -------------------------------------------------------- Top-left Plants showing mosaic symptoms Top-right Closely cropped leaves","source":"quality"}
+{"scope":"block","page_number":159,"block_id":"DOC002_P159_B005","reason":"spurious_table_reclassified","detail":"Image Description ------------ -------------------------------------------------------- Top-left Plants showing mosaic symptoms Top-right Closely cropped leaves","source":"quality"}
+{"scope":"block","page_number":161,"block_id":"DOC002_P161_B002","reason":"spurious_table_reclassified","detail":"Stage Description ------------------------------- ----------------------------------- Attraction Vector moves towards plant Settling and feeding Vector feeds on","source":"quality"}
+{"scope":"block","page_number":162,"block_id":"DOC002_P162_B001","reason":"spurious_table_reclassified","detail":"M 1 2 3 4 5 6 7 8 9 10 11 12 13 K- K+ - - - - - - - - - - - -- -- -- -- -- --","source":"quality"}
+{"scope":"block","page_number":187,"block_id":"DOC002_P187_B008","reason":"spurious_table_reclassified","detail":"Label Deskripsi ----- ------------------------ A Spora B Basidium dengan sterigma","source":"quality"}
+{"scope":"block","page_number":198,"block_id":"DOC002_P198_B003","reason":"spurious_table_reclassified","detail":"Label Deskripsi bar ----- --------------------------------------------------------------------------------------------------------------------------------------","source":"quality"}
+{"scope":"block","page_number":201,"block_id":"DOC002_P201_B003","reason":"spurious_table_reclassified","detail":"a b c --------- ------------------------------------------------------------------------------------------------ -----------------------------------------------","source":"quality"}
+{"scope":"block","page_number":250,"block_id":"DOC002_P250_B010","reason":"block_recovered_from_baseline","detail":"Purwanto, D. S., Nirwanto, H. and Wiyatiningsih, S. (2016) ‘Model Epidemi","source":"quality"}
+{"scope":"block","page_number":250,"block_id":"DOC002_P250_B010","reason":"recovered_at_page_end","detail":"Purwanto, D. S., Nirwanto, H. and Wiyatiningsih, S. (2016) ‘Model Epidemi","source":"quality"}
+{"scope":"block","page_number":250,"block_id":"DOC002_P250_B011","reason":"block_recovered_from_baseline","detail":"Penyakit Tanaman : Hubungan Faktor Lingkungan terhadap Laju Infeksi dan Pola Sebaran Penyakit Bulai (Peronosclerospora maydis) pada Tanaman Jagung di Kabupaten ","source":"quality"}
+{"scope":"block","page_number":250,"block_id":"DOC002_P250_B011","reason":"recovered_at_page_end","detail":"Penyakit Tanaman : Hubungan Faktor Lingkungan terhadap Laju Infeksi dan Pola Sebaran Penyakit Bulai (Peronosclerospora maydis) pada Tanaman Jagung di Kabupaten ","source":"quality"}
+{"scope":"block","page_number":274,"block_id":"DOC002_P274_B005","reason":"spurious_table_reclassified","detail":"ISBN 978-623-342-079-2 --------------- ----------------- Barcode Numbers 9 786233 420792","source":"quality"}
+{"scope":"page","page_number":5,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0889 baseline_chars=347 llamaparse_chars=352; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":6,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0294 baseline_chars=915 llamaparse_chars=915; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":12,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0872 baseline_chars=1121 llamaparse_chars=1082; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":28,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0267 baseline_chars=1542 llamaparse_chars=1495; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":41,"reason":"parser_added_content","detail":"extra_tokens=30; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":49,"reason":"parser_added_content","detail":"extra_tokens=23; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":51,"reason":"parser_added_content","detail":"extra_tokens=28; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":58,"reason":"parser_added_content","detail":"extra_tokens=28; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":59,"reason":"parser_added_content","detail":"extra_tokens=33; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":79,"reason":"parser_added_content","detail":"extra_tokens=22; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":81,"reason":"parser_added_content","detail":"extra_tokens=45; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":146,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0677 baseline_chars=946 llamaparse_chars=903; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":159,"reason":"parser_added_content","detail":"extra_tokens=31; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":161,"reason":"parser_added_content","detail":"extra_tokens=30; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":170,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0303 baseline_chars=926 llamaparse_chars=965; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":171,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0258 baseline_chars=1345 llamaparse_chars=1294; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":172,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0357 baseline_chars=970 llamaparse_chars=935; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":173,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0359 baseline_chars=1606 llamaparse_chars=1549; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":175,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0288 baseline_chars=1018 llamaparse_chars=969; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":176,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0411 baseline_chars=959 llamaparse_chars=1006; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":177,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0556 baseline_chars=168 llamaparse_chars=125; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":179,"reason":"parser_added_content","detail":"extra_tokens=20; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":189,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0256 baseline_chars=909 llamaparse_chars=862; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":195,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0449 baseline_chars=702 llamaparse_chars=653; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":198,"reason":"parser_added_content","detail":"extra_tokens=64; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":201,"reason":"parser_added_content","detail":"extra_tokens=36; parser membaca teks yang tidak tertangkap baseline (mis. label diagram) - cek apakah isinya memang ada di PDF","source":"comparison"}
+{"scope":"page","page_number":235,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0221 baseline_chars=1932 llamaparse_chars=1830; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}
+{"scope":"page","page_number":240,"reason":"text_differs_from_baseline","detail":"cer_content_recall=0.0221 baseline_chars=1779 llamaparse_chars=1759; bandingkan manual dengan PDF, terutama bila multi-kolom","source":"comparison"}

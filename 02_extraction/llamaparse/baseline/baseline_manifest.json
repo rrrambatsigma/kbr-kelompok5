@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC002",
+  "created_at": "2026-10-28T03:04:02Z",
+  "authority": "pymupdf_text_layer",
+  "source": "backup:pre_llamaparse_20261028T023457Z",
+  "source_path": "02_extraction/extraction_notes/_backups/pre_llamaparse_20261028T023457Z/02_extraction/extracted_text",
+  "files": {
+    "pages": {
+      "path": "02_extraction/llamaparse/baseline/DOC002.pages.jsonl",
+      "sha256": "7045521c6aa0f3cd8f2ab597d8a583486d56b33be09e94a6073f8a173c93ec3a",
+      "size_bytes": 565722,
+      "source": "backup:pre_llamaparse_20261028T023457Z"
+    },
+    "blocks": {
+      "path": "02_extraction/llamaparse/baseline/DOC002.blocks.jsonl",
+      "sha256": "f0a5ea8c69a706eaa86de347022b8c4905e1c6cafa5fd98221a3645103c22b3e",
+      "size_bytes": 1522682,
+      "source": "backup:pre_llamaparse_20261028T023457Z"
+    }
+  },
+  "note": "Snapshot beku sebelum promosi LlamaParse; dipakai sebagai pembanding rekonsiliasi dan gate."
+}

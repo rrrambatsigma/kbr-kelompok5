@@ -27,8 +27,8 @@ class SourceDocument:
     filename: str
 
 
+# Hanya DOC002 yang menjadi lingkup proyek; PDF hortikultura tidak dipakai.
 SOURCE_DOCUMENTS = (
-    SourceDocument("DOC001", "PenyakitTanamanHortikultura.pdf"),
     SourceDocument("DOC002", "PenyakitTanamanPangan.pdf"),
 )
 
@@ -82,6 +82,7 @@ CONTENT_TYPES = (
     "paragraph",
     "list_item",
     "table",
+    "figure_caption",
 )
 CONTENT_TYPE_SET = frozenset(CONTENT_TYPES)
 
@@ -115,6 +116,7 @@ PAGE_FLAGS = (
     "possible_multi_column_layout",
     "repeated_header_candidate",
     "repeated_footer_candidate",
+    "layout_conflict_table_text",
 )
 PAGE_FLAG_SET = frozenset(PAGE_FLAGS)
 
