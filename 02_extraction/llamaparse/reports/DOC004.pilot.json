@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC004",
+  "generated_at": "2026-10-30T13:05:40Z",
+  "version": "2026-09-28",
+  "pages": [
+    12,
+    24,
+    47
+  ],
+  "results": [
+    {
+      "tier": "cost_effective",
+      "run_id": "DOC004_cost_effective_pilot-e120ee97_d6c44386",
+      "status": "ok",
+      "pages": 3,
+      "blocks": 18,
+      "chunks": 6,
+      "credits": 9.0,
+      "quality_status": "warning",
+      "quality_issues": [],
+      "cer_mean": null,
+      "cer_noise_adjusted_mean": null,
+      "chapter_count": 2,
+      "printed_page_numbers": 3,
+      "tables": 0,
+      "gate_passed": false,
+      "tables_pages": []
+    }
+  ],
+  "recommended_tier": "cost_effective",
+  "recommendation_basis": "CER terendah (noise-adjusted), lalu kredit terendah"
+}

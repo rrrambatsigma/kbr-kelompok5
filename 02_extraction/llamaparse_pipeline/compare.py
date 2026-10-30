@@ -289,7 +289,238 @@ def _scope_pages(manifest: dict[str, Any]) -> list[int]:
     return sorted(page for page in selected if 1 <= page <= total)
 
 
+def compare_internal(run_id: str) -> dict[str, Any]:
+    """Verifikasi tanpa baseline PyMuPDF (DOC003 dan DOC004).
+
+    Tanpa pembanding text layer, gate memeriksa hal-hal yang bisa dibuktikan
+    dari keluaran parser sendiri: kelengkapan halaman, lantai karakter,
+    konsistensi nomor halaman cetak, jumlah bagian, dan tabel yang diharapkan
+    muncul pada halaman tertentu.
+    """
+
+    profile = config.profile()
+    normalized = store.ensure_normalized(run_id)
+    pages = normalized["pages"]
+    blocks = normalized["blocks"]
+    manifest = store.load_manifest(run_id)
+    options = manifest.get("options") or {}
+    page_ranges = (options.get("page_ranges") or {}).get("target_pages")
+    is_full_run = not page_ranges
+
+    expected = quality._expected_pages(manifest)
+    present = [int(page["page_number"]) for page in pages]
+    missing_pages = sorted(set(expected) - set(present))
+
+    short_pages = [
+        int(page["page_number"])
+        for page in pages
+        if int(page.get("text_char_count") or 0) < quality.MIN_PAGE_CHARS
+        and int(page["page_number"]) not in profile.blank_pages
+    ]
+    failed_pages = [
+        int(page["page_number"])
+        for page in pages
+        if page.get("extraction_status") == "extraction_error"
+    ]
+    empty_pages = [
+        int(page["page_number"])
+        for page in pages
+        if int(page.get("block_count") or 0) == 0
+        and int(page["page_number"]) not in profile.blank_pages
+    ]
+
+    chapters: list[str] = []
+    for block in blocks:
+        if block.get("content_type") != "chapter_heading":
+            continue
+        if not (
+            profile.body_start
+            <= int(block.get("page_number") or 0)
+            <= profile.body_end
+        ):
+            continue
+        chapter = str(block.get("chapter") or "").strip()
+        if chapter and chapter not in chapters:
+            chapters.append(chapter)
+
+    offsets: Counter[int] = Counter()
+    offset_mismatch: list[int] = []
+    for page in pages:
+        page_number = int(page["page_number"])
+        printed = page.get("printed_page_number")
+        if printed is None or not (profile.body_start <= page_number <= profile.body_end):
+            continue
+        offset = page_number - int(printed)
+        offsets[offset] += 1
+        if offset != profile.printed_offset:
+            offset_mismatch.append(page_number)
+
+    dominant_offset = offsets.most_common(1)[0][0] if offsets else None
+    printed_detected = sum(1 for page in pages if page.get("printed_page_number") is not None)
+    printed_coverage = printed_detected / len(pages) if pages else 0.0
+
+    table_pages = sorted(
+        {int(block["page_number"]) for block in blocks if block.get("content_type") == "table"}
+    )
+    missing_table_pages = [page for page in profile.table_pages if page not in table_pages]
+
+    body_blocks = [
+        block
+        for block in blocks
+        if profile.body_start <= int(block.get("page_number") or 0) <= profile.body_end
+        and block.get("content_type") != "chapter_heading"
+    ]
+    # Pada pilot yang dimulai di tengah bab, konteks bab baru terbentuk setelah
+    # heading bab pertama; blok sebelumnya tidak dihitung sebagai kehilangan.
+    first_chapter_page = min(
+        (
+            int(block["page_number"])
+            for block in blocks
+            if block.get("content_type") == "chapter_heading"
+        ),
+        default=profile.body_start,
+    )
+    body_blocks = [
+        block
+        for block in body_blocks
+        if int(block.get("page_number") or 0) >= first_chapter_page
+    ]
+    with_context = sum(1 for block in body_blocks if block.get("chapter"))
+    context_ratio = with_context / len(body_blocks) if body_blocks else 1.0
+
+    gates: dict[str, dict[str, Any]] = {
+        "pages_complete": {
+            "passed": not missing_pages,
+            "detail": f"missing={missing_pages[:20]}",
+        },
+        "no_failed_pages": {
+            "passed": not failed_pages,
+            "detail": f"failed={failed_pages[:20]}",
+        },
+        "page_text_floor": {
+            "passed": not short_pages and not empty_pages,
+            "detail": f"short={short_pages[:20]} empty={empty_pages[:20]}",
+        },
+        "printed_page_numbers": {
+            "passed": (
+                printed_detected > 0
+                and dominant_offset == profile.printed_offset
+                and not offset_mismatch
+            ),
+            "detail": (
+                f"detected={printed_detected} coverage={printed_coverage:.2%} "
+                f"dominant_offset={dominant_offset} expected={profile.printed_offset} "
+                f"mismatch={offset_mismatch[:20]}"
+            ),
+        },
+        "section_count": {
+            "passed": (not is_full_run) or len(chapters) == profile.expected_sections,
+            "detail": f"sections={len(chapters)} expected={profile.expected_sections}",
+        },
+        "tables_expected": {
+            "passed": not missing_table_pages,
+            "detail": (
+                f"table_pages={table_pages} expected={list(profile.table_pages)} "
+                f"missing={missing_table_pages}"
+            ),
+        },
+        "context_coverage": {
+            "passed": context_ratio >= 0.80,
+            "detail": (
+                f"blocks_with_chapter={with_context}/{len(body_blocks)} "
+                f"ratio={context_ratio:.2%}"
+            ),
+        },
+    }
+    gate_passed = all(item["passed"] for item in gates.values())
+
+    report = {
+        "schema_version": "1.1.0",
+        "document_id": config.DOCUMENT_ID,
+        "run_id": run_id,
+        "generated_at": utc_now(),
+        "tier": options.get("tier"),
+        "version": options.get("version"),
+        "is_full_run": is_full_run,
+        "gate_mode": "internal",
+        "baseline": None,
+        "pages_compared": len(present),
+        "pages_missing_vs_baseline": missing_pages,
+        "text_similarity": {
+            "method": "not_computed_without_baseline",
+            "cer_mean": None,
+            "cer_noise_adjusted_mean": None,
+            "cer_content_loss_mean": None,
+            "cer_content_recall_mean": None,
+        },
+        "headings": {
+            "baseline_chapter_headings": [],
+            "llamaparse_chapter_headings": chapters,
+            "llamaparse_chapter_count": len(chapters),
+            "expected_chapter_count": profile.expected_sections,
+        },
+        "tables": {
+            "baseline_pages": list(profile.table_pages),
+            "llamaparse_pages": table_pages,
+        },
+        "printed_page_numbers": {
+            "detected": printed_detected,
+            "coverage": round(printed_coverage, 4),
+            "dominant_offset": dominant_offset,
+            "expected_offset": profile.printed_offset,
+        },
+        "multi_column_pages": [],
+        "gates": gates,
+        "gate_passed": gate_passed,
+        "per_page": [],
+    }
+    write_json(config.report_paths()["comparison"], report)
+
+    review: list[dict[str, Any]] = []
+    for page_number in short_pages:
+        review.append(
+            {
+                "scope": "page",
+                "page_number": page_number,
+                "reason": "page_text_too_short",
+                "detail": "Teks halaman di bawah ambang minimum",
+            }
+        )
+    for page_number in offset_mismatch:
+        review.append(
+            {
+                "scope": "page",
+                "page_number": page_number,
+                "reason": "printed_page_offset_mismatch",
+                "detail": f"expected_offset={profile.printed_offset}",
+            }
+        )
+    for page_number in missing_table_pages:
+        review.append(
+            {
+                "scope": "page",
+                "page_number": page_number,
+                "reason": "expected_table_missing",
+                "detail": "Tabel yang diharapkan tidak terdeteksi pada halaman ini",
+            }
+        )
+    quality.append_review(review)
+
+    LOGGER.info(
+        "Verifikasi internal (%s): halaman=%s/%s bagian=%s gate=%s",
+        profile.document_id,
+        len(present),
+        len(expected),
+        len(chapters),
+        gate_passed,
+    )
+    return report
+
+
 def compare_run(run_id: str) -> dict[str, Any]:
+    if config.profile().gate_mode != "baseline":
+        return compare_internal(run_id)
+
     from . import baseline as baseline_store
 
     baseline_pages = baseline_store.load_pages()

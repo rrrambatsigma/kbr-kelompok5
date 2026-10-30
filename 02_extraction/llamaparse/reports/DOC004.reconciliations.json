@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC004",
+  "run_id": "DOC004_cost_effective_full-e120ee97_cd3fd5fc",
+  "generated_at": "2026-10-30T13:15:51Z",
+  "authority": "pymupdf_text_layer",
+  "baseline_snapshot": "02_extraction/llamaparse/baseline/baseline_manifest.json",
+  "pages_scanned": 65,
+  "pages_reconciled": 0,
+  "tokens_restored": 0,
+  "table_tokens_restored": 0,
+  "blocks_recovered": 0,
+  "fallback_pages": [],
+  "restored_by_page": {},
+  "table_restored_by_page": {},
+  "recovered_by_page": {},
+  "event_count": 0
+}

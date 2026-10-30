@@ -17,7 +17,8 @@ LOGGER = logging.getLogger("kbr_llamaparse")
 
 MIN_PAGE_CHARS = 40
 LOW_CONFIDENCE = 0.80
-EXPECTED_PRINTED_OFFSET = 24  # PDF 25 = halaman cetak 1 untuk DOC002
+# Dipertahankan untuk kompatibilitas modul lain; nilai aktif diambil dari profil.
+EXPECTED_PRINTED_OFFSET = 24
 
 
 def _expected_pages(manifest: dict[str, Any]) -> list[int]:
@@ -47,6 +48,7 @@ def evaluate_run(run_id: str) -> dict[str, Any]:
     blocks = normalized["blocks"]
     chunks = normalized["chunks"]
 
+    profile = config.profile()
     expected = _expected_pages(manifest)
     present = [int(page["page_number"]) for page in pages]
     missing = sorted(set(expected) - set(present))
@@ -82,6 +84,8 @@ def evaluate_run(run_id: str) -> dict[str, Any]:
 
         if status == "extraction_error":
             reasons.append("extraction_error")
+        elif page_number in profile.blank_pages:
+            pass
         elif status == "no_text_extracted":
             reasons.append("no_text_extracted")
         elif char_count < MIN_PAGE_CHARS:
@@ -103,7 +107,7 @@ def evaluate_run(run_id: str) -> dict[str, Any]:
             )
 
         printed = page.get("printed_page_number")
-        if printed is not None:
+        if printed is not None and profile.body_start <= page_number <= profile.body_end:
             offsets[page_number - int(printed)] += 1
 
         page_stats.append(
@@ -128,7 +132,7 @@ def evaluate_run(run_id: str) -> dict[str, Any]:
                 }
             )
 
-    # Nomor halaman cetak: cek konsistensi offset dominan.
+    # Nomor halaman cetak: cek konsistensi offset dominan pada badan dokumen.
     dominant_offset: Optional[int] = None
     if offsets:
         dominant_offset, _ = offsets.most_common(1)[0]
@@ -136,12 +140,15 @@ def evaluate_run(run_id: str) -> dict[str, Any]:
             printed = page.get("printed_page_number")
             if printed is None:
                 continue
-            offset = int(page["page_number"]) - int(printed)
+            page_number = int(page["page_number"])
+            if not (profile.body_start <= page_number <= profile.body_end):
+                continue
+            offset = page_number - int(printed)
             if offset != dominant_offset:
                 review.append(
                     {
                         "scope": "page",
-                        "page_number": int(page["page_number"]),
+                        "page_number": page_number,
                         "reason": "printed_page_offset_mismatch",
                         "detail": f"offset={offset} dominan={dominant_offset}",
                     }
@@ -280,7 +287,7 @@ def evaluate_run(run_id: str) -> dict[str, Any]:
         "printed_page_number_coverage": printed_coverage,
         "printed_page_offset_distribution": dict(sorted(offsets.items())),
         "dominant_printed_page_offset": dominant_offset,
-        "expected_printed_page_offset": EXPECTED_PRINTED_OFFSET,
+        "expected_printed_page_offset": profile.printed_offset,
         "issues": issues,
         "status": status,
         "page_stats": page_stats,

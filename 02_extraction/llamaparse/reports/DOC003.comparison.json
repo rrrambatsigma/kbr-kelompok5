@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.1.0",
+  "document_id": "DOC003",
+  "run_id": "DOC003_cost_effective_full-71122ed5_c9e9cb8e",
+  "generated_at": "2026-10-30T13:11:26Z",
+  "tier": "cost_effective",
+  "version": "2026-09-28",
+  "is_full_run": true,
+  "gate_mode": "internal",
+  "baseline": null,
+  "pages_compared": 56,
+  "pages_missing_vs_baseline": [],
+  "text_similarity": {
+    "method": "not_computed_without_baseline",
+    "cer_mean": null,
+    "cer_noise_adjusted_mean": null,
+    "cer_content_loss_mean": null,
+    "cer_content_recall_mean": null
+  },
+  "headings": {
+    "baseline_chapter_headings": [],
+    "llamaparse_chapter_headings": [
+      "PENDAHULUAN",
+      "KLASIFIKASI DAN DESKRIPSI",
+      "PERSYARATAN TUMBUH",
+      "PERKEMBANGBIAKAN DAN PERTUMBUHAN",
+      "TEKNOLOGI BUDIDAYA",
+      "HAMA PENYAKIT DAN PENGENDALIANNYA",
+      "KANDUNGAN NUTRISI DAN PEMANFAATAN",
+      "NILAI EKONOMI DAN ANALISIS USAHATANI",
+      "DAFTAR PUSTAKA"
+    ],
+    "llamaparse_chapter_count": 9,
+    "expected_chapter_count": 9
+  },
+  "tables": {
+    "baseline_pages": [
+      29
+    ],
+    "llamaparse_pages": [
+      1,
+      3,
+      7,
+      14,
+      16,
+      29,
+      33,
+      41,
+      42,
+      44
+    ]
+  },
+  "printed_page_numbers": {
+    "detected": 49,
+    "coverage": 0.875,
+    "dominant_offset": 8,
+    "expected_offset": 8
+  },
+  "multi_column_pages": [],
+  "gates": {
+    "pages_complete": {
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    "no_failed_pages": {
+      "passed": true,
+      "detail": "failed=[]"
+    },
+    "page_text_floor": {
+      "passed": true,
+      "detail": "short=[] empty=[]"
+    },
+    "printed_page_numbers": {
+      "passed": true,
+      "detail": "detected=49 coverage=87.50% dominant_offset=8 expected=8 mismatch=[]"
+    },
+    "section_count": {
+      "passed": true,
+      "detail": "sections=9 expected=9"
+    },
+    "tables_expected": {
+      "passed": true,
+      "detail": "table_pages=[1, 3, 7, 14, 16, 29, 33, 41, 42, 44] expected=[29] missing=[]"
+    },
+    "context_coverage": {
+      "passed": true,
+      "detail": "blocks_with_chapter=233/233 ratio=100.00%"
+    }
+  },
+  "gate_passed": true,
+  "per_page": []
+}

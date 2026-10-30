@@ -7,6 +7,7 @@ traceability parser. Tidak ada nilai tanaman/penyakit yang ditebak.
 from __future__ import annotations
 
 import logging
+import re
 from pathlib import Path
 from typing import Any, Optional
 
@@ -85,13 +86,45 @@ def _table_payload(item: dict[str, Any]) -> dict[str, Any]:
 
 
 def _is_spurious_table(payload: dict[str, Any]) -> bool:
-    """True bila model layout justru tidak menemukan tabel di area itu."""
+    """True bila model layout justru tidak menemukan tabel di area itu.
 
+    Tabel yang masih membawa sel berisi tidak pernah dibuang; peringatan
+    layout bisa muncul bersamaan dengan hasil tabel yang valid (mis. tiga
+    tabel data pada satu halaman).
+    """
+
+    rows = payload.get("rows") or []
+    has_content = any(
+        str(cell).strip()
+        for row in rows
+        if isinstance(row, list)
+        for cell in row
+    )
+    if has_content:
+        return False
     for concern in payload.get("parse_concerns") or []:
         details = str(concern.get("details") or "").lower()
         if "no table/form" in details:
             return True
     return False
+
+
+def _is_page_number_table(payload: dict[str, Any], page_number: int) -> bool:
+    """True bila "tabel" hanya berisi nomor halaman cetak.
+
+    Parser kadang membungkus nomor halaman di tepi sebagai tabel satu sel.
+    Nomor hanya diterima bila cocok dengan offset dokumen, jadi angka lain di
+    dalam tabel asli tidak ikut terbuang.
+    """
+
+    cells = payload.get("cells") or []
+    if len(cells) != 1 or not isinstance(cells[0], list) or len(cells[0]) != 1:
+        return False
+    value = str(cells[0][0] or "").strip()
+    match = re.fullmatch(r"\|?\s*(\d{1,4})\s*\|?", value)
+    if not match:
+        return False
+    return int(match.group(1)) == page_number - config.profile().printed_offset
 
 
 def _item_text_and_markdown(item: dict[str, Any]) -> tuple[str, Optional[str], bool]:
@@ -149,6 +182,8 @@ def build_blocks_for_page(
         "removed_standalone_page_number": 0,
         "removed_repeated_edge": 0,
         "removed_image_placeholder": 0,
+        "removed_page_number_table": 0,
+        "removed_chapter_label_line": 0,
         "empty_items": 0,
         "substance_changed": 0,
     }
@@ -212,6 +247,13 @@ def build_blocks_for_page(
                     removed_edge_lines.append(text)
                     continue
 
+        if item_type == "heading" and structure.is_book_title(
+            text, config.profile().ignored_headings
+        ):
+            counters["removed_repeated_edge"] += 1
+            removed_edge_lines.append(text)
+            continue
+
         if item_type in {"text", "heading"}:
             bbox_value = _bbox_to_list(item.get("bbox"))
             if clean.is_running_edge_line(text, bbox_value, page_height):
@@ -248,9 +290,28 @@ def build_blocks_for_page(
                 heading_content_type = structure.update_for_heading(
                     context, text, level
                 )
-            content_type = _content_type(item, heading_content_type)
+                content_type = _content_type(item, heading_content_type)
+            elif item_type == "text" and structure.is_known_chapter(
+                text, context.known_chapters
+            ):
+                # Sebagian parser mengirim judul bab HURUF BESAR sebagai teks
+                # biasa; judul yang cocok dengan daftar isi diangkat menjadi
+                # heading tanpa menebak.
+                level = 1
+                content_type = structure.update_for_heading(context, text, 1)
+            else:
+                content_type = _content_type(item, heading_content_type)
         if content_type is None:
             counters["empty_items"] += 1
+            continue
+
+        if content_type == "chapter_heading" and structure.is_bare_chapter_label(text):
+            # "BAB 7" hanya nomor bab; judulnya ada di baris berikutnya dan
+            # sudah masuk konteks. Menyimpannya sebagai heading akan menghitung
+            # satu bab dua kali.
+            counters["removed_chapter_label_line"] = (
+                counters.get("removed_chapter_label_line", 0) + 1
+            )
             continue
 
         if item_type == "image" and not text.strip():
@@ -281,6 +342,11 @@ def build_blocks_for_page(
 
         if item_type == "table":
             payload = _table_payload(item)
+            if _is_page_number_table(payload, page_number):
+                counters["removed_page_number_table"] = (
+                    counters.get("removed_page_number_table", 0) + 1
+                )
+                continue
             if _is_spurious_table(payload):
                 # Layout model tidak menemukan tabel; LVM/VLM mengarang tabel
                 # (mis. diagram alur pada halaman 41). Teksnya tetap disimpan,
@@ -384,10 +450,15 @@ def normalize_run(run_id: str) -> dict[str, Any]:
         except (OSError, ValueError):
             image_counts = {}
 
-    context = structure.DocumentContext()
+    context = structure.DocumentContext(
+        config.profile().chapter_titles,
+        config.profile().lettered_subsections,
+    )
     page_records: list[dict[str, Any]] = []
     block_records: list[dict[str, Any]] = []
-    baseline_pages = reconcile.load_baseline()
+    baseline_pages = (
+        reconcile.load_baseline() if config.profile().gate_mode == "baseline" else {}
+    )
     reconciliation_pages: list[dict[str, Any]] = []
     reconciliation_events: list[dict[str, Any]] = []
 
@@ -403,6 +474,7 @@ def normalize_run(run_id: str) -> dict[str, Any]:
         items_page = items_pages.get(page_number, {})
         metadata_page = metadata_pages.get(page_number, {})
         stored = stored_meta.get(page_number, {})
+        markdown_text = markdown_page.get("markdown") or ""
 
         printed_raw = metadata_page.get("printed_page_number")
         printed_number, printed_source = clean.parse_printed_page_number(printed_raw)
@@ -417,6 +489,15 @@ def normalize_run(run_id: str) -> dict[str, Any]:
                 printed_source = derived_source
                 printed_raw = derived_raw
         if printed_number is None:
+            candidate, candidate_source, candidate_raw = (
+                clean.derive_page_number_from_text(markdown_text)
+            )
+            expected_printed = page_number - config.profile().printed_offset
+            if candidate is not None and candidate == expected_printed:
+                printed_number = candidate
+                printed_source = candidate_source
+                printed_raw = candidate_raw
+        if printed_number is None:
             derived_printed = reconcile.baseline_printed_page_number(
                 baseline_pages.get(page_number)
             )
@@ -426,7 +507,6 @@ def normalize_run(run_id: str) -> dict[str, Any]:
                 printed_raw = str(derived_printed)
 
         success = bool(markdown_page.get("success", items_page.get("success", True)))
-        markdown_text = markdown_page.get("markdown") or ""
         items = items_page.get("items") or []
         page_width = float(items_page.get("page_width") or 0.0)
         page_height = float(items_page.get("page_height") or 0.0)

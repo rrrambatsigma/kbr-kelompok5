@@ -1,0 +1,9 @@
+symptom_id,document_id,disease_id,plant_id,verbatim_text,chunk_id,page_start,page_end,char_start,char_end,review_status
+SYM_602,DOC003,DIS_111,PLANT_017,Umumnya serangan jamur terlihat pada saat tanaman berumur dua bulan.,DOC003_C030_02,30,31,131,199,verified
+SYM_603,DOC003,DIS_117,PLANT_017,Gejala penyakit ini mula-mula ditandai adanya luka berwarna kecoklatan pada leher yang selanjutnya menyebar ke seluruh batang semu.,DOC003_C031_01,31,32,210,341,verified
+SYM_604,DOC003,DIS_117,PLANT_017,"Pada tingkat serangan yang berat, tanaman akhirnya mati.",DOC003_C031_01,31,32,342,398,verified
+SYM_605,DOC003,DIS_113,PLANT_017,Gejala tanaman yang terserang antara lain klorotik dan kerdil hingga hawar pada daun berat.,DOC003_C032_01,32,32,145,236,verified
+SYM_606,DOC003,DIS_113,PLANT_017,"Gejala awal berupa nekrotik pada ujung akar, yang cepat berkembang dan mematikan seluruh akar.",DOC003_C032_01,32,32,237,331,verified
+SYM_607,DOC003,DIS_114,PLANT_017,"Bakteri penyebab penyakit busuk ubi masuk ke dalam jaringan tanaman melalui luka pada daun, tangkai daun dan ubi yang menimbulkan busuk basah dan pada serangan yang berat dapat mengakibatkan tanaman mati.",DOC003_C032_01,32,32,550,754,verified
+SYM_608,DOC003,DIS_115,PLANT_017,"Gejala infeksi DMV pada tanaman suweg (A. campanulatus) antara lain berupa mosaik pada daun, daun muda yang baru muncul mengalami perubahan bentuk (menggulung dan keriting), berwarna kuning pucat dengan garis klorotik yang sejajar.",DOC003_C032_01,32,32,1699,1930,verified
+SYM_609,DOC003,DIS_115,PLANT_017,"Selain mosaik, pada helaian daun juga sering dijumpai bercak klorotik kecoklatan.",DOC003_C032_01,32,32,1931,2012,verified

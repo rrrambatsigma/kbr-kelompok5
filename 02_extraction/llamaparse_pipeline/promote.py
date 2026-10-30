@@ -12,7 +12,7 @@ from pdf_pipeline import output as base_output
 from pdf_pipeline import validate as base_validate
 from pdf_pipeline.output import read_json, read_jsonl, utc_now, write_json, write_jsonl, write_text
 
-from . import config, store
+from . import config, md_export, store
 
 
 LOGGER = logging.getLogger("kbr_llamaparse")
@@ -36,16 +36,29 @@ PAGE_TEXT_SOURCES = frozenset(
 
 
 def _merge_global_notes(notes: list[Any], backup_relative: str) -> list[str]:
-    """Menyimpan hanya catatan backup terbaru di manifest global."""
+    """Menyimpan hanya catatan backup terbaru untuk dokumen yang dipromosikan."""
 
+    if config.DOCUMENT_ID == "DOC002":
+        prefix = "backup_baseline:"
+        backup_note = f"backup_baseline:{backup_relative}"
+    else:
+        # Dokumen lain memakai namespace sendiri agar catatan backup DOC002
+        # tetap utuh di manifest global.
+        prefix = f"backup_baseline:{config.DOCUMENT_ID}:"
+        backup_note = f"{prefix}{backup_relative}"
     kept = [
         str(note)
         for note in notes
-        if not str(note).startswith("backup_baseline:")
+        if not str(note).startswith(prefix)
     ]
+    gate_label = (
+        "perbandingan"
+        if config.profile().gate_mode == "baseline"
+        else "verifikasi internal"
+    )
     merged = kept + [
-        "DOC002 dipromosikan dari LlamaParse setelah gate perbandingan lolos",
-        f"backup_baseline:{backup_relative}",
+        f"{config.DOCUMENT_ID} dipromosikan dari LlamaParse setelah gate {gate_label} lolos",
+        backup_note,
     ]
     return list(dict.fromkeys(merged))
 
@@ -215,6 +228,7 @@ def _build_entry(
 def validate_promoted() -> dict[str, Any]:
     paths = base_config.build_paths()
     normalized = config.normalized_paths()
+    profile = config.profile()
     pages = read_jsonl(paths.extracted_text_dir / f"{config.DOCUMENT_ID}.pages.jsonl")
     blocks = read_jsonl(paths.extracted_text_dir / f"{config.DOCUMENT_ID}.blocks.jsonl")
     chunks_path = paths.extracted_text_dir / f"{config.DOCUMENT_ID}.chunks.jsonl"
@@ -224,8 +238,8 @@ def validate_promoted() -> dict[str, Any]:
     warnings: list[str] = []
 
     page_numbers = [int(page.get("page_number")) for page in pages]
-    if page_numbers != list(range(1, 275)):
-        errors.append("page_sequence_not_1_274")
+    if page_numbers != list(range(1, profile.expected_pages + 1)):
+        errors.append(f"page_sequence_not_1_{profile.expected_pages}")
 
     block_ids = {str(block.get("block_id")) for block in blocks}
     for block in blocks:
@@ -284,13 +298,21 @@ def validate_promoted() -> dict[str, Any]:
 def promote(run_id: str, quality: dict[str, Any], comparison: dict[str, Any]) -> dict[str, Any]:
     if not comparison.get("gate_passed"):
         raise RuntimeError(
-            "Gate perbandingan belum lolos; promosi dibatalkan. "
-            "Periksa reports/DOC002.comparison.json"
+            f"Gate {config.DOCUMENT_ID} belum lolos; promosi dibatalkan. "
+            f"Periksa reports/{config.DOCUMENT_ID}.comparison.json"
         )
     if not comparison.get("is_full_run"):
-        raise RuntimeError("Promosi hanya boleh untuk full run 274 halaman")
+        raise RuntimeError(
+            "Promosi hanya boleh untuk full run "
+            f"{config.profile().expected_pages} halaman"
+        )
 
     manifest = store.load_manifest(run_id)
+    if str(manifest.get("document_id")) != config.DOCUMENT_ID:
+        raise RuntimeError(
+            "Manifest run bukan milik dokumen aktif "
+            f"({manifest.get('document_id')} != {config.DOCUMENT_ID})"
+        )
     current_sha = config.sha256_file(config.PDF_PATH)
     if current_sha != manifest.get("source_sha256"):
         raise RuntimeError(
@@ -303,6 +325,7 @@ def promote(run_id: str, quality: dict[str, Any], comparison: dict[str, Any]) ->
         "pages": paths.extracted_text_dir / f"{config.DOCUMENT_ID}.pages.jsonl",
         "blocks": paths.extracted_text_dir / f"{config.DOCUMENT_ID}.blocks.jsonl",
         "chunks": paths.extracted_text_dir / f"{config.DOCUMENT_ID}.chunks.jsonl",
+        "markdown": config.canonical_paths()["markdown"],
         "notes": paths.extraction_notes_dir / f"{config.DOCUMENT_ID}.extraction_notes.json",
     }
 
@@ -310,6 +333,7 @@ def promote(run_id: str, quality: dict[str, Any], comparison: dict[str, Any]) ->
         targets["pages"],
         targets["blocks"],
         targets["chunks"],
+        targets["markdown"],
         targets["notes"],
         paths.manifest,
         paths.report,
@@ -330,6 +354,7 @@ def promote(run_id: str, quality: dict[str, Any], comparison: dict[str, Any]) ->
     write_jsonl(targets["pages"], pages)
     write_jsonl(targets["blocks"], blocks)
     write_jsonl(targets["chunks"], chunks)
+    md_export.write_markdown(targets["markdown"], pages, blocks)
 
     # Statistik dihitung dari record yang benar-benar ditulis agar cocok
     # dengan validator lintas-pipeline.
@@ -418,16 +443,17 @@ def promote(run_id: str, quality: dict[str, Any], comparison: dict[str, Any]) ->
     else:
         settings = {}
         global_notes = []
-    settings = {
-        **settings,
-        "llamaparse": {
-            "run_id": run_id,
-            "tier": (manifest.get("options") or {}).get("tier"),
-            "version": (manifest.get("options") or {}).get("version"),
-            "job_id": manifest.get("job_id"),
-            "credits_used": manifest.get("credits_used"),
-        },
+    run_settings = {
+        "run_id": run_id,
+        "tier": (manifest.get("options") or {}).get("tier"),
+        "version": (manifest.get("options") or {}).get("version"),
+        "job_id": manifest.get("job_id"),
+        "credits_used": manifest.get("credits_used"),
     }
+    settings = {**settings, "llamaparse": run_settings}
+    per_document = dict(settings.get("llamaparse_runs") or {})
+    per_document[config.DOCUMENT_ID] = run_settings
+    settings["llamaparse_runs"] = per_document
     # Hanya backup terakhir yang relevan; catatan lama dibuang agar tidak
     # menunjuk direktori yang sudah dihapus.
     global_notes = _merge_global_notes(
@@ -453,7 +479,8 @@ def promote(run_id: str, quality: dict[str, Any], comparison: dict[str, Any]) ->
     validation = validate_promoted()
     if validation.get("status") != "pass":
         raise RuntimeError(
-            "Validasi setelah promosi gagal; lihat reports/DOC002.validation.json"
+            "Validasi setelah promosi gagal; lihat "
+            f"reports/{config.DOCUMENT_ID}.validation.json"
         )
 
     return {

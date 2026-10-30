@@ -12,7 +12,7 @@ from typing import Any, Optional
 
 from pdf_pipeline.output import read_json, utc_now, write_json
 
-from . import baseline, chunk, compare, config, normalize, promote, quality, store
+from . import baseline, chunk, compare, config, md_export, normalize, profiles, promote, quality, store
 from .client import (
     LlamaParseClient,
     LlamaParseConfigError,
@@ -35,12 +35,45 @@ def _configure_logging(verbose: bool) -> None:
 
 
 def _pdf_page_count(pdf_path: Path) -> int:
-    try:
-        import pymupdf
-    except ImportError:  # pragma: no cover - PyMuPDF terpasang
-        import fitz as pymupdf
-    with pymupdf.open(pdf_path) as document:
-        return int(document.page_count)
+    """Jumlah halaman dari profil dokumen.
+
+    Pipeline ini tidak lagi membaca PDF dengan PyMuPDF; jumlah halaman sudah
+    diverifikasi saat survei sumber dan dipakai sebagai kontrol cakupan.
+    """
+
+    if pdf_path != config.PDF_PATH:
+        raise RuntimeError(f"PDF di luar profil aktif: {pdf_path}")
+    if not pdf_path.exists():
+        raise RuntimeError(f"PDF tidak ditemukan: {pdf_path}")
+    return int(config.profile().expected_pages)
+
+
+def _activate_document(args: argparse.Namespace) -> profiles.DocumentProfile:
+    """Menentukan dokumen aktif dari ``--run`` atau ``--doc``."""
+
+    run_id = getattr(args, "run", None)
+    document_id = getattr(args, "doc", None)
+    if run_id:
+        return config.activate(profiles.from_run_id(str(run_id)).document_id)
+    if document_id:
+        return config.activate(str(document_id))
+    return config.activate(profiles.DEFAULT_DOCUMENT_ID)
+
+
+def _doc002_frozen(args: argparse.Namespace) -> bool:
+    """DOC002 sudah final; perintah yang menulis harus membuka kunci eksplisit."""
+
+    if config.DOCUMENT_ID != "DOC002":
+        return False
+    return not bool(getattr(args, "allow_doc002", False))
+
+
+def _frozen_error() -> int:
+    LOGGER.error(
+        "DOC002 sudah dibekukan dan tidak boleh dijalankan ulang. "
+        "Tambahkan --allow-doc002 hanya bila memang sengaja mengulang."
+    )
+    return 1
 
 
 def count_range_pages(target_pages: Optional[str], total_pages: int) -> int:
@@ -300,6 +333,8 @@ def command_versions(args: argparse.Namespace, paths: Any = None) -> int:
 
 
 def command_smoke(args: argparse.Namespace, paths: Any = None) -> int:
+    if _doc002_frozen(args):
+        return _frozen_error()
     code, _ = _run_parse(
         tier=args.tier,
         version=args.version,
@@ -313,6 +348,8 @@ def command_smoke(args: argparse.Namespace, paths: Any = None) -> int:
 
 
 def command_parse(args: argparse.Namespace, paths: Any = None) -> int:
+    if _doc002_frozen(args):
+        return _frozen_error()
     code, _ = _run_parse(
         tier=args.tier,
         version=args.version,
@@ -329,10 +366,18 @@ def command_parse(args: argparse.Namespace, paths: Any = None) -> int:
 # Build / quality / compare
 # ----------------------------------------------------------------------
 def _build_outputs(run_id: str) -> dict[str, Any]:
-    snapshot = baseline.ensure_snapshot()
+    snapshot: dict[str, Any] = {"source": None}
+    if config.profile().gate_mode == "baseline":
+        snapshot = baseline.ensure_snapshot()
     normalization = normalize.normalize_run(run_id)
     chunking = chunk.build_chunks(run_id)
     report = quality.evaluate_run(run_id)
+    normalized = store.ensure_normalized(run_id)
+    md_export.write_markdown(
+        config.NORMALIZED_DIR / f"{config.DOCUMENT_ID}.md",
+        normalized["pages"],
+        normalized["blocks"],
+    )
     return {
         "baseline": snapshot.get("source"),
         "normalization": normalization,
@@ -342,6 +387,8 @@ def _build_outputs(run_id: str) -> dict[str, Any]:
 
 
 def command_build(args: argparse.Namespace, paths: Any = None) -> int:
+    if _doc002_frozen(args):
+        return _frozen_error()
     run_id = _run_id_from_args(args)
     result = _build_outputs(run_id)
     print(
@@ -362,6 +409,8 @@ def command_build(args: argparse.Namespace, paths: Any = None) -> int:
 
 
 def command_quality(args: argparse.Namespace, paths: Any = None) -> int:
+    if _doc002_frozen(args):
+        return _frozen_error()
     run_id = _run_id_from_args(args)
     report = quality.evaluate_run(run_id)
     print(json.dumps({k: v for k, v in report.items() if k != "page_stats"}, indent=2))
@@ -369,6 +418,8 @@ def command_quality(args: argparse.Namespace, paths: Any = None) -> int:
 
 
 def command_compare(args: argparse.Namespace, paths: Any = None) -> int:
+    if _doc002_frozen(args):
+        return _frozen_error()
     run_id = _run_id_from_args(args)
     report = compare.compare_run(run_id)
     print(
@@ -421,7 +472,7 @@ def command_images(args: argparse.Namespace, paths: Any = None) -> int:
         raise RuntimeError("Manifest tidak memuat job_id; gambar tidak bisa diambil ulang.")
 
     load_environment(config.ENV_PATH)
-    client = LlamaParseClient(registry_dir=config.LLAMAPARSE_DIR)
+    client = LlamaParseClient(registry_dir=config.RAW_DIR / config.DOCUMENT_ID)
     try:
         result = client.get(
             job_id,
@@ -474,6 +525,8 @@ def command_runs(args: argparse.Namespace, paths: Any = None) -> int:
 # Pilot / full run
 # ----------------------------------------------------------------------
 def command_pilot(args: argparse.Namespace, paths: Any = None) -> int:
+    if _doc002_frozen(args):
+        return _frozen_error()
     tiers = [item.strip() for item in args.tiers.split(",") if item.strip()]
     invalid = [tier for tier in tiers if tier not in config.TIERS]
     if invalid:
@@ -554,6 +607,8 @@ def command_pilot(args: argparse.Namespace, paths: Any = None) -> int:
 
 
 def command_full(args: argparse.Namespace, paths: Any = None) -> int:
+    if _doc002_frozen(args):
+        return _frozen_error()
     code, run_id = _run_parse(
         tier=args.tier,
         version=args.version,
@@ -600,7 +655,7 @@ def command_full(args: argparse.Namespace, paths: Any = None) -> int:
     elif not comparison["gate_passed"]:
         LOGGER.warning(
             "Gate tidak lolos; output canonical tidak diubah. "
-            "Lihat reports/DOC002.comparison.json"
+            f"Lihat reports/{config.DOCUMENT_ID}.comparison.json"
         )
 
     print(json.dumps(summary, indent=2))
@@ -610,12 +665,17 @@ def command_full(args: argparse.Namespace, paths: Any = None) -> int:
 def command_promote(args: argparse.Namespace, paths: Any = None) -> int:
     """Mempromosikan run yang sudah lolos gate tanpa memanggil API lagi."""
 
+    if _doc002_frozen(args):
+        return _frozen_error()
     run_id = _run_id_from_args(args)
     quality_report = quality.evaluate_run(run_id)
     comparison = compare.compare_run(run_id)
     manifest = store.load_manifest(run_id)
     if not comparison.get("is_full_run"):
-        print("Promosi hanya untuk full run 274 halaman.")
+        print(
+            "Promosi hanya untuk full run "
+            f"{config.profile().expected_pages} halaman."
+        )
         return 1
     if not comparison.get("gate_passed"):
         print("Gate belum lolos; output canonical tidak diubah.")
@@ -638,10 +698,26 @@ def command_promote(args: argparse.Namespace, paths: Any = None) -> int:
     return 0
 
 
+def _add_document_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--doc",
+        choices=list(config.document_ids()),
+        help="document_id yang diproses (default: DOC002).",
+    )
+    parser.add_argument(
+        "--allow-doc002",
+        action="store_true",
+        help=argparse.SUPPRESS,
+    )
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="run_llamaparse",
-        description="Pipeline LlamaParse untuk DOC002 (PenyakitTanamanPangan).",
+        description=(
+            "Pipeline LlamaParse untuk DOC002, DOC003, dan DOC004. "
+            "Gunakan --doc untuk memilih dokumen."
+        ),
     )
     parser.add_argument("--verbose", action="store_true", help="log debug")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -657,6 +733,7 @@ def build_parser() -> argparse.ArgumentParser:
     versions.set_defaults(func=command_versions)
 
     smoke = subparsers.add_parser("smoke", help="parse satu halaman sebagai uji koneksi")
+    _add_document_args(smoke)
     smoke.add_argument("--page", type=int, default=25, help="nomor halaman PDF (1-based)")
     smoke.add_argument("--tier", default="cost_effective", choices=config.TIERS)
     smoke.add_argument("--version", default=config.DEFAULT_VERSION)
@@ -666,6 +743,7 @@ def build_parser() -> argparse.ArgumentParser:
     smoke.set_defaults(func=command_smoke)
 
     parse = subparsers.add_parser("parse", help="jalankan parsing (subset atau penuh)")
+    _add_document_args(parse)
     parse.add_argument("--tier", default=config.DEFAULT_TIER, choices=config.TIERS)
     parse.add_argument("--version", default=config.DEFAULT_VERSION)
     parse.add_argument("--pages", default=None, help='contoh: "25,27,91-95"')
@@ -678,39 +756,46 @@ def build_parser() -> argparse.ArgumentParser:
     build = subparsers.add_parser(
         "build", help="normalisasi, chunking, dan quality untuk run tertentu"
     )
+    _add_document_args(build)
     build.add_argument("--run", default=None, help="run_id (default: run terakhir)")
     build.set_defaults(func=command_build)
 
     quality_parser = subparsers.add_parser("quality", help="hitung ulang laporan kualitas")
+    _add_document_args(quality_parser)
     quality_parser.add_argument("--run", default=None)
     quality_parser.set_defaults(func=command_quality)
 
     compare_parser = subparsers.add_parser(
-        "compare", help="bandingkan dengan baseline PyMuPDF"
+        "compare", help="bandingkan dengan baseline atau jalankan gate internal"
     )
+    _add_document_args(compare_parser)
     compare_parser.add_argument("--run", default=None)
     compare_parser.set_defaults(func=command_compare)
 
     images_parser = subparsers.add_parser(
         "images", help="ambil ulang gambar yang gagal diunduh (tanpa kredit)"
     )
+    _add_document_args(images_parser)
     images_parser.add_argument("--run", default=None)
     images_parser.add_argument("--dry-run", action="store_true")
     images_parser.set_defaults(func=command_images)
 
     runs = subparsers.add_parser("runs", help="daftar run yang tersimpan")
+    _add_document_args(runs)
     runs.set_defaults(func=command_runs)
 
     pilot = subparsers.add_parser(
         "pilot", help="uji beberapa tier pada halaman sampel"
     )
+    _add_document_args(pilot)
     pilot.add_argument("--tiers", default="fast,cost_effective,agentic")
     pilot.add_argument("--version", default=config.DEFAULT_VERSION)
     pilot.add_argument("--force", action="store_true")
     pilot.add_argument("--no-images", action="store_true")
     pilot.set_defaults(func=command_pilot)
 
-    full = subparsers.add_parser("full", help="proses 274 halaman lalu bandingkan")
+    full = subparsers.add_parser("full", help="proses seluruh halaman lalu bandingkan")
+    _add_document_args(full)
     full.add_argument("--tier", default=config.DEFAULT_TIER, choices=config.TIERS)
     full.add_argument("--version", default=config.DEFAULT_VERSION)
     full.add_argument("--force", action="store_true")
@@ -730,6 +815,7 @@ def build_parser() -> argparse.ArgumentParser:
     promote_parser = subparsers.add_parser(
         "promote", help="promosikan run yang lolos gate ke output canonical"
     )
+    _add_document_args(promote_parser)
     promote_parser.add_argument("--run", default=None)
     promote_parser.set_defaults(func=command_promote)
 
@@ -741,6 +827,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     args = parser.parse_args(argv)
     _configure_logging(args.verbose)
     try:
+        _activate_document(args)
         return int(args.func(args))
     except RuntimeError as exc:
         LOGGER.error("%s", exc)

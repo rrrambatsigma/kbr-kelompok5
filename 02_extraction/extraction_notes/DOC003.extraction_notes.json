@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC003",
+  "document_name": "porang.pdf",
+  "generated_at": "2026-10-30T13:11:26Z",
+  "summary": {
+    "pages_with_text": 54,
+    "pages_without_text": 2,
+    "pages_with_errors": 0,
+    "pages_flagged": 13,
+    "blocks_total": 279,
+    "blocks_by_content_type": {
+      "chapter_heading": 13,
+      "figure_caption": 8,
+      "heading_unclassified": 1,
+      "list_item": 2,
+      "paragraph": 231,
+      "section_heading": 14,
+      "table": 10
+    },
+    "tables_detected": 10,
+    "tables_needs_review": 7,
+    "headings_detected": 28,
+    "printed_page_numbers_detected": 49,
+    "characters_total": 96338
+  },
+  "document_notes": [
+    "extracted_with_llamaparse",
+    "parser_tier:cost_effective",
+    "parser_version:2026-09-28",
+    "parser_run_id:DOC003_cost_effective_full-71122ed5_c9e9cb8e",
+    "quality_status:warning",
+    "blocks_context_missing:1",
+    "tables_with_concerns:7"
+  ],
+  "pages_with_issues": [
+    {
+      "page_number": 1,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 4,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 6,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 8,
+      "extraction_status": "no_text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 10,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 12,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 14,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 16,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 18,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 20,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 22,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 24,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 26,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 28,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 30,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 32,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 34,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 36,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 38,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:2"
+      ]
+    },
+    {
+      "page_number": 40,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 42,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 43,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_image_placeholder:1"
+      ]
+    },
+    {
+      "page_number": 44,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 46,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 48,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 50,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 52,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 54,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 56,
+      "extraction_status": "no_text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    }
+  ],
+  "repeated_lines": {
+    "threshold": 0,
+    "header_candidates": [],
+    "footer_candidates": [],
+    "source": "llamaparse"
+  },
+  "table_issues": [
+    {
+      "block_id": "DOC003_P001_B004",
+      "page_number": 1,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC003_P003_B005",
+      "page_number": 3,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC003_P007_B006",
+      "page_number": 7,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC003_P014_B003",
+      "page_number": 14,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC003_P029_B006",
+      "page_number": 29,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC003_P033_B003",
+      "page_number": 33,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC003_P041_B007",
+      "page_number": 41,
+      "reason": "table_needs_review"
+    }
+  ],
+  "structure_issues": {
+    "chapter_count": 9,
+    "unclassified_headings": 1
+  },
+  "extractor": "LlamaParse",
+  "run_id": "DOC003_cost_effective_full-71122ed5_c9e9cb8e",
+  "tier": "cost_effective",
+  "version": "2026-09-28",
+  "quality": {
+    "status": "warning",
+    "issues": [
+      "blocks_context_missing:1",
+      "tables_with_concerns:7"
+    ],
+    "pages_missing": [],
+    "blocks_needs_review": 7
+  },
+  "structure": {
+    "chapter_headings": [
+      "PENDAHULUAN",
+      "KLASIFIKASI DAN DESKRIPSI",
+      "PERSYARATAN TUMBUH",
+      "PERKEMBANGBIAKAN DAN PERTUMBUHAN",
+      "TEKNOLOGI BUDIDAYA",
+      "HAMA PENYAKIT DAN PENGENDALIANNYA",
+      "KANDUNGAN NUTRISI DAN PEMANFAATAN",
+      "NILAI EKONOMI DAN ANALISIS USAHATANI",
+      "DAFTAR PUSTAKA"
+    ],
+    "chapter_count": 9
+  },
+  "text_similarity": {
+    "method": "not_computed_without_baseline",
+    "cer_mean": null,
+    "cer_noise_adjusted_mean": null,
+    "cer_content_loss_mean": null,
+    "cer_content_recall_mean": null
+  },
+  "reconciliation": {
+    "schema_version": "1.0.0",
+    "document_id": "DOC003",
+    "run_id": "DOC003_cost_effective_full-71122ed5_c9e9cb8e",
+    "generated_at": "2026-10-30T13:11:13Z",
+    "authority": "pymupdf_text_layer",
+    "baseline_snapshot": "02_extraction/llamaparse/baseline/baseline_manifest.json",
+    "pages_scanned": 56,
+    "pages_reconciled": 0,
+    "tokens_restored": 0,
+    "table_tokens_restored": 0,
+    "blocks_recovered": 0,
+    "fallback_pages": [],
+    "restored_by_page": {},
+    "table_restored_by_page": {},
+    "recovered_by_page": {},
+    "event_count": 0
+  },
+  "tables": {
+    "baseline_pages": [
+      29
+    ],
+    "llamaparse_pages": [
+      1,
+      3,
+      7,
+      14,
+      16,
+      29,
+      33,
+      41,
+      42,
+      44
+    ]
+  },
+  "printed_page_numbers": {
+    "detected": 49,
+    "coverage": 0.875,
+    "dominant_offset": 8,
+    "expected_offset": 8
+  },
+  "backup": "02_extraction/extraction_notes/_backups/pre_llamaparse_20261030T131126Z"
+}
