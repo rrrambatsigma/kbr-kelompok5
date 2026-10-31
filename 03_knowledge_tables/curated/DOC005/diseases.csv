@@ -1,0 +1,9 @@
+disease_id,document_id,plant_id,host_verbatim,disease_name_verbatim,disease_name_en_verbatim,pathogen_verbatim,pathogen_id,reference_verbatim,page_start,page_end,source_block_id,chunk_id,source_type,review_status,notes
+DIS_118,DOC005,PLANT_018,KEDELAI,KARAT,,Phakopsora pachyrhizi Syd. dan Phakopsora meibomiae,PAT_114,,18,18,DOC005_P018_B003,DOC005_C018_02,prose,verified,Penyebab utama P. pachyrhizi; P. meibomiae kurang virulen menurut sumber.
+DIS_119,DOC005,PLANT_018,KEDELAI,EMBUN BULU,,Peronospora manshurica (Naumov) Syd. In Gaum,PAT_116,,26,26,DOC005_P026_B006,DOC005_C026_03,prose,verified,
+DIS_120,DOC005,PLANT_018,KEDELAI,ANTRAKNOSA,,,PAT_117,,31,31,DOC005_P031_B001,DOC005_C031_01,prose,verified,Nama penyakit diambil dari heading section; patogen dirujuk lewat disease_pathogen.
+DIS_121,DOC005,PLANT_019,KACANG TANAH,KARAT,,Puccinia arachidis,PAT_118,,39,39,DOC005_P039_B002,DOC005_C039_01,prose,verified,Nama penyakit sama dengan karat kedelai; dibedakan oleh inang.
+DIS_122,DOC005,PLANT_019,KACANG TANAH,BERCAK DAUN,,Cercospora arachidicola dan Cercospora personata,PAT_119,,45,45,DOC005_P045_B005,DOC005_C045_02,prose,verified,Dua patogen; C. arachidicola dijadikan patogen utama.
+DIS_123,DOC005,PLANT_020,KACANG HIJAU,EMBUN TEPUNG,,Erysiphe polygoni,PAT_121,,53,53,DOC005_P053_B002,DOC005_C053_01,prose,verified,
+DIS_124,DOC005,PLANT_020,KACANG HIJAU,BERCAK DAUN,,Cercospora canescens dan Cercospora cruenta,PAT_122,,60,60,DOC005_P060_B002,DOC005_C060_01,prose,verified,Dua patogen; C. canescens lebih banyak ditemukan dan dijadikan patogen utama.
+DIS_125,DOC005,PLANT_020,KACANG HIJAU,LAYU,,Sclerotium rolfsii (Sacc.) Curzi,PAT_124,,65,65,DOC005_P065_B004,DOC005_C065_02,prose,verified,

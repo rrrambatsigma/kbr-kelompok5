@@ -70,7 +70,7 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | `curated/DOC003/*.csv` | otoritas akhir tabel porang/suweg |
 | `curated/DOC004/*.csv` | otoritas akhir tabel nutrisi dan pupuk |
 | `reports/DOC003.tables.validation.json` / `DOC004.tables.validation.json` | hasil gate verbatim dokumen tambahan |
-| `tests/test_document_tables.py` | 17 gate test DOC003/DOC004 |
+| `tests/test_document_tables.py` | 22 gate test DOC003/DOC004/DOC005 |
 
 ## Menjalankan
 
@@ -89,6 +89,11 @@ python 03_knowledge_tables/build_document_tables.py
 # dari folder ini
 python -m unittest discover -s tests -p "test_*.py"
 ```
+
+Test yang membutuhkan artefak `02_extraction/extracted_text/*.jsonl` akan
+di-skip dengan alasan eksplisit bila artefak tersebut tidak tersedia. Artefak
+yang ada tetap diuji; regenerate artefak dokumen terkait untuk menjalankan gate
+lengkap.
 
 Builder keluar dengan kode `2` bila ada pelanggaran verbatim, `0` bila bersih.
 `curate.py`/`curate_pathogens.py` keluar dengan kode `2` bila ada kutipan yang

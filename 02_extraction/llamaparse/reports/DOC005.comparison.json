@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.1.0",
+  "document_id": "DOC005",
+  "run_id": "DOC005_agentic_full-d2aec48f_733d33b7",
+  "generated_at": "2026-10-31T03:48:36Z",
+  "tier": "agentic",
+  "version": "latest",
+  "is_full_run": true,
+  "gate_mode": "internal",
+  "baseline": null,
+  "pages_compared": 84,
+  "pages_missing_vs_baseline": [],
+  "text_similarity": {
+    "method": "not_computed_without_baseline",
+    "cer_mean": null,
+    "cer_noise_adjusted_mean": null,
+    "cer_content_loss_mean": null,
+    "cer_content_recall_mean": null
+  },
+  "headings": {
+    "baseline_chapter_headings": [],
+    "llamaparse_chapter_headings": [
+      "PENDAHULUAN",
+      "KEDELAI",
+      "KACANG TANAH",
+      "KACANG HIJAU"
+    ],
+    "llamaparse_chapter_count": 4,
+    "expected_chapter_count": 4
+  },
+  "tables": {
+    "baseline_pages": [
+      44,
+      45,
+      49,
+      56,
+      57,
+      58,
+      69
+    ],
+    "llamaparse_pages": [
+      8,
+      10,
+      11,
+      18,
+      26,
+      32,
+      39,
+      44,
+      45,
+      49,
+      53,
+      56,
+      57,
+      58,
+      60,
+      65,
+      69
+    ]
+  },
+  "printed_page_numbers": {
+    "detected": 70,
+    "coverage": 0.8333,
+    "dominant_offset": 13,
+    "expected_offset": 13
+  },
+  "multi_column_pages": [],
+  "gates": {
+    "pages_complete": {
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    "no_failed_pages": {
+      "passed": true,
+      "detail": "failed=[]"
+    },
+    "page_text_floor": {
+      "passed": true,
+      "detail": "short=[] empty=[]"
+    },
+    "printed_page_numbers": {
+      "passed": true,
+      "detail": "detected=70 coverage=83.33% dominant_offset=13 expected=13 mismatch=[]"
+    },
+    "section_count": {
+      "passed": true,
+      "detail": "sections=4 expected=4"
+    },
+    "tables_expected": {
+      "passed": true,
+      "detail": "table_pages=[8, 10, 11, 18, 26, 32, 39, 44, 45, 49, 53, 56, 57, 58, 60, 65, 69] expected=[44, 45, 49, 56, 57, 58, 69] missing=[]"
+    },
+    "context_coverage": {
+      "passed": true,
+      "detail": "blocks_with_chapter=332/332 ratio=100.00%"
+    }
+  },
+  "gate_passed": true,
+  "per_page": []
+}

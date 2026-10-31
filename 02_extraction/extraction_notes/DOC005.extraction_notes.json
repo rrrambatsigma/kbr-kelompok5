@@ -1,0 +1,1038 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC005",
+  "document_name": "PenyakitTanamanKedelaiKacangTanahKacangHijau.pdf",
+  "generated_at": "2026-10-31T03:48:36Z",
+  "summary": {
+    "pages_with_text": 80,
+    "pages_without_text": 4,
+    "pages_with_errors": 0,
+    "pages_flagged": 81,
+    "blocks_total": 510,
+    "blocks_by_content_type": {
+      "chapter_heading": 5,
+      "figure_caption": 28,
+      "list_item": 2,
+      "paragraph": 351,
+      "section_heading": 17,
+      "subsection_heading": 90,
+      "table": 17
+    },
+    "tables_detected": 17,
+    "tables_needs_review": 10,
+    "headings_detected": 112,
+    "printed_page_numbers_detected": 70,
+    "characters_total": 115862
+  },
+  "document_notes": [
+    "extracted_with_llamaparse",
+    "parser_tier:agentic",
+    "parser_version:latest",
+    "parser_run_id:DOC005_agentic_full-d2aec48f_733d33b7",
+    "quality_status:warning",
+    "blocks_context_missing:42",
+    "tables_with_concerns:12"
+  ],
+  "pages_with_issues": [
+    {
+      "page_number": 1,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 2,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_standalone_page_number:1",
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 3,
+      "extraction_status": "no_text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 4,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_standalone_page_number:1",
+        "removed_repeated_header_footer:2"
+      ]
+    },
+    {
+      "page_number": 5,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_standalone_page_number:1",
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 6,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 7,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 8,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 9,
+      "extraction_status": "no_text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 10,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 11,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 12,
+      "extraction_status": "no_text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 13,
+      "extraction_status": "no_text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 14,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 15,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 16,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 17,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 18,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 19,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 20,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 21,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 22,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 23,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 24,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 25,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 26,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 27,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 28,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 29,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 30,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 31,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 32,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 33,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 34,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 35,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 36,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 37,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 38,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 39,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 40,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 41,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 42,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 43,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 44,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 45,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 46,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 47,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 48,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 49,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 50,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 51,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 52,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 53,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 54,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 55,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 56,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 57,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 58,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 59,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 60,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 61,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 62,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 63,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 64,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 65,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 66,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 67,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    },
+    {
+      "page_number": 68,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 69,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 70,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 71,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 72,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 73,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 74,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 75,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 76,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 77,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 78,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 79,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 80,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 81,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 82,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 83,
+      "extraction_status": "text_extracted",
+      "flags": [
+        "repeated_footer_candidate"
+      ],
+      "notes": [
+        "removed_repeated_header_footer:1"
+      ]
+    },
+    {
+      "page_number": 84,
+      "extraction_status": "text_extracted",
+      "flags": [],
+      "notes": [
+        "removed_repeated_header_footer:1",
+        "parser_confidence_low"
+      ]
+    }
+  ],
+  "repeated_lines": {
+    "threshold": 0,
+    "header_candidates": [],
+    "footer_candidates": [],
+    "source": "llamaparse"
+  },
+  "table_issues": [
+    {
+      "block_id": "DOC005_P008_B002",
+      "page_number": 8,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P010_B002",
+      "page_number": 10,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P011_B002",
+      "page_number": 11,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P018_B004",
+      "page_number": 18,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P026_B007",
+      "page_number": 26,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P032_B004",
+      "page_number": 32,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P039_B003",
+      "page_number": 39,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P053_B003",
+      "page_number": 53,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P060_B003",
+      "page_number": 60,
+      "reason": "table_needs_review"
+    },
+    {
+      "block_id": "DOC005_P065_B005",
+      "page_number": 65,
+      "reason": "table_needs_review"
+    }
+  ],
+  "structure_issues": {
+    "chapter_count": 4,
+    "unclassified_headings": 0
+  },
+  "extractor": "LlamaParse",
+  "run_id": "DOC005_agentic_full-d2aec48f_733d33b7",
+  "tier": "agentic",
+  "version": "latest",
+  "quality": {
+    "status": "warning",
+    "issues": [
+      "blocks_context_missing:42",
+      "tables_with_concerns:12"
+    ],
+    "pages_missing": [],
+    "blocks_needs_review": 10
+  },
+  "structure": {
+    "chapter_headings": [
+      "PENDAHULUAN",
+      "KEDELAI",
+      "KACANG TANAH",
+      "KACANG HIJAU"
+    ],
+    "chapter_count": 4
+  },
+  "text_similarity": {
+    "method": "not_computed_without_baseline",
+    "cer_mean": null,
+    "cer_noise_adjusted_mean": null,
+    "cer_content_loss_mean": null,
+    "cer_content_recall_mean": null
+  },
+  "reconciliation": {
+    "schema_version": "1.0.0",
+    "document_id": "DOC005",
+    "run_id": "DOC005_agentic_full-d2aec48f_733d33b7",
+    "generated_at": "2026-10-31T03:48:32Z",
+    "authority": "pymupdf_text_layer",
+    "baseline_snapshot": "02_extraction/llamaparse/baseline/baseline_manifest.json",
+    "pages_scanned": 84,
+    "pages_reconciled": 0,
+    "tokens_restored": 0,
+    "table_tokens_restored": 0,
+    "blocks_recovered": 0,
+    "fallback_pages": [],
+    "restored_by_page": {},
+    "table_restored_by_page": {},
+    "recovered_by_page": {},
+    "event_count": 0
+  },
+  "tables": {
+    "baseline_pages": [
+      44,
+      45,
+      49,
+      56,
+      57,
+      58,
+      69
+    ],
+    "llamaparse_pages": [
+      8,
+      10,
+      11,
+      18,
+      26,
+      32,
+      39,
+      44,
+      45,
+      49,
+      53,
+      56,
+      57,
+      58,
+      60,
+      65,
+      69
+    ]
+  },
+  "printed_page_numbers": {
+    "detected": 70,
+    "coverage": 0.8333,
+    "dominant_offset": 13,
+    "expected_offset": 13
+  },
+  "backup": "02_extraction/extraction_notes/_backups/pre_llamaparse_20261031T034836Z"
+}

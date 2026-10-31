@@ -453,6 +453,8 @@ def normalize_run(run_id: str) -> dict[str, Any]:
     context = structure.DocumentContext(
         config.profile().chapter_titles,
         config.profile().lettered_subsections,
+        config.profile().chapter_plants,
+        config.profile().lettered_subsection_level,
     )
     page_records: list[dict[str, Any]] = []
     block_records: list[dict[str, Any]] = []

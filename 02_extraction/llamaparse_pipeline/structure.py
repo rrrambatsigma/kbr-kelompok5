@@ -187,13 +187,20 @@ class DocumentContext:
         self,
         known_chapters: tuple[str, ...] = (),
         lettered_subsections: bool = False,
+        chapter_plants: Optional[dict[str, str]] = None,
+        lettered_subsection_level: int = 0,
     ) -> None:
         self.known_chapters = {
             normalize_heading(title).casefold()
             for title in known_chapters
             if normalize_heading(title)
         }
+        self.chapter_plants = {
+            normalize_heading(title).casefold(): plant
+            for title, plant in (chapter_plants or {}).items()
+        }
         self.lettered_subsections = lettered_subsections
+        self.lettered_subsection_level = lettered_subsection_level
         self.chapter: Optional[str] = None
         self.section: Optional[str] = None
         self.section_source: Optional[str] = None
@@ -248,9 +255,9 @@ def update_for_heading(
         # (DOC003/DOC004) tetap dianggap level 1 karena judulnya diambil dari
         # daftar isi yang tercetak, bukan ditebak.
         level = 1
-    elif context.lettered_subsections and re.match(r"^[a-z]\.\s+\S", heading):
-        # Enumerasi "a.", "b.", ... adalah subbab, bukan bab.
-        level = 2
+    elif context.lettered_subsections and re.match(r"^[a-z][.)]\s+\S", heading):
+        # Enumerasi "a.", "a)", "b.", ... adalah subbab, bukan bab.
+        level = context.lettered_subsection_level or 2
 
     if level <= 1:
         if known_chapter:
@@ -281,9 +288,16 @@ def update_for_heading(
         context.subsection = None
         context.disease_name = None
         context.disease_source = None
-        plant, plant_source = plant_from_chapter(context.chapter)
-        context.plant_name = plant
-        context.plant_source = plant_source
+        mapped_plant = context.chapter_plants.get(
+            normalize_heading(context.chapter).casefold()
+        )
+        if mapped_plant:
+            context.plant_name = mapped_plant
+            context.plant_source = "chapter_title_map"
+        else:
+            plant, plant_source = plant_from_chapter(context.chapter)
+            context.plant_name = plant
+            context.plant_source = plant_source
         context.chunk_type = category_for(context.chapter)
         if context.chunk_type == "unclassified" and is_generic_label(context.chapter):
             context.chunk_type = "reference" if "pustaka" in context.chapter.lower() else "unclassified"
@@ -293,7 +307,9 @@ def update_for_heading(
         context.section = heading
         context.section_source = "section_heading"
         context.subsection = None
-        disease, disease_source = disease_from_section(heading)
+        disease, disease_source = (
+            disease_from_section(heading) if context.plant_name else (None, None)
+        )
         context.disease_name = disease
         context.disease_source = disease_source
         context.chunk_type = category_for(heading)

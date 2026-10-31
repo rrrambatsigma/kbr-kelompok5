@@ -4,8 +4,8 @@ Modul ini hanya berisi path, konstanta, dan builder opsi API. Tidak ada
 pemanggilan jaringan dan tidak ada pembacaan nilai API key.
 
 Dokumen aktif dipilih lewat :func:`activate`; seluruh path dan konstanta
-diturunkan dari ``profiles.DocumentProfile`` sehingga DOC002, DOC003, dan
-DOC004 memakai kode yang sama tanpa nilai hard-code per dokumen.
+diturunkan dari ``profiles.DocumentProfile`` sehingga DOC002-DOC005 memakai
+kode yang sama tanpa nilai hard-code per dokumen.
 """
 
 from __future__ import annotations
@@ -37,7 +37,7 @@ EXTRACTED_TEXT_DIR = EXTRACTION_DIR / "extracted_text"
 
 PROFILE = profiles.get(profiles.DEFAULT_DOCUMENT_ID)
 DOCUMENT_ID = PROFILE.document_id
-PDF_PATH = PROJECT_ROOT / "01_knowledge_sources" / "pdf_original" / PROFILE.filename
+PDF_PATH = PROJECT_ROOT / "01_knowledge_sources" / PROFILE.source_dir / PROFILE.filename
 PILOT_PAGES = PROFILE.pilot_pages
 MAX_FULL_PAGES = PROFILE.expected_pages
 
@@ -59,7 +59,7 @@ def activate(document_id: str) -> profiles.DocumentProfile:
     profile = profiles.get(document_id)
     PROFILE = profile
     DOCUMENT_ID = profile.document_id
-    PDF_PATH = PROJECT_ROOT / "01_knowledge_sources" / "pdf_original" / profile.filename
+    PDF_PATH = PROJECT_ROOT / "01_knowledge_sources" / profile.source_dir / profile.filename
     PILOT_PAGES = profile.pilot_pages
     MAX_FULL_PAGES = profile.expected_pages
     return profile

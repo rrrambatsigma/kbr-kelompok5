@@ -1,10 +1,10 @@
-"""Pembangun knowledge table untuk dokumen baru (DOC003, DOC004).
+"""Pembangun knowledge table untuk dokumen baru (DOC003, DOC004, DOC005).
 
 Berbeda dari ``build_knowledge_tables.py`` yang menurunkan baris DOC002 secara
 otomatis dari heading, builder ini membaca spesifikasi kurasi
-``config/DOC003_tables.json`` dan ``config/DOC004_tables.json``. Setiap baris
-wajib menunjuk blok sumber dan kutipan verbatim; builder memverifikasi kutipan
-itu benar-benar ada di blok dan chunk yang dirujuk sebelum menulis CSV.
+``config/{DOC}_tables.json``. Setiap baris wajib menunjuk blok sumber dan
+kutipan verbatim; builder memverifikasi kutipan itu benar-benar ada di blok dan
+chunk yang dirujuk sebelum menulis CSV.
 
 Input read-only:
 - ``02_extraction/extracted_text/{DOC}.blocks.jsonl``
@@ -16,7 +16,7 @@ Output:
 
 Jalankan::
 
-    python 03_knowledge_tables/build_document_tables.py --doc DOC003 --doc DOC004
+    python 03_knowledge_tables/build_document_tables.py --doc DOC005
 
 Keluar dengan kode 2 bila ada pelanggaran (verbatim, foreign key, ID, offset).
 """
@@ -58,6 +58,89 @@ COLUMNS: dict[str, dict[str, list[str]]] = {
             "notes",
         ],
         "amorphophallus_spp_diseases": [
+            "disease_id",
+            "document_id",
+            "plant_id",
+            "host_verbatim",
+            "disease_name_verbatim",
+            "disease_name_en_verbatim",
+            "pathogen_verbatim",
+            "pathogen_id",
+            "reference_verbatim",
+            "page_start",
+            "page_end",
+            "source_block_id",
+            "chunk_id",
+            "source_type",
+            "review_status",
+            "notes",
+        ],
+        "pathogens": [
+            "pathogen_id",
+            "document_id",
+            "scientific_name",
+            "verbatim_text",
+            "taxon_group",
+            "taxon_evidence_chunk_id",
+            "taxon_evidence_quote",
+            "page",
+            "chunk_id",
+            "note",
+            "review_status",
+        ],
+        "disease_pathogen": [
+            "disease_id",
+            "pathogen_id",
+            "document_id",
+            "evidence_chunk_id",
+            "relation_note",
+            "review_status",
+        ],
+        "symptoms": [
+            "symptom_id",
+            "document_id",
+            "disease_id",
+            "plant_id",
+            "verbatim_text",
+            "chunk_id",
+            "page_start",
+            "page_end",
+            "char_start",
+            "char_end",
+            "review_status",
+        ],
+        "controls": [
+            "control_id",
+            "document_id",
+            "disease_id",
+            "plant_id",
+            "verbatim_text",
+            "chunk_id",
+            "page_start",
+            "page_end",
+            "char_start",
+            "char_end",
+            "control_category",
+            "scope",
+            "review_status",
+        ],
+    },
+    "DOC005": {
+        "plants": [
+            "plant_id",
+            "document_id",
+            "plant_name_id",
+            "plant_name_en",
+            "scientific_name",
+            "scientific_name_page",
+            "chapter_number",
+            "chapter_title",
+            "page_start",
+            "page_end",
+            "evidence_chunk_id",
+            "notes",
+        ],
+        "diseases": [
             "disease_id",
             "document_id",
             "plant_id",
@@ -201,6 +284,7 @@ ID_PATTERNS = {
 PRIMARY_KEYS: dict[str, tuple[str, ...]] = {
     "plants": ("plant_id",),
     "amorphophallus_spp_diseases": ("disease_id",),
+    "diseases": ("disease_id",),
     "pathogens": ("pathogen_id",),
     "disease_pathogen": ("disease_id", "pathogen_id"),
     "symptoms": ("symptom_id",),
@@ -225,6 +309,16 @@ FOREIGN_KEYS = {
         ("symptoms", "disease_id", "amorphophallus_spp_diseases", "disease_id"),
         ("symptoms", "plant_id", "plants", "plant_id"),
         ("controls", "disease_id", "amorphophallus_spp_diseases", "disease_id"),
+        ("controls", "plant_id", "plants", "plant_id"),
+    ],
+    "DOC005": [
+        ("diseases", "plant_id", "plants", "plant_id"),
+        ("diseases", "pathogen_id", "pathogens", "pathogen_id"),
+        ("disease_pathogen", "disease_id", "diseases", "disease_id"),
+        ("disease_pathogen", "pathogen_id", "pathogens", "pathogen_id"),
+        ("symptoms", "disease_id", "diseases", "disease_id"),
+        ("symptoms", "plant_id", "plants", "plant_id"),
+        ("controls", "disease_id", "diseases", "disease_id"),
         ("controls", "plant_id", "plants", "plant_id"),
     ],
     "DOC004": [],
@@ -391,7 +485,9 @@ class Builder:
     # ------------------------------------------------------------------
     # Penyusunan baris
     # ------------------------------------------------------------------
-    def build_doc003(self, spec: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
+    def build_plant_disease_tables(
+        self, spec: dict[str, Any], disease_table: str
+    ) -> dict[str, list[dict[str, Any]]]:
         tables = spec.get("tables") or {}
         out: dict[str, list[dict[str, Any]]] = {}
 
@@ -438,18 +534,16 @@ class Builder:
         out["plants"] = plants
 
         diseases: list[dict[str, Any]] = []
-        for row in tables.get("amorphophallus_spp_diseases") or []:
+        for row in tables.get(disease_table) or []:
             row_id = str(row.get("disease_id") or "")
             record = dict(row)
             record.setdefault("document_id", self.document_id)
             block = self.block_by_id.get(str(row.get("block_id") or ""))
-            chunk = self.resolve_chunk(
-                "amorphophallus_spp_diseases", row_id, row
-            )
+            chunk = self.resolve_chunk(disease_table, row_id, row)
             if block is None or chunk is None:
                 continue
             self.verify_quote(
-                "amorphophallus_spp_diseases",
+                disease_table,
                 row_id,
                 str(row.get("quote") or ""),
                 block,
@@ -461,7 +555,7 @@ class Builder:
                 value = norm(row.get(field))
                 if value and value.casefold() not in quote_norm.casefold():
                     self.error(
-                        "amorphophallus_spp_diseases",
+                        disease_table,
                         row_id,
                         f"{field}_not_in_quote",
                     )
@@ -469,7 +563,7 @@ class Builder:
                 value = norm(row.get(field))
                 if value and value.casefold() not in evidence.casefold():
                     self.error(
-                        "amorphophallus_spp_diseases",
+                        disease_table,
                         row_id,
                         f"{field}_not_in_block_evidence",
                     )
@@ -478,7 +572,7 @@ class Builder:
             record["source_block_id"] = str(block.get("block_id"))
             record["chunk_id"] = str(chunk.get("chunk_id"))
             diseases.append(record)
-        out["amorphophallus_spp_diseases"] = diseases
+        out[disease_table] = diseases
 
         pathogens: list[dict[str, Any]] = []
         for row in tables.get("pathogens") or []:
@@ -666,7 +760,11 @@ class Builder:
                 f"config:document_id_mismatch:{spec.get('document_id')}"
             )
         if self.document_id == "DOC003":
-            tables = self.build_doc003(spec)
+            tables = self.build_plant_disease_tables(
+                spec, "amorphophallus_spp_diseases"
+            )
+        elif self.document_id == "DOC005":
+            tables = self.build_plant_disease_tables(spec, "diseases")
         else:
             tables = self.build_doc004(spec)
 
@@ -750,10 +848,10 @@ def main(argv: Optional[list[str]] = None) -> int:
         "--doc",
         action="append",
         choices=sorted(COLUMNS),
-        help="Dokumen yang dibangun (boleh diulang). Default: DOC003 dan DOC004.",
+        help="Dokumen yang dibangun (boleh diulang). Default: semua dokumen.",
     )
     args = parser.parse_args(argv)
-    documents = args.doc or ["DOC003", "DOC004"]
+    documents = args.doc or sorted(COLUMNS)
     exit_code = 0
     for document_id in documents:
         exit_code = max(exit_code, Builder(document_id).run())
