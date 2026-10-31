@@ -70,6 +70,22 @@
         "Editor: Dr. Alamsyah, S.Pt., M.Pt.",
         "PDF yang tersedia hanya memuat Bab 7 (Pengelolaan Nutrisi Tanaman): halaman cetak 72-115 (PDF 12-55), daftar pustaka halaman cetak 116-123 (PDF 56-63), profil penulis halaman cetak 204 (PDF 64), dan sampul belakang (PDF 65)"
       ]
+    },
+    "DOC005": {
+      "title": "Penyakit Utama Pada Tanaman: Kedelai, Kacang Tanah Dan Kacang Hijau",
+      "authors": [
+        "Sumartini",
+        "Emerensiana Uge",
+        "Yuliantoro Baliadi"
+      ],
+      "publication_year": 2020,
+      "publisher": "Balai Penelitian Tanaman Aneka Kacang dan Umbi",
+      "language": "id",
+      "notes": [
+        "Disalin dari halaman kolofon PDF (halaman 5); ISBN 978-602-5421-03-7",
+        "Halaman cetak 1 = halaman PDF 14; total 84 halaman PDF",
+        "Tiga inang: kedelai, kacang tanah, dan kacang hijau"
+      ]
     }
   }
 }

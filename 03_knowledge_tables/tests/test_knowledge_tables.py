@@ -18,11 +18,26 @@ from pathlib import Path
 TABLE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = TABLE_DIR.parent
 CHUNKS_PATH = PROJECT_ROOT / "02_extraction" / "extracted_text" / "DOC002.chunks.jsonl"
+BLOCKS_PATH = PROJECT_ROOT / "02_extraction" / "extracted_text" / "DOC002.blocks.jsonl"
 CONFIG_PATH = TABLE_DIR / "config" / "chapter_map.json"
 SCHEMA_PATH = TABLE_DIR / "schema" / "knowledge_tables.schema.json"
 AUTO_DIR = TABLE_DIR / "auto"
 
 WS_RE = re.compile(r"\s+")
+
+
+def require_source_artifacts(*paths: Path) -> None:
+    missing = [path for path in paths if not path.exists()]
+    if not missing:
+        return
+    relative = ", ".join(
+        str(path.relative_to(PROJECT_ROOT)) for path in missing
+    )
+    raise unittest.SkipTest(
+        "DOC002 dilewati: artefak ekstraksi tidak tersedia "
+        f"(gitignored, perlu regenerate): {relative}"
+    )
+
 
 # Snapshot jumlah penyakit per tanaman pada build pertama yang stabil.
 EXPECTED_DISEASES = {
@@ -66,6 +81,7 @@ def read_jsonl(path: Path) -> list[dict]:
 class KnowledgeTableTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        require_source_artifacts(CHUNKS_PATH)
         cls.config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
         cls.schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         cls.plants = read_csv(AUTO_DIR / "plants.csv")
@@ -284,6 +300,7 @@ class CuratedTableTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
+        require_source_artifacts(CHUNKS_PATH, BLOCKS_PATH)
         cls.diseases = read_csv(TABLE_DIR / "curated" / "diseases.csv")
         cls.table_rows = read_csv(TABLE_DIR / "curated" / "ubi_kayu_tabel_5.csv")
         cls.log = read_csv(TABLE_DIR / "review" / "curation_log.csv")
@@ -367,6 +384,7 @@ class ExtendedTableTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
+        require_source_artifacts(CHUNKS_PATH, BLOCKS_PATH)
         cls.schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         cls.plants = read_csv(AUTO_DIR / "plants.csv")
         cls.diseases = read_csv(TABLE_DIR / "curated" / "diseases.csv")

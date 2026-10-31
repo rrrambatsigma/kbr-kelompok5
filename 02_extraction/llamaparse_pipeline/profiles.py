@@ -31,9 +31,12 @@ class DocumentProfile:
     non_content_pages: dict[int, str] = field(default_factory=dict)
     table_pages: tuple[int, ...] = ()
     chapter_titles: tuple[str, ...] = ()
+    chapter_plants: dict[str, str] = field(default_factory=dict)
     lettered_subsections: bool = False
+    lettered_subsection_level: int = 0
     ignored_headings: tuple[str, ...] = ()
     notes: tuple[str, ...] = ()
+    source_dir: str = "pdf_original"
 
 
 DOC002 = DocumentProfile(
@@ -133,9 +136,64 @@ DOC004 = DocumentProfile(
     ),
 )
 
+DOC005 = DocumentProfile(
+    document_id="DOC005",
+    filename="PenyakitTanamanKedelaiKacangTanahKacangHijau.pdf",
+    expected_pages=84,
+    printed_offset=13,
+    body_start=14,
+    body_end=71,
+    pilot_pages=(2, 14, 17, 18, 19, 26, 31, 38, 44, 52, 57, 72),
+    expected_sections=4,
+    gate_mode="internal",
+    blank_pages=frozenset({3, 9, 12, 13}),
+    non_content_pages={
+        1: "front_matter_cover",
+        2: "front_matter_title_page",
+        3: "front_matter_colophon",
+        4: "front_matter_preface",
+        5: "front_matter_toc",
+        6: "front_matter_toc",
+        7: "front_matter_toc",
+        8: "front_matter_toc",
+        9: "front_matter_toc",
+        10: "front_matter_toc",
+        11: "front_matter_toc",
+        12: "front_matter_toc",
+        13: "blank_page",
+        84: "back_cover",
+    },
+    table_pages=(44, 45, 49, 56, 57, 58, 69),
+    chapter_titles=(
+        "PENDAHULUAN",
+        "KEDELAI",
+        "KACANG TANAH",
+        "KACANG HIJAU",
+        "DAFTAR PUSTAKA",
+    ),
+    chapter_plants={
+        "KEDELAI": "Kedelai",
+        "KACANG TANAH": "Kacang tanah",
+        "KACANG HIJAU": "Kacang hijau",
+    },
+    lettered_subsections=True,
+    lettered_subsection_level=3,
+    ignored_headings=(
+        "Penyakit utama pada tanaman kedelai, kacang tanah dan kacang hijau",
+    ),
+    notes=(
+        "Halaman cetak 1 = PDF 14 (offset +13).",
+        "Bab inang memakai judul HURUF BESAR tanpa label Bab.",
+        "Subbab a.-e. harus berada di level 3 agar tidak menimpa section penyakit.",
+        "Tabel 1-7 diperkirakan berada di PDF 44, 45, 49, 56, 57, 58, dan 69.",
+        "PDF 9 dan 12 tidak punya blok mandiri karena tabelnya digabung ke PDF 8 dan 11.",
+    ),
+    source_dir="pdf_sources",
+)
+
 PROFILES = {
     profile.document_id: profile
-    for profile in (DOC002, DOC003, DOC004)
+    for profile in (DOC002, DOC003, DOC004, DOC005)
 }
 
 DEFAULT_DOCUMENT_ID = DOC002.document_id

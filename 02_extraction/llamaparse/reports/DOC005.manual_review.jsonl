@@ -1,0 +1,30 @@
+{"scope":"page","page_number":1,"reason":"low_parser_confidence","detail":"char=365 confidence=0.0","source":"quality"}
+{"scope":"page","page_number":8,"reason":"low_parser_confidence","detail":"char=1763 confidence=0.513","source":"quality"}
+{"scope":"page","page_number":9,"reason":"low_parser_confidence","detail":"char=0 confidence=0.626","source":"quality"}
+{"scope":"page","page_number":10,"reason":"low_parser_confidence","detail":"char=861 confidence=0.755","source":"quality"}
+{"scope":"page","page_number":28,"reason":"low_parser_confidence","detail":"char=1350 confidence=0.787","source":"quality"}
+{"scope":"page","page_number":34,"reason":"low_parser_confidence","detail":"char=1799 confidence=0.509","source":"quality"}
+{"scope":"page","page_number":36,"reason":"low_parser_confidence","detail":"char=1633 confidence=0.74","source":"quality"}
+{"scope":"page","page_number":40,"reason":"low_parser_confidence","detail":"char=1248 confidence=0.497","source":"quality"}
+{"scope":"page","page_number":44,"reason":"low_parser_confidence","detail":"char=1776 confidence=0.567","source":"quality"}
+{"scope":"page","page_number":45,"reason":"low_parser_confidence","detail":"char=1344 confidence=0.752","source":"quality"}
+{"scope":"page","page_number":48,"reason":"low_parser_confidence","detail":"char=1767 confidence=0.586","source":"quality"}
+{"scope":"page","page_number":49,"reason":"low_parser_confidence","detail":"char=1737 confidence=0.765","source":"quality"}
+{"scope":"page","page_number":54,"reason":"low_parser_confidence","detail":"char=858 confidence=0.649","source":"quality"}
+{"scope":"page","page_number":57,"reason":"low_parser_confidence","detail":"char=1872 confidence=0.754","source":"quality"}
+{"scope":"page","page_number":58,"reason":"low_parser_confidence","detail":"char=1366 confidence=0.688","source":"quality"}
+{"scope":"page","page_number":61,"reason":"low_parser_confidence","detail":"char=1470 confidence=0.684","source":"quality"}
+{"scope":"page","page_number":67,"reason":"low_parser_confidence","detail":"char=1884 confidence=0.539","source":"quality"}
+{"scope":"page","page_number":84,"reason":"low_parser_confidence","detail":"char=102 confidence=0.0","source":"quality"}
+{"scope":"block","page_number":8,"block_id":"DOC005_P008_B002","reason":"table_parse_concerns","detail":"| **PRAKATA** | v | | ----------------------------------- | ------ | | **DAFTAR ISI** | vii | | **DAFTAR TABEL** | ix | | **DAFTAR GAMBAR** | x | | **PENDAHULUA","source":"quality"}
+{"scope":"block","page_number":8,"block_id":"DOC005_P008_B002","reason":"table_merged_from_pages","detail":"| **PRAKATA** | v | | ----------------------------------- | ------ | | **DAFTAR ISI** | vii | | **DAFTAR TABEL** | ix | | **DAFTAR GAMBAR** | x | | **PENDAHULUA","source":"quality"}
+{"scope":"block","page_number":10,"block_id":"DOC005_P010_B002","reason":"table_parse_concerns","detail":"| Tabel 1. | Hasil dan kehilangan hasil akibat penyakit bercak daun pada kacang tanah. Muneng MK 1991 dan Jambegede MK 1992 | 31 | | -------- | ----------------","source":"quality"}
+{"scope":"block","page_number":11,"block_id":"DOC005_P011_B002","reason":"table_parse_concerns","detail":"| Gambar 1. a) Gejala penyakit karat pada permukaan bawah daun kedelai (Foto: Sumartini). b) Pustul atau uredium pada daun dilihat dari dekat | 4 | | ----------","source":"quality"}
+{"scope":"block","page_number":11,"block_id":"DOC005_P011_B002","reason":"table_merged_from_pages","detail":"| Gambar 1. a) Gejala penyakit karat pada permukaan bawah daun kedelai (Foto: Sumartini). b) Pustul atau uredium pada daun dilihat dari dekat | 4 | | ----------","source":"quality"}
+{"scope":"block","page_number":18,"block_id":"DOC005_P018_B004","reason":"table_parse_concerns","detail":"| Divisi | : Mycota | | --------- | --------------------- | | Kelas | : Basidiomycota | | Sub Kelas | : Urediniomycetes | | Ordo | : Uredinales | | Family | : P","source":"quality"}
+{"scope":"block","page_number":26,"block_id":"DOC005_P026_B007","reason":"table_parse_concerns","detail":"| Kingdom | : Chromista | | ------- | ------------------ | | Fylum | : Oomycota | | Class | : Oomycetes | | Ordo | : Peronosparales | | Family | : Peronosporace","source":"quality"}
+{"scope":"block","page_number":32,"block_id":"DOC005_P032_B004","reason":"table_parse_concerns","detail":"| Divisi | : Ascomycota | | --------- | ------------------------------------------------ | | Kelas | : Sordariomycetes | | Sub Kelas | : Sordariomycetidae | | F","source":"quality"}
+{"scope":"block","page_number":39,"block_id":"DOC005_P039_B003","reason":"table_parse_concerns","detail":"| Divisi | : Amastigomycota | | --------- | ---------------------- | | Kelas | : Basidiomycetes | | Sub kelas | : Teliomycetidae | | Ordo | : Uredinales | | Fam","source":"quality"}
+{"scope":"block","page_number":53,"block_id":"DOC005_P053_B003","reason":"table_parse_concerns","detail":"| Divisi | : Eumycota | | ---------- | --------------------- | | Sub Divisi | : Ascomycotina | | Kelas | : Pyrenomycetec | | Ordo | : Erysiphales | | Family | :","source":"quality"}
+{"scope":"block","page_number":60,"block_id":"DOC005_P060_B003","reason":"table_parse_concerns","detail":"| Divisi | : Ascomycota | | ---------- | ------------------------ | | Sub Divisi | : Pezizomycotina | | Kelas | : Dothideomycetes | | Ordo | : Capnodiales | | F","source":"quality"}
+{"scope":"block","page_number":65,"block_id":"DOC005_P065_B005","reason":"table_parse_concerns","detail":"| Divisi | : Basidiomycota | | ------- | --------------------------- | | Kelas | : Agaricomycetes | | Ordo | : Agaricales | | Family | : Typhulaceae | | Genus |","source":"quality"}

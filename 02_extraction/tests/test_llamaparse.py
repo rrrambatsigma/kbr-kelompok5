@@ -185,6 +185,31 @@ class StructureTests(unittest.TestCase):
         self.assertEqual(context.section, "5.2")
         self.assertEqual(context.section_source, "derived_from_subsection_number")
 
+    def test_chapter_plant_map_and_lettered_paren_subsection(self) -> None:
+        context = structure.DocumentContext(
+            known_chapters=("KEDELAI", "KACANG HIJAU"),
+            chapter_plants={"KEDELAI": "Kedelai", "KACANG HIJAU": "Kacang hijau"},
+            lettered_subsections=True,
+            lettered_subsection_level=3,
+        )
+        structure.update_for_heading(context, "KEDELAI", 1)
+        self.assertEqual(context.plant_name, "Kedelai")
+        structure.update_for_heading(context, "1. PENYAKIT KARAT", 2)
+        self.assertEqual(context.disease_name, "KARAT")
+        structure.update_for_heading(context, "a) Varietas Tahan", 2)
+        self.assertEqual(context.section, "1. PENYAKIT KARAT")
+        self.assertEqual(context.subsection, "a) Varietas Tahan")
+        self.assertEqual(context.disease_name, "KARAT")
+
+    def test_section_outside_plant_chapter_is_not_a_disease(self) -> None:
+        context = structure.DocumentContext(
+            known_chapters=("PENDAHULUAN", "KEDELAI"),
+        )
+        structure.update_for_heading(context, "PENDAHULUAN", 1)
+        structure.update_for_heading(context, "PRAKATA", 2)
+        self.assertIsNone(context.plant_name)
+        self.assertIsNone(context.disease_name)
+
 
 class NormalizeTests(unittest.TestCase):
     def test_bbox_dict_to_list(self) -> None:

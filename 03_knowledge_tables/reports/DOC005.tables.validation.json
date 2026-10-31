@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC005",
+  "generated_at": "2026-10-31T04:08:00Z",
+  "sources": {
+    "blocks": "02_extraction/extracted_text/DOC005.blocks.jsonl",
+    "chunks": "02_extraction/extracted_text/DOC005.chunks.jsonl",
+    "config": "03_knowledge_tables/config/DOC005_tables.json"
+  },
+  "tables": {
+    "plants": {
+      "file": "03_knowledge_tables/curated/DOC005/plants.csv",
+      "rows": 3,
+      "columns": [
+        "plant_id",
+        "document_id",
+        "plant_name_id",
+        "plant_name_en",
+        "scientific_name",
+        "scientific_name_page",
+        "chapter_number",
+        "chapter_title",
+        "page_start",
+        "page_end",
+        "evidence_chunk_id",
+        "notes"
+      ]
+    },
+    "diseases": {
+      "file": "03_knowledge_tables/curated/DOC005/diseases.csv",
+      "rows": 8,
+      "columns": [
+        "disease_id",
+        "document_id",
+        "plant_id",
+        "host_verbatim",
+        "disease_name_verbatim",
+        "disease_name_en_verbatim",
+        "pathogen_verbatim",
+        "pathogen_id",
+        "reference_verbatim",
+        "page_start",
+        "page_end",
+        "source_block_id",
+        "chunk_id",
+        "source_type",
+        "review_status",
+        "notes"
+      ]
+    },
+    "pathogens": {
+      "file": "03_knowledge_tables/curated/DOC005/pathogens.csv",
+      "rows": 11,
+      "columns": [
+        "pathogen_id",
+        "document_id",
+        "scientific_name",
+        "verbatim_text",
+        "taxon_group",
+        "taxon_evidence_chunk_id",
+        "taxon_evidence_quote",
+        "page",
+        "chunk_id",
+        "note",
+        "review_status"
+      ]
+    },
+    "disease_pathogen": {
+      "file": "03_knowledge_tables/curated/DOC005/disease_pathogen.csv",
+      "rows": 11,
+      "columns": [
+        "disease_id",
+        "pathogen_id",
+        "document_id",
+        "evidence_chunk_id",
+        "relation_note",
+        "review_status"
+      ]
+    },
+    "symptoms": {
+      "file": "03_knowledge_tables/curated/DOC005/symptoms.csv",
+      "rows": 17,
+      "columns": [
+        "symptom_id",
+        "document_id",
+        "disease_id",
+        "plant_id",
+        "verbatim_text",
+        "chunk_id",
+        "page_start",
+        "page_end",
+        "char_start",
+        "char_end",
+        "review_status"
+      ]
+    },
+    "controls": {
+      "file": "03_knowledge_tables/curated/DOC005/controls.csv",
+      "rows": 25,
+      "columns": [
+        "control_id",
+        "document_id",
+        "disease_id",
+        "plant_id",
+        "verbatim_text",
+        "chunk_id",
+        "page_start",
+        "page_end",
+        "char_start",
+        "char_end",
+        "control_category",
+        "scope",
+        "review_status"
+      ]
+    }
+  },
+  "checks": {
+    "verbatim_in_block": "pass",
+    "verbatim_in_chunk": "pass",
+    "ids_unique": "pass",
+    "foreign_keys": "pass",
+    "offsets": "pass"
+  },
+  "errors": [],
+  "warnings": [],
+  "status": "pass"
+}

@@ -1,0 +1,12 @@
+{
+  "run_id": "DOC005_agentic_full-d2aec48f_733d33b7",
+  "generated_at": "2026-10-31T03:46:03Z",
+  "tier": "agentic",
+  "version": "latest",
+  "pages_expected": 84,
+  "credits_used": 840.0,
+  "usd_per_1000_credits": 1.25,
+  "estimated_usd": 1.05,
+  "job_status": "COMPLETED",
+  "job_error": null
+}

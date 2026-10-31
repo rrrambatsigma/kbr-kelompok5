@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC005",
+  "source_document": "PenyakitTanamanKedelaiKacangTanahKacangHijau.pdf",
+  "description": "Skema knowledge table DOC005 (Penyakit Utama pada Tanaman: Kedelai, Kacang Tanah, dan Kacang Hijau). Tiga inang dibedakan lewat plants; nama penyakit yang sama pada inang berbeda dibedakan lewat plant_id dan host_verbatim.",
+  "tables": {
+    "plants": {
+      "file": "curated/DOC005/plants.csv",
+      "primary_key": "plant_id",
+      "columns": {
+        "plant_id": {"type": "string", "pattern": "^PLANT_\\d{3}$"},
+        "document_id": {"type": "string", "const": "DOC005"},
+        "plant_name_id": {"type": "string"},
+        "plant_name_en": {"type": "string", "nullable": true},
+        "scientific_name": {"type": "string", "nullable": true},
+        "scientific_name_page": {"type": "integer", "nullable": true},
+        "chapter_number": {"type": "integer", "minimum": 1},
+        "chapter_title": {"type": "string"},
+        "page_start": {"type": "integer"},
+        "page_end": {"type": "integer"},
+        "evidence_chunk_id": {"type": "string"},
+        "notes": {"type": "string", "nullable": true}
+      }
+    },
+    "diseases": {
+      "file": "curated/DOC005/diseases.csv",
+      "primary_key": "disease_id",
+      "columns": {
+        "disease_id": {"type": "string", "pattern": "^DIS_\\d{3}$"},
+        "document_id": {"type": "string", "const": "DOC005"},
+        "plant_id": {"type": "string", "foreign_key": "plants.plant_id"},
+        "host_verbatim": {"type": "string", "note": "Nama inang seperti tercetak pada judul bab: KEDELAI, KACANG TANAH, KACANG HIJAU."},
+        "disease_name_verbatim": {"type": "string"},
+        "disease_name_en_verbatim": {"type": "string", "nullable": true},
+        "pathogen_verbatim": {"type": "string", "nullable": true, "note": "Kosong bila nama penyakit diambil dari heading dan patogen hanya ada di disease_pathogen."},
+        "pathogen_id": {"type": "string", "foreign_key": "pathogens.pathogen_id"},
+        "reference_verbatim": {"type": "string", "nullable": true},
+        "page_start": {"type": "integer"},
+        "page_end": {"type": "integer"},
+        "source_block_id": {"type": "string"},
+        "chunk_id": {"type": "string"},
+        "source_type": {"type": "enum", "values": ["table", "prose"]},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]},
+        "notes": {"type": "string", "nullable": true}
+      }
+    },
+    "pathogens": {
+      "file": "curated/DOC005/pathogens.csv",
+      "primary_key": "pathogen_id",
+      "columns": {
+        "pathogen_id": {"type": "string", "pattern": "^PAT_\\d{3}$"},
+        "document_id": {"type": "string", "const": "DOC005"},
+        "scientific_name": {"type": "string"},
+        "verbatim_text": {"type": "string"},
+        "taxon_group": {"type": "enum", "values": ["jamur", "bakteri", "virus", "nematoda", "fitoplasma", "oomycete", "unknown"]},
+        "taxon_evidence_chunk_id": {"type": "string", "nullable": true},
+        "taxon_evidence_quote": {"type": "string", "nullable": true},
+        "page": {"type": "integer"},
+        "chunk_id": {"type": "string"},
+        "note": {"type": "string", "nullable": true},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
+      }
+    },
+    "disease_pathogen": {
+      "file": "curated/DOC005/disease_pathogen.csv",
+      "primary_key": ["disease_id", "pathogen_id"],
+      "columns": {
+        "disease_id": {"type": "string", "foreign_key": "diseases.disease_id"},
+        "pathogen_id": {"type": "string", "foreign_key": "pathogens.pathogen_id"},
+        "document_id": {"type": "string", "const": "DOC005"},
+        "evidence_chunk_id": {"type": "string"},
+        "relation_note": {"type": "string"},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
+      }
+    },
+    "symptoms": {
+      "file": "curated/DOC005/symptoms.csv",
+      "primary_key": "symptom_id",
+      "columns": {
+        "symptom_id": {"type": "string", "pattern": "^SYM_\\d{3}$"},
+        "document_id": {"type": "string", "const": "DOC005"},
+        "disease_id": {"type": "string", "foreign_key": "diseases.disease_id"},
+        "plant_id": {"type": "string", "foreign_key": "plants.plant_id"},
+        "verbatim_text": {"type": "string"},
+        "chunk_id": {"type": "string"},
+        "page_start": {"type": "integer"},
+        "page_end": {"type": "integer"},
+        "char_start": {"type": "integer"},
+        "char_end": {"type": "integer"},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
+      }
+    },
+    "controls": {
+      "file": "curated/DOC005/controls.csv",
+      "primary_key": "control_id",
+      "columns": {
+        "control_id": {"type": "string", "pattern": "^CTL_\\d{3}$"},
+        "document_id": {"type": "string", "const": "DOC005"},
+        "disease_id": {"type": "string", "foreign_key": "diseases.disease_id"},
+        "plant_id": {"type": "string", "foreign_key": "plants.plant_id"},
+        "verbatim_text": {"type": "string"},
+        "chunk_id": {"type": "string"},
+        "page_start": {"type": "integer"},
+        "page_end": {"type": "integer"},
+        "char_start": {"type": "integer"},
+        "char_end": {"type": "integer"},
+        "control_category": {"type": "string", "nullable": true},
+        "scope": {"type": "enum", "values": ["disease", "chapter"]},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]}
+      }
+    }
+  },
+  "invariants": [
+    "Semua verbatim_text harus substring dari plain_text chunk yang dirujuk setelah normalisasi spasi.",
+    "Setiap baris penyakit harus menunjuk blok sumber dan chunk yang memuatnya.",
+    "Nama penyakit yang sama pada inang berbeda dibedakan oleh plant_id dan host_verbatim.",
+    "Semua patogen pada disease_pathogen harus berasal dari bagian Penyebab Penyakit yang relevan.",
+    "Nama patogen disimpan seperti tercetak; koreksi hanya di note."
+  ]
+}

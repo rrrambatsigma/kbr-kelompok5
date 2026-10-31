@@ -1,0 +1,12 @@
+disease_id,pathogen_id,document_id,evidence_chunk_id,relation_note,review_status
+DIS_118,PAT_114,DOC005,DOC005_C018_02,Penyebab utama.,verified
+DIS_118,PAT_115,DOC005,DOC005_C018_02,Patogen alternatif; kurang virulen.,verified
+DIS_119,PAT_116,DOC005,DOC005_C026_03,Penyebab embun bulu kedelai.,verified
+DIS_120,PAT_117,DOC005,DOC005_C032_02,Penyebab antraknosa kedelai.,verified
+DIS_121,PAT_118,DOC005,DOC005_C039_01,Penyebab karat kacang tanah.,verified
+DIS_122,PAT_119,DOC005,DOC005_C045_02,Patogen utama bercak daun kacang tanah.,verified
+DIS_122,PAT_120,DOC005,DOC005_C045_02,Patogen kedua bercak daun kacang tanah.,verified
+DIS_123,PAT_121,DOC005,DOC005_C053_01,Penyebab embun tepung kacang hijau.,verified
+DIS_124,PAT_122,DOC005,DOC005_C060_01,Patogen utama bercak daun kacang hijau.,verified
+DIS_124,PAT_123,DOC005,DOC005_C060_01,Patogen kedua bercak daun kacang hijau.,verified
+DIS_125,PAT_124,DOC005,DOC005_C065_02,Penyebab layu kacang hijau.,verified

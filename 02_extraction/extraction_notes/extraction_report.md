@@ -1,9 +1,9 @@
 # Extraction Report
 
-- Generated at: `2026-10-30T13:15:56Z`
+- Generated at: `2026-10-31T03:48:36Z`
 - Schema: `1.0.0`
 - Pipeline: `1.0.0`
-- Extractor: `LlamaParse` `2026-09-28`
+- Extractor: `LlamaParse` `latest`
 
 ## Ringkasan dokumen
 
@@ -12,6 +12,7 @@
 | DOC002 | 274 | 265 | 1578 | 5 | completed_with_warnings |
 | DOC003 | 56 | 54 | 279 | 10 | completed_with_warnings |
 | DOC004 | 65 | 65 | 364 | 13 | completed_with_warnings |
+| DOC005 | 84 | 80 | 510 | 17 | completed_with_warnings |
 
 ## Detail dokumen
 
@@ -106,6 +107,37 @@ Catatan:
 - `blocks_context_missing:22`
 - `tables_with_concerns:13`
 
+### DOC005 — PenyakitTanamanKedelaiKacangTanahKacangHijau.pdf
+
+- Source: `01_knowledge_sources/pdf_sources/PenyakitTanamanKedelaiKacangTanahKacangHijau.pdf`
+- SHA-256: `d2aec48f63af965b58cc756170814b5e3f6c078c303f4a24b4e051b460f1f1bf`
+- Total halaman PDF: 84
+- Status ekstraksi: `completed_with_warnings`
+- Halaman berteks: 80
+- Halaman tanpa teks: 4
+- Halaman error: 0
+- Blok: 510
+- Tabel: 17 (review: 10)
+- Judul: Penyakit Utama Pada Tanaman: Kedelai, Kacang Tanah Dan Kacang Hijau
+- Penulis: Sumartini, Emerensiana Uge, Yuliantoro Baliadi
+- Tahun: 2020
+- Penerbit: Balai Penelitian Tanaman Aneka Kacang dan Umbi
+- Bahasa: id
+
+Output:
+- `blocks`: `02_extraction/extracted_text/DOC005.blocks.jsonl`
+- `pages`: `02_extraction/extracted_text/DOC005.pages.jsonl`
+- `notes`: `02_extraction/extraction_notes/DOC005.extraction_notes.json`
+
+Catatan:
+- `extracted_with_llamaparse`
+- `parser_tier:agentic`
+- `parser_version:latest`
+- `parser_run_id:DOC005_agentic_full-d2aec48f_733d33b7`
+- `quality_status:warning`
+- `blocks_context_missing:42`
+- `tables_with_concerns:12`
+
 ## Catatan pipeline
 
 - `DOC002 dipromosikan dari LlamaParse setelah gate perbandingan lolos`
@@ -114,6 +146,8 @@ Catatan:
 - `backup_baseline:DOC003:02_extraction/extraction_notes/_backups/pre_llamaparse_20261030T131126Z`
 - `DOC004 dipromosikan dari LlamaParse setelah gate verifikasi internal lolos`
 - `backup_baseline:DOC004:02_extraction/extraction_notes/_backups/pre_llamaparse_20261030T131556Z`
+- `DOC005 dipromosikan dari LlamaParse setelah gate verifikasi internal lolos`
+- `backup_baseline:DOC005:02_extraction/extraction_notes/_backups/pre_llamaparse_20261031T034836Z`
 
 ## Langkah berikutnya
 

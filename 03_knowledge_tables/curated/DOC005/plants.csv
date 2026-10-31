@@ -1,0 +1,4 @@
+plant_id,document_id,plant_name_id,plant_name_en,scientific_name,scientific_name_page,chapter_number,chapter_title,page_start,page_end,evidence_chunk_id,notes
+PLANT_018,DOC005,Kedelai,,,,1,KEDELAI,17,37,DOC005_C016_01,Judul bab KEDELAI pada PDF halaman 17; rentang bab sampai sebelum KACANG TANAH.
+PLANT_019,DOC005,Kacang tanah,,,,2,KACANG TANAH,38,51,DOC005_C038_01,Judul bab KACANG TANAH pada PDF halaman 38; rentang bab sampai sebelum KACANG HIJAU.
+PLANT_020,DOC005,Kacang hijau,,,,3,KACANG HIJAU,52,71,DOC005_C052_01,Judul bab KACANG HIJAU pada PDF halaman 52; rentang bab sampai sebelum DAFTAR PUSTAKA.
