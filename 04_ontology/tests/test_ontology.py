@@ -1,7 +1,8 @@
-"""Gate test untuk ontologi OWL 2 (Tahap 4).
+"""Gate test untuk ontologi OWL 2 Penyakit Tanaman Pangan Indonesia (Tahap 4).
 
-Semua test bersifat read-only terhadap artefak ``ontology.ttl``; satu test
-gerbang (gate) membangun ulang ontologi lewat ``build_ontology.build()``.
+Sebagian test bersifat read-only terhadap artefak ``ontology.ttl``; satu test
+gerbang (gate) membangun ulang ontologi lewat ``build_ontology.build()``; satu
+test menjalankan reasoner HermiT lewat owlready2 bila Java tersedia.
 Jalankan dari ``04_ontology``::
 
     python -m unittest discover -s tests -p "test_*.py"
@@ -9,6 +10,7 @@ Jalankan dari ``04_ontology``::
 
 from __future__ import annotations
 
+import shutil
 import sys
 import unittest
 from pathlib import Path
@@ -21,62 +23,111 @@ ONTO_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ONTO_DIR))
 
 import build_ontology as bo  # noqa: E402
-from tbox import KBR, KBRD  # noqa: E402
+import tbox  # noqa: E402
+from tbox import KBR  # noqa: E402
 
 ARTIFACT = ONTO_DIR / "ontology.ttl"
+OWL_ARTIFACT = ONTO_DIR / "ontology.owl"
+
+EXPECTED_TRIPLES = 1852
+EXPECTED_INDIVIDUALS = 230
 
 SNAPSHOT_CLASSES = {
-    "KnowledgeSource": 3,
-    "Plant": 17,
-    "Disease": 117,
-    "Pathogen": 112,
-    "Symptom": 609,
-    "ControlMeasure": 532,
-    "DiseaseControl": 452,
-    "ChapterControl": 80,
-    "SourceTable": 3,
-    "CassavaSourceTable": 3,
-    "SourceTableRow": 19,
-    "EvidenceChunk": 359,
-    "SourceSection": 122,
-    "Fungus": 57,
-    "Bacterium": 10,
-    "Virus": 16,
-    "Nematode": 7,
-    "Phytoplasma": 1,
-    "Oomycete": 2,
+    "ArtikelIlmiah": 0,
+    "BagianTanaman": 6,
+    "Bakteri": 1,
+    "Buku": 1,
+    "CurahHujan": 0,
+    "DrainaseBuruk": 0,
+    "FaktorBudidaya": 0,
+    "FaktorLahan": 0,
+    "FaktorLingkungan": 0,
+    "FaktorRisiko": 0,
+    "Gejala": 73,
+    "GejalaAkar": 4,
+    "GejalaBatang": 10,
+    "GejalaDaun": 26,
+    "GejalaUmbi": 4,
+    "Jamur": 8,
+    "JurnalIlmiah": 0,
+    "KelembapanTinggi": 0,
+    "KondisiDrainase": 0,
+    "KondisiTanah": 0,
+    "OrganismeLain": 1,
+    "Patogen": 28,
+    "Pengendalian": 95,
+    "PengendalianBiologis": 0,
+    "PengendalianKimiawi": 0,
+    "PengendalianKulturTeknis": 0,
+    "PengendalianMekanis": 0,
+    "PengendalianTerpadu": 0,
+    "PenggunaanBenihTerinfeksi": 0,
+    "Penyakit": 24,
+    "PenyakitBakteri": 0,
+    "PenyakitJamur": 0,
+    "PenyakitLainnya": 0,
+    "PenyakitVirus": 0,
+    "PublikasiInstansi": 0,
+    "Referensi": 1,
+    "SanitasiLahanBuruk": 0,
+    "Suhu": 0,
+    "TanamanPangan": 3,
+    "Virus": 3,
 }
 
-SNAPSHOT_PROPERTIES = {
-    "occursIn": 117,
-    "causedBy": 139,
-    "hasSymptom": 609,
-    "observedOn": 609,
-    "appliesTo": 452,
-    "appliesToPlant": 532,
-    "hasEvidence": 1593,
-    "hasTaxonEvidence": 9,
-    "hasSourceDocument": 1448,
-    "locatedInSection": 110,
-    "containsSection": 107,
-    "isTableRowOf": 19,
-    "aboutPlant": 3,
+SNAPSHOT_OBJECT_PROPS = {
+    "dijelaskanDalam": 24,
+    "dikendalikanDengan": 95,
+    "dipengaruhiOleh": 0,
+    "disebabkanOleh": 34,
+    "diserangPenyakit": 24,
+    "memilikiGejala": 73,
+    "memilikiReferensi": 24,
+    "mengendalikanPenyakit": 95,
+    "menyebabkanPenyakit": 34,
+    "menyerangBagian": 32,
+    "menyerangTanaman": 24,
+    "merupakanGejalaDari": 73,
+    "terdapatPada": 48,
 }
 
-INVERSE_PAIRS = [
-    ("occursIn", "hasDisease"),
-    ("causedBy", "causes"),
-    ("hasSymptom", "symptomOf"),
-    ("appliesTo", "hasControlMeasure"),
-    ("containsSection", "sectionOf"),
-    ("isTableRowOf", "hasTableRow"),
-]
+SNAPSHOT_DATA_PROPS = {
+    "deskripsiGejala": 73,
+    "deskripsiPengendalian": 95,
+    "deskripsiPenyakit": 0,
+    "deskripsiTanaman": 0,
+    "judulReferensi": 1,
+    "namaIlmiah": 2,
+    "namaIlmiahPatogen": 28,
+    "namaPengendalian": 0,
+    "namaPenulis": 1,
+    "tahunTerbit": 1,
+    "tingkatKeparahan": 0,
+    "urlReferensi": 0,
+}
 
 
-def label_of(graph: Graph, uri: URIRef) -> str | None:
-    for value in graph.objects(uri, RDFS.label):
-        return str(value)
-    return None
+def _inverse_pairs() -> list[tuple[str, str]]:
+    return [
+        (name, spec["inverse"])
+        for name, spec in tbox.OBJECT_PROPERTIES.items()
+        if spec.get("inverse")
+    ]
+
+
+def _restriction_nodes(graph: Graph) -> list[tuple[str, str, str, str]]:
+    found: list[tuple[str, str, str, str]] = []
+    for sub, _, restr in graph.triples((None, RDFS.subClassOf, None)):
+        if (restr, RDF.type, OWL.Restriction) not in graph:
+            continue
+        prop = next(graph.objects(restr, OWL.onProperty), None)
+        if prop is None:
+            continue
+        for quantifier, pred in (("some", OWL.someValuesFrom), ("only", OWL.allValuesFrom)):
+            target = next(graph.objects(restr, pred), None)
+            if target is not None:
+                found.append((str(sub).rsplit("#", 1)[-1], str(prop).rsplit("#", 1)[-1], str(target).rsplit("#", 1)[-1], quantifier))
+    return found
 
 
 class OntologyArtifactTest(unittest.TestCase):
@@ -88,11 +139,15 @@ class OntologyArtifactTest(unittest.TestCase):
             )
         cls.graph = Graph()
         cls.graph.parse(data=ARTIFACT.read_text(encoding="utf-8"), format="turtle")
-        cls.diseases = set(cls.graph.subjects(RDF.type, KBR.Disease))
-        cls.plants = set(cls.graph.subjects(RDF.type, KBR.Plant))
+        cls.diseases = set(cls.graph.subjects(RDF.type, KBR["Penyakit"]))
+        cls.plants = set(cls.graph.subjects(RDF.type, KBR["TanamanPangan"]))
 
     def test_artifact_triple_count(self) -> None:
-        self.assertEqual(len(self.graph), 24652)
+        self.assertEqual(len(self.graph), EXPECTED_TRIPLES)
+
+    def test_named_individuals(self) -> None:
+        actual = len(list(self.graph.subjects(RDF.type, OWL.NamedIndividual)))
+        self.assertEqual(actual, EXPECTED_INDIVIDUALS)
 
     def test_snapshot_classes(self) -> None:
         for cls_name, count in SNAPSHOT_CLASSES.items():
@@ -100,145 +155,234 @@ class OntologyArtifactTest(unittest.TestCase):
                 actual = len(list(self.graph.subjects(RDF.type, KBR[cls_name])))
                 self.assertEqual(actual, count)
 
-    def test_snapshot_properties(self) -> None:
-        for prop, count in SNAPSHOT_PROPERTIES.items():
+    def test_snapshot_object_properties(self) -> None:
+        for prop, count in SNAPSHOT_OBJECT_PROPS.items():
             with self.subTest(prop=prop):
                 actual = len(list(self.graph.triples((None, KBR[prop], None))))
                 self.assertEqual(actual, count)
 
-    def test_named_individuals(self) -> None:
-        actual = len(list(self.graph.subjects(RDF.type, OWL.NamedIndividual)))
-        self.assertEqual(actual, 1932)
+    def test_snapshot_data_properties(self) -> None:
+        for prop, count in SNAPSHOT_DATA_PROPS.items():
+            with self.subTest(prop=prop):
+                actual = len(list(self.graph.triples((None, KBR[prop], None))))
+                self.assertEqual(actual, count)
 
     def test_no_empty_literals(self) -> None:
         for obj in self.graph.objects():
             if isinstance(obj, Literal):
                 self.assertNotEqual(str(obj), "", f"literal kosong pada {obj}")
 
-    def test_labels_use_indonesian_language_tag(self) -> None:
+    def test_text_literals_use_indonesian_language_tag(self) -> None:
         langs = {
-            str(literal.language)
-            for literal in self.graph.objects(None, RDFS.label)
+            obj.language
+            for obj in self.graph.objects()
+            if isinstance(obj, Literal) and obj.datatype != XSD.integer
         }
         self.assertEqual(langs, {"id"})
 
-    def test_guardrail_diseases_without_pathogen(self) -> None:
-        with_pathogen = set(self.graph.subjects(KBR.causedBy, None))
-        self.assertEqual(len(self.diseases - with_pathogen), 7)
+    def test_tahun_terbit_is_integer(self) -> None:
+        values = list(self.graph.objects(None, KBR["tahunTerbit"]))
+        self.assertEqual(values, [Literal(2021, datatype=XSD.integer)])
 
-    def test_guardrail_diseases_without_symptom(self) -> None:
-        with_symptom = set(self.graph.subjects(KBR.hasSymptom, None))
-        self.assertEqual(len(self.diseases - with_symptom), 19)
+    def test_no_explicit_disease_category_assertion(self) -> None:
+        for cls_name in ("PenyakitJamur", "PenyakitBakteri", "PenyakitVirus", "PenyakitLainnya"):
+            with self.subTest(cls=cls_name):
+                actual = set(self.graph.subjects(RDF.type, KBR[cls_name]))
+                self.assertEqual(
+                    actual,
+                    set(),
+                    "kelas hasil klasifikasi wajib hanya muncul lewat inferensi reasoner",
+                )
 
-    def test_plant_016_has_no_disease(self) -> None:
-        victims = list(self.graph.subjects(KBR.occursIn, KBRD["PLANT_016"]))
-        self.assertEqual(victims, [])
+    def test_every_disease_has_plant_symptom_reference(self) -> None:
+        for disease in self.diseases:
+            with self.subTest(disease=str(disease).rsplit("#", 1)[-1]):
+                self.assertTrue(list(self.graph.objects(disease, KBR["menyerangTanaman"])))
+                self.assertTrue(list(self.graph.objects(disease, KBR["memilikiGejala"])))
+                self.assertTrue(list(self.graph.objects(disease, KBR["memilikiReferensi"])))
 
-    def test_plant_005_has_17_diseases(self) -> None:
-        cassava = list(self.graph.subjects(KBR.occursIn, KBRD["PLANT_005"]))
-        self.assertEqual(len(cassava), 17)
+    def test_only_two_diseases_without_pathogen(self) -> None:
+        with_pathogen = set(self.graph.subjects(KBR["disebabkanOleh"], None))
+        without = {str(d).rsplit("#", 1)[-1] for d in self.diseases - with_pathogen}
+        self.assertEqual(
+            without,
+            {"PenyakitBelangMottleKacangTanah", "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu"},
+        )
 
-    def test_pathogen_id_collision_disambiguated(self) -> None:
-        doc2 = KBRD["PAT_106"]
-        doc3 = KBRD["PAT_106_DOC003"]
-        self.assertIn((doc2, RDF.type, KBR.Pathogen), self.graph)
-        self.assertIn((doc3, RDF.type, KBR.Pathogen), self.graph)
-        self.assertEqual(label_of(self.graph, doc2), "Ipomovirus")
-        self.assertEqual(label_of(self.graph, doc3), "Rhizoctonia solani")
+    def test_three_scope_plants(self) -> None:
+        names = {str(p).rsplit("#", 1)[-1] for p in self.plants}
+        self.assertEqual(names, {"KacangTanah", "UbiJalar", "UbiKayu"})
+        scientific = {
+            str(p).rsplit("#", 1)[-1]: str(next(self.graph.objects(p, KBR["namaIlmiah"])))
+            for p in self.plants
+            if list(self.graph.objects(p, KBR["namaIlmiah"]))
+        }
+        self.assertEqual(
+            scientific,
+            {
+                "UbiJalar": "Ipomoea batatas L. (Lam)",
+                "UbiKayu": "Manihot esculenta Crantz",
+            },
+        )
 
-    def test_unnumbered_table_rows_exist(self) -> None:
-        first = KBRD["T5_2_BATANG_R_unnumbered_1"]
-        second = KBRD["T5_2_BATANG_R_unnumbered_2"]
-        for uri in (first, second):
-            with self.subTest(row=uri):
-                self.assertIn((uri, RDF.type, KBR.SourceTableRow), self.graph)
-                table = list(self.graph.objects(uri, KBR.isTableRowOf))
-                self.assertEqual(table, [KBRD["T5_2_BATANG"]])
+    def test_duplicate_disease_names_disambiguated(self) -> None:
+        first = KBR["AntraknosaUbiKayuDIS031"]
+        second = KBR["AntraknosaUbiKayuDIS110"]
+        self.assertIn((first, RDF.type, KBR["Penyakit"]), self.graph)
+        self.assertIn((second, RDF.type, KBR["Penyakit"]), self.graph)
+        labels = {str(next(self.graph.objects(u, RDFS.label))) for u in (first, second)}
+        self.assertEqual(labels, {"Antraknosa"})
 
     def test_inverse_materialized_on_sample(self) -> None:
-        disease = next(iter(sorted(self.diseases, key=str)))
-        plant = next(iter(self.graph.objects(disease, KBR.occursIn)), None)
-        self.assertIsNotNone(plant)
-        self.assertIn((plant, KBR.hasDisease, disease), self.graph)
+        for prop, inverse in _inverse_pairs():
+            with self.subTest(prop=prop):
+                for subj, obj in list(self.graph.subject_objects(KBR[prop]))[:3]:
+                    self.assertIn((obj, KBR[inverse], subj), self.graph)
 
 
-class ShroiqAxiomTest(unittest.TestCase):
+class OntologyAxiomTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.graph = Graph()
         cls.graph.parse(data=ARTIFACT.read_text(encoding="utf-8"), format="turtle")
 
-    def test_s_transitive_asymmetric_irreflexive(self) -> None:
-        for prop_type in (OWL.TransitiveProperty, OWL.AsymmetricProperty, OWL.IrreflexiveProperty):
-            with self.subTest(prop_type=prop_type):
-                self.assertIn((KBR.containsSection, RDF.type, prop_type), self.graph)
+    def test_disjoint_pair_count(self) -> None:
+        actual = list(cls_pairs(self.graph))
+        self.assertEqual(len(actual), 43)
 
-    def test_h_role_hierarchy(self) -> None:
-        self.assertIn(
-            (KBR.hasTaxonEvidence, RDFS.subPropertyOf, KBR.hasEvidence), self.graph
-        )
+    def test_top_classes_are_pairwise_disjoint(self) -> None:
+        pairs = set(cls_pairs(self.graph))
+        for i, left in enumerate(tbox.TOP_CLASSES):
+            for right in tbox.TOP_CLASSES[i + 1:]:
+                with self.subTest(pair=(left, right)):
+                    self.assertIn((KBR[left], OWL.disjointWith, KBR[right]), self.graph)
+                    self.assertNotIn((KBR[right], OWL.disjointWith, KBR[left]), self.graph)
 
-    def test_r_property_chains(self) -> None:
-        chains: dict[URIRef, tuple] = {}
-        for super_prop, _, node in self.graph.triples((None, OWL.propertyChainAxiom, None)):
-            chains[super_prop] = tuple(Collection(self.graph, node))
-        self.assertEqual(len(chains), 2)
-        self.assertEqual(
-            chains[KBR.appliesToPlant], (KBR.appliesTo, KBR.occursIn)
-        )
-        self.assertEqual(
-            chains[KBR.occursIn], (KBR.hasSymptom, KBR.observedOn)
-        )
+    def test_subclass_taxonomy(self) -> None:
+        for child, parent in tbox.SUBCLASSES:
+            with self.subTest(child=child):
+                self.assertIn((KBR[child], RDFS.subClassOf, KBR[parent]), self.graph)
 
-    def test_o_nominals_cassava_tables(self) -> None:
-        for equivalent in self.graph.objects(KBR.CassavaSourceTable, OWL.equivalentClass):
-            for one_of in self.graph.objects(equivalent, OWL.oneOf):
-                members = set(Collection(self.graph, one_of))
-                self.assertEqual(
-                    members,
-                    {
-                        KBRD["T5_1_DAUN"],
-                        KBRD["T5_2_BATANG"],
-                        KBRD["T5_3_AKAR"],
-                    },
-                )
-
-    def test_i_inverse_of_axioms(self) -> None:
-        for prop, inverse in INVERSE_PAIRS:
+    def test_inverse_of_axioms(self) -> None:
+        pairs = _inverse_pairs()
+        self.assertEqual(len({frozenset(p) for p in pairs}), 5)
+        for prop, inverse in pairs:
             with self.subTest(prop=prop):
                 self.assertIn((KBR[prop], OWL.inverseOf, KBR[inverse]), self.graph)
                 self.assertIn((KBR[inverse], OWL.inverseOf, KBR[prop]), self.graph)
-
-    def test_inverse_materialized_both_directions(self) -> None:
-        for prop, inverse in INVERSE_PAIRS:
-            with self.subTest(prop=prop):
-                for subj, obj in self.graph.subject_objects(KBR[prop]):
-                    self.assertIn((obj, KBR[inverse], subj), self.graph)
-
-    def test_q_functional_properties(self) -> None:
-        for prop in ("occursIn", "observedOn", "isTableRowOf"):
-            with self.subTest(prop=prop):
-                self.assertIn((KBR[prop], RDF.type, OWL.FunctionalProperty), self.graph)
-
-    def test_d_datatypes(self) -> None:
-        integers = [
-            literal
-            for literal in self.graph.objects(None, KBR.chapterNumber)
-            if isinstance(literal, Literal) and literal.datatype == XSD.integer
-        ]
-        self.assertTrue(integers)
-
-    def test_disjoint_classes_axioms(self) -> None:
         self.assertEqual(
-            len(list(self.graph.subjects(RDF.type, OWL.AllDisjointClasses))), 3
+            len(list(self.graph.subject_objects(OWL.inverseOf))), 10
         )
+
+    def test_equivalent_classes_structure(self) -> None:
+        equivalents = list(self.graph.subjects(OWL.equivalentClass, None))
+        self.assertEqual(
+            {str(u).rsplit("#", 1)[-1] for u in equivalents},
+            {"PenyakitJamur", "PenyakitBakteri", "PenyakitVirus"},
+        )
+        for penyakit_cls, patogen_cls in tbox.EQUIVALENT_CLASSES:
+            with self.subTest(cls=penyakit_cls):
+                intersections = list(self.graph.objects(KBR[penyakit_cls], OWL.equivalentClass))
+                self.assertEqual(len(intersections), 1)
+                members = list(
+                    self.graph.objects(intersections[0], OWL.intersectionOf)
+                )
+                self.assertEqual(len(members), 1)
+                chain = list(Collection(self.graph, members[0]))
+                self.assertEqual(len(chain), 2)
+                self.assertEqual(chain[0], KBR["Penyakit"])
+                self.assertEqual(
+                    (chain[1], RDF.type, OWL.Restriction) in self.graph,
+                    True,
+                )
+                self.assertIn(
+                    (chain[1], OWL.someValuesFrom, KBR[patogen_cls]), self.graph
+                )
+
+    def test_restrictions_exactly_as_rancangan(self) -> None:
+        found = set(_restriction_nodes(self.graph))
+        expected = set(tbox.RESTRICTIONS)
+        self.assertEqual(found, expected)
+
+    def test_no_data_property_range_axiom(self) -> None:
+        for name in tbox.DATA_PROPERTIES:
+            with self.subTest(prop=name):
+                self.assertEqual(
+                    list(self.graph.objects(KBR[name], RDFS.range)),
+                    [],
+                    "range xsd:string bentrok dengan literal @id di OWL 2",
+                )
+
+    def test_object_property_domain_range(self) -> None:
+        for name, spec in tbox.OBJECT_PROPERTIES.items():
+            with self.subTest(prop=name):
+                self.assertIn((KBR[name], RDFS.domain, KBR[spec["domain"]]), self.graph)
+                self.assertIn((KBR[name], RDFS.range, KBR[spec["range"]]), self.graph)
+
+    def test_ontology_header(self) -> None:
+        headers = list(self.graph.subjects(RDF.type, OWL.Ontology))
+        self.assertEqual(len(headers), 1)
+        self.assertEqual(str(headers[0]), str(tbox.ONTOLOGY_IRI))
+
+
+def cls_pairs(graph: Graph):
+    for left, _, right in graph.triples((None, OWL.disjointWith, None)):
+        yield str(left).rsplit("#", 1)[-1], str(right).rsplit("#", 1)[-1]
 
 
 class BuildGateTest(unittest.TestCase):
     def test_fresh_build_has_no_errors(self) -> None:
         graph, _expected, errors, _builder = bo.build()
         self.assertEqual(errors, [])
-        self.assertEqual(len(graph), 24652)
+        self.assertEqual(len(graph), EXPECTED_TRIPLES)
+
+
+@unittest.skipUnless(shutil.which("java"), "Java tidak tersedia untuk HermiT")
+class HermiTReasoningTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        try:
+            import owlready2  # noqa: F401
+        except ImportError as exc:  # pragma: no cover
+            raise unittest.SkipTest(f"owlready2 tidak terpasang: {exc}")
+        if not OWL_ARTIFACT.exists():
+            raise AssertionError(
+                f"artefak hilang: {OWL_ARTIFACT} — jalankan python build_ontology.py dulu"
+            )
+        from owlready2 import World, sync_reasoner
+
+        cls.world = World()
+        cls.onto = cls.world.get_ontology(
+            "http://kbr.kelompok5.org/penyakit-tanaman-pangan"
+        )
+        with OWL_ARTIFACT.open("rb") as handle:
+            cls.onto.load(fileobj=handle, format="rdfxml")
+        sync_reasoner(cls.onto, debug=0)
+
+    def test_ontology_is_consistent(self) -> None:
+        nothing = [
+            ind
+            for ind in self.onto.individuals()
+            if any(cls.name == "Nothing" for cls in ind.is_a if cls is not None)
+        ]
+        self.assertEqual(nothing, [], "tidak boleh ada individu owl:Nothing")
+
+    def test_inferred_disease_categories(self) -> None:
+        expected = {
+            "PenyakitJamur": 7,
+            "PenyakitBakteri": 1,
+            "PenyakitVirus": 1,
+            "PenyakitLainnya": 0,
+        }
+        for cls_name, count in expected.items():
+            with self.subTest(cls=cls_name):
+                cls = getattr(self.onto, cls_name)
+                self.assertEqual(len(list(cls.instances())), count)
+
+    def test_inferred_bakteri_example(self) -> None:
+        cls = self.onto.PenyakitBakteri
+        names = {ind.name for ind in cls.instances()}
+        self.assertEqual(names, {"PenyakitLayuBakteriKacangTanah"})
 
 
 if __name__ == "__main__":

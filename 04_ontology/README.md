@@ -1,102 +1,196 @@
-# Ontologi OWL 2 — Sistem Pakar Penyakit Tanaman
+# Ontologi OWL 2 — Penyakit Tanaman Pangan Indonesia
 
-Folder ini membangun ontologi OWL 2 (Turtle) dari knowledge tables terkurasi di
-`03_knowledge_tables/`. TBox didefinisikan manual di `tbox.py`; ABox dibangkitkan
-otomatis oleh `build_ontology.py` dari CSV sumber, lalu divalidasi (jumlah
-individu/triple, range properti, axiom, ketiadaan literal kosong). Generator
-berkode keluar `2` bila validasi gagal.
+Folder ini membangun ontologi OWL 2 berbahasa Indonesia dari knowledge tables
+terkurasi di `03_knowledge_tables/`, sesuai rancangan kelas
+**TanamanPangan, Penyakit, Gejala, Patogen, BagianTanaman, Pengendalian,
+FaktorRisiko, Referensi**. TBox didefinisikan manual di `tbox.py`; ABox
+dibangkitkan otomatis oleh `build_ontology.py` dari CSV sumber, lalu divalidasi
+(jumlah individu/triple, axioms, domain/range, ketiadaan literal kosong, larangan
+assert eksplisit kelas hasil klasifikasi). Generator berkode keluar `2` bila
+validasi gagal.
+
+Cakupan prototipe: **3 tanaman** — Kacang Tanah, Ubi Jalar, Ubi Kayu — dengan
+**24 penyakit**, **73 gejala**, **28 patogen**, **95 pengendalian**.
 
 ## Cara menjalankan
 
 ```powershell
-pip install -r 04_ontology/requirements.txt   # rdflib >=7,<8
-python 04_ontology/build_ontology.py          # menulis ontology.ttl
+pip install -r 04_ontology/requirements.txt   # rdflib >=7,<8 dan owlready2 >=0.45
+python 04_ontology/build_ontology.py          # menulis ontology.ttl dan ontology.owl
 cd 04_ontology
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-Keluaran build terakhir: **24 652 triple**, **1 932 individu**,
-**359 chunk bukti**, **122 bagian dokumen**, 23 test lulus.
+Keluaran build terakhir: **1 852 triple**, **230 individu** (24 penyakit,
+73 gejala, 28 patogen, 95 pengendalian, 3 tanaman, 6 bagian tanaman,
+1 referensi). Test: **27 lulus**, termasuk uji reasoning HermiT lewat owlready2
+(membutuhkan Java di PATH; bila Java tidak ada, test reasoning dilewati/skip).
+
+Artefak:
+
+- `ontology.ttl` — Turtle, sumber utama di repo.
+- `ontology.owl` — RDF/XML, untuk dibuka di Protégé dan untuk test owlready2.
 
 ## Namespace dan kebijakan IRI
 
 | Namespace | IRI | Dipakai untuk |
 |---|---|---|
-| `kbr:` | `http://kbr.kelompok5.org/ontology#` | kelas, properti, axioms |
-| `kbrd:` | `http://kbr.kelompok5.org/data#` | individu ABox |
+| `ptp:` | `http://kbr.kelompok5.org/penyakit-tanaman-pangan#` | kelas, properti, individu |
+| ontologi | `http://kbr.kelompok5.org/penyakit-tanaman-pangan` | header `owl:Ontology` |
 
-Ontologi: `http://kbr.kelompok5.org/ontology`. ID tabel (mis. `PLANT_005`,
-`DIS_042`, `PAT_110`, `T5_2_BATANG`) dipakai apa adanya sebagai local name
-(karakter non-`[A-Za-z0-9_-]` diganti `_`). Semua literal `rdfs:label`
-menggunakan tag bahasa `id` dan diambil verbatim dari kurasi.
+Kebijakan local name individu (tanpa mengubah data sumber):
 
-Dua penyelesaian tabrakan ID (bukan perubahan data sumber):
+- **Tanaman**: pascal case nama verbatim → `KacangTanah`, `UbiJalar`, `UbiKayu`.
+- **Penyakit**: pascal(nama penyakit + nama tanaman) → `LayuFusariumUbiJalar`;
+  bila nama+grup duplikat (mis. "Antraknosa" muncul dua kali pada ubi kayu),
+  **semua** anggota grup diberi suffix `pascal(disease_id)` →
+  `AntraknosaUbiKayuDIS031`, `AntraknosaUbiKayuDIS110`.
+- **Patogen**: pascal(nama ilmiah); tabrakan nama ilmiah diberi suffix
+  `pascal(pathogen_id)`.
+- **Gejala/Pengendalian**: prefix kelas + pascal(5 kata pertama) + `_` +
+  8 karakter pertama md5 teks — teks identik memakai IRI yang sama.
 
-- **Patogen DOC003**: `03_knowledge_tables/curated/DOC003/pathogens.csv`
-  memakai ulang ID `PAT_106`–`PAT_112` untuk organisme berbeda (mis. DOC002
-  `PAT_106` = Ipomovirus, DOC003 `PAT_106` = Rhizoctonia solani). Individu
-  DOC003 diskoping: `kbrd:PAT_106_DOC003`, dst. Rujukan
-  `DOC003/disease_pathogen.csv` mengikuti aturan yang sama.
-- **Baris tabel tanpa nomor**: dua baris `status=unnumbered` di tabel
-  T5.2_BATANG punya `row_no` kosong; IRI-nya menjadi
-  `kbrd:T5_2_BATANG_R_unnumbered_1` dan `..._2` (berurutan per tabel).
+Semua literal teks memakai tag bahasa `@id` (kecuali `tahunTerbit` yang
+`xsd:integer`). Literal tidak pernah kosong — bila data tidak ada di sumber,
+properti tidak ditulis sama sekali (lihat "Data yang sengaja kosong").
 
-## Pemetaan sumber ke model
+## Tabel master
 
-| Sumber | Individu | Kelas |
+### Kelas utama dan subclass
+
+| Kelas utama | Subclass | Individu |
 |---|---|---|
-| `manual_metadata.json` | DOC002, DOC003, DOC004 | KnowledgeSource |
-| `auto/plants.csv` (15) + `DOC003/plants.csv` (2) | PLANT_001–016 … | Plant (17) |
-| `curated/diseases.csv` (110) + `DOC003/amorphophallus_spp_diseases.csv` (7) | DIS_001–117 | Disease (117) |
-| `curated/pathogens.csv` (105) + `DOC003/pathogens.csv` (7) | PAT_001–112 (+`_DOC003`) | Pathogen (112) + kelas takson (Fungus 57, Bacterium 10, Virus 16, Nematode 7, Oomycete 2, Phytoplasma 1) |
-| `curated/symptoms.csv` + `DOC003/symptoms.csv` | SYM_001–609 | Symptom (609) |
-| `curated/controls.csv` + `DOC003/controls.csv` | CTR_* | ControlMeasure (532; DiseaseControl 452, ChapterControl 80) |
-| `curated/ubi_kayu_tabel_5.csv` | T5.1_DAUN, T5.2_BATANG, T5.3_AKAR + 19 baris | SourceTable (3), SourceTableRow (19) |
-| `curated/DOC004/{nutrients,fertilizers,practices,compost}.csv` | NUT/FRT/PRC/CMP_* | 39 individu nutrisi/pupuk (multi-tipe) |
-| kolom `chunk_id`/`evidence_chunk_ids` semua tabel | chunk teks sumber | EvidenceChunk (359) |
-| judul bab dari `plants.csv` + seksi penyakit | — | SourceSection (122) |
+| TanamanPangan | — | 3 |
+| Penyakit | PenyakitJamur, PenyakitBakteri, PenyakitVirus, PenyakitLainnya | 24 |
+| Gejala | GejalaDaun, GejalaBatang, GejalaAkar, GejalaUmbi | 73 (26/10/4/4) |
+| Patogen | Jamur, Bakteri, Virus, OrganismeLain | 28 (8/1/3/1) |
+| BagianTanaman | — (individual: Daun, Batang, Akar, Umbi, Buah, Biji) | 6 |
+| Pengendalian | PengendalianKulturTeknis, Mekanis, Biologis, Kimiawi, Terpadu | 95 |
+| FaktorRisiko | FaktorLingkungan (KelembapanTinggi, Suhu, CurahHujan), FaktorBudidaya (SanitasiLahanBuruk, DrainaseBuruk, PenggunaanBenihTerinfeksi), FaktorLahan (KondisiTanah, KondisiDrainase) | 0 |
+| Referensi | Buku, JurnalIlmiah, ArtikelIlmiah, PublikasiInstansi | 1 (Buku) |
 
-Relasi utama: penyakit ←`causedBy`→ patogen (139), penyakit ←`hasSymptom`→
-gejala (609) dengan `observedOn` tanaman, pengendalian ←`appliesTo`→ penyakit
-(452) dan `appliesToPlant` (532), `locatedInSection` (110), bukti chunk
-`hasEvidence` (1 593) + `hasTaxonEvidence` (9).
+Jumlah individu subclass = individu kelas induk yang tergolong (mis. 8 penyakit
+memiliki patogen jamur, sehingga disimpulkan termasuk PenyakitJamur oleh
+reasoner — **tidak pernah di-assert eksplisit**, divalidasi test).
 
-## Matriks SHROIQ(D)
+### Object property (13)
 
-| Huruf | Konstruk | Penerapan di ontologi ini |
+| Properti | Domain | Range | Invers |
+|---|---|---|---|
+| menyerangTanaman | Penyakit | TanamanPangan | diserangPenyakit |
+| memilikiGejala | Penyakit | Gejala | merupakanGejalaDari |
+| disebabkanOleh | Penyakit | Patogen | menyebabkanPenyakit |
+| menyerangBagian | Penyakit | BagianTanaman | — |
+| dikendalikanDengan | Penyakit | Pengendalian | mengendalikanPenyakit |
+| dipengaruhiOleh | Penyakit | FaktorRisiko | — |
+| memilikiReferensi | Penyakit | Referensi | dijelaskanDalam |
+| terdapatPada | Gejala | BagianTanaman | — |
+| + 4 inverse terdaftar di atas (10 axioms `owl:inverseOf`, semua inverse juga dimaterialisasi di ABox) | | | |
+
+`menjadiReferensiBagi` pada rancangan awal tidak dibuat terpisah; perannya
+diambil alih `dijelaskanDalam` (lihat comment di `tbox.py`).
+
+### Data property (12)
+
+| Properti | Domain | Nilai terisi |
 |---|---|---|
-| **S** | Transitive role | `kbr:containsSection` — transitif + asimetris + irrefleksif; hierarki bab → seksi → subseksi |
-| **H** | Role hierarchy | `kbr:hasTaxonEvidence rdfs:subPropertyOf kbr:hasEvidence` |
-| **R** | Property chain | `appliesTo ∘ occursIn ⊑ appliesToPlant`; `hasSymptom ∘ observedOn ⊑ occursIn` |
-| **O** | Nominals | `kbr:CassavaSourceTable ≡ owl:oneOf (T5_1_DAUN T5_2_BATANG T5_3_AKAR)` |
-| **I** | Inverses | 6 pasang `owl:inverseOf`: occursIn↔hasDisease, causedBy↔causes, hasSymptom↔symptomOf, appliesTo↔hasControlMeasure, containsSection↔sectionOf, isTableRowOf↔hasTableRow |
-| **Q** | Qualified cardinality | FunctionalProperty: `occursIn`, `observedOn`, `isTableRowOf` (satu penyakit → satu tanaman, dst.) |
-| **D** | Datatypes | `xsd:integer` (page, chapterNumber, row terkait) dan literal ter-tag `@id` untuk teks |
+| namaIlmiah | TanamanPangan | 2 (kacang tanah kosong di sumber) |
+| deskripsiTanaman | TanamanPangan | 0 |
+| namaIlmiahPatogen | Patogen | 28 |
+| deskripsiPenyakit | Penyakit | 0 |
+| deskripsiGejala | Gejala | 73 |
+| tingkatKeparahan | Penyakit | 0 |
+| judulReferensi | Referensi | 1 |
+| tahunTerbit | Referensi | 1 (`2021`^^xsd:integer) |
+| namaPenulis | Referensi | 1 |
+| urlReferensi | Referensi | 0 |
+| namaPengendalian | Pengendalian | 0 |
+| deskripsiPengendalian | Pengendalian | 95 |
 
-Selain itu ada 3 axioms `owl:AllDisjointClasses` (mis. tanaman vs patogen vs
-penyakit) dan 19 object property + ~35 data property di TBox (`tbox.py`).
-Inverse dicetak dua arah langsung di ABox (materialisasi) agar ontologi tetap
-bisa ditelusuri tanpa reasoner; axiom `owl:inverseOf` tetap dinyatakan.
+`rdfs:range` sengaja tidak ditulis untuk data property: nilai teks memakai tag
+bahasa `@id` (rdf:langString) yang pada OWL 2 **disjoint** dengan `xsd:string`,
+sehingga range `xsd:string` akan membuat ontologi inkonsisten.
 
-## Guardrail konsistensi (fakta kurasi, bukan bug)
+## Axioms dan penalaran
 
-- **7 penyakit tanpa patogen**: DIS_005, 022, 039, 088, 090, 098, 109 —
-  `disease_pathogen.csv` tidak memuat barisnya; `causedBy` tidak dipaksakan.
-- **19 penyakit tanpa gejala**: DIS_028–043 + DIS_110 (DOC002, 17 penyakit
-  ubi kayu) dan DIS_112, DIS_116 (DOC003) — tidak ada baris di `symptoms.csv`.
-- **PLANT_016 (Porang)** tidak memiliki penyakit di DOC003 (hanya budidaya &
-  nutrisi).
-- **PLANT_005 (Ubi kayu)** memiliki 17 penyakit (DIS_028–043 + DIS_110).
-- Property chain kedua aman terhadap sifat fungsional `occursIn`: kolom
-  `plant_id` pada `symptoms.csv` selalu sama dengan `plant_id` penyakitnya
-  (divalidasi silang oleh pipeline tahap 2).
+| Axiom | Jumlah | Isi |
+|---|---|---|
+| Disjoint Classes | 43 pasang | 28 antar 8 kelas utama, 6 antar kelas Penyakit*, 6 antar Patogen* (Jamur/Bakteri/Virus/OrganismeLain), 3 antar FaktorLingkungan/Budidaya/Lahan. Kelas Gejala* dan Pengendalian* **tidak** di-disjoint (anak bisa tumpang tindih pada kenyataan). |
+| Equivalent Classes | 3 | `PenyakitJamur ≡ Penyakit ⊓ (disebabkanOleh some Jamur)` dan pola sama utk Bakteri/Virus |
+| Sub Class Of + restriction | 3 | `Penyakit ⊑ menyerangTanaman some TanamanPangan`, `Penyakit ⊑ memilikiGejala some Gejala`, `Penyakit ⊑ disebabkanOleh only Patogen` |
+| Inverse Of | 10 | 5 pasang (menyerangTanaman/diserangPenyakit, memilikiGejala/merupakanGejalaDari, disebabkanOleh/menyebabkanPenyakit, dikendalikanDengan/mengendalikanPenyakit, memilikiReferensi/dijelaskanDalam) |
 
-## Struktur file
+Hasil reasoning HermiT pada ontologi final (konsisten, tanpa individu
+`owl:Nothing`):
 
-| File | Peran |
+- **PenyakitJamur: 7** — BercakDaunKacangTanah, KudisUbiJalar,
+  BusukHitamBlackRotUbiJalar, LayuFusariumUbiJalar, BusukUmbiUbiKayu,
+  BusukPangkalBatangUbiKayu, BusukAkarDanUmbiUbiKayu.
+- **PenyakitBakteri: 1** — PenyakitLayuBakteriKacangTanah.
+- **PenyakitVirus: 1** — PenyakitBercakKuningUbiJalar.
+
+Individu kelas Penyakit* tidak pernah di-assert; murni inferensi reasoner.
+
+## Membuka dan mendemokan di Protégé
+
+1. Buka Protégé 5.6+, **File → Open…**, pilih `ontology.owl` (RDF/XML).
+2. Pastikan tab **Entities** menampilkan 8 kelas utama berbahasa Indonesia
+   (Entity Type: Classes).
+3. Buka tab **Object Properties** — cek 13 properti + 4 inverse (ikon "owl:O").
+4. Buka tab **Data Properties** — cek 12 properti; buka `tahunTerbit` untuk
+   melihat range `xsd:integer`.
+5. Buka tab **Reasoner**, pilih **HermiT** dari menu Reasoner.
+6. Klik **Reasoner → Synchronize Reasoner** (tunggu hingga selesai).
+7. Kembali ke tab Classes: kelas yang terinferensi (mis. `Penyakit Bakteri`)
+   tersorot; buka klasenya → **Members (inferred)** berisi
+   PenyakitLayuBakteriKacangTanah. Utk Penyakit Jamur ada 7 anggota.
+8. Buka tab **DL Query**, ketik kelas ekspresi
+   `Penyakit and (disebabkanOleh value Jamur)` — klik **Ask** → hasil sama
+   dengan 7 anggota PenyakitJamur.
+9. Untuk melihat axioms: klik kanan kelas `Penyakit` → **View →
+   Description**, sorot restriction `menyerangTanaman some TanamanPangan`
+   dsb; klik kanan `Penyakit Jamur` → Equivalent Classes menampilkan
+   `Penyakit ⊓ disebabkanOleh some Jamur`.
+10. Tutup tanpa menyimpan bila hanya meninjau (inferensi reasoner tidak perlu
+    disimpan ke file); file sumber tetap `ontology.owl`/`ontology.ttl`.
+
+## Aturan SWRL (opsional)
+
+HermiT **tidak** mengeksekusi aturan SWRL. Untuk mencoba aturan, pasang plugin
+**SWRLTab** (Protégé → File → Check for Plugins), tambahkan rule lewat tab
+SWRL, lalu jalankan dengan reasoner SWRL yang mendukung (mis. Drools/Rule
+Engine pada SWRLTab). Contoh aturan yang seluruh simbolnya sudah ada di
+ontologi — otomatiskan `menyerangBagian` dari gejala daun:
+
+```
+Penyakit(?p) ^ memilikiGejala(?p, ?g) ^ GejalaDaun(?g) -> menyerangBagian(?p, Daun)
+```
+
+Aturan ini melengkapi (bukan menggantikan) data `menyerangBagian` yang sudah
+di-assert dari sumber.
+
+## Data yang sengaja kosong (tanpa mengarang)
+
+| Properti/individu | Alasan |
 |---|---|
-| `tbox.py` | TBox: daftar kelas, 33 subClassOf, 3 AllDisjointClasses, object/data property + axiom SHROIQ(D) |
-| `build_ontology.py` | Generator ABox + `expected_counts()` + `validate()` (keluaran `ontology.ttl`, exit 2 bila gagal) |
-| `ontology.ttl` | Artefak keluaran (Turtle, di-commit bersama generator) |
-| `tests/test_ontology.py` | Gate test: snapshot jumlah kelas/triple, axiom SHROIQ(D), guardrail kurasi, build ulang tanpa error |
-| `requirements.txt` | `rdflib>=7.0,<8` |
+| deskripsiPenyakit, deskripsiTanaman | `03_knowledge_sources/.../chunks.jsonl` tidak tersedia di repo |
+| tingkatKeparahan | tidak ada kolom keparahan di sumber |
+| namaPengendalian | sumber tidak punya nama/nategori per metode (kolom kategori kosong) |
+| urlReferensi | `manual_metadata.json` tidak punya field URL |
+| individu FaktorRisiko; `dipengaruhiOleh` (0 triple) | rancangan mensyaratkan struktur kelasnya saja; tidak ada pasangan penyakit–faktor di sumber |
+| PengendalianKulturTeknis … Terpadu (0 individu) | kontrol sumber tidak terkategori |
+| Pengendalian penyakit ubi kayu | sumber punya kontrol per-disease hanya untuk kacang tanah (81) dan ubi jalar (14) |
+| JurnalIlmiah/ArtikelIlmiah/PublikasiInstansi | hanya DOC002 (buku) yang dalam cakupan; DOC003/DOC004 di luar cakupan |
+| namaIlmiah kacang tanah | `plants.csv` kolom scientific_name kosong |
+
+Penyakit tanpa patogen (2): PenyakitBelangMottleKacangTanah,
+NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu — restriksi
+`disebabkanOleh only Patogen` tetap terpenuhi secara kosong.
+
+## Struktur generator
+
+- `tbox.py` — semua kelas/properti/axioms (sumber kebenaran tunggal TBox).
+- `build_ontology.py` — pembaca CSV → `Builder` ABox → `expected_counts()` →
+  `validate()` → tulis `ontology.ttl` + `ontology.owl`.
+- `tests/test_ontology.py` — snapshot jumlah, axioms, guardrail, build gate,
+  dan test reasoning HermiT.

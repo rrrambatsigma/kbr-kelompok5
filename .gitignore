@@ -46,6 +46,9 @@ env/
 *.bak
 *.log
 
+# Katalog lokal yang dibuat Protégé saat membuka ontologi
+04_ontology/catalog-v001.xml
+
 # ==========================================
 # EDITOR / OPERATING SYSTEM
 # ==========================================

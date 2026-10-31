@@ -1,14 +1,16 @@
-"""Generator ontologi OWL 2 project kbr-kelompok5.
+"""Generator ontologi OWL 2 "Penyakit Tanaman Pangan Indonesia".
 
-Membaca knowledge tables hasil kurasi (``03_knowledge_tables/curated`` dan
-``auto/``), metadata dokumen, serta ``chapter_map.json`` lalu membangun ABox
-di atas TBox dari ``tbox.py`` menjadi ``ontology.tttl``.
+Membaca knowledge tables hasil kurasi (``03_knowledge_tables``) untuk tiga
+tanaman prototipe — Kacang Tanah, Ubi Jalar, Ubi Kayu — lalu membangun ABox
+di atas TBox ``tbox.py``. Setiap teks diambil verbatim dari sumber; informasi
+yang tidak tersedia dikosongkan, bukan ditebak.
 
 Pemakaian (dari root repo)::
 
     python 04_ontology/build_ontology.py
 
-Keluaran: ``04_ontology/ontology.ttl``, kode keluar ``2`` bila validasi gagal.
+Keluaran: ``04_ontology/ontology.ttl`` dan ``ontology.owl``; kode keluar ``2``
+bila validasi gagal.
 """
 
 from __future__ import annotations
@@ -19,7 +21,6 @@ import hashlib
 import json
 import re
 import sys
-from collections import Counter
 from pathlib import Path
 
 from rdflib import Graph, Literal, URIRef
@@ -31,67 +32,33 @@ TABLE_DIR = PROJECT_ROOT / "03_knowledge_tables"
 CURATED_DIR = TABLE_DIR / "curated"
 AUTO_DIR = TABLE_DIR / "auto"
 META_PATH = PROJECT_ROOT / "01_knowledge_sources" / "source_metadata" / "manual_metadata.json"
-CHAPTER_MAP_PATH = TABLE_DIR / "config" / "chapter_map.json"
-DEFAULT_OUT = ONTO_DIR / "ontology.ttl"
+DEFAULT_TTL = ONTO_DIR / "ontology.ttl"
+DEFAULT_OWL = ONTO_DIR / "ontology.owl"
 
 sys.path.insert(0, str(ONTO_DIR))
 
 import tbox  # noqa: E402
-from tbox import KBR, KBRD  # noqa: E402
+from tbox import KBR  # noqa: E402
 
-TAXON_TO_CLASS = {
-    "jamur": "Fungus",
-    "bakteri": "Bacterium",
+SCOPE_PLANTS = ("PLANT_003", "PLANT_004", "PLANT_005")
+TAXON_CLASS = {
+    "jamur": "Jamur",
+    "bakteri": "Bakteri",
     "virus": "Virus",
-    "nematoda": "Nematode",
-    "fitoplasma": "Phytoplasma",
-    "oomycete": "Oomycete",
+    "fitoplasma": "OrganismeLain",
+    "oomycete": "OrganismeLain",
+    "nematoda": "OrganismeLain",
 }
-
-NUTRITION_CATEGORY_CLASSES: dict[str, dict[str, list[str]]] = {
-    "nutrients": {
-        "makronutrien dan mikronutrien": ["Nutrient"],
-        "mikronutrien": ["Micronutrient", "Nutrient"],
-    },
-    "fertilizers": {
-        "pupuk nitrogen": ["NitrogenFertilizer", "Fertilizer"],
-        "pupuk fosfor": ["PhosphateFertilizer", "Fertilizer"],
-        "pupuk kalium": ["PotassiumFertilizer", "Fertilizer"],
-        "pupuk majemuk": ["CompoundFertilizer", "Fertilizer"],
-        "jenis pupuk": ["Fertilizer"],
-    },
-    "practices": {
-        "strategi pengelolaan nutrisi": ["NutrientManagementStrategy", "FertilizationPractice"],
-        "pemupukan berimbang": ["BalancedFertilization", "FertilizationPractice"],
-    },
-    "compost": {
-        "kompos": ["Compost", "OrganicFertilizer", "Fertilizer"],
-        "bioaktivator": ["Bioactivator", "OrganicFertilizer", "Fertilizer"],
-        "pupuk organik cair": ["LiquidOrganicFertilizer", "OrganicFertilizer", "Fertilizer"],
-        "manfaat pupuk organik": ["OrganicFertilizerBenefit"],
-    },
+PART_WORDS = {
+    "daun": "Daun",
+    "batang": "Batang",
+    "akar": "Akar",
+    "umbi": "Umbi",
+    "buah": "Buah",
+    "biji": "Biji",
 }
-
-EVIDENCE_COLUMNS: list[tuple[str, str, str]] = [
-    ("auto/plants.csv", "evidence_chunk_id", "hasEvidence"),
-    ("curated/diseases.csv", "evidence_chunk_ids", "hasEvidence"),
-    ("curated/pathogens.csv", "chunk_id", "hasEvidence"),
-    ("curated/pathogens.csv", "taxon_evidence_chunk_id", "hasTaxonEvidence"),
-    ("curated/symptoms.csv", "chunk_id", "hasEvidence"),
-    ("curated/controls.csv", "chunk_id", "hasEvidence"),
-    ("curated/DOC003/plants.csv", "evidence_chunk_id", "hasEvidence"),
-    ("curated/DOC003/amorphophallus_spp_diseases.csv", "chunk_id", "hasEvidence"),
-    ("curated/DOC003/pathogens.csv", "chunk_id", "hasEvidence"),
-    ("curated/DOC003/pathogens.csv", "taxon_evidence_chunk_id", "hasTaxonEvidence"),
-    ("curated/DOC003/symptoms.csv", "chunk_id", "hasEvidence"),
-    ("curated/DOC003/controls.csv", "chunk_id", "hasEvidence"),
-    ("curated/DOC004/nutrients.csv", "chunk_id", "hasEvidence"),
-    ("curated/DOC004/fertilizers.csv", "chunk_id", "hasEvidence"),
-    ("curated/DOC004/practices.csv", "chunk_id", "hasEvidence"),
-    ("curated/DOC004/compost.csv", "chunk_id", "hasEvidence"),
-]
-
-_SLUG_RE = re.compile(r"[^a-z0-9]+")
+PART_SUBCLASS = {"Daun": "GejalaDaun", "Batang": "GejalaBatang", "Akar": "GejalaAkar", "Umbi": "GejalaUmbi"}
+TABLE_PART = {"T5.1_DAUN": "daun", "T5.2_BATANG": "batang", "T5.3_AKAR": "akar"}
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -99,63 +66,184 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def plain_local(raw: str) -> str:
-    local = re.sub(r"[^A-Za-z0-9_-]", "_", raw)
-    local = re.sub(r"_+", "_", local).strip("_")
-    if not local:
-        local = "x"
-    if not re.match(r"[A-Za-z_]", local):
-        local = "x_" + local
-    return local
+def norm(text: str | None) -> str:
+    return re.sub(r"\s+", " ", (text or "")).strip().lower()
 
 
-def text_local(prefix: str, text: str) -> str:
-    slug = _SLUG_RE.sub("-", text.lower()).strip("-")[:48] or "x"
-    digest = hashlib.md5(text.encode("utf-8")).hexdigest()[:8]
-    return f"{prefix}_{slug}_{digest}"
+def pascal(text: str) -> str:
+    return "".join(w[:1].upper() + w[1:] for w in re.split(r"[^0-9A-Za-z]+", text or "") if w)
 
 
-def split_chunk_ids(raw: str) -> list[str]:
-    return [part.strip() for part in raw.split(";") if part.strip()]
+def short_hash(text: str) -> str:
+    return hashlib.md5(text.encode("utf-8")).hexdigest()[:8]
 
 
-def section_paths(chapter: str, section: str, subsection: str) -> list[tuple[str, ...]]:
-    chapter = chapter.strip()
-    section = section.strip()
-    subsection = subsection.strip()
-    paths: list[tuple[str, ...]] = [(chapter,)]
-    section_path: tuple[str, ...] | None = None
-    if section:
-        section_path = (chapter, section)
-        paths.append(section_path)
-    if subsection:
-        paths.append(section_path + (subsection,) if section_path else (chapter, subsection))
-    return paths
+def text_parts(text: str) -> list[str]:
+    low = (text or "").lower()
+    return [name for word, name in PART_WORDS.items() if re.search(r"\b" + word, low)]
 
 
-def section_target(chapter: str, section: str, subsection: str) -> tuple[str, ...]:
-    paths = section_paths(chapter, section, subsection)
-    return paths[-1]
+def subsection_parts(subsection: str) -> list[str]:
+    low = norm(subsection)
+    if "akar" in low or "umbi" in low:
+        return ["Akar", "Umbi"]
+    if "batang" in low:
+        return ["Batang"]
+    if "daun" in low:
+        return ["Daun"]
+    return []
 
+
+# ---------------------------------------------------------------- koleksi data
+
+def scope_plants_rows() -> list[dict[str, str]]:
+    rows = read_csv(AUTO_DIR / "plants.csv")
+    return [r for r in rows if r["plant_id"].strip() in SCOPE_PLANTS]
+
+
+def penyakit_entries() -> list[dict[str, str]]:
+    plants = {r["plant_id"].strip(): r for r in read_csv(AUTO_DIR / "plants.csv")}
+    rows = [r for r in read_csv(CURATED_DIR / "diseases.csv") if r["plant_id"].strip() in SCOPE_PLANTS]
+    bases: dict[str, list[str]] = {}
+    for row in rows:
+        plant = plants[row["plant_id"].strip()]
+        base = pascal(row["disease_name_verbatim"].strip() + plant["plant_name_id"].strip())
+        bases.setdefault(base, []).append(row["disease_id"].strip())
+    entries = []
+    for row in rows:
+        disease_id = row["disease_id"].strip()
+        plant = plants[row["plant_id"].strip()]
+        nama = row["disease_name_verbatim"].strip()
+        base = pascal(nama + plant["plant_name_id"].strip())
+        local = base if len(bases[base]) == 1 else base + pascal(disease_id)
+        entries.append(
+            {
+                "disease_id": disease_id,
+                "plant_id": row["plant_id"].strip(),
+                "plant_local": pascal(plant["plant_name_id"].strip()),
+                "nama": nama,
+                "local": local,
+                "subsection": (row.get("subsection") or "").strip(),
+            }
+        )
+    return entries
+
+
+def gejala_rows(entries: list[dict[str, str]]) -> tuple[list[tuple[str, str]], list[str]]:
+    """Kembalikan pasangan (disease_id, teks_gejala) dan daftar error pencocokan."""
+    by_norm: dict[str, list[dict[str, str]]] = {}
+    for entry in entries:
+        by_norm.setdefault(norm(entry["nama"]), []).append(entry)
+    pairs: list[tuple[str, str]] = []
+    errors: list[str] = []
+    for row in read_csv(CURATED_DIR / "symptoms.csv"):
+        if row["disease_id"].strip() in {e["disease_id"] for e in entries}:
+            text = (row.get("verbatim_text") or "").strip()
+            if text:
+                pairs.append((row["disease_id"].strip(), text))
+    for row in read_csv(CURATED_DIR / "ubi_kayu_tabel_5.csv"):
+        nama = (row.get("disease_name") or "").strip()
+        if not nama:
+            continue
+        text = (row.get("symptom_text") or "").strip()
+        cands = by_norm.get(norm(nama), [])
+        if len(cands) == 1:
+            disease_id = cands[0]["disease_id"]
+        elif len(cands) > 1:
+            want = TABLE_PART.get(row["table_id"].strip(), "")
+            hit = [c for c in cands if want in norm(c["subsection"])]
+            if len(hit) == 1:
+                disease_id = hit[0]["disease_id"]
+            else:
+                errors.append(f"nama penyakit tabel ambigu pada baris {row['table_id']}#{row['row_no']}: {nama!r}")
+                continue
+        else:
+            errors.append(f"nama penyakit tabel tidak dikenal pada baris {row['table_id']}#{row['row_no']}: {nama!r}")
+            continue
+        if not text:
+            errors.append(f"baris tabel {row['table_id']}#{row['row_no']} tanpa teks gejala")
+            continue
+        pairs.append((disease_id, text))
+    return pairs, errors
+
+
+def patogen_pairs(entries: list[dict[str, str]]) -> list[tuple[str, dict[str, str]]]:
+    scope_ids = {e["disease_id"] for e in entries}
+    pathogens = {r["pathogen_id"].strip(): r for r in read_csv(CURATED_DIR / "pathogens.csv")}
+    pairs = []
+    seen: set[tuple[str, str]] = set()
+    for row in read_csv(CURATED_DIR / "disease_pathogen.csv"):
+        disease_id = row["disease_id"].strip()
+        pathogen_id = row["pathogen_id"].strip()
+        if disease_id in scope_ids and (disease_id, pathogen_id) not in seen:
+            seen.add((disease_id, pathogen_id))
+            pairs.append((disease_id, pathogens[pathogen_id]))
+    return pairs
+
+
+def control_pairs(entries: list[dict[str, str]]) -> list[tuple[str, str]]:
+    scope_ids = {e["disease_id"] for e in entries}
+    pairs: list[tuple[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    for row in read_csv(CURATED_DIR / "controls.csv"):
+        disease_id = row["disease_id"].strip()
+        text = (row.get("verbatim_text") or "").strip()
+        if disease_id in scope_ids and row["scope"].strip() == "disease" and text:
+            if (disease_id, text) not in seen:
+                seen.add((disease_id, text))
+                pairs.append((disease_id, text))
+    return pairs
+
+
+def gejala_texts_by_disease(pairs: list[tuple[str, str]]) -> dict[str, list[str]]:
+    out: dict[str, list[str]] = {}
+    for disease_id, text in pairs:
+        out.setdefault(disease_id, []).append(text)
+    return out
+
+
+def menyerang_bagian_pairs(
+    entries: list[dict[str, str]], pairs: list[tuple[str, str]]
+) -> list[tuple[str, str]]:
+    by_disease = gejala_texts_by_disease(pairs)
+    out: list[tuple[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    for entry in entries:
+        if entry["subsection"]:
+            parts = subsection_parts(entry["subsection"])
+        else:
+            parts = []
+            for text in by_disease.get(entry["disease_id"], []):
+                for part in text_parts(text):
+                    if part not in parts:
+                        parts.append(part)
+        for part in parts:
+            key = (entry["disease_id"], part)
+            if key not in seen:
+                seen.add(key)
+                out.append(key)
+    return out
+
+
+# ---------------------------------------------------------------- builder ABox
 
 class Builder:
     def __init__(self) -> None:
         self.graph = Graph()
-        self.chunks: set[str] = set()
-        self.class_counts: Counter[str] = Counter()
-        self.triple_property_counts: Counter[str] = Counter()
         self.errors: list[str] = []
-        self.section_cache: dict[tuple[str, ...], URIRef] = {}
-        self.chapter_number_by_title: dict[str, int] = {}
-        self.plant_ids: set[str] = set()
+        self.used_locals: set[str] = set()
 
-    def declare(self, uri: URIRef, *classes: str) -> None:
+    def individual(self, local: str, *classes: str) -> URIRef:
+        if local in self.used_locals:
+            self.errors.append(f"local name individu duplikat: {local}")
+        self.used_locals.add(local)
+        uri = KBR[local]
         self.graph.add((uri, RDF.type, OWL.NamedIndividual))
         for cls in classes:
             self.graph.add((uri, RDF.type, KBR[cls]))
-            self.class_counts[cls] += 1
+        return uri
 
-    def label(self, uri: URIRef, text: str) -> None:
+    def label(self, uri: URIRef, text: str | None) -> None:
         if text and text.strip():
             self.graph.add((uri, RDFS.label, Literal(text.strip(), lang="id")))
 
@@ -172,483 +260,220 @@ class Builder:
 
     def link(self, uri: URIRef, prop: str, target: URIRef) -> None:
         self.graph.add((uri, KBR[prop], target))
-        self.triple_property_counts[prop] += 1
         inverse = tbox.OBJECT_PROPERTIES.get(prop, {}).get("inverse")
         if inverse:
             self.graph.add((target, KBR[inverse], uri))
-            self.triple_property_counts[inverse] += 1
-
-    def evidence_iri(self, chunk_id: str) -> URIRef:
-        if chunk_id not in self.chunks:
-            self.chunks.add(chunk_id)
-            iri = KBRD[plain_local(chunk_id)]
-            self.declare(iri, "EvidenceChunk")
-            self.label(iri, chunk_id)
-            self.s(iri, "chunkId", chunk_id)
-        return KBRD[plain_local(chunk_id)]
-
-    def link_evidence(self, uri: URIRef, raw: str, prop: str = "hasEvidence") -> None:
-        for chunk_id in split_chunk_ids(raw):
-            self.link(uri, prop, self.evidence_iri(chunk_id))
-
-    def section(self, path: tuple[str, ...]) -> URIRef:
-        if path in self.section_cache:
-            return self.section_cache[path]
-        local = text_local("SEC", "\x1f".join(path))
-        uri = KBRD[local]
-        level = "chapter" if len(path) == 1 else ("section" if len(path) == 2 else "subsection")
-        self.declare(uri, "SourceSection")
-        self.label(uri, path[-1])
-        self.s(uri, "sectionLevel", level)
-        self.s(uri, "sectionLabel", path[-1])
-        self.s(uri, "chapterTitle", path[0])
-        if path[0] in self.chapter_number_by_title:
-            self.i(uri, "chapterNumber", str(self.chapter_number_by_title[path[0]]))
-        if len(path) > 1:
-            parent = self.section(path[:-1])
-            self.link(parent, "containsSection", uri)
-        self.section_cache[path] = uri
-        return uri
-
-    def source(self, doc_id: str) -> URIRef:
-        return KBRD[doc_id]
 
 
-def load_chapter_titles(builder: Builder, plants_rows: list[dict[str, str]]) -> None:
-    for row in plants_rows:
-        title = (row.get("chapter_title") or "").strip()
-        number = (row.get("chapter_number") or "").strip()
-        if title and number:
-            builder.chapter_number_by_title.setdefault(title, number)
+def gejala_uri(text: str, cache: dict[str, URIRef], builder: Builder) -> URIRef:
+    if text in cache:
+        return cache[text]
+    words = [w for w in text.split() if w][:5]
+    local = "Gejala" + (pascal(" ".join(words)) or "TanpaTeks") + "_" + short_hash(text)
+    classes = ["Gejala"] + [PART_SUBCLASS[p] for p in text_parts(text) if p in PART_SUBCLASS]
+    uri = builder.individual(local, *classes)
+    builder.label(uri, text)
+    builder.s(uri, "deskripsiGejala", text)
+    for part in text_parts(text):
+        builder.link(uri, "terdapatPada", KBR[part])
+    cache[text] = uri
+    return uri
 
 
-def build_sources(builder: Builder) -> None:
+def build_tanaman(builder: Builder) -> None:
+    for row in scope_plants_rows():
+        local = pascal(row["plant_name_id"].strip())
+        uri = builder.individual(local, "TanamanPangan")
+        builder.label(uri, row.get("plant_name_id"))
+        builder.s(uri, "namaIlmiah", row.get("scientific_name"))
+
+
+def build_referensi(builder: Builder) -> None:
     meta = json.loads(META_PATH.read_text(encoding="utf-8"))
-    documents = meta.get("documents", {})
-    for doc_id, info in documents.items():
-        uri = builder.source(doc_id)
-        builder.declare(uri, "KnowledgeSource")
-        builder.label(uri, info.get("title") or doc_id)
-        builder.s(uri, "documentId", doc_id)
-        builder.s(uri, "title", info.get("title"))
-        for author in info.get("authors") or []:
-            builder.s(uri, "author", author)
-        year = info.get("publication_year")
-        if year is not None:
-            builder.graph.add((uri, KBR.publicationYear, Literal(int(year), datatype=XSD.integer)))
-        builder.s(uri, "publisher", info.get("publisher"))
-        builder.s(uri, "languageCode", info.get("language"))
-        for note in info.get("notes") or []:
-            builder.s(uri, "sourceNote", note)
+    info = meta["documents"]["DOC002"]
+    uri = builder.individual("BukuDOC002", "Referensi", "Buku")
+    builder.label(uri, info.get("title"))
+    builder.s(uri, "judulReferensi", info.get("title"))
+    year = info.get("publication_year")
+    if year is not None:
+        builder.graph.add((uri, KBR.tahunTerbit, Literal(int(year), datatype=XSD.integer)))
+    authors = ", ".join(info.get("authors") or [])
+    builder.s(uri, "namaPenulis", authors or None)
 
 
-def build_plants(builder: Builder) -> None:
-    specs = [
-        (AUTO_DIR / "plants.csv", "DOC002"),
-        (CURATED_DIR / "DOC003" / "plants.csv", "DOC003"),
-    ]
-    for path, doc_id in specs:
-        for row in read_csv(path):
-            plant_id = row["plant_id"].strip()
-            uri = KBRD[plain_local(plant_id)]
-            builder.declare(uri, "Plant")
-            builder.label(uri, row.get("plant_name_id") or plant_id)
-            builder.s(uri, "plantNameId", row.get("plant_name_id"))
-            builder.s(uri, "plantNameEn", row.get("plant_name_en"))
-            builder.s(uri, "scientificName", row.get("scientific_name"))
-            builder.i(uri, "scientificNamePage", row.get("scientific_name_page"))
-            builder.i(uri, "chapterNumber", row.get("chapter_number"))
-            builder.s(uri, "chapterTitle", row.get("chapter_title"))
-            builder.i(uri, "pageStart", row.get("page_start"))
-            builder.i(uri, "pageEnd", row.get("page_end"))
-            builder.s(uri, "notes", row.get("notes"))
-            builder.link_evidence(uri, row.get("evidence_chunk_id") or "")
-            builder.link(uri, "hasSourceDocument", builder.source(doc_id))
-            builder.plant_ids.add(plant_id)
+def build_bagi_tanaman(builder: Builder) -> None:
+    for name in PART_WORDS.values():
+        uri = builder.individual(name, "BagianTanaman")
+        builder.label(uri, name)
 
 
-def build_diseases_doc002(builder: Builder) -> None:
-    for row in read_csv(CURATED_DIR / "diseases.csv"):
-        disease_id = row["disease_id"].strip()
-        uri = KBRD[plain_local(disease_id)]
-        name = (row.get("disease_name_verbatim") or "").strip()
-        builder.declare(uri, "Disease")
-        builder.label(uri, name or (row.get("disease_name_key") or disease_id))
-        builder.s(uri, "diseaseName", row.get("disease_name_verbatim"))
-        builder.s(uri, "diseaseNameKey", row.get("disease_name_key"))
-        builder.s(uri, "diseaseNameEn", row.get("name_en_verbatim"))
-        builder.s(uri, "chapterTitle", row.get("chapter_title"))
-        builder.s(uri, "headingLevel", row.get("heading_level"))
-        builder.s(uri, "section", row.get("section"))
-        builder.s(uri, "subsection", row.get("subsection"))
-        builder.i(uri, "pageStart", row.get("page_start"))
-        builder.i(uri, "pageEnd", row.get("page_end"))
-        builder.s(uri, "sourceBlockId", row.get("source_block_ids"))
-        builder.s(uri, "reviewStatus", row.get("review_status"))
-        builder.s(uri, "notes", row.get("notes"))
-        builder.link_evidence(uri, row.get("evidence_chunk_ids") or "")
-        builder.link(uri, "hasSourceDocument", builder.source("DOC002"))
-        plant = KBRD[plain_local(row["plant_id"].strip())]
-        builder.link(uri, "occursIn", plant)
-        target = section_target(
-            row.get("chapter_title") or "",
-            row.get("section") or "",
-            row.get("subsection") or "",
+def build_penyakit(builder: Builder, entries: list[dict[str, str]]) -> None:
+    for entry in entries:
+        uri = builder.individual(entry["local"], "Penyakit")
+        builder.label(uri, entry["nama"])
+        builder.link(uri, "menyerangTanaman", KBR[entry["plant_local"]])
+        builder.link(uri, "memilikiReferensi", KBR["BukuDOC002"])
+
+
+def build_patogen(builder: Builder, pairs: list[tuple[str, dict[str, str]]]) -> None:
+    entries = {e["disease_id"]: e for e in penyakit_entries()}
+    uniq: dict[str, dict[str, str]] = {}
+    for _disease_id, row in pairs:
+        uniq.setdefault(row["pathogen_id"].strip(), row)
+    bases: dict[str, list[str]] = {}
+    for pathogen_id, row in uniq.items():
+        base = pascal(row["scientific_name"]) or pascal(pathogen_id)
+        bases.setdefault(base, []).append(pathogen_id)
+    local_by_id: dict[str, str] = {}
+    for pathogen_id, row in uniq.items():
+        base = pascal(row["scientific_name"]) or pascal(pathogen_id)
+        local = base if len(bases[base]) == 1 else base + pascal(pathogen_id)
+        local_by_id[pathogen_id] = local
+        taxon = (row.get("taxon_group") or "").strip().lower()
+        classes = ["Patogen"]
+        if taxon in TAXON_CLASS:
+            classes.append(TAXON_CLASS[taxon])
+        uri = builder.individual(local, *classes)
+        builder.label(uri, row.get("scientific_name") or pathogen_id)
+        builder.s(uri, "namaIlmiahPatogen", row.get("scientific_name"))
+    for disease_id, row in pairs:
+        builder.link(
+            KBR[entries[disease_id]["local"]],
+            "disebabkanOleh",
+            KBR[local_by_id[row["pathogen_id"].strip()]],
         )
-        builder.link(uri, "locatedInSection", builder.section(target))
 
 
-def build_diseases_doc003(builder: Builder) -> None:
-    for row in read_csv(CURATED_DIR / "DOC003" / "amorphophallus_spp_diseases.csv"):
-        disease_id = row["disease_id"].strip()
-        uri = KBRD[plain_local(disease_id)]
-        builder.declare(uri, "Disease")
-        builder.label(uri, row.get("disease_name_verbatim") or disease_id)
-        builder.s(uri, "diseaseName", row.get("disease_name_verbatim"))
-        builder.s(uri, "diseaseNameEn", row.get("disease_name_en_verbatim"))
-        builder.s(uri, "hostName", row.get("host_verbatim"))
-        builder.s(uri, "reference", row.get("reference_verbatim"))
-        builder.s(uri, "sourceType", row.get("source_type"))
-        builder.i(uri, "pageStart", row.get("page_start"))
-        builder.i(uri, "pageEnd", row.get("page_end"))
-        builder.s(uri, "sourceBlockId", row.get("source_block_id"))
-        builder.s(uri, "reviewStatus", row.get("review_status"))
-        builder.s(uri, "notes", row.get("notes"))
-        builder.link_evidence(uri, row.get("chunk_id") or "")
-        builder.link(uri, "hasSourceDocument", builder.source("DOC003"))
-        builder.link(uri, "occursIn", KBRD[plain_local(row["plant_id"].strip())])
+def build_gejala(builder: Builder, pairs: list[tuple[str, str]]) -> None:
+    entries = {e["disease_id"]: e for e in penyakit_entries()}
+    cache: dict[str, URIRef] = {}
+    for disease_id, text in pairs:
+        uri = gejala_uri(text, cache, builder)
+        builder.link(KBR[entries[disease_id]["local"]], "memilikiGejala", uri)
 
 
-def doc002_pathogen_ids() -> set[str]:
-    return {row["pathogen_id"].strip() for row in read_csv(CURATED_DIR / "pathogens.csv")}
+def build_menyerang_bagian(builder: Builder, bagian_pairs: list[tuple[str, str]]) -> None:
+    entries = {e["disease_id"]: e for e in penyakit_entries()}
+    for disease_id, part in bagian_pairs:
+        builder.link(KBR[entries[disease_id]["local"]], "menyerangBagian", KBR[part])
 
 
-def pathogen_local(pathogen_id: str, doc_id: str, doc2_ids: set[str]) -> str:
-    if doc_id == "DOC003" and pathogen_id in doc2_ids:
-        return plain_local(f"{pathogen_id}_DOC003")
-    return plain_local(pathogen_id)
+def build_pengendalian(builder: Builder, pairs: list[tuple[str, str]]) -> None:
+    entries = {e["disease_id"]: e for e in penyakit_entries()}
+    cache: dict[str, URIRef] = {}
+    for disease_id, text in pairs:
+        if text not in cache:
+            words = [w for w in text.split() if w][:5]
+            local = "Pengendalian" + (pascal(" ".join(words)) or "TanpaTeks") + "_" + short_hash(text)
+            uri = builder.individual(local, "Pengendalian")
+            builder.label(uri, text)
+            builder.s(uri, "deskripsiPengendalian", text)
+            cache[text] = uri
+        builder.link(KBR[entries[disease_id]["local"]], "dikendalikanDengan", cache[text])
 
 
-def build_pathogens(builder: Builder) -> None:
-    doc2_ids = doc002_pathogen_ids()
-    specs = [
-        (CURATED_DIR / "pathogens.csv", "DOC002"),
-        (CURATED_DIR / "DOC003" / "pathogens.csv", "DOC003"),
-    ]
-    for path, doc_id in specs:
-        for row in read_csv(path):
-            pathogen_id = row["pathogen_id"].strip()
-            uri = KBRD[pathogen_local(pathogen_id, doc_id, doc2_ids)]
-            taxon = (row.get("taxon_group") or "").strip()
-            classes = ["Pathogen"]
-            if taxon in TAXON_TO_CLASS:
-                classes.append(TAXON_TO_CLASS[taxon])
-            builder.declare(uri, *classes)
-            builder.label(uri, row.get("scientific_name") or pathogen_id)
-            builder.s(uri, "scientificName", row.get("scientific_name"))
-            builder.s(uri, "verbatimText", row.get("verbatim_text"))
-            builder.s(uri, "taxonGroupLabel", row.get("taxon_group"))
-            builder.s(uri, "taxonEvidenceQuote", row.get("taxon_evidence_quote"))
-            builder.i(uri, "pageStart", row.get("page"))
-            builder.s(uri, "reviewStatus", row.get("review_status"))
-            builder.s(uri, "notes", row.get("note"))
-            builder.link_evidence(uri, row.get("chunk_id") or "")
-            taxon_chunk = (row.get("taxon_evidence_chunk_id") or "").strip()
-            if taxon_chunk:
-                builder.link_evidence(uri, taxon_chunk, "hasTaxonEvidence")
-            builder.link(uri, "hasSourceDocument", builder.source(doc_id))
-
-
-def build_disease_pathogen(builder: Builder) -> None:
-    doc2_ids = doc002_pathogen_ids()
-    specs = [
-        ("disease_pathogen.csv", "DOC002"),
-        ("DOC003/disease_pathogen.csv", "DOC003"),
-    ]
-    for rel_path, doc_id in specs:
-        for row in read_csv(CURATED_DIR / rel_path):
-            disease = KBRD[plain_local(row["disease_id"].strip())]
-            pathogen = KBRD[
-                pathogen_local(row["pathogen_id"].strip(), doc_id, doc2_ids)
-            ]
-            builder.link(disease, "causedBy", pathogen)
-
-
-def build_symptoms(builder: Builder) -> None:
-    specs = [
-        (CURATED_DIR / "symptoms.csv", "DOC002"),
-        (CURATED_DIR / "DOC003" / "symptoms.csv", "DOC003"),
-    ]
-    for path, doc_id in specs:
-        for row in read_csv(path):
-            symptom_id = row["symptom_id"].strip()
-            uri = KBRD[plain_local(symptom_id)]
-            builder.declare(uri, "Symptom")
-            builder.label(uri, row.get("verbatim_text") or symptom_id)
-            builder.s(uri, "verbatimText", row.get("verbatim_text"))
-            builder.i(uri, "pageStart", row.get("page_start"))
-            builder.i(uri, "pageEnd", row.get("page_end"))
-            builder.i(uri, "charStart", row.get("char_start"))
-            builder.i(uri, "charEnd", row.get("char_end"))
-            builder.s(uri, "reviewStatus", row.get("review_status"))
-            builder.link_evidence(uri, row.get("chunk_id") or "")
-            builder.link(KBRD[plain_local(row["disease_id"].strip())], "hasSymptom", uri)
-            builder.link(uri, "observedOn", KBRD[plain_local(row["plant_id"].strip())])
-            builder.link(uri, "hasSourceDocument", builder.source(doc_id))
-
-
-def build_controls(builder: Builder) -> None:
-    specs = [
-        (CURATED_DIR / "controls.csv", "DOC002"),
-        (CURATED_DIR / "DOC003" / "controls.csv", "DOC003"),
-    ]
-    for path, doc_id in specs:
-        for row in read_csv(path):
-            control_id = row["control_id"].strip()
-            uri = KBRD[plain_local(control_id)]
-            scope = (row.get("scope") or "").strip()
-            scope_class = "DiseaseControl" if scope == "disease" else "ChapterControl"
-            builder.declare(uri, "ControlMeasure", scope_class)
-            builder.label(uri, row.get("verbatim_text") or control_id)
-            builder.s(uri, "verbatimText", row.get("verbatim_text"))
-            builder.i(uri, "pageStart", row.get("page_start"))
-            builder.i(uri, "pageEnd", row.get("page_end"))
-            builder.i(uri, "charStart", row.get("char_start"))
-            builder.i(uri, "charEnd", row.get("char_end"))
-            builder.s(uri, "controlCategory", row.get("control_category"))
-            builder.s(uri, "reviewStatus", row.get("review_status"))
-            builder.link_evidence(uri, row.get("chunk_id") or "")
-            disease_id = (row.get("disease_id") or "").strip()
-            if disease_id and scope == "disease":
-                builder.link(uri, "appliesTo", KBRD[plain_local(disease_id)])
-            builder.link(uri, "appliesToPlant", KBRD[plain_local(row["plant_id"].strip())])
-            builder.link(uri, "hasSourceDocument", builder.source(doc_id))
-
-
-def build_ubi_tables(builder: Builder) -> None:
-    chapters = json.loads(CHAPTER_MAP_PATH.read_text(encoding="utf-8"))["chapters"]
-    plant_by_chapter = {int(c["chapter_number"]): c["plant_id"] for c in chapters}
-    rows = read_csv(CURATED_DIR / "ubi_kayu_tabel_5.csv")
-    table_titles: dict[str, str] = {}
-    for row in rows:
-        table_id = row["table_id"].strip()
-        table_titles.setdefault(table_id, (row.get("table_title") or "").strip())
-
-    table_by_id: dict[str, URIRef] = {}
-    for table_id, title in table_titles.items():
-        uri = KBRD[plain_local(table_id)]
-        builder.declare(uri, "SourceTable", "CassavaSourceTable")
-        builder.label(uri, title or table_id)
-        builder.s(uri, "tableTitle", title)
-        match = re.match(r"T(\d+)", table_id)
-        if match:
-            plant_id = plant_by_chapter.get(int(match.group(1)))
-            if plant_id:
-                builder.link(uri, "aboutPlant", KBRD[plain_local(plant_id)])
-        builder.link(uri, "hasSourceDocument", builder.source("DOC002"))
-        table_by_id[table_id] = uri
-
-    unnumbered_count: dict[str, int] = {}
-    for row in rows:
-        table_id = row["table_id"].strip()
-        row_no = row["row_no"].strip()
-        if row_no:
-            local = plain_local(f"{table_id}_R{row_no}")
-        else:
-            n = unnumbered_count.get(table_id, 0) + 1
-            unnumbered_count[table_id] = n
-            local = plain_local(f"{table_id}_R_unnumbered_{n}")
-        uri = KBRD[local]
-        builder.declare(uri, "SourceTableRow")
-        disease_name = (row.get("disease_name") or "").strip()
-        builder.label(uri, disease_name or f"Baris {row_no} {table_id}")
-        builder.s(uri, "rowNumber", row_no)
-        builder.s(uri, "diseaseName", row.get("disease_name"))
-        builder.s(uri, "pathogenName", row.get("pathogen_name"))
-        builder.s(uri, "symptomText", row.get("symptom_text"))
-        builder.i(uri, "pageStart", row.get("page"))
-        builder.s(uri, "sourceBlockId", row.get("source_block_id"))
-        builder.s(uri, "rowStatus", row.get("status"))
-        builder.s(uri, "notes", row.get("note"))
-        builder.link(uri, "isTableRowOf", table_by_id[table_id])
-        builder.link(uri, "hasSourceDocument", builder.source("DOC002"))
-
-
-def build_nutrition(builder: Builder) -> None:
-    for table, category_map in NUTRITION_CATEGORY_CLASSES.items():
-        rel_path = CURATED_DIR / "DOC004" / f"{table}.csv"
-        for row in read_csv(rel_path):
-            record_id = row["record_id"].strip()
-            uri = KBRD[plain_local(record_id)]
-            category = (row.get("category") or "").strip()
-            if category not in category_map:
-                builder.errors.append(f"kategori tak dikenal di {table}.csv: {category!r}")
-                classes = []
-            else:
-                classes = category_map[category]
-            builder.declare(uri, *(classes or ["KnowledgeRecord"]))
-            subject = (row.get("subject") or "").strip()
-            attribute = (row.get("attribute") or "").strip()
-            builder.label(uri, f"{subject} — {attribute}" if attribute else subject or record_id)
-            builder.s(uri, "category", row.get("category"))
-            builder.s(uri, "subject", row.get("subject"))
-            builder.s(uri, "attribute", row.get("attribute"))
-            builder.s(uri, "recordValue", row.get("value"))
-            builder.s(uri, "unit", row.get("unit"))
-            builder.s(uri, "verbatimText", row.get("verbatim_text"))
-            builder.i(uri, "pageStart", row.get("page"))
-            builder.s(uri, "sourceBlockId", row.get("source_block_id"))
-            builder.s(uri, "reviewStatus", row.get("review_status"))
-            builder.s(uri, "notes", row.get("notes"))
-            builder.link_evidence(uri, row.get("chunk_id") or "")
-            builder.link(uri, "hasSourceDocument", builder.source("DOC004"))
-
+# ------------------------------------------------------------------ ekspektasi
 
 def expected_counts() -> dict:
-    diseases1 = read_csv(CURATED_DIR / "diseases.csv")
-    diseases3 = read_csv(CURATED_DIR / "DOC003" / "amorphophallus_spp_diseases.csv")
-    pathogens1 = read_csv(CURATED_DIR / "pathogens.csv")
-    pathogens3 = read_csv(CURATED_DIR / "DOC003" / "pathogens.csv")
-    symptoms1 = read_csv(CURATED_DIR / "symptoms.csv")
-    symptoms3 = read_csv(CURATED_DIR / "DOC003" / "symptoms.csv")
-    controls1 = read_csv(CURATED_DIR / "controls.csv")
-    controls3 = read_csv(CURATED_DIR / "DOC003" / "controls.csv")
-    plants1 = read_csv(AUTO_DIR / "plants.csv")
-    plants3 = read_csv(CURATED_DIR / "DOC003" / "plants.csv")
-    table_rows = read_csv(CURATED_DIR / "ubi_kayu_tabel_5.csv")
-    nutrition_rows = {
-        table: read_csv(CURATED_DIR / "DOC004" / f"{table}.csv")
-        for table in NUTRITION_CATEGORY_CLASSES
-    }
-    dp1 = read_csv(CURATED_DIR / "disease_pathogen.csv")
-    dp3 = read_csv(CURATED_DIR / "DOC003" / "disease_pathogen.csv")
-    meta = json.loads(META_PATH.read_text(encoding="utf-8"))
+    entries = penyakit_entries()
+    g_pairs, _errors = gejala_rows(entries)
+    p_pairs = patogen_pairs(entries)
+    c_pairs = control_pairs(entries)
+    bagian_pairs = menyerang_bagian_pairs(entries, g_pairs)
+    plants = scope_plants_rows()
 
-    classes: Counter[str] = Counter()
-    classes["KnowledgeSource"] = len(meta["documents"])
-    classes["Plant"] = len(plants1) + len(plants3)
-    classes["Disease"] = len(diseases1) + len(diseases3)
-    classes["Symptom"] = len(symptoms1) + len(symptoms3)
-    classes["ControlMeasure"] = len(controls1) + len(controls3)
-    classes["Pathogen"] = len(pathogens1) + len(pathogens3)
-    for row in pathogens1 + pathogens3:
-        mapped = TAXON_TO_CLASS.get((row.get("taxon_group") or "").strip())
+    gejala_texts = {text for _d, text in g_pairs}
+    control_texts = {text for _d, text in c_pairs}
+    pathogen_ids = {row["pathogen_id"].strip() for _d, row in p_pairs}
+    pathogen_rows = {row["pathogen_id"].strip(): row for _d, row in p_pairs}
+
+    classes: dict[str, int] = {
+        "TanamanPangan": len(plants),
+        "Penyakit": len(entries),
+        "Gejala": len(gejala_texts),
+        "Patogen": len(pathogen_ids),
+        "BagianTanaman": len(PART_WORDS),
+        "Pengendalian": len(control_texts),
+        "Referensi": 1,
+        "Buku": 1,
+        "PenyakitJamur": 0,
+        "PenyakitBakteri": 0,
+        "PenyakitVirus": 0,
+        "PenyakitLainnya": 0,
+    }
+    for text in gejala_texts:
+        for part in text_parts(text):
+            if part in PART_SUBCLASS:
+                classes[PART_SUBCLASS[part]] = classes.get(PART_SUBCLASS[part], 0) + 1
+    for row in pathogen_rows.values():
+        mapped = TAXON_CLASS.get((row.get("taxon_group") or "").strip().lower())
         if mapped:
-            classes[mapped] += 1
-    all_controls = controls1 + controls3
-    for row in all_controls:
-        scope = (row.get("scope") or "").strip()
-        classes["DiseaseControl" if scope == "disease" else "ChapterControl"] += 1
-    classes["SourceTable"] = len({r["table_id"].strip() for r in table_rows})
-    classes["CassavaSourceTable"] = classes["SourceTable"]
-    classes["SourceTableRow"] = len(table_rows)
-    classes["EvidenceChunk"] = len(expected_chunk_ids())
-
-    nutrition_classes: Counter[str] = Counter()
-    for table, rows in nutrition_rows.items():
-        category_map = NUTRITION_CATEGORY_CLASSES[table]
-        for row in rows:
-            for cls in category_map[(row.get("category") or "").strip()]:
-                nutrition_classes[cls] += 1
-    classes.update(nutrition_classes)
-
-    section_paths_set: set[tuple[str, ...]] = set()
-    for row in diseases1:
-        section_paths_set.update(
-            section_paths(
-                row.get("chapter_title") or "",
-                row.get("section") or "",
-                row.get("subsection") or "",
-            )
-        )
-    chapters = {p[0] for p in section_paths_set}
-    contains = len(section_paths_set) - len(chapters)
-
-    properties: Counter[str] = Counter()
-    properties["occursIn"] = len(diseases1) + len(diseases3)
-    properties["causedBy"] = len(dp1) + len(dp3)
-    properties["hasSymptom"] = len(symptoms1) + len(symptoms3)
-    properties["observedOn"] = len(symptoms1) + len(symptoms3)
-    properties["appliesTo"] = sum(
-        1 for r in all_controls if (r.get("scope") or "").strip() == "disease"
+            classes[mapped] = classes.get(mapped, 0) + 1
+    classes["NamedIndividual"] = (
+        classes["TanamanPangan"]
+        + classes["Penyakit"]
+        + classes["Gejala"]
+        + classes["Patogen"]
+        + classes["BagianTanaman"]
+        + classes["Pengendalian"]
+        + classes["Referensi"]
     )
-    properties["appliesToPlant"] = sum(1 for r in all_controls if (r.get("plant_id") or "").strip())
-    properties["hasDisease"] = properties["occursIn"]
-    properties["causes"] = properties["causedBy"]
-    properties["symptomOf"] = properties["hasSymptom"]
-    properties["hasControlMeasure"] = properties["appliesTo"]
-    properties["locatedInSection"] = len(diseases1)
-    properties["isTableRowOf"] = len(table_rows)
-    properties["hasTableRow"] = properties["isTableRowOf"]
-    properties["aboutPlant"] = classes["SourceTable"]
-    properties["containsSection"] = contains
-    properties["sectionOf"] = contains
-    properties["SourceSection_individuals"] = len(section_paths_set)
 
-    evidence_total = 0
-    for rel_path, column, prop in EVIDENCE_COLUMNS:
-        rows = read_csv(TABLE_DIR / rel_path)
-        for row in rows:
-            raw = (row.get(column) or "").strip()
-            if prop == "hasEvidence":
-                evidence_total += len(split_chunk_ids(raw))
-            else:
-                evidence_total_taxon = 1 if raw else 0
-                properties["hasTaxonEvidence"] += evidence_total_taxon
-    properties["hasEvidence"] = evidence_total
-
-    nutrition_individuals = sum(
-        len({row["record_id"].strip() for row in rows}) for rows in nutrition_rows.values()
-    )
-    records_total = (
-        classes["Plant"]
-        + classes["Disease"]
-        + classes["Pathogen"]
-        + classes["Symptom"]
-        + classes["ControlMeasure"]
-        + classes["SourceTable"]
-        + classes["SourceTableRow"]
-        + nutrition_individuals
-    )
-    properties["hasSourceDocument"] = records_total
-
-    return {
-        "classes": {k: v for k, v in classes.items() if v},
-        "properties": dict(properties),
+    properties: dict[str, int] = {
+        "menyerangTanaman": len(entries),
+        "diserangPenyakit": len(entries),
+        "memilikiGejala": len(g_pairs),
+        "merupakanGejalaDari": len(g_pairs),
+        "disebabkanOleh": len(p_pairs),
+        "menyebabkanPenyakit": len(p_pairs),
+        "menyerangBagian": len(bagian_pairs),
+        "terdapatPada": sum(len({p for p in text_parts(text)}) for text in gejala_texts),
+        "dikendalikanDengan": len(c_pairs),
+        "mengendalikanPenyakit": len(c_pairs),
+        "memilikiReferensi": len(entries),
+        "dijelaskanDalam": len(entries),
     }
-
-
-def expected_chunk_ids() -> set[str]:
-    ids: set[str] = set()
-    for rel_path, column, _prop in EVIDENCE_COLUMNS:
-        for row in read_csv(TABLE_DIR / rel_path):
-            ids.update(split_chunk_ids((row.get(column) or "").strip()))
-    ids.discard("")
-    return ids
+    data_properties: dict[str, int] = {
+        "namaIlmiah": sum(1 for r in plants if (r.get("scientific_name") or "").strip()),
+        "namaIlmiahPatogen": sum(
+            1 for r in pathogen_rows.values() if (r.get("scientific_name") or "").strip()
+        ),
+        "deskripsiGejala": len(gejala_texts),
+        "deskripsiPengendalian": len(control_texts),
+        "judulReferensi": 1,
+        "tahunTerbit": 1,
+        "namaPenulis": 1,
+    }
+    return {"classes": classes, "properties": properties, "data_properties": data_properties}
 
 
 def build() -> tuple[Graph, dict, list[str], Builder]:
     builder = Builder()
     tbox.build_tbox(builder.graph)
-    builder.graph.bind("kbr", KBR)
-    builder.graph.bind("kbrd", tbox.KBRD)
+    builder.graph.bind("ptp", KBR)
 
-    load_chapter_titles(builder, read_csv(AUTO_DIR / "plants.csv"))
-    build_sources(builder)
-    build_plants(builder)
-    build_diseases_doc002(builder)
-    build_diseases_doc003(builder)
-    build_pathogens(builder)
-    build_disease_pathogen(builder)
-    build_symptoms(builder)
-    build_controls(builder)
-    build_ubi_tables(builder)
-    build_nutrition(builder)
+    entries = penyakit_entries()
+    g_pairs, g_errors = gejala_rows(entries)
+    builder.errors.extend(g_errors)
+    p_pairs = patogen_pairs(entries)
+    c_pairs = control_pairs(entries)
+    bagian_pairs = menyerang_bagian_pairs(entries, g_pairs)
+
+    build_referensi(builder)
+    build_tanaman(builder)
+    build_bagi_tanaman(builder)
+    build_penyakit(builder, entries)
+    build_patogen(builder, p_pairs)
+    build_gejala(builder, g_pairs)
+    build_menyerang_bagian(builder, bagian_pairs)
+    build_pengendalian(builder, c_pairs)
 
     expected = expected_counts()
     errors = validate(builder.graph, builder, expected)
     return builder.graph, expected, errors, builder
 
+
+# ------------------------------------------------------------------ validasi
 
 def validate(graph: Graph, builder: Builder, expected: dict) -> list[str]:
     errors = list(builder.errors)
@@ -661,72 +486,84 @@ def validate(graph: Graph, builder: Builder, expected: dict) -> list[str]:
         return errors + [f"parse ulang gagal: {exc}"]
 
     for cls, count in sorted(expected["classes"].items()):
-        actual = len(list(graph.subjects(RDF.type, KBR[cls])))
+        target = OWL.NamedIndividual if cls == "NamedIndividual" else KBR[cls]
+        actual = len(list(graph.subjects(RDF.type, target)))
         if actual != count:
             errors.append(f"jumlah individu {cls}: {actual} != {count}")
 
-    if builder.class_counts["SourceSection"] != expected["properties"]["SourceSection_individuals"]:
-        errors.append(
-            "jumlah individu SourceSection: "
-            f"{builder.class_counts['SourceSection']} != "
-            f"{expected['properties']['SourceSection_individuals']}"
-        )
-
     for prop, count in sorted(expected["properties"].items()):
-        if prop == "SourceSection_individuals":
-            continue
         actual = len(list(graph.triples((None, KBR[prop], None))))
         if actual != count:
             errors.append(f"jumlah triple {prop}: {actual} != {count}")
 
-    for prop, spec in tbox.OBJECT_PROPERTIES.items():
-        rng = KBR[spec["range"]]
-        for obj in graph.objects(None, KBR[prop]):
+    for prop, count in sorted(expected["data_properties"].items()):
+        actual = len(list(graph.triples((None, KBR[prop], None))))
+        if actual != count:
+            errors.append(f"jumlah triple data {prop}: {actual} != {count}")
+
+    for name, spec in tbox.OBJECT_PROPERTIES.items():
+        domain, rng = KBR[spec["domain"]], KBR[spec["range"]]
+        for subj, obj in graph.subject_objects(KBR[name]):
+            if (subj, RDF.type, domain) not in graph:
+                errors.append(f"subjek {subj} dari kbr:{name} tidak bertipe {spec['domain']}")
             if (obj, RDF.type, rng) not in graph:
-                errors.append(f"objek {obj} dari kbr:{prop} tidak bertipe {rng}")
+                errors.append(f"objek {obj} dari kbr:{name} tidak bertipe {spec['range']}")
+
+    for name in tbox.DATA_PROPERTIES:
+        domain = KBR[tbox.DATA_PROPERTIES[name]["domain"]]
+        for subj, _obj in graph.subject_objects(KBR[name]):
+            if (subj, RDF.type, domain) not in graph:
+                errors.append(f"subjek {subj} dari kbr:{name} tidak bertipe {domain}")
 
     for literal_obj in graph.objects():
         if isinstance(literal_obj, Literal) and str(literal_obj) == "":
             errors.append("literal kosong ditemukan")
 
-    axiom_checks = [
-        (KBR.containsSection, RDF.type, OWL.TransitiveProperty),
-        (KBR.containsSection, RDF.type, OWL.AsymmetricProperty),
-        (KBR.containsSection, RDF.type, OWL.IrreflexiveProperty),
-        (KBR.hasTaxonEvidence, RDFS.subPropertyOf, KBR.hasEvidence),
-        (KBR.occursIn, RDF.type, OWL.FunctionalProperty),
-        (KBR.observedOn, RDF.type, OWL.FunctionalProperty),
-        (KBR.isTableRowOf, RDF.type, OWL.FunctionalProperty),
-        (KBR.CassavaSourceTable, OWL.equivalentClass, None),
-    ]
-    for subj, pred, obj in axiom_checks:
-        if obj is None:
-            if not any(graph.objects(subj, pred)):
-                errors.append(f"axiom hilang: {subj} {pred} ?")
-        elif (subj, pred, obj) not in graph:
-            errors.append(f"axiom hilang: {subj} {pred} {obj}")
+    for penyakit_cls, _patogen_cls in tbox.EQUIVALENT_CLASSES:
+        if not any(graph.objects(KBR[penyakit_cls], OWL.equivalentClass)):
+            errors.append(f"axiom equivalentClass hilang: {penyakit_cls}")
 
-    chains = list(graph.objects(None, OWL.propertyChainAxiom))
-    if len(chains) != len(tbox.PROPERTY_CHAINS):
-        errors.append(f"jumlah propertyChainAxiom: {len(chains)} != {len(tbox.PROPERTY_CHAINS)}")
+    restr_found = set()
+    for sub_cls, prop, target, quant in tbox.RESTRICTIONS:
+        for node in graph.objects(KBR[sub_cls], RDFS.subClassOf):
+            if (node, OWL.onProperty, KBR[prop]) in graph:
+                quantifier = OWL.someValuesFrom if quant == "some" else OWL.allValuesFrom
+                if (node, quantifier, KBR[target]) in graph:
+                    restr_found.add((sub_cls, prop, quant))
+    for sub_cls, prop, _target, quant in tbox.RESTRICTIONS:
+        if (sub_cls, prop, quant) not in restr_found:
+            errors.append(f"restriction hilang: {sub_cls} {quant} {prop}")
 
-    for name, spec in tbox.OBJECT_PROPERTIES.items():
-        inverse = spec.get("inverse")
-        if not inverse:
-            continue
-        for subj, obj in graph.subject_objects(KBR[name]):
-            if (obj, KBR[inverse], subj) not in graph:
-                errors.append(f"inverse tak lengkap: {subj} kbr:{name} {obj}")
+    if len(list(graph.subject_objects(OWL.disjointWith))) != len(tbox.DISJOINT_PAIRS):
+        errors.append(
+            f"jumlah disjointWith: {len(list(graph.subject_objects(OWL.disjointWith)))} "
+            f"!= {len(tbox.DISJOINT_PAIRS)}"
+        )
+
+    if len(list(graph.subject_objects(OWL.inverseOf))) != 10:
+        errors.append(f"jumlah inverseOf: {len(list(graph.subject_objects(OWL.inverseOf)))} != 10")
+
+    for forbidden in ("PenyakitJamur", "PenyakitBakteri", "PenyakitVirus", "PenyakitLainnya"):
+        explicit = list(graph.subjects(RDF.type, KBR[forbidden]))
+        if explicit:
+            errors.append(f"{forbidden} tidak boleh di-assert eksplisit (harus inferensi reasoner)")
+
+    entries = penyakit_entries()
+    for entry in entries:
+        uri = KBR[entry["local"]]
+        for prop in ("menyerangTanaman", "memilikiGejala", "memilikiReferensi"):
+            if not any(graph.objects(uri, KBR[prop])):
+                errors.append(f"penyakit {entry['local']} tanpa {prop}")
 
     return errors
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Bangun ontology.ttl dari knowledge tables.")
-    parser.add_argument("--out", type=Path, default=DEFAULT_OUT, help="path keluaran TTL")
+    parser = argparse.ArgumentParser(description="Bangun ontologi Penyakit Tanaman Pangan Indonesia.")
+    parser.add_argument("--out", type=Path, default=DEFAULT_TTL, help="path keluaran TTL")
     args = parser.parse_args(argv)
 
-    graph, _expected, errors, builder = build()
+    graph, expected, errors, builder = build()
     if errors:
         print("VALIDASI GAGAL:", file=sys.stderr)
         for error in errors:
@@ -735,11 +572,14 @@ def main(argv: list[str] | None = None) -> int:
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     graph.serialize(destination=str(args.out), format="turtle")
+    owl_path = args.out.with_suffix(".owl")
+    graph.serialize(destination=str(owl_path), format="xml")
     individuals = len(list(graph.subjects(RDF.type, OWL.NamedIndividual)))
-    print(f"ontology.ttl ditulis: {args.out}")
+    cls = expected["classes"]
+    print(f"ontologi ditulis: {args.out} dan {owl_path}")
     print(
-        f"triple: {len(graph)} | individu: {individuals} | "
-        f"chunk bukti: {len(builder.chunks)} | bagian dokumen: {builder.class_counts['SourceSection']}"
+        f"triple: {len(graph)} | individu: {individuals} | penyakit: {cls['Penyakit']} | "
+        f"gejala: {cls['Gejala']} | patogen: {cls['Patogen']} | pengendalian: {cls['Pengendalian']}"
     )
     return 0
 
