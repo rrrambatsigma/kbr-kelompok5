@@ -1,0 +1,8 @@
+pathogen_id,document_id,scientific_name,verbatim_text,taxon_group,taxon_evidence_chunk_id,taxon_evidence_quote,page,chunk_id,note,review_status
+PAT_106,DOC003,Rhizoctonia solani,Rhizoctonia solani,jamur,,,30,DOC003_C030_01,,verified
+PAT_107,DOC003,Phytophthora colocasiae,Phytophthora colocasiae,jamur,,,30,DOC003_C030_01,"Sumber menyebutnya jamur, bukan oomycete.",verified
+PAT_108,DOC003,Pythium helicoides,Pythium helicoides,jamur,DOC003_C032_01,Penyakit busuk ubi dan hawar daun pada tanaman suweg (A. paeoniifolius) juga dapat disebabkan oleh jamur Phytium helicoides,29,DOC003_C029_04,Tabel 2 menulis 'Pythium helicoides'; prosa halaman 32 menulis 'Phytium helicoides'. Sumber menyebutnya jamur.,verified
+PAT_109,DOC003,Erwinia carotovora pv. carotovora,Erwinia carotovora pv. carotovora,bakteri,DOC003_C030_01,Penyakit bakteri pada suweg adalah busuk basah oleh Erwinia carotovora,29,DOC003_C029_04,Pathovar 'pv. carotovora' tercetak pada Tabel 2 halaman 29; prosa halaman 30 hanya menulis 'Erwinia carotovora'.,verified
+PAT_110,DOC003,Dasheen mosaic virus,Dasheen mosaic virus,virus,,,30,DOC003_C030_01,,verified
+PAT_111,DOC003,Konjac mosaic virus,Konjac mosaic virus,virus,,,30,DOC003_C030_01,,verified
+PAT_112,DOC003,Sclerotium rolfsii,Sclerotium rolfsii,jamur,,,31,DOC003_C031_01,Prosa halaman 30 menulis 'Slerotium rolfsii'.,verified

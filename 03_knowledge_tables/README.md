@@ -1,8 +1,10 @@
-# Tahap 2 — Knowledge Tables DOC002
+# Tahap 2 — Knowledge Tables
 
-Tabel pengetahuan untuk **PenyakitTanamanPangan.pdf** (DOC002), 15 bab tanaman pangan.
-Semua isi diturunkan dari keluaran Tahap 1 (`02_extraction/extracted_text/`) tanpa
-model bahasa di dalam pipeline dan tanpa pengetahuan dari luar buku.
+Tabel pengetahuan Tahap 2. Dokumen utama adalah **PenyakitTanamanPangan.pdf**
+(DOC002, 15 bab tanaman pangan); dokumen tambahan **porang.pdf** (DOC003) dan
+**TPTPkhususjamilah.pdf** (DOC004) memakai builder terpisah. Semua isi
+diturunkan dari keluaran Tahap 1 (`02_extraction/extracted_text/`) tanpa model
+bahasa di dalam pipeline dan tanpa pengetahuan dari luar buku.
 
 ## Aturan yang tidak boleh dilanggar
 
@@ -61,6 +63,14 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | `reports/coverage.md` / `.json` | cakupan per tanaman |
 | `reports/validation.json` | gate G1–G7 |
 | `tests/test_knowledge_tables.py` | 33 gate test |
+| `config/DOC003_tables.json` / `DOC004_tables.json` | spesifikasi baris kurasi dokumen tambahan |
+| `build_document_tables.py` | builder + validator verbatim DOC003/DOC004 |
+| `schema/knowledge_tables_DOC003.schema.json` | skema 6 tabel DOC003 |
+| `schema/production_tables.schema.json` | skema 4 tabel produksi DOC004 |
+| `curated/DOC003/*.csv` | otoritas akhir tabel porang/suweg |
+| `curated/DOC004/*.csv` | otoritas akhir tabel nutrisi dan pupuk |
+| `reports/DOC003.tables.validation.json` / `DOC004.tables.validation.json` | hasil gate verbatim dokumen tambahan |
+| `tests/test_document_tables.py` | 17 gate test DOC003/DOC004 |
 
 ## Menjalankan
 
@@ -72,6 +82,9 @@ python 03_knowledge_tables/build_extended_tables.py
 python 03_knowledge_tables/curate_pathogens.py
 python 03_knowledge_tables/curate_sentences.py
 python 03_knowledge_tables/build_reports.py
+
+# dokumen tambahan DOC003/DOC004 (dari root repo atau folder ini)
+python 03_knowledge_tables/build_document_tables.py
 
 # dari folder ini
 python -m unittest discover -s tests -p "test_*.py"
@@ -189,6 +202,52 @@ Keputusan kurasi yang perlu diketahui pembaca:
 - Nama ilmiah hanya diisi untuk 8 tanaman yang mencetaknya di badan bab.
 - Gejala ubi kayu tidak diduplikasi ke `symptoms.csv`; sumbernya tabel 5.1–5.3
   di `curated/ubi_kayu_tabel_5.csv`, dan laporan cakupan menghitungnya dari sana.
+
+## Dokumen tambahan — DOC003 dan DOC004
+
+Kedua dokumen memakai jalur terpisah dari DOC002. Baris tidak diturunkan dari
+heading otomatis, melainkan ditulis di `config/DOC003_tables.json` dan
+`config/DOC004_tables.json`, lalu diverifikasi ulang oleh
+`build_document_tables.py` terhadap blok dan chunk Tahap 1, termasuk verifikasi
+kutipan, foreign key, dan offset karakter, lalu menulis CSV.
+
+**DOC003 — porang.pdf.** 56 halaman PDF, 9 bab. Bab 6 (Hama Penyakit dan
+Pengendaliannya) secara eksplisit merangkum penyakit **suweg**
+(`Amorphophallus spp.`), bukan penyakit porang. Karena itu:
+
+- `plants` berisi `PLANT_016` Porang dan `PLANT_017` Suweg;
+- penyakit suweg masuk tabel `amorphophallus_spp_diseases`, tidak digabung ke
+  `diseases` DOC002;
+- 7 penyakit, 7 patogen, 7 relasi, 8 gejala, 4 pengendalian;
+- salah eja sumber dipertahankan (`Pythium helicoides` vs `Phytium helicoides`,
+  `Sclerotium rolfsii` vs `Slerotium rolfsii`) dan hanya dijelaskan di `note`.
+
+**DOC004 — TPTPkhususjamilah.pdf.** PDF yang tersedia hanya cuplikan Bab 7
+(Pengelolaan Nutrisi Tanaman), 65 halaman PDF; badan bab 12–55, referensi dan
+sampul belakang di luar rentang. Empat tabel produksi:
+
+| Tabel | Baris | Isi |
+|---|---|---|
+| `nutrients` | 4 | peran dan bentuk serapan unsur hara |
+| `fertilizers` | 8 | jenis pupuk dan dosis yang tercetak |
+| `practices` | 17 | strategi dan langkah pemupukan berimbang |
+| `compost` | 10 | kompos, bioaktivator, POC, dan manfaatnya |
+
+Dosis hanya diisi bila angka benar-benar tercetak (urea, ammonium sulfat,
+superfosfat, KCl); pupuk tanpa angka dosis dibiarkan kosong. PDF DOC004 memuat
+derau parser/OCR, sehingga hanya kalimat bersih dan tidak ambigu yang dikutip.
+
+Perintah dan gate:
+
+```powershell
+python 03_knowledge_tables/build_document_tables.py --doc DOC003 --doc DOC004
+```
+
+Builder keluar `2` bila ada kutipan yang tidak ada di blok/chunk, nilai/unit
+tidak ada di kutipan, ID duplikat/tidak sesuai pola, foreign key menggantung,
+atau offset karakter gagal. Laporan per dokumen ditulis ke
+`reports/DOC003.tables.validation.json` dan
+`reports/DOC004.tables.validation.json`.
 
 ## Batas tahap ini
 

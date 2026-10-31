@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.1.0",
+  "document_id": "DOC004",
+  "run_id": "DOC004_cost_effective_full-e120ee97_cd3fd5fc",
+  "generated_at": "2026-10-30T13:15:56Z",
+  "tier": "cost_effective",
+  "version": "2026-09-28",
+  "is_full_run": true,
+  "gate_mode": "internal",
+  "baseline": null,
+  "pages_compared": 65,
+  "pages_missing_vs_baseline": [],
+  "text_similarity": {
+    "method": "not_computed_without_baseline",
+    "cer_mean": null,
+    "cer_noise_adjusted_mean": null,
+    "cer_content_loss_mean": null,
+    "cer_content_recall_mean": null
+  },
+  "headings": {
+    "baseline_chapter_headings": [],
+    "llamaparse_chapter_headings": [
+      "PENGELOLAAN NUTRISI TANAMAN"
+    ],
+    "llamaparse_chapter_count": 1,
+    "expected_chapter_count": 1
+  },
+  "tables": {
+    "baseline_pages": [],
+    "llamaparse_pages": [
+      17,
+      18,
+      21,
+      23,
+      24,
+      31,
+      34,
+      42,
+      65
+    ]
+  },
+  "printed_page_numbers": {
+    "detected": 53,
+    "coverage": 0.8154,
+    "dominant_offset": -60,
+    "expected_offset": -60
+  },
+  "multi_column_pages": [],
+  "gates": {
+    "pages_complete": {
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    "no_failed_pages": {
+      "passed": true,
+      "detail": "failed=[]"
+    },
+    "page_text_floor": {
+      "passed": true,
+      "detail": "short=[] empty=[]"
+    },
+    "printed_page_numbers": {
+      "passed": true,
+      "detail": "detected=53 coverage=81.54% dominant_offset=-60 expected=-60 mismatch=[]"
+    },
+    "section_count": {
+      "passed": true,
+      "detail": "sections=1 expected=1"
+    },
+    "tables_expected": {
+      "passed": true,
+      "detail": "table_pages=[17, 18, 21, 23, 24, 31, 34, 42, 65] expected=[] missing=[]"
+    },
+    "context_coverage": {
+      "passed": true,
+      "detail": "blocks_with_chapter=211/211 ratio=100.00%"
+    }
+  },
+  "gate_passed": true,
+  "per_page": []
+}

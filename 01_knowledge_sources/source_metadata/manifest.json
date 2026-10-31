@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-10-28T03:07:24Z",
+  "generated_at": "2026-10-30T13:15:56Z",
   "pipeline": {
     "name": "kbr-pdf-extraction",
     "version": "1.0.0",
@@ -19,11 +19,38 @@
       "version": "2026-09-28",
       "job_id": "pjb-q033fibyemtchtcih7z0ki3zey4b",
       "credits_used": 822.0
+    },
+    "llamaparse_runs": {
+      "DOC002": {
+        "run_id": "DOC002_cost_effective_full-fb503f92_fbfce257",
+        "tier": "cost_effective",
+        "version": "2026-09-28",
+        "job_id": "pjb-q033fibyemtchtcih7z0ki3zey4b",
+        "credits_used": 822.0
+      },
+      "DOC003": {
+        "run_id": "DOC003_cost_effective_full-71122ed5_c9e9cb8e",
+        "tier": "cost_effective",
+        "version": "2026-09-28",
+        "job_id": "pjb-hqnw71ux5gin38zl2mvu4l4ctp3j",
+        "credits_used": 168.0
+      },
+      "DOC004": {
+        "run_id": "DOC004_cost_effective_full-e120ee97_cd3fd5fc",
+        "tier": "cost_effective",
+        "version": "2026-09-28",
+        "job_id": "pjb-i550axszl7bkwdbdeai2op8ezfus",
+        "credits_used": 195.0
+      }
     }
   },
   "notes": [
     "DOC002 dipromosikan dari LlamaParse setelah gate perbandingan lolos",
-    "backup_baseline:02_extraction/extraction_notes/_backups/pre_llamaparse_20261028T030724Z"
+    "backup_baseline:02_extraction/extraction_notes/_backups/pre_llamaparse_20261028T030724Z",
+    "DOC003 dipromosikan dari LlamaParse setelah gate verifikasi internal lolos",
+    "backup_baseline:DOC003:02_extraction/extraction_notes/_backups/pre_llamaparse_20261030T131126Z",
+    "DOC004 dipromosikan dari LlamaParse setelah gate verifikasi internal lolos",
+    "backup_baseline:DOC004:02_extraction/extraction_notes/_backups/pre_llamaparse_20261030T131556Z"
   ],
   "documents": [
     {
@@ -111,6 +138,148 @@
         "blocks": "02_extraction/extracted_text/DOC002.blocks.jsonl",
         "chunks": "02_extraction/extracted_text/DOC002.chunks.jsonl",
         "notes": "02_extraction/extraction_notes/DOC002.extraction_notes.json"
+      }
+    },
+    {
+      "document_id": "DOC003",
+      "document_name": "porang.pdf",
+      "source_path": "01_knowledge_sources/pdf_original/porang.pdf",
+      "source_sha256": "71122ed5fdd8ba41ca091d7752ffe77e5c3355686112e968008df7933c8a4239",
+      "source_sha256_after": "71122ed5fdd8ba41ca091d7752ffe77e5c3355686112e968008df7933c8a4239",
+      "file_size_bytes": 342504,
+      "title": "Tanaman Porang: Pengenalan, Budidaya, dan Pemanfaatannya",
+      "authors": [
+        "Nasir Saleh",
+        "St. A. Rahayuningsih",
+        "Budhi Santoso Radjit",
+        "Erliana Ginting",
+        "Didik Harnowo",
+        "I Made Jana Mejaya"
+      ],
+      "publication_year": 2015,
+      "publisher": "Pusat Penelitian dan Pengembangan Tanaman Pangan",
+      "language": "id",
+      "total_pdf_pages": 56,
+      "document_type": "pdf",
+      "extraction_status": "completed_with_warnings",
+      "notes": [
+        "extracted_with_llamaparse",
+        "parser_tier:cost_effective",
+        "parser_version:2026-09-28",
+        "parser_run_id:DOC003_cost_effective_full-71122ed5_c9e9cb8e",
+        "quality_status:warning",
+        "blocks_context_missing:1",
+        "tables_with_concerns:7"
+      ],
+      "pdf_metadata": {},
+      "metadata_source": {
+        "title": "manual_metadata.json",
+        "authors": "manual_metadata.json",
+        "publication_year": "manual_metadata.json",
+        "publisher": "manual_metadata.json",
+        "language": "manual_metadata.json"
+      },
+      "statistics": {
+        "pages_with_text": 54,
+        "pages_without_text": 2,
+        "pages_with_errors": 0,
+        "pages_flagged": 13,
+        "blocks_total": 279,
+        "blocks_by_content_type": {
+          "chapter_heading": 13,
+          "figure_caption": 8,
+          "heading_unclassified": 1,
+          "list_item": 2,
+          "paragraph": 231,
+          "section_heading": 14,
+          "table": 10
+        },
+        "tables_detected": 10,
+        "tables_needs_review": 7,
+        "headings_detected": 28,
+        "printed_page_numbers_detected": 49,
+        "characters_total": 96338
+      },
+      "output_files": {
+        "pages": "02_extraction/extracted_text/DOC003.pages.jsonl",
+        "blocks": "02_extraction/extracted_text/DOC003.blocks.jsonl",
+        "chunks": "02_extraction/extracted_text/DOC003.chunks.jsonl",
+        "markdown": "02_extraction/extracted_text/DOC003.md",
+        "notes": "02_extraction/extraction_notes/DOC003.extraction_notes.json"
+      }
+    },
+    {
+      "document_id": "DOC004",
+      "document_name": "TPTPkhususjamilah.pdf",
+      "source_path": "01_knowledge_sources/pdf_original/TPTPkhususjamilah.pdf",
+      "source_sha256": "e120ee97185633d8a11372b5d5d76db2f6d084f3942a23926f2ead8628688873",
+      "source_sha256_after": "e120ee97185633d8a11372b5d5d76db2f6d084f3942a23926f2ead8628688873",
+      "file_size_bytes": 4081829,
+      "title": "Teknologi Produksi Tanaman Pangan",
+      "authors": [
+        "Andi Adriani Wahditiya",
+        "Ari Kurniawan",
+        "Jeanne Ivonne Nendissa",
+        "Aulia Meyuliana",
+        "Muharama Yora",
+        "Jamilah",
+        "Dewi Jayagma Ilham",
+        "Iid Mufaidah",
+        "Ali Zainal Abidin Alaydrus",
+        "Filya Hidayati",
+        "Alex Copernikus Andaria"
+      ],
+      "publication_year": 2024,
+      "publisher": "Yayasan Tri Edukasi Ilmiah",
+      "language": "id",
+      "total_pdf_pages": 65,
+      "document_type": "pdf",
+      "extraction_status": "completed_with_warnings",
+      "notes": [
+        "extracted_with_llamaparse",
+        "parser_tier:cost_effective",
+        "parser_version:2026-09-28",
+        "parser_run_id:DOC004_cost_effective_full-e120ee97_cd3fd5fc",
+        "quality_status:warning",
+        "blocks_context_missing:22",
+        "tables_with_concerns:13"
+      ],
+      "pdf_metadata": {},
+      "metadata_source": {
+        "title": "manual_metadata.json",
+        "authors": "manual_metadata.json",
+        "publication_year": "manual_metadata.json",
+        "publisher": "manual_metadata.json",
+        "language": "manual_metadata.json"
+      },
+      "statistics": {
+        "pages_with_text": 65,
+        "pages_without_text": 0,
+        "pages_with_errors": 0,
+        "pages_flagged": 10,
+        "blocks_total": 364,
+        "blocks_by_content_type": {
+          "chapter_heading": 4,
+          "figure_caption": 11,
+          "heading_unclassified": 13,
+          "list_item": 8,
+          "paragraph": 293,
+          "section_heading": 20,
+          "subsection_heading": 2,
+          "table": 13
+        },
+        "tables_detected": 13,
+        "tables_needs_review": 13,
+        "headings_detected": 39,
+        "printed_page_numbers_detected": 53,
+        "characters_total": 103288
+      },
+      "output_files": {
+        "pages": "02_extraction/extracted_text/DOC004.pages.jsonl",
+        "blocks": "02_extraction/extracted_text/DOC004.blocks.jsonl",
+        "chunks": "02_extraction/extracted_text/DOC004.chunks.jsonl",
+        "markdown": "02_extraction/extracted_text/DOC004.md",
+        "notes": "02_extraction/extraction_notes/DOC004.extraction_notes.json"
       }
     }
   ]

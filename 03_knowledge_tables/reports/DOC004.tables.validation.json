@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC004",
+  "generated_at": "2026-10-30T13:29:36Z",
+  "sources": {
+    "blocks": "02_extraction/extracted_text/DOC004.blocks.jsonl",
+    "chunks": "02_extraction/extracted_text/DOC004.chunks.jsonl",
+    "config": "03_knowledge_tables/config/DOC004_tables.json"
+  },
+  "tables": {
+    "nutrients": {
+      "file": "03_knowledge_tables/curated/DOC004/nutrients.csv",
+      "rows": 4,
+      "columns": [
+        "record_id",
+        "document_id",
+        "category",
+        "subject",
+        "attribute",
+        "value",
+        "unit",
+        "verbatim_text",
+        "page",
+        "chunk_id",
+        "source_block_id",
+        "review_status",
+        "notes"
+      ]
+    },
+    "fertilizers": {
+      "file": "03_knowledge_tables/curated/DOC004/fertilizers.csv",
+      "rows": 8,
+      "columns": [
+        "record_id",
+        "document_id",
+        "category",
+        "subject",
+        "attribute",
+        "value",
+        "unit",
+        "verbatim_text",
+        "page",
+        "chunk_id",
+        "source_block_id",
+        "review_status",
+        "notes"
+      ]
+    },
+    "practices": {
+      "file": "03_knowledge_tables/curated/DOC004/practices.csv",
+      "rows": 17,
+      "columns": [
+        "record_id",
+        "document_id",
+        "category",
+        "subject",
+        "attribute",
+        "value",
+        "unit",
+        "verbatim_text",
+        "page",
+        "chunk_id",
+        "source_block_id",
+        "review_status",
+        "notes"
+      ]
+    },
+    "compost": {
+      "file": "03_knowledge_tables/curated/DOC004/compost.csv",
+      "rows": 10,
+      "columns": [
+        "record_id",
+        "document_id",
+        "category",
+        "subject",
+        "attribute",
+        "value",
+        "unit",
+        "verbatim_text",
+        "page",
+        "chunk_id",
+        "source_block_id",
+        "review_status",
+        "notes"
+      ]
+    }
+  },
+  "checks": {
+    "verbatim_in_block": "pass",
+    "verbatim_in_chunk": "pass",
+    "ids_unique": "pass",
+    "foreign_keys": "pass",
+    "offsets": "pass"
+  },
+  "errors": [],
+  "warnings": [],
+  "status": "pass"
+}

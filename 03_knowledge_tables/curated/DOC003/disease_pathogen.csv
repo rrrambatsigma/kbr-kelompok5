@@ -1,0 +1,8 @@
+disease_id,pathogen_id,document_id,evidence_chunk_id,relation_note,review_status
+DIS_111,PAT_106,DOC003,DOC003_C029_04,Tabel 2: penyebab Rhizoctonia solani.,verified
+DIS_112,PAT_107,DOC003,DOC003_C029_04,Tabel 2: penyebab Phytophthora colocasiae.,verified
+DIS_113,PAT_108,DOC003,DOC003_C029_04,Tabel 2: penyebab Pythium helicoides.,verified
+DIS_114,PAT_109,DOC003,DOC003_C029_04,Tabel 2: penyebab Erwinia carotovora pv. carotovora.,verified
+DIS_115,PAT_110,DOC003,DOC003_C029_04,Tabel 2: penyebab Dasheen mosaic virus.,verified
+DIS_116,PAT_111,DOC003,DOC003_C029_04,Tabel 2: penyebab Konjac mosaic virus.,verified
+DIS_117,PAT_112,DOC003,DOC003_C031_01,Prosa: busuk leher oleh jamur Sclerotium rolfsii.,verified

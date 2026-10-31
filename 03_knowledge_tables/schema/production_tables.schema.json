@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC004",
+  "source_document": "TPTPkhususjamilah.pdf",
+  "description": "Skema tabel teknologi produksi DOC004. PDF yang tersedia hanya cuplikan Bab 7 (Pengelolaan Nutrisi Tanaman), sehingga tabel hanya memuat pengetahuan dari halaman cetak 72-123.",
+  "common_columns": {
+    "record_id": {"type": "string"},
+    "document_id": {"type": "string", "const": "DOC004"},
+    "category": {"type": "string", "note": "Kelompok seperti makronutrien, pupuk nitrogen, atau praktik."},
+    "subject": {"type": "string", "note": "Nama unsur, pupuk, atau praktik seperti tercetak."},
+    "attribute": {"type": "string", "note": "Jenis informasi, mis. peran, dosis, manfaat."},
+    "value": {"type": "string", "nullable": true, "note": "Nilai verbatim bila sumber mencetaknya (mis. 100-150 kg ha -1)."},
+    "unit": {"type": "string", "nullable": true},
+    "verbatim_text": {"type": "string", "note": "Satu atau lebih kalimat utuh dari sumber."},
+    "page": {"type": "integer"},
+    "chunk_id": {"type": "string"},
+    "source_block_id": {"type": "string"},
+    "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified"]},
+    "notes": {"type": "string", "nullable": true}
+  },
+  "tables": {
+    "nutrients": {
+      "file": "curated/DOC004/nutrients.csv",
+      "primary_key": "record_id",
+      "columns": ["record_id", "document_id", "category", "subject", "attribute", "value", "unit", "verbatim_text", "page", "chunk_id", "source_block_id", "review_status", "notes"],
+      "description": "Peran dan ketersediaan unsur hara."
+    },
+    "fertilizers": {
+      "file": "curated/DOC004/fertilizers.csv",
+      "primary_key": "record_id",
+      "columns": ["record_id", "document_id", "category", "subject", "attribute", "value", "unit", "verbatim_text", "page", "chunk_id", "source_block_id", "review_status", "notes"],
+      "description": "Jenis pupuk dan dosis yang tercetak."
+    },
+    "practices": {
+      "file": "curated/DOC004/practices.csv",
+      "primary_key": "record_id",
+      "columns": ["record_id", "document_id", "category", "subject", "attribute", "value", "unit", "verbatim_text", "page", "chunk_id", "source_block_id", "review_status", "notes"],
+      "description": "Strategi pengelolaan nutrisi tanaman."
+    },
+    "compost": {
+      "file": "curated/DOC004/compost.csv",
+      "primary_key": "record_id",
+      "columns": ["record_id", "document_id", "category", "subject", "attribute", "value", "unit", "verbatim_text", "page", "chunk_id", "source_block_id", "review_status", "notes"],
+      "description": "Kompos dan pupuk organik cair."
+    }
+  },
+  "invariants": [
+    "Semua verbatim_text harus substring dari plain_text chunk yang dirujuk setelah normalisasi spasi.",
+    "value dan unit harus substring dari verbatim_text.",
+    "Tidak ada dosis yang diisi bila sumber tidak mencetaknya.",
+    "Halaman yang dirujuk adalah halaman PDF, bukan halaman cetak."
+  ]
+}

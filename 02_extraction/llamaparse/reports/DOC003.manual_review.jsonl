@@ -1,0 +1,7 @@
+{"scope":"block","page_number":1,"block_id":"DOC003_P001_B004","reason":"table_parse_concerns","detail":"| i | | - |","source":"quality"}
+{"scope":"block","page_number":3,"block_id":"DOC003_P003_B005","reason":"table_parse_concerns","detail":"| iii | | --- |","source":"quality"}
+{"scope":"block","page_number":7,"block_id":"DOC003_P007_B006","reason":"table_parse_concerns","detail":"| vii | | --- |","source":"quality"}
+{"scope":"block","page_number":14,"block_id":"DOC003_P014_B003","reason":"table_parse_concerns","detail":"| Label | Description | | ----- | ----------------------------------------------------------------------------- | | a | Tanaman porang dengan tajuk daun, ujung ","source":"quality"}
+{"scope":"block","page_number":29,"block_id":"DOC003_P029_B006","reason":"table_parse_concerns","detail":"| Nama penyakit | Penyebab | Referensi | | ------------------------ | ----------------------------------------- | -------------------------- | | Busuk kaki (foo","source":"quality"}
+{"scope":"block","page_number":33,"block_id":"DOC003_P033_B003","reason":"table_parse_concerns","detail":"| Nutrisi | A. campanulatus | A. rivieri | A. oncophyllus | | --------------- | --------------- | ---------- | -------------- | | Kadar air (%) | 75-79 | 78,8 |","source":"quality"}
+{"scope":"block","page_number":41,"block_id":"DOC003_P041_B007","reason":"table_parse_concerns","detail":"| Kriteria | Mutu I | Mutu II | | -------------------------- | ------------ | ------------ | | Kadar air (%) | maksimum 12% | maksimum 12% | | Kadar mannan keri","source":"quality"}

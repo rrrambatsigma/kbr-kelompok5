@@ -1,7 +1,11 @@
-"""Konfigurasi pipeline LlamaParse untuk DOC002.
+"""Konfigurasi pipeline LlamaParse.
 
 Modul ini hanya berisi path, konstanta, dan builder opsi API. Tidak ada
 pemanggilan jaringan dan tidak ada pembacaan nilai API key.
+
+Dokumen aktif dipilih lewat :func:`activate`; seluruh path dan konstanta
+diturunkan dari ``profiles.DocumentProfile`` sehingga DOC002, DOC003, dan
+DOC004 memakai kode yang sama tanpa nilai hard-code per dokumen.
 """
 
 from __future__ import annotations
@@ -12,6 +16,8 @@ from pathlib import Path
 from typing import Any, Optional
 
 from pdf_pipeline import config as base_config
+
+from . import profiles
 
 
 PIPELINE_NAME = "kbr-llamaparse-extraction"
@@ -27,13 +33,13 @@ REPORTS_DIR = LLAMAPARSE_DIR / "reports"
 BASELINE_DIR = LLAMAPARSE_DIR / "baseline"
 BASELINE_MANIFEST = BASELINE_DIR / "baseline_manifest.json"
 
-DOCUMENT_ID = "DOC002"
-PDF_PATH = (
-    PROJECT_ROOT
-    / "01_knowledge_sources"
-    / "pdf_original"
-    / "PenyakitTanamanPangan.pdf"
-)
+EXTRACTED_TEXT_DIR = EXTRACTION_DIR / "extracted_text"
+
+PROFILE = profiles.get(profiles.DEFAULT_DOCUMENT_ID)
+DOCUMENT_ID = PROFILE.document_id
+PDF_PATH = PROJECT_ROOT / "01_knowledge_sources" / "pdf_original" / PROFILE.filename
+PILOT_PAGES = PROFILE.pilot_pages
+MAX_FULL_PAGES = PROFILE.expected_pages
 
 ENV_PATH = PROJECT_ROOT / ".env"
 API_KEY_ENV = "LLAMA_CLOUD_API_KEY"
@@ -45,32 +51,26 @@ DEFAULT_VERSION = "latest"
 
 EXPAND = ("markdown", "items", "metadata", "images_content_metadata", "usage")
 
-# Halaman pilot: front matter, awal bab, body, tabel, bab akhir, referensi.
-PILOT_PAGES = (
-    1,
-    9,
-    23,
-    25,
-    27,
-    40,
-    41,
-    91,
-    92,
-    94,
-    95,
-    134,
-    148,
-    158,
-    168,
-    178,
-    196,
-    212,
-    224,
-    274,
-)
 
-# Batas aman agar satu run tidak memakan kuota tanpa kendali.
-MAX_FULL_PAGES = 274
+def activate(document_id: str) -> profiles.DocumentProfile:
+    """Mengaktifkan profil dokumen untuk pemanggilan berikutnya."""
+
+    global PROFILE, DOCUMENT_ID, PDF_PATH, PILOT_PAGES, MAX_FULL_PAGES
+    profile = profiles.get(document_id)
+    PROFILE = profile
+    DOCUMENT_ID = profile.document_id
+    PDF_PATH = PROJECT_ROOT / "01_knowledge_sources" / "pdf_original" / profile.filename
+    PILOT_PAGES = profile.pilot_pages
+    MAX_FULL_PAGES = profile.expected_pages
+    return profile
+
+
+def profile() -> profiles.DocumentProfile:
+    return PROFILE
+
+
+def document_ids() -> tuple[str, ...]:
+    return profiles.document_ids()
 JOB_TIMEOUT_BASE_SECONDS = 900
 JOB_TIMEOUT_PER_PAGE_SECONDS = 5
 ALLOWED_PAGE_FAILURE_RATIO = 0.02
@@ -134,6 +134,16 @@ def report_paths() -> dict[str, Path]:
     }
 
 
+def canonical_paths() -> dict[str, Path]:
+    return {
+        "pages": EXTRACTED_TEXT_DIR / f"{DOCUMENT_ID}.pages.jsonl",
+        "blocks": EXTRACTED_TEXT_DIR / f"{DOCUMENT_ID}.blocks.jsonl",
+        "chunks": EXTRACTED_TEXT_DIR / f"{DOCUMENT_ID}.chunks.jsonl",
+        "markdown": EXTRACTED_TEXT_DIR / f"{DOCUMENT_ID}.md",
+        "notes": EXTRACTION_DIR / "extraction_notes" / f"{DOCUMENT_ID}.extraction_notes.json",
+    }
+
+
 def sha256_file(path: Path, chunk_size: int = 1024 * 1024) -> str:
     digest = hashlib.sha256()
     with open(path, "rb") as handle:
@@ -183,7 +193,7 @@ def build_parse_options(
     tier: str,
     version: str,
     page_ranges: Optional[dict[str, str]] = None,
-    page_count: int = MAX_FULL_PAGES,
+    page_count: Optional[int] = None,
     with_images: bool = True,
 ) -> dict[str, Any]:
     """Menyusun seluruh argumen ``parsing.parse`` yang reproducible."""
@@ -194,7 +204,9 @@ def build_parse_options(
         "expand": list(EXPAND),
         "output_options": build_output_options(with_images=with_images),
         "processing_options": build_processing_options(),
-        "processing_control": build_processing_control(page_count),
+        "processing_control": build_processing_control(
+            MAX_FULL_PAGES if page_count is None else page_count
+        ),
         "disable_cache": False,
     }
     if page_ranges:

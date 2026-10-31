@@ -1,0 +1,3 @@
+plant_id,document_id,plant_name_id,plant_name_en,scientific_name,scientific_name_page,chapter_number,chapter_title,page_start,page_end,evidence_chunk_id,notes
+PLANT_016,DOC003,Porang,,Amorphophallus oncophyllus Prain.,9,1,PENDAHULUAN,9,10,DOC003_C009_01,"Nama ilmiah lengkap tercetak di halaman 9. Penyakit pada bab 6 merujuk suweg, sehingga tidak diatribusikan ke porang."
+PLANT_017,DOC003,Suweg,,Amorphophallus paeoniifolius,33,6,HAMA PENYAKIT DAN PENGENDALIANNYA,30,33,DOC003_C033_01,Sumber juga memakai nama singkat A. campanulatus/A. paeoniifolius pada halaman 30.

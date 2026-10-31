@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "DOC003",
+  "generated_at": "2026-10-30T13:11:26Z",
+  "pages": 56,
+  "blocks": 279,
+  "chunks": 93,
+  "text_sources": {
+    "llamaparse": 56
+  },
+  "errors": [],
+  "warnings": [],
+  "status": "pass",
+  "normalized_pages": "E:\\kbr-kelompok5\\02_extraction\\llamaparse\\normalized\\DOC003.pages.jsonl"
+}

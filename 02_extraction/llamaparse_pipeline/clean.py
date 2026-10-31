@@ -207,7 +207,18 @@ def is_running_edge_line(text: str, bbox: Any, page_height: float) -> bool:
     if re.match(r"^(BAB|BAGIAN|CHAPTER)\b", value, re.IGNORECASE) and re.search(
         r"\d{1,4}\s*$", value
     ):
-        return True
+        # Baris "BAB 7" tanpa judul adalah label bab asli, bukan running
+        # header. Running header selalu memuat judul di antara label dan
+        # nomor halaman, mis. "BAB 5 PENYAKIT PADI 123".
+        label = re.match(
+            r"^(BAB|BAGIAN|CHAPTER)\s+(?:[IVXLCDM]+|\d+)\b\s*[:.\-–—]?\s*(.*)$",
+            value,
+            re.IGNORECASE,
+        )
+        if label and label.group(2).strip():
+            return True
+        if not label:
+            return True
     if re.match(r"^\d{1,4}\s+\S", value):
         return True
     if re.match(r"^[A-Za-zÀ-ÿ].{10,}\s\d{1,4}$", value):
@@ -301,6 +312,31 @@ def derive_printed_page_number(
                 number = int(match.group(1))
                 if 1 <= number <= 9999:
                     return number, source, text
+    return None, None, None
+
+
+EDGE_NUMBER_LINE_RE = re.compile(r"^\|?\s*(\d{1,4})\s*\|?$")
+
+
+def derive_page_number_from_text(
+    markdown_text: str,
+) -> tuple[Optional[int], Optional[str], Optional[str]]:
+    """Nomor halaman dari baris tepi teks halaman (mis. ``| 21 |``).
+
+    LlamaParse kadang tidak mengisi metadata nomor halaman meski angkanya
+    tercetak di tepi halaman. Fungsi ini hanya mengembalikan kandidat; pemanggil
+    wajib mencocokkannya dengan offset dokumen sebelum menerimanya.
+    """
+
+    lines = [collapse_whitespace(line) for line in (markdown_text or "").splitlines()]
+    candidates = [line for line in lines[:3] + lines[-3:] if line]
+    for line in candidates:
+        match = EDGE_NUMBER_LINE_RE.match(line)
+        if not match:
+            continue
+        number = int(match.group(1))
+        if 1 <= number <= 9999:
+            return number, "text_sequence", line
     return None, None, None
 
 

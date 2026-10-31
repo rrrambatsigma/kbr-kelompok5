@@ -154,10 +154,46 @@ def disease_from_section(section: Optional[str]) -> tuple[Optional[str], Optiona
     return title, "section_heading"
 
 
+def is_known_chapter(text: str, known_chapters: set[str]) -> bool:
+    """True bila teks sama persis dengan judul bab yang tercetak di daftar isi."""
+
+    return bool(known_chapters) and normalize_heading(text).casefold() in known_chapters
+
+
+def is_bare_chapter_label(text: str) -> bool:
+    """True untuk baris nomor bab tanpa judul, mis. ``BAB 7``.
+
+    Baris seperti ini hanya membawa nomor; judulnya ada di baris berikutnya,
+    jadi tidak disimpan sebagai heading tersendiri.
+    """
+
+    match = CHAPTER_LABEL_RE.match(normalize_heading(text))
+    return bool(match) and not match.group(3).strip()
+
+
+def is_book_title(text: str, titles: tuple[str, ...]) -> bool:
+    """True bila teks sama dengan judul buku/running header yang diabaikan."""
+
+    if not titles:
+        return False
+    value = normalize_heading(text).casefold()
+    return any(value == normalize_heading(title).casefold() for title in titles)
+
+
 class DocumentContext:
     """Konteks yang dibawa antar halaman."""
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        known_chapters: tuple[str, ...] = (),
+        lettered_subsections: bool = False,
+    ) -> None:
+        self.known_chapters = {
+            normalize_heading(title).casefold()
+            for title in known_chapters
+            if normalize_heading(title)
+        }
+        self.lettered_subsections = lettered_subsections
         self.chapter: Optional[str] = None
         self.section: Optional[str] = None
         self.section_source: Optional[str] = None
@@ -206,9 +242,23 @@ def update_for_heading(
 
     heading = normalize_heading(text)
     level = resolve_heading_level(heading, level)
+    known_chapter = heading.casefold() in context.known_chapters
+    if known_chapter:
+        # Judul bab yang tercetak HURUF BESAR tanpa label "Bab N"
+        # (DOC003/DOC004) tetap dianggap level 1 karena judulnya diambil dari
+        # daftar isi yang tercetak, bukan ditebak.
+        level = 1
+    elif context.lettered_subsections and re.match(r"^[a-z]\.\s+\S", heading):
+        # Enumerasi "a.", "b.", ... adalah subbab, bukan bab.
+        level = 2
 
     if level <= 1:
-        if is_chapter_label(heading):
+        if known_chapter:
+            # Judul sudah pasti dari daftar isi; jangan digabung dengan label
+            # bab yang mungkin masih tertunda.
+            context.chapter = heading
+            context.pending_chapter_label = None
+        elif is_chapter_label(heading):
             _, _, title = chapter_label_parts(heading)
             if title:
                 context.chapter = heading

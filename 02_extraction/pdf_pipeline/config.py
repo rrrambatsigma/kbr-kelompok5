@@ -27,9 +27,11 @@ class SourceDocument:
     filename: str
 
 
-# Hanya DOC002 yang menjadi lingkup proyek; PDF hortikultura tidak dipakai.
+# Registry dokumen sumber yang dipakai proyek.
 SOURCE_DOCUMENTS = (
     SourceDocument("DOC002", "PenyakitTanamanPangan.pdf"),
+    SourceDocument("DOC003", "porang.pdf"),
+    SourceDocument("DOC004", "TPTPkhususjamilah.pdf"),
 )
 
 
