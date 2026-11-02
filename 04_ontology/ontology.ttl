@@ -1,0 +1,2133 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ptp: <http://kbr.kelompok5.org/penyakit-tanaman-pangan#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://kbr.kelompok5.org/penyakit-tanaman-pangan> a owl:Ontology ;
+    rdfs:label "Ontologi Penyakit Tanaman Pangan Indonesia"@id ;
+    rdfs:comment "Knowledge base penyakit tanaman pangan Indonesia (prototipe: kacang tanah, ubi jalar, ubi kayu) untuk penalaran OWL di Protégé."@id .
+
+ptp:ArtikelIlmiah a owl:Class ;
+    rdfs:label "Artikel Ilmiah"@id ;
+    rdfs:subClassOf ptp:Referensi .
+
+ptp:CurahHujan a owl:Class ;
+    rdfs:label "Curah Hujan"@id ;
+    rdfs:subClassOf ptp:FaktorLingkungan .
+
+ptp:DrainaseBuruk a owl:Class ;
+    rdfs:label "Drainase Buruk"@id ;
+    rdfs:subClassOf ptp:FaktorBudidaya .
+
+ptp:JurnalIlmiah a owl:Class ;
+    rdfs:label "Jurnal Ilmiah"@id ;
+    rdfs:subClassOf ptp:Referensi .
+
+ptp:KelembapanTinggi a owl:Class ;
+    rdfs:label "Kelembapan Tinggi"@id ;
+    rdfs:subClassOf ptp:FaktorLingkungan .
+
+ptp:KondisiDrainase a owl:Class ;
+    rdfs:label "Kondisi Drainase"@id ;
+    rdfs:subClassOf ptp:FaktorLahan .
+
+ptp:KondisiTanah a owl:Class ;
+    rdfs:label "Kondisi Tanah"@id ;
+    rdfs:subClassOf ptp:FaktorLahan .
+
+ptp:PengendalianBiologis a owl:Class ;
+    rdfs:label "Pengendalian Biologis"@id ;
+    rdfs:subClassOf ptp:Pengendalian .
+
+ptp:PengendalianKimiawi a owl:Class ;
+    rdfs:label "Pengendalian Kimiawi"@id ;
+    rdfs:subClassOf ptp:Pengendalian .
+
+ptp:PengendalianKulturTeknis a owl:Class ;
+    rdfs:label "Pengendalian Kultur Teknis"@id ;
+    rdfs:subClassOf ptp:Pengendalian .
+
+ptp:PengendalianMekanis a owl:Class ;
+    rdfs:label "Pengendalian Mekanis"@id ;
+    rdfs:subClassOf ptp:Pengendalian .
+
+ptp:PengendalianTerpadu a owl:Class ;
+    rdfs:label "Pengendalian Terpadu"@id ;
+    rdfs:subClassOf ptp:Pengendalian .
+
+ptp:PenggunaanBenihTerinfeksi a owl:Class ;
+    rdfs:label "Penggunaan Benih Terinfeksi"@id ;
+    rdfs:subClassOf ptp:FaktorBudidaya .
+
+ptp:PenyakitJamur a owl:Class ;
+    rdfs:label "Penyakit Jamur"@id ;
+    rdfs:subClassOf ptp:Penyakit ;
+    owl:disjointWith ptp:PenyakitBakteri,
+        ptp:PenyakitLainnya,
+        ptp:PenyakitVirus ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( ptp:Penyakit [ a owl:Restriction ;
+                        owl:onProperty ptp:disebabkanOleh ;
+                        owl:someValuesFrom ptp:Jamur ] ) ] .
+
+ptp:PublikasiInstansi a owl:Class ;
+    rdfs:label "Publikasi Instansi"@id ;
+    rdfs:subClassOf ptp:Referensi .
+
+ptp:SanitasiLahanBuruk a owl:Class ;
+    rdfs:label "Sanitasi Lahan Buruk"@id ;
+    rdfs:subClassOf ptp:FaktorBudidaya .
+
+ptp:Suhu a owl:Class ;
+    rdfs:label "Suhu"@id ;
+    rdfs:subClassOf ptp:FaktorLingkungan .
+
+ptp:deskripsiGejala a owl:DatatypeProperty ;
+    rdfs:label "deskripsi gejala"@id ;
+    rdfs:comment "Penjelasan gejala menurut sumber."@id ;
+    rdfs:domain ptp:Gejala .
+
+ptp:deskripsiPengendalian a owl:DatatypeProperty ;
+    rdfs:label "deskripsi pengendalian"@id ;
+    rdfs:comment "Penjelasan metode pengendalian menurut sumber."@id ;
+    rdfs:domain ptp:Pengendalian .
+
+ptp:deskripsiPenyakit a owl:DatatypeProperty ;
+    rdfs:label "deskripsi penyakit"@id ;
+    rdfs:comment "Penjelasan penyakit menurut sumber."@id ;
+    rdfs:domain ptp:Penyakit .
+
+ptp:deskripsiTanaman a owl:DatatypeProperty ;
+    rdfs:label "deskripsi tanaman"@id ;
+    rdfs:comment "Deskripsi tanaman pangan."@id ;
+    rdfs:domain ptp:TanamanPangan .
+
+ptp:dipengaruhiOleh a owl:ObjectProperty ;
+    rdfs:label "dipengaruhi oleh"@id ;
+    rdfs:comment "Faktor risiko lingkungan/budidaya yang memengaruhi kemunculan penyakit."@id ;
+    rdfs:domain ptp:Penyakit ;
+    rdfs:range ptp:FaktorRisiko .
+
+ptp:judulReferensi a owl:DatatypeProperty ;
+    rdfs:label "judul referensi"@id ;
+    rdfs:comment "Judul sumber referensi."@id ;
+    rdfs:domain ptp:Referensi .
+
+ptp:menyerangBagian a owl:ObjectProperty ;
+    rdfs:label "menyerang bagian"@id ;
+    rdfs:comment "Bagian tanaman (daun, batang, akar, umbi) yang terserang penyakit."@id ;
+    rdfs:domain ptp:Penyakit ;
+    rdfs:range ptp:BagianTanaman .
+
+ptp:namaIlmiah a owl:DatatypeProperty ;
+    rdfs:label "nama ilmiah"@id ;
+    rdfs:comment "Nama ilmiah tanaman pangan."@id ;
+    rdfs:domain ptp:TanamanPangan .
+
+ptp:namaIlmiahPatogen a owl:DatatypeProperty ;
+    rdfs:label "nama ilmiah patogen"@id ;
+    rdfs:comment "Nama ilmiah patogen penyebab penyakit."@id ;
+    rdfs:domain ptp:Patogen .
+
+ptp:namaPengendalian a owl:DatatypeProperty ;
+    rdfs:label "nama pengendalian"@id ;
+    rdfs:comment "Nama metode pengendalian."@id ;
+    rdfs:domain ptp:Pengendalian .
+
+ptp:namaPenulis a owl:DatatypeProperty ;
+    rdfs:label "nama penulis"@id ;
+    rdfs:comment "Penulis referensi."@id ;
+    rdfs:domain ptp:Referensi .
+
+ptp:tahunTerbit a owl:DatatypeProperty ;
+    rdfs:label "tahun terbit"@id ;
+    rdfs:comment "Tahun publikasi referensi."@id ;
+    rdfs:domain ptp:Referensi .
+
+ptp:terdapatPada a owl:ObjectProperty ;
+    rdfs:label "terdapat pada"@id ;
+    rdfs:comment "Lokasi gejala pada bagian tanaman tertentu."@id ;
+    rdfs:domain ptp:Gejala ;
+    rdfs:range ptp:BagianTanaman .
+
+ptp:tingkatKeparahan a owl:DatatypeProperty ;
+    rdfs:label "tingkat keparahan"@id ;
+    rdfs:comment "Kategori keparahan penyakit bila tersedia di sumber."@id ;
+    rdfs:domain ptp:Penyakit .
+
+ptp:urlReferensi a owl:DatatypeProperty ;
+    rdfs:label "url referensi"@id ;
+    rdfs:comment "Tautan sumber referensi."@id ;
+    rdfs:domain ptp:Referensi .
+
+ptp:Buah a ptp:BagianTanaman,
+        owl:NamedIndividual ;
+    rdfs:label "Buah"@id .
+
+ptp:Buku a owl:Class ;
+    rdfs:label "Buku"@id ;
+    rdfs:subClassOf ptp:Referensi .
+
+ptp:CeratocystisFimbriata a ptp:Jamur,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Ceratocystis fimbriata"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitBusukHitamBlackRotUbiJalar ;
+    ptp:namaIlmiahPatogen "Ceratocystis fimbriata"@id .
+
+ptp:CercosporaArachidicola a ptp:Jamur,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Cercospora arachidicola"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:namaIlmiahPatogen "Cercospora arachidicola"@id .
+
+ptp:CercosporaHenningsii a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Cercospora henningsii"@id ;
+    ptp:menyebabkanPenyakit ptp:BercakDaunCoklatUbiKayu ;
+    ptp:namaIlmiahPatogen "Cercospora henningsii"@id .
+
+ptp:CercosporaViscosae a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Cercospora. viscosae"@id ;
+    ptp:menyebabkanPenyakit ptp:BercakDaunBaurUbiKayu ;
+    ptp:namaIlmiahPatogen "Cercospora. viscosae"@id .
+
+ptp:CercosporidiumHenningsii a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Cercosporidium henningsii"@id ;
+    ptp:menyebabkanPenyakit ptp:BercakDaunCoklatUbiKayu ;
+    ptp:namaIlmiahPatogen "Cercosporidium henningsii"@id .
+
+ptp:CollectothricumGloeosporioides a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Collectothricum gloeosporioides"@id ;
+    ptp:menyebabkanPenyakit ptp:AntraknosaUbiKayuDIS110 ;
+    ptp:namaIlmiahPatogen "Collectothricum gloeosporioides"@id .
+
+ptp:ColletotricumSpp a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Colletotricum spp"@id ;
+    ptp:menyebabkanPenyakit ptp:AntraknosaUbiKayuDIS031 ;
+    ptp:namaIlmiahPatogen "Colletotricum spp"@id .
+
+ptp:ElsinoeBatatas a ptp:Jamur,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Elsinoe batatas"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitKudisUbiJalar ;
+    ptp:namaIlmiahPatogen "Elsinoe batatas"@id .
+
+ptp:ElsinoeBrasiliensis a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Elsinoe brasiliensis"@id ;
+    ptp:menyebabkanPenyakit ptp:SuperelongasiUbiKayu ;
+    ptp:namaIlmiahPatogen "Elsinoe brasiliensis"@id .
+
+ptp:Fitoplasma a ptp:OrganismeLain,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Fitoplasma"@id ;
+    ptp:menyebabkanPenyakit ptp:SapuSetanWitchesBroomUbiKayu ;
+    ptp:namaIlmiahPatogen "Fitoplasma"@id .
+
+ptp:FusariumOxysporum a ptp:Jamur,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Fusarium oxysporum"@id ;
+    ptp:menyebabkanPenyakit ptp:LayuFusariumUbiJalar ;
+    ptp:namaIlmiahPatogen "Fusarium oxysporum"@id .
+
+ptp:Gejala2018MenjelaskanBahwaGejalaAwal_5c05bed5 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "(2018) menjelaskan bahwa gejala awal ditandai dengan daun yang terinfeksi berwarna kuning pada bagian atas, diikuti menguningnya pada bagian bawah dan lebih cepat pada daun tua."@id ;
+    ptp:deskripsiGejala "(2018) menjelaskan bahwa gejala awal ditandai dengan daun yang terinfeksi berwarna kuning pada bagian atas, diikuti menguningnya pada bagian bawah dan lebih cepat pada daun tua."@id ;
+    ptp:merupakanGejalaDari ptp:LayuFusariumUbiJalar ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:Gejala2018MenjelaskanBahwaGejalaSerangan_a1bd3ac9 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "(2018) menjelaskan bahwa gejala serangan C."@id ;
+    ptp:deskripsiGejala "(2018) menjelaskan bahwa gejala serangan C."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBusukHitamBlackRotUbiJalar .
+
+ptp:GejalaAdapunGejalaDiLapanganPada_b6b7db6c a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Adapun gejala di lapangan pada daun yaitu kadang-kadang tidak tampak atau mottling, klorosis, bercak klorotik (Tugume, Mukasa and Valkonen, 2008), dan bercak kuning (Hondo et al., 2018)."@id ;
+    ptp:deskripsiGejala "Adapun gejala di lapangan pada daun yaitu kadang-kadang tidak tampak atau mottling, klorosis, bercak klorotik (Tugume, Mukasa and Valkonen, 2008), dan bercak kuning (Hondo et al., 2018)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakKuningUbiJalar ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaAkarMembusukTerdapatTubuhBuah_0f535eca a ptp:Gejala,
+        ptp:GejalaAkar,
+        ptp:GejalaBatang,
+        owl:NamedIndividual ;
+    rdfs:label "Akar membusuk, terdapat tubuh buah (jamur) kecil berwarna keputihan dan menguning, di ujung akar dekat pangkal batang,"@id ;
+    ptp:deskripsiGejala "Akar membusuk, terdapat tubuh buah (jamur) kecil berwarna keputihan dan menguning, di ujung akar dekat pangkal batang,"@id ;
+    ptp:merupakanGejalaDari ptp:BusukAkarUbiKayu ;
+    ptp:terdapatPada ptp:Akar,
+        ptp:Batang,
+        ptp:Buah .
+
+ptp:GejalaAkarMengalamiKerusakanAkarPembentukan_99e28980 a ptp:Gejala,
+        ptp:GejalaAkar,
+        ptp:GejalaUmbi,
+        owl:NamedIndividual ;
+    rdfs:label "Akar mengalami kerusakan akar, pembentukan dan pembesaran umbi ubi kayu terhambat, serta busuk"@id ;
+    ptp:deskripsiGejala "Akar mengalami kerusakan akar, pembentukan dan pembesaran umbi ubi kayu terhambat, serta busuk"@id ;
+    ptp:merupakanGejalaDari ptp:BusukAkarDanUmbiUbiKayu ;
+    ptp:terdapatPada ptp:Akar,
+        ptp:Umbi .
+
+ptp:GejalaBercakBerukuranBesarSeringDijumpai_3379344c a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Bercak berukuran besar, sering dijumpai pada ujung daun dan daun muda,bercak tanpa batas yang jelas, bercak pada permukaan atas daun berwarna coklat dan bagian bawah berwarna keabu-abuan (spora fungi)"@id ;
+    ptp:deskripsiGejala "Bercak berukuran besar, sering dijumpai pada ujung daun dan daun muda,bercak tanpa batas yang jelas, bercak pada permukaan atas daun berwarna coklat dan bagian bawah berwarna keabu-abuan (spora fungi)"@id ;
+    ptp:merupakanGejalaDari ptp:BercakDaunBaurUbiKayu ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaBercakDaunBerwarnaCokelatBerbentuk_625f0428 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "bercak daun berwarna cokelat, berbentuk bulat kecil (Miarti et al. 2020)"@id ;
+    ptp:deskripsiGejala "bercak daun berwarna cokelat, berbentuk bulat kecil (Miarti et al. 2020)"@id ;
+    ptp:merupakanGejalaDari ptp:BercakDaunCoklatUbiKayu ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaBercakKecilBulatBerwarnaPutih_2396721b a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Bercak kecil, bulat berwarna putih"@id ;
+    ptp:deskripsiGejala "Bercak kecil, bulat berwarna putih"@id ;
+    ptp:merupakanGejalaDari ptp:BercakDaunPutihUbiKayu .
+
+ptp:GejalaBercakKlorosisPadaDaun_cdaa23ae a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Bercak klorosis pada daun"@id ;
+    ptp:deskripsiGejala "Bercak klorosis pada daun"@id ;
+    ptp:merupakanGejalaDari ptp:CassavaBrownStreakDiseaseCBSDUbiKayu ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaCPersonataMembentukKonidiaLebih_76d88dc6 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "C personata membentuk konidia lebih pendek dan gemuk bersekat 1 – 7, C arachidicola bercak relatif lebih dulu muncul, berukuran lebih besar, berwarna kekuningan, sporulasi cendawan lebih banyak di permukaan atas daun."@id ;
+    ptp:deskripsiGejala "C personata membentuk konidia lebih pendek dan gemuk bersekat 1 – 7, C arachidicola bercak relatif lebih dulu muncul, berukuran lebih besar, berwarna kekuningan, sporulasi cendawan lebih banyak di permukaan atas daun."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaDalamPerkembangannyaBintikBintikIniBerubah_d1fd297e a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Dalam perkembangannya bintik-bintik ini berubah menjadi bercak coklat agak menonjol pada permukaan bawah dan atas daun."@id ;
+    ptp:deskripsiGejala "Dalam perkembangannya bintik-bintik ini berubah menjadi bercak coklat agak menonjol pada permukaan bawah dan atas daun."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaDaunMenjadiTidakProduktifDalam_20fbcc4e a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Daun menjadi tidak produktif dalam fotosintesis jika pada tingkat serangan berat, sehingga hasil ubi rendah dan bahkan tidak menghasilkan sama sekali (Rukmana, 1997)."@id ;
+    ptp:deskripsiGejala "Daun menjadi tidak produktif dalam fotosintesis jika pada tingkat serangan berat, sehingga hasil ubi rendah dan bahkan tidak menghasilkan sama sekali (Rukmana, 1997)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitKudisUbiJalar ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaEkspresiKetahananTerhadapPenyakitLayu_0ac95d2e a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Ekspresi ketahanan terhadap penyakit layu sering kali tidak stabil, di agroekologi yang berbeda sifat tahan tersebut kadang tidak muncul."@id ;
+    ptp:deskripsiGejala "Ekspresi ketahanan terhadap penyakit layu sering kali tidak stabil, di agroekologi yang berbeda sifat tahan tersebut kadang tidak muncul."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaFimbriataABGejalaPascapanenPada_3531aef5 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "fimbriata, (a&b) gejala pascapanen pada ubi jalar (c&d) Anterior dan posterior koloni SPL17100 pada media PDA yang diinkubasi selama 7 hari pada 25 °C, e,g,h) aleurokonidiophore dengan aleurokonidia, f) perithecium dengan leher panjang (i&j) konidia silinder (Sumber: Paul et al., 2018) Hasil penelitian Zhang et al."@id ;
+    ptp:deskripsiGejala "fimbriata, (a&b) gejala pascapanen pada ubi jalar (c&d) Anterior dan posterior koloni SPL17100 pada media PDA yang diinkubasi selama 7 hari pada 25 °C, e,g,h) aleurokonidiophore dengan aleurokonidia, f) perithecium dengan leher panjang (i&j) konidia silinder (Sumber: Paul et al., 2018) Hasil penelitian Zhang et al."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBusukHitamBlackRotUbiJalar .
+
+ptp:GejalaFimbriataPadaUmbiUbiJalar_7db4ad13 a ptp:Gejala,
+        ptp:GejalaAkar,
+        ptp:GejalaUmbi,
+        owl:NamedIndividual ;
+    rdfs:label "fimbriata pada umbi ubi jalar pada tahap awal terdapat lesio atau bintik hitam, kecil, melingkar, dan sedikit cekung, kemudian bintik hitam tersebut membesar dan perithecia dengan leher panjang, pada tahap selanjutnya muncul bulu gelap pada akar penyimpanan (Gambar 6a dan b)."@id ;
+    ptp:deskripsiGejala "fimbriata pada umbi ubi jalar pada tahap awal terdapat lesio atau bintik hitam, kecil, melingkar, dan sedikit cekung, kemudian bintik hitam tersebut membesar dan perithecia dengan leher panjang, pada tahap selanjutnya muncul bulu gelap pada akar penyimpanan (Gambar 6a dan b)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBusukHitamBlackRotUbiJalar ;
+    ptp:terdapatPada ptp:Akar,
+        ptp:Umbi .
+
+ptp:GejalaFusariumOxysporumDikenalSebagaiPenyebab_e321011e a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Fusarium oxysporum dikenal sebagai penyebab penyakit busuk permukaan (surface root) atau layu fusarium F."@id ;
+    ptp:deskripsiGejala "Fusarium oxysporum dikenal sebagai penyebab penyakit busuk permukaan (surface root) atau layu fusarium F."@id ;
+    ptp:merupakanGejalaDari ptp:LayuFusariumUbiJalar .
+
+ptp:GejalaGambar46GejalaDanBentuk_f4b351e9 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Gambar 4.6: Gejala dan bentuk mikroskopis C."@id ;
+    ptp:deskripsiGejala "Gambar 4.6: Gejala dan bentuk mikroskopis C."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBusukHitamBlackRotUbiJalar .
+
+ptp:GejalaGejalaAwalBerupaKelayuanTidak_51f17216 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala awal berupa kelayuan tidak permanen, tanaman segar kembali malam atau pagi hari."@id ;
+    ptp:deskripsiGejala "Gejala awal berupa kelayuan tidak permanen, tanaman segar kembali malam atau pagi hari."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaGejalaBerbedaBedaTergantungDariSpesies_63b451cd a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala berbeda-beda tergantung dari spesies patogennya (Cercospora arachidicola dan C."@id ;
+    ptp:deskripsiGejala "Gejala berbeda-beda tergantung dari spesies patogennya (Cercospora arachidicola dan C."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:GejalaGejalaBerikutnyaDaunLayuKerdil_30de66d2 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala berikutnya daun layu, kerdil dan akhirnya tanaman mati."@id ;
+    ptp:deskripsiGejala "Gejala berikutnya daun layu, kerdil dan akhirnya tanaman mati."@id ;
+    ptp:merupakanGejalaDari ptp:LayuFusariumUbiJalar ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaGejalaIniDiikutiOlehKematian_064700df a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala ini diikuti oleh kematian sebagian atau seluruh cabang dalam satu tanaman."@id ;
+    ptp:deskripsiGejala "Gejala ini diikuti oleh kematian sebagian atau seluruh cabang dalam satu tanaman."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaGejalaKhasBerupaBercakAtau_bb5a688d a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala khas berupa bercak atau lesi berair (eksudat seperti getah berwarna krem) pada tangkai daun tanaman terinfeksi. Pada daun gejala muncul urat atau tulang daun,tepi dan ujung bilah daun. Perkembangan infeksi lebih lanjut bercak tersebut menyatu membentuk hawar/bercak coklat besar, daun mengering atau layu, daun gugur."@id ;
+    ptp:deskripsiGejala "Gejala khas berupa bercak atau lesi berair (eksudat seperti getah berwarna krem) pada tangkai daun tanaman terinfeksi. Pada daun gejala muncul urat atau tulang daun,tepi dan ujung bilah daun. Perkembangan infeksi lebih lanjut bercak tersebut menyatu membentuk hawar/bercak coklat besar, daun mengering atau layu, daun gugur."@id ;
+    ptp:merupakanGejalaDari ptp:HawarDaunBakteriUbiKayu ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaGejalaLanjutHelaianDaunTerdapat_e95745c0 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala lanjut helaian daun terdapat bentuk belang-belang yang tidak beraturan, berwarna hijau tua dan hijau muda."@id ;
+    ptp:deskripsiGejala "Gejala lanjut helaian daun terdapat bentuk belang-belang yang tidak beraturan, berwarna hijau tua dan hijau muda."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaGejalaMunculPadaPermukaanDaun_859281c3 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala muncul pada permukaan daun kacang tanah dengan warna coklat, terdapat lingkaran halo kuning sampai coklat kehitaman tergantung dari tingkat keparahan penyakit."@id ;
+    ptp:deskripsiGejala "Gejala muncul pada permukaan daun kacang tanah dengan warna coklat, terdapat lingkaran halo kuning sampai coklat kehitaman tergantung dari tingkat keparahan penyakit."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaGejalaPertamaMuncul10Hari_bb151311 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala pertama muncul 10 hari setelah inokulasi berupa lesio kecil klorotik, selanjutnya lesio semakin meluas hingga diameter 1 – 10 mm berwarna semakin gelap."@id ;
+    ptp:deskripsiGejala "Gejala pertama muncul 10 hari setelah inokulasi berupa lesio kecil klorotik, selanjutnya lesio semakin meluas hingga diameter 1 – 10 mm berwarna semakin gelap."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:GejalaGejalaSeranganDanMakroskopisDitunjukkan_d82312cb a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala serangan dan makroskopis ditunjukkan Gambar 4."@id ;
+    ptp:deskripsiGejala "Gejala serangan dan makroskopis ditunjukkan Gambar 4."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:GejalaGejalaSeranganFusariumPadaUmbi_d5d5ab03 a ptp:Gejala,
+        ptp:GejalaUmbi,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala serangan Fusarium pada umbi ubi jalar berupa kanker melingkar permukaan yang minimal memengaruhi jaringan di bawahnya, berwarna coklat pucat sampai kehitaman kering, rerata diameter awalnya 2-4 mm, luka dapat tumbuh dan berkembang menghasilkan area gelap yang lebih luas (Gambar 2A)."@id ;
+    ptp:deskripsiGejala "Gejala serangan Fusarium pada umbi ubi jalar berupa kanker melingkar permukaan yang minimal memengaruhi jaringan di bawahnya, berwarna coklat pucat sampai kehitaman kering, rerata diameter awalnya 2-4 mm, luka dapat tumbuh dan berkembang menghasilkan area gelap yang lebih luas (Gambar 2A)."@id ;
+    ptp:merupakanGejalaDari ptp:LayuFusariumUbiJalar ;
+    ptp:terdapatPada ptp:Umbi .
+
+ptp:GejalaGejalaSerangannyaTampakPadaDaun_83475197 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala serangannya tampak pada daun muda berupa belang (mottle) atau mosaik hijau tua tidak teratur."@id ;
+    ptp:deskripsiGejala "Gejala serangannya tampak pada daun muda berupa belang (mottle) atau mosaik hijau tua tidak teratur."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaGejalaUtamaDitandaiDenganMunculnya_ee60c01e a ptp:Gejala,
+        ptp:GejalaBatang,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala utama ditandai dengan munculnya bercak gelap/abu-abu atau nekrotik pada permukaan batang, area nekrotik tersebut merupakan struktur dari jamur patogen yang menginfeksi batang ubi kayu, dan gejala tersebut juga menutupi titik tunas dan menghambat pertumbuhan tunas"@id ;
+    ptp:deskripsiGejala "Gejala utama ditandai dengan munculnya bercak gelap/abu-abu atau nekrotik pada permukaan batang, area nekrotik tersebut merupakan struktur dari jamur patogen yang menginfeksi batang ubi kayu, dan gejala tersebut juga menutupi titik tunas dan menghambat pertumbuhan tunas"@id ;
+    ptp:merupakanGejalaDari ptp:NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu ;
+    ptp:terdapatPada ptp:Batang .
+
+ptp:GejalaGejalaYangTimbulAkibatSerangan_915a4f80 a ptp:Gejala,
+        ptp:GejalaBatang,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala yang timbul akibat serangan penyakit kudis pada bagian batang yaitu terdapat bercak berwarna coklat, berbentuk cekung atau bulat tidak beraturan, satu bercak dapat meluas dan akan bersatu dengan bercak yang lain (Gambar 3A), sedangkan pada bagian daun terutama tulang daun pucuk terdapat bercak kecil, cekung dan berwarna coklat (Gambar 3B, Martanto, 2010)."@id ;
+    ptp:deskripsiGejala "Gejala yang timbul akibat serangan penyakit kudis pada bagian batang yaitu terdapat bercak berwarna coklat, berbentuk cekung atau bulat tidak beraturan, satu bercak dapat meluas dan akan bersatu dengan bercak yang lain (Gambar 3A), sedangkan pada bagian daun terutama tulang daun pucuk terdapat bercak kecil, cekung dan berwarna coklat (Gambar 3B, Martanto, 2010)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitKudisUbiJalar ;
+    ptp:terdapatPada ptp:Batang,
+        ptp:Daun .
+
+ptp:GejalaGejalaYangTimbulAkibatSerangan_c8ea4de0 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Gejala yang timbul akibat serangan penyakit ini pada planlet yang belum mengalami kultur meristem tunas pucuk berupa klorotik, nekrosis, daun kecil dan terlipat (Barahima and Purnomo, 2003)."@id ;
+    ptp:deskripsiGejala "Gejala yang timbul akibat serangan penyakit ini pada planlet yang belum mengalami kultur meristem tunas pucuk berupa klorotik, nekrosis, daun kecil dan terlipat (Barahima and Purnomo, 2003)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakKuningUbiJalar ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaGulmaYangTumbuhBersamaKacang_297f1fb1 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Gulma yang tumbuh bersama kacang tanah memiliki peran penting dalam daur penyakit layu."@id ;
+    ptp:deskripsiGejala "Gulma yang tumbuh bersama kacang tanah memiliki peran penting dalam daur penyakit layu."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaHasilPenelitianDiChinaMenunjukkan_38d94252 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Hasil penelitian di China menunjukkan bahwa penularan bakteri layu berkisar 3–6% dan viabilitas bakteri dalam biji kacang tanah akan menurun dengan semakin rendahnya kadar air benih (Tan et al."@id ;
+    ptp:deskripsiGejala "Hasil penelitian di China menunjukkan bahwa penularan bakteri layu berkisar 3–6% dan viabilitas bakteri dalam biji kacang tanah akan menurun dengan semakin rendahnya kadar air benih (Tan et al."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah ;
+    ptp:terdapatPada ptp:Biji .
+
+ptp:GejalaHasilPenelitianMartanto2010Menjelaskan_da1fad4b a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Hasil penelitian Martanto (2010) menjelaskan bahwa tanaman ubi jalar membentuk lapisan gabus untuk mempertahankan diri dari serangan penyakit kudis (Gambar 3A dan B)."@id ;
+    ptp:deskripsiGejala "Hasil penelitian Martanto (2010) menjelaskan bahwa tanaman ubi jalar membentuk lapisan gabus untuk mempertahankan diri dari serangan penyakit kudis (Gambar 3A dan B)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitKudisUbiJalar .
+
+ptp:GejalaInangKeduaPatogenIniHanya_871e0176 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Inang kedua patogen ini hanya kacang tanah, Cercospora personata bercak relatif lambat muncul, berukuran lebih kecil, berwarna coklat gelap sampai hitam, sporulasi cendawan lebih banyak di permukaan bawah daun."@id ;
+    ptp:deskripsiGejala "Inang kedua patogen ini hanya kacang tanah, Cercospora personata bercak relatif lambat muncul, berukuran lebih kecil, berwarna coklat gelap sampai hitam, sporulasi cendawan lebih banyak di permukaan bawah daun."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaInfeksiPadaBatangAkanMenimbulkan_6893d93b a ptp:Gejala,
+        ptp:GejalaBatang,
+        owl:NamedIndividual ;
+    rdfs:label "Infeksi pada batang akan menimbulkan retakan berupa kanker batang, gejala mati pucuk, dan pucuk atau batang akan patah."@id ;
+    ptp:deskripsiGejala "Infeksi pada batang akan menimbulkan retakan berupa kanker batang, gejala mati pucuk, dan pucuk atau batang akan patah."@id ;
+    ptp:merupakanGejalaDari ptp:AntraknosaUbiKayuDIS110 ;
+    ptp:terdapatPada ptp:Batang .
+
+ptp:GejalaInfeksiPatogenPadaBagianBatang_259b3d61 a ptp:Gejala,
+        ptp:GejalaBatang,
+        owl:NamedIndividual ;
+    rdfs:label "Infeksi patogen pada bagian batang dekat permukaan tanah (pangkal batang), dan menyebabkan pangkal batang membusuk sehingga tanaman layu."@id ;
+    ptp:deskripsiGejala "Infeksi patogen pada bagian batang dekat permukaan tanah (pangkal batang), dan menyebabkan pangkal batang membusuk sehingga tanaman layu."@id ;
+    ptp:merupakanGejalaDari ptp:BusukPangkalBatangUbiKayu ;
+    ptp:terdapatPada ptp:Batang .
+
+ptp:GejalaInfeksiYangTerjadiSaatTanaman_88bef2a0 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Infeksi yang terjadi saat tanaman masih muda sering menyebabkan timbulnya gejala berupa belang dengan cincin-cincin klorosis."@id ;
+    ptp:deskripsiGejala "Infeksi yang terjadi saat tanaman masih muda sering menyebabkan timbulnya gejala berupa belang dengan cincin-cincin klorosis."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:GejalaInformasiPenelitianDiIndonesiaTerkait_8ee11e4c a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Informasi penelitian di Indonesia terkait virus pada ubi jalar masih sedikit, namun yang paling dominan adalah serangan SPFMV."@id ;
+    ptp:deskripsiGejala "Informasi penelitian di Indonesia terkait virus pada ubi jalar masih sedikit, namun yang paling dominan adalah serangan SPFMV."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakKuningUbiJalar .
+
+ptp:GejalaKadangKadangGejalaOlehPStVBerupa_dd8b21c3 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Kadang-kadang gejala oleh PStV berupa garis putus-putus berwarna hijau gelap (stripe)."@id ;
+    ptp:deskripsiGejala "Kadang-kadang gejala oleh PStV berupa garis putus-putus berwarna hijau gelap (stripe)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:GejalaLebihLanjutSemangun2007Menyatakan_23449887 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "lebih lanjut Semangun, 2007 menyatakan bahwa pada gejala lanjut penyakit ini dapat menyebabkan daun berlubang kemudian kering dan mati."@id ;
+    ptp:deskripsiGejala "lebih lanjut Semangun, 2007 menyatakan bahwa pada gejala lanjut penyakit ini dapat menyebabkan daun berlubang kemudian kering dan mati."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaMengeringkanKacangTanahHinggaKadar_c913930a a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Mengeringkan kacang tanah hingga kadar air biji kurang dari 8% dilaporkan efektif untuk mencegah penularan penyakit layu bakteri."@id ;
+    ptp:deskripsiGejala "Mengeringkan kacang tanah hingga kadar air biji kurang dari 8% dilaporkan efektif untuk mencegah penularan penyakit layu bakteri."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah ;
+    ptp:terdapatPada ptp:Biji .
+
+ptp:GejalaMenurutCooperAndJones2006_c959a1b0 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Menurut Cooper and Jones (2006) bahwa variabilitas dalam ekspresi gejala disebabkan karena beberapa faktor seperti kondisi lingkungan, strain virus, spesies atau genotipe tanaman inang, umur dan fisiologi inang."@id ;
+    ptp:deskripsiGejala "Menurut Cooper and Jones (2006) bahwa variabilitas dalam ekspresi gejala disebabkan karena beberapa faktor seperti kondisi lingkungan, strain virus, spesies atau genotipe tanaman inang, umur dan fisiologi inang."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakKuningUbiJalar .
+
+ptp:GejalaMenurutSemangun1991GejalaTanaman_c63f9ed4 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Menurut Semangun, 1991 gejala tanaman yang terinfeksi oleh penyakit terdapat bercak coklat kecil pada daun bawah yang memiliki bentuk bulat yang tidak beraturan."@id ;
+    ptp:deskripsiGejala "Menurut Semangun, 1991 gejala tanaman yang terinfeksi oleh penyakit terdapat bercak coklat kecil pada daun bawah yang memiliki bentuk bulat yang tidak beraturan."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaMunculEksudatBergetahBerwarnaKrem_a255e497 a ptp:Gejala,
+        ptp:GejalaBatang,
+        owl:NamedIndividual ;
+    rdfs:label "Muncul eksudat bergetah berwarna krem atau coklat kekuningan pada bagian batang yang terinfeksi, dan batang akan mati, meskipun adakalanya pada batang yang terinfeksi dan mati juga dapat memunculkan tunas baru"@id ;
+    ptp:deskripsiGejala "Muncul eksudat bergetah berwarna krem atau coklat kekuningan pada bagian batang yang terinfeksi, dan batang akan mati, meskipun adakalanya pada batang yang terinfeksi dan mati juga dapat memunculkan tunas baru"@id ;
+    ptp:merupakanGejalaDari ptp:HawarBakteriUbiKayu ;
+    ptp:terdapatPada ptp:Batang .
+
+ptp:GejalaPadaAwalnyaBercakBerwarnaKuning_2c0c6737 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Pada awalnya bercak berwarna kuning coklat kekuningan, coklat kemerahan dan akhirnya menjadi coklat kehitaman (Martanto, Tanati and Baan, 2016)."@id ;
+    ptp:deskripsiGejala "Pada awalnya bercak berwarna kuning coklat kekuningan, coklat kemerahan dan akhirnya menjadi coklat kehitaman (Martanto, Tanati and Baan, 2016)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitKudisUbiJalar .
+
+ptp:GejalaPadaKondisiIniSistemPerakaran_3189e491 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Pada kondisi ini sistem perakaran tidak berfungsi sehingga tanaman layu dan mati."@id ;
+    ptp:deskripsiGejala "Pada kondisi ini sistem perakaran tidak berfungsi sehingga tanaman layu dan mati."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaPadaTangkaiDaunMunculRetakan_8095bba8 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Pada tangkai daun muncul retakan jaringan berupa kanker, infeksi lebih lanjut mengakibatkan tanaman layu yang disertai defoliasi"@id ;
+    ptp:deskripsiGejala "Pada tangkai daun muncul retakan jaringan berupa kanker, infeksi lebih lanjut mengakibatkan tanaman layu yang disertai defoliasi"@id ;
+    ptp:merupakanGejalaDari ptp:AntraknosaUbiKayuDIS031 ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaPadaUmumnyaBintikBintikKecilTersebut_f91def23 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Pada umumnya bintik-bintik kecil tersebut dikelilingi oleh bagian yang klorosis, walaupun ada yang hanya berupa bintik coklat (Abadi, 2003, Semangun, 2004)."@id ;
+    ptp:deskripsiGejala "Pada umumnya bintik-bintik kecil tersebut dikelilingi oleh bagian yang klorosis, walaupun ada yang hanya berupa bintik coklat (Abadi, 2003, Semangun, 2004)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:GejalaPadaUmumnyaGejalaTerdapatPada_b3a2a647 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Pada umumnya, gejala terdapat pada permukaan daun bawah yang berupa pustule atau bintik-bintik kecil berwarna coklat pucat seperti karat besi (Gambar 3A)."@id ;
+    ptp:deskripsiGejala "Pada umumnya, gejala terdapat pada permukaan daun bawah yang berupa pustule atau bintik-bintik kecil berwarna coklat pucat seperti karat besi (Gambar 3A)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaPatogenPenyebabPenyakitLayuAdalah_0d0c919a a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Patogen penyebab penyakit layu adalah bakteri Ralstonia solanacearum."@id ;
+    ptp:deskripsiGejala "Patogen penyebab penyakit layu adalah bakteri Ralstonia solanacearum."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaPemanjanganRuasBatangYangBerlebihan_c36bb64b a ptp:Gejala,
+        ptp:GejalaBatang,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Pemanjangan ruas batang yang berlebihan, sehingga batang terbentuk tipis dan lemah dibandingkan tanaman sehat. Gejala pada daun dan tangkai daun di batang muda, deformasi berkembang berasosisi dengan gejala kanker."@id ;
+    ptp:deskripsiGejala "Pemanjangan ruas batang yang berlebihan, sehingga batang terbentuk tipis dan lemah dibandingkan tanaman sehat. Gejala pada daun dan tangkai daun di batang muda, deformasi berkembang berasosisi dengan gejala kanker."@id ;
+    ptp:merupakanGejalaDari ptp:SuperelongasiUbiKayu ;
+    ptp:terdapatPada ptp:Batang,
+        ptp:Daun .
+
+ptp:GejalaPenyakitBercakDaunMerupakanPenyakit_d560ea46 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit bercak daun merupakan penyakit tular udara yang disebabkan oleh patogen (Cercospora arachidicola dan C."@id ;
+    ptp:deskripsiGejala "Penyakit bercak daun merupakan penyakit tular udara yang disebabkan oleh patogen (Cercospora arachidicola dan C."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaPenyakitBercakKuningPadaUbi_2ed05050 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit bercak kuning pada ubi jalar disebabkan oleh Sweet Potato Feathery Mottle Virus (SPFMV) termasuk ke dalam genus Potyvirus, famili Potyviridae (Tugume, Mukasa and Valkonen, 2008)."@id ;
+    ptp:deskripsiGejala "Penyakit bercak kuning pada ubi jalar disebabkan oleh Sweet Potato Feathery Mottle Virus (SPFMV) termasuk ke dalam genus Potyvirus, famili Potyviridae (Tugume, Mukasa and Valkonen, 2008)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakKuningUbiJalar .
+
+ptp:GejalaPenyakitBusukHitamBlackRot_d9297d18 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit busuk hitam (black rot) disebabkan oleh jamur Ceratocystis fimbriata menjadi salah satu ancaman produksi pada ubi jalar di dunia (Muramoto et al., 2012) dan menyebabkan kerusakan parah selama penyimpanan pascapanen (Baker et al., 2003)."@id ;
+    ptp:deskripsiGejala "Penyakit busuk hitam (black rot) disebabkan oleh jamur Ceratocystis fimbriata menjadi salah satu ancaman produksi pada ubi jalar di dunia (Muramoto et al., 2012) dan menyebabkan kerusakan parah selama penyimpanan pascapanen (Baker et al., 2003)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBusukHitamBlackRotUbiJalar .
+
+ptp:GejalaPenyakitKaratMerupakanPenyakitPenting_62711156 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit karat merupakan penyakit penting kedua pada kacang tanah setelah bercak daun."@id ;
+    ptp:deskripsiGejala "Penyakit karat merupakan penyakit penting kedua pada kacang tanah setelah bercak daun."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaPenyebaranPenyakitBusukHitamMelalui_7e4b35e6 a ptp:Gejala,
+        ptp:GejalaAkar,
+        owl:NamedIndividual ;
+    rdfs:label "Penyebaran penyakit busuk hitam melalui luka, setek propagativ, cangkok akar sehingga pohon yang berdekatan akan mudah terinfeksi, serangga vektor kumbang nitidulid (Glischrochilus quadrisignatus) pemakan jamur dan cairan tanaman, melalui kotoran serangga, dan alat-alat pertanian, sedangkan penyebaran konidium melalui udara tidak mungkin terjadi (Soesanto, 2020)."@id ;
+    ptp:deskripsiGejala "Penyebaran penyakit busuk hitam melalui luka, setek propagativ, cangkok akar sehingga pohon yang berdekatan akan mudah terinfeksi, serangga vektor kumbang nitidulid (Glischrochilus quadrisignatus) pemakan jamur dan cairan tanaman, melalui kotoran serangga, dan alat-alat pertanian, sedangkan penyebaran konidium melalui udara tidak mungkin terjadi (Soesanto, 2020)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBusukHitamBlackRotUbiJalar ;
+    ptp:terdapatPada ptp:Akar .
+
+ptp:GejalaPerbedaanTampakPadaWarnaDaun_8438fb25 a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Perbedaan tampak pada warna daun terinfeksi mengalami klorosis dan di lapangan akan tampak lebih kekuningan."@id ;
+    ptp:deskripsiGejala "Perbedaan tampak pada warna daun terinfeksi mengalami klorosis dan di lapangan akan tampak lebih kekuningan."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaSecaraUmumPengamatanMakroskopisDaun_86027a4b a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Secara umum pengamatan makroskopis daun kacang tanah yang terinfeksi C arachidicola penyebab penyakit bercak pada kacang tanah menunjukkan gejala bercak coklat yang tidak teratur."@id ;
+    ptp:deskripsiGejala "Secara umum pengamatan makroskopis daun kacang tanah yang terinfeksi C arachidicola penyebab penyakit bercak pada kacang tanah menunjukkan gejala bercak coklat yang tidak teratur."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaSelainItuFaktorLingkunganJuga_5dfc7716 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Selain itu, faktor lingkungan juga memengaruhi perubahan ketahanan ubi jalar terhadap penyakit kudis (Roosda et al., 20013), sehingga kultivar yang tahan dapat berubah menjadi tidak tahan dan periode inkubasi juga memengaruhi munculnya gejala penyakit (Samiyarsih, Juwarno and Muljowati, 2018)."@id ;
+    ptp:deskripsiGejala "Selain itu, faktor lingkungan juga memengaruhi perubahan ketahanan ubi jalar terhadap penyakit kudis (Roosda et al., 20013), sehingga kultivar yang tahan dapat berubah menjadi tidak tahan dan periode inkubasi juga memengaruhi munculnya gejala penyakit (Samiyarsih, Juwarno and Muljowati, 2018)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitKudisUbiJalar .
+
+ptp:GejalaSelainItuTerjadiNekrosisPada_125ffc86 a ptp:Gejala,
+        ptp:GejalaBatang,
+        owl:NamedIndividual ;
+    rdfs:label "Selain itu, terjadi nekrosis pada bagian vaskular batang dengan perubahan warna coklat menjadi ungu yang disertai pecahnya korteks batang dan miselium tumbuh pada permukaan batang yang terinfeksi (Gambar 1G dan F)."@id ;
+    ptp:deskripsiGejala "Selain itu, terjadi nekrosis pada bagian vaskular batang dengan perubahan warna coklat menjadi ungu yang disertai pecahnya korteks batang dan miselium tumbuh pada permukaan batang yang terinfeksi (Gambar 1G dan F)."@id ;
+    ptp:merupakanGejalaDari ptp:LayuFusariumUbiJalar ;
+    ptp:terdapatPada ptp:Batang .
+
+ptp:GejalaSelainKacangTanahYangMenjadi_b4d9b445 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Selain kacang tanah yang menjadi tempat hidup bakteri layu, komoditas lain yang bernilai ekonomis tinggi seperti terong, kentang, tomat, pisang, dan tembakau merupakan inang utama R."@id ;
+    ptp:deskripsiGejala "Selain kacang tanah yang menjadi tempat hidup bakteri layu, komoditas lain yang bernilai ekonomis tinggi seperti terong, kentang, tomat, pisang, dan tembakau merupakan inang utama R."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaSeranganPenyakitBerdampakPadaPengurangan_f18bf8a8 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Serangan penyakit berdampak pada pengurangan jumlah polong dan berat biji per tanaman sehingga dapat mengakibatkan penurunan hasil dan produksi sebesar 50%."@id ;
+    ptp:deskripsiGejala "Serangan penyakit berdampak pada pengurangan jumlah polong dan berat biji per tanaman sehingga dapat mengakibatkan penurunan hasil dan produksi sebesar 50%."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:terdapatPada ptp:Biji .
+
+ptp:GejalaSeringKaliGulmaYangTerinfeksi_5cba86e5 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Sering kali, gulma yang terinfeksi bakteri tersebut tidak menunjukkan gejala layu."@id ;
+    ptp:deskripsiGejala "Sering kali, gulma yang terinfeksi bakteri tersebut tidak menunjukkan gejala layu."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaSolanacearumDiLahanSetempatSehingga_19f52839 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "solanacearum di lahan setempat sehingga mengurangi kejadian penyakit layu."@id ;
+    ptp:deskripsiGejala "solanacearum di lahan setempat sehingga mengurangi kejadian penyakit layu."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:GejalaSporulasiPatogenTerjadiPadaBercak_cfba1e82 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Sporulasi patogen terjadi pada bercak yang telah berkembang penuh biasanya 15 hari setelah inokulasi."@id ;
+    ptp:deskripsiGejala "Sporulasi patogen terjadi pada bercak yang telah berkembang penuh biasanya 15 hari setelah inokulasi."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:GejalaSumberInokulumPenyakitKudisBiasanya_81ba6411 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Sumber inokulum penyakit kudis biasanya berasal dari bahan tanam (setek) yang terinfeksi jamur, penyakit ini menyebar lebih cepat ke tanaman yang sehat percikan air hujan yang disertai angin, lebih banyak terjadi serangan pada musim hujan (Saleh and Rahayuningsih, 2013)."@id ;
+    ptp:deskripsiGejala "Sumber inokulum penyakit kudis biasanya berasal dari bahan tanam (setek) yang terinfeksi jamur, penyakit ini menyebar lebih cepat ke tanaman yang sehat percikan air hujan yang disertai angin, lebih banyak terjadi serangan pada musim hujan (Saleh and Rahayuningsih, 2013)."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitKudisUbiJalar .
+
+ptp:GejalaTampakMotifMosaikBerwarnaKuning_a067218c a ptp:Gejala,
+        ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Tampak motif mosaik berwarna kuning atau pun keputihan pada daun hijau,serta menyebabkan daun keriting atau ukuran daun mengecil"@id ;
+    ptp:deskripsiGejala "Tampak motif mosaik berwarna kuning atau pun keputihan pada daun hijau,serta menyebabkan daun keriting atau ukuran daun mengecil"@id ;
+    ptp:merupakanGejalaDari ptp:CassavaMosaicBegomovirusCMBsUbiKayu ;
+    ptp:terdapatPada ptp:Daun .
+
+ptp:GejalaTanamanMerambatBerwarnaKecokelatan1B_4ee547a4 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Tanaman merambat berwarna kecokelatan (1B dan E), tanaman yang mati sering terdapat miselium berwarna merah muda dengan makrokonidia dan mikrokonidia patogen (1C dan F)."@id ;
+    ptp:deskripsiGejala "Tanaman merambat berwarna kecokelatan (1B dan E), tanaman yang mati sering terdapat miselium berwarna merah muda dengan makrokonidia dan mikrokonidia patogen (1C dan F)."@id ;
+    ptp:merupakanGejalaDari ptp:LayuFusariumUbiJalar .
+
+ptp:GejalaTanamanTidakTumbuhSecaraNormal_cf1598a0 a ptp:Gejala,
+        ptp:GejalaBatang,
+        owl:NamedIndividual ;
+    rdfs:label "Tanaman tidak tumbuh secara normal, gejala ini umumnya terjadi pada tanaman yang mengalami infeksi awal oleh virus ini. Tanaman yang terinfeksi virus ini umumnya akan memiliki batang yang berukuran kecil"@id ;
+    ptp:deskripsiGejala "Tanaman tidak tumbuh secara normal, gejala ini umumnya terjadi pada tanaman yang mengalami infeksi awal oleh virus ini. Tanaman yang terinfeksi virus ini umumnya akan memiliki batang yang berukuran kecil"@id ;
+    ptp:merupakanGejalaDari ptp:TanamanKerdilStuntUbiKayu ;
+    ptp:terdapatPada ptp:Batang .
+
+ptp:GejalaTanamanTumbuhKerdilDwarfRuas_bde1d865 a ptp:Gejala,
+        ptp:GejalaBatang,
+        owl:NamedIndividual ;
+    rdfs:label "Tanaman tumbuh kerdil (dwarf), ruas batang memendek, pada ujung tanaman tumbuh tunas yang banyak menyerupai sapu"@id ;
+    ptp:deskripsiGejala "Tanaman tumbuh kerdil (dwarf), ruas batang memendek, pada ujung tanaman tumbuh tunas yang banyak menyerupai sapu"@id ;
+    ptp:merupakanGejalaDari ptp:SapuSetanWitchesBroomUbiKayu ;
+    ptp:terdapatPada ptp:Batang .
+
+ptp:GejalaTetapiUmumnyaGejalaKeduaVirus_12edc343 a ptp:Gejala,
+        owl:NamedIndividual ;
+    rdfs:label "Tetapi umumnya gejala kedua virus ini sukar dibedakan."@id ;
+    ptp:deskripsiGejala "Tetapi umumnya gejala kedua virus ini sukar dibedakan."@id ;
+    ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:GejalaUmbiMembusukDanTanamanLayu_2dc0c0e4 a ptp:Gejala,
+        ptp:GejalaUmbi,
+        owl:NamedIndividual ;
+    rdfs:label "Umbi membusuk dan tanaman layu, umbi berwarna lebih gelap dan berbau busuk khas."@id ;
+    ptp:deskripsiGejala "Umbi membusuk dan tanaman layu, umbi berwarna lebih gelap dan berbau busuk khas."@id ;
+    ptp:merupakanGejalaDari ptp:BusukUmbiUbiKayu ;
+    ptp:terdapatPada ptp:Umbi .
+
+ptp:Ipomovirus a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Ipomovirus"@id ;
+    ptp:menyebabkanPenyakit ptp:CassavaBrownStreakDiseaseCBSDUbiKayu ;
+    ptp:namaIlmiahPatogen "Ipomovirus"@id .
+
+ptp:Pengendalian2018MenjelaskanBahwaPengendalianPascapanen_ffe39a4f a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "(2018) menjelaskan bahwa pengendalian pascapanen menggunakan perilladehyde (PAE) 100 μm/l dengan cara fumigasi dapat mengurangi perkembangan miselium C."@id ;
+    ptp:deskripsiPengendalian "(2018) menjelaskan bahwa pengendalian pascapanen menggunakan perilladehyde (PAE) 100 μm/l dengan cara fumigasi dapat mengurangi perkembangan miselium C."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBusukHitamBlackRotUbiJalar .
+
+ptp:PengendalianAdapunPengendalianYangDapatDilakukan_d27acf2c a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Adapun pengendalian yang dapat dilakukan dengan menggunakan lahan baru yang bebas dari patogen untuk persemaian, rotasi tanaman selama 3-4 tahun (Saleh et al., 2015)."@id ;
+    ptp:deskripsiPengendalian "Adapun pengendalian yang dapat dilakukan dengan menggunakan lahan baru yang bebas dari patogen untuk persemaian, rotasi tanaman selama 3-4 tahun (Saleh et al., 2015)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBusukHitamBlackRotUbiJalar .
+
+ptp:PengendalianAeroginosaBulkholderiaCepaciaSertaBacillus_b7c945fd a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "aeroginosa, Bulkholderia cepacia, serta Bacillus subtilis, Erwinia sp., dan Streptomyces setonii yang diisolasi dari rizosfer tanaman sehat dilaporkan efektif mengendalikan layu R."@id ;
+    ptp:deskripsiPengendalian "aeroginosa, Bulkholderia cepacia, serta Bacillus subtilis, Erwinia sp., dan Streptomyces setonii yang diisolasi dari rizosfer tanaman sehat dilaporkan efektif mengendalikan layu R."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianAgensHayatiDariJenisBakteri_2ea7be64 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Agens hayati dari jenis bakteri antagonis memiliki potensi cukup baik untuk mengendalikan layu R."@id ;
+    ptp:deskripsiPengendalian "Agens hayati dari jenis bakteri antagonis memiliki potensi cukup baik untuk mengendalikan layu R."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianAkanTetapiSampaiDenganSaat_cef2e504 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Akan tetapi sampai dengan saat ini belum ditemukan varietas kacang tanah tahan terhadap PStV."@id ;
+    ptp:deskripsiPengendalian "Akan tetapi sampai dengan saat ini belum ditemukan varietas kacang tanah tahan terhadap PStV."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianArachidicolaMengalamiResistensiDanLingkungan_76799b08 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "arachidicola mengalami resistensi dan lingkungan mendukung dalam perkembangan patogen"@id ;
+    ptp:deskripsiPengendalian "arachidicola mengalami resistensi dan lingkungan mendukung dalam perkembangan patogen"@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianArachidicolaYaituDenganPestisidaDengan_308de187 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "arachidicola yaitu dengan pestisida dengan bahan aktif heksakonazol."@id ;
+    ptp:deskripsiPengendalian "arachidicola yaitu dengan pestisida dengan bahan aktif heksakonazol."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianBaliadiEtAl1993Melaporkan_498f9503 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Baliadi et al, 1993 melaporkan varietas kelinci lebih toleran terhadap infeksi PStV dibandingkan dengan varietas gajah."@id ;
+    ptp:deskripsiPengendalian "Baliadi et al, 1993 melaporkan varietas kelinci lebih toleran terhadap infeksi PStV dibandingkan dengan varietas gajah."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianBatatasMisalnyaJagungPadiKacangKacangan_0235e728 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sisa-sisa tanaman yang terinfeksi, menggunakan fungisida kimiawi misalnya menggunakan bahan aktif benomyl (dosis 400 g ba/ha), chlorotalonil (1.300 g ba/ha), captafol (1.520 g ba/ha), fentin hidraxide (300 g ba/ha), tembaga oxiklorida (1.500 g ba/ha), dan mancozeb, dapat juga menggunakan fungisida nabati (Saleh and Rahayuningsih, 2013)."@id ;
+    ptp:deskripsiPengendalian "batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sisa-sisa tanaman yang terinfeksi, menggunakan fungisida kimiawi misalnya menggunakan bahan aktif benomyl (dosis 400 g ba/ha), chlorotalonil (1.300 g ba/ha), captafol (1.520 g ba/ha), fentin hidraxide (300 g ba/ha), tembaga oxiklorida (1.500 g ba/ha), dan mancozeb, dapat juga menggunakan fungisida nabati (Saleh and Rahayuningsih, 2013)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitKudisUbiJalar .
+
+ptp:PengendalianBeberapaBakteriAntagonisSepertiPsedomonas_577cd405 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Beberapa bakteri antagonis seperti Psedomonas fluorescens, P."@id ;
+    ptp:deskripsiPengendalian "Beberapa bakteri antagonis seperti Psedomonas fluorescens, P."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianBeberapaMikrobaTelahDitelitiDan_c8140e0b a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Beberapa mikroba telah diteliti dan dilaporkan mampu berperan sebagai agens pengendali hayati penyakit layu bakteri R."@id ;
+    ptp:deskripsiPengendalian "Beberapa mikroba telah diteliti dan dilaporkan mampu berperan sebagai agens pengendali hayati penyakit layu bakteri R."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianBenihSehatBebasVirusMerupakan_5b21ecbf a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Benih sehat bebas virus merupakan awal dari budidaya tanaman sehat bebas virus PStV."@id ;
+    ptp:deskripsiPengendalian "Benih sehat bebas virus merupakan awal dari budidaya tanaman sehat bebas virus PStV."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianBenihYangKecilDanKeriput_c931b3f5 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Benih yang kecil dan keriput merupakan tanpa benih tidak sehat dan membawa penyakit."@id ;
+    ptp:deskripsiPengendalian "Benih yang kecil dan keriput merupakan tanpa benih tidak sehat dan membawa penyakit."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianBerbagaiUpayaPengendalianTelahBanyak_6b5a5fa6 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Berbagai upaya pengendalian telah banyak dilakukan untuk dapat mengurangi kerusakan akibat penyakit bercak daun."@id ;
+    ptp:deskripsiPengendalian "Berbagai upaya pengendalian telah banyak dilakukan untuk dapat mengurangi kerusakan akibat penyakit bercak daun."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianDenganMenanamTanamanToleranPStV_4b75d7ee a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Dengan menanam tanaman toleran PStV diharapkan dapat mengurangi kerusakan akibat PStV"@id ;
+    ptp:deskripsiPengendalian "Dengan menanam tanaman toleran PStV diharapkan dapat mengurangi kerusakan akibat PStV"@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianHarzianumDapatDitemukanDiBerbagai_b3d47539 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "harzianum dapat ditemukan di berbagai tempat, mudah diisolasi dan tumbuh cepat pada berbagai substrat, mampu hidup dan berkembang di rhizosfer dan dekat struktur istirahat patogen, mampu beradaptasi terhadap kondisi untuk dapat diperbanyak secara massal, dapat berperan sebagai biofertilizer dan biostimulan, dapat berperan sebagai biokontrol dengan mekanisme mikoparasit, antibiosis, kompetisi nutrisi dan induksi ketahanan tanaman."@id ;
+    ptp:deskripsiPengendalian "harzianum dapat ditemukan di berbagai tempat, mudah diisolasi dan tumbuh cepat pada berbagai substrat, mampu hidup dan berkembang di rhizosfer dan dekat struktur istirahat patogen, mampu beradaptasi terhadap kondisi untuk dapat diperbanyak secara massal, dapat berperan sebagai biofertilizer dan biostimulan, dapat berperan sebagai biokontrol dengan mekanisme mikoparasit, antibiosis, kompetisi nutrisi dan induksi ketahanan tanaman."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianHarzianumJugaDapatMemarasitMiselium_0d4aea4a a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "harzianum juga dapat memarasit miselium jamur lain dengan menembus dinding sel dan masuk ke dalam sel untuk mengambil zat makanan dari dalam sel sehingga jamur menjadi mati, dalam proses kompetisi jamur T."@id ;
+    ptp:deskripsiPengendalian "harzianum juga dapat memarasit miselium jamur lain dengan menembus dinding sel dan masuk ke dalam sel untuk mengambil zat makanan dari dalam sel sehingga jamur menjadi mati, dalam proses kompetisi jamur T."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianHarzianumMempunyaiKemampuanMemperebutkanTempat_623c00fe a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "harzianum mempunyai kemampuan memperebutkan tempat hidup, dan sumber makanan di dalam tanah atau di sekitar perakaran tanaman (rhizosfer) (Mustofa dan Majid, 2011)."@id ;
+    ptp:deskripsiPengendalian "harzianum mempunyai kemampuan memperebutkan tempat hidup, dan sumber makanan di dalam tanah atau di sekitar perakaran tanaman (rhizosfer) (Mustofa dan Majid, 2011)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianHasilPenelitianAsmanDanSitepu_d6a3d46e a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Hasil penelitian Asman dan Sitepu (1998) menunjukkan bahwa antibiotik streptomisin-sulfat cukup efektif untuk menekan layu R."@id ;
+    ptp:deskripsiPengendalian "Hasil penelitian Asman dan Sitepu (1998) menunjukkan bahwa antibiotik streptomisin-sulfat cukup efektif untuk menekan layu R."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianHasilPenelitianMeliyana2019Menunjukkan_6ea39d61 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Hasil penelitian Meliyana, 2019 menunjukkan bahwa penggunaan pestisida sintetik tidak dapat menekan laju pertumbuhan penyakit."@id ;
+    ptp:deskripsiPengendalian "Hasil penelitian Meliyana, 2019 menunjukkan bahwa penggunaan pestisida sintetik tidak dapat menekan laju pertumbuhan penyakit."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianInfeksiBenih25DapatMenyebabkan_6ffa39cc a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Infeksi benih 2-5% dapat menyebabkan endemis penyakit saat panen."@id ;
+    ptp:deskripsiPengendalian "Infeksi benih 2-5% dapat menyebabkan endemis penyakit saat panen."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianInfeksiPStVPadaKacangTanah_eeff79e4 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Infeksi PStV pada kacang tanah pada musim hujan dapat lebih ringan dibanding musim kemarau"@id ;
+    ptp:deskripsiPengendalian "Infeksi PStV pada kacang tanah pada musim hujan dapat lebih ringan dibanding musim kemarau"@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianKacangTanahMampuMengikatNitrogen_b149bd9c a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Kacang tanah mampu mengikat Nitrogen dari udara, sehingga sering tidak respons terhadap pemupukan Nitrogen."@id ;
+    ptp:deskripsiPengendalian "Kacang tanah mampu mengikat Nitrogen dari udara, sehingga sering tidak respons terhadap pemupukan Nitrogen."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianKaratDaunMerupakanPenyakitTular_b8960371 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Karat daun merupakan penyakit tular udara yang penyebarannya melalui angin dan percikan air hujan."@id ;
+    ptp:deskripsiPengendalian "Karat daun merupakan penyakit tular udara yang penyebarannya melalui angin dan percikan air hujan."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianKarenaPenularanDapatTerjadiDengan_6b43df38 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Karena penularan dapat terjadi dengan sangat cepat sebelum serangga mati."@id ;
+    ptp:deskripsiPengendalian "Karena penularan dapat terjadi dengan sangat cepat sebelum serangga mati."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianKeamananHayatiProdukPertanianSaat_008ba70c a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Keamanan hayati produk pertanian saat ini semakin mendapat perhatian masyarakat dan petani, sehingga secara berangsur-angsur penggunaan pestisida kimia yang memiliki residu berbahaya terhadap kesehatan, disubstitusi dengan pestisida hayati berasal dari mikroba agens hayati."@id ;
+    ptp:deskripsiPengendalian "Keamanan hayati produk pertanian saat ini semakin mendapat perhatian masyarakat dan petani, sehingga secara berangsur-angsur penggunaan pestisida kimia yang memiliki residu berbahaya terhadap kesehatan, disubstitusi dengan pestisida hayati berasal dari mikroba agens hayati."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianKemampuanKandunganSenyawaAktifFenol_b932ea31 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Kemampuan kandungan senyawa aktif fenol yang terkandung dalam ekstrak daun kemangi yaitu sebagai anti fungi (Sumartini, 2008)."@id ;
+    ptp:deskripsiPengendalian "Kemampuan kandungan senyawa aktif fenol yang terkandung dalam ekstrak daun kemangi yaitu sebagai anti fungi (Sumartini, 2008)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianMengaturWaktuTanamYangTepat_ba823aa6 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Mengatur waktu tanam yang tepat saat populasi vektor tinggi di lapang masih rendah merupakan cara yang paling tepat untuk menghindari serangan penyakit belang."@id ;
+    ptp:deskripsiPengendalian "Mengatur waktu tanam yang tepat saat populasi vektor tinggi di lapang masih rendah merupakan cara yang paling tepat untuk menghindari serangan penyakit belang."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianMenurutBarahimaAndPurnomo2003_b9a8b075 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Menurut Barahima and Purnomo (2003) bahwa upaya untuk mendapatkan bahan tanam yang bebas virus dapat menggunakan pucuk tunas sebagai bahan eksplan melalui kultur meristem untuk mengeliminasi SPFMV."@id ;
+    ptp:deskripsiPengendalian "Menurut Barahima and Purnomo (2003) bahwa upaya untuk mendapatkan bahan tanam yang bebas virus dapat menggunakan pucuk tunas sebagai bahan eksplan melalui kultur meristem untuk mengeliminasi SPFMV."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakKuningUbiJalar .
+
+ptp:PengendalianMenurutIstifadahDanSari2017_ebc04332 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Menurut Istifadah dan Sari (2017), Jamur T."@id ;
+    ptp:deskripsiPengendalian "Menurut Istifadah dan Sari (2017), Jamur T."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianMenurutMartantoTanatiAndBaan_d663d15d a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Menurut (Martanto, Tanati and Baan, 2016) varietas tahan dapat menggunakan Mouwebsi, Wonembai, Kuyage-2, Inanwatan-4, Abomourow, sedangkan Bonsasarai termasuk agak tahan."@id ;
+    ptp:deskripsiPengendalian "Menurut (Martanto, Tanati and Baan, 2016) varietas tahan dapat menggunakan Mouwebsi, Wonembai, Kuyage-2, Inanwatan-4, Abomourow, sedangkan Bonsasarai termasuk agak tahan."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitKudisUbiJalar .
+
+ptp:PengendalianMikroorganismeAntagonisAdalahMikroorganismeYang_0846c6d4 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Mikroorganisme antagonis adalah mikroorganisme yang bersifat lawan bagi patogen."@id ;
+    ptp:deskripsiPengendalian "Mikroorganisme antagonis adalah mikroorganisme yang bersifat lawan bagi patogen."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianMikroorganismeIniBiasanyaBerasalDari_07098f62 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Mikroorganisme ini biasanya berasal dari daerah perakaran atau endofit dan juga dari jaringan endofit daun."@id ;
+    ptp:deskripsiPengendalian "Mikroorganisme ini biasanya berasal dari daerah perakaran atau endofit dan juga dari jaringan endofit daun."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianNamunDemikianPenggunaanBahanBahanAlami_ca615f76 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Namun demikian, penggunaan bahan-bahan alami lebih dianjurkan didahului dengan upaya pencegahan."@id ;
+    ptp:deskripsiPengendalian "Namun demikian, penggunaan bahan-bahan alami lebih dianjurkan didahului dengan upaya pencegahan."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianNamunUntukVirusNonPersistenPenyemprotan_319a6740 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Namun untuk virus non-persisten penyemprotan insektisida tidak efektif menekan populasi."@id ;
+    ptp:deskripsiPengendalian "Namun untuk virus non-persisten penyemprotan insektisida tidak efektif menekan populasi."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianOlehKarenaItuPenggunaanBenih_4015fcb5 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "oleh karena itu penggunaan benih berukuran normal dapat mengurangi risiko sumber inokulum penyakit."@id ;
+    ptp:deskripsiPengendalian "oleh karena itu penggunaan benih berukuran normal dapat mengurangi risiko sumber inokulum penyakit."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianOxysporumScattoliniHernandezAndGonzales_e6eada76 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "oxysporum (Scattolini, Hernandez and Gonzales, 2020)."@id ;
+    ptp:deskripsiPengendalian "oxysporum (Scattolini, Hernandez and Gonzales, 2020)."@id ;
+    ptp:mengendalikanPenyakit ptp:LayuFusariumUbiJalar .
+
+ptp:PengendalianPemantulanSinarYangMenyilaukanDapat_4f5d7113 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pemantulan sinar yang menyilaukan dapat mengurangi populasi hama vektor pada tanaman Pengendalian vektor Penentuan penyebaran PStV di lapang tergantung dari populasi dan aktivitas vektor."@id ;
+    ptp:deskripsiPengendalian "Pemantulan sinar yang menyilaukan dapat mengurangi populasi hama vektor pada tanaman Pengendalian vektor Penentuan penyebaran PStV di lapang tergantung dari populasi dan aktivitas vektor."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPemupukanBerimbangPemupukanYangOptimal_d9b87b60 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pemupukan berimbang Pemupukan yang optimal untuk menunjang pertumbuhan dan hasil kacang tanah untuk jenis tanah yang berbeda."@id ;
+    ptp:deskripsiPengendalian "Pemupukan berimbang Pemupukan yang optimal untuk menunjang pertumbuhan dan hasil kacang tanah untuk jenis tanah yang berbeda."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPemupukanYangEfisienDisesuaikanDengan_11319e75 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pemupukan yang efisien disesuaikan dengan kebutuhan tanaman."@id ;
+    ptp:deskripsiPengendalian "Pemupukan yang efisien disesuaikan dengan kebutuhan tanaman."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPenanamanKacangTanahSecaraTerus_61360bfb a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penanaman kacang tanah secara terus menerus atau diikuti kedelai atau dengan famili yang sama akan memberi peluang lebih tinggi dalam kelangsungan hidup vektor virus."@id ;
+    ptp:deskripsiPengendalian "Penanaman kacang tanah secara terus menerus atau diikuti kedelai atau dengan famili yang sama akan memberi peluang lebih tinggi dalam kelangsungan hidup vektor virus."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPenanamanVarietasKacangTanahTahan_682caab2 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penanaman varietas kacang tanah tahan PStV merupakan cara pengendalian yang efektif, murah, dan dapat dikombinasikan dengan cara pengendalian yang lain."@id ;
+    ptp:deskripsiPengendalian "Penanaman varietas kacang tanah tahan PStV merupakan cara pengendalian yang efektif, murah, dan dapat dikombinasikan dengan cara pengendalian yang lain."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPendekatanBioteknologiMelaluiRekayasaGenetik_5f68e8b9 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pendekatan bioteknologi melalui rekayasa genetik untuk menghasilkan tanaman transgenik diharapkan mampu membantu upaya memperoleh tanaman kacang tanah yang terinfeksi PStV."@id ;
+    ptp:deskripsiPengendalian "Pendekatan bioteknologi melalui rekayasa genetik untuk menghasilkan tanaman transgenik diharapkan mampu membantu upaya memperoleh tanaman kacang tanah yang terinfeksi PStV."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPendekatanYangDapatDilakukanUntuk_d697d376 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pendekatan yang dapat dilakukan untuk mengurangi infeksi akibat PStV adalah dengan menanam tanaman yang toleran."@id ;
+    ptp:deskripsiPengendalian "Pendekatan yang dapat dilakukan untuk mengurangi infeksi akibat PStV adalah dengan menanam tanaman yang toleran."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPengendalianHayatiAdalahPengendalianDengan_048cd90f a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian hayati adalah pengendalian dengan menggunakan mikroorganisme antagonis sehingga menghambat pertumbuhan patogen penyebab penyakit."@id ;
+    ptp:deskripsiPengendalian "Pengendalian hayati adalah pengendalian dengan menggunakan mikroorganisme antagonis sehingga menghambat pertumbuhan patogen penyebab penyakit."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPengendalianKimiaPengendalianKimiawiDengan_6c8594d7 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian kimia Pengendalian kimiawi dengan aplikasi bakterisida pada umumnya diterapkan pada tanaman hortikultura."@id ;
+    ptp:deskripsiPengendalian "Pengendalian kimia Pengendalian kimiawi dengan aplikasi bakterisida pada umumnya diterapkan pada tanaman hortikultura."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianPengendalianKimiaYaituUpayaPengendalian_3150cdb3 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian kimia yaitu upaya pengendalian patogen dengan pestisida sintetis."@id ;
+    ptp:deskripsiPengendalian "Pengendalian kimia yaitu upaya pengendalian patogen dengan pestisida sintetis."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPengendalianNabatiAdalahPestisidaYang_ea857d2f a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian nabati adalah pestisida yang diperoleh dari tanaman."@id ;
+    ptp:deskripsiPengendalian "Pengendalian nabati adalah pestisida yang diperoleh dari tanaman."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPengendalianNabatiYaituUpayaPengendalian_dd76cabd a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "pengendalian nabati yaitu upaya pengendalian patogen dengan menggunakan bahan-bahan atau pestisida nabati."@id ;
+    ptp:deskripsiPengendalian "pengendalian nabati yaitu upaya pengendalian patogen dengan menggunakan bahan-bahan atau pestisida nabati."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPengendalianPenyakitKudisDapatDilakukan_39e475bc a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S."@id ;
+    ptp:deskripsiPengendalian "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitKudisUbiJalar .
+
+ptp:PengendalianPengendalianPenyakitTanamanDitekankanMelalui_c3266e86 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian penyakit tanaman ditekankan melalui pengelolaan penyakit terpadu, dengan menerapkan beberapa komponen teknologi pengendalian yang efektif dan dapat diintegrasikan dengan teknis budidaya tanaman."@id ;
+    ptp:deskripsiPengendalian "Pengendalian penyakit tanaman ditekankan melalui pengelolaan penyakit terpadu, dengan menerapkan beberapa komponen teknologi pengendalian yang efektif dan dapat diintegrasikan dengan teknis budidaya tanaman."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianPengendalianVektorDapatDilakukanDengan_94481566 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian vektor dapat dilakukan dengan menggunakan insektisida."@id ;
+    ptp:deskripsiPengendalian "Pengendalian vektor dapat dilakukan dengan menggunakan insektisida."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPengendalianYangDapatDilakukanDengan_e6bb9ac3 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian yang dapat dilakukan dengan cara menggunakan varietas tahan, menggunakan bibit, setek atau bahan tanam yang bebas virus, rotasi tanaman, sanitasi dan eradikasi tanaman, serta mengendalikan serangga vektor (Saleh et al., 2015)."@id ;
+    ptp:deskripsiPengendalian "Pengendalian yang dapat dilakukan dengan cara menggunakan varietas tahan, menggunakan bibit, setek atau bahan tanam yang bebas virus, rotasi tanaman, sanitasi dan eradikasi tanaman, serta mengendalikan serangga vektor (Saleh et al., 2015)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakKuningUbiJalar .
+
+ptp:PengendalianPengendalianYangDapatDilakukanDi_e4bfb039 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengendalian yang dapat dilakukan di antaranya sanitasi, penanganan hasil panen secara hati-hati supaya luka karena panen dapat meminimalisir, menggunakan umbi yang bebas penyakit dan pencelupan dalam larutan fungisida (Saleh et al., 2015)."@id ;
+    ptp:deskripsiPengendalian "Pengendalian yang dapat dilakukan di antaranya sanitasi, penanganan hasil panen secara hati-hati supaya luka karena panen dapat meminimalisir, menggunakan umbi yang bebas penyakit dan pencelupan dalam larutan fungisida (Saleh et al., 2015)."@id ;
+    ptp:mengendalikanPenyakit ptp:LayuFusariumUbiJalar .
+
+ptp:PengendalianPenggunaanBahanAlamiSamaEfektifnya_934bba80 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penggunaan bahan alami sama efektifnya dan terkadang bisa lebih efektif dari pestisida kimia sintetik meskipun kadang memerlukan waktu yang lebih panjang."@id ;
+    ptp:deskripsiPengendalian "Penggunaan bahan alami sama efektifnya dan terkadang bisa lebih efektif dari pestisida kimia sintetik meskipun kadang memerlukan waktu yang lebih panjang."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPenggunaanPestisidaNabatiEkstrakDaun_1967d18f a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penggunaan pestisida nabati ekstrak daun kemangi bekerja dengan cara menghambat perkembangan jamur."@id ;
+    ptp:deskripsiPengendalian "Penggunaan pestisida nabati ekstrak daun kemangi bekerja dengan cara menghambat perkembangan jamur."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPenggunaanPestisidaSintetisDalamJangka_7def1482 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penggunaan pestisida sintetis dalam jangka panjang dapat menimbulkan resistensi, resurjensi dan kerusakan lingkungan."@id ;
+    ptp:deskripsiPengendalian "Penggunaan pestisida sintetis dalam jangka panjang dapat menimbulkan resistensi, resurjensi dan kerusakan lingkungan."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPenggunaanPestisidaSintetisSecaraBerlebihan_ad542838 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penggunaan pestisida sintetis secara berlebihan akan menimbulkan resistensi terhadap OPT."@id ;
+    ptp:deskripsiPengendalian "Penggunaan pestisida sintetis secara berlebihan akan menimbulkan resistensi terhadap OPT."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPenggunaanTanamanDariBenihYang_9d2e6ba7 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penggunaan tanaman dari benih yang sebelumnya terinfeksi PStV akan menyebabkan ledakan penyakit terutama saat populasi vektor tinggi."@id ;
+    ptp:deskripsiPengendalian "Penggunaan tanaman dari benih yang sebelumnya terinfeksi PStV akan menyebabkan ledakan penyakit terutama saat populasi vektor tinggi."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPenggunaanVarietasYangTidakMembawa_cbcecebb a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penggunaan varietas yang tidak membawa PStV juga merupakan upaya untuk mengurangi intensitas PStV di lapang."@id ;
+    ptp:deskripsiPengendalian "Penggunaan varietas yang tidak membawa PStV juga merupakan upaya untuk mengurangi intensitas PStV di lapang."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPenghambatPertumbuhanYaituDenganHiperparasitisme_ac5f9ea4 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Penghambat pertumbuhan yaitu dengan hiperparasitisme dan mengeluarkan senyawa antibiotika yang akan menghambat pertumbuhan patogen."@id ;
+    ptp:deskripsiPengendalian "Penghambat pertumbuhan yaitu dengan hiperparasitisme dan mengeluarkan senyawa antibiotika yang akan menghambat pertumbuhan patogen."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPengujianKetahananTanamanTerhadapPStV_f432216f a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pengujian ketahanan tanaman terhadap PStV pernah dilakukan terhadap 11.000 genotipe menunjukkan semua genotipe rentan terhadap PStV."@id ;
+    ptp:deskripsiPengendalian "Pengujian ketahanan tanaman terhadap PStV pernah dilakukan terhadap 11.000 genotipe menunjukkan semua genotipe rentan terhadap PStV."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPergiliranTanamanDenganTanamanLain_28b03763 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pergiliran tanaman dengan tanaman lain berbeda famili dapat menekan penyakit PStV."@id ;
+    ptp:deskripsiPengendalian "Pergiliran tanaman dengan tanaman lain berbeda famili dapat menekan penyakit PStV."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPertumbuhanTanamanYangTegarAkan_6f3f7f1b a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pertumbuhan tanaman yang tegar akan mampu mengurangi kehilangan hasil akibat infeksi PStV."@id ;
+    ptp:deskripsiPengendalian "Pertumbuhan tanaman yang tegar akan mampu mengurangi kehilangan hasil akibat infeksi PStV."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianPestisidaDigemariDiKalanganPetani_57ce16fd a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pestisida digemari di kalangan petani karena mudah didapatkan serta mudah dalam penggunaannya."@id ;
+    ptp:deskripsiPengendalian "Pestisida digemari di kalangan petani karena mudah didapatkan serta mudah dalam penggunaannya."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPestisidaDigolongkanMenjadiBeberapaMacam_d10b4b44 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pestisida digolongkan menjadi beberapa macam di antaranya insektisida, fungisida, herbisida, rodentisida, dan nematosida."@id ;
+    ptp:deskripsiPengendalian "Pestisida digolongkan menjadi beberapa macam di antaranya insektisida, fungisida, herbisida, rodentisida, dan nematosida."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPestisidaMerupakanBahanAtauZat_90d7f35f a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pestisida merupakan bahan atau zat kimia yang berguna untuk mengendalikan populasi hama yang menyerang pada tumbuhan."@id ;
+    ptp:deskripsiPengendalian "Pestisida merupakan bahan atau zat kimia yang berguna untuk mengendalikan populasi hama yang menyerang pada tumbuhan."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPestisidaNabatiBersifatToxinBagi_a1e5f9a4 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pestisida nabati bersifat toxin bagi patogen tergantung bahan pembuatnya."@id ;
+    ptp:deskripsiPengendalian "Pestisida nabati bersifat toxin bagi patogen tergantung bahan pembuatnya."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianPestisidaNabatiYangDilaporkanLebih_12f8596c a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Pestisida nabati yang dilaporkan lebih ramah lingkungan namun tetap efektif dalam mengendalikan Organisme Pengganggu Tanaman (OPT)."@id ;
+    ptp:deskripsiPengendalian "Pestisida nabati yang dilaporkan lebih ramah lingkungan namun tetap efektif dalam mengendalikan Organisme Pengganggu Tanaman (OPT)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianRuangPenyimpananDiaturPadaSuhu_18abed67 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Ruang penyimpanan diatur pada suhu 13-16° C dengan kelembaban 85% agar perkembangan penyakit lambat (Clark and Moyer, 2013)."@id ;
+    ptp:deskripsiPengendalian "Ruang penyimpanan diatur pada suhu 13-16° C dengan kelembaban 85% agar perkembangan penyakit lambat (Clark and Moyer, 2013)."@id ;
+    ptp:mengendalikanPenyakit ptp:LayuFusariumUbiJalar .
+
+ptp:PengendalianSaatIniPestisidaSudahTidak_e15bf269 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Saat ini pestisida sudah tidak asing lagi bagi masyarakat terutama di kalangan petani."@id ;
+    ptp:deskripsiPengendalian "Saat ini pestisida sudah tidak asing lagi bagi masyarakat terutama di kalangan petani."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianSaatPanenProdusenSeringMemanen_db28f7e4 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Saat panen, produsen sering memanen ubi jalar di bawah suhu dan kelembaban relatif dan pengeringan dilakukan di lapangan dengan kisaran suhu optimum 29 – 32° C dengan kelembaban 85%, di mana kondisi tersebut memungkinkan penyembuhan periderm secara cepat dan lengkap (Nielsen and Johnson, 1974)."@id ;
+    ptp:deskripsiPengendalian "Saat panen, produsen sering memanen ubi jalar di bawah suhu dan kelembaban relatif dan pengeringan dilakukan di lapangan dengan kisaran suhu optimum 29 – 32° C dengan kelembaban 85%, di mana kondisi tersebut memungkinkan penyembuhan periderm secara cepat dan lengkap (Nielsen and Johnson, 1974)."@id ;
+    ptp:mengendalikanPenyakit ptp:LayuFusariumUbiJalar .
+
+ptp:PengendalianSalahSatuAgensPengendaliHayati_64edcf60 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Salah satu agens pengendali hayati yang dapat digunakan untuk mengendalikan jamur Cerospora sp yaitu Trichoderma harzianum."@id ;
+    ptp:deskripsiPengendalian "Salah satu agens pengendali hayati yang dapat digunakan untuk mengendalikan jamur Cerospora sp yaitu Trichoderma harzianum."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianSalahSatuFungisidaYangDapat_8a6a5356 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Salah satu fungisida yang dapat digunakan untuk mengendalikan C."@id ;
+    ptp:deskripsiPengendalian "Salah satu fungisida yang dapat digunakan untuk mengendalikan C."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianSejumlahTanamanYangDapatDigunakan_d8b8918b a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Sejumlah tanaman yang dapat digunakan sebagai bahan baku pestisida nabati seperti daun pepaya, brotowali, bawang putih, mimba, kipait, saliara, suren, jarak pagar, daun kemangi."@id ;
+    ptp:deskripsiPengendalian "Sejumlah tanaman yang dapat digunakan sebagai bahan baku pestisida nabati seperti daun pepaya, brotowali, bawang putih, mimba, kipait, saliara, suren, jarak pagar, daun kemangi."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianSelainItuMemilihTanamanDengan_ee331deb a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Selain itu, memilih tanaman dengan tingkat kerentanan yang lebih rendah terhadap F."@id ;
+    ptp:deskripsiPengendalian "Selain itu, memilih tanaman dengan tingkat kerentanan yang lebih rendah terhadap F."@id ;
+    ptp:mengendalikanPenyakit ptp:LayuFusariumUbiJalar .
+
+ptp:PengendalianSelainItuPemanfaatanTanamanSebagai_376eba43 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Selain itu, pemanfaatan tanaman sebagai fungisida nabati dapat menggunakan ekstrak Zingeber officinale, Portulaca oleracea dan Impatiens balsamina dengan larutan etanol atau aseton mampu menghambat pertumbuhan jamur S."@id ;
+    ptp:deskripsiPengendalian "Selain itu, pemanfaatan tanaman sebagai fungisida nabati dapat menggunakan ekstrak Zingeber officinale, Portulaca oleracea dan Impatiens balsamina dengan larutan etanol atau aseton mampu menghambat pertumbuhan jamur S."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitKudisUbiJalar .
+
+ptp:PengendalianSelainItuPestisidaNabatiJuga_f7bea0f0 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Selain itu, pestisida nabati juga dapat mencegah serangga memakan tanaman, menghambat reproduksi serangga, mengacaukan sistem hormon di dalam tubuh serangga, dan mengendalikan pertumbuhan jamur dan bakteri."@id ;
+    ptp:deskripsiPengendalian "Selain itu, pestisida nabati juga dapat mencegah serangga memakan tanaman, menghambat reproduksi serangga, mengacaukan sistem hormon di dalam tubuh serangga, dan mengendalikan pertumbuhan jamur dan bakteri."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianSelainItuSenyawaLinalolEstragol_d98d999d a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Selain itu senyawa linalol, estragol, dan eugenol pada ekstrak kemangi berperan juga dalam proses penghambatan jamur (Zahra et al., 2017)."@id ;
+    ptp:deskripsiPengendalian "Selain itu senyawa linalol, estragol, dan eugenol pada ekstrak kemangi berperan juga dalam proses penghambatan jamur (Zahra et al., 2017)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianSelainItuUpayaUntukMengurangi_0538cad3 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Selain itu, upaya untuk mengurangi intensitas serangan PStV yaitu dengan menggunakan mulsa mengkilap."@id ;
+    ptp:deskripsiPengendalian "Selain itu, upaya untuk mengurangi intensitas serangan PStV yaitu dengan menggunakan mulsa mengkilap."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianSelainMenekanPenyakitPengendalianHayati_6e3aa140 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Selain menekan penyakit, pengendalian hayati tersebut dapat meningkatkan hasil polong kacang tanah hingga 2,71 t/ha sedangkan tanpa perlakuan pengendalian polong yang dihasilkan hanya 2 t/ha (Doan dan Nguyen 2006)."@id ;
+    ptp:deskripsiPengendalian "Selain menekan penyakit, pengendalian hayati tersebut dapat meningkatkan hasil polong kacang tanah hingga 2,71 t/ha sedangkan tanpa perlakuan pengendalian polong yang dihasilkan hanya 2 t/ha (Doan dan Nguyen 2006)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianSolanacearumMerupakanPatogenYangTerdiri_c582dc98 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "solanacearum merupakan patogen yang terdiri atas beragam strain dan biovar, serta pengendaliannya sejauh ini belum dilakukan secara serius oleh petani maka beberapa komponen pengendalian seperti penggunaan varietas tahan, pemilihan lahan bebas penyakit (non infeksi), pergiliran tanaman dengan jenis bukan inang, penggunaan benih sehat, pengendalian hayati, pestisida nabati potensial sebagai bakterisida, dan pengendalian kimiawi dengan antibiotik memiliki potensi cukup baik untuk diterapkan di lapangan."@id ;
+    ptp:deskripsiPengendalian "solanacearum merupakan patogen yang terdiri atas beragam strain dan biovar, serta pengendaliannya sejauh ini belum dilakukan secara serius oleh petani maka beberapa komponen pengendalian seperti penggunaan varietas tahan, pemilihan lahan bebas penyakit (non infeksi), pergiliran tanaman dengan jenis bukan inang, penggunaan benih sehat, pengendalian hayati, pestisida nabati potensial sebagai bakterisida, dan pengendalian kimiawi dengan antibiotik memiliki potensi cukup baik untuk diterapkan di lapangan."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianSolanacearumPadaTanamanAromatikNilam_23a464ba a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "solanacearum pada tanaman aromatik nilam."@id ;
+    ptp:deskripsiPengendalian "solanacearum pada tanaman aromatik nilam."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianSterilisasiAkarAtauBahanSebelum_552cd22d a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Sterilisasi akar atau bahan sebelum ditanam di persemaian, sterilisasi tanah dan rotasi tanaman efektif untuk pencegahan menggunakan kultivar yang tahan (Okada et al., 2017)."@id ;
+    ptp:deskripsiPengendalian "Sterilisasi akar atau bahan sebelum ditanam di persemaian, sterilisasi tanah dan rotasi tanaman efektif untuk pencegahan menggunakan kultivar yang tahan (Okada et al., 2017)."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBusukHitamBlackRotUbiJalar .
+
+ptp:PengendalianSubtilisMenekanKejadianLayuHingga_06b23492 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "subtilis menekan kejadian layu hingga 61% sedangkan tanpa pengendalian hayati kejadian layu lebih tinggi mencapai 89%."@id ;
+    ptp:deskripsiPengendalian "subtilis menekan kejadian layu hingga 61% sedangkan tanpa pengendalian hayati kejadian layu lebih tinggi mencapai 89%."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianSubtilisYangDiaplikasikanMelaluiBenih_d3833792 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "subtilis yang diaplikasikan melalui benih kacang tanah, dapat menekan kejadian layu hingga 67% demikian juga aplikasi B."@id ;
+    ptp:deskripsiPengendalian "subtilis yang diaplikasikan melalui benih kacang tanah, dapat menekan kejadian layu hingga 67% demikian juga aplikasi B."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianTanamanYangBerpotensiSebagaiBahan_617d5c55 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Tanaman yang berpotensi sebagai bahan pestisida di antaranya memiliki ciri beraroma kuat, rasa yang pahit, tidak disukai serangga hama, dan dapat digunakan sebagai tanaman obat."@id ;
+    ptp:deskripsiPengendalian "Tanaman yang berpotensi sebagai bahan pestisida di antaranya memiliki ciri beraroma kuat, rasa yang pahit, tidak disukai serangga hama, dan dapat digunakan sebagai tanaman obat."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianTingginyaHargaAntibiotikDanAdanya_cd0c0097 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Tingginya harga antibiotik dan adanya permintaan produk pertanian yang bebas residu pestisida, telah membatasi penerapan pengendalian kimiawi di beberapa negara seperti Mesir dan Eropa."@id ;
+    ptp:deskripsiPengendalian "Tingginya harga antibiotik dan adanya permintaan produk pertanian yang bebas residu pestisida, telah membatasi penerapan pengendalian kimiawi di beberapa negara seperti Mesir dan Eropa."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PengendalianTrichodermaHarzianumDapatMenghambatPerkembangan_cddbb057 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Trichoderma harzianum dapat menghambat perkembangan patogen melalui proses mikoparasitisme, antibiosis dan kompetisi."@id ;
+    ptp:deskripsiPengendalian "Trichoderma harzianum dapat menghambat perkembangan patogen melalui proses mikoparasitisme, antibiosis dan kompetisi."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianUpayaPengendalianHayatiYaituPengendalian_2ba44e85 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Upaya pengendalian hayati yaitu, pengendalian dengan mikroorganisme antagonis."@id ;
+    ptp:deskripsiPengendalian "Upaya pengendalian hayati yaitu, pengendalian dengan mikroorganisme antagonis."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianUpayaPengendalianTidakDapatDilakukan_8c14767a a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Upaya pengendalian tidak dapat dilakukan dengan 1 teknik pengendalian, hal ini untuk mencegah infeksi dari awal budidaya."@id ;
+    ptp:deskripsiPengendalian "Upaya pengendalian tidak dapat dilakukan dengan 1 teknik pengendalian, hal ini untuk mencegah infeksi dari awal budidaya."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianUpayaPengendalianYangDapatDilakukan_7c92a6ad a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Upaya pengendalian yang dapat dilakukan yaitu dengan pengendalian hayati, pengendalian dengan pestisida nabati dan pengendalian kimia."@id ;
+    ptp:deskripsiPengendalian "Upaya pengendalian yang dapat dilakukan yaitu dengan pengendalian hayati, pengendalian dengan pestisida nabati dan pengendalian kimia."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianUpayaUntukMengendalikanPenyakitKarat_a089be19 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Upaya untuk mengendalikan penyakit karat melalui beberapa cara, di antaranya dengan penanaman varietas tahan, sanitasi dan rotasi, pengendalian hayati, pengendalian nabati dan pengendalian dengan kimia sintetis."@id ;
+    ptp:deskripsiPengendalian "Upaya untuk mengendalikan penyakit karat melalui beberapa cara, di antaranya dengan penanaman varietas tahan, sanitasi dan rotasi, pengendalian hayati, pengendalian nabati dan pengendalian dengan kimia sintetis."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBercakDaunKacangTanah .
+
+ptp:PengendalianWaktuTanamYangTepatBerbeda_44458d45 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Waktu tanam yang tepat berbeda setiap agroekosistem."@id ;
+    ptp:deskripsiPengendalian "Waktu tanam yang tepat berbeda setiap agroekosistem."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah .
+
+ptp:PengendalianWalaupunBakterisidaAtauAntibiotikTelah_91959485 a ptp:Pengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Walaupun bakterisida atau antibiotik telah diketahui efektivitasnya terhadap layu bakteri, tetapi belum diterapkan pada kacang tanah diduga karena pertimbangan tingginya harga bakterisida sehingga tidak efisien."@id ;
+    ptp:deskripsiPengendalian "Walaupun bakterisida atau antibiotik telah diketahui efektivitasnya terhadap layu bakteri, tetapi belum diterapkan pada kacang tanah diduga karena pertimbangan tingginya harga bakterisida sehingga tidak efisien."@id ;
+    ptp:mengendalikanPenyakit ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:PenyakitBakteri a owl:Class ;
+    rdfs:label "Penyakit Bakteri"@id ;
+    rdfs:subClassOf ptp:Penyakit ;
+    owl:disjointWith ptp:PenyakitLainnya,
+        ptp:PenyakitVirus ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( ptp:Penyakit [ a owl:Restriction ;
+                        owl:onProperty ptp:disebabkanOleh ;
+                        owl:someValuesFrom ptp:Bakteri ] ) ] .
+
+ptp:PhaeoramulariaManihotis a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Phaeoramularia manihotis"@id ;
+    ptp:menyebabkanPenyakit ptp:BercakDaunPutihUbiKayu ;
+    ptp:namaIlmiahPatogen "Phaeoramularia manihotis"@id .
+
+ptp:PolyporusSulphureus a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Polyporus sulphureus"@id ;
+    ptp:menyebabkanPenyakit ptp:BusukAkarUbiKayu ;
+    ptp:namaIlmiahPatogen "Polyporus sulphureus"@id .
+
+ptp:PucciniaArachidis a ptp:Jamur,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Puccinia arachidis"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitBercakDaunKacangTanah ;
+    ptp:namaIlmiahPatogen "Puccinia arachidis"@id .
+
+ptp:RalstoniaSolanacearum a ptp:Bakteri,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Ralstonia solanacearum"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitLayuBakteriKacangTanah ;
+    ptp:namaIlmiahPatogen "Ralstonia solanacearum"@id .
+
+ptp:SpacelomaBatatas a ptp:Jamur,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Spaceloma batatas"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitKudisUbiJalar ;
+    ptp:namaIlmiahPatogen "Spaceloma batatas"@id .
+
+ptp:SweetPotatoChloroticFleckVirus a ptp:Patogen,
+        ptp:Virus,
+        owl:NamedIndividual ;
+    rdfs:label "Sweet Potato Chlorotic Fleck Virus"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitBercakKuningUbiJalar ;
+    ptp:namaIlmiahPatogen "Sweet Potato Chlorotic Fleck Virus"@id .
+
+ptp:SweetPotatoFeatheryMottleVirus a ptp:Patogen,
+        ptp:Virus,
+        owl:NamedIndividual ;
+    rdfs:label "Sweet Potato Feathery Mottle Virus"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitBercakKuningUbiJalar ;
+    ptp:namaIlmiahPatogen "Sweet Potato Feathery Mottle Virus"@id .
+
+ptp:SweetPotatoMildMottleVirus a ptp:Patogen,
+        ptp:Virus,
+        owl:NamedIndividual ;
+    rdfs:label "Sweet Potato Mild Mottle Virus"@id ;
+    ptp:menyebabkanPenyakit ptp:PenyakitBercakKuningUbiJalar ;
+    ptp:namaIlmiahPatogen "Sweet Potato Mild Mottle Virus"@id .
+
+ptp:XanthomonasCampestrisPvManihotis a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Xanthomonas campestris pv. Manihotis"@id ;
+    ptp:menyebabkanPenyakit ptp:HawarBakteriUbiKayu ;
+    ptp:namaIlmiahPatogen "Xanthomonas campestris pv. Manihotis"@id .
+
+ptp:XanthomonasCampestrispvManihotis a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Xanthomonas Campestrispv. Manihotis"@id ;
+    ptp:menyebabkanPenyakit ptp:HawarDaunBakteriUbiKayu ;
+    ptp:namaIlmiahPatogen "Xanthomonas Campestrispv. Manihotis"@id .
+
+ptp:dijelaskanDalam a owl:ObjectProperty ;
+    rdfs:label "dijelaskan dalam"@id ;
+    rdfs:comment "Referensi menjelaskan penyakit; kebalikan dari memilikiReferensi (menjadiReferensiBagi pada rancangan awal)."@id ;
+    rdfs:domain ptp:Referensi ;
+    rdfs:range ptp:Penyakit ;
+    owl:inverseOf ptp:memilikiReferensi .
+
+ptp:dikendalikanDengan a owl:ObjectProperty ;
+    rdfs:label "dikendalikan dengan"@id ;
+    rdfs:comment "Metode pengendalian yang direkomendasikan untuk penyakit."@id ;
+    rdfs:domain ptp:Penyakit ;
+    rdfs:range ptp:Pengendalian ;
+    owl:inverseOf ptp:mengendalikanPenyakit .
+
+ptp:diserangPenyakit a owl:ObjectProperty ;
+    rdfs:label "diserang penyakit"@id ;
+    rdfs:comment "Kebalikan dari menyerangTanaman."@id ;
+    rdfs:domain ptp:TanamanPangan ;
+    rdfs:range ptp:Penyakit ;
+    owl:inverseOf ptp:menyerangTanaman .
+
+ptp:memilikiReferensi a owl:ObjectProperty ;
+    rdfs:label "memiliki referensi"@id ;
+    rdfs:comment "Penyakit didukung oleh referensi sumber."@id ;
+    rdfs:domain ptp:Penyakit ;
+    rdfs:range ptp:Referensi ;
+    owl:inverseOf ptp:dijelaskanDalam .
+
+ptp:mengendalikanPenyakit a owl:ObjectProperty ;
+    rdfs:label "mengendalikan penyakit"@id ;
+    rdfs:comment "Kebalikan dari dikendalikanDengan."@id ;
+    rdfs:domain ptp:Pengendalian ;
+    rdfs:range ptp:Penyakit ;
+    owl:inverseOf ptp:dikendalikanDengan .
+
+ptp:menyebabkanPenyakit a owl:ObjectProperty ;
+    rdfs:label "menyebabkan penyakit"@id ;
+    rdfs:comment "Kebalikan dari disebabkanOleh."@id ;
+    rdfs:domain ptp:Patogen ;
+    rdfs:range ptp:Penyakit ;
+    owl:inverseOf ptp:disebabkanOleh .
+
+ptp:merupakanGejalaDari a owl:ObjectProperty ;
+    rdfs:label "merupakan gejala dari"@id ;
+    rdfs:comment "Kebalikan dari memilikiGejala."@id ;
+    rdfs:domain ptp:Gejala ;
+    rdfs:range ptp:Penyakit ;
+    owl:inverseOf ptp:memilikiGejala .
+
+ptp:Begomovirus a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Begomovirus"@id ;
+    ptp:menyebabkanPenyakit ptp:CassavaMosaicBegomovirusCMBsUbiKayu,
+        ptp:TanamanKerdilStuntUbiKayu ;
+    ptp:namaIlmiahPatogen "Begomovirus"@id .
+
+ptp:BotryodiplodiaSpp a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Botryodiplodia spp"@id ;
+    ptp:menyebabkanPenyakit ptp:BusukAkarDanUmbiUbiKayu,
+        ptp:BusukPangkalBatangUbiKayu ;
+    ptp:namaIlmiahPatogen "Botryodiplodia spp"@id .
+
+ptp:DiplodiaSpp a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Diplodia spp"@id ;
+    ptp:menyebabkanPenyakit ptp:BusukAkarDanUmbiUbiKayu,
+        ptp:BusukPangkalBatangUbiKayu ;
+    ptp:namaIlmiahPatogen "Diplodia spp"@id .
+
+ptp:FusariumSpp a ptp:Jamur,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Fusarium spp"@id ;
+    ptp:menyebabkanPenyakit ptp:BusukPangkalBatangUbiKayu,
+        ptp:BusukUmbiUbiKayu ;
+    ptp:namaIlmiahPatogen "Fusarium spp"@id .
+
+ptp:PenyakitVirus a owl:Class ;
+    rdfs:label "Penyakit Virus"@id ;
+    rdfs:subClassOf ptp:Penyakit ;
+    owl:disjointWith ptp:PenyakitLainnya ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( ptp:Penyakit [ a owl:Restriction ;
+                        owl:onProperty ptp:disebabkanOleh ;
+                        owl:someValuesFrom ptp:Virus ] ) ] .
+
+ptp:PhytophthoraSpp a ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Phytophthora spp"@id ;
+    ptp:menyebabkanPenyakit ptp:BusukAkarDanUmbiUbiKayu,
+        ptp:BusukPangkalBatangUbiKayu ;
+    ptp:namaIlmiahPatogen "Phytophthora spp"@id .
+
+ptp:SclerotiumRolfsii a ptp:Jamur,
+        ptp:Patogen,
+        owl:NamedIndividual ;
+    rdfs:label "Sclerotium rolfsii"@id ;
+    ptp:menyebabkanPenyakit ptp:BusukAkarDanUmbiUbiKayu,
+        ptp:BusukPangkalBatangUbiKayu ;
+    ptp:namaIlmiahPatogen "Sclerotium rolfsii"@id .
+
+ptp:memilikiGejala a owl:ObjectProperty ;
+    rdfs:label "memiliki gejala"@id ;
+    rdfs:comment "Penyakit menimbulkan gejala tertentu pada tanaman."@id ;
+    rdfs:domain ptp:Penyakit ;
+    rdfs:range ptp:Gejala ;
+    owl:inverseOf ptp:merupakanGejalaDari .
+
+ptp:menyerangTanaman a owl:ObjectProperty ;
+    rdfs:label "menyerang tanaman"@id ;
+    rdfs:comment "Penyakit menyerang tanaman pangan tertentu (tanaman inang)."@id ;
+    rdfs:domain ptp:Penyakit ;
+    rdfs:range ptp:TanamanPangan ;
+    owl:inverseOf ptp:diserangPenyakit .
+
+ptp:Bakteri a owl:Class ;
+    rdfs:label "Bakteri"@id ;
+    rdfs:subClassOf ptp:Patogen ;
+    owl:disjointWith ptp:OrganismeLain,
+        ptp:Virus .
+
+ptp:FaktorLingkungan a owl:Class ;
+    rdfs:label "Faktor Lingkungan"@id ;
+    rdfs:subClassOf ptp:FaktorRisiko ;
+    owl:disjointWith ptp:FaktorBudidaya,
+        ptp:FaktorLahan .
+
+ptp:KacangTanah a ptp:TanamanPangan,
+        owl:NamedIndividual ;
+    rdfs:label "Kacang tanah"@id ;
+    ptp:diserangPenyakit ptp:PenyakitBelangMottleKacangTanah,
+        ptp:PenyakitBercakDaunKacangTanah,
+        ptp:PenyakitLayuBakteriKacangTanah .
+
+ptp:NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Nekrosis pada titik tunas (Cassava bud necrosis)"@id ;
+    ptp:memilikiGejala ptp:GejalaGejalaUtamaDitandaiDenganMunculnya_ee60c01e ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:PenyakitLainnya a owl:Class ;
+    rdfs:label "Penyakit Lainnya"@id ;
+    rdfs:subClassOf ptp:Penyakit .
+
+ptp:AntraknosaUbiKayuDIS031 a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Antraknosa"@id ;
+    ptp:disebabkanOleh ptp:ColletotricumSpp ;
+    ptp:memilikiGejala ptp:GejalaPadaTangkaiDaunMunculRetakan_8095bba8 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:AntraknosaUbiKayuDIS110 a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Antraknosa"@id ;
+    ptp:disebabkanOleh ptp:CollectothricumGloeosporioides ;
+    ptp:memilikiGejala ptp:GejalaInfeksiPadaBatangAkanMenimbulkan_6893d93b ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:BercakDaunBaurUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Bercak daun baur"@id ;
+    ptp:disebabkanOleh ptp:CercosporaViscosae ;
+    ptp:memilikiGejala ptp:GejalaBercakBerukuranBesarSeringDijumpai_3379344c ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:BercakDaunPutihUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Bercak daun putih"@id ;
+    ptp:disebabkanOleh ptp:PhaeoramulariaManihotis ;
+    ptp:memilikiGejala ptp:GejalaBercakKecilBulatBerwarnaPutih_2396721b ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:BusukAkarUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Busuk akar"@id ;
+    ptp:disebabkanOleh ptp:PolyporusSulphureus ;
+    ptp:memilikiGejala ptp:GejalaAkarMembusukTerdapatTubuhBuah_0f535eca ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Akar,
+        ptp:Umbi ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:BusukUmbiUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Busuk Umbi"@id ;
+    ptp:disebabkanOleh ptp:FusariumSpp ;
+    ptp:memilikiGejala ptp:GejalaUmbiMembusukDanTanamanLayu_2dc0c0e4 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Akar,
+        ptp:Umbi ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:CassavaBrownStreakDiseaseCBSDUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Cassava Brown Streak Disease (CBSD)"@id ;
+    ptp:disebabkanOleh ptp:Ipomovirus ;
+    ptp:memilikiGejala ptp:GejalaBercakKlorosisPadaDaun_cdaa23ae ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:CassavaMosaicBegomovirusCMBsUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Cassava Mosaic Begomovirus (CMBs)"@id ;
+    ptp:disebabkanOleh ptp:Begomovirus ;
+    ptp:memilikiGejala ptp:GejalaTampakMotifMosaikBerwarnaKuning_a067218c ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:FaktorBudidaya a owl:Class ;
+    rdfs:label "Faktor Budidaya"@id ;
+    rdfs:subClassOf ptp:FaktorRisiko ;
+    owl:disjointWith ptp:FaktorLahan .
+
+ptp:FaktorLahan a owl:Class ;
+    rdfs:label "Faktor Lahan"@id ;
+    rdfs:subClassOf ptp:FaktorRisiko .
+
+ptp:GejalaAkar a owl:Class ;
+    rdfs:label "Gejala Akar"@id ;
+    rdfs:subClassOf ptp:Gejala .
+
+ptp:GejalaUmbi a owl:Class ;
+    rdfs:label "Gejala Umbi"@id ;
+    rdfs:subClassOf ptp:Gejala .
+
+ptp:HawarBakteriUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Hawar bakteri"@id ;
+    ptp:disebabkanOleh ptp:XanthomonasCampestrisPvManihotis ;
+    ptp:memilikiGejala ptp:GejalaMunculEksudatBergetahBerwarnaKrem_a255e497 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:HawarDaunBakteriUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Hawar daun bakteri"@id ;
+    ptp:disebabkanOleh ptp:XanthomonasCampestrispvManihotis ;
+    ptp:memilikiGejala ptp:GejalaGejalaKhasBerupaBercakAtau_bb5a688d ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:OrganismeLain a owl:Class ;
+    rdfs:label "Organisme Lain"@id ;
+    rdfs:subClassOf ptp:Patogen .
+
+ptp:SapuSetanWitchesBroomUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Sapu setan (Witches broom)"@id ;
+    ptp:disebabkanOleh ptp:Fitoplasma ;
+    ptp:memilikiGejala ptp:GejalaTanamanTumbuhKerdilDwarfRuas_bde1d865 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:SuperelongasiUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Superelongasi"@id ;
+    ptp:disebabkanOleh ptp:ElsinoeBrasiliensis ;
+    ptp:memilikiGejala ptp:GejalaPemanjanganRuasBatangYangBerlebihan_c36bb64b ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:TanamanKerdilStuntUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Tanaman kerdil (stunt)"@id ;
+    ptp:disebabkanOleh ptp:Begomovirus ;
+    ptp:memilikiGejala ptp:GejalaTanamanTidakTumbuhSecaraNormal_cf1598a0 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:UbiJalar a ptp:TanamanPangan,
+        owl:NamedIndividual ;
+    rdfs:label "Ubi jalar"@id ;
+    ptp:diserangPenyakit ptp:LayuFusariumUbiJalar,
+        ptp:PenyakitBercakKuningUbiJalar,
+        ptp:PenyakitBusukHitamBlackRotUbiJalar,
+        ptp:PenyakitKudisUbiJalar ;
+    ptp:namaIlmiah "Ipomoea batatas L. (Lam)"@id .
+
+ptp:BercakDaunCoklatUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Bercak daun Coklat"@id ;
+    ptp:disebabkanOleh ptp:CercosporaHenningsii,
+        ptp:CercosporidiumHenningsii ;
+    ptp:memilikiGejala ptp:GejalaBercakDaunBerwarnaCokelatBerbentuk_625f0428 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:Biji a ptp:BagianTanaman,
+        owl:NamedIndividual ;
+    rdfs:label "Biji"@id .
+
+ptp:disebabkanOleh a owl:ObjectProperty ;
+    rdfs:label "disebabkan oleh"@id ;
+    rdfs:comment "Penyakit disebabkan oleh patogen tertentu."@id ;
+    rdfs:domain ptp:Penyakit ;
+    rdfs:range ptp:Patogen ;
+    owl:inverseOf ptp:menyebabkanPenyakit .
+
+ptp:Virus a owl:Class ;
+    rdfs:label "Virus"@id ;
+    rdfs:subClassOf ptp:Patogen ;
+    owl:disjointWith ptp:OrganismeLain .
+
+ptp:BusukAkarDanUmbiUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Busuk akar dan umbi"@id ;
+    ptp:disebabkanOleh ptp:BotryodiplodiaSpp,
+        ptp:DiplodiaSpp,
+        ptp:PhytophthoraSpp,
+        ptp:SclerotiumRolfsii ;
+    ptp:memilikiGejala ptp:GejalaAkarMengalamiKerusakanAkarPembentukan_99e28980 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Akar,
+        ptp:Umbi ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:Akar a ptp:BagianTanaman,
+        owl:NamedIndividual ;
+    rdfs:label "Akar"@id .
+
+ptp:BusukPangkalBatangUbiKayu a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Busuk pangkal batang"@id ;
+    ptp:disebabkanOleh ptp:BotryodiplodiaSpp,
+        ptp:DiplodiaSpp,
+        ptp:FusariumSpp,
+        ptp:PhytophthoraSpp,
+        ptp:SclerotiumRolfsii ;
+    ptp:memilikiGejala ptp:GejalaInfeksiPatogenPadaBagianBatang_259b3d61 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang ;
+    ptp:menyerangTanaman ptp:UbiKayu .
+
+ptp:TanamanPangan a owl:Class ;
+    rdfs:label "Tanaman Pangan"@id ;
+    owl:disjointWith ptp:BagianTanaman,
+        ptp:FaktorRisiko,
+        ptp:Gejala,
+        ptp:Patogen,
+        ptp:Pengendalian,
+        ptp:Penyakit,
+        ptp:Referensi .
+
+ptp:Jamur a owl:Class ;
+    rdfs:label "Jamur"@id ;
+    rdfs:subClassOf ptp:Patogen ;
+    owl:disjointWith ptp:Bakteri,
+        ptp:OrganismeLain,
+        ptp:Virus .
+
+ptp:Umbi a ptp:BagianTanaman,
+        owl:NamedIndividual ;
+    rdfs:label "Umbi"@id .
+
+ptp:FaktorRisiko a owl:Class ;
+    rdfs:label "Faktor Risiko"@id ;
+    owl:disjointWith ptp:Referensi .
+
+ptp:GejalaBatang a owl:Class ;
+    rdfs:label "Gejala Batang"@id ;
+    rdfs:subClassOf ptp:Gejala .
+
+ptp:BagianTanaman a owl:Class ;
+    rdfs:label "Bagian Tanaman"@id ;
+    owl:disjointWith ptp:FaktorRisiko,
+        ptp:Pengendalian,
+        ptp:Referensi .
+
+ptp:PenyakitBercakKuningUbiJalar a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit bercak kuning"@id ;
+    ptp:dikendalikanDengan ptp:PengendalianMenurutBarahimaAndPurnomo2003_b9a8b075,
+        ptp:PengendalianPengendalianYangDapatDilakukanDengan_e6bb9ac3 ;
+    ptp:disebabkanOleh ptp:SweetPotatoChloroticFleckVirus,
+        ptp:SweetPotatoFeatheryMottleVirus,
+        ptp:SweetPotatoMildMottleVirus ;
+    ptp:memilikiGejala ptp:GejalaAdapunGejalaDiLapanganPada_b6b7db6c,
+        ptp:GejalaGejalaYangTimbulAkibatSerangan_c8ea4de0,
+        ptp:GejalaInformasiPenelitianDiIndonesiaTerkait_8ee11e4c,
+        ptp:GejalaMenurutCooperAndJones2006_c959a1b0,
+        ptp:GejalaPenyakitBercakKuningPadaUbi_2ed05050 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiJalar .
+
+ptp:PenyakitBusukHitamBlackRotUbiJalar a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit busuk hitam (black rot)"@id ;
+    ptp:dikendalikanDengan ptp:Pengendalian2018MenjelaskanBahwaPengendalianPascapanen_ffe39a4f,
+        ptp:PengendalianAdapunPengendalianYangDapatDilakukan_d27acf2c,
+        ptp:PengendalianSterilisasiAkarAtauBahanSebelum_552cd22d ;
+    ptp:disebabkanOleh ptp:CeratocystisFimbriata ;
+    ptp:memilikiGejala ptp:Gejala2018MenjelaskanBahwaGejalaSerangan_a1bd3ac9,
+        ptp:GejalaFimbriataABGejalaPascapanenPada_3531aef5,
+        ptp:GejalaFimbriataPadaUmbiUbiJalar_7db4ad13,
+        ptp:GejalaGambar46GejalaDanBentuk_f4b351e9,
+        ptp:GejalaPenyakitBusukHitamBlackRot_d9297d18,
+        ptp:GejalaPenyebaranPenyakitBusukHitamMelalui_7e4b35e6 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Akar,
+        ptp:Umbi ;
+    ptp:menyerangTanaman ptp:UbiJalar .
+
+ptp:LayuFusariumUbiJalar a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "layu fusarium"@id ;
+    ptp:dikendalikanDengan ptp:PengendalianOxysporumScattoliniHernandezAndGonzales_e6eada76,
+        ptp:PengendalianPengendalianYangDapatDilakukanDi_e4bfb039,
+        ptp:PengendalianRuangPenyimpananDiaturPadaSuhu_18abed67,
+        ptp:PengendalianSaatPanenProdusenSeringMemanen_db28f7e4,
+        ptp:PengendalianSelainItuMemilihTanamanDengan_ee331deb ;
+    ptp:disebabkanOleh ptp:FusariumOxysporum ;
+    ptp:memilikiGejala ptp:Gejala2018MenjelaskanBahwaGejalaAwal_5c05bed5,
+        ptp:GejalaFusariumOxysporumDikenalSebagaiPenyebab_e321011e,
+        ptp:GejalaGejalaBerikutnyaDaunLayuKerdil_30de66d2,
+        ptp:GejalaGejalaSeranganFusariumPadaUmbi_d5d5ab03,
+        ptp:GejalaSelainItuTerjadiNekrosisPada_125ffc86,
+        ptp:GejalaTanamanMerambatBerwarnaKecokelatan1B_4ee547a4 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang,
+        ptp:Daun,
+        ptp:Umbi ;
+    ptp:menyerangTanaman ptp:UbiJalar .
+
+ptp:PenyakitKudisUbiJalar a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit kudis"@id ;
+    ptp:dikendalikanDengan ptp:PengendalianBatatasMisalnyaJagungPadiKacangKacangan_0235e728,
+        ptp:PengendalianMenurutMartantoTanatiAndBaan_d663d15d,
+        ptp:PengendalianPengendalianPenyakitKudisDapatDilakukan_39e475bc,
+        ptp:PengendalianSelainItuPemanfaatanTanamanSebagai_376eba43 ;
+    ptp:disebabkanOleh ptp:ElsinoeBatatas,
+        ptp:SpacelomaBatatas ;
+    ptp:memilikiGejala ptp:GejalaDaunMenjadiTidakProduktifDalam_20fbcc4e,
+        ptp:GejalaGejalaYangTimbulAkibatSerangan_915a4f80,
+        ptp:GejalaHasilPenelitianMartanto2010Menjelaskan_da1fad4b,
+        ptp:GejalaPadaAwalnyaBercakBerwarnaKuning_2c0c6737,
+        ptp:GejalaSelainItuFaktorLingkunganJuga_5dfc7716,
+        ptp:GejalaSumberInokulumPenyakitKudisBiasanya_81ba6411 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang,
+        ptp:Daun ;
+    ptp:menyerangTanaman ptp:UbiJalar .
+
+ptp:UbiKayu a ptp:TanamanPangan,
+        owl:NamedIndividual ;
+    rdfs:label "Ubi kayu"@id ;
+    ptp:diserangPenyakit ptp:AntraknosaUbiKayuDIS031,
+        ptp:AntraknosaUbiKayuDIS110,
+        ptp:BercakDaunBaurUbiKayu,
+        ptp:BercakDaunCoklatUbiKayu,
+        ptp:BercakDaunPutihUbiKayu,
+        ptp:BusukAkarDanUmbiUbiKayu,
+        ptp:BusukAkarUbiKayu,
+        ptp:BusukPangkalBatangUbiKayu,
+        ptp:BusukUmbiUbiKayu,
+        ptp:CassavaBrownStreakDiseaseCBSDUbiKayu,
+        ptp:CassavaMosaicBegomovirusCMBsUbiKayu,
+        ptp:HawarBakteriUbiKayu,
+        ptp:HawarDaunBakteriUbiKayu,
+        ptp:NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu,
+        ptp:SapuSetanWitchesBroomUbiKayu,
+        ptp:SuperelongasiUbiKayu,
+        ptp:TanamanKerdilStuntUbiKayu ;
+    ptp:namaIlmiah "Manihot esculenta Crantz"@id .
+
+ptp:Batang a ptp:BagianTanaman,
+        owl:NamedIndividual ;
+    rdfs:label "Batang"@id .
+
+ptp:Referensi a owl:Class ;
+    rdfs:label "Referensi"@id .
+
+ptp:BukuDOC002 a ptp:Buku,
+        ptp:Referensi,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Tanaman dan Pengendaliannya"@id ;
+    ptp:dijelaskanDalam ptp:AntraknosaUbiKayuDIS031,
+        ptp:AntraknosaUbiKayuDIS110,
+        ptp:BercakDaunBaurUbiKayu,
+        ptp:BercakDaunCoklatUbiKayu,
+        ptp:BercakDaunPutihUbiKayu,
+        ptp:BusukAkarDanUmbiUbiKayu,
+        ptp:BusukAkarUbiKayu,
+        ptp:BusukPangkalBatangUbiKayu,
+        ptp:BusukUmbiUbiKayu,
+        ptp:CassavaBrownStreakDiseaseCBSDUbiKayu,
+        ptp:CassavaMosaicBegomovirusCMBsUbiKayu,
+        ptp:HawarBakteriUbiKayu,
+        ptp:HawarDaunBakteriUbiKayu,
+        ptp:LayuFusariumUbiJalar,
+        ptp:NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu,
+        ptp:PenyakitBelangMottleKacangTanah,
+        ptp:PenyakitBercakDaunKacangTanah,
+        ptp:PenyakitBercakKuningUbiJalar,
+        ptp:PenyakitBusukHitamBlackRotUbiJalar,
+        ptp:PenyakitKudisUbiJalar,
+        ptp:PenyakitLayuBakteriKacangTanah,
+        ptp:SapuSetanWitchesBroomUbiKayu,
+        ptp:SuperelongasiUbiKayu,
+        ptp:TanamanKerdilStuntUbiKayu ;
+    ptp:judulReferensi "Penyakit Tanaman dan Pengendaliannya"@id ;
+    ptp:namaPenulis "Evan Purnama Ramdan, Lina Budiarti, Nur Kholida Wulansari, Resti Fajarfika, Riana Murti Handayani, Ratna Dwi Hirma Windriyati, Junairiah, Dwiwiyati Nurul Septariani, Arsi, Muzayyanah Rahmiyah, Wenni Tania Defriyanti, Muh. Adiwena, Akhmad Faisal Malik, Ankardiansyah Pandu Pradana, Muhammad Asril"@id ;
+    ptp:tahunTerbit 2021 .
+
+ptp:GejalaDaun a owl:Class ;
+    rdfs:label "Gejala Daun"@id ;
+    rdfs:subClassOf ptp:Gejala .
+
+ptp:PenyakitLayuBakteriKacangTanah a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Layu Bakteri"@id ;
+    ptp:dikendalikanDengan ptp:PengendalianAeroginosaBulkholderiaCepaciaSertaBacillus_b7c945fd,
+        ptp:PengendalianAgensHayatiDariJenisBakteri_2ea7be64,
+        ptp:PengendalianBeberapaBakteriAntagonisSepertiPsedomonas_577cd405,
+        ptp:PengendalianBeberapaMikrobaTelahDitelitiDan_c8140e0b,
+        ptp:PengendalianHasilPenelitianAsmanDanSitepu_d6a3d46e,
+        ptp:PengendalianKeamananHayatiProdukPertanianSaat_008ba70c,
+        ptp:PengendalianPengendalianKimiaPengendalianKimiawiDengan_6c8594d7,
+        ptp:PengendalianPengendalianPenyakitTanamanDitekankanMelalui_c3266e86,
+        ptp:PengendalianSelainMenekanPenyakitPengendalianHayati_6e3aa140,
+        ptp:PengendalianSolanacearumMerupakanPatogenYangTerdiri_c582dc98,
+        ptp:PengendalianSolanacearumPadaTanamanAromatikNilam_23a464ba,
+        ptp:PengendalianSubtilisMenekanKejadianLayuHingga_06b23492,
+        ptp:PengendalianSubtilisYangDiaplikasikanMelaluiBenih_d3833792,
+        ptp:PengendalianTingginyaHargaAntibiotikDanAdanya_cd0c0097,
+        ptp:PengendalianWalaupunBakterisidaAtauAntibiotikTelah_91959485 ;
+    ptp:disebabkanOleh ptp:RalstoniaSolanacearum ;
+    ptp:memilikiGejala ptp:GejalaEkspresiKetahananTerhadapPenyakitLayu_0ac95d2e,
+        ptp:GejalaGejalaAwalBerupaKelayuanTidak_51f17216,
+        ptp:GejalaGejalaIniDiikutiOlehKematian_064700df,
+        ptp:GejalaGulmaYangTumbuhBersamaKacang_297f1fb1,
+        ptp:GejalaHasilPenelitianDiChinaMenunjukkan_38d94252,
+        ptp:GejalaMengeringkanKacangTanahHinggaKadar_c913930a,
+        ptp:GejalaPadaKondisiIniSistemPerakaran_3189e491,
+        ptp:GejalaPatogenPenyebabPenyakitLayuAdalah_0d0c919a,
+        ptp:GejalaSelainKacangTanahYangMenjadi_b4d9b445,
+        ptp:GejalaSeringKaliGulmaYangTerinfeksi_5cba86e5,
+        ptp:GejalaSolanacearumDiLahanSetempatSehingga_19f52839 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Biji ;
+    ptp:menyerangTanaman ptp:KacangTanah .
+
+ptp:PenyakitBelangMottleKacangTanah a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Belang (Mottle)"@id ;
+    ptp:dikendalikanDengan ptp:PengendalianAkanTetapiSampaiDenganSaat_cef2e504,
+        ptp:PengendalianBaliadiEtAl1993Melaporkan_498f9503,
+        ptp:PengendalianBenihSehatBebasVirusMerupakan_5b21ecbf,
+        ptp:PengendalianBenihYangKecilDanKeriput_c931b3f5,
+        ptp:PengendalianDenganMenanamTanamanToleranPStV_4b75d7ee,
+        ptp:PengendalianInfeksiBenih25DapatMenyebabkan_6ffa39cc,
+        ptp:PengendalianInfeksiPStVPadaKacangTanah_eeff79e4,
+        ptp:PengendalianKacangTanahMampuMengikatNitrogen_b149bd9c,
+        ptp:PengendalianKarenaPenularanDapatTerjadiDengan_6b43df38,
+        ptp:PengendalianMengaturWaktuTanamYangTepat_ba823aa6,
+        ptp:PengendalianNamunUntukVirusNonPersistenPenyemprotan_319a6740,
+        ptp:PengendalianOlehKarenaItuPenggunaanBenih_4015fcb5,
+        ptp:PengendalianPemantulanSinarYangMenyilaukanDapat_4f5d7113,
+        ptp:PengendalianPemupukanBerimbangPemupukanYangOptimal_d9b87b60,
+        ptp:PengendalianPemupukanYangEfisienDisesuaikanDengan_11319e75,
+        ptp:PengendalianPenanamanKacangTanahSecaraTerus_61360bfb,
+        ptp:PengendalianPenanamanVarietasKacangTanahTahan_682caab2,
+        ptp:PengendalianPendekatanBioteknologiMelaluiRekayasaGenetik_5f68e8b9,
+        ptp:PengendalianPendekatanYangDapatDilakukanUntuk_d697d376,
+        ptp:PengendalianPengendalianVektorDapatDilakukanDengan_94481566,
+        ptp:PengendalianPenggunaanTanamanDariBenihYang_9d2e6ba7,
+        ptp:PengendalianPenggunaanVarietasYangTidakMembawa_cbcecebb,
+        ptp:PengendalianPengujianKetahananTanamanTerhadapPStV_f432216f,
+        ptp:PengendalianPergiliranTanamanDenganTanamanLain_28b03763,
+        ptp:PengendalianPertumbuhanTanamanYangTegarAkan_6f3f7f1b,
+        ptp:PengendalianSelainItuUpayaUntukMengurangi_0538cad3,
+        ptp:PengendalianWaktuTanamYangTepatBerbeda_44458d45 ;
+    ptp:memilikiGejala ptp:GejalaGejalaLanjutHelaianDaunTerdapat_e95745c0,
+        ptp:GejalaGejalaSeranganDanMakroskopisDitunjukkan_d82312cb,
+        ptp:GejalaGejalaSerangannyaTampakPadaDaun_83475197,
+        ptp:GejalaInfeksiYangTerjadiSaatTanaman_88bef2a0,
+        ptp:GejalaKadangKadangGejalaOlehPStVBerupa_dd8b21c3,
+        ptp:GejalaPerbedaanTampakPadaWarnaDaun_8438fb25,
+        ptp:GejalaTetapiUmumnyaGejalaKeduaVirus_12edc343 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:KacangTanah .
+
+ptp:Daun a ptp:BagianTanaman,
+        owl:NamedIndividual ;
+    rdfs:label "Daun"@id .
+
+ptp:Patogen a owl:Class ;
+    rdfs:label "Patogen"@id ;
+    owl:disjointWith ptp:BagianTanaman,
+        ptp:FaktorRisiko,
+        ptp:Pengendalian,
+        ptp:Referensi .
+
+ptp:Penyakit a owl:Class ;
+    rdfs:label "Penyakit"@id ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ptp:Patogen ;
+            owl:onProperty ptp:disebabkanOleh ],
+        [ a owl:Restriction ;
+            owl:onProperty ptp:memilikiGejala ;
+            owl:someValuesFrom ptp:Gejala ],
+        [ a owl:Restriction ;
+            owl:onProperty ptp:menyerangTanaman ;
+            owl:someValuesFrom ptp:TanamanPangan ] ;
+    owl:disjointWith ptp:BagianTanaman,
+        ptp:FaktorRisiko,
+        ptp:Gejala,
+        ptp:Patogen,
+        ptp:Pengendalian,
+        ptp:Referensi .
+
+ptp:PenyakitBercakDaunKacangTanah a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Bercak Daun"@id ;
+    ptp:dikendalikanDengan ptp:PengendalianArachidicolaMengalamiResistensiDanLingkungan_76799b08,
+        ptp:PengendalianArachidicolaYaituDenganPestisidaDengan_308de187,
+        ptp:PengendalianBerbagaiUpayaPengendalianTelahBanyak_6b5a5fa6,
+        ptp:PengendalianHarzianumDapatDitemukanDiBerbagai_b3d47539,
+        ptp:PengendalianHarzianumJugaDapatMemarasitMiselium_0d4aea4a,
+        ptp:PengendalianHarzianumMempunyaiKemampuanMemperebutkanTempat_623c00fe,
+        ptp:PengendalianHasilPenelitianMeliyana2019Menunjukkan_6ea39d61,
+        ptp:PengendalianKaratDaunMerupakanPenyakitTular_b8960371,
+        ptp:PengendalianKemampuanKandunganSenyawaAktifFenol_b932ea31,
+        ptp:PengendalianMenurutIstifadahDanSari2017_ebc04332,
+        ptp:PengendalianMikroorganismeAntagonisAdalahMikroorganismeYang_0846c6d4,
+        ptp:PengendalianMikroorganismeIniBiasanyaBerasalDari_07098f62,
+        ptp:PengendalianNamunDemikianPenggunaanBahanBahanAlami_ca615f76,
+        ptp:PengendalianPengendalianHayatiAdalahPengendalianDengan_048cd90f,
+        ptp:PengendalianPengendalianKimiaYaituUpayaPengendalian_3150cdb3,
+        ptp:PengendalianPengendalianNabatiAdalahPestisidaYang_ea857d2f,
+        ptp:PengendalianPengendalianNabatiYaituUpayaPengendalian_dd76cabd,
+        ptp:PengendalianPenggunaanBahanAlamiSamaEfektifnya_934bba80,
+        ptp:PengendalianPenggunaanPestisidaNabatiEkstrakDaun_1967d18f,
+        ptp:PengendalianPenggunaanPestisidaSintetisDalamJangka_7def1482,
+        ptp:PengendalianPenggunaanPestisidaSintetisSecaraBerlebihan_ad542838,
+        ptp:PengendalianPenghambatPertumbuhanYaituDenganHiperparasitisme_ac5f9ea4,
+        ptp:PengendalianPestisidaDigemariDiKalanganPetani_57ce16fd,
+        ptp:PengendalianPestisidaDigolongkanMenjadiBeberapaMacam_d10b4b44,
+        ptp:PengendalianPestisidaMerupakanBahanAtauZat_90d7f35f,
+        ptp:PengendalianPestisidaNabatiBersifatToxinBagi_a1e5f9a4,
+        ptp:PengendalianPestisidaNabatiYangDilaporkanLebih_12f8596c,
+        ptp:PengendalianSaatIniPestisidaSudahTidak_e15bf269,
+        ptp:PengendalianSalahSatuAgensPengendaliHayati_64edcf60,
+        ptp:PengendalianSalahSatuFungisidaYangDapat_8a6a5356,
+        ptp:PengendalianSejumlahTanamanYangDapatDigunakan_d8b8918b,
+        ptp:PengendalianSelainItuPestisidaNabatiJuga_f7bea0f0,
+        ptp:PengendalianSelainItuSenyawaLinalolEstragol_d98d999d,
+        ptp:PengendalianTanamanYangBerpotensiSebagaiBahan_617d5c55,
+        ptp:PengendalianTrichodermaHarzianumDapatMenghambatPerkembangan_cddbb057,
+        ptp:PengendalianUpayaPengendalianHayatiYaituPengendalian_2ba44e85,
+        ptp:PengendalianUpayaPengendalianTidakDapatDilakukan_8c14767a,
+        ptp:PengendalianUpayaPengendalianYangDapatDilakukan_7c92a6ad,
+        ptp:PengendalianUpayaUntukMengendalikanPenyakitKarat_a089be19 ;
+    ptp:disebabkanOleh ptp:CercosporaArachidicola,
+        ptp:PucciniaArachidis ;
+    ptp:memilikiGejala ptp:GejalaCPersonataMembentukKonidiaLebih_76d88dc6,
+        ptp:GejalaDalamPerkembangannyaBintikBintikIniBerubah_d1fd297e,
+        ptp:GejalaGejalaBerbedaBedaTergantungDariSpesies_63b451cd,
+        ptp:GejalaGejalaMunculPadaPermukaanDaun_859281c3,
+        ptp:GejalaGejalaPertamaMuncul10Hari_bb151311,
+        ptp:GejalaInangKeduaPatogenIniHanya_871e0176,
+        ptp:GejalaLebihLanjutSemangun2007Menyatakan_23449887,
+        ptp:GejalaMenurutSemangun1991GejalaTanaman_c63f9ed4,
+        ptp:GejalaPadaUmumnyaBintikBintikKecilTersebut_f91def23,
+        ptp:GejalaPadaUmumnyaGejalaTerdapatPada_b3a2a647,
+        ptp:GejalaPenyakitBercakDaunMerupakanPenyakit_d560ea46,
+        ptp:GejalaPenyakitKaratMerupakanPenyakitPenting_62711156,
+        ptp:GejalaSecaraUmumPengamatanMakroskopisDaun_86027a4b,
+        ptp:GejalaSeranganPenyakitBerdampakPadaPengurangan_f18bf8a8,
+        ptp:GejalaSporulasiPatogenTerjadiPadaBercak_cfba1e82 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Biji,
+        ptp:Daun ;
+    ptp:menyerangTanaman ptp:KacangTanah .
+
+ptp:Gejala a owl:Class ;
+    rdfs:label "Gejala"@id ;
+    owl:disjointWith ptp:BagianTanaman,
+        ptp:FaktorRisiko,
+        ptp:Patogen,
+        ptp:Pengendalian,
+        ptp:Referensi .
+
+ptp:Pengendalian a owl:Class ;
+    rdfs:label "Pengendalian"@id ;
+    owl:disjointWith ptp:FaktorRisiko,
+        ptp:Referensi .
+
