@@ -1,0 +1,2647 @@
+{
+  "controls": {
+    "disease": [
+      {
+        "disease_id": "DIS_001",
+        "classes": [
+          "PengendalianKulturTeknis",
+          "PengendalianMekanis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_001",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_001",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_001",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_001",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_001",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_001",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_001",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_002",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_002",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_002",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_002",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_002",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_002",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_002",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_002",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_003",
+        "classes": [
+          "PengendalianKulturTeknis",
+          "PengendalianMekanis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_003",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_003",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_003",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_004",
+        "classes": [
+          "PengendalianKulturTeknis",
+          "PengendalianMekanis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_004",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_004",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_004",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_005",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_005",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_005",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_005",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_005",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_006",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_007",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_007",
+        "classes": [
+          "PengendalianBiologis",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_007",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_007",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_007",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_008",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_008",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_008",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_008",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_009",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_010",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_010",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_010",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_010",
+        "classes": [
+          "PengendalianBiologis",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_010",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_011",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_011",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_012",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_012",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_012",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_012",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_012",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_012",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_013",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_013",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_013",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_013",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_013",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_014",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_014",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_014",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_015",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_016",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_016",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_016",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_016",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_016",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_016",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_017",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_017",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_017",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_018",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_019",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_019",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_019",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_019",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_019",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_020",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_021",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_022",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianTerpadu"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_023",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_024",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_024",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_024",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_024",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_024",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_025",
+        "classes": [
+          "PengendalianKulturTeknis",
+          "PengendalianTerpadu"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_025",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_025",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_025",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_026",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_026",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_027",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_027",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_027",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_044",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_044",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_044",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_044",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_044",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_044",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_044",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_044",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_045",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_045",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_045",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianBiologis",
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_046",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_047",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_048",
+        "classes": [],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease_id": "DIS_118",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "varietas tahan",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_118",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "fungisida nabati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_118",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "agens hayati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_119",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "benih sehat",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_119",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "perlakuan benih",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_119",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "fungisida sintetik",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_120",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "benih sehat",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_120",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "sanitasi",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_120",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "agens hayati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_120",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "rotasi tanaman",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_121",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "varietas tahan",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_121",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "sanitasi",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_121",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "rotasi tanaman",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_122",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "varietas tahan",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_122",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "sanitasi dan rotasi",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_123",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "varietas tahan",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_123",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "fungisida nabati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_123",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "agens hayati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_124",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "category": "pestisida nabati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_124",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "pestisida nabati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_124",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "kultur teknis",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_125",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "varietas tahan",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_125",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "category": "agens hayati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_125",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "category": "pestisida nabati",
+        "source": "DOC005"
+      },
+      {
+        "disease_id": "DIS_125",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "category": "kultur teknis",
+        "source": "DOC005"
+      }
+    ],
+    "chapter": [
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianBiologis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "KacangTanah",
+        "classes": [
+          "PengendalianKimiawi"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "UbiKayu",
+        "classes": [],
+        "source": "DOC002"
+      },
+      {
+        "plant": "UbiKayu",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "UbiKayu",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "UbiKayu",
+        "classes": [
+          "PengendalianKimiawi",
+          "PengendalianMekanis"
+        ],
+        "source": "DOC002"
+      },
+      {
+        "plant": "UbiKayu",
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
+        "source": "DOC002"
+      }
+    ],
+    "unclassified": 82
+  },
+  "varieties": [
+    {
+      "local": "VarietasAsianHoney",
+      "name": "Asian Honey",
+      "plant": "Jagung",
+      "disease_ids": [
+        "DIS_046"
+      ],
+      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+    },
+    {
+      "local": "VarietasPioneer21",
+      "name": "Pioneer 21",
+      "plant": "Jagung",
+      "disease_ids": [
+        "DIS_046"
+      ],
+      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+    },
+    {
+      "local": "VarietasPioneer27",
+      "name": "Pioneer 27",
+      "plant": "Jagung",
+      "disease_ids": [
+        "DIS_046"
+      ],
+      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+    },
+    {
+      "local": "VarietasVima4",
+      "name": "Vima 4",
+      "plant": "KacangHijau",
+      "disease_ids": [
+        "DIS_125"
+      ],
+      "evidence": "Balitkabi (2017) menginfokan varietas Vima 4 dan Vima 5 memiliki sifat agak tahan terhadap infeksi patogen tular tanah. \n agens hayati merupakan salah satu alternatif pengendalian yang banyak dianjurkan. \n Produk pestisida nabati yang dapat dimanfaatkan seperti ekstrak daun sirih. \n Pengendalian S. rolfsii dapat dilakukan dengan perlakuan kultur teknis, seperti pengolahan tanah, pemberian kompos, "
+    },
+    {
+      "local": "VarietasVima5",
+      "name": "Vima 5",
+      "plant": "KacangHijau",
+      "disease_ids": [
+        "DIS_125"
+      ],
+      "evidence": "Balitkabi (2017) menginfokan varietas Vima 4 dan Vima 5 memiliki sifat agak tahan terhadap infeksi patogen tular tanah. \n agens hayati merupakan salah satu alternatif pengendalian yang banyak dianjurkan. \n Produk pestisida nabati yang dapat dimanfaatkan seperti ekstrak daun sirih. \n Pengendalian S. rolfsii dapat dilakukan dengan perlakuan kultur teknis, seperti pengolahan tanah, pemberian kompos, "
+    },
+    {
+      "local": "VarietasBadak",
+      "name": "Badak",
+      "plant": "KacangTanah",
+      "disease_ids": [
+        "DIS_122"
+      ],
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+    },
+    {
+      "local": "VarietasBison",
+      "name": "Bison",
+      "plant": "KacangTanah",
+      "disease_ids": [
+        "DIS_122"
+      ],
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+    },
+    {
+      "local": "VarietasDomba",
+      "name": "Domba",
+      "plant": "KacangTanah",
+      "disease_ids": [
+        "DIS_122"
+      ],
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+    },
+    {
+      "local": "VarietasJerapah",
+      "name": "Jerapah",
+      "plant": "KacangTanah",
+      "disease_ids": [
+        "DIS_122"
+      ],
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+    },
+    {
+      "local": "VarietasKelinci",
+      "name": "Kelinci",
+      "plant": "KacangTanah",
+      "disease_ids": [
+        "DIS_122"
+      ],
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+    },
+    {
+      "local": "VarietasPanther",
+      "name": "Panther",
+      "plant": "KacangTanah",
+      "disease_ids": [
+        "DIS_122"
+      ],
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+    },
+    {
+      "local": "VarietasTakar1",
+      "name": "Takar 1",
+      "plant": "KacangTanah",
+      "disease_ids": [
+        "DIS_121"
+      ],
+      "evidence": "Varietas unggul baru kacang tanah tahan penyakit karat adalah Takar 1 dan Takar 2. \n Sanitasi lingkungan di sekitar pertanaman kacang tanah diperlukan untuk mengantisipasi adanya sumber inokulum dari volunter kacang tanah dan gulma sebagai inang alternatifnya. \n Rotasi tanaman untuk mengurangi populasi inokulum awal. \n Gejala awal penyakit karat di kacang tanah ditandai dengan munculnya bercak klo"
+    },
+    {
+      "local": "VarietasTakar2",
+      "name": "Takar 2",
+      "plant": "KacangTanah",
+      "disease_ids": [
+        "DIS_121"
+      ],
+      "evidence": "Varietas unggul baru kacang tanah tahan penyakit karat adalah Takar 1 dan Takar 2. \n Sanitasi lingkungan di sekitar pertanaman kacang tanah diperlukan untuk mengantisipasi adanya sumber inokulum dari volunter kacang tanah dan gulma sebagai inang alternatifnya. \n Rotasi tanaman untuk mengurangi populasi inokulum awal. \n Gejala awal penyakit karat di kacang tanah ditandai dengan munculnya bercak klo"
+    },
+    {
+      "local": "VarietasAnjasmoro",
+      "name": "Anjasmoro",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_006",
+        "DIS_009"
+      ],
+      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+    },
+    {
+      "local": "VarietasDega1",
+      "name": "Dega 1",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_006"
+      ],
+      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+    },
+    {
+      "local": "VarietasDena",
+      "name": "Dena",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_009"
+      ],
+      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+    },
+    {
+      "local": "VarietasDena1",
+      "name": "Dena 1",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_006"
+      ],
+      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+    },
+    {
+      "local": "VarietasDering1",
+      "name": "Dering 1",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_006"
+      ],
+      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+    },
+    {
+      "local": "VarietasDevon1",
+      "name": "Devon 1",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_006"
+      ],
+      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+    },
+    {
+      "local": "VarietasGrobogan",
+      "name": "Grobogan",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_006"
+      ],
+      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+    },
+    {
+      "local": "VarietasKaba",
+      "name": "Kaba",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_009"
+      ],
+      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+    },
+    {
+      "local": "VarietasSinabung",
+      "name": "Sinabung",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_009"
+      ],
+      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+    },
+    {
+      "local": "VarietasTanggamus",
+      "name": "Tanggamus",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_009"
+      ],
+      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+    },
+    {
+      "local": "VarietasWilis",
+      "name": "Wilis",
+      "plant": "Kedelai",
+      "disease_ids": [
+        "DIS_009"
+      ],
+      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+    },
+    {
+      "local": "VarietasBondoyudo",
+      "name": "Bondoyudo",
+      "plant": "Padi",
+      "disease_ids": [
+        "DIS_004"
+      ],
+      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+    },
+    {
+      "local": "VarietasKalimas",
+      "name": "Kalimas",
+      "plant": "Padi",
+      "disease_ids": [
+        "DIS_004"
+      ],
+      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+    },
+    {
+      "local": "VarietasTukadBalian",
+      "name": "Tukad Balian",
+      "plant": "Padi",
+      "disease_ids": [
+        "DIS_004"
+      ],
+      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+    },
+    {
+      "local": "VarietasTukadUnda",
+      "name": "Tukad Unda",
+      "plant": "Padi",
+      "disease_ids": [
+        "DIS_004"
+      ],
+      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+    },
+    {
+      "local": "VarietasAbomourow",
+      "name": "Abomourow",
+      "plant": "UbiJalar",
+      "disease_ids": [
+        "DIS_025"
+      ],
+      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+    },
+    {
+      "local": "VarietasBonsasarai",
+      "name": "Bonsasarai",
+      "plant": "UbiJalar",
+      "disease_ids": [
+        "DIS_025"
+      ],
+      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+    },
+    {
+      "local": "VarietasInanwatan4",
+      "name": "Inanwatan-4",
+      "plant": "UbiJalar",
+      "disease_ids": [
+        "DIS_025"
+      ],
+      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+    },
+    {
+      "local": "VarietasKuyage2",
+      "name": "Kuyage-2",
+      "plant": "UbiJalar",
+      "disease_ids": [
+        "DIS_025"
+      ],
+      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+    },
+    {
+      "local": "VarietasMouwebsi",
+      "name": "Mouwebsi",
+      "plant": "UbiJalar",
+      "disease_ids": [
+        "DIS_025"
+      ],
+      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+    },
+    {
+      "local": "VarietasWonembai",
+      "name": "Wonembai",
+      "plant": "UbiJalar",
+      "disease_ids": [
+        "DIS_025"
+      ],
+      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+    }
+  ],
+  "phases": [
+    {
+      "local": "FaseAnakan",
+      "label": "Fase anakan"
+    },
+    {
+      "local": "FaseMatangSusu",
+      "label": "Fase matang susu"
+    },
+    {
+      "local": "FaseVegetatif",
+      "label": "Fase vegetatif"
+    }
+  ],
+  "environment": [
+    {
+      "local": "KondisiKelembapanTinggi",
+      "class": "KelembapanTinggi",
+      "label": "Kelembapan tinggi"
+    },
+    {
+      "local": "KondisiSuhu",
+      "class": "Suhu",
+      "label": "Suhu"
+    },
+    {
+      "local": "KondisiCurahHujan",
+      "class": "CurahHujan",
+      "label": "Curah hujan"
+    },
+    {
+      "local": "KondisiMusimHujan",
+      "class": "MusimHujan",
+      "label": "Musim hujan"
+    },
+    {
+      "local": "KondisiMusimKemarau",
+      "class": "MusimKemarau",
+      "label": "Musim kemarau"
+    }
+  ],
+  "environment_links": [
+    {
+      "disease_id": "DIS_001",
+      "env": "KondisiSuhu"
+    },
+    {
+      "disease_id": "DIS_002",
+      "env": "KondisiMusimHujan"
+    },
+    {
+      "disease_id": "DIS_007",
+      "env": "KondisiMusimHujan"
+    },
+    {
+      "disease_id": "DIS_008",
+      "env": "KondisiCurahHujan"
+    },
+    {
+      "disease_id": "DIS_022",
+      "env": "KondisiMusimHujan"
+    },
+    {
+      "disease_id": "DIS_022",
+      "env": "KondisiMusimKemarau"
+    },
+    {
+      "disease_id": "DIS_024",
+      "env": "KondisiSuhu"
+    },
+    {
+      "disease_id": "DIS_025",
+      "env": "KondisiMusimHujan"
+    },
+    {
+      "disease_id": "DIS_044",
+      "env": "KondisiKelembapanTinggi"
+    },
+    {
+      "disease_id": "DIS_045",
+      "env": "KondisiKelembapanTinggi"
+    },
+    {
+      "disease_id": "DIS_045",
+      "env": "KondisiSuhu"
+    },
+    {
+      "disease_id": "DIS_046",
+      "env": "KondisiSuhu"
+    },
+    {
+      "disease_id": "DIS_118",
+      "env": "KondisiMusimKemarau"
+    }
+  ],
+  "summary": {
+    "plants": 7,
+    "diseases": 57,
+    "symptom_pairs": 240,
+    "pathogen_pairs": 73,
+    "control_pairs_disease": 257,
+    "control_pairs_chapter": 45,
+    "bagian_pairs": 53
+  }
+}
