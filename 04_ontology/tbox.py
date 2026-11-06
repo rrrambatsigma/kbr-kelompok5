@@ -1,9 +1,20 @@
-"""TBox ontologi "Penyakit Tanaman Pangan Indonesia" (SHROIQ ringan).
+"""TBox ontologi "Penyakit Tanaman Pangan Indonesia" (minimal SROIQ(D)).
 
-Delapan class utama ala rancangan: TanamanPangan, Penyakit, Gejala, Patogen,
-BagianTanaman, Pengendalian, FaktorRisiko, Referensi — lengkap dengan subclass,
-object property (domain/range/inverse), data property, axioms SubClass Of,
-Equivalent Classes, Disjoint Classes, serta restriction some/only.
+Profil OWL 2 DL yang didemonstrasikan axioms per huruf:
+- S: rdfs:subClassOf; rdfs:subPropertyOf —
+  dikendalikanDengan dan pengendalianUmum ⊑ berkaitanPengendalian.
+- R: owl:propertyChainAxiom —
+  memilikiGejala o terdapatPada ⊑ menyerangBagian.
+- O: nominal (owl:oneOf) —
+  Serealia ≡ {Padi, Jagung}, Legum ≡ {Kedelai, KacangTanah, KacangHijau}.
+- I: 6 pasang owl:inverseOf (12 triple).
+- Q: kualifikasi cardinality —
+  Penyakit ⊑ (memilikiReferensi min 1 Referensi);
+  Buku ⊑ (tahunTerbit exactly 1 xsd:integer).
+- D: data property tahunTerbit xsd:integer; literal teks memakai @id
+  (rdf:langString) tanpa rdfs:range xsd:string agar tidak disjoint.
+
+Role pada property chain tidak dikenai number restriction (simple role).
 """
 
 from __future__ import annotations
@@ -47,10 +58,12 @@ CLASS_LABELS: dict[str, str] = {
     "PengendalianKimiawi": "Pengendalian Kimiawi",
     "PengendalianTerpadu": "Pengendalian Terpadu",
     "FaktorRisiko": "Faktor Risiko",
-    "FaktorLingkungan": "Faktor Lingkungan",
+    "FaktorLingkungan": "Kondisi Lingkungan",
     "KelembapanTinggi": "Kelembapan Tinggi",
     "Suhu": "Suhu",
     "CurahHujan": "Curah Hujan",
+    "MusimHujan": "Musim Hujan",
+    "MusimKemarau": "Musim Kemarau",
     "FaktorBudidaya": "Faktor Budidaya",
     "SanitasiLahanBuruk": "Sanitasi Lahan Buruk",
     "DrainaseBuruk": "Drainase Buruk",
@@ -63,6 +76,10 @@ CLASS_LABELS: dict[str, str] = {
     "JurnalIlmiah": "Jurnal Ilmiah",
     "ArtikelIlmiah": "Artikel Ilmiah",
     "PublikasiInstansi": "Publikasi Instansi",
+    "Varietas": "Varietas",
+    "FasePertumbuhan": "Fase Pertumbuhan",
+    "Serealia": "Serealia",
+    "Legum": "Legum",
 }
 
 TOP_CLASSES = [
@@ -74,6 +91,8 @@ TOP_CLASSES = [
     "Pengendalian",
     "FaktorRisiko",
     "Referensi",
+    "Varietas",
+    "FasePertumbuhan",
 ]
 
 SUBCLASSES: list[tuple[str, str]] = [
@@ -98,6 +117,8 @@ SUBCLASSES: list[tuple[str, str]] = [
     ("KelembapanTinggi", "FaktorLingkungan"),
     ("Suhu", "FaktorLingkungan"),
     ("CurahHujan", "FaktorLingkungan"),
+    ("MusimHujan", "FaktorLingkungan"),
+    ("MusimKemarau", "FaktorLingkungan"),
     ("FaktorBudidaya", "FaktorRisiko"),
     ("SanitasiLahanBuruk", "FaktorBudidaya"),
     ("DrainaseBuruk", "FaktorBudidaya"),
@@ -109,6 +130,8 @@ SUBCLASSES: list[tuple[str, str]] = [
     ("JurnalIlmiah", "Referensi"),
     ("ArtikelIlmiah", "Referensi"),
     ("PublikasiInstansi", "Referensi"),
+    ("Serealia", "TanamanPangan"),
+    ("Legum", "TanamanPangan"),
 ]
 
 OBJECT_PROPERTIES: dict[str, dict] = {
@@ -174,6 +197,20 @@ OBJECT_PROPERTIES: dict[str, dict] = {
         "range": "Penyakit",
         "inverse": "dikendalikanDengan",
     },
+    "pengendalianUmum": {
+        "label": "pengendalian umum",
+        "comment": "Pengendalian umum per tanaman yang berlaku lintas penyakit.",
+        "domain": "TanamanPangan",
+        "range": "Pengendalian",
+    },
+    "berkaitanPengendalian": {
+        "label": "berkaitan pengendalian",
+        "comment": (
+            "Superproperty pengendalian tanpa domain: menghubungkan penyakit "
+            "atau tanaman dengan metode pengendalian."
+        ),
+        "range": "Pengendalian",
+    },
     "dipengaruhiOleh": {
         "label": "dipengaruhi oleh",
         "comment": "Faktor risiko lingkungan/budidaya yang memengaruhi kemunculan penyakit.",
@@ -189,8 +226,7 @@ OBJECT_PROPERTIES: dict[str, dict] = {
     },
     "dijelaskanDalam": {
         "label": "dijelaskan dalam",
-        "comment": "Referensi menjelaskan penyakit; kebalikan dari memilikiReferensi "
-        "(menjadiReferensiBagi pada rancangan awal).",
+        "comment": "Referensi menjelaskan penyakit; kebalikan dari memilikiReferensi.",
         "domain": "Referensi",
         "range": "Penyakit",
         "inverse": "memilikiReferensi",
@@ -201,6 +237,47 @@ OBJECT_PROPERTIES: dict[str, dict] = {
         "domain": "Gejala",
         "range": "BagianTanaman",
     },
+    "memilikiVarietas": {
+        "label": "memiliki varietas",
+        "comment": "Tanaman pangan memiliki varietas tertentu.",
+        "domain": "TanamanPangan",
+        "range": "Varietas",
+        "inverse": "merupakanVarietasDari",
+    },
+    "merupakanVarietasDari": {
+        "label": "merupakan varietas dari",
+        "comment": "Kebalikan dari memilikiVarietas.",
+        "domain": "Varietas",
+        "range": "TanamanPangan",
+        "inverse": "memilikiVarietas",
+    },
+    "tahanTerhadap": {
+        "label": "tahan terhadap",
+        "comment": "Varietas tahan/resisten terhadap penyakit tertentu.",
+        "domain": "Varietas",
+        "range": "Penyakit",
+    },
+    "menyerangFase": {
+        "label": "menyerang fase",
+        "comment": "Fase pertumbuhan tanaman yang diserang penyakit.",
+        "domain": "Penyakit",
+        "range": "FasePertumbuhan",
+    },
+}
+
+SUBPROPERTY_OF: list[tuple[str, str]] = [
+    ("dikendalikanDengan", "berkaitanPengendalian"),
+    ("pengendalianUmum", "berkaitanPengendalian"),
+]
+
+PROPERTY_CHAINS: list[tuple[list[str], str]] = [
+    (["memilikiGejala", "terdapatPada"], "menyerangBagian"),
+]
+
+# Nominal: nama kelas → daftar individual (ABox) yang menjadi anggota oneOf.
+NOMINAL_CLASSES: dict[str, list[str]] = {
+    "Serealia": ["Padi", "Jagung"],
+    "Legum": ["Kedelai", "KacangTanah", "KacangHijau"],
 }
 
 DATA_PROPERTIES: dict[str, dict] = {
@@ -278,18 +355,24 @@ DATA_PROPERTIES: dict[str, dict] = {
     },
 }
 
-# Equivalent Classes: klasifikasi penyakit berdasarkan penyebab (diferensial).
 EQUIVALENT_CLASSES: list[tuple[str, str]] = [
     ("PenyakitJamur", "Jamur"),
     ("PenyakitBakteri", "Bakteri"),
     ("PenyakitVirus", "Virus"),
 ]
 
-# Restriction contoh rancangan: (class, prop, target_class, kuantifier).
+# Restriction rancangan: (class, prop, target_class, kuantifier).
+# Kuantifier: some | only | min1 (kualifikasi: min 1 target).
 RESTRICTIONS: list[tuple[str, str, str, str]] = [
     ("Penyakit", "menyerangTanaman", "TanamanPangan", "some"),
     ("Penyakit", "memilikiGejala", "Gejala", "some"),
     ("Penyakit", "disebabkanOleh", "Patogen", "only"),
+    ("Penyakit", "memilikiReferensi", "Referensi", "min1"),
+]
+
+# Restriksi data: (class, prop, xsd_type, kuantifier exactly1).
+DATATYPE_RESTRICTIONS: list[tuple[str, str, str, str]] = [
+    ("Buku", "tahunTerbit", "integer", "exactly1"),
 ]
 
 
@@ -316,6 +399,42 @@ def _restriction(graph: Graph, prop: URIRef, target: URIRef, quant: str) -> URIR
     return node
 
 
+def _min1_restriction(graph: Graph, prop: URIRef, target: URIRef) -> URIRef:
+    node = BNode()
+    graph.add((node, RDF.type, OWL.Restriction))
+    graph.add((node, OWL.onProperty, prop))
+    graph.add((node, OWL.minCardinality, Literal(1, datatype=XSD.nonNegativeInteger)))
+    graph.add((node, OWL.onClass, target))
+    return node
+
+
+def _exactly1_datatype_restriction(graph: Graph, prop: URIRef, datatype: URIRef) -> URIRef:
+    node = BNode()
+    graph.add((node, RDF.type, OWL.Restriction))
+    graph.add((node, OWL.onProperty, prop))
+    graph.add((node, OWL.cardinality, Literal(1, datatype=XSD.nonNegativeInteger)))
+    graph.add((node, OWL.onDatatype, datatype))
+    return node
+
+
+def _one_of(graph: Graph, members: list[URIRef]) -> URIRef:
+    node = BNode()
+    graph.add((node, RDF.type, OWL.Class))
+    coll = BNode()
+    Collection(graph, coll, members)
+    graph.add((node, OWL.oneOf, coll))
+    return node
+
+
+def _intersection(graph: Graph, parts: list[URIRef]) -> URIRef:
+    node = BNode()
+    graph.add((node, RDF.type, OWL.Class))
+    coll = BNode()
+    Collection(graph, coll, parts)
+    graph.add((node, OWL.intersectionOf, coll))
+    return node
+
+
 def build_tbox(graph: Graph) -> None:
     graph.add((ONTOLOGY_IRI, RDF.type, OWL.Ontology))
     graph.add(
@@ -330,8 +449,9 @@ def build_tbox(graph: Graph) -> None:
             ONTOLOGY_IRI,
             RDFS.comment,
             Literal(
-                "Knowledge base penyakit tanaman pangan Indonesia (prototipe: kacang "
-                "tanah, ubi jalar, ubi kayu) untuk penalaran OWL di Protégé.",
+                "Knowledge base penyakit tanaman pangan Indonesia (padi, kedelai, "
+                "jagung, ubi jalar, ubi kayu, kacang tanah, kacang hijau) untuk "
+                "penalaran OWL 2 minimal SROIQ(D) di Protégé.",
                 lang="id",
             ),
         )
@@ -348,28 +468,48 @@ def build_tbox(graph: Graph) -> None:
     for left, right in DISJOINT_PAIRS:
         graph.add((_cls(left), OWL.disjointWith, _cls(right)))
 
+    # O — nominal owl:oneOf.
+    for cls_name, individual_names in NOMINAL_CLASSES.items():
+        members = [_cls(n) for n in individual_names]
+        graph.add((_cls(cls_name), OWL.equivalentClass, _one_of(graph, members)))
+
     for penyakit_cls, patogen_cls in EQUIVALENT_CLASSES:
         restr = _restriction(graph, _cls("disebabkanOleh"), _cls(patogen_cls), "some")
-        intersection = BNode()
-        graph.add((intersection, RDF.type, OWL.Class))
-        members = BNode()
-        Collection(graph, members, [_cls("Penyakit"), restr])
-        graph.add((intersection, OWL.intersectionOf, members))
+        intersection = _intersection(graph, [_cls("Penyakit"), restr])
         graph.add((_cls(penyakit_cls), OWL.equivalentClass, intersection))
 
     for sub_cls, prop, target, quant in RESTRICTIONS:
-        restr = _restriction(graph, _cls(prop), _cls(target), quant)
+        if quant == "min1":
+            restr = _min1_restriction(graph, _cls(prop), _cls(target))
+        else:
+            restr = _restriction(graph, _cls(prop), _cls(target), quant)
         graph.add((_cls(sub_cls), RDFS.subClassOf, restr))
+
+    xsd_types = {"integer": XSD.integer, "string": XSD.string}
+    for cls_name, prop, type_name, _quant in DATATYPE_RESTRICTIONS:
+        restr = _exactly1_datatype_restriction(graph, _cls(prop), xsd_types[type_name])
+        graph.add((_cls(cls_name), RDFS.subClassOf, restr))
 
     for name, spec in OBJECT_PROPERTIES.items():
         uri = _cls(name)
         graph.add((uri, RDF.type, OWL.ObjectProperty))
         graph.add((uri, RDFS.label, Literal(spec["label"], lang="id")))
         graph.add((uri, RDFS.comment, Literal(spec["comment"], lang="id")))
-        graph.add((uri, RDFS.domain, _cls(spec["domain"])))
+        if spec.get("domain"):
+            graph.add((uri, RDFS.domain, _cls(spec["domain"])))
         graph.add((uri, RDFS.range, _cls(spec["range"])))
         if spec.get("inverse"):
             graph.add((uri, OWL.inverseOf, _cls(spec["inverse"])))
+
+    # S — subPropertyOf.
+    for sub_prop, super_prop in SUBPROPERTY_OF:
+        graph.add((_cls(sub_prop), RDFS.subPropertyOf, _cls(super_prop)))
+
+    # R — property chain.
+    for chain, super_prop in PROPERTY_CHAINS:
+        chain_node = BNode()
+        Collection(graph, chain_node, [_cls(p) for p in chain])
+        graph.add((_cls(super_prop), OWL.propertyChainAxiom, chain_node))
 
     for name, spec in DATA_PROPERTIES.items():
         uri = _cls(name)
