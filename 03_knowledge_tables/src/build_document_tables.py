@@ -32,7 +32,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Optional
 
-TABLE_DIR = Path(__file__).resolve().parent
+TABLE_DIR = Path(__file__).resolve().parents[1]
 PROJECT_ROOT = TABLE_DIR.parent
 EXTRACTION_DIR = PROJECT_ROOT / "02_extraction" / "extracted_text"
 CONFIG_DIR = TABLE_DIR / "config"

@@ -20,19 +20,36 @@ Kacang Tanah, Kacang Hijau — dengan **57 penyakit**, **240 gejala**,
 ```powershell
 pip install -r 04_ontology/requirements.txt   # rdflib >=7,<8 dan owlready2 >=0.45
 python 04_ontology/build_ontology.py          # menulis ontology.ttl, ontology.owl, extraction_report.json
+python 04_ontology/build_ontology_md.py       # menulis ontology_md.ttl (baca ontology.ttl saja)
 cd 04_ontology
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-Keluaran build terakhir: **5 436 triple**, **674 individu**. Test: **34 lulus**,
-termasuk uji reasoning HermiT lewat owlready2 (membutuhkan Java di PATH; bila
-Java tidak ada, test reasoning dilewati/skip).
+`build_ontology.py` menghasilkan **5 436 triple**, **674 individu**. Artefak
+`ontology.ttl` yang tersimpan di repo kini **5 430 triple**: disunting di
+Protégé (arah `inverseOf` dan `disjointWith` dinormalisasi, `minCardinality`
+menjadi `minQualifiedCardinality`) lalu `owl:onDatatype xsd:integer` untuk
+`tahunTerbit` dipulihkan agar bagian **D** profil SROIQ(D) tetap utuh.
+Test: **34 lulus**, termasuk uji reasoning HermiT lewat owlready2 (membutuhkan
+Java di PATH; bila Java tidak ada, test reasoning dilewati/skip).
+
+Snapshot memakai dua angka terpisah: `EXPECTED_BUILD_TRIPLES = 5436` untuk
+gerbang `build_ontology.build()` dan `EXPECTED_ARTIFACT_TRIPLES = 5430` untuk
+artefak di disk. Uji axiom dibuat semantik-simetris (`disjointWith`,
+`inverseOf`, dan urutan `owl:oneOf` tidak mengunci arah) sehingga hasil simpanan
+Protégé diterima.
+
+> **Peringatan:** menjalankan `python 04_ontology/build_ontology.py` menimpa
+> `ontology.ttl` dan `ontology.owl` dengan hasil generator — suntingan Protégé
+> akan hilang. Untuk ontologi hasil enrichment, bangun `ontology_md.ttl` saja.
 
 Artefak:
 
 - `ontology.ttl` — Turtle, sumber utama di repo.
 - `ontology.owl` — RDF/XML, untuk dibuka di Protégé dan untuk test owlready2.
 - `extraction_report.json` — bukti ekstraksi varietas/fase/kondisi/kategori.
+- `ontology_md.ttl` — Turtle hasil enrichment (canonical + fakta 7 tanaman utama).
+- `extraction_report_md.json` — hitungan build `ontology_md.ttl`.
 
 ## Namespace dan kebijakan IRI
 
@@ -178,6 +195,45 @@ Semua hasil tercatat di `extraction_report.json`:
   (termasuk 17 penyakit ubi kayu yang tanpa kontrol per-penyakit).
   Superproperty `berkaitanPengendalian` dimaterialisasi di ABox.
 
+## Enrichment — `ontology_md.ttl`
+
+`ontology_md.ttl` adalah graf berdiri sendiri: seluruh isi `ontology.ttl`
+(dimanfaatkan apa adanya, **tidak pernah ditulis ulang**) **plus** TBox dan ABox
+tambahan hasil enrichment di `03_knowledge_tables/`.
+
+```powershell
+python 03_knowledge_tables/src/build_md_chunks.py          # bukti MD DOC002
+python 03_knowledge_tables/src/build_enrichment_facts.py   # 98 fakta
+python 04_ontology/build_ontology_md.py                    # ontology_md.ttl
+python -m unittest discover -s 04_ontology/tests -p "test_ontology_md.py"   # 9 test
+```
+
+| Item | Nilai |
+|---|---|
+| Triple total | **5 578** = base 5 430 + tambahan 148 |
+| Fakta enrichment | **98** |
+| Entitas yang dirujuk fakta | **93** (7 tanaman, 57 penyakit, 25 kondisi lingkungan, 4 faktor risiko) |
+| TBox tambahan | `memilikiKondisiTumbuh` — object property, domain `TanamanPangan`, range `FaktorLingkungan` |
+| Predikat fakta | `deskripsiPenyakit` 57, `deskripsiTanaman` 7, `dipengaruhiOleh` 20, `memilikiKondisiTumbuh` 4, `tingkatKeparahan` 10 |
+
+TBox tambahan sengaja **tidak** disatukan ke `CLASS_LABELS`/`OBJECT_PROPERTIES`
+di `tbox.py`: `tests/test_ontology.py` membangun ulang `ontology.ttl` lewat
+`build_ontology.build()` dan mengunci jumlah triple/individu. Fungsi
+`build_md_tbox()` diisolasi sehingga generator kanonik tidak mengenal istilah
+baru.
+
+Sumber fakta: baseline `02_extraction/extracted_text/DOC002.blocks.jsonl`, chunk
+`DOC005.chunks.jsonl`, chunk MD `03_knowledge_tables/auto/DOC002_md/`, teks MD
+`00_sumber_data/02_PenyakitTanamanPangan.md` + `05_…` + `07_…`, dan
+`03_knowledge_tables/curated/DOC002/ubi_kayu_tabel_5.csv`. Setiap fakta membawa
+`source_document`, `source_type`, `source_id`, dan `evidence_quote` sehingga
+dapat ditelusuri balik ke sumber; gap yang belum terisi tercatat di
+`03_knowledge_tables/reports/DOC002_enrichment_gaps.md`.
+
+Builder `build_ontology_md.py` hanya membaca `ontology.ttl` — kanonik tidak
+ditulis oleh pipeline enrichment (divalidasi `canonical_untouched` di
+`extraction_report_md.json`).
+
 ## Membuka dan mendemokan di Protégé
 
 1. Buka Protégé 5.6+, **File → Open…**, pilih `ontology.owl` (RDF/XML).
@@ -208,6 +264,11 @@ Property chain TBox sudah menurunkan `menyerangBagian` dari
 
 ## Data yang sengaja kosong (tanpa mengarang)
 
+Tabel berikut berlaku untuk `ontology.ttl` (kanonik). Fakta yang bisa diurutkan
+dari sumber kini diisi terpisah lewat `ontology_md.ttl` (lihat bagian
+*Enrichment*): `deskripsiPenyakit` 57, `deskripsiTanaman` 7, `tingkatKeparahan`
+10.
+
 | Properti/individu | Alasan |
 |---|---|
 | deskripsiPenyakit, deskripsiTanaman | chunks.jsonl tidak tersedia di repo |
@@ -225,9 +286,16 @@ PenyakitKerdilRumputDanKerdilHampaPadi — restriksi
 
 ## Struktur generator
 
-- `tbox.py` — semua kelas/properti/axioms SROIQ(D) (sumber kebenaran TBox).
+- `tbox.py` — semua kelas/properti/axioms SROIQ(D) (sumber kebenaran TBox),
+  termasuk `build_md_tbox()` terisolasi untuk `memilikiKondisiTumbuh`.
 - `build_ontology.py` — baca CSV DOC002+DOC005 → ekstraksi → `Builder` ABox →
   `expected_counts()` → `validate()` → tulis `ontology.ttl` + `ontology.owl`
   + `extraction_report.json`.
+- `build_ontology_md.py` — baca `ontology.ttl` (hanya baca), tambahkan
+  `build_md_tbox()` + entitas dan fakta dari CSV enrichment → tulis
+  `ontology_md.ttl` + `extraction_report_md.json`.
 - `tests/test_ontology.py` — snapshot jumlah, axioms SROIQ(D), guardrail,
-  build gate, dan test reasoning HermiT.
+  build gate, dan test reasoning HermiT (34 test).
+- `tests/test_ontology_md.py` — 9 test enrichment: properti domain/range,
+  cakupan 7 tanaman, jumlah fakta, bahasa literal `@id`, konsistensi laporan,
+  dan bukti kanonik tidak tercemari.

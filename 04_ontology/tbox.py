@@ -435,6 +435,26 @@ def _intersection(graph: Graph, parts: list[URIRef]) -> URIRef:
     return node
 
 
+MD_OBJECT_PROPERTIES: dict[str, dict] = {
+    "memilikiKondisiTumbuh": {
+        "label": "memiliki kondisi tumbuh",
+        "comment": "Tanaman pangan memiliki kondisi lingkungan tumbuh yang terkontrol.",
+        "domain": "TanamanPangan",
+        "range": "FaktorLingkungan",
+    },
+}
+
+
+def build_md_tbox(graph: Graph) -> None:
+    for name, spec in MD_OBJECT_PROPERTIES.items():
+        uri = _cls(name)
+        graph.add((uri, RDF.type, OWL.ObjectProperty))
+        graph.add((uri, RDFS.label, Literal(spec["label"], lang="id")))
+        graph.add((uri, RDFS.comment, Literal(spec["comment"], lang="id")))
+        graph.add((uri, RDFS.domain, _cls(spec["domain"])))
+        graph.add((uri, RDFS.range, _cls(spec["range"])))
+
+
 def build_tbox(graph: Graph) -> None:
     graph.add((ONTOLOGY_IRI, RDF.type, OWL.Ontology))
     graph.add(

@@ -1,0 +1,32 @@
+{
+  "base": "04_ontology/ontology.ttl",
+  "output": "04_ontology/ontology_md.ttl",
+  "base_triples": 5430,
+  "added_triples": 148,
+  "total_triples": 5578,
+  "facts": 98,
+  "predicate_counts": {
+    "deskripsiPenyakit": 57,
+    "deskripsiTanaman": 7,
+    "dipengaruhiOleh": 20,
+    "memilikiKondisiTumbuh": 4,
+    "tingkatKeparahan": 10
+  },
+  "entities": 93,
+  "entity_counts": {
+    "FaktorLingkungan": 25,
+    "FaktorRisiko": 4,
+    "Penyakit": 57,
+    "TanamanPangan": 7
+  },
+  "scope_plants": [
+    "Padi",
+    "Kedelai",
+    "Jagung",
+    "UbiJalar",
+    "UbiKayu",
+    "KacangTanah",
+    "KacangHijau"
+  ],
+  "canonical_untouched": true
+}
