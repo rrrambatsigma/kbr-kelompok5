@@ -59,6 +59,9 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | `curated/symptoms.csv` | otoritas akhir gejala |
 | `curated/controls.csv` | otoritas akhir pengendalian |
 | `curated/ubi_kayu_tabel_5.csv` | otoritas akhir tabel ubi kayu |
+| `curated/DOC002/plants.csv` | otoritas tanaman DOC002 in-scope (6 baris) |
+| `curated/DOC005/plants.csv` | otoritas tanaman DOC005 (3 baris) |
+| `curated/plant_descriptions.csv` | deskripsi ringkas 7 tanaman untuk ontologi |
 | `reports/build_report.json` / `.md` | ringkasan build penyakit |
 | `reports/coverage.md` / `.json` | cakupan per tanaman |
 | `reports/validation.json` | gate G1–G7 |
@@ -204,7 +207,9 @@ Keputusan kurasi yang perlu diketahui pembaca:
   patogen berbeda; penyakit dipisah mengikuti tabel. Baris 5.2 ditambahkan
   lewat `additions` karena builder awal menduplikasi nama.
 - `Penyakit Antraknos` (Bab 11) terpotong di sumber dan dibiarkan apa adanya.
-- Nama ilmiah hanya diisi untuk 8 tanaman yang mencetaknya di badan bab.
+- Di `auto/plants.csv`, nama ilmiah hanya diisi untuk 8 tanaman yang mencetaknya
+  di badan bab; `curated/DOC002/plants.csv` melengkapi 6 tanaman in-scope, dengan
+  nama standar ditandai di kolom `notes`.
 - Gejala ubi kayu tidak diduplikasi ke `symptoms.csv`; sumbernya tabel 5.1–5.3
   di `curated/ubi_kayu_tabel_5.csv`, dan laporan cakupan menghitungnya dari sana.
 

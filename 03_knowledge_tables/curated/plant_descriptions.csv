@@ -1,0 +1,8 @@
+plant_id,plant_name_id,deskripsi,source_page,source_block_id,notes
+PLANT_001,Padi,"Padi adalah tanaman pangan pokok utama di Indonesia dan sebagian besar Asia; produksinya perlu dilindungi dari gangguan organisme pengganggu tanaman.",25,DOC002_P025_B004,Ringkasan dari blok Pendahuluan DOC002.
+PLANT_002,Kedelai,"Kedelai adalah tanaman pangan sumber protein nabati dan komoditas unggulan setelah padi dan jagung; bijinya diolah menjadi berbagai bahan pangan.",37,DOC002_P037_B004,Ringkasan dari blok Pendahuluan DOC002.
+PLANT_003,Kacang tanah,"Kacang tanah adalah tanaman kacang-kacangan sumber protein nabati yang mudah dibudidayakan, tetapi produktivitasnya dapat menurun akibat serangan patogen.",63,DOC002_P063_B004,Ringkasan dari blok Pendahuluan DOC002.
+PLANT_004,Ubi jalar,"Ubi jalar adalah komoditas pangan sumber karbohidrat penting di dunia dan mendukung program diversifikasi pangan.",79,DOC002_P079_B004,Ringkasan dari blok Pendahuluan DOC002.
+PLANT_005,Ubi kayu,"Ubi kayu atau singkong adalah tanaman umbi-umbian yang banyak dibudidayakan sebagai sumber pangan pokok alternatif di Indonesia.",89,DOC002_P089_B006,Ringkasan dari blok Pendahuluan DOC002.
+PLANT_006,Jagung,"Jagung adalah komoditas pangan bernilai ekonomi tinggi dan menempati urutan kedua setelah padi; digunakan untuk konsumsi, pakan, dan industri.",98,DOC002_P098_B004,Ringkasan dari blok Pendahuluan DOC002.
+PLANT_020,Kacang hijau,"Kacang hijau adalah tanaman aneka kacang sumber protein nabati yang dibudidayakan di Indonesia bersama kedelai dan kacang tanah.",13,,Deskripsi umum aneka kacang dari Pendahuluan DOC005; bab KACANG HIJAU tidak memuat deskripsi tanaman khusus.

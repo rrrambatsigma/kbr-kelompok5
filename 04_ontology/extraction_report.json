@@ -12,7 +12,9 @@
       },
       {
         "disease_id": "DIS_001",
-        "classes": [],
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
         "category": "",
         "source": "DOC002"
       },
@@ -26,19 +28,25 @@
       },
       {
         "disease_id": "DIS_001",
-        "classes": [],
+        "classes": [
+          "PengendalianFisik"
+        ],
         "category": "",
         "source": "DOC002"
       },
       {
         "disease_id": "DIS_001",
-        "classes": [],
+        "classes": [
+          "PengendalianFisik"
+        ],
         "category": "",
         "source": "DOC002"
       },
       {
         "disease_id": "DIS_001",
-        "classes": [],
+        "classes": [
+          "PengendalianFisik"
+        ],
         "category": "",
         "source": "DOC002"
       },
@@ -66,7 +74,9 @@
       },
       {
         "disease_id": "DIS_002",
-        "classes": [],
+        "classes": [
+          "PengendalianMekanis"
+        ],
         "category": "",
         "source": "DOC002"
       },
@@ -118,6 +128,7 @@
       {
         "disease_id": "DIS_003",
         "classes": [
+          "PengendalianFisik",
           "PengendalianKulturTeknis",
           "PengendalianMekanis"
         ],
@@ -160,6 +171,7 @@
       {
         "disease_id": "DIS_004",
         "classes": [
+          "PengendalianFisik",
           "PengendalianKulturTeknis"
         ],
         "category": "",
@@ -313,7 +325,9 @@
       },
       {
         "disease_id": "DIS_006",
-        "classes": [],
+        "classes": [
+          "PengendalianFisik"
+        ],
         "category": "",
         "source": "DOC002"
       },
@@ -358,7 +372,9 @@
         "disease_id": "DIS_008",
         "classes": [
           "PengendalianKimiawi",
-          "PengendalianBiologis"
+          "PengendalianBiologis",
+          "PengendalianFisik",
+          "PengendalianKulturTeknis"
         ],
         "category": "",
         "source": "DOC002"
@@ -738,7 +754,8 @@
       {
         "disease_id": "DIS_019",
         "classes": [
-          "PengendalianKimiawi"
+          "PengendalianKimiawi",
+          "PengendalianKulturTeknis"
         ],
         "category": "",
         "source": "DOC002"
@@ -1167,7 +1184,9 @@
       },
       {
         "disease_id": "DIS_022",
-        "classes": [],
+        "classes": [
+          "PengendalianKulturTeknis"
+        ],
         "category": "",
         "source": "DOC002"
       },
@@ -1381,7 +1400,9 @@
       },
       {
         "disease_id": "DIS_024",
-        "classes": [],
+        "classes": [
+          "PengendalianFisik"
+        ],
         "category": "",
         "source": "DOC002"
       },
@@ -1919,7 +1940,8 @@
       {
         "disease_id": "DIS_125",
         "classes": [
-          "PengendalianKulturTeknis"
+          "PengendalianKulturTeknis",
+          "PengendalianFisik"
         ],
         "category": "kultur teknis",
         "source": "DOC005"
@@ -2229,7 +2251,7 @@
         "source": "DOC002"
       }
     ],
-    "unclassified": 82
+    "unclassified": 74
   },
   "varieties": [
     {
@@ -2239,7 +2261,9 @@
       "disease_ids": [
         "DIS_046"
       ],
-      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+      "evidence": "Pengendalian penyakit bulai jagung dapat dilakukan dengan menggunakan varietas tahan seperti Jagung Asian Honey yang mempunyai kejadian penyakit lebih rendah (54.17%) dibandingkan dengan varietas Jagung Pioneer 21 (70.83%) dan Jagung Pacific 339 (79.17%).",
+      "page": "106",
+      "chunk": "DOC002_C106_02"
     },
     {
       "local": "VarietasPioneer21",
@@ -2248,7 +2272,9 @@
       "disease_ids": [
         "DIS_046"
       ],
-      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+      "evidence": "Pengendalian penyakit bulai jagung dapat dilakukan dengan menggunakan varietas tahan seperti Jagung Asian Honey yang mempunyai kejadian penyakit lebih rendah (54.17%) dibandingkan dengan varietas Jagung Pioneer 21 (70.83%) dan Jagung Pacific 339 (79.17%).",
+      "page": "106",
+      "chunk": "DOC002_C106_02"
     },
     {
       "local": "VarietasPioneer27",
@@ -2257,7 +2283,9 @@
       "disease_ids": [
         "DIS_046"
       ],
-      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+      "evidence": "Namun, Ulhaq and Masnilah, (2019) mengatakan bahwa varietas Pioneer 21 termasuk agak rentan dan varietas yang tahan terhadap penyakit bulai adalah Pioneer 27.",
+      "page": "106",
+      "chunk": "DOC002_C106_02"
     },
     {
       "local": "VarietasVima4",
@@ -2266,7 +2294,9 @@
       "disease_ids": [
         "DIS_125"
       ],
-      "evidence": "Balitkabi (2017) menginfokan varietas Vima 4 dan Vima 5 memiliki sifat agak tahan terhadap infeksi patogen tular tanah. \n agens hayati merupakan salah satu alternatif pengendalian yang banyak dianjurkan. \n Produk pestisida nabati yang dapat dimanfaatkan seperti ekstrak daun sirih. \n Pengendalian S. rolfsii dapat dilakukan dengan perlakuan kultur teknis, seperti pengolahan tanah, pemberian kompos, "
+      "evidence": "Balitkabi (2017) menginfokan varietas Vima 4 dan Vima 5 memiliki sifat agak tahan terhadap infeksi patogen tular tanah.",
+      "page": "68",
+      "chunk": "DOC005_C068_01"
     },
     {
       "local": "VarietasVima5",
@@ -2275,7 +2305,9 @@
       "disease_ids": [
         "DIS_125"
       ],
-      "evidence": "Balitkabi (2017) menginfokan varietas Vima 4 dan Vima 5 memiliki sifat agak tahan terhadap infeksi patogen tular tanah. \n agens hayati merupakan salah satu alternatif pengendalian yang banyak dianjurkan. \n Produk pestisida nabati yang dapat dimanfaatkan seperti ekstrak daun sirih. \n Pengendalian S. rolfsii dapat dilakukan dengan perlakuan kultur teknis, seperti pengolahan tanah, pemberian kompos, "
+      "evidence": "Balitkabi (2017) menginfokan varietas Vima 4 dan Vima 5 memiliki sifat agak tahan terhadap infeksi patogen tular tanah.",
+      "page": "68",
+      "chunk": "DOC005_C068_01"
     },
     {
       "local": "VarietasBadak",
@@ -2284,7 +2316,9 @@
       "disease_ids": [
         "DIS_122"
       ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004).",
+      "page": "49",
+      "chunk": "DOC005_C049_01"
     },
     {
       "local": "VarietasBison",
@@ -2293,7 +2327,9 @@
       "disease_ids": [
         "DIS_122"
       ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004).",
+      "page": "49",
+      "chunk": "DOC005_C049_01"
     },
     {
       "local": "VarietasDomba",
@@ -2302,7 +2338,9 @@
       "disease_ids": [
         "DIS_122"
       ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004).",
+      "page": "49",
+      "chunk": "DOC005_C049_01"
     },
     {
       "local": "VarietasJerapah",
@@ -2311,7 +2349,9 @@
       "disease_ids": [
         "DIS_122"
       ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004).",
+      "page": "49",
+      "chunk": "DOC005_C049_01"
     },
     {
       "local": "VarietasKelinci",
@@ -2320,7 +2360,9 @@
       "disease_ids": [
         "DIS_122"
       ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004).",
+      "page": "49",
+      "chunk": "DOC005_C049_01"
     },
     {
       "local": "VarietasPanther",
@@ -2329,7 +2371,9 @@
       "disease_ids": [
         "DIS_122"
       ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004).",
+      "page": "49",
+      "chunk": "DOC005_C049_01"
     },
     {
       "local": "VarietasTakar1",
@@ -2338,7 +2382,9 @@
       "disease_ids": [
         "DIS_121"
       ],
-      "evidence": "Varietas unggul baru kacang tanah tahan penyakit karat adalah Takar 1 dan Takar 2. \n Sanitasi lingkungan di sekitar pertanaman kacang tanah diperlukan untuk mengantisipasi adanya sumber inokulum dari volunter kacang tanah dan gulma sebagai inang alternatifnya. \n Rotasi tanaman untuk mengurangi populasi inokulum awal. \n Gejala awal penyakit karat di kacang tanah ditandai dengan munculnya bercak klo"
+      "evidence": "Varietas unggul baru kacang tanah tahan penyakit karat adalah Takar 1 dan Takar 2.",
+      "page": "41",
+      "chunk": "DOC005_C041_05"
     },
     {
       "local": "VarietasTakar2",
@@ -2347,7 +2393,9 @@
       "disease_ids": [
         "DIS_121"
       ],
-      "evidence": "Varietas unggul baru kacang tanah tahan penyakit karat adalah Takar 1 dan Takar 2. \n Sanitasi lingkungan di sekitar pertanaman kacang tanah diperlukan untuk mengantisipasi adanya sumber inokulum dari volunter kacang tanah dan gulma sebagai inang alternatifnya. \n Rotasi tanaman untuk mengurangi populasi inokulum awal. \n Gejala awal penyakit karat di kacang tanah ditandai dengan munculnya bercak klo"
+      "evidence": "Varietas unggul baru kacang tanah tahan penyakit karat adalah Takar 1 dan Takar 2.",
+      "page": "41",
+      "chunk": "DOC005_C041_05"
     },
     {
       "local": "VarietasAnjasmoro",
@@ -2357,7 +2405,9 @@
         "DIS_006",
         "DIS_009"
       ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "evidence": "rolfsii diketahui bahwa Varietas Dena 1 tingkat keparahan penyakitnya lebih rendah dibandingkan dengan varietas Anjasmoro, Devon 1, Dering 1, Grobogan, dan Dega 1 yaitu 30% yang termasuk ke dalam varietas tahan.",
+      "page": "40",
+      "chunk": "DOC002_C040_01"
     },
     {
       "local": "VarietasDega1",
@@ -2366,7 +2416,9 @@
       "disease_ids": [
         "DIS_006"
       ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "evidence": "rolfsii diketahui bahwa Varietas Dena 1 tingkat keparahan penyakitnya lebih rendah dibandingkan dengan varietas Anjasmoro, Devon 1, Dering 1, Grobogan, dan Dega 1 yaitu 30% yang termasuk ke dalam varietas tahan.",
+      "page": "40",
+      "chunk": "DOC002_C040_01"
     },
     {
       "local": "VarietasDena",
@@ -2375,7 +2427,9 @@
       "disease_ids": [
         "DIS_009"
       ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "evidence": "Varietas kedelai yang toleran seperti Varietas Wilis dan Dena.",
+      "page": "44",
+      "chunk": "DOC002_C044_02"
     },
     {
       "local": "VarietasDena1",
@@ -2384,7 +2438,9 @@
       "disease_ids": [
         "DIS_006"
       ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "evidence": "rolfsii diketahui bahwa Varietas Dena 1 tingkat keparahan penyakitnya lebih rendah dibandingkan dengan varietas Anjasmoro, Devon 1, Dering 1, Grobogan, dan Dega 1 yaitu 30% yang termasuk ke dalam varietas tahan.",
+      "page": "40",
+      "chunk": "DOC002_C040_01"
     },
     {
       "local": "VarietasDering1",
@@ -2393,7 +2449,9 @@
       "disease_ids": [
         "DIS_006"
       ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "evidence": "rolfsii diketahui bahwa Varietas Dena 1 tingkat keparahan penyakitnya lebih rendah dibandingkan dengan varietas Anjasmoro, Devon 1, Dering 1, Grobogan, dan Dega 1 yaitu 30% yang termasuk ke dalam varietas tahan.",
+      "page": "40",
+      "chunk": "DOC002_C040_01"
     },
     {
       "local": "VarietasDevon1",
@@ -2402,7 +2460,9 @@
       "disease_ids": [
         "DIS_006"
       ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "evidence": "rolfsii diketahui bahwa Varietas Dena 1 tingkat keparahan penyakitnya lebih rendah dibandingkan dengan varietas Anjasmoro, Devon 1, Dering 1, Grobogan, dan Dega 1 yaitu 30% yang termasuk ke dalam varietas tahan.",
+      "page": "40",
+      "chunk": "DOC002_C040_01"
     },
     {
       "local": "VarietasGrobogan",
@@ -2411,7 +2471,9 @@
       "disease_ids": [
         "DIS_006"
       ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "evidence": "rolfsii diketahui bahwa Varietas Dena 1 tingkat keparahan penyakitnya lebih rendah dibandingkan dengan varietas Anjasmoro, Devon 1, Dering 1, Grobogan, dan Dega 1 yaitu 30% yang termasuk ke dalam varietas tahan.",
+      "page": "40",
+      "chunk": "DOC002_C040_01"
     },
     {
       "local": "VarietasKaba",
@@ -2420,7 +2482,9 @@
       "disease_ids": [
         "DIS_009"
       ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "evidence": "pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan.",
+      "page": "44",
+      "chunk": "DOC002_C044_02"
     },
     {
       "local": "VarietasSinabung",
@@ -2429,7 +2493,9 @@
       "disease_ids": [
         "DIS_009"
       ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "evidence": "pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan.",
+      "page": "44",
+      "chunk": "DOC002_C044_02"
     },
     {
       "local": "VarietasTanggamus",
@@ -2438,7 +2504,9 @@
       "disease_ids": [
         "DIS_009"
       ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "evidence": "pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan.",
+      "page": "44",
+      "chunk": "DOC002_C044_02"
     },
     {
       "local": "VarietasWilis",
@@ -2447,7 +2515,9 @@
       "disease_ids": [
         "DIS_009"
       ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "evidence": "Varietas kedelai yang toleran seperti Varietas Wilis dan Dena.",
+      "page": "44",
+      "chunk": "DOC002_C044_02"
     },
     {
       "local": "VarietasBondoyudo",
@@ -2456,7 +2526,9 @@
       "disease_ids": [
         "DIS_004"
       ],
-      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005).",
+      "page": "34",
+      "chunk": "DOC002_C034_02"
     },
     {
       "local": "VarietasKalimas",
@@ -2465,7 +2537,9 @@
       "disease_ids": [
         "DIS_004"
       ],
-      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005).",
+      "page": "34",
+      "chunk": "DOC002_C034_02"
     },
     {
       "local": "VarietasTukadBalian",
@@ -2474,7 +2548,9 @@
       "disease_ids": [
         "DIS_004"
       ],
-      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005).",
+      "page": "34",
+      "chunk": "DOC002_C034_02"
     },
     {
       "local": "VarietasTukadUnda",
@@ -2483,7 +2559,9 @@
       "disease_ids": [
         "DIS_004"
       ],
-      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005).",
+      "page": "34",
+      "chunk": "DOC002_C034_02"
     },
     {
       "local": "VarietasAbomourow",
@@ -2492,7 +2570,9 @@
       "disease_ids": [
         "DIS_025"
       ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "evidence": "Menurut (Martanto, Tanati and Baan, 2016) varietas tahan dapat menggunakan Mouwebsi, Wonembai, Kuyage-2, Inanwatan-4, Abomourow, sedangkan Bonsasarai termasuk agak tahan.",
+      "page": "84",
+      "chunk": "DOC002_C084_04"
     },
     {
       "local": "VarietasBonsasarai",
@@ -2501,7 +2581,9 @@
       "disease_ids": [
         "DIS_025"
       ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "evidence": "Menurut (Martanto, Tanati and Baan, 2016) varietas tahan dapat menggunakan Mouwebsi, Wonembai, Kuyage-2, Inanwatan-4, Abomourow, sedangkan Bonsasarai termasuk agak tahan.",
+      "page": "84",
+      "chunk": "DOC002_C084_04"
     },
     {
       "local": "VarietasInanwatan4",
@@ -2510,7 +2592,9 @@
       "disease_ids": [
         "DIS_025"
       ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "evidence": "Menurut (Martanto, Tanati and Baan, 2016) varietas tahan dapat menggunakan Mouwebsi, Wonembai, Kuyage-2, Inanwatan-4, Abomourow, sedangkan Bonsasarai termasuk agak tahan.",
+      "page": "84",
+      "chunk": "DOC002_C084_04"
     },
     {
       "local": "VarietasKuyage2",
@@ -2519,7 +2603,9 @@
       "disease_ids": [
         "DIS_025"
       ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "evidence": "Menurut (Martanto, Tanati and Baan, 2016) varietas tahan dapat menggunakan Mouwebsi, Wonembai, Kuyage-2, Inanwatan-4, Abomourow, sedangkan Bonsasarai termasuk agak tahan.",
+      "page": "84",
+      "chunk": "DOC002_C084_04"
     },
     {
       "local": "VarietasMouwebsi",
@@ -2528,7 +2614,9 @@
       "disease_ids": [
         "DIS_025"
       ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "evidence": "Menurut (Martanto, Tanati and Baan, 2016) varietas tahan dapat menggunakan Mouwebsi, Wonembai, Kuyage-2, Inanwatan-4, Abomourow, sedangkan Bonsasarai termasuk agak tahan.",
+      "page": "84",
+      "chunk": "DOC002_C084_04"
     },
     {
       "local": "VarietasWonembai",
@@ -2537,9 +2625,144 @@
       "disease_ids": [
         "DIS_025"
       ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "evidence": "Menurut (Martanto, Tanati and Baan, 2016) varietas tahan dapat menggunakan Mouwebsi, Wonembai, Kuyage-2, Inanwatan-4, Abomourow, sedangkan Bonsasarai termasuk agak tahan.",
+      "page": "84",
+      "chunk": "DOC002_C084_04"
     }
   ],
+  "variety_links": {
+    "tahan": [
+      [
+        "VarietasTukadUnda",
+        "TungroPadi"
+      ],
+      [
+        "VarietasTukadBalian",
+        "TungroPadi"
+      ],
+      [
+        "VarietasKalimas",
+        "TungroPadi"
+      ],
+      [
+        "VarietasBondoyudo",
+        "TungroPadi"
+      ],
+      [
+        "VarietasDena1",
+        "RebahSemaiKedelai"
+      ],
+      [
+        "VarietasDevon1",
+        "RebahSemaiKedelai"
+      ],
+      [
+        "VarietasDering1",
+        "RebahSemaiKedelai"
+      ],
+      [
+        "VarietasGrobogan",
+        "RebahSemaiKedelai"
+      ],
+      [
+        "VarietasDega1",
+        "RebahSemaiKedelai"
+      ],
+      [
+        "VarietasAnjasmoro",
+        "RebahSemaiKedelai"
+      ],
+      [
+        "VarietasAnjasmoro",
+        "KaratKedelai"
+      ],
+      [
+        "VarietasTanggamus",
+        "KaratKedelai"
+      ],
+      [
+        "VarietasKaba",
+        "KaratKedelai"
+      ],
+      [
+        "VarietasSinabung",
+        "KaratKedelai"
+      ],
+      [
+        "VarietasWilis",
+        "KaratKedelai"
+      ],
+      [
+        "VarietasDena",
+        "KaratKedelai"
+      ],
+      [
+        "VarietasMouwebsi",
+        "KudisUbiJalar"
+      ],
+      [
+        "VarietasWonembai",
+        "KudisUbiJalar"
+      ],
+      [
+        "VarietasKuyage2",
+        "KudisUbiJalar"
+      ],
+      [
+        "VarietasInanwatan4",
+        "KudisUbiJalar"
+      ],
+      [
+        "VarietasAbomourow",
+        "KudisUbiJalar"
+      ],
+      [
+        "VarietasBonsasarai",
+        "KudisUbiJalar"
+      ],
+      [
+        "VarietasTakar1",
+        "KaratKacangTanah"
+      ],
+      [
+        "VarietasTakar2",
+        "KaratKacangTanah"
+      ],
+      [
+        "VarietasPanther",
+        "BercakDaunKacangTanah"
+      ],
+      [
+        "VarietasDomba",
+        "BercakDaunKacangTanah"
+      ],
+      [
+        "VarietasBison",
+        "BercakDaunKacangTanah"
+      ],
+      [
+        "VarietasJerapah",
+        "BercakDaunKacangTanah"
+      ],
+      [
+        "VarietasKelinci",
+        "BercakDaunKacangTanah"
+      ],
+      [
+        "VarietasBadak",
+        "BercakDaunKacangTanah"
+      ],
+      [
+        "VarietasVima4",
+        "LayuKacangHijau"
+      ],
+      [
+        "VarietasVima5",
+        "LayuKacangHijau"
+      ]
+    ],
+    "rentan": []
+  },
   "phases": [
     {
       "local": "FaseAnakan",
@@ -2556,39 +2779,894 @@
   ],
   "environment": [
     {
-      "local": "KondisiKelembapanTinggi",
-      "class": "KelembapanTinggi",
-      "label": "Kelembapan tinggi"
-    },
-    {
-      "local": "KondisiSuhu",
-      "class": "Suhu",
-      "label": "Suhu"
-    },
-    {
-      "local": "KondisiCurahHujan",
-      "class": "CurahHujan",
-      "label": "Curah hujan"
-    },
-    {
       "local": "KondisiMusimHujan",
-      "class": "MusimHujan",
-      "label": "Musim hujan"
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "MusimHujan"
+      ],
+      "condition": "hujan",
+      "level": "hujan",
+      "unit": "",
+      "value_min": null,
+      "value_max": null,
+      "value": null,
+      "quote": "Kemudian penanaman lebih awal selama musim hujan.",
+      "page": "29"
+    },
+    {
+      "local": "KelembapanTanahTinggi",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanTanah"
+      ],
+      "condition": "tinggi",
+      "level": "tinggi",
+      "unit": "",
+      "value_min": null,
+      "value_max": null,
+      "value": null,
+      "quote": "Perkembangan penyakit terjadi apabila kelembaban tanah tinggi dan suhu \n rolfsii menyebabkan busuk batang atau rebah semai (dumping off).",
+      "page": "38"
+    },
+    {
+      "local": "CurahHujanTinggi",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "CurahHujan"
+      ],
+      "condition": "tinggi",
+      "level": "tinggi",
+      "unit": "",
+      "value_min": null,
+      "value_max": null,
+      "value": null,
+      "quote": "dapat dilakukan dengan beberapa teknik pengendalian seperti memperbaiki saluran air yang buruk, mengatur waktu penanaman kedelai agar tidak pada musim penghujan dengan curah hujan yang tinggi, pengendalian dengan solarisasi pada lahan yang akan dibudidayakan, penggunaan sistem tanam dengan mulsa plastik, perlakuan seed treatment pada benih yang akan ditanam dengan fungisida berbahan aktif thiram dan karbendazim, secara hayati dengan jamur antagonis Trichoderma dan Gliocladium, dan penyemprotan fungisida berbahan aktif etridiazole dan tiofanat (Inayati and Yusnawan, 2017).",
+      "page": "42"
+    },
+    {
+      "local": "SuhuOptimal15Sampai28",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "optimal",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 15.0,
+      "value_max": 28.0,
+      "value": null,
+      "quote": "Suhu optimum untuk infeksi berkisar antara 15–28 °C (Monte et al.",
+      "page": "18"
+    },
+    {
+      "local": "SuhuMendukung27Desimal5",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "mendukung",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 27.5,
+      "quote": "Kondisi lingkungan yang mendukung untuk perkembangan patogen ini adalah pada suhu 27,50C.",
+      "page": "18"
+    },
+    {
+      "local": "SuhuTercatat27Desimal5",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 27.5,
+      "quote": "Perkembangan penyakit tidak akan terjadi apabila suhu yang ada di lahan lebih dari 27,50C.",
+      "page": "18"
     },
     {
       "local": "KondisiMusimKemarau",
-      "class": "MusimKemarau",
-      "label": "Musim kemarau"
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "MusimKemarau"
+      ],
+      "condition": "kemarau",
+      "level": "kemarau",
+      "unit": "",
+      "value_min": null,
+      "value_max": null,
+      "value": null,
+      "quote": "Inayati and Yusnawan, (2017) menyatakan bahwa perkembangan penyakit karat daun tinggi pada \n 20 Penyakit Tanaman dan Pengendaliannya \n musim kemarau.",
+      "page": "18"
+    },
+    {
+      "local": "IntensitasCahayaRendah700",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Cahaya"
+      ],
+      "condition": "rendah",
+      "level": "",
+      "unit": "lux",
+      "value_min": null,
+      "value_max": null,
+      "value": 700.0,
+      "quote": "Menurut Sudjono (1979), penjemuran daun kedelai yang terinfeksi di bawah sinar matahari dengan intensitas cahaya 700 lux dapat menurunkan daya kecambah urediospora yang hanya mampu bertahan selama 6 jam, selain itu sinar ultra violet juga menurunkan daya kecambah urediospora.",
+      "page": "18"
+    },
+    {
+      "local": "KondisiAngin",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Angin"
+      ],
+      "condition": "tercatat",
+      "level": "",
+      "unit": "",
+      "value_min": null,
+      "value_max": null,
+      "value": null,
+      "quote": "Urediospora sangat mudah terbawa angin dan percikan air hujan sehingga cepat tersebar dan siklus penyakit akan terjadi dari musim ke musim (Gambar 2).",
+      "page": "18"
+    },
+    {
+      "local": "SuhuTercatat22Sampai26",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 22.0,
+      "value_max": 26.0,
+      "value": null,
+      "quote": "diffusa berkisar 22- 260C dan kelembaban mencapai 80-88%.",
+      "page": "45"
+    },
+    {
+      "local": "KelembapanUdaraTercatat80Sampai88",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "tercatat",
+      "level": "tinggi",
+      "unit": "%",
+      "value_min": 80.0,
+      "value_max": 88.0,
+      "value": null,
+      "quote": "diffusa berkisar 22- 260C dan kelembaban mencapai 80-88%.",
+      "page": "45"
+    },
+    {
+      "local": "CahayaMatahari",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Cahaya"
+      ],
+      "condition": "tercatat",
+      "level": "",
+      "unit": "",
+      "value_min": null,
+      "value_max": null,
+      "value": null,
+      "quote": "Perkembangan penyakit embun tepung dipengaruhi oleh faktor lingkungan seperti suhu, kelembaban, dan cahaya matahari.",
+      "page": "45"
+    },
+    {
+      "local": "SuhuTercatat20Sampai22",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 20.0,
+      "value_max": 22.0,
+      "value": null,
+      "quote": "manshurica adalah 20-220C (Silva et al.",
+      "page": "46"
+    },
+    {
+      "local": "KelembapanUdaraRendah",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "rendah",
+      "level": "rendah",
+      "unit": "",
+      "value_min": null,
+      "value_max": null,
+      "value": null,
+      "quote": "Cendawan menginfeksi tanaman dengan oospora (Inayati and Yusnawan, 2017) Perkembangan patogen membutuhkan suhu yang dingin dengan kelembaban yang rendah.",
+      "page": "46"
+    },
+    {
+      "local": "SuhuTercatat25Sampai30",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 25.0,
+      "value_max": 30.0,
+      "value": null,
+      "quote": "Pada lingkungan dengan suhu 25-300C dan kelembaban >90% menyebabkan tingkat infeksi patogen menjadi tinggi (Mian et al.",
+      "page": "47"
+    },
+    {
+      "local": "KelembapanUdaraTercatat90",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "tercatat",
+      "level": "tinggi",
+      "unit": "%",
+      "value_min": 90.0,
+      "value_max": 90.0,
+      "value": null,
+      "quote": "Pada lingkungan dengan suhu 25-300C dan kelembaban >90% menyebabkan tingkat infeksi patogen menjadi tinggi (Mian et al.",
+      "page": "47"
+    },
+    {
+      "local": "KelembapanUdaraTinggi",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "tinggi",
+      "level": "tinggi",
+      "unit": "",
+      "value_min": null,
+      "value_max": null,
+      "value": null,
+      "quote": "sojina merupakan penyakit penting untuk negara-negara penghasil kedelai yang berada pada daerah yang memiliki iklim dengan suhu yang panas dan kelembaban tinggi (Marcelo et al.",
+      "page": "47"
+    },
+    {
+      "local": "SuhuMaksimum30",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "maksimum",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 30.0,
+      "quote": "truncatum 25-30 °C (Laxman 2006), dengan pertumbuhan maksimal pada suhu 30 °C, sedangkan suhu optimal untuk sporulasi 20 °C (Wong et al.",
+      "page": "49"
+    },
+    {
+      "local": "SuhuOptimal20",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "optimal",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 20.0,
+      "quote": "truncatum 25-30 °C (Laxman 2006), dengan pertumbuhan maksimal pada suhu 30 °C, sedangkan suhu optimal untuk sporulasi 20 °C (Wong et al.",
+      "page": "49"
+    },
+    {
+      "local": "SuhuHangat22Desimal7Sampai26Desimal7",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "hangat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 22.7,
+      "value_max": 26.7,
+      "value": null,
+      "quote": "kikuchii menyukai lingkungan yang lembab yaitu dan cuaca yang hangat yaitu 22,7-26,70C.",
+      "page": "53"
+    },
+    {
+      "local": "SuhuTercatat28Sampai32",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 28.0,
+      "value_max": 32.0,
+      "value": null,
+      "quote": "axonopodis yaitu 28-320C dengan kelembaban 84-98% (Suhendar et al.",
+      "page": "56"
+    },
+    {
+      "local": "KelembapanUdaraTercatat84Sampai98",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "tercatat",
+      "level": "tinggi",
+      "unit": "%",
+      "value_min": 84.0,
+      "value_max": 98.0,
+      "value": null,
+      "quote": "axonopodis yaitu 28-320C dengan kelembaban 84-98% (Suhendar et al.",
+      "page": "56"
+    },
+    {
+      "local": "SuhuMaksimum10",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "maksimum",
+      "level": "rendah",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 10.0,
+      "quote": "Perkembangan bercak daun awal terjadi pada suhu minimal, optimal, dan maksimal yakni 10 °C, 25 °C, dan 31°C.",
+      "page": "47"
+    },
+    {
+      "local": "SuhuTercatat25",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 25.0,
+      "quote": "Perkembangan bercak daun awal terjadi pada suhu minimal, optimal, dan maksimal yakni 10 °C, 25 °C, dan 31°C.",
+      "page": "47"
+    },
+    {
+      "local": "SuhuTercatat31",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "tinggi",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 31.0,
+      "quote": "Perkembangan bercak daun awal terjadi pada suhu minimal, optimal, dan maksimal yakni 10 °C, 25 °C, dan 31°C.",
+      "page": "47"
+    },
+    {
+      "local": "SuhuTercatat13Sampai16",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "rendah",
+      "unit": "°C",
+      "value_min": 13.0,
+      "value_max": 16.0,
+      "value": null,
+      "quote": "Ruang penyimpanan diatur pada suhu 13-16° C dengan kelembaban 85% agar perkembangan penyakit lambat (Clark and Moyer, 2013).",
+      "page": "80"
+    },
+    {
+      "local": "SuhuOptimal29Sampai32",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "optimal",
+      "level": "tinggi",
+      "unit": "°C",
+      "value_min": 29.0,
+      "value_max": 32.0,
+      "value": null,
+      "quote": "Saat panen, produsen sering memanen ubi jalar di bawah suhu dan kelembaban relatif dan pengeringan dilakukan di lapangan dengan kisaran suhu optimum 29 – 32° C dengan kelembaban 85%, di mana kondisi tersebut memungkinkan penyembuhan periderm secara cepat dan lengkap (Nielsen and Johnson, 1974).",
+      "page": "80"
+    },
+    {
+      "local": "KelembapanUdaraTercatat85",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "tercatat",
+      "level": "tinggi",
+      "unit": "%",
+      "value_min": 85.0,
+      "value_max": 85.0,
+      "value": null,
+      "quote": "Ruang penyimpanan diatur pada suhu 13-16° C dengan kelembaban 85% agar perkembangan penyakit lambat (Clark and Moyer, 2013).",
+      "page": "80"
+    },
+    {
+      "local": "KelembapanUdaraOptimal85",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "optimal",
+      "level": "tinggi",
+      "unit": "%",
+      "value_min": 85.0,
+      "value_max": 85.0,
+      "value": null,
+      "quote": "Saat panen, produsen sering memanen ubi jalar di bawah suhu dan kelembaban relatif dan pengeringan dilakukan di lapangan dengan kisaran suhu optimum 29 – 32° C dengan kelembaban 85%, di mana kondisi tersebut memungkinkan penyembuhan periderm secara cepat dan lengkap (Nielsen and Johnson, 1974).",
+      "page": "80"
+    },
+    {
+      "local": "SuhuRendah21",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "rendah",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 21.0,
+      "quote": "Martanto, (1997) melaporkan bahwa penyakit ini akan berkembang lebih baik pada suhu rendah (21° C) dibandingkan pada suhu kamar (28° C).",
+      "page": "83"
+    },
+    {
+      "local": "SuhuKamar28",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "kamar",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 28.0,
+      "quote": "Martanto, (1997) melaporkan bahwa penyakit ini akan berkembang lebih baik pada suhu rendah (21° C) dibandingkan pada suhu kamar (28° C).",
+      "page": "83"
+    },
+    {
+      "local": "SuhuMaksimum18Desimal6Sampai28Desimal9",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "maksimum",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 18.6,
+      "value_max": 28.9,
+      "value": null,
+      "quote": "Sedangkan wilayah Mogoro mempunyai suhu minimum dan maksimum yang relatif tinggi (18.6-28.9°C) dan kelembaban relatif yang sedang 56.",
+      "page": "100"
+    },
+    {
+      "local": "SuhuMinimum13Desimal9",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "minimum",
+      "level": "rendah",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 13.9,
+      "quote": "Wilayah Mbeya mempunyai keparahan penyakit paling tinggi karena suhu minimum (13.9°C) dan maksimum (23.",
+      "page": "100"
+    },
+    {
+      "local": "SuhuMaksimum23Desimal7",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "maksimum",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 23.7,
+      "quote": "9°C) dan maksimum (23.7°C) yang rendah dan kelembaban relatif sedang (67%) dan curah hujan 386.",
+      "page": "100"
+    },
+    {
+      "local": "SuhuMinimum14Desimal2",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "minimum",
+      "level": "rendah",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 14.2,
+      "quote": "Wilayah Arusha mempunyai suhu minimum (14.2°C) dan kelembapan relatif tinggi (91.",
+      "page": "100"
+    },
+    {
+      "local": "SuhuTercatat25Desimal2",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 25.2,
+      "quote": "Suhu 25.2°C – 28.",
+      "page": "103"
+    },
+    {
+      "local": "SuhuTercatat28Desimal8",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 28.8,
+      "quote": "2°C – 28.8°C merupakan suhu optimum perkembangan penyakit karat.",
+      "page": "103"
+    },
+    {
+      "local": "SuhuRendah24",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "rendah",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 24.0,
+      "quote": "Kecepatan angin, kelembaban yang tinggi lebih dari 90% dan suhu di bawah 24°C dapat meningkatkan laju infeksi penyakit bulai.",
+      "page": "104"
+    },
+    {
+      "local": "SuhuTercatat15",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "rendah",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 15.0,
+      "quote": "Perkembangan penyakit akan semakin meningkat jika kelembaban lingkungan tinggi di atas 80% dan suhu antara 15°C-35°C (Soenartiningsih et al.",
+      "page": "109"
+    },
+    {
+      "local": "SuhuTercatat35",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "tinggi",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 35.0,
+      "quote": "Perkembangan penyakit akan semakin meningkat jika kelembaban lingkungan tinggi di atas 80% dan suhu antara 15°C-35°C (Soenartiningsih et al.",
+      "page": "109"
+    },
+    {
+      "local": "SuhuRendah18Sampai20",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "rendah",
+      "level": "rendah",
+      "unit": "°C",
+      "value_min": 18.0,
+      "value_max": 20.0,
+      "value": null,
+      "quote": "Hal ini akan diperparah pada kondisi suhu yang rendah yakni 18-20 °C (Dunleavy 1971).",
+      "page": "26"
+    },
+    {
+      "local": "SuhuHangat20Sampai24",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "hangat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 20.0,
+      "value_max": 24.0,
+      "value": null,
+      "quote": "Perkembangan penyakit akan meningkat pada kondisi kelembapan yang tinggi dan suhu hangat 20-24 °C.",
+      "page": "26"
+    },
+    {
+      "local": "SuhuOptimal10Sampai30",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "optimal",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 10.0,
+      "value_max": 30.0,
+      "value": null,
+      "quote": "Populasi sumber inokulum dipengaruhi oleh suhu optimum pada kisaran 10-30 °C (Mc Kenzie dan Wyllie 1971).",
+      "page": "26"
+    },
+    {
+      "local": "SuhuTercatat25Sampai28",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 25.0,
+      "value_max": 28.0,
+      "value": null,
+      "quote": "Sumber: Gulzar (2010) \n Urediospora bertahan hidup selama 20 hari di lapangan, pada suhu berkisar 25-28 °C, dan perkecambahan maksimum pada suhu 25 °C.",
+      "page": "39"
+    },
+    {
+      "local": "SuhuMaksimum25",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "maksimum",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 25.0,
+      "quote": "Sumber: Gulzar (2010) \n Urediospora bertahan hidup selama 20 hari di lapangan, pada suhu berkisar 25-28 °C, dan perkecambahan maksimum pada suhu 25 °C.",
+      "page": "39"
+    },
+    {
+      "local": "SuhuTercatat24Desimal7",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 24.7,
+      "quote": "Selanjutnya Arsule dan Pande (2011) menyatakan bahwa urediospora paling banyak diperoleh pada suhu 24,7 °C, kelembapan 74%, kecepatan angin 5,8 km/jam, dan tidak terjadi hujan.",
+      "page": "39"
+    },
+    {
+      "local": "KelembapanUdaraTercatat74",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "%",
+      "value_min": 74.0,
+      "value_max": 74.0,
+      "value": null,
+      "quote": "Selanjutnya Arsule dan Pande (2011) menyatakan bahwa urediospora paling banyak diperoleh pada suhu 24,7 °C, kelembapan 74%, kecepatan angin 5,8 km/jam, dan tidak terjadi hujan.",
+      "page": "39"
+    },
+    {
+      "local": "SuhuSejuk20Sampai24",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "sejuk",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": 20.0,
+      "value_max": 24.0,
+      "value": null,
+      "quote": "Perkembangan penyakit didukung oleh kelembapan tinggi (di musim hujan), suhu sejuk 20–24 °C, dan pada tanaman yang kurang subur.",
+      "page": "60"
+    },
+    {
+      "local": "SuhuTercatat27",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 27.0,
+      "quote": "Sporulasi cendawan terbanyak terjadi pada suhu 27 °C dan kelembapan relatif 96%.",
+      "page": "60"
+    },
+    {
+      "local": "KelembapanUdaraTercatat96",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanUdara"
+      ],
+      "condition": "tercatat",
+      "level": "tinggi",
+      "unit": "%",
+      "value_min": 96.0,
+      "value_max": 96.0,
+      "value": null,
+      "quote": "Sporulasi cendawan terbanyak terjadi pada suhu 27 °C dan kelembapan relatif 96%.",
+      "page": "60"
+    },
+    {
+      "local": "SuhuTercatat30",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 30.0,
+      "quote": "Sumber: Agrios (2005) \n Penyakit berkembang pesat pada kondisi suhu hangat, 30 °C (Kwon et al.",
+      "page": "65"
+    },
+    {
+      "local": "SuhuOptimal28",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "Suhu"
+      ],
+      "condition": "optimal",
+      "level": "sedang",
+      "unit": "°C",
+      "value_min": null,
+      "value_max": null,
+      "value": 28.0,
+      "quote": "Hartati (2008) juga menyampaikan suhu dan kelembapan optimal untuk pertumbuhan cendawan adalah 28 °C dan 85%.",
+      "page": "65"
+    },
+    {
+      "local": "KelembapanTanahTercatat60Sampai80",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "KelembapanTanah"
+      ],
+      "condition": "tercatat",
+      "level": "sedang",
+      "unit": "%",
+      "value_min": 60.0,
+      "value_max": 80.0,
+      "value": null,
+      "quote": "Menurut Muljowati dan Sucianto (2012) kelembapan tanah 60-80% sangat sesuai untuk perkembangan penyakit.",
+      "page": "65"
+    },
+    {
+      "local": "DerajatKeasamanTanahRendah7",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "DerajatKeasamanTanah"
+      ],
+      "condition": "rendah",
+      "level": "",
+      "unit": "pH",
+      "value_min": null,
+      "value_max": null,
+      "value": 7.0,
+      "quote": "Menurut Sastrahidayat (1990) peluang sporulasi lebih besar pada pH tanah di bawah 7 pada semua jenis tanah, dan potensinya akan menurun pada kondisi pH tanah <3,6 dan >8,8.",
+      "page": "65"
+    },
+    {
+      "local": "DerajatKeasamanTanahRendah3Desimal6",
+      "classes": [
+        "FaktorRisiko",
+        "FaktorLingkungan",
+        "DerajatKeasamanTanah"
+      ],
+      "condition": "rendah",
+      "level": "",
+      "unit": "pH",
+      "value_min": null,
+      "value_max": null,
+      "value": 3.6,
+      "quote": "Menurut Sastrahidayat (1990) peluang sporulasi lebih besar pada pH tanah di bawah 7 pada semua jenis tanah, dan potensinya akan menurun pada kondisi pH tanah <3,6 dan >8,8.",
+      "page": "65"
     }
   ],
   "environment_links": [
     {
-      "disease_id": "DIS_001",
-      "env": "KondisiSuhu"
-    },
-    {
       "disease_id": "DIS_002",
       "env": "KondisiMusimHujan"
+    },
+    {
+      "disease_id": "DIS_006",
+      "env": "KelembapanTanahTinggi"
     },
     {
       "disease_id": "DIS_007",
@@ -2596,7 +3674,143 @@
     },
     {
       "disease_id": "DIS_008",
-      "env": "KondisiCurahHujan"
+      "env": "CurahHujanTinggi"
+    },
+    {
+      "disease_id": "DIS_008",
+      "env": "KondisiMusimHujan"
+    },
+    {
+      "disease_id": "DIS_009",
+      "env": "SuhuOptimal15Sampai28"
+    },
+    {
+      "disease_id": "DIS_009",
+      "env": "SuhuMendukung27Desimal5"
+    },
+    {
+      "disease_id": "DIS_009",
+      "env": "SuhuTercatat27Desimal5"
+    },
+    {
+      "disease_id": "DIS_009",
+      "env": "CurahHujanTinggi"
+    },
+    {
+      "disease_id": "DIS_009",
+      "env": "KondisiMusimKemarau"
+    },
+    {
+      "disease_id": "DIS_009",
+      "env": "IntensitasCahayaRendah700"
+    },
+    {
+      "disease_id": "DIS_009",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_010",
+      "env": "SuhuTercatat22Sampai26"
+    },
+    {
+      "disease_id": "DIS_010",
+      "env": "KelembapanUdaraTercatat80Sampai88"
+    },
+    {
+      "disease_id": "DIS_010",
+      "env": "CahayaMatahari"
+    },
+    {
+      "disease_id": "DIS_011",
+      "env": "SuhuTercatat20Sampai22"
+    },
+    {
+      "disease_id": "DIS_011",
+      "env": "KelembapanUdaraRendah"
+    },
+    {
+      "disease_id": "DIS_012",
+      "env": "SuhuTercatat25Sampai30"
+    },
+    {
+      "disease_id": "DIS_012",
+      "env": "KelembapanUdaraTercatat90"
+    },
+    {
+      "disease_id": "DIS_012",
+      "env": "KelembapanUdaraTinggi"
+    },
+    {
+      "disease_id": "DIS_012",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_013",
+      "env": "SuhuTercatat25Sampai30"
+    },
+    {
+      "disease_id": "DIS_013",
+      "env": "SuhuMaksimum30"
+    },
+    {
+      "disease_id": "DIS_013",
+      "env": "SuhuOptimal20"
+    },
+    {
+      "disease_id": "DIS_013",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_015",
+      "env": "SuhuHangat22Desimal7Sampai26Desimal7"
+    },
+    {
+      "disease_id": "DIS_015",
+      "env": "CahayaMatahari"
+    },
+    {
+      "disease_id": "DIS_017",
+      "env": "SuhuTercatat28Sampai32"
+    },
+    {
+      "disease_id": "DIS_017",
+      "env": "KelembapanUdaraTercatat84Sampai98"
+    },
+    {
+      "disease_id": "DIS_017",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_021",
+      "env": "SuhuTercatat25Sampai30"
+    },
+    {
+      "disease_id": "DIS_021",
+      "env": "SuhuMaksimum10"
+    },
+    {
+      "disease_id": "DIS_021",
+      "env": "SuhuTercatat25"
+    },
+    {
+      "disease_id": "DIS_021",
+      "env": "SuhuTercatat31"
+    },
+    {
+      "disease_id": "DIS_021",
+      "env": "KelembapanUdaraTercatat90"
+    },
+    {
+      "disease_id": "DIS_021",
+      "env": "KelembapanUdaraTinggi"
+    },
+    {
+      "disease_id": "DIS_021",
+      "env": "KelembapanUdaraRendah"
+    },
+    {
+      "disease_id": "DIS_021",
+      "env": "KondisiAngin"
     },
     {
       "disease_id": "DIS_022",
@@ -2607,41 +3821,501 @@
       "env": "KondisiMusimKemarau"
     },
     {
+      "disease_id": "DIS_022",
+      "env": "KondisiAngin"
+    },
+    {
       "disease_id": "DIS_024",
-      "env": "KondisiSuhu"
+      "env": "SuhuTercatat13Sampai16"
+    },
+    {
+      "disease_id": "DIS_024",
+      "env": "SuhuOptimal29Sampai32"
+    },
+    {
+      "disease_id": "DIS_024",
+      "env": "KelembapanUdaraTercatat85"
+    },
+    {
+      "disease_id": "DIS_024",
+      "env": "KelembapanUdaraOptimal85"
+    },
+    {
+      "disease_id": "DIS_025",
+      "env": "SuhuRendah21"
+    },
+    {
+      "disease_id": "DIS_025",
+      "env": "SuhuKamar28"
     },
     {
       "disease_id": "DIS_025",
       "env": "KondisiMusimHujan"
     },
     {
+      "disease_id": "DIS_025",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_027",
+      "env": "SuhuTercatat25"
+    },
+    {
       "disease_id": "DIS_044",
-      "env": "KondisiKelembapanTinggi"
+      "env": "SuhuMaksimum18Desimal6Sampai28Desimal9"
+    },
+    {
+      "disease_id": "DIS_044",
+      "env": "SuhuMinimum13Desimal9"
+    },
+    {
+      "disease_id": "DIS_044",
+      "env": "SuhuMaksimum23Desimal7"
+    },
+    {
+      "disease_id": "DIS_044",
+      "env": "SuhuMinimum14Desimal2"
+    },
+    {
+      "disease_id": "DIS_044",
+      "env": "KelembapanUdaraTinggi"
     },
     {
       "disease_id": "DIS_045",
-      "env": "KondisiKelembapanTinggi"
+      "env": "SuhuTercatat25Desimal2"
     },
     {
       "disease_id": "DIS_045",
-      "env": "KondisiSuhu"
+      "env": "SuhuTercatat28Desimal8"
+    },
+    {
+      "disease_id": "DIS_045",
+      "env": "KelembapanUdaraTinggi"
+    },
+    {
+      "disease_id": "DIS_045",
+      "env": "KondisiAngin"
     },
     {
       "disease_id": "DIS_046",
-      "env": "KondisiSuhu"
+      "env": "SuhuRendah24"
+    },
+    {
+      "disease_id": "DIS_046",
+      "env": "KelembapanUdaraTinggi"
+    },
+    {
+      "disease_id": "DIS_046",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_048",
+      "env": "SuhuTercatat15"
+    },
+    {
+      "disease_id": "DIS_048",
+      "env": "SuhuTercatat35"
+    },
+    {
+      "disease_id": "DIS_118",
+      "env": "SuhuOptimal15Sampai28"
+    },
+    {
+      "disease_id": "DIS_118",
+      "env": "SuhuMendukung27Desimal5"
+    },
+    {
+      "disease_id": "DIS_118",
+      "env": "SuhuTercatat27Desimal5"
+    },
+    {
+      "disease_id": "DIS_118",
+      "env": "CurahHujanTinggi"
     },
     {
       "disease_id": "DIS_118",
       "env": "KondisiMusimKemarau"
+    },
+    {
+      "disease_id": "DIS_118",
+      "env": "IntensitasCahayaRendah700"
+    },
+    {
+      "disease_id": "DIS_118",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_119",
+      "env": "SuhuRendah18Sampai20"
+    },
+    {
+      "disease_id": "DIS_119",
+      "env": "SuhuHangat20Sampai24"
+    },
+    {
+      "disease_id": "DIS_119",
+      "env": "SuhuOptimal10Sampai30"
+    },
+    {
+      "disease_id": "DIS_119",
+      "env": "KelembapanUdaraTinggi"
+    },
+    {
+      "disease_id": "DIS_119",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_120",
+      "env": "SuhuTercatat25Sampai30"
+    },
+    {
+      "disease_id": "DIS_120",
+      "env": "SuhuMaksimum30"
+    },
+    {
+      "disease_id": "DIS_120",
+      "env": "SuhuOptimal20"
+    },
+    {
+      "disease_id": "DIS_120",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_121",
+      "env": "SuhuTercatat25Sampai28"
+    },
+    {
+      "disease_id": "DIS_121",
+      "env": "SuhuMaksimum25"
+    },
+    {
+      "disease_id": "DIS_121",
+      "env": "SuhuTercatat24Desimal7"
+    },
+    {
+      "disease_id": "DIS_121",
+      "env": "KelembapanUdaraTercatat74"
+    },
+    {
+      "disease_id": "DIS_121",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_122",
+      "env": "SuhuTercatat25Sampai30"
+    },
+    {
+      "disease_id": "DIS_122",
+      "env": "SuhuMaksimum10"
+    },
+    {
+      "disease_id": "DIS_122",
+      "env": "SuhuTercatat25"
+    },
+    {
+      "disease_id": "DIS_122",
+      "env": "SuhuTercatat31"
+    },
+    {
+      "disease_id": "DIS_122",
+      "env": "KelembapanUdaraTercatat90"
+    },
+    {
+      "disease_id": "DIS_122",
+      "env": "KelembapanUdaraTinggi"
+    },
+    {
+      "disease_id": "DIS_122",
+      "env": "KelembapanUdaraRendah"
+    },
+    {
+      "disease_id": "DIS_122",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_123",
+      "env": "SuhuTercatat22Sampai26"
+    },
+    {
+      "disease_id": "DIS_123",
+      "env": "KelembapanUdaraRendah"
+    },
+    {
+      "disease_id": "DIS_123",
+      "env": "KondisiMusimKemarau"
+    },
+    {
+      "disease_id": "DIS_124",
+      "env": "SuhuSejuk20Sampai24"
+    },
+    {
+      "disease_id": "DIS_124",
+      "env": "SuhuTercatat27"
+    },
+    {
+      "disease_id": "DIS_124",
+      "env": "KelembapanUdaraTercatat96"
+    },
+    {
+      "disease_id": "DIS_124",
+      "env": "KelembapanUdaraTinggi"
+    },
+    {
+      "disease_id": "DIS_124",
+      "env": "KondisiMusimHujan"
+    },
+    {
+      "disease_id": "DIS_124",
+      "env": "KondisiAngin"
+    },
+    {
+      "disease_id": "DIS_125",
+      "env": "SuhuTercatat30"
+    },
+    {
+      "disease_id": "DIS_125",
+      "env": "SuhuOptimal28"
+    },
+    {
+      "disease_id": "DIS_125",
+      "env": "KelembapanTanahTercatat60Sampai80"
+    },
+    {
+      "disease_id": "DIS_125",
+      "env": "DerajatKeasamanTanahRendah7"
+    },
+    {
+      "disease_id": "DIS_125",
+      "env": "DerajatKeasamanTanahRendah3Desimal6"
+    },
+    {
+      "disease_id": "DIS_125",
+      "env": "KondisiAngin"
     }
   ],
   "summary": {
     "plants": 7,
-    "diseases": 57,
+    "diseases": 54,
     "symptom_pairs": 240,
     "pathogen_pairs": 73,
     "control_pairs_disease": 257,
     "control_pairs_chapter": 45,
-    "bagian_pairs": 53
-  }
+    "bagian_pairs": 89,
+    "environment_individuals": 55
+  },
+  "counts": {
+    "classes": {
+      "TanamanPangan": 7,
+      "Serealia": 2,
+      "Legum": 3,
+      "UmbiUmbian": 2,
+      "Penyakit": 54,
+      "PenyakitJamur": 0,
+      "PenyakitBakteri": 0,
+      "PenyakitVirus": 0,
+      "PenyakitNematoda": 0,
+      "PenyakitOomycete": 0,
+      "PenyakitFitoplasma": 0,
+      "PenyakitLainnya": 0,
+      "PenyakitRisiko": 0,
+      "PenyakitRisikoSuhuTinggi": 0,
+      "PenyakitRisikoKelembapanTinggi": 0,
+      "PenyakitRisikoMusimHujan": 0,
+      "Gejala": 238,
+      "GejalaDaun": 94,
+      "GejalaBatang": 21,
+      "GejalaAkar": 11,
+      "GejalaUmbi": 4,
+      "GejalaBuah": 3,
+      "GejalaBiji": 8,
+      "GejalaBunga": 0,
+      "GejalaMalai": 4,
+      "GejalaPelepah": 3,
+      "GejalaPolong": 11,
+      "GejalaPucuk": 3,
+      "GejalaTongkol": 1,
+      "GejalaLeherMalai": 4,
+      "Patogen": 59,
+      "Jamur": 29,
+      "Bakteri": 5,
+      "Virus": 8,
+      "OrganismeLain": 0,
+      "Nematoda": 0,
+      "Oomycete": 1,
+      "Fitoplasma": 1,
+      "BagianTanaman": 13,
+      "Pengendalian": 261,
+      "PengendalianKulturTeknis": 82,
+      "PengendalianMekanis": 5,
+      "PengendalianBiologis": 59,
+      "PengendalianKimiawi": 67,
+      "PengendalianFisik": 9,
+      "PengendalianTerpadu": 2,
+      "FaktorRisiko": 55,
+      "FaktorLingkungan": 55,
+      "Suhu": 36,
+      "Kelembapan": 0,
+      "KelembapanUdara": 9,
+      "KelembapanTanah": 2,
+      "CurahHujan": 1,
+      "Musim": 0,
+      "MusimHujan": 1,
+      "MusimKemarau": 1,
+      "Cahaya": 2,
+      "Angin": 1,
+      "DerajatKeasamanTanah": 2,
+      "FaktorBudidaya": 0,
+      "SanitasiLahanBuruk": 0,
+      "DrainaseBuruk": 0,
+      "PenggunaanBenihTerinfeksi": 0,
+      "JarakTanamRapat": 0,
+      "PemupukanTidakSeimbang": 0,
+      "RotasiTanamanTidakDilakukan": 0,
+      "PengolahanTanahBuruk": 0,
+      "FaktorLahan": 0,
+      "KondisiTanah": 0,
+      "KondisiDrainase": 0,
+      "KondisiUnsurHara": 0,
+      "Referensi": 2,
+      "Buku": 2,
+      "JurnalIlmiah": 0,
+      "ArtikelIlmiah": 0,
+      "PublikasiInstansi": 0,
+      "Varietas": 34,
+      "VarietasUnggul": 2,
+      "VarietasLokal": 0,
+      "FasePertumbuhan": 3,
+      "NamedIndividual": 726
+    },
+    "properties": {
+      "menyerangTanaman": 54,
+      "diserangPenyakit": 54,
+      "memilikiGejala": 238,
+      "merupakanGejalaDari": 238,
+      "disebabkanOleh": 72,
+      "menyebabkanPenyakit": 72,
+      "menyerangBagian": 89,
+      "dikendalikanDengan": 257,
+      "mengendalikanPenyakit": 257,
+      "pengendalianUmum": 45,
+      "berkaitanPengendalian": 302,
+      "dipengaruhiOleh": 89,
+      "memilikiReferensi": 57,
+      "dijelaskanDalam": 57,
+      "terdapatPada": 167,
+      "memilikiVarietas": 34,
+      "merupakanVarietasDari": 34,
+      "tahanTerhadap": 32,
+      "rentanTerhadap": 0,
+      "menyerangFase": 3
+    },
+    "data_properties": {
+      "namaIlmiah": 7,
+      "deskripsiTanaman": 7,
+      "namaIlmiahPatogen": 59,
+      "catatanTakson": 20,
+      "deskripsiPenyakit": 54,
+      "namaInggrisPenyakit": 9,
+      "tingkatKeparahan": 0,
+      "deskripsiGejala": 238,
+      "judulReferensi": 2,
+      "tahunTerbit": 2,
+      "namaPenulis": 2,
+      "urlReferensi": 0,
+      "namaPengendalian": 129,
+      "deskripsiPengendalian": 261,
+      "nilaiMin": 22,
+      "nilaiMaks": 22,
+      "nilaiTunggal": 25,
+      "satuan": 47,
+      "tingkat": 50,
+      "kondisi": 55,
+      "kutipanSumber": 713,
+      "halamanSumber": 708,
+      "idBlokSumber": 670
+    }
+  },
+  "coverage": {
+    "penyakit_total": 54,
+    "berDeskripsi": 54,
+    "berPatogen": 51,
+    "berGejala": 54,
+    "berPengendalian": 54,
+    "berFaktorLingkungan": 25,
+    "persenDeskripsi": 100.0,
+    "persenPatogen": 94.4,
+    "persenFaktorLingkungan": 46.3,
+    "tanpaDeskripsi": [],
+    "tanpaPatogen": [
+      "BelangMottleKacangTanah",
+      "KerdilRumputDanKerdilHampaPadi",
+      "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu"
+    ],
+    "tanpaPengendalian": [],
+    "tanpaFaktorLingkungan": [
+      "AntraknosaUbiKayuBatang",
+      "AntraknosaUbiKayuDaun",
+      "BercakDaunBaurUbiKayu",
+      "BercakDaunCoklatUbiKayu",
+      "BercakDaunPutihUbiKayu",
+      "BercakKuningUbiJalar",
+      "BercakTargetKedelai",
+      "BusukAkarDanUmbiUbiKayu",
+      "BusukAkarUbiKayu",
+      "BusukPangkalBatangUbiKayu",
+      "BusukUmbiUbiKayu",
+      "CassavaBrownStreakDiseaseCbsdUbiKayu",
+      "CassavaMosaicBegomovirusCMBsUbiKayu",
+      "HawarBakteriBacterialBlightKedelai",
+      "HawarBakteriUbiKayu",
+      "HawarDaunBakteriPadi",
+      "HawarDaunBakteriUbiKayu",
+      "HawarPelepahDaunPadi",
+      "KerdilKedelaiSoybeanStuntVirusKedelai",
+      "KerdilRumputDanKerdilHampaPadi",
+      "LayuBakteriKacangTanah",
+      "LayuStewartJagung",
+      "MosaikKedelaiSoybeanMosaicVirusKedelai",
+      "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
+      "SamarKacangTunggakCowpeaMildMottleVirusKedelai",
+      "SapuSetanWitchesBroomUbiKayu",
+      "SuperelongasiUbiKayu",
+      "TanamanKerdilStuntUbiKayu",
+      "TungroPadi"
+    ]
+  },
+  "schema_only_classes": [
+    "ArtikelIlmiah",
+    "DrainaseBuruk",
+    "FaktorBudidaya",
+    "FaktorLahan",
+    "GejalaBunga",
+    "JarakTanamRapat",
+    "JurnalIlmiah",
+    "Kelembapan",
+    "KondisiDrainase",
+    "KondisiTanah",
+    "KondisiUnsurHara",
+    "Musim",
+    "Nematoda",
+    "OrganismeLain",
+    "PemupukanTidakSeimbang",
+    "PenggunaanBenihTerinfeksi",
+    "PengolahanTanahBuruk",
+    "PenyakitBakteri",
+    "PenyakitFitoplasma",
+    "PenyakitJamur",
+    "PenyakitLainnya",
+    "PenyakitNematoda",
+    "PenyakitOomycete",
+    "PenyakitRisiko",
+    "PenyakitRisikoKelembapanTinggi",
+    "PenyakitRisikoMusimHujan",
+    "PenyakitRisikoSuhuTinggi",
+    "PenyakitVirus",
+    "PublikasiInstansi",
+    "RotasiTanamanTidakDilakukan",
+    "SanitasiLahanBuruk",
+    "VarietasLokal"
+  ]
 }

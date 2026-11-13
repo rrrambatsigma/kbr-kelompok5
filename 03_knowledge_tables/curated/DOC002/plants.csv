@@ -1,0 +1,7 @@
+plant_id,document_id,plant_name_id,plant_name_en,scientific_name,scientific_name_page,chapter_number,chapter_title,page_start,page_end,evidence_chunk_id,notes
+PLANT_001,DOC002,Padi,,Oryza sativa L.,,1,Bab 1 — Penyakit Padi,25,36,DOC002_C025_01,"Nama ilmiah standar; blok Pendahuluan hlm. 25 tidak mencantumkan nama ilmiah. Rentang bab 25-36."
+PLANT_002,DOC002,Kedelai,,Glycine max L. Merril,37,2,Bab 2 — Penyakit Kedelai,37,62,DOC002_C037_02,"Nama ilmiah tercantum di Pendahuluan hlm. 37. Rentang bab 37-62."
+PLANT_003,DOC002,Kacang tanah,,Arachis hypogaea L.,,3,Bab 3 — Penyakit Kacang Tanah,63,78,DOC002_C063_01,"Nama ilmiah standar; Pendahuluan hlm. 63 membahas kacang tanah. Rentang bab 63-78."
+PLANT_004,DOC002,Ubi jalar,,Ipomoea batatas L. (Lam),79,4,Bab 4 — Penyakit Tanaman Ubi Jalar,79,88,DOC002_C079_02,"Nama ilmiah tercantum di Pendahuluan hlm. 79. Rentang bab 79-88."
+PLANT_005,DOC002,Ubi kayu,,Manihot esculenta Crantz,89,5,Bab 5 — Penyakit Pada Tanaman Ubi Kayu,89,97,DOC002_C089_02,"Nama ilmiah tercantum di Pendahuluan hlm. 89. Rentang bab 89-97."
+PLANT_006,DOC002,Jagung,,Zea mays L.,,6,Bab 6 — Penyakit Jagung,98,110,DOC002_C098_01,"Nama ilmiah standar; Pendahuluan hlm. 98 membahas jagung. Rentang bab 98-110."
