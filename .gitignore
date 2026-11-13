@@ -5,6 +5,8 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # ==========================================
 # VIRTUAL ENVIRONMENT
@@ -32,21 +34,55 @@ env/
 /02_extraction/extracted_text/*.jsonl
 /02_extraction/extraction_notes/*.log
 
-# Cadangan otomatis dari promote/validasi (besar, lokal saja)
+# Cadangan otomatis lokal
 /02_extraction/extraction_notes/_backups/
 
-# Jika nanti ada output OCR sementara
+# Output OCR sementara
 /02_extraction/ocr_temp/
 /02_extraction/temp/
+
+# ==========================================
+# FUSEKI / APACHE JENA
+# ==========================================
+
+# Database runtime TDB2 - JANGAN MASUK GIT
+/06_backend/fuseki-data/
+
+# Log runtime Fuseki
+/06_backend/fuseki-config/logs/
+
+# File sementara Fuseki
+*.lock
+
+# ==========================================
+# NODE.JS / TYPESCRIPT
+# ==========================================
+node_modules/
+dist/
+coverage/
+.npm/
+*.tsbuildinfo
+
+# ==========================================
+# JAVA / MAVEN / SPRING BOOT
+# ==========================================
+
+# Hasil kompilasi dan build Maven
+target/
+
+# Log aplikasi Java
+*.log
 
 # ==========================================
 # TEMPORARY FILES
 # ==========================================
 *.tmp
 *.bak
-*.log
+*.swp
+*.swo
+*~
 
-# Katalog lokal yang dibuat Protégé saat membuka ontologi
+# Katalog lokal Protégé
 04_ontology/catalog-v001.xml
 
 # ==========================================
