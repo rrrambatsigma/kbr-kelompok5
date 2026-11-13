@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import json
+import shutil
 import unittest
 from pathlib import Path
 
@@ -16,6 +17,7 @@ PTP = "http://kbr.kelompok5.org/penyakit-tanaman-pangan#"
 KBR = lambda name: URIRef(PTP + name)  # noqa: E731
 
 ARTIFACT = ONTO_DIR / "ontology_md.ttl"
+OWL_ARTIFACT = ONTO_DIR / "ontology_md.owl"
 CANONICAL = ONTO_DIR / "ontology.ttl"
 REPORT = ONTO_DIR / "extraction_report_md.json"
 TABLE_DIR = PROJECT_ROOT / "03_knowledge_tables"
@@ -30,8 +32,6 @@ COMMENT_GAPS = {
     "KondisiKelembapanUdaraRendah",
     "KondisiKelembapanUdaraSedang",
     "KondisiKelembapanUdaraTinggi",
-    "KondisiKelembapanTinggi",
-    "KondisiSuhuTinggi",
     "KondisiTanahBasa",
     "KondisiTanahBerpasir",
     "KondisiTanahLiat",
@@ -93,8 +93,11 @@ class TestOntologyMd(unittest.TestCase):
         self.assertEqual(len(self.objects("Kedelai", "memilikiKondisiTumbuh")), 3)
         self.assertIn(KBR("KondisiTanahSubur"), self.objects("UbiKayu", "memilikiKondisiTumbuh"))
         self.assertEqual(len(list(self.graph.triples((None, KBR("deskripsiTanaman"), None)))), 7)
-        self.assertEqual(len(list(self.graph.triples((None, KBR("deskripsiPenyakit"), None)))), 57)
-        self.assertEqual(len(list(self.graph.triples((None, KBR("tingkatKeparahan"), None)))), 10)
+        self.assertEqual(len(list(self.graph.triples((None, KBR("deskripsiPenyakit"), None)))), 53)
+        self.assertEqual(
+            len(list(self.graph.triples((None, KBR("tingkatKeparahan"), None)))),
+            self.report["predicate_counts"]["tingkatKeparahan"],
+        )
         self.assertGreaterEqual(len(list(self.graph.triples((None, KBR("dipengaruhiOleh"), None)))), 13)
 
     def test_literals_are_indonesian(self) -> None:
@@ -205,6 +208,40 @@ class TestOntologyMd(unittest.TestCase):
 
     def test_canonical_does_not_get_md_property(self) -> None:
         self.assertFalse(list(self.canonical.triples((KBR("memilikiKondisiTumbuh"), None, None))))
+
+
+@unittest.skipUnless(shutil.which("java"), "Java tidak tersedia untuk HermiT")
+class TestOntologyMdReasoning(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        try:
+            import owlready2  # noqa: F401
+        except ImportError as exc:  # pragma: no cover
+            raise unittest.SkipTest(f"owlready2 tidak terpasang: {exc}")
+        if not OWL_ARTIFACT.exists():
+            raise AssertionError(
+                f"artefak hilang: {OWL_ARTIFACT} - jalankan python build_ontology_md.py dulu"
+            )
+
+        from owlready2 import World, sync_reasoner
+
+        cls.world = World()
+        cls.onto = cls.world.get_ontology(PTP.rstrip("#"))
+        with OWL_ARTIFACT.open("rb") as handle:
+            cls.onto.load(fileobj=handle, format="rdfxml")
+        sync_reasoner(cls.onto, debug=0)
+
+    def test_ontology_is_consistent(self) -> None:
+        nothing = [
+            ind
+            for ind in self.onto.individuals()
+            if any(getattr(cls, "name", None) == "Nothing" for cls in ind.is_a if cls is not None)
+        ]
+        self.assertEqual(nothing, [], "tidak boleh ada individu owl:Nothing")
+
+    def test_enriched_conditions_are_typed(self) -> None:
+        self.assertIn(self.onto.KondisiSuhuTinggi, self.onto.Suhu.instances())
+        self.assertIn(self.onto.KondisiKelembapanTinggi, self.onto.KelembapanUdara.instances())
 
 
 if __name__ == "__main__":

@@ -277,42 +277,42 @@ ptp:alasanKecocokan a owl:DatatypeProperty ;
     rdfs:label "alasan kecocokan"@id ;
     rdfs:comment "Alasan kecocokan kandidat diagnosis."@id ;
     rdfs:domain ptp:KandidatDiagnosis ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "alasan kecocokan"@id .
 
 ptp:catatanKualitas a owl:DatatypeProperty ;
     rdfs:label "catatan kualitas"@id ;
     rdfs:comment "Catatan kualitas atau keterbatasan kutipan sumber."@id ;
     rdfs:domain ptp:BuktiSumber ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "catatan kualitas"@id .
 
 ptp:deskripsiGejala a owl:DatatypeProperty ;
     rdfs:label "deskripsi gejala"@id ;
     rdfs:comment "Deskripsi pengamatan gejala menurut sumber."@id ;
     rdfs:domain ptp:Gejala ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "deskripsi gejala"@id .
 
 ptp:deskripsiPengendalian a owl:DatatypeProperty ;
     rdfs:label "deskripsi pengendalian"@id ;
     rdfs:comment "Deskripsi tindakan pengendalian menurut sumber."@id ;
     rdfs:domain ptp:Pengendalian ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "deskripsi pengendalian"@id .
 
 ptp:deskripsiPenyakit a owl:DatatypeProperty ;
     rdfs:label "deskripsi penyakit"@id ;
     rdfs:comment "Penjelasan penyakit menurut sumber."@id ;
     rdfs:domain ptp:Penyakit ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "deskripsi penyakit"@id .
 
 ptp:deskripsiTanaman a owl:DatatypeProperty ;
     rdfs:label "deskripsi tanaman"@id ;
     rdfs:comment "Deskripsi tanaman pangan menurut sumber."@id ;
     rdfs:domain ptp:TanamanPangan ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "deskripsi tanaman"@id .
 
 ptp:didukungOleh a owl:ObjectProperty ;
@@ -361,35 +361,35 @@ ptp:judulReferensi a owl:DatatypeProperty ;
     rdfs:label "judul referensi"@id ;
     rdfs:comment "Judul sumber referensi."@id ;
     rdfs:domain ptp:Referensi ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "judul referensi"@id .
 
 ptp:klasifikasiTurunan a owl:DatatypeProperty ;
     rdfs:label "klasifikasi turunan"@id ;
     rdfs:comment "Klasifikasi turunan eksplisit, bukan fakta tambahan."@id ;
     rdfs:domain ptp:ObservasiLingkungan ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "klasifikasi turunan"@id .
 
 ptp:kondisi a owl:DatatypeProperty ;
     rdfs:label "kondisi"@id ;
     rdfs:comment "Kondisi lingkungan kualitatif yang dinyatakan sumber."@id ;
     rdfs:domain ptp:ObservasiLingkungan ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "kondisi"@id .
 
 ptp:kutipanNormalisasi a owl:DatatypeProperty ;
     rdfs:label "kutipan normalisasi"@id ;
     rdfs:comment "Kutipan sumber setelah normalisasi ringan."@id ;
     rdfs:domain ptp:BuktiSumber ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "kutipan normalisasi"@id .
 
 ptp:kutipanSumber a owl:DatatypeProperty ;
     rdfs:label "kutipan sumber"@id ;
     rdfs:comment "Kutipan verbatim dari sumber."@id ;
     rdfs:domain ptp:BuktiSumber ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "kutipan sumber"@id .
 
 ptp:memilikiObservasi a owl:ObjectProperty ;
@@ -461,7 +461,7 @@ ptp:namaPengendalian a owl:DatatypeProperty ;
     rdfs:label "nama pengendalian"@id ;
     rdfs:comment "Nama tindakan pengendalian kanonik."@id ;
     rdfs:domain ptp:Pengendalian ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "nama pengendalian"@id .
 
 ptp:namaPenulis a owl:DatatypeProperty ;
@@ -546,21 +546,21 @@ ptp:tingkat a owl:DatatypeProperty ;
     rdfs:label "tingkat"@id ;
     rdfs:comment "Tingkat kualitatif yang dinyatakan sumber."@id ;
     rdfs:domain ptp:ObservasiLingkungan ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "tingkat"@id .
 
 ptp:tingkatKeparahan a owl:DatatypeProperty ;
     rdfs:label "tingkat keparahan"@id ;
     rdfs:comment "Kategori keparahan penyakit bila tersedia di sumber."@id ;
     rdfs:domain ptp:Penyakit ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "tingkat keparahan"@id .
 
 ptp:tingkatKeyakinan a owl:DatatypeProperty ;
     rdfs:label "tingkat keyakinan"@id ;
     rdfs:comment "Tingkat keyakinan kandidat diagnosis."@id ;
     rdfs:domain ptp:KandidatDiagnosis ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "tingkat keyakinan"@id .
 
 ptp:urlReferensi a owl:DatatypeProperty ;
@@ -14425,6 +14425,7 @@ ptp:PenyakitEmbunTepungKacangHijau a ptp:Penyakit,
     ptp:memilikiReferensi ptp:BukuDOC005 ;
     ptp:menyerangTanaman ptp:KacangHijau ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:altLabel "EMBUN TEPUNG"@id ;
     skos:prefLabel "Penyakit Embun Tepung"@id .
 
 ptp:PenyakitKerdilKedelaiSoybeanStuntVirusKedelai a ptp:Penyakit,
@@ -14518,6 +14519,7 @@ ptp:PenyakitBercakDaunKacangHijau a ptp:Penyakit,
     ptp:memilikiReferensi ptp:BukuDOC005 ;
     ptp:menyerangTanaman ptp:KacangHijau ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:altLabel "BERCAK DAUN"@id ;
     skos:prefLabel "Penyakit Bercak Daun"@id .
 
 ptp:PenyakitBercakTargetKedelai a ptp:Penyakit,
@@ -14715,6 +14717,7 @@ ptp:PenyakitKaratDaunKacangTanah a ptp:Penyakit,
     ptp:memilikiReferensi ptp:BukuDOC005 ;
     ptp:menyerangTanaman ptp:KacangTanah ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:altLabel "KARAT"@id ;
     skos:prefLabel "Penyakit Karat Daun"@id .
 
 ptp:PenyakitLayuStewartJagung a ptp:Penyakit,
@@ -14907,6 +14910,7 @@ ptp:PenyakitLayuKacangHijau a ptp:Penyakit,
     ptp:memilikiReferensi ptp:BukuDOC005 ;
     ptp:menyerangTanaman ptp:KacangHijau ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:altLabel "LAYU"@id ;
     skos:prefLabel "Penyakit Layu"@id .
 
 ptp:PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai a ptp:Penyakit,
@@ -16847,18 +16851,18 @@ ptp:Penyakit a owl:Class ;
     rdfs:label "Penyakit"@id ;
     rdfs:comment "Penyakit tanaman pangan yang dicatat dalam sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass ptp:Referensi ;
-            owl:onProperty ptp:memilikiReferensi ],
+            owl:allValuesFrom ptp:Patogen ;
+            owl:onProperty ptp:disebabkanOleh ],
         [ a owl:Restriction ;
             owl:onProperty ptp:menyerangTanaman ;
             owl:someValuesFrom ptp:TanamanPangan ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ptp:Patogen ;
-            owl:onProperty ptp:disebabkanOleh ],
-        [ a owl:Restriction ;
             owl:onProperty ptp:memilikiGejala ;
             owl:someValuesFrom ptp:Gejala ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass ptp:Referensi ;
+            owl:onProperty ptp:memilikiReferensi ],
         ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
@@ -16974,22 +16978,22 @@ ptp:BukuDOC002 a ptp:Buku,
     skos:prefLabel "Penyakit Tanaman dan Pengendaliannya"@id .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePembungaan ptp:FasePemasakan ptp:FasePanen ) .
+    owl:members ( ptp:FaktorLingkungan ptp:FaktorBudidaya ptp:FaktorLahan ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:PengendalianKulturTeknis ptp:PengendalianMekanis ptp:PengendalianBiologis ptp:PengendalianKimiawi ptp:PengendalianFisik ptp:PengendalianTerpadu ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
+    owl:members ( ptp:VarietasUnggul ptp:VarietasLokal ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:Buku ptp:JurnalIlmiah ptp:ArtikelIlmiah ptp:PublikasiInstansi ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:FaktorLingkungan ptp:FaktorBudidaya ptp:FaktorLahan ) .
+    owl:members ( ptp:PengendalianKulturTeknis ptp:PengendalianMekanis ptp:PengendalianBiologis ptp:PengendalianKimiawi ptp:PengendalianFisik ptp:PengendalianTerpadu ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:VarietasUnggul ptp:VarietasLokal ) .
+    owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePembungaan ptp:FasePemasakan ptp:FasePanen ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:Jamur ptp:Bakteri ptp:Virus ptp:Nematoda ptp:Oomycete ptp:Fitoplasma ptp:OrganismeLain ) .

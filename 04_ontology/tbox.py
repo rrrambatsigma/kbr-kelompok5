@@ -654,7 +654,7 @@ DATA_PROPERTIES: dict[str, dict] = {
         "label": "deskripsi tanaman",
         "comment": "Deskripsi tanaman pangan menurut sumber.",
         "domain": "TanamanPangan",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "namaIlmiahPatogen": {
         "label": "nama ilmiah patogen",
@@ -666,7 +666,7 @@ DATA_PROPERTIES: dict[str, dict] = {
         "label": "deskripsi penyakit",
         "comment": "Penjelasan penyakit menurut sumber.",
         "domain": "Penyakit",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "namaInggrisPenyakit": {
         "label": "nama Inggris penyakit",
@@ -678,25 +678,25 @@ DATA_PROPERTIES: dict[str, dict] = {
         "label": "deskripsi gejala",
         "comment": "Deskripsi pengamatan gejala menurut sumber.",
         "domain": "Gejala",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "deskripsiPengendalian": {
         "label": "deskripsi pengendalian",
         "comment": "Deskripsi tindakan pengendalian menurut sumber.",
         "domain": "Pengendalian",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "tingkatKeparahan": {
         "label": "tingkat keparahan",
         "comment": "Kategori keparahan penyakit bila tersedia di sumber.",
         "domain": "Penyakit",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "judulReferensi": {
         "label": "judul referensi",
         "comment": "Judul sumber referensi.",
         "domain": "Referensi",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "tahunTerbit": {
         "label": "tahun terbit",
@@ -720,7 +720,7 @@ DATA_PROPERTIES: dict[str, dict] = {
         "label": "nama pengendalian",
         "comment": "Nama tindakan pengendalian kanonik.",
         "domain": "Pengendalian",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "nilaiMin": {
         "label": "nilai minimum",
@@ -756,31 +756,31 @@ DATA_PROPERTIES: dict[str, dict] = {
         "label": "tingkat",
         "comment": "Tingkat kualitatif yang dinyatakan sumber.",
         "domain": "ObservasiLingkungan",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "kondisi": {
         "label": "kondisi",
         "comment": "Kondisi lingkungan kualitatif yang dinyatakan sumber.",
         "domain": "ObservasiLingkungan",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "klasifikasiTurunan": {
         "label": "klasifikasi turunan",
         "comment": "Klasifikasi turunan eksplisit, bukan fakta tambahan.",
         "domain": "ObservasiLingkungan",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "kutipanSumber": {
         "label": "kutipan sumber",
         "comment": "Kutipan verbatim dari sumber.",
         "domain": "BuktiSumber",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "kutipanNormalisasi": {
         "label": "kutipan normalisasi",
         "comment": "Kutipan sumber setelah normalisasi ringan.",
         "domain": "BuktiSumber",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "dokumenSumber": {
         "label": "dokumen sumber",
@@ -816,7 +816,7 @@ DATA_PROPERTIES: dict[str, dict] = {
         "label": "catatan kualitas",
         "comment": "Catatan kualitas atau keterbatasan kutipan sumber.",
         "domain": "BuktiSumber",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "skorKecocokan": {
         "label": "skor kecocokan",
@@ -834,13 +834,13 @@ DATA_PROPERTIES: dict[str, dict] = {
         "label": "tingkat keyakinan",
         "comment": "Tingkat keyakinan kandidat diagnosis.",
         "domain": "KandidatDiagnosis",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
     "alasanKecocokan": {
         "label": "alasan kecocokan",
         "comment": "Alasan kecocokan kandidat diagnosis.",
         "domain": "KandidatDiagnosis",
-        "range": RDF.langString,
+        "range": RDF.PlainLiteral,
     },
 }
 

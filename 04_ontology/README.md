@@ -12,10 +12,10 @@ Kacang Hijau**. Tanaman di luar cakupan tidak dibuat sebagai individu.
 
 | Artefak | Isi |
 |---|---|
-| `ontology.ttl` | Turtle kanonik, **15.861 triple**, **1.162 individu** |
+| `ontology.ttl` | Turtle kanonik, **15.801 triple**, **1.159 individu** |
 | `ontology.owl` | RDF/XML kanonik untuk Protégé dan owlready2 |
 | `extraction_report.json` | Ringkasan build, tautan, dan data quality |
-| `ontology_md.ttl` | Kanonik + enrichment, **16.470 triple** |
+| `ontology_md.ttl` | Kanonik + enrichment, **16.391 triple** |
 | `ontology_md.owl` | RDF/XML hasil enrichment |
 | `extraction_report_md.json` | Ringkasan build enrichment |
 
@@ -23,17 +23,17 @@ Ringkasan kanonik:
 
 - **89 kelas**, **28 object property** PTP (+ `prov:wasDerivedFrom` eksternal),
   **33 data property**.
-- **7 tanaman**, **57 penyakit**, **73 tautan penyakit-patogen**.
-- **240 baris gejala** menjadi **225 pengamatan gejala**: **94 grup kanonik**
+- **7 tanaman**, **53 penyakit**, **73 tautan penyakit-patogen**.
+- **240 baris gejala** menjadi **222 pengamatan gejala**: **91 grup kanonik**
   dan **131 pengamatan belum dipetakan**.
-- **167 baris pengendalian disease-scope + 27 baris chapter-scope**;
-  **201 tautan `dikendalikanDengan`** unik.
+- **257 baris pengendalian disease-scope + 45 baris chapter-scope**;
+  **192 tautan `dikendalikanDengan`**.
 - **38 item varietas**, **3 tautan fase pertumbuhan**.
 - **7 observasi lingkungan numerik** dan **8 kondisi kualitatif**.
 - **698 node bukti** dan **1.139 tautan `didukungOleh`**.
 
-Hasil inferensi HermiT: **PenyakitJamur 29**, **PenyakitBakteri 5**,
-**PenyakitVirus 5**, **PenyakitOomycete 2**, **PenyakitFitoplasma 1**,
+Hasil inferensi HermiT: **PenyakitJamur 26**, **PenyakitBakteri 5**,
+**PenyakitVirus 5**, **PenyakitOomycete 1**, **PenyakitFitoplasma 1**,
 **PenyakitNematoda 0**. Kelas kategori penyakit tidak pernah di-assert
 eksplisit; seluruhnya muncul dari `owl:equivalentClass`.
 
@@ -42,13 +42,14 @@ eksplisit; seluruhnya muncul dari `owl:equivalentClass`.
 ```powershell
 pip install -r 04_ontology/requirements.txt
 python 04_ontology/build_ontology.py
+python 03_knowledge_tables/src/build_enrichment_facts.py
 python 03_knowledge_tables/src/build_descriptions.py
 python 04_ontology/build_ontology_md.py
 cd 04_ontology
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-Test saat ini: **52 lulus** (38 test kanonik + 14 test enrichment), termasuk
+Test saat ini: **55 lulus** (39 test kanonik + 16 test enrichment), termasuk
 reasoning **HermiT** lewat owlready2. Bila Java tidak tersedia, test reasoning
 di-skip.
 
@@ -138,7 +139,7 @@ patogen.
 | **O** | Nominal | `Serealia ≡ {Padi, Jagung}`, `Legum ≡ {Kedelai, KacangTanah, KacangHijau}`, `UmbiUmbian ≡ {UbiKayu, UbiJalar}` |
 | **I** | Inverse | 8 pasang `owl:inverseOf` |
 | **Q** | Qualified cardinality | `Penyakit ⊑ (memilikiReferensi min 1 Referensi)`; `Buku ⊑ (tahunTerbit exactly 1 xsd:integer)` |
-| **D** | Data range | `xsd:string`, `xsd:integer`, `xsd:decimal`, `xsd:anyURI`, `rdf:langString` |
+| **D** | Data range | `xsd:string`, `xsd:integer`, `xsd:decimal`, `xsd:anyURI`, `rdf:PlainLiteral` |
 
 Restriksi kunci:
 
@@ -182,17 +183,17 @@ ditambah TBox/ABox enrichment. Kanonik tidak pernah ditulis ulang.
 
 | Item | Nilai |
 |---|---|
-| Triple total | **16.470** = base **15.861** + tambahan **609** |
-| Fakta enrichment | **89** |
-| Entitas yang dirujuk fakta | **95** (7 tanaman, 57 penyakit, 25 kondisi lingkungan, 6 faktor risiko) |
-| Deskripsi `rdfs:comment` | **428** (`auto_ok` 303, `needs_review` 125) |
-| Individu `owl:NamedIndividual` | **1.188** |
+| Triple total | **16.391** = base **15.801** + tambahan **590** |
+| Fakta enrichment | **84** |
+| Entitas yang dirujuk fakta | **91** (7 tanaman, 53 penyakit, 25 kondisi lingkungan, 6 faktor risiko) |
+| Deskripsi `rdfs:comment` | **420** (`auto_ok` 299, `needs_review` 121) |
+| Individu `owl:NamedIndividual` | **1.182** |
 | Kelas dengan deskripsi | **89 dari 89** |
-| Individu tanpa deskripsi | **10 kondisi lingkungan** |
+| Individu tanpa deskripsi | **8 kondisi lingkungan dan 9 pengamatan gejala** |
 | TBox tambahan | `memilikiKondisiTumbuh` (domain `TanamanPangan`, range `FaktorLingkungan`) |
 
-Predikat fakta enrichment: `deskripsiPenyakit` 57, `deskripsiTanaman` 7,
-`dipengaruhiOleh` 11, `memilikiKondisiTumbuh` 4, `tingkatKeparahan` 10.
+Predikat fakta enrichment: `deskripsiPenyakit` 53, `deskripsiTanaman` 7,
+`dipengaruhiOleh` 11, `memilikiKondisiTumbuh` 4, `tingkatKeparahan` 9.
 
 Deskripsi berasal dari
 `03_knowledge_tables/auto/DOC002_md/DOC002_descriptions.csv`. Subjek tanpa
@@ -243,11 +244,11 @@ Penyakit tanpa patogen (3): `PenyakitBelangMottleKacangTanah`,
 - `build_ontology_md.py` — baca `ontology.ttl` (hanya baca), tambahkan TBox
   enrichment, entitas, fakta, dan deskripsi → tulis `ontology_md.ttl`,
   `ontology_md.owl`, `extraction_report_md.json`.
-- `tests/test_ontology.py` — 38 test: snapshot dinamis, IRI hygiene, bukti,
+- `tests/test_ontology.py` — 39 test: snapshot dinamis, IRI hygiene, bukti,
   disjointness, SROIQ(D), build gate, dan HermiT.
-- `tests/test_ontology_md.py` — 14 test enrichment: properti, cakupan tanaman,
-  fakta, bahasa literal, konsistensi laporan, deskripsi, dan kanonik tidak
-  tercemari.
+- `tests/test_ontology_md.py` — 16 test enrichment: properti, cakupan tanaman,
+  fakta, bahasa literal, konsistensi laporan, deskripsi, kanonik tidak
+  tercemari, dan HermiT.
 
 Test tidak mengunci jumlah triple/individu lama. Angka diverifikasi terhadap
 `extraction_report.json`/`extraction_report_md.json` dan invarian graf, sehingga

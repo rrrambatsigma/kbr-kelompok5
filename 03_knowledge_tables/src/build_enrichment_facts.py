@@ -983,7 +983,7 @@ def entity_rows(facts: dict[tuple, Fact], entries: list[dict[str, str]]) -> list
         rows[(entry["local"], "Penyakit")] = {
             "entity_local": entry["local"],
             "entity_class": "Penyakit",
-            "label": entry["nama"],
+            "label": entry.get("label") or entry["nama"],
             "source_document": entry["source"],
             "source_id": entry["disease_id"],
             "notes": "",
@@ -1069,6 +1069,7 @@ def build_report(
     facts: dict[tuple, Fact],
     units: list[Unit],
     entries: list[dict[str, str]],
+    unique_entries: list[dict[str, str]],
     rows: list[dict[str, str]],
 ) -> str:
     pathogen_ids, control_ids, chapter_plants = curated_scope_sets(entries)
@@ -1107,11 +1108,11 @@ def build_report(
 
     lines += ["", "## Deskripsi", "", "| Tipe | Terisi |", "|---|---:|"]
     lines.append(f"| Tanaman | {len(descriptions_by_plant)}/7 |")
-    lines.append(f"| Penyakit | {len(descriptions_by_disease)}/{len(entries)} |")
+    lines.append(f"| Penyakit | {len(descriptions_by_disease)}/{len(unique_entries)} |")
 
     missing_plant_desc = [plant for plant in SCOPE_PLANTS if plant not in descriptions_by_plant]
     missing_conditions = [plant for plant in SCOPE_PLANTS if not conditions_by_plant.get(plant)]
-    missing_disease_desc = [entry for entry in entries if entry["local"] not in descriptions_by_disease]
+    missing_disease_desc = [entry for entry in unique_entries if entry["local"] not in descriptions_by_disease]
     lines += [
         "",
         "## Tanaman tanpa kondisi tumbuh",
@@ -1146,12 +1147,23 @@ def build_report(
         "",
     ]
     for entry in missing_disease_desc:
-        lines.append(f"- `{entry['disease_id']}` {entry['nama']} ({PLANT_LABELS[entry['plant_local']]})")
+        lines.append(f"- `{entry['disease_id']}` {entry.get('label') or entry['nama']} ({PLANT_LABELS[entry['plant_local']]})")
     if not missing_disease_desc:
         lines.append("Tidak ada — terisi penuh.")
 
-    no_pathogen = [entry for entry in entries if entry["disease_id"] not in pathogen_ids]
-    no_control = [entry for entry in entries if entry["disease_id"] not in control_ids]
+    ids_by_local: dict[str, set[str]] = {}
+    for entry in entries:
+        ids_by_local.setdefault(entry["local"], set()).add(entry["disease_id"])
+    no_pathogen = [
+        entry
+        for entry in unique_entries
+        if not (ids_by_local.get(entry["local"], set()) & pathogen_ids)
+    ]
+    no_control = [
+        entry
+        for entry in unique_entries
+        if not (ids_by_local.get(entry["local"], set()) & control_ids)
+    ]
     lines += [
         "",
         "## Penyakit tanpa tautan patogen di curated",
@@ -1163,7 +1175,7 @@ def build_report(
     ]
     for entry in no_pathogen:
         quotes = gap_evidence(units, entry["local"], re.compile(r"disebabkan|penyebab|patogen|jamur|bakteri|virus|spp\.", re.I))
-        lines.append(f"- `{entry['disease_id']}` {entry['nama']} ({PLANT_LABELS[entry['plant_local']]})")
+        lines.append(f"- `{entry['disease_id']}` {entry.get('label') or entry['nama']} ({PLANT_LABELS[entry['plant_local']]})")
         for quote in quotes:
             lines.append(f"  - bukti: {quote[:300]}")
 
@@ -1177,7 +1189,7 @@ def build_report(
     for entry in no_control:
         chapter_note = " (ada kendali tingkat bab)" if entry["plant_id"] in chapter_plants else ""
         quotes = gap_evidence(units, entry["local"], re.compile(r"pengendalian|dikendalikan|pengobatan|pencegahan|sanitasi|fungisida|bakterisida|rotasi|varietas tahan", re.I))
-        lines.append(f"- `{entry['disease_id']}` {entry['nama']} ({PLANT_LABELS[entry['plant_local']]}){chapter_note}")
+        lines.append(f"- `{entry['disease_id']}` {entry.get('label') or entry['nama']} ({PLANT_LABELS[entry['plant_local']]}){chapter_note}")
         for quote in quotes:
             lines.append(f"  - bukti: {quote[:300]}")
 
@@ -1214,6 +1226,7 @@ def build_report(
 
 def build() -> tuple[list[dict[str, str]], list[dict[str, str]], str]:
     entries = bo.penyakit_entries()
+    unique_entries = bo.unique_diseases(entries)
     units = load_doc002_baseline() + load_doc005_chunks() + load_doc005_md_units()
     md_units = load_md_units()
     assign_diseases(units, entries)
@@ -1229,8 +1242,8 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], str]:
     annotate_existing(facts, load_existing_triples())
 
     rows = fact_rows(facts)
-    entities = entity_rows(facts, entries)
-    report = build_report(facts, units, entries, rows)
+    entities = entity_rows(facts, unique_entries)
+    report = build_report(facts, units, entries, unique_entries, rows)
     return rows, entities, report
 
 

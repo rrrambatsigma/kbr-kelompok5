@@ -373,42 +373,42 @@ ns1:alasanKecocokan a owl:DatatypeProperty ;
     rdfs:label "alasan kecocokan"@id ;
     rdfs:comment "Alasan kecocokan kandidat diagnosis."@id ;
     rdfs:domain ns1:KandidatDiagnosis ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "alasan kecocokan"@id .
 
 ns1:catatanKualitas a owl:DatatypeProperty ;
     rdfs:label "catatan kualitas"@id ;
     rdfs:comment "Catatan kualitas atau keterbatasan kutipan sumber."@id ;
     rdfs:domain ns1:BuktiSumber ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "catatan kualitas"@id .
 
 ns1:deskripsiGejala a owl:DatatypeProperty ;
     rdfs:label "deskripsi gejala"@id ;
     rdfs:comment "Deskripsi pengamatan gejala menurut sumber."@id ;
     rdfs:domain ns1:Gejala ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "deskripsi gejala"@id .
 
 ns1:deskripsiPengendalian a owl:DatatypeProperty ;
     rdfs:label "deskripsi pengendalian"@id ;
     rdfs:comment "Deskripsi tindakan pengendalian menurut sumber."@id ;
     rdfs:domain ns1:Pengendalian ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "deskripsi pengendalian"@id .
 
 ns1:deskripsiPenyakit a owl:DatatypeProperty ;
     rdfs:label "deskripsi penyakit"@id ;
     rdfs:comment "Penjelasan penyakit menurut sumber."@id ;
     rdfs:domain ns1:Penyakit ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "deskripsi penyakit"@id .
 
 ns1:deskripsiTanaman a owl:DatatypeProperty ;
     rdfs:label "deskripsi tanaman"@id ;
     rdfs:comment "Deskripsi tanaman pangan menurut sumber."@id ;
     rdfs:domain ns1:TanamanPangan ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "deskripsi tanaman"@id .
 
 ns1:didukungOleh a owl:ObjectProperty ;
@@ -457,35 +457,35 @@ ns1:judulReferensi a owl:DatatypeProperty ;
     rdfs:label "judul referensi"@id ;
     rdfs:comment "Judul sumber referensi."@id ;
     rdfs:domain ns1:Referensi ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "judul referensi"@id .
 
 ns1:klasifikasiTurunan a owl:DatatypeProperty ;
     rdfs:label "klasifikasi turunan"@id ;
     rdfs:comment "Klasifikasi turunan eksplisit, bukan fakta tambahan."@id ;
     rdfs:domain ns1:ObservasiLingkungan ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "klasifikasi turunan"@id .
 
 ns1:kondisi a owl:DatatypeProperty ;
     rdfs:label "kondisi"@id ;
     rdfs:comment "Kondisi lingkungan kualitatif yang dinyatakan sumber."@id ;
     rdfs:domain ns1:ObservasiLingkungan ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "kondisi"@id .
 
 ns1:kutipanNormalisasi a owl:DatatypeProperty ;
     rdfs:label "kutipan normalisasi"@id ;
     rdfs:comment "Kutipan sumber setelah normalisasi ringan."@id ;
     rdfs:domain ns1:BuktiSumber ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "kutipan normalisasi"@id .
 
 ns1:kutipanSumber a owl:DatatypeProperty ;
     rdfs:label "kutipan sumber"@id ;
     rdfs:comment "Kutipan verbatim dari sumber."@id ;
     rdfs:domain ns1:BuktiSumber ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "kutipan sumber"@id .
 
 ns1:memilikiKondisiTumbuh a owl:ObjectProperty ;
@@ -564,7 +564,7 @@ ns1:namaPengendalian a owl:DatatypeProperty ;
     rdfs:label "nama pengendalian"@id ;
     rdfs:comment "Nama tindakan pengendalian kanonik."@id ;
     rdfs:domain ns1:Pengendalian ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "nama pengendalian"@id .
 
 ns1:namaPenulis a owl:DatatypeProperty ;
@@ -649,21 +649,21 @@ ns1:tingkat a owl:DatatypeProperty ;
     rdfs:label "tingkat"@id ;
     rdfs:comment "Tingkat kualitatif yang dinyatakan sumber."@id ;
     rdfs:domain ns1:ObservasiLingkungan ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "tingkat"@id .
 
 ns1:tingkatKeparahan a owl:DatatypeProperty ;
     rdfs:label "tingkat keparahan"@id ;
     rdfs:comment "Kategori keparahan penyakit bila tersedia di sumber."@id ;
     rdfs:domain ns1:Penyakit ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "tingkat keparahan"@id .
 
 ns1:tingkatKeyakinan a owl:DatatypeProperty ;
     rdfs:label "tingkat keyakinan"@id ;
     rdfs:comment "Tingkat keyakinan kandidat diagnosis."@id ;
     rdfs:domain ns1:KandidatDiagnosis ;
-    rdfs:range rdf:langString ;
+    rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "tingkat keyakinan"@id .
 
 ns1:urlReferensi a owl:DatatypeProperty ;
@@ -14884,8 +14884,7 @@ ns1:PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai a ns1:Penyakit,
 
 ns1:PenyakitEmbunTepungKacangHijau a ns1:Penyakit,
         owl:NamedIndividual ;
-    rdfs:label "EMBUN TEPUNG"@id,
-        "Penyakit Embun Tepung"@id ;
+    rdfs:label "Penyakit Embun Tepung"@id ;
     ns1:berkaitanPengendalian ns1:PenggunaanAgensHayati,
         ns1:PenggunaanEkstrakTanaman,
         ns1:PenggunaanFungisida,
@@ -14911,6 +14910,7 @@ ns1:PenyakitEmbunTepungKacangHijau a ns1:Penyakit,
     ns1:tingkatKeparahan "Penurunan hasil kacang hijau akibat penyakit embun tepung di Thailand mencapai 26,2% (Tantanapornkul et al. 2005)."@id ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id,
         "Salah satu penyakit utama pada kacang hijau adalah embun tepung. Meskipun telah lama diketahui namun jarang dikendalikan karena keterbatasan pengetahuan petani terhadap penyakit tersebut. Penyakit embun tepung tersebar luas di seluruh negara sentra produksi kacang hijau, meliputi India, Pakistan, Thailand, China, Myanmar, dan Indonesia (Khodaparast dan Abbasi 2009, Nair et al. 2014). Penurunan hasil kacang hijau akibat penyakit embun tepung di Thailand mencapai 26,2% (Tantanapornkul et al. 2005). Petani jarang mengendalikan penyakit embun tepung, dan jika dikendalikan masih menggunakan fungisida yang tidak ramah lingkungan."@id ;
+    skos:altLabel "EMBUN TEPUNG"@id ;
     skos:prefLabel "Penyakit Embun Tepung"@id .
 
 ns1:PenyakitKerdilKedelaiSoybeanStuntVirusKedelai a ns1:Penyakit,
@@ -14985,8 +14985,7 @@ ns1:GejalaPolong a owl:Class ;
 
 ns1:PenyakitBercakDaunKacangHijau a ns1:Penyakit,
         owl:NamedIndividual ;
-    rdfs:label "BERCAK DAUN"@id,
-        "Penyakit Bercak Daun"@id ;
+    rdfs:label "Penyakit Bercak Daun"@id ;
     ns1:berkaitanPengendalian ns1:PengaturanJarakTanam,
         ns1:PengaturanKelembapan,
         ns1:PengelolaanGulma,
@@ -15014,6 +15013,7 @@ ns1:PenyakitBercakDaunKacangHijau a ns1:Penyakit,
     ns1:tingkatKeparahan "Infeksi C. canescens pada kacang hijau menyebabkan kehilangan hasil 46-61% di lahan (Iqbal et al. 1995; Kapadi dan Dhuruj 1999, Sompong et al. 2011)."@id ;
     rdfs:comment "Bercak daun merupakan salah satu penyakit utama kacang hijau. Tidak hanya di Indonesia, tetapi juga di Asia seperti Filipina, Malaysia, Thailand, India, Bangladesh, dan Pakistan. Di Indonesia penyakit ini diketahui di seluruh sentra produksi kacang hijau. Infeksi C. canescens pada kacang hijau menyebabkan kehilangan hasil 46-61% di lahan (Iqbal et al. 1995; Kapadi dan Dhuruj 1999, Sompong et al. 2011)."@id,
         "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:altLabel "BERCAK DAUN"@id ;
     skos:prefLabel "Penyakit Bercak Daun"@id .
 
 ns1:PenyakitBercakTargetKedelai a ns1:Penyakit,
@@ -15202,8 +15202,7 @@ ns1:PenyakitHawarDaunJagung a ns1:Penyakit,
 
 ns1:PenyakitKaratDaunKacangTanah a ns1:Penyakit,
         owl:NamedIndividual ;
-    rdfs:label "KARAT"@id,
-        "Penyakit Karat Daun"@id ;
+    rdfs:label "Penyakit Karat Daun"@id ;
     ns1:berkaitanPengendalian ns1:PengelolaanGulma,
         ns1:PenggunaanVarietasTahan,
         ns1:RotasiTanaman,
@@ -15228,6 +15227,7 @@ ns1:PenyakitKaratDaunKacangTanah a ns1:Penyakit,
     ns1:tingkatKeparahan "Kehilangan hasil mencapai 57% (Semangun 1991)."@id ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id,
         "Di Indonesia, penyakit karat pada kacang tanah merupakan penyakit penting ke dua setelah bercak daun. Penyakit ini tersebar luas di daerah sentra penghasil kacang tanah seperti Jawa Timur, Bali, dan Nusa Tenggara Barat. Kehilangan hasil mencapai 57% (Semangun 1991). Kehilangan hasil yang diakibatkan penyakit karat dapat mencapai 6–57% (Subramanyam dan Mc Donald 1984)."@id ;
+    skos:altLabel "KARAT"@id ;
     skos:prefLabel "Penyakit Karat Daun"@id .
 
 ns1:PenyakitLayuStewartJagung a ns1:Penyakit,
@@ -15402,8 +15402,7 @@ ns1:PenyakitLayuBakteriKacangTanah a ns1:Penyakit,
 
 ns1:PenyakitLayuKacangHijau a ns1:Penyakit,
         owl:NamedIndividual ;
-    rdfs:label "LAYU"@id,
-        "Penyakit Layu"@id ;
+    rdfs:label "Penyakit Layu"@id ;
     ns1:berkaitanPengendalian ns1:PenggunaanAgensHayati,
         ns1:PenggunaanEkstrakTanaman,
         ns1:PenggunaanPestisidaNabati,
@@ -15432,6 +15431,7 @@ ns1:PenyakitLayuKacangHijau a ns1:Penyakit,
     ns1:menyerangTanaman ns1:KacangHijau ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id,
         "Gejala penyakit layu berupa ruam pada bagian terinfeksi, seperti pengaruh penggenangan air. Bagian yang ruam berwarna coklat muda dan berkembang menjadi coklat tua. Tanaman terinfeksi selanjutnya akan menjadi busuk dan akhirnya mati. Miselia berwarna putih akan ditemukan di sekitar gejala, dan pada gejala tingkat lanjut akan ditemukan sejumlah sclerosia pada akar (Jin Hyeuk 2017) dan daun dekat permukaan tanah (Gambar 25). Selain gejala layu, infeksi cendawan ini juga menyebabkan busuk akar dan polong, serta rebah kecambah (damping off) (Akram et al. 2007). Infeksi pada tanaman dapat terjadi pada stadia awal sebelum benih berkecambah hingga fase generatif akhir. Namun demikian fase awal pertumbuhan tanaman merupakan fase rentan infeksi cendawan ini."@id ;
+    skos:altLabel "LAYU"@id ;
     skos:prefLabel "Penyakit Layu"@id .
 
 ns1:PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai a ns1:Penyakit,
@@ -15991,8 +15991,7 @@ ns1:PenyakitBelangMottleKacangTanah a ns1:Penyakit,
 
 ns1:PenyakitEmbunPalsuDownyMildewKedelai a ns1:Penyakit,
         owl:NamedIndividual ;
-    rdfs:label "EMBUN BULU"@id,
-        "Penyakit Embun Palsu (Downy mildew)"@id ;
+    rdfs:label "Penyakit Embun Palsu (Downy mildew)"@id ;
     ns1:berkaitanPengendalian ns1:PenggunaanBenihSehat,
         ns1:PenggunaanFungisida,
         ns1:PerlakuanBenih,
@@ -16285,8 +16284,7 @@ ns1:PenggunaanBacillus a ns1:PengendalianBiologis,
 
 ns1:PenyakitAntraknosaKedelai a ns1:Penyakit,
         owl:NamedIndividual ;
-    rdfs:label "ANTRAKNOSA"@id,
-        "Penyakit Antraknosa"@id ;
+    rdfs:label "Penyakit Antraknosa"@id ;
     ns1:berkaitanPengendalian ns1:PenggunaanAgensHayati,
         ns1:PenggunaanBenihSehat,
         ns1:PenggunaanFungisida,
@@ -16892,8 +16890,7 @@ ns1:Pengendalian a owl:Class ;
 
 ns1:PenyakitKaratDaunKedelai a ns1:Penyakit,
         owl:NamedIndividual ;
-    rdfs:label "KARAT"@id,
-        "Penyakit Karat Daun"@id ;
+    rdfs:label "Penyakit Karat Daun"@id ;
     ns1:berkaitanPengendalian ns1:PenggunaanAgensHayati,
         ns1:PenggunaanBacillus,
         ns1:PenggunaanFungisida,
@@ -17077,8 +17074,7 @@ ns1:RotasiTanaman a ns1:PengendalianKulturTeknis,
 
 ns1:PenyakitBercakDaunKacangTanah a ns1:Penyakit,
         owl:NamedIndividual ;
-    rdfs:label "BERCAK DAUN"@id,
-        "Penyakit Bercak Daun"@id ;
+    rdfs:label "Penyakit Bercak Daun"@id ;
     ns1:berkaitanPengendalian ns1:PenerapanPengendalianMekanis,
         ns1:PenggunaanAgensHayati,
         ns1:PenggunaanBakterisida,
@@ -17479,18 +17475,18 @@ ns1:Penyakit a owl:Class ;
     rdfs:comment "Pada tulisan ini akan disajikan penjelasan OPT, khususnya penyakit penting tanaman padi, seperti penyakit hawar daun bakteri, penyakit blas, penyakit hawar pelepah daun, penyakit tungro, serta penyakit kerdil rumput dan kerdil hampa."@id,
         "Penyakit tanaman pangan yang dicatat dalam sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass ns1:Referensi ;
-            owl:onProperty ns1:memilikiReferensi ],
+            owl:allValuesFrom ns1:Patogen ;
+            owl:onProperty ns1:disebabkanOleh ],
         [ a owl:Restriction ;
             owl:onProperty ns1:menyerangTanaman ;
             owl:someValuesFrom ns1:TanamanPangan ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ns1:Patogen ;
-            owl:onProperty ns1:disebabkanOleh ],
-        [ a owl:Restriction ;
             owl:onProperty ns1:memilikiGejala ;
             owl:someValuesFrom ns1:Gejala ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass ns1:Referensi ;
+            owl:onProperty ns1:memilikiReferensi ],
         ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
@@ -17608,22 +17604,22 @@ ns1:BukuDOC002 a ns1:Buku,
     skos:prefLabel "Penyakit Tanaman dan Pengendaliannya"@id .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ns1:FaseVegetatif ns1:FaseGeneratif ns1:FasePembibitan ns1:FaseAnakan ns1:FasePembungaan ns1:FasePemasakan ns1:FasePanen ) .
+    owl:members ( ns1:FaktorLingkungan ns1:FaktorBudidaya ns1:FaktorLahan ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ns1:PengendalianKulturTeknis ns1:PengendalianMekanis ns1:PengendalianBiologis ns1:PengendalianKimiawi ns1:PengendalianFisik ns1:PengendalianTerpadu ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ns1:Serealia ns1:Legum ns1:UmbiUmbian ) .
+    owl:members ( ns1:VarietasUnggul ns1:VarietasLokal ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ns1:Buku ns1:JurnalIlmiah ns1:ArtikelIlmiah ns1:PublikasiInstansi ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ns1:FaktorLingkungan ns1:FaktorBudidaya ns1:FaktorLahan ) .
+    owl:members ( ns1:PengendalianKulturTeknis ns1:PengendalianMekanis ns1:PengendalianBiologis ns1:PengendalianKimiawi ns1:PengendalianFisik ns1:PengendalianTerpadu ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ns1:VarietasUnggul ns1:VarietasLokal ) .
+    owl:members ( ns1:FaseVegetatif ns1:FaseGeneratif ns1:FasePembibitan ns1:FaseAnakan ns1:FasePembungaan ns1:FasePemasakan ns1:FasePanen ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ns1:Serealia ns1:Legum ns1:UmbiUmbian ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ns1:Jamur ns1:Bakteri ns1:Virus ns1:Nematoda ns1:Oomycete ns1:Fitoplasma ns1:OrganismeLain ) .

@@ -1086,6 +1086,17 @@ def penyakit_entries() -> list[dict[str, str]]:
     return entries
 
 
+def unique_diseases(entries: list[dict[str, str]]) -> list[dict[str, str]]:
+    unique: dict[str, dict[str, str]] = {}
+    for entry in entries:
+        current = unique.get(entry["local"])
+        if current is None or (
+            current.get("legacy_local") and not entry.get("legacy_local")
+        ):
+            unique[entry["local"]] = entry
+    return list(unique.values())
+
+
 def symptom_records(entries: list[dict[str, str]]) -> tuple[list[dict], list[str]]:
     by_norm: dict[str, list[dict[str, str]]] = {}
     for entry in entries:
@@ -1373,7 +1384,7 @@ def build_penyakit(builder: Builder, entries: list[dict[str, str]], report: dict
         builder.plain(uri, "namaInggrisPenyakit", canonical["name_en"] or None)
 
         for entry in group:
-            if entry is not canonical:
+            if entry is not canonical or entry.get("legacy_local") or entry["nama"] != canonical.get("label"):
                 builder.alt(uri, entry["nama"])
             builder.plain(uri, "identifierSumber", entry["disease_id"])
             builder.link(uri, "menyerangTanaman", KBR[entry["plant_local"]])
@@ -1841,7 +1852,7 @@ def build() -> tuple[Graph, dict, list[str], Builder]:
     builder.graph.bind("skos", SKOS)
 
     entries = penyakit_entries()
-    unique_diseases = list({entry["local"]: entry for entry in entries}.values())
+    unique_disease_entries = unique_diseases(entries)
     symptom_rows, symptom_errors = symptom_records(entries)
     builder.errors.extend(symptom_errors)
     pathogen_rows = pathogen_records(entries)
@@ -1865,7 +1876,7 @@ def build() -> tuple[Graph, dict, list[str], Builder]:
 
     report["summary"] = {
         "plants": len(plant_rows_merged()),
-        "diseases": len(unique_diseases),
+        "diseases": len(unique_disease_entries),
         "symptom_records": len(symptom_rows),
         "pathogen_links": len(pathogen_rows),
         "control_records_disease": len(control_rows),
@@ -1875,23 +1886,23 @@ def build() -> tuple[Graph, dict, list[str], Builder]:
     }
     report["coverage"] = {
         plant: {
-            "diseases": sum(1 for e in unique_diseases if e["plant_local"] == plant),
+            "diseases": sum(1 for e in unique_disease_entries if e["plant_local"] == plant),
             "symptoms": sum(1 for r in symptom_rows if e_plant(entries, r["disease_id"]) == plant),
             "controls": sum(1 for r in control_rows if e_plant(entries, r["disease_id"]) == plant),
         }
         for plant in PLANT_ORDER
     }
     report["data_quality"]["diseases_without_pathogen"] = sorted(
-        e["local"] for e in unique_diseases if not any(builder.graph.objects(KBR[e["local"]], KBR["disebabkanOleh"]))
+        e["local"] for e in unique_disease_entries if not any(builder.graph.objects(KBR[e["local"]], KBR["disebabkanOleh"]))
     )
     report["data_quality"]["diseases_without_control"] = sorted(
-        e["local"] for e in unique_diseases if not any(builder.graph.objects(KBR[e["local"]], KBR["dikendalikanDengan"]))
+        e["local"] for e in unique_disease_entries if not any(builder.graph.objects(KBR[e["local"]], KBR["dikendalikanDengan"]))
     )
     report["data_quality"]["diseases_without_environment"] = sorted(
-        e["local"] for e in unique_diseases if not any(builder.graph.objects(KBR[e["local"]], KBR["dipengaruhiOleh"]))
+        e["local"] for e in unique_disease_entries if not any(builder.graph.objects(KBR[e["local"]], KBR["dipengaruhiOleh"]))
     )
     report["data_quality"]["diseases_without_scientific_name"] = sorted(
-        e["local"] for e in unique_diseases if not any(builder.graph.objects(KBR[e["local"]], KBR["memilikiGejala"]))
+        e["local"] for e in unique_disease_entries if not any(builder.graph.objects(KBR[e["local"]], KBR["memilikiGejala"]))
     )
     errors = validate(builder.graph, builder, entries)
     return builder.graph, report, errors, builder
@@ -1992,7 +2003,7 @@ def validate(graph: Graph, builder: Builder, entries: list[dict[str, str]]) -> l
                 errors.append(f"subjek data {subject} tidak bertipe {spec['domain']} untuk {name}")
             if not isinstance(obj, Literal):
                 errors.append(f"nilai data bukan literal untuk {name}: {obj}")
-            elif spec["range"] == RDF.langString and obj.language != "id":
+            elif spec["range"] == RDF.PlainLiteral and obj.language != "id":
                 errors.append(f"literal {name} tidak berbahasa id: {obj}")
             elif spec["range"] == XSD.integer and obj.datatype != XSD.integer:
                 errors.append(f"literal {name} bukan integer: {obj}")

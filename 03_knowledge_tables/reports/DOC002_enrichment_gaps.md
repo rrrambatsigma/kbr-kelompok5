@@ -29,7 +29,7 @@ Scope: 7 tanaman utama. Fakta: **84**.
 | Tipe | Terisi |
 |---|---:|
 | Tanaman | 7/7 |
-| Penyakit | 53/57 |
+| Penyakit | 53/53 |
 
 ## Tanaman tanpa kondisi tumbuh
 

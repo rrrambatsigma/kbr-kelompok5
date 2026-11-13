@@ -42,7 +42,7 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | `src/build_reports.py` | laporan cakupan + gate validasi G1–G7 |
 | `src/build_md_chunks.py` | chunk MD DOC002 (prosa + tabel) sebagai bukti lintas-format |
 | `src/build_enrichment_facts.py` | fakta enrichment 7 tanaman utama → bahan `04_ontology/ontology_md.ttl` |
-| `src/build_descriptions.py` | 428 baris deskripsi verbatim (`rdfs:comment`) kelas + individu |
+| `src/build_descriptions.py` | 420 baris deskripsi verbatim (`rdfs:comment`) kelas + individu |
 | `schema/knowledge_tables.schema.json` | skema 7 tabel + invarian |
 | `auto/plants.csv` | 15 tanaman |
 | `auto/diseases.csv` | inventaris penyakit dari heading/tabel |
@@ -52,9 +52,9 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | `auto/controls.csv` | kalimat pengendalian + offset |
 | `auto/ubi_kayu_table_rows.csv` | baris tabel 5.1–5.3 termasuk penanda celah |
 | `auto/DOC002_md/DOC002_md_chunks.csv` | 31 chunk MD DOC002 (prosa dan tabel, nomor baris) |
-| `auto/DOC002_md/DOC002_enrichment_facts.csv` | 89 fakta enrichment berformat panjang + jejak sumber |
-| `auto/DOC002_md/DOC002_enrichment_entities.csv` | 95 individu hasil fakta (tanaman, penyakit, faktor) |
-| `auto/DOC002_md/DOC002_descriptions.csv` | 428 deskripsi verbatim + jejak sumber |
+| `auto/DOC002_md/DOC002_enrichment_facts.csv` | 84 fakta enrichment berformat panjang + jejak sumber |
+| `auto/DOC002_md/DOC002_enrichment_entities.csv` | 91 individu hasil fakta (tanaman, penyakit, faktor) |
+| `auto/DOC002_md/DOC002_descriptions.csv` | 420 deskripsi verbatim + jejak sumber |
 | `review/curation_decisions.json` | keputusan manusia penyakit: kutipan + alasan |
 | `review/pathogen_decisions.json` | keputusan manusia patogen: tolak, takson, catatan |
 | `review/curation_log.csv` / `pathogen_log.csv` | log per field yang berubah |
@@ -276,16 +276,16 @@ atau offset karakter gagal. Laporan per dokumen ditulis ke
 `src/build_md_chunks.py` memecah ulang DOC002 ke Markdown (prosa dan tabel
 5.1–5.3) menjadi 31 chunk bernomor baris di
 `auto/DOC002_md/DOC002_md_chunks.csv`. `src/build_enrichment_facts.py`
-menyusun **89 fakta** untuk **7 tanaman utama** dari baseline DOC002, chunk
+menyusun **84 fakta** untuk **7 tanaman utama** dari baseline DOC002, chunk
 DOC005, chunk MD DOC002, dan MD DOC005.
 
 | Predikat | Jumlah | Sumber utama |
 |---|---:|---|
-| `deskripsiPenyakit` | 57 | prosa DOC002/DOC005 + baris tabel gejala ubi kayu |
+| `deskripsiPenyakit` | 53 | prosa DOC002/DOC005 + baris tabel gejala ubi kayu |
 | `deskripsiTanaman` | 7 | pendahuluan tiap tanaman |
 | `dipengaruhiOleh` | 11 | kalimat faktor risiko |
 | `memilikiKondisiTumbuh` | 4 | kalimat syarat tumbuh eksplisit |
-| `tingkatKeparahan` | 10 | kalimat keparahan |
+| `tingkatKeparahan` | 9 | kalimat keparahan |
 
 Aturan dan catatan:
 
@@ -311,18 +311,23 @@ python -m unittest discover -s tests -p "test_enrichment_facts.py"   # 12 test
 
 ## Deskripsi rujukan (bahan `rdfs:comment`)
 
-`src/build_descriptions.py` menurunkan **428 baris deskripsi verbatim** untuk
+`src/build_descriptions.py` menurunkan **420 baris deskripsi verbatim** untuk
 kelas dan individu ontologi ke `auto/DOC002_md/DOC002_descriptions.csv`, lalu
 mencatat celahnya di `reports/DOC002_description_gaps.md`. Lima jalur, semuanya
 bersumber dari pengetahuan yang ada (tanpa teks karangan):
 
 | Jalur | Jumlah | Sumber |
 |---|---:|---|
-| mirror kanonik | 222 | `deskripsiGejala`/`deskripsiPengendalian` `ontology.ttl` |
-| mirror fakta | 64 | `deskripsiPenyakit`/`deskripsiTanaman` baris fakta enrichment |
-| ekstraksi verbatim | 128 | kalimat/frasa korpus terfilter 7 tanaman, korpus penuh DOC002/DOC005, dan sel tabel |
-| paragraf dokumen | 13 | paragraf pendahuluan/kata pengantar dan fallback korpus penuh |
-| bukti tautan | 1 | `evidence_quote` fakta untuk kondisi tanpa frasa di sumber |
+| salinan deskripsi kanonik | 219 | `deskripsiGejala`/`deskripsiPengendalian` `ontology.ttl` |
+| salinan fakta enrichment | 60 | `deskripsiPenyakit`/`deskripsiTanaman` baris fakta enrichment |
+| kalimat terkait istilah kelas | 64 | kalimat sumber yang menyebut istilah kelas |
+| frasa kunci pada kalimat sumber | 44 | frasa yang ditemukan verbatim di kalimat sumber |
+| fallback korpus dokumen penuh | 8 | paragraf pendahuluan/kata pengantar di luar filter 7 tanaman |
+| definisi sumber | 7 | definisi eksplisit pada dokumen sumber |
+| kata kunci, bukan frasa utuh | 7 | kata kunci tunggal dari frasa sumber |
+| sel deskripsi pada baris tabel | 4 | sel tabel terkurasi DOC002 |
+| kata terakhir frasa | 6 | fallback nama patogen pada frasa sumber |
+| bukti tautan kondisi | 1 | `evidence_quote` fakta untuk kondisi tanpa frasa di sumber |
 
 Aturan:
 
@@ -336,8 +341,8 @@ Aturan:
   (8 kondisi lingkungan dan 9 pengamatan gejala) serta 22 kelas antara lain
   `ArtikelIlmiah`, `FaktorRisiko`, `JurnalIlmiah`, `KondisiDrainase`,
   `OrganismeLain`, `PengendalianBiologis`, dan `PublikasiInstansi`.
-- Cakupan: **211/228** individu dan **67/89** kelas terisi; status baris
-  `auto_ok` 303, `needs_review` 125.
+- Cakupan: **206/223** individu dan **67/89** kelas terisi; status baris
+  `auto_ok` 299, `needs_review` 121.
 
 ```powershell
 python 03_knowledge_tables/src/build_descriptions.py

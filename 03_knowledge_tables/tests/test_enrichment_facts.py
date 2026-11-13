@@ -86,8 +86,9 @@ class TestEnrichmentFacts(unittest.TestCase):
             for row in self.rows
             if row["predicate"] == "deskripsiPenyakit"
         }
-        self.assertEqual(described, {entry["local"] for entry in self.entries})
-        self.assertGreaterEqual(len(described), 57)
+        unique_locals = {entry["local"] for entry in bo.unique_diseases(self.entries)}
+        self.assertEqual(described, unique_locals)
+        self.assertEqual(len(described), 53)
         self.assertIn("PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai", described)
         self.assertIn("PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai", described)
         self.assertIn("PenyakitAntraknosaKedelai", described)

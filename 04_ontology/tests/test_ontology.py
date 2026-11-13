@@ -400,6 +400,19 @@ class OntologyAxiomTest(unittest.TestCase):
                 self.assertEqual(self.graph.value(KBR[name], RDFS.range), spec["range"])
                 self.assertIn((KBR[name], RDF.type, OWL.DatatypeProperty), self.graph)
 
+    def test_language_ranges_use_plain_literal(self) -> None:
+        language_props = [
+            name
+            for name, spec in tbox.DATA_PROPERTIES.items()
+            if spec["range"] == RDF.PlainLiteral
+        ]
+        self.assertTrue(language_props)
+        for name in language_props:
+            with self.subTest(prop=name):
+                self.assertNotEqual(self.graph.value(KBR[name], RDFS.range), RDF.langString)
+                for value in self.graph.objects(None, KBR[name]):
+                    self.assertEqual(value.language, "id", f"{name}: {value!r}")
+
     def test_object_property_domain_range(self) -> None:
         for name, spec in tbox.OBJECT_PROPERTIES.items():
             with self.subTest(prop=name):

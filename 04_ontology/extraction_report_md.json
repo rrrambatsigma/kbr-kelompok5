@@ -1,9 +1,9 @@
 {
   "base": "04_ontology/ontology.ttl",
   "output": "04_ontology/ontology_md.ttl",
-  "base_triples": 15797,
-  "added_triples": 598,
-  "total_triples": 16395,
+  "base_triples": 15801,
+  "added_triples": 590,
+  "total_triples": 16391,
   "facts": 84,
   "predicate_counts": {
     "deskripsiPenyakit": 53,
@@ -60,5 +60,6 @@
     "KacangTanah",
     "KacangHijau"
   ],
-  "canonical_untouched": true
+  "canonical_untouched": true,
+  "validation_errors": []
 }
