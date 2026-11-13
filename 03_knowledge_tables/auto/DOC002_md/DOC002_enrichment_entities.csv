@@ -1,0 +1,92 @@
+﻿entity_local,entity_class,label,source_document,source_id,notes
+AntraknosaUbiKayuBatang,Penyakit,Antraknosa,DOC002,DIS_110,
+AntraknosaUbiKayuDaun,Penyakit,Antraknosa,DOC002,DIS_031,
+BercakDaunBaurUbiKayu,Penyakit,Bercak daun baur,DOC002,DIS_029,
+BercakDaunCoklatUbiKayu,Penyakit,Bercak daun Coklat,DOC002,DIS_028,
+BercakDaunPutihUbiKayu,Penyakit,Bercak daun putih,DOC002,DIS_030,
+BusukAkarDanUmbiUbiKayu,Penyakit,Busuk akar dan umbi,DOC002,DIS_041,
+BusukAkarUbiKayu,Penyakit,Busuk akar,DOC002,DIS_043,
+BusukPangkalBatangUbiKayu,Penyakit,Busuk pangkal batang,DOC002,DIS_040,
+BusukUmbiUbiKayu,Penyakit,Busuk Umbi,DOC002,DIS_042,
+CassavaBrownStreakDiseaseCBSDUbiKayu,Penyakit,Cassava Brown Streak Disease (CBSD),DOC002,DIS_035,
+CassavaMosaicBegomovirusCMBsUbiKayu,Penyakit,Cassava Mosaic Begomovirus (CMBs),DOC002,DIS_034,
+HawarBakteriUbiKayu,Penyakit,Hawar bakteri,DOC002,DIS_036,
+HawarDaunBakteriUbiKayu,Penyakit,Hawar daun bakteri,DOC002,DIS_032,
+Jagung,TanamanPangan,Jagung,curated,,
+KacangHijau,TanamanPangan,Kacang hijau,curated,,
+KacangTanah,TanamanPangan,Kacang tanah,curated,,
+Kedelai,TanamanPangan,Kedelai,curated,,
+KondisiCahayaRendah,FaktorLingkungan,Cahaya rendah,derived,,kondisi tumbuh terkontrol
+KondisiCahayaSedang,FaktorLingkungan,Cahaya sedang,derived,,kondisi tumbuh terkontrol
+KondisiCahayaTinggi,FaktorLingkungan,Cahaya tinggi,derived,,kondisi tumbuh terkontrol
+KondisiCurahHujanRendah,FaktorLingkungan,Curah hujan rendah,derived,,kondisi tumbuh terkontrol
+KondisiCurahHujanSedang,FaktorLingkungan,Curah hujan sedang,derived,,kondisi tumbuh terkontrol
+KondisiCurahHujanTinggi,FaktorLingkungan,Curah hujan tinggi,derived,,kondisi tumbuh terkontrol
+KondisiCurahHujanTinggi,FaktorRisiko,Curah hujan tinggi,ontology,,faktor risiko existing
+KondisiDataranRendah,FaktorLingkungan,Dataran rendah,derived,,kondisi tumbuh terkontrol
+KondisiDataranTinggi,FaktorLingkungan,Dataran tinggi,derived,,kondisi tumbuh terkontrol
+KondisiDrainaseBaik,FaktorLingkungan,Drainase baik,derived,,kondisi tumbuh terkontrol
+KondisiDrainaseBuruk,FaktorLingkungan,Drainase buruk,derived,,kondisi tumbuh terkontrol
+KondisiIklimBasah,FaktorLingkungan,Iklim basah,derived,,kondisi tumbuh terkontrol
+KondisiIklimKering,FaktorLingkungan,Iklim kering,derived,,kondisi tumbuh terkontrol
+KondisiKelembapanTinggi,FaktorRisiko,Kelembapan tinggi,ontology,,faktor risiko existing
+KondisiKelembapanUdaraRendah,FaktorLingkungan,Kelembapan udara rendah,derived,,kondisi tumbuh terkontrol
+KondisiKelembapanUdaraSedang,FaktorLingkungan,Kelembapan udara sedang,derived,,kondisi tumbuh terkontrol
+KondisiKelembapanUdaraTinggi,FaktorLingkungan,Kelembapan udara tinggi,derived,,kondisi tumbuh terkontrol
+KondisiMusimHujan,FaktorRisiko,Musim hujan,ontology,,faktor risiko existing
+KondisiMusimKemarau,FaktorRisiko,Musim kemarau,ontology,,faktor risiko existing
+KondisiSuhuDingin,FaktorLingkungan,Suhu dingin,derived,,kondisi tumbuh terkontrol
+KondisiSuhuHangat,FaktorLingkungan,Suhu hangat,derived,,kondisi tumbuh terkontrol
+KondisiSuhuRendah,FaktorRisiko,Suhu rendah,ontology,,faktor risiko existing
+KondisiSuhuSedang,FaktorLingkungan,Suhu sedang,derived,,kondisi tumbuh terkontrol
+KondisiSuhuTinggi,FaktorRisiko,Suhu tinggi,ontology,,faktor risiko existing
+KondisiTanahAsam,FaktorLingkungan,Tanah asam,derived,,kondisi tumbuh terkontrol
+KondisiTanahBasa,FaktorLingkungan,Tanah basa,derived,,kondisi tumbuh terkontrol
+KondisiTanahBerpasir,FaktorLingkungan,Tanah berpasir,derived,,kondisi tumbuh terkontrol
+KondisiTanahGembur,FaktorLingkungan,Tanah gembur,derived,,kondisi tumbuh terkontrol
+KondisiTanahLiat,FaktorLingkungan,Tanah liat,derived,,kondisi tumbuh terkontrol
+KondisiTanahNetral,FaktorLingkungan,Tanah netral,derived,,kondisi tumbuh terkontrol
+KondisiTanahSubur,FaktorLingkungan,Tanah subur,derived,,kondisi tumbuh terkontrol
+LayuFusariumUbiJalar,Penyakit,layu fusarium,DOC002,DIS_024,
+NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu,Penyakit,Nekrosis pada titik tunas (Cassava bud necrosis),DOC002,DIS_039,
+Padi,TanamanPangan,Padi,curated,,
+PenyakitAntraknosaKedelai,Penyakit,Penyakit Antraknosa,DOC002,DIS_013,
+PenyakitBakteriPustulKedelai,Penyakit,Penyakit Bakteri Pustul,DOC002,DIS_017,
+PenyakitBelangMottleKacangTanah,Penyakit,Penyakit Belang (Mottle),DOC002,DIS_022,
+PenyakitBercakBijiUnguKedelai,Penyakit,Penyakit Bercak Biji Ungu,DOC002,DIS_015,
+PenyakitBercakDaunKacangHijau,Penyakit,Penyakit Bercak Daun,DOC005,DIS_124,
+PenyakitBercakDaunKacangTanah,Penyakit,Penyakit Bercak Daun,DOC002,DIS_021,
+PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai,Penyakit,Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot),DOC002,DIS_012,
+PenyakitBercakKuningUbiJalar,Penyakit,Penyakit bercak kuning,DOC002,DIS_026,
+PenyakitBercakTargetKedelai,Penyakit,Penyakit Bercak Target,DOC002,DIS_014,
+PenyakitBlasPadi,Penyakit,Penyakit Blas,DOC002,DIS_002,
+PenyakitBulaiJagung,Penyakit,Penyakit Bulai,DOC002,DIS_046,
+PenyakitBusukHitamBlackRotUbiJalar,Penyakit,Penyakit busuk hitam (black rot),DOC002,DIS_027,
+PenyakitBusukPelepahJagung,Penyakit,Penyakit Busuk Pelepah,DOC002,DIS_048,
+PenyakitEmbunPalsuDownyMildewKedelai,Penyakit,Penyakit Embun Palsu (Downy mildew),DOC002,DIS_011,
+PenyakitEmbunTepungKacangHijau,Penyakit,Penyakit Embun Tepung,DOC005,DIS_123,
+PenyakitEmbunTepungPowderyMildewKedelai,Penyakit,Penyakit Embun Tepung (Powdery Mildew),DOC002,DIS_010,
+PenyakitHawarBakteriBacterialBlightKedelai,Penyakit,Penyakit Hawar Bakteri (Bacterial Blight),DOC002,DIS_016,
+PenyakitHawarDaunBakteriPadi,Penyakit,Penyakit Hawar Daun Bakteri,DOC002,DIS_001,
+PenyakitHawarDaunJagung,Penyakit,Penyakit Hawar Daun,DOC002,DIS_044,
+PenyakitHawarPelepahDaunPadi,Penyakit,Penyakit Hawar Pelepah Daun,DOC002,DIS_003,
+PenyakitKaratDaunJagung,Penyakit,Penyakit Karat Daun,DOC002,DIS_045,
+PenyakitKaratDaunKacangTanah,Penyakit,Penyakit Karat Daun,DOC005,DIS_121,
+PenyakitKaratDaunKedelai,Penyakit,Penyakit Karat Daun,DOC002,DIS_009,
+PenyakitKerdilKedelaiSoybeanStuntVirusKedelai,Penyakit,Penyakit Kerdil Kedelai (Soybean Stunt Virus),DOC002,DIS_020,
+PenyakitKerdilRumputDanKerdilHampaPadi,Penyakit,Penyakit Kerdil Rumput dan Kerdil Hampa,DOC002,DIS_005,
+PenyakitKudisUbiJalar,Penyakit,Penyakit kudis,DOC002,DIS_025,
+PenyakitLayuBakteriKacangTanah,Penyakit,Penyakit Layu Bakteri,DOC002,DIS_023,
+PenyakitLayuFusariumKedelai,Penyakit,Penyakit Layu Fusarium,DOC002,DIS_008,
+PenyakitLayuKacangHijau,Penyakit,Penyakit Layu,DOC005,DIS_125,
+PenyakitLayuStewartJagung,Penyakit,Penyakit Layu Stewart,DOC002,DIS_047,
+PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai,Penyakit,Penyakit Mosaik Kedelai (Soybean Mosaic Virus),DOC002,DIS_018,
+PenyakitRebahKecambahKedelai,Penyakit,Penyakit Rebah Kecambah,DOC002,DIS_007,
+PenyakitRebahSemaiKedelai,Penyakit,Penyakit Rebah Semai,DOC002,DIS_006,
+PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai,Penyakit,Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus),DOC002,DIS_019,
+PenyakitTungroPadi,Penyakit,Penyakit Tungro,DOC002,DIS_004,
+SapuSetanWitchesBroomUbiKayu,Penyakit,Sapu setan (Witches broom),DOC002,DIS_033,
+SuperelongasiUbiKayu,Penyakit,Superelongasi,DOC002,DIS_037,
+TanamanKerdilStuntUbiKayu,Penyakit,Tanaman kerdil (stunt),DOC002,DIS_038,
+UbiJalar,TanamanPangan,Ubi jalar,curated,,
+UbiKayu,TanamanPangan,Ubi kayu,curated,,
