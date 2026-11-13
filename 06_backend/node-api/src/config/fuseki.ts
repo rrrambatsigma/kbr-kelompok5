@@ -1,12 +1,14 @@
+import { env } from "./env.js";
 
-const FUSEKI_BASE_URL =
-  process.env.FUSEKI_BASE_URL || "http://localhost:3030";
-
-const FUSEKI_DATASET =
-  process.env.FUSEKI_DATASET || "plant-kb";
+const baseUrl = env.fusekiBaseUrl;
+const dataset = encodeURIComponent(env.fusekiDataset);
 
 export const fusekiConfig = {
-  baseUrl: FUSEKI_BASE_URL.replace(/\/$/, ""),
-  dataset: FUSEKI_DATASET,
-  queryUrl: `${FUSEKI_BASE_URL.replace(/\/$/, "")}/${FUSEKI_DATASET}/query`,
-};
+  baseUrl,
+  dataset: env.fusekiDataset,
+  queryUrl: `${baseUrl}/${dataset}/query`,
+  timeoutMs: env.fusekiTimeoutMs,
+} as const;
+
+export const ptpNamespace =
+  "http://kbr.kelompok5.org/penyakit-tanaman-pangan#";

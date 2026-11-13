@@ -1,13 +1,16 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "KBR plant disease expert system API (Express -> Fuseki + reasoning API)",
+  "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/server.ts",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "typecheck": "tsc --noEmit",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "prestart": "npm run clean && npm run build",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "test": "tsx --test test/*.test.ts"
   },
   "keywords": [],
   "author": "",

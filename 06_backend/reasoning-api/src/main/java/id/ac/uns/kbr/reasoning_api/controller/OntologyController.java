@@ -1,75 +1,49 @@
-
 package id.ac.uns.kbr.reasoning_api.controller;
 
-import id.ac.uns.kbr.reasoning_api.service.OntologyService;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import id.ac.uns.kbr.reasoning_api.service.OntologyProvider;
+import id.ac.uns.kbr.reasoning_api.service.ReasoningService;
+import id.ac.uns.kbr.reasoning_api.web.ApiResponse;
 
 @RestController
 @RequestMapping("/api/ontology")
 public class OntologyController {
 
-    private final OntologyService ontologyService;
+    private final OntologyProvider ontologyProvider;
+    private final ReasoningService reasoningService;
 
-    public OntologyController(OntologyService ontologyService) {
-        this.ontologyService = ontologyService;
+    public OntologyController(
+            OntologyProvider ontologyProvider,
+            ReasoningService reasoningService
+    ) {
+        this.ontologyProvider = ontologyProvider;
+        this.reasoningService = reasoningService;
     }
 
-    @PostMapping("/load")
-    public ResponseEntity<Map<String, Object>> loadOntology() {
-        try {
-            Map<String, Object> result = ontologyService.loadOntology();
-            return ResponseEntity.ok(result);
-
-        } catch (Exception e) {
-            return ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(Map.of(
-                    "success", false,
-                    "message", "Gagal memuat ontology",
-                    "error", e.getMessage()
-                ));
-        }
+    /**
+     * Reloads the ontology. Kept for admin/diagnostic use; the API loads the
+     * ontology automatically at startup.
+     */
+    @PostMapping({"/reload", "/load"})
+    public ResponseEntity<Map<String, Object>> reload() {
+        ontologyProvider.reload();
+        return ResponseEntity.ok(ApiResponse.ok(reasoningService.status()));
     }
 
     @GetMapping("/status")
-    public ResponseEntity<Map<String, Object>> getStatus() {
-
-        boolean loaded = ontologyService.isOntologyLoaded();
-
-        return ResponseEntity.ok(Map.of(
-            "success", true,
-            "loaded", loaded,
-            "message", loaded
-                ? "Ontology sudah dimuat"
-                : "Ontology belum dimuat"
-        ));
+    public ResponseEntity<Map<String, Object>> status() {
+        return ResponseEntity.ok(ApiResponse.ok(reasoningService.status()));
     }
 
     @GetMapping("/consistency")
-    public ResponseEntity<Map<String, Object>> checkConsistency() {
-        try {
-            boolean consistent = ontologyService.checkConsistency();
-
-            return ResponseEntity.ok(Map.of(
-                "success", true,
-                "consistent", consistent,
-                "message", consistent
-                    ? "Ontology konsisten"
-                    : "Ontology tidak konsisten"
-            ));
-
-        } catch (Exception e) {
-            return ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(Map.of(
-                    "success", false,
-                    "message", e.getMessage()
-                ));
-        }
+    public ResponseEntity<Map<String, Object>> consistency() {
+        return ResponseEntity.ok(ApiResponse.ok(reasoningService.consistency()));
     }
 }

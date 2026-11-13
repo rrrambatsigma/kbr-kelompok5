@@ -51,6 +51,13 @@ env/
 # Log runtime Fuseki
 /06_backend/fuseki-config/logs/
 
+# Runtime base Fuseki (dibuat otomatis)
+/06_backend/fuseki-config/run/
+/run/
+
+# Backup runtime Fuseki
+/06_backend/backups/
+
 # File sementara Fuseki
 *.lock
 
