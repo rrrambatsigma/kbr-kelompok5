@@ -90,8 +90,8 @@ class TestEnrichmentFacts(unittest.TestCase):
         self.assertGreaterEqual(len(described), 57)
         self.assertIn("PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai", described)
         self.assertIn("PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai", described)
-        self.assertIn("ANTRAKNOSAKedelai", described)
-        self.assertIn("BERCAKDAUNKacangTanah", described)
+        self.assertIn("PenyakitAntraknosaKedelai", described)
+        self.assertIn("PenyakitBercakDaunKacangTanah", described)
         for row in self.rows:
             if row["predicate"] == "deskripsiPenyakit":
                 self.assertEqual(row["subject_class"], "Penyakit", row["fact_id"])
@@ -121,7 +121,7 @@ class TestEnrichmentFacts(unittest.TestCase):
                 for row in table_rows
                 if row["source_type"] == "table_row"
             },
-            {"BercakDaunCoklatUbiKayu", "AntraknosaUbiKayuDIS110"},
+            {"BercakDaunCoklatUbiKayu", "AntraknosaUbiKayuBatang"},
         )
 
     def test_disease_assignment_edge_cases(self) -> None:
@@ -131,19 +131,13 @@ class TestEnrichmentFacts(unittest.TestCase):
         for local in (
             "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
             "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
-            "ANTRAKNOSAKedelai",
-            "BERCAKDAUNKacangTanah",
+            "PenyakitAntraknosaKedelai",
+            "PenyakitBercakDaunKacangTanah",
         ):
             self.assertIn(local, assigned)
 
     def test_risk_factors_existing_and_clean(self) -> None:
-        existing = {
-            "KondisiKelembapanTinggi",
-            "KondisiSuhu",
-            "KondisiCurahHujan",
-            "KondisiMusimHujan",
-            "KondisiMusimKemarau",
-        }
+        existing = {local for local, _cls, _pattern in bo.ENV_PATTERNS}
         for row in self.rows:
             if row["predicate"] != "dipengaruhiOleh":
                 continue

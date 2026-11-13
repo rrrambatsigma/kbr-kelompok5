@@ -119,11 +119,7 @@ CONDITION_LABELS = {
     "KondisiIklimBasah": "Iklim basah",
 }
 EXISTING_FACTOR_LABELS = {
-    "KondisiKelembapanTinggi": "Kelembapan tinggi",
-    "KondisiSuhu": "Suhu",
-    "KondisiCurahHujan": "Curah hujan",
-    "KondisiMusimHujan": "Musim hujan",
-    "KondisiMusimKemarau": "Musim kemarau",
+    local: label for local, _cls, label, _pattern in bo.QUALITATIVE_RULES
 }
 
 NUMBERING_RE = re.compile(r"^\d+(?:\.\d+)*\s*")

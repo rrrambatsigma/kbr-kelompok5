@@ -1,16 +1,16 @@
 # Gap dan cakupan enrichment DOC002/DOC005
 
-Scope: 7 tanaman utama. Fakta: **98**.
+Scope: 7 tanaman utama. Fakta: **84**.
 
 ## Ringkasan predikat
 
 | Predikat | Jumlah |
 |---|---:|
-| `deskripsiPenyakit` | 57 |
+| `deskripsiPenyakit` | 53 |
 | `deskripsiTanaman` | 7 |
-| `dipengaruhiOleh` | 20 |
+| `dipengaruhiOleh` | 11 |
 | `memilikiKondisiTumbuh` | 4 |
-| `tingkatKeparahan` | 10 |
+| `tingkatKeparahan` | 9 |
 
 ## Kondisi tumbuh per tanaman
 
@@ -29,7 +29,7 @@ Scope: 7 tanaman utama. Fakta: **98**.
 | Tipe | Terisi |
 |---|---:|
 | Tanaman | 7/7 |
-| Penyakit | 57/57 |
+| Penyakit | 53/57 |
 
 ## Tanaman tanpa kondisi tumbuh
 
@@ -98,6 +98,6 @@ Jumlah: **17**
 - MD DOC002 hanya mencakup Padi, Kedelai, dan Ubi kayu.
 - Penyakit Ubi kayu di DOC002 berupa baris tabel; deskripsi per penyakit diambil dari baris tabel gejala.
 - Dari baris tabel Ubi kayu: 15 verbatim di chunk MD, 2 sel tabel terkurasi (`needs_review`).
-- Total fakta berstatus `needs_review`: 12.
+- Total fakta berstatus `needs_review`: 11.
 - Fakta tanaman di luar 7 tanaman utama dibuang.
 
