@@ -21,6 +21,7 @@ from pathlib import Path
 TABLE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = TABLE_DIR.parent
 sys.path.insert(0, str(TABLE_DIR))
+sys.path.insert(0, str(TABLE_DIR / "src"))
 
 import build_document_tables as bdt  # noqa: E402
 

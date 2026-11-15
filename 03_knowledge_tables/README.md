@@ -34,12 +34,15 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | Path | Isi |
 |---|---|
 | `config/chapter_map.json` | 15 bab → tanaman, level heading penyakit, nama ilmiah terverifikasi, grup tabel Bab 5 |
-| `build_knowledge_tables.py` | builder deterministik + gate verbatim (tanaman, penyakit, tabel 5) |
-| `curate.py` | menerapkan keputusan manual penyakit + verifikasi kutipan |
-| `build_extended_tables.py` | builder patogen, relasi penyakit-patogen, gejala, pengendalian |
-| `curate_pathogens.py` | menerapkan keputusan manual patogen + verifikasi kutipan |
-| `curate_sentences.py` | memverifikasi offset lalu menyalin gejala/pengendalian ke `curated/` |
-| `build_reports.py` | laporan cakupan + gate validasi G1–G7 |
+| `src/build_knowledge_tables.py` | builder deterministik + gate verbatim (tanaman, penyakit, tabel 5) |
+| `src/curate.py` | menerapkan keputusan manual penyakit + verifikasi kutipan |
+| `src/build_extended_tables.py` | builder patogen, relasi penyakit-patogen, gejala, pengendalian |
+| `src/curate_pathogens.py` | menerapkan keputusan manual patogen + verifikasi kutipan |
+| `src/curate_sentences.py` | memverifikasi offset lalu menyalin gejala/pengendalian ke `curated/` |
+| `src/build_reports.py` | laporan cakupan + gate validasi G1–G7 |
+| `src/build_md_chunks.py` | chunk MD DOC002 (prosa + tabel) sebagai bukti lintas-format |
+| `src/build_enrichment_facts.py` | fakta enrichment 7 tanaman utama → bahan `04_ontology/ontology_md.ttl` |
+| `src/build_descriptions.py` | 420 baris deskripsi verbatim (`rdfs:comment`) kelas + individu |
 | `schema/knowledge_tables.schema.json` | skema 7 tabel + invarian |
 | `auto/plants.csv` | 15 tanaman |
 | `auto/diseases.csv` | inventaris penyakit dari heading/tabel |
@@ -48,6 +51,10 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | `auto/symptoms.csv` | kalimat gejala + offset |
 | `auto/controls.csv` | kalimat pengendalian + offset |
 | `auto/ubi_kayu_table_rows.csv` | baris tabel 5.1–5.3 termasuk penanda celah |
+| `auto/DOC002_md/DOC002_md_chunks.csv` | 31 chunk MD DOC002 (prosa dan tabel, nomor baris) |
+| `auto/DOC002_md/DOC002_enrichment_facts.csv` | 84 fakta enrichment berformat panjang + jejak sumber |
+| `auto/DOC002_md/DOC002_enrichment_entities.csv` | 91 individu hasil fakta (tanaman, penyakit, faktor) |
+| `auto/DOC002_md/DOC002_descriptions.csv` | 420 deskripsi verbatim + jejak sumber |
 | `review/curation_decisions.json` | keputusan manusia penyakit: kutipan + alasan |
 | `review/pathogen_decisions.json` | keputusan manusia patogen: tolak, takson, catatan |
 | `review/curation_log.csv` / `pathogen_log.csv` | log per field yang berubah |
@@ -62,9 +69,14 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 | `reports/build_report.json` / `.md` | ringkasan build penyakit |
 | `reports/coverage.md` / `.json` | cakupan per tanaman |
 | `reports/validation.json` | gate G1–G7 |
+| `reports/DOC002_enrichment_gaps.md` | gap dan cakupan enrichment (per predikat, per tanaman) |
+| `reports/DOC002_description_gaps.md` | cakupan deskripsi per kelas/individu + 17 individu dan 22 kelas kosong |
 | `tests/test_knowledge_tables.py` | 33 gate test |
+| `tests/test_md_chunks.py` | 8 gate test chunk MD |
+| `tests/test_enrichment_facts.py` | 12 gate test fakta enrichment |
+| `tests/test_descriptions.py` | 16 gate test baris deskripsi |
 | `config/DOC003_tables.json` / `DOC004_tables.json` | spesifikasi baris kurasi dokumen tambahan |
-| `build_document_tables.py` | builder + validator verbatim DOC003/DOC004 |
+| `src/build_document_tables.py` | builder + validator verbatim DOC003/DOC004 |
 | `schema/knowledge_tables_DOC003.schema.json` | skema 6 tabel DOC003 |
 | `schema/production_tables.schema.json` | skema 4 tabel produksi DOC004 |
 | `curated/DOC003/*.csv` | otoritas akhir tabel porang/suweg |
@@ -76,15 +88,20 @@ Alur: `auto` → `review` → `curated`. Baris `auto` tidak pernah ditimpa kuras
 
 ```powershell
 # dari root repo — urutan lengkap
-python 03_knowledge_tables/build_knowledge_tables.py
-python 03_knowledge_tables/curate.py
-python 03_knowledge_tables/build_extended_tables.py
-python 03_knowledge_tables/curate_pathogens.py
-python 03_knowledge_tables/curate_sentences.py
-python 03_knowledge_tables/build_reports.py
+python 03_knowledge_tables/src/build_knowledge_tables.py
+python 03_knowledge_tables/src/curate.py
+python 03_knowledge_tables/src/build_extended_tables.py
+python 03_knowledge_tables/src/curate_pathogens.py
+python 03_knowledge_tables/src/curate_sentences.py
+python 03_knowledge_tables/src/build_reports.py
 
 # dokumen tambahan DOC003/DOC004 (dari root repo atau folder ini)
-python 03_knowledge_tables/build_document_tables.py
+python 03_knowledge_tables/src/build_document_tables.py
+
+# bukti lintas-format MD + fakta enrichment (bahan ontology_md.ttl)
+python 03_knowledge_tables/src/build_md_chunks.py
+python 03_knowledge_tables/src/build_enrichment_facts.py
+python 03_knowledge_tables/src/build_descriptions.py
 
 # dari folder ini
 python -m unittest discover -s tests -p "test_*.py"
@@ -141,8 +158,8 @@ gagal.
    `evidence_ref` (id chunk `DOC002_C…` atau blok `DOC002_P…`) dan
    `evidence_quote` yang tercetak persis di sumber (khusus `verifications`,
    bukti diambil dari `verbatim_text` dan chunk/tabel patogen itu sendiri).
-2. Jalankan `python 03_knowledge_tables/curate.py` lalu
-   `python 03_knowledge_tables/curate_pathogens.py`.
+2. Jalankan `python 03_knowledge_tables/src/curate.py` lalu
+   `python 03_knowledge_tables/src/curate_pathogens.py`.
 3. Periksa `review/curation_log.csv` dan `review/pathogen_log.csv`; satu baris =
    satu field yang berubah.
 4. Jalankan test. Jangan mengedit `curated/*.csv` langsung — perubahan akan
@@ -245,7 +262,7 @@ derau parser/OCR, sehingga hanya kalimat bersih dan tidak ambigu yang dikutip.
 Perintah dan gate:
 
 ```powershell
-python 03_knowledge_tables/build_document_tables.py --doc DOC003 --doc DOC004
+python 03_knowledge_tables/src/build_document_tables.py --doc DOC003 --doc DOC004
 ```
 
 Builder keluar `2` bila ada kutipan yang tidak ada di blok/chunk, nilai/unit
@@ -254,8 +271,88 @@ atau offset karakter gagal. Laporan per dokumen ditulis ke
 `reports/DOC003.tables.validation.json` dan
 `reports/DOC004.tables.validation.json`.
 
+## Enrichment fakta (bahan `04_ontology/ontology_md.ttl`)
+
+`src/build_md_chunks.py` memecah ulang DOC002 ke Markdown (prosa dan tabel
+5.1–5.3) menjadi 31 chunk bernomor baris di
+`auto/DOC002_md/DOC002_md_chunks.csv`. `src/build_enrichment_facts.py`
+menyusun **84 fakta** untuk **7 tanaman utama** dari baseline DOC002, chunk
+DOC005, chunk MD DOC002, dan MD DOC005.
+
+| Predikat | Jumlah | Sumber utama |
+|---|---:|---|
+| `deskripsiPenyakit` | 53 | prosa DOC002/DOC005 + baris tabel gejala ubi kayu |
+| `deskripsiTanaman` | 7 | pendahuluan tiap tanaman |
+| `dipengaruhiOleh` | 11 | kalimat faktor risiko |
+| `memilikiKondisiTumbuh` | 4 | kalimat syarat tumbuh eksplisit |
+| `tingkatKeparahan` | 9 | kalimat keparahan |
+
+Aturan dan catatan:
+
+- **Kutipan verbatim.** Setiap `evidence_quote` wajib substring dari sumber
+  yang dirujuk setelah normalisasi spasi; diuji untuk tipe sumber
+  `baseline_block`, `doc005_chunk`, `md_chunk`, dan `table_row`.
+- **Deskripsi ubi kayu.** 17 penyakit bab 5.2 tidak punya narasi prosa; teksnya
+  diambil dari `curated/ubi_kayu_tabel_5.csv` dan dipetakan per bagian tanaman
+  via `T5.1_DAUN`/`T5.2_BATANG`/`T5.3_AKAR`. 15 sel terbukti verbatim pada chunk
+  tabel MD; 2 sisanya (`Bercak daun Coklat` dan `Antraknosa` baris batang) hanya
+  ada di sel tabel terkurasi sehingga tetap `needs_review`.
+- **Gap yang sengaja dibiarkan.** Padi, Jagung, Ubi jalar, Kacang tanah, dan
+  Kacang hijau tidak diberi `memilikiKondisiTumbuh` karena tidak ada kalimat
+  syarat tumbuh eksplisit pada sumber dalam scope. Gap lain (tautan patogen,
+  pengendalian tingkat penyakit) tercatat di
+  `reports/DOC002_enrichment_gaps.md`.
+- Fakta untuk tanaman di luar 7 tanaman utama dibuang.
+
+```powershell
+python 03_knowledge_tables/src/build_enrichment_facts.py
+python -m unittest discover -s tests -p "test_enrichment_facts.py"   # 12 test
+```
+
+## Deskripsi rujukan (bahan `rdfs:comment`)
+
+`src/build_descriptions.py` menurunkan **420 baris deskripsi verbatim** untuk
+kelas dan individu ontologi ke `auto/DOC002_md/DOC002_descriptions.csv`, lalu
+mencatat celahnya di `reports/DOC002_description_gaps.md`. Lima jalur, semuanya
+bersumber dari pengetahuan yang ada (tanpa teks karangan):
+
+| Jalur | Jumlah | Sumber |
+|---|---:|---|
+| salinan deskripsi kanonik | 219 | `deskripsiGejala`/`deskripsiPengendalian` `ontology.ttl` |
+| salinan fakta enrichment | 60 | `deskripsiPenyakit`/`deskripsiTanaman` baris fakta enrichment |
+| kalimat terkait istilah kelas | 64 | kalimat sumber yang menyebut istilah kelas |
+| frasa kunci pada kalimat sumber | 44 | frasa yang ditemukan verbatim di kalimat sumber |
+| fallback korpus dokumen penuh | 8 | paragraf pendahuluan/kata pengantar di luar filter 7 tanaman |
+| definisi sumber | 7 | definisi eksplisit pada dokumen sumber |
+| kata kunci, bukan frasa utuh | 7 | kata kunci tunggal dari frasa sumber |
+| sel deskripsi pada baris tabel | 4 | sel tabel terkurasi DOC002 |
+| kata terakhir frasa | 6 | fallback nama patogen pada frasa sumber |
+| bukti tautan kondisi | 1 | `evidence_quote` fakta untuk kondisi tanpa frasa di sumber |
+
+Aturan:
+
+- **Verbatim.** Setiap `literal_value` substring dari sumber yang dirujuk
+  (kecuali jalur mirror yang menyalin literal kanonik apa adanya); urutan
+  pemilihan: frasa utuh → kata kunci → kata terakhir frasa, dan hanya untuk
+  subjek `Patogen` pada tahap terakhir.
+- **Jejak sumber.** Baris membawa `source_document`, `source_type`,
+  `source_id`, `evidence_quote`, `page`, serta `line_start`/`line_end`.
+- **Tanpa tebakan.** Subjek tanpa sumber dibiarkan kosong: 17 individu
+  (8 kondisi lingkungan dan 9 pengamatan gejala) serta 22 kelas antara lain
+  `ArtikelIlmiah`, `FaktorRisiko`, `JurnalIlmiah`, `KondisiDrainase`,
+  `OrganismeLain`, `PengendalianBiologis`, dan `PublikasiInstansi`.
+- Cakupan: **206/223** individu dan **67/89** kelas terisi; status baris
+  `auto_ok` 299, `needs_review` 121.
+
+```powershell
+python 03_knowledge_tables/src/build_descriptions.py
+python -m unittest discover -s tests -p "test_descriptions.py"   # 16 test
+```
+
 ## Batas tahap ini
 
 Tidak ada model bahasa di dalam pipeline, RAG, embedding, basis vektor, backend,
 frontend, atau ontologi. Seluruh nilai berasal dari chunk/blok DOC002 dan dapat
-ditelusuri lewat `chunk_id`/`source_block_ids` serta offset karakter.
+ditelusuri lewat `chunk_id`/`source_block_ids` serta offset karakter. Fakta
+enrichment adalah produk tahap ini yang dikonsumsi `04_ontology/ontology_md.ttl`;
+TBox dan ABox ontologi tetap dibangun di `04_ontology/`.

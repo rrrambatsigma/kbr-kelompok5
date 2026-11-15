@@ -11,7 +11,7 @@ $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 $backendDir = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 
 if ($OntologyFile -eq "") {
-    $OntologyFile = Join-Path $repoRoot "04_ontology\ontology.ttl"
+    $OntologyFile = Join-Path $repoRoot "04_ontology\ontology_md.ttl"
 }
 
 if ($DataDir -eq "") {

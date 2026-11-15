@@ -373,7 +373,8 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
                (SAMPLE(?part) AS ?part)
                (SAMPLE(?partLabel) AS ?partLabel)
         WHERE {
-          ?symptom a ptp:Gejala .
+          ?symptom a/rdfs:subClassOf* ptp:Gejala .
+          FILTER EXISTS { ?disease ptp:memilikiGejala ?symptom }
           OPTIONAL { ?symptom rdfs:label ?label }
           OPTIONAL {
             ?symptom ptp:terdapatPada ?part .
