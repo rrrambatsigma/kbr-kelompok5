@@ -128,12 +128,7 @@ public class ReasoningService {
     }
 
     public List<String> diseaseCategoryNames() {
-        return List.of(
-                "PenyakitJamur",
-                "PenyakitBakteri",
-                "PenyakitVirus",
-                "PenyakitLainnya"
-        );
+        return OntologyProvider.DISEASE_CATEGORIES;
     }
 
     private List<String> normaliseRequest(List<String> diseaseIris) {

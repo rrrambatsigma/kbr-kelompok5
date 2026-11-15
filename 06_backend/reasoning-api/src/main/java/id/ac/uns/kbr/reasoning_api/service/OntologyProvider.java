@@ -74,10 +74,13 @@ public class OntologyProvider {
     public static final String PTP_NAMESPACE =
             "http://kbr.kelompok5.org/penyakit-tanaman-pangan#";
 
-    private static final List<String> DISEASE_CATEGORIES = List.of(
+    public static final List<String> DISEASE_CATEGORIES = List.of(
             "PenyakitJamur",
             "PenyakitBakteri",
             "PenyakitVirus",
+            "PenyakitOomycete",
+            "PenyakitFitoplasma",
+            "PenyakitNematoda",
             "PenyakitLainnya"
     );
 

@@ -33,7 +33,7 @@ menyediakan kategori penyakit hasil inferensi Openllet.
 - Java 21+ (dipakai Java 23 juga OK)
 - Node.js 20+
 - Apache Jena Fuseki 6.x (`fuseki-server.jar`)
-- File `04_ontology/ontology.ttl`
+- File `04_ontology/ontology_md.ttl`
 
 Script `scripts/start-fuseki.ps1` dan `scripts/load-ontology.ps1` memakai
 default `E:\apache-jena-fuseki-6.2.0\apache-jena-fuseki-6.2.0\fuseki-server.jar`.
@@ -64,7 +64,7 @@ Override lewat environment variable bila perlu:
 |---|---|---|
 | `SERVER_PORT` | `8082` | Port Java |
 | `SERVER_ADDRESS` | `127.0.0.1` | Bind address |
-| `ONTOLOGY_FILE_PATH` | `E:/kbr-kelompok5/04_ontology/ontology.ttl` | Lokasi ontology |
+| `ONTOLOGY_FILE_PATH` | `E:/kbr-kelompok5/04_ontology/ontology_md.ttl` | Lokasi ontology |
 | `ONTOLOGY_REASONING_TIMEOUT_MS` | `120000` | Timeout precompute/klasifikasi |
 | `ONTOLOGY_FAIL_FAST` | `false` | `true` = startup gagal jika ontology invalid |
 
@@ -201,16 +201,20 @@ Jika reasoning API mati/timeout, diagnosis tetap `200` dengan
 Kategori yang diinferensi Openllet:
 
 ```text
-PenyakitJamur   = 29
-PenyakitBakteri = 5
-PenyakitVirus   = 5
-PenyakitLainnya = 0
+PenyakitJamur       = 26
+PenyakitBakteri     = 5
+PenyakitVirus       = 5
+PenyakitOomycete    = 1
+PenyakitFitoplasma  = 1
+PenyakitNematoda    = 0
+PenyakitLainnya     = 0
 ```
 
-Ada 18 penyakit yang tidak masuk keempat kategori karena tidak memiliki relasi
-`disebabkanOleh` ke `Jamur`, `Bakteri`, atau `Virus`. Penyakit tersebut
-dikembalikan dengan `category: null` dan warning
-`DISEASE_CATEGORY_UNCLASSIFIED`; tidak ada kategori yang dikarang.
+Ada 15 penyakit yang tidak masuk kategori mana pun karena tidak memiliki
+relasi `disebabkanOleh` ke kelompok patogen yang dikenal (`Jamur`, `Bakteri`,
+`Virus`, `Oomycete`, `Fitoplasma`, `Nematoda`). Penyakit tersebut dikembalikan
+dengan `category: null` dan warning `DISEASE_CATEGORY_UNCLASSIFIED`; tidak ada
+kategori yang dikarang.
 
 ## Kode error
 
@@ -232,7 +236,7 @@ dikembalikan dengan `category: null` dan warning
 Java menghitung SHA-256 file ontology saat load. Nilainya tersedia di
 `/api/reasoning/status` dan `/api/health/ready`. Prosedur update:
 
-1. Validasi `04_ontology/ontology.ttl`.
+1. Validasi `04_ontology/ontology_md.ttl`.
 2. Hentikan Fuseki, jalankan `load-ontology.ps1 -Reset`.
 3. Jalankan Fuseki read-only.
 4. Reload Java (`POST /api/ontology/reload`) atau restart.
@@ -264,7 +268,7 @@ cd .\06_backend\reasoning-api
 | `readiness` DOWN, reasoning DOWN | Java belum selesai load / mati | Cek log Java, `GET /api/reasoning/status` |
 | `ONTOLOGY_NOT_LOADED` | File ontology tidak ditemukan | Set `ONTOLOGY_FILE_PATH`, cek log startup |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
-| `totalTriples` bukan 5436 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
+| `totalTriples` bukan 16391 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
 | Port sudah dipakai | Proses lama masih hidup | Hentikan proses pada port 3000/3030/8082 |
 
 ## Catatan keamanan

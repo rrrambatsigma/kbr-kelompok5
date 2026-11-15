@@ -17,7 +17,7 @@ import id.ac.uns.kbr.reasoning_api.service.ReasoningService;
  */
 class OntologyProviderGoldenTest {
 
-    private static final String ONTOLOGY_PATH = "../../04_ontology/ontology.ttl";
+    private static final String ONTOLOGY_PATH = "../../04_ontology/ontology_md.ttl";
 
     @Test
     void loadsOntologyAndInfersDiseaseCategories() {
@@ -44,9 +44,12 @@ class OntologyProviderGoldenTest {
             Map<String, Long> counts =
                     (Map<String, Long>) status.get("diseaseCategoryCounts");
 
-            assertEquals(29L, counts.get("PenyakitJamur"));
+            assertEquals(26L, counts.get("PenyakitJamur"));
             assertEquals(5L, counts.get("PenyakitBakteri"));
             assertEquals(5L, counts.get("PenyakitVirus"));
+            assertEquals(1L, counts.get("PenyakitOomycete"));
+            assertEquals(1L, counts.get("PenyakitFitoplasma"));
+            assertEquals(0L, counts.get("PenyakitNematoda"));
             assertEquals(0L, counts.get("PenyakitLainnya"));
 
             Map<String, Object> categories =

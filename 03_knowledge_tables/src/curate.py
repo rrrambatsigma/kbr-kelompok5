@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-TABLE_DIR = Path(__file__).resolve().parent
+TABLE_DIR = Path(__file__).resolve().parents[1]
 PROJECT_ROOT = TABLE_DIR.parent
 EXTRACTION_DIR = PROJECT_ROOT / "02_extraction" / "extracted_text"
 

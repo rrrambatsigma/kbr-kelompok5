@@ -21,24 +21,30 @@ Assert-Equal $ready.data.dependencies.fuseki.status "UP" "fuseki readiness"
 Assert-Equal $ready.data.dependencies.reasoning.status "UP" "reasoning readiness"
 
 $fuseki = Invoke-RestMethod "$BaseUrl/api/health/fuseki"
-Assert-Equal $fuseki.data.totalTriples 5436 "triple count"
+Assert-Equal $fuseki.data.totalTriples 16391 "triple count"
 
 $plants = Invoke-RestMethod "$BaseUrl/api/plants"
 Assert-Equal $plants.data.count 7 "plant count"
 
 $diseases = Invoke-RestMethod "$BaseUrl/api/diseases"
-Assert-Equal $diseases.data.count 57 "disease count"
+Assert-Equal $diseases.data.count 53 "disease count"
 
-$symptoms = Invoke-RestMethod "$BaseUrl/api/symptoms"
-Assert-Equal $symptoms.data.count 240 "symptom count"
+$symptoms = Invoke-RestMethod "$BaseUrl/api/symptoms?plantId=Padi"
+Assert-Equal $symptoms.data.count 29 "Padi symptom count"
+
+$symptomIds = @(
+    $symptoms.data.items |
+        Select-Object -First 3 |
+        ForEach-Object { $_.id }
+)
+
+if ($symptomIds.Count -lt 3) {
+    throw "diagnosis: butuh minimal 3 gejala Padi, hanya ditemukan $($symptomIds.Count)"
+}
 
 $payload = @{
     plantId = "Padi"
-    symptomIds = @(
-        "GejalaAdapunBentukBercakSendiriDapat_626f021f",
-        "GejalaAdapunBentukWarnaDanUkuran_f8023518",
-        "GejalaAkibatnyaLeherMalaiTidakAkan_fe97cd7f"
-    )
+    symptomIds = $symptomIds
     topN = 5
 } | ConvertTo-Json -Depth 5
 
@@ -60,5 +66,5 @@ if ($diagnosis.data.reasoning.status -ne "UP") {
     throw "diagnosis: reasoning tidak UP"
 }
 
-Write-Host "OK: plants=7, diseases=57, symptoms=240, candidates=$($diagnosis.data.candidates.Count)"
+Write-Host "OK: plants=7, diseases=53, padiSymptoms=$($symptoms.data.count), candidates=$($diagnosis.data.candidates.Count)"
 Write-Host "Top candidate: $($first.label) (score=$($first.score), category=$($first.category))"

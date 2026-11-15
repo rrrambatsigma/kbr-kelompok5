@@ -1,1925 +1,1437 @@
 {
+  "summary": {
+    "plants": 7,
+    "diseases": 53,
+    "symptom_records": 240,
+    "pathogen_links": 73,
+    "control_records_disease": 257,
+    "control_records_chapter": 45,
+    "named_individuals": 1159,
+    "triples": 15801,
+    "classes": 89,
+    "object_properties": 28,
+    "data_properties": 33
+  },
   "controls": {
     "disease": [
       {
-        "disease_id": "DIS_001",
-        "classes": [
-          "PengendalianKulturTeknis",
-          "PengendalianMekanis"
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "actions": [
+          "PenggunaanBenihSehat",
+          "PemupukanBerimbang",
+          "PengelolaanGulma",
+          "PencabutanTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_001",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_001",
-        "classes": [
-          "PengendalianKulturTeknis"
-        ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_001",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_001",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_001",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_001",
-        "classes": [
-          "PengendalianKimiawi"
-        ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_001",
-        "classes": [
-          "PengendalianBiologis"
-        ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_002",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_002",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_002",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_002",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianKulturTeknis"
-        ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_002",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_002",
-        "classes": [
-          "PengendalianKulturTeknis"
-        ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_002",
-        "classes": [
-          "PengendalianKimiawi"
-        ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_002",
-        "classes": [
-          "PengendalianBiologis"
-        ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_003",
-        "classes": [
-          "PengendalianKulturTeknis",
-          "PengendalianMekanis"
-        ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_003",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "actions": [
+          "PengairanDanDrainase"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_003",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_003",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "actions": [
+          "PenerapanPengendalianFisik"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_004",
-        "classes": [
-          "PengendalianKulturTeknis",
-          "PengendalianMekanis"
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "actions": [
+          "PerlakuanAirPanas"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_004",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "actions": [
+          "PerlakuanBenih",
+          "PerlakuanAirPanas"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_004",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "actions": [
+          "PerlakuanBenih",
+          "PenggunaanBakterisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_004",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanBacillus",
+          "PenggunaanPseudomonas"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_005",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_005",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_005",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitBlasPadi",
+        "actions": [
+          "PengumpulanDanPemusnahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_005",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBlasPadi",
+        "actions": [
+          "PenggunaanBenihSehat",
+          "PerlakuanBenih",
+          "PengairanDanDrainase",
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_005",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBlasPadi",
+        "actions": [
+          "PemupukanBerimbang"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_006",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBlasPadi",
+        "actions": [
+          "PenggunaanFungisida",
+          "PenggunaanBakterisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_006",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_006",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBlasPadi",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanTrichoderma",
+          "PenggunaanBacillus",
+          "PenggunaanPseudomonas"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_006",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitHawarPelepahDaunPadi",
+        "actions": [
+          "PengaturanJarakTanam",
+          "PengumpulanDanPemusnahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_006",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitHawarPelepahDaunPadi",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_006",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarPelepahDaunPadi",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanTrichoderma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_006",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarPelepahDaunPadi",
+        "actions": [
+          "PenggunaanPseudomonas"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_006",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_006",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_006",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitTungroPadi",
+        "actions": [
+          "PenggunaanVarietasTahan",
+          "PengaturanWaktuTanam",
+          "PengumpulanDanPemusnahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_006",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_006",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_006",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitTungroPadi",
+        "actions": [
+          "SanitasiLahan",
+          "PengelolaanGulma"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_006",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_007",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_007",
-        "classes": [
-          "PengendalianBiologis",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitTungroPadi",
+        "actions": [
+          "PenggunaanMetarhizium"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_007",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitKerdilRumputDanKerdilHampaPadi",
+        "actions": [
+          "PenggunaanBeauveria",
+          "PenggunaanMetarhizium"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_007",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitKerdilRumputDanKerdilHampaPadi",
+        "actions": [
+          "SanitasiLahan",
+          "PengelolaanGulma"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_007",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_008",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitRebahSemaiKedelai",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_008",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitRebahSemaiKedelai",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_008",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitRebahSemaiKedelai",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_008",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitRebahSemaiKedelai",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitRebahSemaiKedelai",
+        "actions": [
+          "PenggunaanBacillus"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitRebahSemaiKedelai",
+        "actions": [
+          "PenggunaanTrichoderma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitRebahSemaiKedelai",
+        "actions": [
+          "PenggunaanBeauveria"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitRebahSemaiKedelai",
+        "actions": [
+          "SolarisasiTanah"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitRebahKecambahKedelai",
+        "actions": [
+          "SanitasiLahan",
+          "RotasiTanaman",
+          "PengairanDanDrainase",
+          "PenggunaanTrichoderma"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_009",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitRebahKecambahKedelai",
+        "actions": [
+          "PerlakuanBenih",
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitRebahKecambahKedelai",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanBacillus"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_009",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitLayuFusariumKedelai",
+        "actions": [
+          "PerlakuanBenih",
+          "PenggunaanMulsa",
+          "PenggunaanTrichoderma",
+          "PenggunaanFungisida",
+          "SolarisasiTanah"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_010",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitLayuFusariumKedelai",
+        "actions": [
+          "PemupukanBerimbang"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_010",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_010",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuFusariumKedelai",
+        "actions": [
+          "PemupukanBerimbang"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_010",
-        "classes": [
-          "PengendalianBiologis",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKaratDaunKedelai",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_010",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_011",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_011",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_012",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_012",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKaratDaunKedelai",
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_012",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitKaratDaunKedelai",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanBacillus"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_012",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitKaratDaunKedelai",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_012",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_012",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKaratDaunKedelai",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_013",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitEmbunTepungPowderyMildewKedelai",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_013",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitEmbunTepungPowderyMildewKedelai",
+        "actions": [
+          "SanitasiLahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_013",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitEmbunTepungPowderyMildewKedelai",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_013",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_013",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitEmbunTepungPowderyMildewKedelai",
+        "actions": [
+          "PemupukanBerimbang",
+          "PenggunaanAgensHayati"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_014",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_014",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
+        "actions": [
+          "SanitasiLahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_014",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_015",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_016",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+        "actions": [
+          "PerlakuanBenih",
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_016",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+        "actions": [
+          "PenggunaanFungisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_016",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_016",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_016",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_016",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitAntraknosaKedelai",
+        "actions": [
+          "PerlakuanBenih",
+          "SanitasiLahan",
+          "PenggunaanFungisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_017",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_017",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitAntraknosaKedelai",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_017",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitAntraknosaKedelai",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_018",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitAntraknosaKedelai",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_019",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakTargetKedelai",
+        "actions": [
+          "SanitasiLahan",
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_019",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakTargetKedelai",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_019",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakBijiUnguKedelai",
+        "actions": [
+          "PerlakuanBenih",
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_019",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_019",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitHawarBakteriBacterialBlightKedelai",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_020",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitHawarBakteriBacterialBlightKedelai",
+        "actions": [
+          "PenggunaanBacillus",
+          "PenggunaanPseudomonas"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarBakteriBacterialBlightKedelai",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarBakteriBacterialBlightKedelai",
+        "actions": [
+          "PerlakuanBenih",
+          "PenggunaanBakterisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitBakteriPustulKedelai",
+        "actions": [
+          "SanitasiLahan"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitBakteriPustulKedelai",
+        "actions": [
+          "PenggunaanEkstrakTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitBakteriPustulKedelai",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanBacillus"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
+        "actions": [
+          "SanitasiLahan",
+          "PenggunaanInsektisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+        "actions": [
+          "PengaturanJarakTanam",
+          "PengaturanWaktuTanam"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+        "actions": [
+          "SanitasiLahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+        "actions": [
+          "PenggunaanMulsa",
+          "PenggunaanInsektisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
+        "actions": [
+          "PerlakuanBenih",
+          "RotasiTanaman",
+          "PenggunaanInsektisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanBakterisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanTrichoderma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanTrichoderma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenerapanPengendalianMekanis"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanEkstrakTanaman",
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanEkstrakTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanEkstrakTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanFungisida",
+          "PenggunaanInsektisida",
+          "PenggunaanHerbisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_021",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_021",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanFungisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanVarietasTahan",
+          "SanitasiLahan",
+          "RotasiTanaman",
+          "PenggunaanAgensHayati"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PenggunaanBenihSehat"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PengaturanWaktuTanam"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PengaturanWaktuTanam"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "RotasiTanaman"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PenggunaanMulsa"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PenggunaanInsektisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PenggunaanInsektisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_022",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianTerpadu"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PemupukanBerimbang"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PemupukanBerimbang"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "actions": [
+          "PemupukanBerimbang"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanVarietasTahan",
+          "PenggunaanBenihSehat",
+          "RotasiTanaman",
+          "PenggunaanAgensHayati",
+          "PenggunaanBakterisida",
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanBiopestisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_023",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_023",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanBacillus"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanBakterisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_023",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanBakterisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_023",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanBakterisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_024",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitLayuBakteriKacangTanah",
+        "actions": [
+          "PenggunaanBakterisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_024",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_024",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_024",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_024",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_025",
-        "classes": [
-          "PengendalianKulturTeknis",
-          "PengendalianTerpadu"
+        "disease": "LayuFusariumUbiJalar",
+        "actions": [
+          "SanitasiLahan",
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_025",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKudisUbiJalar",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_025",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKudisUbiJalar",
+        "actions": [
+          "SanitasiLahan",
+          "PenggunaanFungisida",
+          "PenggunaanBakterisida",
+          "PenggunaanPestisidaNabati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_025",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitKudisUbiJalar",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_026",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKudisUbiJalar",
+        "actions": [
+          "PenggunaanEkstrakTanaman",
+          "PenggunaanFungisida",
+          "PenggunaanPestisidaNabati"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_026",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_027",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakKuningUbiJalar",
+        "actions": [
+          "PenggunaanVarietasTahan",
+          "SanitasiLahan",
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_027",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBusukHitamBlackRotUbiJalar",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_027",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_044",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBusukHitamBlackRotUbiJalar",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_044",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBusukHitamBlackRotUbiJalar",
+        "actions": [
+          "PerlakuanKimiaTanah"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_044",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitHawarDaunJagung",
+        "actions": [
+          "SanitasiLahan",
+          "PengelolaanGulma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_044",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarDaunJagung",
+        "actions": [
+          "SanitasiLahan",
+          "PengelolaanGulma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_044",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitHawarDaunJagung",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_044",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_044",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_044",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_045",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitHawarDaunJagung",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_045",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitHawarDaunJagung",
+        "actions": [
+          "PenggunaanTrichoderma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_045",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKaratDaunJagung",
+        "actions": [
+          "SanitasiLahan",
+          "PengelolaanGulma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitKaratDaunJagung",
+        "actions": [
+          "PengaturanJarakTanam",
+          "PengelolaanGulma",
+          "PengaturanKelembapan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitKaratDaunJagung",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBulaiJagung",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBulaiJagung",
+        "actions": [
+          "PenggunaanFungisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_046",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBulaiJagung",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBulaiJagung",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBulaiJagung",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBulaiJagung",
+        "actions": [
+          "PemupukanBerimbang"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitBulaiJagung",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianBiologis",
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBulaiJagung",
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanPseudomonas"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_046",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitLayuStewartJagung",
+        "actions": [
+          "PerlakuanBenih",
+          "PenggunaanAgensHayati"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_046",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_046",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_047",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuStewartJagung",
+        "actions": [
+          "PenggunaanBacillus"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_047",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_047",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_047",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_047",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuStewartJagung",
+        "actions": [
+          "PerlakuanBenih"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_047",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_047",
-        "classes": [],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_047",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitLayuStewartJagung",
+        "actions": [
+          "SanitasiLahan",
+          "PengelolaanGulma"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_047",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuStewartJagung",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_047",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitLayuStewartJagung",
+        "actions": [
+          "PenggunaanInsektisida"
         ],
-        "category": "",
-        "source": "DOC002"
-      },
-      {
-        "disease_id": "DIS_048",
-        "classes": [],
         "category": "",
         "source": "DOC002"
       },
       {
-        "disease_id": "DIS_118",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKaratDaunKedelai",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "varietas tahan",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_118",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitKaratDaunKedelai",
+        "actions": [
+          "PenggunaanFungisida",
+          "PenggunaanPestisidaNabati"
         ],
         "category": "fungisida nabati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_118",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitKaratDaunKedelai",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "agens hayati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_119",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
+        "actions": [
+          "PenggunaanBenihSehat"
         ],
         "category": "benih sehat",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_119",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
+        "actions": [
+          "PerlakuanBenih"
         ],
         "category": "perlakuan benih",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_119",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "category": "fungisida sintetik",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_120",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitAntraknosaKedelai",
+        "actions": [
+          "PenggunaanBenihSehat"
         ],
         "category": "benih sehat",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_120",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitAntraknosaKedelai",
+        "actions": [
+          "SanitasiLahan"
         ],
         "category": "sanitasi",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_120",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitAntraknosaKedelai",
+        "actions": [
+          "PerlakuanBenih",
+          "PenggunaanTrichoderma",
+          "PenggunaanPseudomonas",
+          "PenggunaanAgensHayati"
         ],
         "category": "agens hayati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_120",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitAntraknosaKedelai",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "rotasi tanaman",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_121",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKaratDaunKacangTanah",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "varietas tahan",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_121",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKaratDaunKacangTanah",
+        "actions": [
+          "SanitasiLahan",
+          "PengelolaanGulma"
         ],
         "category": "sanitasi",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_121",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitKaratDaunKacangTanah",
+        "actions": [
+          "RotasiTanaman"
         ],
         "category": "rotasi tanaman",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_122",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "varietas tahan",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_122",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "actions": [
+          "SanitasiLahan",
+          "RotasiTanaman"
         ],
         "category": "sanitasi dan rotasi",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_123",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitEmbunTepungKacangHijau",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "varietas tahan",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_123",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitEmbunTepungKacangHijau",
+        "actions": [
+          "PenggunaanEkstrakTanaman",
+          "PenggunaanFungisida",
+          "PenggunaanPestisidaNabati"
         ],
         "category": "fungisida nabati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_123",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitEmbunTepungKacangHijau",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "agens hayati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_124",
-        "classes": [
-          "PengendalianKimiawi"
+        "disease": "PenyakitBercakDaunKacangHijau",
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "category": "pestisida nabati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_124",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitBercakDaunKacangHijau",
+        "actions": [
+          "PenggunaanEkstrakTanaman",
+          "PenggunaanPestisidaNabati"
         ],
         "category": "pestisida nabati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_124",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitBercakDaunKacangHijau",
+        "actions": [
+          "PengaturanJarakTanam",
+          "PengelolaanGulma",
+          "PengaturanKelembapan"
         ],
         "category": "kultur teknis",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_125",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitLayuKacangHijau",
+        "actions": [
+          "PenggunaanVarietasTahan"
         ],
         "category": "varietas tahan",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_125",
-        "classes": [
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuKacangHijau",
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "category": "agens hayati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_125",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "disease": "PenyakitLayuKacangHijau",
+        "actions": [
+          "PenggunaanEkstrakTanaman",
+          "PenggunaanPestisidaNabati"
         ],
         "category": "pestisida nabati",
         "source": "DOC005"
       },
       {
-        "disease_id": "DIS_125",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "disease": "PenyakitLayuKacangHijau",
+        "actions": [
+          "SolarisasiTanah"
         ],
         "category": "kultur teknis",
         "source": "DOC005"
@@ -1928,720 +1440,1296 @@
     "chapter": [
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanBakterisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanTrichoderma"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanTrichoderma"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "actions": [
+          "PenerapanPengendalianMekanis"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanEkstrakTanaman",
+          "PenggunaanPestisidaNabati"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanEkstrakTanaman"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanEkstrakTanaman"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanPestisidaNabati"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanFungisida",
+          "PenggunaanInsektisida",
+          "PenggunaanHerbisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanFungisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanAgensHayati",
+          "PenggunaanBiopestisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanBacillus"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanAgensHayati"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanBakterisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanBakterisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianBiologis"
+        "actions": [
+          "PenggunaanBakterisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
-        ],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
-        ],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
-        ],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
-        ],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianBiologis"
-        ],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
-        ],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
-        ],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
-        ],
-        "source": "DOC002"
-      },
-      {
-        "plant": "KacangTanah",
-        "classes": [
-          "PengendalianKimiawi"
+        "actions": [
+          "PenggunaanBakterisida"
         ],
         "source": "DOC002"
       },
       {
         "plant": "UbiKayu",
-        "classes": [],
-        "source": "DOC002"
-      },
-      {
-        "plant": "UbiKayu",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "actions": [
+          "PemupukanBerimbang"
         ],
         "source": "DOC002"
       },
       {
         "plant": "UbiKayu",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "actions": [
+          "PenggunaanVarietasTahan",
+          "RotasiTanaman",
+          "PengaturanJarakTanam",
+          "PengairanDanDrainase"
         ],
         "source": "DOC002"
       },
       {
         "plant": "UbiKayu",
-        "classes": [
-          "PengendalianKimiawi",
-          "PengendalianMekanis"
+        "actions": [
+          "SanitasiLahan",
+          "KarantinaTanaman",
+          "PengumpulanDanPemusnahan"
         ],
         "source": "DOC002"
       },
       {
         "plant": "UbiKayu",
-        "classes": [
-          "PengendalianKulturTeknis"
+        "actions": [
+          "PanenTepatWaktu"
         ],
         "source": "DOC002"
       }
-    ],
-    "unclassified": 82
+    ]
   },
-  "varieties": [
+  "canonical_symptoms": {
+    "used": {
+      "BercakDaun": 23,
+      "KlorosisDaun": 18,
+      "LayuDaun": 12,
+      "HawarDaun": 4,
+      "BusukBatang": 6,
+      "KerdilTanaman": 9,
+      "PertumbuhanTerhambat": 5,
+      "BusukAkar": 5,
+      "MosaikDaun": 5,
+      "PucukMati": 3,
+      "BusukBuah": 1
+    },
+    "total": 222,
+    "canonical_groups": 91,
+    "unmapped": 131
+  },
+  "environment": {
+    "numeric": [
+      {
+        "disease": "PenyakitKaratDaunJagung",
+        "factor": "Suhu",
+        "min": "25.2",
+        "max": "28.8",
+        "value": "",
+        "operator": "range",
+        "unit": "°C"
+      },
+      {
+        "disease": "PenyakitBulaiJagung",
+        "factor": "Suhu",
+        "min": "",
+        "max": "",
+        "value": "24",
+        "operator": "<",
+        "unit": "°C"
+      },
+      {
+        "disease": "PenyakitBulaiJagung",
+        "factor": "Kelembapan",
+        "min": "",
+        "max": "",
+        "value": "90",
+        "operator": ">",
+        "unit": "%"
+      },
+      {
+        "disease": "PenyakitHawarDaunBakteriPadi",
+        "factor": "Suhu",
+        "min": "",
+        "max": "",
+        "value": "55",
+        "operator": "sama dengan",
+        "unit": "°C"
+      },
+      {
+        "disease": "LayuFusariumUbiJalar",
+        "factor": "Suhu",
+        "min": "13",
+        "max": "16",
+        "value": "",
+        "operator": "range",
+        "unit": "°C"
+      },
+      {
+        "disease": "LayuFusariumUbiJalar",
+        "factor": "Kelembapan",
+        "min": "",
+        "max": "",
+        "value": "85",
+        "operator": "sama dengan",
+        "unit": "%"
+      },
+      {
+        "disease": "LayuFusariumUbiJalar",
+        "factor": "Suhu",
+        "min": "29",
+        "max": "32",
+        "value": "",
+        "operator": "range",
+        "unit": "°C"
+      }
+    ],
+    "qualitative": [
+      {
+        "disease": "PenyakitKudisUbiJalar",
+        "condition": "KondisiMusimHujan"
+      },
+      {
+        "disease": "PenyakitKaratDaunJagung",
+        "condition": "KondisiSuhuRendah"
+      },
+      {
+        "disease": "PenyakitKaratDaunKedelai",
+        "condition": "KondisiMusimKemarau"
+      },
+      {
+        "disease": "PenyakitBlasPadi",
+        "condition": "KondisiMusimHujan"
+      },
+      {
+        "disease": "PenyakitRebahKecambahKedelai",
+        "condition": "KondisiMusimHujan"
+      },
+      {
+        "disease": "PenyakitLayuFusariumKedelai",
+        "condition": "KondisiCurahHujanTinggi"
+      },
+      {
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "condition": "KondisiMusimHujan"
+      },
+      {
+        "disease": "PenyakitBelangMottleKacangTanah",
+        "condition": "KondisiMusimKemarau"
+      }
+    ]
+  },
+  "varieties": {
+    "items": [
+      {
+        "local": "VarietasTukadUnda",
+        "name": "Tukad Unda",
+        "plant": "Padi",
+        "disease": "PenyakitTungroPadi"
+      },
+      {
+        "local": "VarietasTukadBalian",
+        "name": "Tukad Balian",
+        "plant": "Padi",
+        "disease": "PenyakitTungroPadi"
+      },
+      {
+        "local": "VarietasKalimas",
+        "name": "Kalimas",
+        "plant": "Padi",
+        "disease": "PenyakitTungroPadi"
+      },
+      {
+        "local": "VarietasBondoyudo",
+        "name": "Bondoyudo",
+        "plant": "Padi",
+        "disease": "PenyakitTungroPadi"
+      },
+      {
+        "local": "VarietasDena1",
+        "name": "Dena 1",
+        "plant": "Kedelai",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "local": "VarietasDevon1",
+        "name": "Devon 1",
+        "plant": "Kedelai",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "local": "VarietasDering1",
+        "name": "Dering 1",
+        "plant": "Kedelai",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "local": "VarietasGrobogan",
+        "name": "Grobogan",
+        "plant": "Kedelai",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "local": "VarietasDega1",
+        "name": "Dega 1",
+        "plant": "Kedelai",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "local": "VarietasAnjasmoro",
+        "name": "Anjasmoro",
+        "plant": "Kedelai",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "local": "VarietasAnjasmoro",
+        "name": "Anjasmoro",
+        "plant": "Kedelai",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "local": "VarietasTanggamus",
+        "name": "Tanggamus",
+        "plant": "Kedelai",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "local": "VarietasKaba",
+        "name": "Kaba",
+        "plant": "Kedelai",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "local": "VarietasSinabung",
+        "name": "Sinabung",
+        "plant": "Kedelai",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "local": "VarietasWilis",
+        "name": "Wilis",
+        "plant": "Kedelai",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "local": "VarietasDena",
+        "name": "Dena",
+        "plant": "Kedelai",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "local": "VarietasMouwebsi",
+        "name": "Mouwebsi",
+        "plant": "UbiJalar",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "local": "VarietasWonembai",
+        "name": "Wonembai",
+        "plant": "UbiJalar",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "local": "VarietasKuyage2",
+        "name": "Kuyage-2",
+        "plant": "UbiJalar",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "local": "VarietasInanwatan4",
+        "name": "Inanwatan-4",
+        "plant": "UbiJalar",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "local": "VarietasAbomourow",
+        "name": "Abomourow",
+        "plant": "UbiJalar",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "local": "VarietasBonsasarai",
+        "name": "Bonsasarai",
+        "plant": "UbiJalar",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "local": "VarietasAsianHoney",
+        "name": "Asian Honey",
+        "plant": "Jagung",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "local": "VarietasPioneer21",
+        "name": "Pioneer 21",
+        "plant": "Jagung",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "local": "VarietasAsianHoney",
+        "name": "Asian Honey",
+        "plant": "Jagung",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "local": "VarietasPioneer21",
+        "name": "Pioneer 21",
+        "plant": "Jagung",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "local": "VarietasPioneer27",
+        "name": "Pioneer 27",
+        "plant": "Jagung",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "local": "VarietasPioneer27",
+        "name": "Pioneer 27",
+        "plant": "Jagung",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "local": "VarietasTakar1",
+        "name": "Takar 1",
+        "plant": "KacangTanah",
+        "disease": "PenyakitKaratDaunKacangTanah"
+      },
+      {
+        "local": "VarietasTakar2",
+        "name": "Takar 2",
+        "plant": "KacangTanah",
+        "disease": "PenyakitKaratDaunKacangTanah"
+      },
+      {
+        "local": "VarietasPanther",
+        "name": "Panther",
+        "plant": "KacangTanah",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "local": "VarietasDomba",
+        "name": "Domba",
+        "plant": "KacangTanah",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "local": "VarietasBison",
+        "name": "Bison",
+        "plant": "KacangTanah",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "local": "VarietasJerapah",
+        "name": "Jerapah",
+        "plant": "KacangTanah",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "local": "VarietasKelinci",
+        "name": "Kelinci",
+        "plant": "KacangTanah",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "local": "VarietasBadak",
+        "name": "Badak",
+        "plant": "KacangTanah",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "local": "VarietasVima4",
+        "name": "Vima 4",
+        "plant": "KacangHijau",
+        "disease": "PenyakitLayuKacangHijau"
+      },
+      {
+        "local": "VarietasVima5",
+        "name": "Vima 5",
+        "plant": "KacangHijau",
+        "disease": "PenyakitLayuKacangHijau"
+      }
+    ],
+    "resistant_links": [
+      {
+        "variety": "VarietasTukadUnda",
+        "disease": "PenyakitTungroPadi"
+      },
+      {
+        "variety": "VarietasTukadBalian",
+        "disease": "PenyakitTungroPadi"
+      },
+      {
+        "variety": "VarietasKalimas",
+        "disease": "PenyakitTungroPadi"
+      },
+      {
+        "variety": "VarietasBondoyudo",
+        "disease": "PenyakitTungroPadi"
+      },
+      {
+        "variety": "VarietasDena1",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "variety": "VarietasDevon1",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "variety": "VarietasDering1",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "variety": "VarietasGrobogan",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "variety": "VarietasDega1",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "variety": "VarietasAnjasmoro",
+        "disease": "PenyakitRebahSemaiKedelai"
+      },
+      {
+        "variety": "VarietasAnjasmoro",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "variety": "VarietasTanggamus",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "variety": "VarietasKaba",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "variety": "VarietasSinabung",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "variety": "VarietasWilis",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "variety": "VarietasDena",
+        "disease": "PenyakitKaratDaunKedelai"
+      },
+      {
+        "variety": "VarietasMouwebsi",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "variety": "VarietasWonembai",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "variety": "VarietasKuyage2",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "variety": "VarietasInanwatan4",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "variety": "VarietasAbomourow",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "variety": "VarietasBonsasarai",
+        "disease": "PenyakitKudisUbiJalar"
+      },
+      {
+        "variety": "VarietasAsianHoney",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "variety": "VarietasPioneer21",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "variety": "VarietasAsianHoney",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "variety": "VarietasTakar1",
+        "disease": "PenyakitKaratDaunKacangTanah"
+      },
+      {
+        "variety": "VarietasTakar2",
+        "disease": "PenyakitKaratDaunKacangTanah"
+      },
+      {
+        "variety": "VarietasPanther",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "variety": "VarietasDomba",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "variety": "VarietasBison",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "variety": "VarietasJerapah",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "variety": "VarietasKelinci",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "variety": "VarietasBadak",
+        "disease": "PenyakitBercakDaunKacangTanah"
+      },
+      {
+        "variety": "VarietasVima4",
+        "disease": "PenyakitLayuKacangHijau"
+      },
+      {
+        "variety": "VarietasVima5",
+        "disease": "PenyakitLayuKacangHijau"
+      }
+    ],
+    "susceptible_links": []
+  },
+  "phases": {
+    "links": [
+      {
+        "disease": "PenyakitHawarPelepahDaunPadi",
+        "phase": "FaseAnakanTanaman"
+      },
+      {
+        "disease": "PenyakitHawarPelepahDaunPadi",
+        "phase": "FaseMatangSusu"
+      },
+      {
+        "disease": "PenyakitBulaiJagung",
+        "phase": "FaseVegetatifUmum"
+      }
+    ]
+  },
+  "pathogen_links": [
     {
-      "local": "VarietasAsianHoney",
-      "name": "Asian Honey",
-      "plant": "Jagung",
-      "disease_ids": [
-        "DIS_046"
-      ],
-      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+      "disease": "PenyakitHawarDaunBakteriPadi",
+      "pathogen": "XanthomonasOryzae",
+      "taxon": "bakteri"
     },
     {
-      "local": "VarietasPioneer21",
-      "name": "Pioneer 21",
-      "plant": "Jagung",
-      "disease_ids": [
-        "DIS_046"
-      ],
-      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+      "disease": "PenyakitBlasPadi",
+      "pathogen": "PyriculariaGrisea",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasPioneer27",
-      "name": "Pioneer 27",
-      "plant": "Jagung",
-      "disease_ids": [
-        "DIS_046"
-      ],
-      "evidence": "Pengendalian penyakit bulai di lapangan dan banyak dilakukan petani dengan menggunakan fungisida sintetik. \n Widiantini et al., (2018) melaporkan bahwa terjadi penurunan keefektifan fungisida yang biasanya digunakan untuk mengendalikan penyakit bulai, yaitu fungisida berbahan aktif metalaksil dan fenamidon . \n Fungisida yang masih dapat digunakan untuk menekan perkecambahan konidia Peronosclerospo"
+      "disease": "PenyakitBlasPadi",
+      "pathogen": "MagnaportheGrisea",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasVima4",
-      "name": "Vima 4",
-      "plant": "KacangHijau",
-      "disease_ids": [
-        "DIS_125"
-      ],
-      "evidence": "Balitkabi (2017) menginfokan varietas Vima 4 dan Vima 5 memiliki sifat agak tahan terhadap infeksi patogen tular tanah. \n agens hayati merupakan salah satu alternatif pengendalian yang banyak dianjurkan. \n Produk pestisida nabati yang dapat dimanfaatkan seperti ekstrak daun sirih. \n Pengendalian S. rolfsii dapat dilakukan dengan perlakuan kultur teknis, seperti pengolahan tanah, pemberian kompos, "
+      "disease": "PenyakitBlasPadi",
+      "pathogen": "PyriculariaOryzae",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasVima5",
-      "name": "Vima 5",
-      "plant": "KacangHijau",
-      "disease_ids": [
-        "DIS_125"
-      ],
-      "evidence": "Balitkabi (2017) menginfokan varietas Vima 4 dan Vima 5 memiliki sifat agak tahan terhadap infeksi patogen tular tanah. \n agens hayati merupakan salah satu alternatif pengendalian yang banyak dianjurkan. \n Produk pestisida nabati yang dapat dimanfaatkan seperti ekstrak daun sirih. \n Pengendalian S. rolfsii dapat dilakukan dengan perlakuan kultur teknis, seperti pengolahan tanah, pemberian kompos, "
+      "disease": "PenyakitHawarPelepahDaunPadi",
+      "pathogen": "RhizoctoniaSolani",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasBadak",
-      "name": "Badak",
-      "plant": "KacangTanah",
-      "disease_ids": [
-        "DIS_122"
-      ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "disease": "PenyakitTungroPadi",
+      "pathogen": "RiceTungroBacilliforVirus",
+      "taxon": "virus"
     },
     {
-      "local": "VarietasBison",
-      "name": "Bison",
-      "plant": "KacangTanah",
-      "disease_ids": [
-        "DIS_122"
-      ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "disease": "PenyakitTungroPadi",
+      "pathogen": "RiceTungroSphericalVirus",
+      "taxon": "virus"
     },
     {
-      "local": "VarietasDomba",
-      "name": "Domba",
-      "plant": "KacangTanah",
-      "disease_ids": [
-        "DIS_122"
-      ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "disease": "PenyakitRebahSemaiKedelai",
+      "pathogen": "SclerotiumRolfsii",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasJerapah",
-      "name": "Jerapah",
-      "plant": "KacangTanah",
-      "disease_ids": [
-        "DIS_122"
-      ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "disease": "PenyakitRebahKecambahKedelai",
+      "pathogen": "RhizoctoniaSolani",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasKelinci",
-      "name": "Kelinci",
-      "plant": "KacangTanah",
-      "disease_ids": [
-        "DIS_122"
-      ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "disease": "PenyakitLayuFusariumKedelai",
+      "pathogen": "FusariumSpp",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasPanther",
-      "name": "Panther",
-      "plant": "KacangTanah",
-      "disease_ids": [
-        "DIS_122"
-      ],
-      "evidence": "Beberapa varietas kacang tanah di Balitkabi memiliki sifat tahan terhadap bercak daun yakni varietas Panther dan Domba, sedangkan yang agak tahan adalah Bison, Jerapah, Kelinci, dan Badak (Purnomo et al. 2004). \n Sifat cendawan yang dapat bertahan hidup di dalam tanah dalam periode waktu yang lama (3-4 tahun) mengharuskan pengelolaan yang baik pada lahan (Hagan 1998), salah satunya adalah sanitasi"
+      "disease": "PenyakitKaratDaunKedelai",
+      "pathogen": "PhakopsporaPachyrhizi",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasTakar1",
-      "name": "Takar 1",
-      "plant": "KacangTanah",
-      "disease_ids": [
-        "DIS_121"
-      ],
-      "evidence": "Varietas unggul baru kacang tanah tahan penyakit karat adalah Takar 1 dan Takar 2. \n Sanitasi lingkungan di sekitar pertanaman kacang tanah diperlukan untuk mengantisipasi adanya sumber inokulum dari volunter kacang tanah dan gulma sebagai inang alternatifnya. \n Rotasi tanaman untuk mengurangi populasi inokulum awal. \n Gejala awal penyakit karat di kacang tanah ditandai dengan munculnya bercak klo"
+      "disease": "PenyakitEmbunTepungPowderyMildewKedelai",
+      "pathogen": "ErysiphaeDiffusa",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasTakar2",
-      "name": "Takar 2",
-      "plant": "KacangTanah",
-      "disease_ids": [
-        "DIS_121"
-      ],
-      "evidence": "Varietas unggul baru kacang tanah tahan penyakit karat adalah Takar 1 dan Takar 2. \n Sanitasi lingkungan di sekitar pertanaman kacang tanah diperlukan untuk mengantisipasi adanya sumber inokulum dari volunter kacang tanah dan gulma sebagai inang alternatifnya. \n Rotasi tanaman untuk mengurangi populasi inokulum awal. \n Gejala awal penyakit karat di kacang tanah ditandai dengan munculnya bercak klo"
+      "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
+      "pathogen": "PeronosporaManshurica",
+      "taxon": "oomycete"
     },
     {
-      "local": "VarietasAnjasmoro",
-      "name": "Anjasmoro",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_006",
-        "DIS_009"
-      ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "disease": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+      "pathogen": "CercosporaSojina",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasDega1",
-      "name": "Dega 1",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_006"
-      ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "disease": "PenyakitAntraknosaKedelai",
+      "pathogen": "Colletotrichum",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasDena",
-      "name": "Dena",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_009"
-      ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "disease": "PenyakitBercakTargetKedelai",
+      "pathogen": "CorynesporaCassiicola",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasDena1",
-      "name": "Dena 1",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_006"
-      ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "disease": "PenyakitBercakBijiUnguKedelai",
+      "pathogen": "CercosporaKikuchii",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasDering1",
-      "name": "Dering 1",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_006"
-      ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "disease": "PenyakitHawarBakteriBacterialBlightKedelai",
+      "pathogen": "PseudomonasSyringae",
+      "taxon": "bakteri"
     },
     {
-      "local": "VarietasDevon1",
-      "name": "Devon 1",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_006"
-      ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "disease": "PenyakitBakteriPustulKedelai",
+      "pathogen": "XanthomonasAxonopodis",
+      "taxon": "bakteri"
     },
     {
-      "local": "VarietasGrobogan",
-      "name": "Grobogan",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_006"
-      ],
-      "evidence": "rolfsii dengan rotasi atau pergiliran tanaman di lahan kurang efektif. \n rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, Cruciferaceae, Cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (Sumartini, 2012). \n Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif. \n Hasil penelitian yang dilakukan oleh Fitria a"
+      "disease": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
+      "pathogen": "SoybeanMosaicVirus",
+      "taxon": "virus"
     },
     {
-      "local": "VarietasKaba",
-      "name": "Kaba",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_009"
-      ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+      "pathogen": "CowpeaMildMottleVirus",
+      "taxon": "virus"
     },
     {
-      "local": "VarietasSinabung",
-      "name": "Sinabung",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_009"
-      ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "disease": "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
+      "pathogen": "SoybeanStuntVirus",
+      "taxon": "virus"
     },
     {
-      "local": "VarietasTanggamus",
-      "name": "Tanggamus",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_009"
-      ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "disease": "PenyakitBercakDaunKacangTanah",
+      "pathogen": "CercosporaArachidicola",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasWilis",
-      "name": "Wilis",
-      "plant": "Kedelai",
-      "disease_ids": [
-        "DIS_009"
-      ],
-      "evidence": "Pengendalian dapat dilakukan dengan menanam varietas kedelai yang tahan terhadap penyakit karat daun. \n Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. \n Beberapa varietas yang agak tahan terhadap patogen P. \n pachyrhizi adalah varietas Anjasmoro, Tanggamus, Kaba, dan Sinabung yang diketahui tingkat ketahanan agak tahan. \n Pemanfaatan minyak cengke"
+      "disease": "PenyakitBercakDaunKacangTanah",
+      "pathogen": "PucciniaArachidis",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasBondoyudo",
-      "name": "Bondoyudo",
-      "plant": "Padi",
-      "disease_ids": [
-        "DIS_004"
-      ],
-      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+      "disease": "PenyakitLayuBakteriKacangTanah",
+      "pathogen": "RalstoniaSolanacearum",
+      "taxon": "bakteri"
     },
     {
-      "local": "VarietasKalimas",
-      "name": "Kalimas",
-      "plant": "Padi",
-      "disease_ids": [
-        "DIS_004"
-      ],
-      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+      "disease": "LayuFusariumUbiJalar",
+      "pathogen": "FusariumOxysporum",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasTukadBalian",
-      "name": "Tukad Balian",
-      "plant": "Padi",
-      "disease_ids": [
-        "DIS_004"
-      ],
-      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+      "disease": "PenyakitKudisUbiJalar",
+      "pathogen": "SpacelomaBatatas",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasTukadUnda",
-      "name": "Tukad Unda",
-      "plant": "Padi",
-      "disease_ids": [
-        "DIS_004"
-      ],
-      "evidence": "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005). \n Kemudian sanitasi dari keberadaan gulma, singgang, dan ceceran gabah yang dap"
+      "disease": "PenyakitKudisUbiJalar",
+      "pathogen": "ElsinoeBatatas",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasAbomourow",
-      "name": "Abomourow",
-      "plant": "UbiJalar",
-      "disease_ids": [
-        "DIS_025"
-      ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "disease": "PenyakitBercakKuningUbiJalar",
+      "pathogen": "SweetPotatoFeatheryMottleVirus",
+      "taxon": "virus"
     },
     {
-      "local": "VarietasBonsasarai",
-      "name": "Bonsasarai",
-      "plant": "UbiJalar",
-      "disease_ids": [
-        "DIS_025"
-      ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "disease": "PenyakitBercakKuningUbiJalar",
+      "pathogen": "SweetPotatoMildMottleVirus",
+      "taxon": "virus"
     },
     {
-      "local": "VarietasInanwatan4",
-      "name": "Inanwatan-4",
-      "plant": "UbiJalar",
-      "disease_ids": [
-        "DIS_025"
-      ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "disease": "PenyakitBercakKuningUbiJalar",
+      "pathogen": "SweetPotatoChloroticFleckVirus",
+      "taxon": "virus"
     },
     {
-      "local": "VarietasKuyage2",
-      "name": "Kuyage-2",
-      "plant": "UbiJalar",
-      "disease_ids": [
-        "DIS_025"
-      ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "disease": "PenyakitBusukHitamBlackRotUbiJalar",
+      "pathogen": "CeratocystisFimbriata",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasMouwebsi",
-      "name": "Mouwebsi",
-      "plant": "UbiJalar",
-      "disease_ids": [
-        "DIS_025"
-      ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "disease": "PenyakitHawarDaunJagung",
+      "pathogen": "HelminthosporiumMaydis",
+      "taxon": "jamur"
     },
     {
-      "local": "VarietasWonembai",
-      "name": "Wonembai",
-      "plant": "UbiJalar",
-      "disease_ids": [
-        "DIS_025"
-      ],
-      "evidence": "Pengendalian penyakit kudis dapat dilakukan secara terpadu di antaranya menggunakan varietas ubi jalar yang tahan, penggunaan bibit yang sehat, rotasi tanaman dengan tanaman lain yang bukan inang dari S. \n batatas misalnya jagung, padi, kacang-kacangan, penanaman varietas campuran misalnya varietas yang tahan dengan yang agak tahan, sanitasi lahan dengan cara membakar atau mengubur dalam tanah sis"
+      "disease": "PenyakitKaratDaunJagung",
+      "pathogen": "PucciniaPolysora",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitBulaiJagung",
+      "pathogen": "PeronosclerosporaSp",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitBulaiJagung",
+      "pathogen": "PeronosclerosporaMaydis",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitLayuStewartJagung",
+      "pathogen": "PantoeaStewartii",
+      "taxon": "bakteri"
+    },
+    {
+      "disease": "PenyakitBusukPelepahJagung",
+      "pathogen": "RhizoctoniaSolani",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "BercakDaunCoklatUbiKayu",
+      "pathogen": "CercosporaHenningsii",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BercakDaunCoklatUbiKayu",
+      "pathogen": "CercosporidiumHenningsii",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BercakDaunBaurUbiKayu",
+      "pathogen": "CercosporaViscosae",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BercakDaunPutihUbiKayu",
+      "pathogen": "PhaeoramulariaManihotis",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "AntraknosaUbiKayuDaun",
+      "pathogen": "ColletotricumSpp",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "HawarDaunBakteriUbiKayu",
+      "pathogen": "XanthomonasCampestrispvManihotis",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "SapuSetanWitchesBroomUbiKayu",
+      "pathogen": "PatogenFitoplasma",
+      "taxon": "fitoplasma"
+    },
+    {
+      "disease": "CassavaMosaicBegomovirusCMBsUbiKayu",
+      "pathogen": "Begomovirus",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "CassavaBrownStreakDiseaseCBSDUbiKayu",
+      "pathogen": "Ipomovirus",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "HawarBakteriUbiKayu",
+      "pathogen": "XanthomonasCampestrisPvManihotis",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "SuperelongasiUbiKayu",
+      "pathogen": "ElsinoeBrasiliensis",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "TanamanKerdilStuntUbiKayu",
+      "pathogen": "Begomovirus",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BusukPangkalBatangUbiKayu",
+      "pathogen": "FusariumSpp",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "BusukPangkalBatangUbiKayu",
+      "pathogen": "DiplodiaSpp",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BusukPangkalBatangUbiKayu",
+      "pathogen": "BotryodiplodiaSpp",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BusukPangkalBatangUbiKayu",
+      "pathogen": "SclerotiumRolfsii",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "BusukPangkalBatangUbiKayu",
+      "pathogen": "PhytophthoraSpp",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BusukAkarDanUmbiUbiKayu",
+      "pathogen": "DiplodiaSpp",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BusukAkarDanUmbiUbiKayu",
+      "pathogen": "BotryodiplodiaSpp",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BusukAkarDanUmbiUbiKayu",
+      "pathogen": "SclerotiumRolfsii",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "BusukAkarDanUmbiUbiKayu",
+      "pathogen": "PhytophthoraSpp",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "BusukUmbiUbiKayu",
+      "pathogen": "FusariumSpp",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "BusukAkarUbiKayu",
+      "pathogen": "PolyporusSulphureus",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "AntraknosaUbiKayuBatang",
+      "pathogen": "CollectothricumGloeosporioides",
+      "taxon": "unknown"
+    },
+    {
+      "disease": "PenyakitKaratDaunKedelai",
+      "pathogen": "PhakopsoraPachyrhizi",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitKaratDaunKedelai",
+      "pathogen": "PhakopsoraMeibomiae",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
+      "pathogen": "PeronosporaManshurica",
+      "taxon": "oomycete"
+    },
+    {
+      "disease": "PenyakitAntraknosaKedelai",
+      "pathogen": "ColletotrichumTruncatum",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitKaratDaunKacangTanah",
+      "pathogen": "PucciniaArachidis",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitBercakDaunKacangTanah",
+      "pathogen": "CercosporaArachidicola",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitBercakDaunKacangTanah",
+      "pathogen": "CercosporaPersonata",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitEmbunTepungKacangHijau",
+      "pathogen": "ErysiphePolygoni",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitBercakDaunKacangHijau",
+      "pathogen": "CercosporaCanescens",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitBercakDaunKacangHijau",
+      "pathogen": "CercosporaCruenta",
+      "taxon": "jamur"
+    },
+    {
+      "disease": "PenyakitLayuKacangHijau",
+      "pathogen": "SclerotiumRolfsii",
+      "taxon": "jamur"
     }
   ],
-  "phases": [
+  "part_links": [
     {
-      "local": "FaseAnakan",
-      "label": "Fase anakan"
+      "disease": "PenyakitKaratDaunKedelai",
+      "part": "Daun"
     },
     {
-      "local": "FaseMatangSusu",
-      "label": "Fase matang susu"
+      "disease": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+      "part": "Daun"
     },
     {
-      "local": "FaseVegetatif",
-      "label": "Fase vegetatif"
+      "disease": "PenyakitBercakBijiUnguKedelai",
+      "part": "Biji"
+    },
+    {
+      "disease": "BercakDaunCoklatUbiKayu",
+      "part": "Daun"
+    },
+    {
+      "disease": "BercakDaunBaurUbiKayu",
+      "part": "Daun"
+    },
+    {
+      "disease": "BercakDaunPutihUbiKayu",
+      "part": "Daun"
+    },
+    {
+      "disease": "AntraknosaUbiKayuDaun",
+      "part": "Daun"
+    },
+    {
+      "disease": "HawarDaunBakteriUbiKayu",
+      "part": "Daun"
+    },
+    {
+      "disease": "SapuSetanWitchesBroomUbiKayu",
+      "part": "Daun"
+    },
+    {
+      "disease": "CassavaMosaicBegomovirusCMBsUbiKayu",
+      "part": "Daun"
+    },
+    {
+      "disease": "CassavaBrownStreakDiseaseCBSDUbiKayu",
+      "part": "Daun"
+    },
+    {
+      "disease": "HawarBakteriUbiKayu",
+      "part": "Batang"
+    },
+    {
+      "disease": "SuperelongasiUbiKayu",
+      "part": "Batang"
+    },
+    {
+      "disease": "TanamanKerdilStuntUbiKayu",
+      "part": "Batang"
+    },
+    {
+      "disease": "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
+      "part": "Batang"
+    },
+    {
+      "disease": "BusukPangkalBatangUbiKayu",
+      "part": "Batang"
+    },
+    {
+      "disease": "BusukAkarDanUmbiUbiKayu",
+      "part": "Akar"
+    },
+    {
+      "disease": "BusukAkarDanUmbiUbiKayu",
+      "part": "Umbi"
+    },
+    {
+      "disease": "BusukUmbiUbiKayu",
+      "part": "Akar"
+    },
+    {
+      "disease": "BusukUmbiUbiKayu",
+      "part": "Umbi"
+    },
+    {
+      "disease": "BusukAkarUbiKayu",
+      "part": "Akar"
+    },
+    {
+      "disease": "BusukAkarUbiKayu",
+      "part": "Umbi"
+    },
+    {
+      "disease": "PenyakitHawarDaunJagung",
+      "part": "Daun"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "part": "Daun"
+    },
+    {
+      "disease": "AntraknosaUbiKayuBatang",
+      "part": "Batang"
     }
   ],
-  "environment": [
-    {
-      "local": "KondisiKelembapanTinggi",
-      "class": "KelembapanTinggi",
-      "label": "Kelembapan tinggi"
+  "data_quality": {
+    "fragment_quotes": 209,
+    "unmapped_symptoms": 131,
+    "unmapped_controls": 108,
+    "unknown_pathogens": 15,
+    "diseases_without_explicit_part": 31,
+    "diseases_without_pathogen": [
+      "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
+      "PenyakitBelangMottleKacangTanah",
+      "PenyakitKerdilRumputDanKerdilHampaPadi"
+    ],
+    "diseases_without_control": [
+      "AntraknosaUbiKayuBatang",
+      "AntraknosaUbiKayuDaun",
+      "BercakDaunBaurUbiKayu",
+      "BercakDaunCoklatUbiKayu",
+      "BercakDaunPutihUbiKayu",
+      "BusukAkarDanUmbiUbiKayu",
+      "BusukAkarUbiKayu",
+      "BusukPangkalBatangUbiKayu",
+      "BusukUmbiUbiKayu",
+      "CassavaBrownStreakDiseaseCBSDUbiKayu",
+      "CassavaMosaicBegomovirusCMBsUbiKayu",
+      "HawarBakteriUbiKayu",
+      "HawarDaunBakteriUbiKayu",
+      "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
+      "PenyakitBusukPelepahJagung",
+      "SapuSetanWitchesBroomUbiKayu",
+      "SuperelongasiUbiKayu",
+      "TanamanKerdilStuntUbiKayu"
+    ],
+    "diseases_without_environment": [
+      "AntraknosaUbiKayuBatang",
+      "AntraknosaUbiKayuDaun",
+      "BercakDaunBaurUbiKayu",
+      "BercakDaunCoklatUbiKayu",
+      "BercakDaunPutihUbiKayu",
+      "BusukAkarDanUmbiUbiKayu",
+      "BusukAkarUbiKayu",
+      "BusukPangkalBatangUbiKayu",
+      "BusukUmbiUbiKayu",
+      "CassavaBrownStreakDiseaseCBSDUbiKayu",
+      "CassavaMosaicBegomovirusCMBsUbiKayu",
+      "HawarBakteriUbiKayu",
+      "HawarDaunBakteriUbiKayu",
+      "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
+      "PenyakitAntraknosaKedelai",
+      "PenyakitBakteriPustulKedelai",
+      "PenyakitBercakBijiUnguKedelai",
+      "PenyakitBercakDaunKacangHijau",
+      "PenyakitBercakDaunKacangTanah",
+      "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+      "PenyakitBercakKuningUbiJalar",
+      "PenyakitBercakTargetKedelai",
+      "PenyakitBusukHitamBlackRotUbiJalar",
+      "PenyakitBusukPelepahJagung",
+      "PenyakitEmbunPalsuDownyMildewKedelai",
+      "PenyakitEmbunTepungKacangHijau",
+      "PenyakitEmbunTepungPowderyMildewKedelai",
+      "PenyakitHawarBakteriBacterialBlightKedelai",
+      "PenyakitHawarDaunJagung",
+      "PenyakitHawarPelepahDaunPadi",
+      "PenyakitKaratDaunKacangTanah",
+      "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
+      "PenyakitKerdilRumputDanKerdilHampaPadi",
+      "PenyakitLayuBakteriKacangTanah",
+      "PenyakitLayuKacangHijau",
+      "PenyakitLayuStewartJagung",
+      "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
+      "PenyakitRebahSemaiKedelai",
+      "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+      "PenyakitTungroPadi",
+      "SapuSetanWitchesBroomUbiKayu",
+      "SuperelongasiUbiKayu",
+      "TanamanKerdilStuntUbiKayu"
+    ],
+    "diseases_without_scientific_name": []
+  },
+  "coverage": {
+    "Padi": {
+      "diseases": 5,
+      "symptoms": 32,
+      "controls": 29
     },
-    {
-      "local": "KondisiSuhu",
-      "class": "Suhu",
-      "label": "Suhu"
+    "Kedelai": {
+      "diseases": 15,
+      "symptoms": 94,
+      "controls": 82
     },
-    {
-      "local": "KondisiCurahHujan",
-      "class": "CurahHujan",
-      "label": "Curah hujan"
+    "Jagung": {
+      "diseases": 5,
+      "symptoms": 30,
+      "controls": 36
     },
-    {
-      "local": "KondisiMusimHujan",
-      "class": "MusimHujan",
-      "label": "Musim hujan"
+    "UbiJalar": {
+      "diseases": 4,
+      "symptoms": 23,
+      "controls": 14
     },
-    {
-      "local": "KondisiMusimKemarau",
-      "class": "MusimKemarau",
-      "label": "Musim kemarau"
+    "UbiKayu": {
+      "diseases": 17,
+      "symptoms": 17,
+      "controls": 0
+    },
+    "KacangTanah": {
+      "diseases": 4,
+      "symptoms": 37,
+      "controls": 86
+    },
+    "KacangHijau": {
+      "diseases": 3,
+      "symptoms": 7,
+      "controls": 10
     }
-  ],
-  "environment_links": [
-    {
-      "disease_id": "DIS_001",
-      "env": "KondisiSuhu"
-    },
-    {
-      "disease_id": "DIS_002",
-      "env": "KondisiMusimHujan"
-    },
-    {
-      "disease_id": "DIS_007",
-      "env": "KondisiMusimHujan"
-    },
-    {
-      "disease_id": "DIS_008",
-      "env": "KondisiCurahHujan"
-    },
-    {
-      "disease_id": "DIS_022",
-      "env": "KondisiMusimHujan"
-    },
-    {
-      "disease_id": "DIS_022",
-      "env": "KondisiMusimKemarau"
-    },
-    {
-      "disease_id": "DIS_024",
-      "env": "KondisiSuhu"
-    },
-    {
-      "disease_id": "DIS_025",
-      "env": "KondisiMusimHujan"
-    },
-    {
-      "disease_id": "DIS_044",
-      "env": "KondisiKelembapanTinggi"
-    },
-    {
-      "disease_id": "DIS_045",
-      "env": "KondisiKelembapanTinggi"
-    },
-    {
-      "disease_id": "DIS_045",
-      "env": "KondisiSuhu"
-    },
-    {
-      "disease_id": "DIS_046",
-      "env": "KondisiSuhu"
-    },
-    {
-      "disease_id": "DIS_118",
-      "env": "KondisiMusimKemarau"
-    }
-  ],
-  "summary": {
-    "plants": 7,
-    "diseases": 57,
-    "symptom_pairs": 240,
-    "pathogen_pairs": 73,
-    "control_pairs_disease": 257,
-    "control_pairs_chapter": 45,
-    "bagian_pairs": 53
   }
 }
