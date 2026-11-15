@@ -1,0 +1,29 @@
+# Konfigurasi Fuseki untuk KBR Kelompok 5.
+#
+# Jalankan dari folder 06_backend/fuseki-config agar lokasi dataset relatif
+# "../fuseki-data" menunjuk ke 06_backend/fuseki-data:
+#
+#   java -cp <fuseki-server.jar> org.apache.jena.fuseki.main.cmds.FusekiServerCmd \
+#        --config config.ttl --port=3030 --localhost
+#
+# Service ini READ-ONLY: hanya query/SPARQL dan read graph store. Tidak ada
+# endpoint update. Gunakan scripts/load-ontology.ps1 untuk memuat ontology.
+
+@prefix fuseki: <http://jena.apache.org/fuseki#> .
+@prefix ja:     <http://jena.hpl.hp.com/2005/11/Assembler#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tdb2:   <http://jena.apache.org/2016/tdb#> .
+
+<#service> a fuseki:Service ;
+    fuseki:name "plant-kb" ;
+    fuseki:serviceQuery "query", "sparql" ;
+    fuseki:serviceReadGraphStore "get", "data" ;
+    fuseki:dataset <#dataset> .
+
+<#dataset> a tdb2:DatasetTDB2 ;
+    tdb2:location "../fuseki-data" ;
+    ja:context [
+        ja:cxtName "arq:queryTimeout" ;
+        ja:cxtValue "10000"
+    ] .
