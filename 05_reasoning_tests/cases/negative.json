@@ -1,0 +1,51 @@
+[
+  {
+    "id": "NEG-PLANT-01",
+    "type": "negative",
+    "plantId": "TidakAda",
+    "symptomIds": ["PengamatanPenyakitBlasPadiBercakDaun"],
+    "expectedStatus": 404,
+    "expectedErrorCode": "NOT_FOUND",
+    "notes": "tanaman tidak dikenal"
+  },
+  {
+    "id": "NEG-SYMPTOM-01",
+    "type": "negative",
+    "plantId": "Padi",
+    "symptomIds": ["PengamatanPenyakitKaratDaunKedelaiBercakDaun"],
+    "expectedStatus": 400,
+    "expectedErrorCode": "INVALID_REQUEST",
+    "notes": "gejala milik tanaman lain"
+  },
+  {
+    "id": "NEG-EMPTY-01",
+    "type": "negative",
+    "plantId": "Padi",
+    "symptomIds": [],
+    "expectedStatus": 400,
+    "expectedErrorCode": "INVALID_REQUEST",
+    "notes": "symptomIds kosong"
+  },
+  {
+    "id": "NEG-TOPN-01",
+    "type": "negative",
+    "plantId": "Padi",
+    "symptomIds": ["PengamatanPenyakitBlasPadiBercakDaun"],
+    "topN": 0,
+    "expectedStatus": 400,
+    "expectedErrorCode": "INVALID_REQUEST",
+    "notes": "topN di luar 1-10"
+  },
+  {
+    "id": "NEG-DUP-01",
+    "type": "negative",
+    "plantId": "Padi",
+    "symptomIds": [
+      "PengamatanPenyakitBlasPadiBercakDaun",
+      "PengamatanPenyakitBlasPadiBercakDaun"
+    ],
+    "expectedStatus": 200,
+    "expectedWarning": "DUPLICATE_SYMPTOM_IDS_IGNORED",
+    "notes": "duplikat dihapus dengan warning"
+  }
+]

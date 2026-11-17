@@ -1,6 +1,13 @@
 import { Router } from "express";
+
 import { fusekiConfig } from "../config/fuseki.js";
-import { fail, meta, ok } from "../lib/response.js";
+import { fail, meta, ok, requestIdOf } from "../lib/response.js";
+import {
+  getOntologyHealth,
+  type OntologyChecks,
+  type OntologyHealth,
+  type OntologyHealthStatus,
+} from "../services/ontology-health.service.js";
 import {
   ask,
   requireIntegerTerm,
@@ -14,6 +21,12 @@ interface DependencyStatus {
   detail: string | null;
   ontologyVersion: string | null;
   checksum: string | null;
+}
+
+interface OntologyDependencyStatus extends DependencyStatus {
+  ontologyStatus: OntologyHealthStatus;
+  checks: OntologyChecks | null;
+  warnings: string[];
 }
 
 const router = Router();
@@ -67,22 +80,53 @@ router.get("/fuseki", async (_req, res) => {
   }
 });
 
+/**
+ * Diagnostik tiga sumber ontology:
+ * file di disk, Java (checksum yang dimuat), dan Fuseki (fingerprint data).
+ *
+ * Endpoint ini selalu 200 selama service bisa menjawab; keputusan readiness
+ * ada di /api/health/ready.
+ */
+router.get("/ontology", async (_req, res) => {
+  try {
+    const health = await getOntologyHealth(requestIdOf(res));
+    res.status(200).json(ok(res, health));
+  } catch (error) {
+    res
+      .status(503)
+      .json(
+        fail(res, "ONTOLOGY_HEALTH_UNAVAILABLE", messageOf(error))
+      );
+  }
+});
+
 router.get("/ready", async (_req, res) => {
   const startedAt = Date.now();
+  const requestId = requestIdOf(res);
 
-  const [fusekiResult, reasoningResult] = await Promise.allSettled([
-    checkFuseki(),
-    checkReasoning(),
-  ]);
+  const [fusekiResult, reasoningResult, ontologyResult] =
+    await Promise.allSettled([
+      checkFuseki(),
+      checkReasoning(requestId),
+      getOntologyHealth(requestId),
+    ]);
+
+  const ontology = ontologyResultOf(ontologyResult, startedAt);
 
   const dependencies = {
     fuseki: resultOf(fusekiResult),
     reasoning: resultOf(reasoningResult),
+    ontology,
   };
 
   const ready =
     dependencies.fuseki.status === "UP" &&
-    dependencies.reasoning.status === "UP";
+    dependencies.reasoning.status === "UP" &&
+    dependencies.ontology.status === "UP";
+
+  const mismatch =
+    ontologyResult.status === "fulfilled" &&
+    ontologyResult.value.status === "MISMATCH";
 
   const body = {
     success: ready,
@@ -95,8 +139,10 @@ router.get("/ready", async (_req, res) => {
       ? {}
       : {
           error: {
-            code: "DEPENDENCY_UNAVAILABLE",
-            message: "Satu atau lebih dependency belum siap",
+            code: mismatch ? "ONTOLOGY_MISMATCH" : "DEPENDENCY_UNAVAILABLE",
+            message: mismatch
+              ? "Checksum ontology tidak cocok dengan file yang dimuat Java"
+              : "Satu atau lebih dependency belum siap",
             details: null,
           },
         }),
@@ -123,11 +169,13 @@ async function checkFuseki(): Promise<DependencyStatus> {
   }
 }
 
-async function checkReasoning(): Promise<DependencyStatus> {
+async function checkReasoning(
+  requestId?: string
+): Promise<DependencyStatus> {
   const startedAt = Date.now();
 
   try {
-    const status = await getReasoningStatus();
+    const status = await getReasoningStatus(requestId);
     return {
       status: status.ready ? "UP" : "DOWN",
       latencyMs: Date.now() - startedAt,
@@ -138,6 +186,41 @@ async function checkReasoning(): Promise<DependencyStatus> {
   } catch (error) {
     return down(startedAt, messageOf(error));
   }
+}
+
+function ontologyResultOf(
+  result: PromiseSettledResult<OntologyHealth>,
+  startedAt: number
+): OntologyDependencyStatus {
+  if (result.status === "rejected") {
+    return {
+      status: "DOWN",
+      latencyMs: Date.now() - startedAt,
+      detail: messageOf(result.reason),
+      ontologyVersion: null,
+      checksum: null,
+      ontologyStatus: "DOWN",
+      checks: null,
+      warnings: [],
+    };
+  }
+
+  const health = result.value;
+  const up = health.status === "OK" || health.status === "UNKNOWN";
+
+  return {
+    status: up ? "UP" : "DOWN",
+    latencyMs: Date.now() - startedAt,
+    detail:
+      health.status === "OK"
+        ? null
+        : health.warnings.join("; ") || `Status ontology: ${health.status}`,
+    ontologyVersion: health.java?.version ?? null,
+    checksum: health.java?.checksum ?? null,
+    ontologyStatus: health.status,
+    checks: health.checks,
+    warnings: health.warnings,
+  };
 }
 
 function down(startedAt: number, detail: string): DependencyStatus {
@@ -160,7 +243,10 @@ function resultOf(
 }
 
 function messageOf(error: unknown): string {
-  return error instanceof Error ? error.message : String(error);
+  if (error instanceof Error) {
+    return error.message;
+  }
+  return String(error);
 }
 
 export default router;

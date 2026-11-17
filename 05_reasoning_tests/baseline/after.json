@@ -1,0 +1,560 @@
+﻿[
+    {
+        "id":  "PADI-BLAS-01",
+        "note":  "3 gejala khas Blas",
+        "request":  {
+                        "symptomIds":  [
+                                           "PengamatanPenyakitBlasPadiBercakDaun",
+                                           "PengamatanPenyakitBlasPadiKhasMalai",
+                                           "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                       ],
+                        "plantId":  "Padi",
+                        "topN":  5
+                    },
+        "message":  "Ditemukan 4 kandidat penyakit berdasarkan gejala yang dipilih.",
+        "reasoning":  {
+                          "status":  "UP",
+                          "modelVersion":  "forward-chaining-cf-v1",
+                          "ontologyVersion":  "17cabff2112e",
+                          "checksum":  "17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90",
+                          "categoryCounts":  {
+                                                 "PenyakitVirus":  5,
+                                                 "PenyakitJamur":  26,
+                                                 "PenyakitNematoda":  0,
+                                                 "PenyakitOomycete":  1,
+                                                 "PenyakitBakteri":  5,
+                                                 "PenyakitLainnya":  0,
+                                                 "PenyakitFitoplasma":  1
+                                             }
+                      },
+        "warnings":  [
+                         "DISEASE_CATEGORY_UNCLASSIFIED"
+                     ],
+        "candidates":  [
+                           {
+                               "diseaseId":  "PenyakitBlasPadi",
+                               "label":  "Penyakit Blas",
+                               "score":  0.7466,
+                               "confidence":  "TINGGI",
+                               "category":  "PenyakitJamur",
+                               "matchedCount":  3,
+                               "selectedCount":  3,
+                               "totalSymptoms":  6,
+                               "scoreComponents":  {
+                                                       "evidence":  0.9955,
+                                                       "completeness":  1,
+                                                       "coverage":  0.5
+                                                   },
+                               "explanation":  "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitBlasPadiBercakDaun",
+                                                       "PengamatanPenyakitBlasPadiKhasMalai",
+                                                       "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "exact",
+                                                    "ruleId":  "R-EXACT-PenyakitBlasPadi-PengamatanPenyakitBlasPadiBercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitBlasPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitBlasPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.5509,
+                                                    "cfAfter":  0.5509
+                                                },
+                                                {
+                                                    "type":  "exact",
+                                                    "ruleId":  "R-EXACT-PenyakitBlasPadi-PengamatanPenyakitBlasPadiKhasMalai",
+                                                    "symptomId":  "PengamatanPenyakitBlasPadiKhasMalai",
+                                                    "matchedObservationId":  "PengamatanPenyakitBlasPadiKhasMalai",
+                                                    "canonicalSymptomId":  null,
+                                                    "canonicalSymptomLabel":  null,
+                                                    "weight":  0.9,
+                                                    "cfAfter":  0.9551
+                                                },
+                                                {
+                                                    "type":  "exact",
+                                                    "ruleId":  "R-EXACT-PenyakitBlasPadi-PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian",
+                                                    "symptomId":  "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian",
+                                                    "matchedObservationId":  "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian",
+                                                    "canonicalSymptomId":  null,
+                                                    "canonicalSymptomLabel":  null,
+                                                    "weight":  0.9,
+                                                    "cfAfter":  0.9955
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitKerdilRumputDanKerdilHampaPadi",
+                               "label":  "Penyakit Kerdil Rumput dan Kerdil Hampa",
+                               "score":  0.1653,
+                               "confidence":  "RENDAH",
+                               "category":  null,
+                               "matchedCount":  1,
+                               "selectedCount":  3,
+                               "totalSymptoms":  4,
+                               "scoreComponents":  {
+                                                       "evidence":  0.3305,
+                                                       "completeness":  0.3333,
+                                                       "coverage":  0.25
+                                                   },
+                               "explanation":  "1 gejala cocok pada konsep Bercak daun. 2 gejala belum dijelaskan kandidat ini.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitBlasPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+                                                                 "PengamatanPenyakitBlasPadiKhasMalai",
+                                                                 "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitKerdilRumputDanKerdilHampaPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitBlasPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitKerdilRumputDanKerdilHampaPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitHawarPelepahDaunPadi",
+                               "label":  "Penyakit Hawar Pelepah Daun",
+                               "score":  0.1511,
+                               "confidence":  "RENDAH",
+                               "category":  "PenyakitJamur",
+                               "matchedCount":  1,
+                               "selectedCount":  3,
+                               "totalSymptoms":  7,
+                               "scoreComponents":  {
+                                                       "evidence":  0.3305,
+                                                       "completeness":  0.3333,
+                                                       "coverage":  0.1429
+                                                   },
+                               "explanation":  "1 gejala cocok pada konsep Bercak daun. 2 gejala belum dijelaskan kandidat ini.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitBlasPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+                                                                 "PengamatanPenyakitBlasPadiKhasMalai",
+                                                                 "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitHawarPelepahDaunPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitBlasPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitHawarDaunBakteriPadi",
+                               "label":  "Penyakit Hawar Daun Bakteri",
+                               "score":  0.1469,
+                               "confidence":  "RENDAH",
+                               "category":  "PenyakitBakteri",
+                               "matchedCount":  1,
+                               "selectedCount":  3,
+                               "totalSymptoms":  9,
+                               "scoreComponents":  {
+                                                       "evidence":  0.3305,
+                                                       "completeness":  0.3333,
+                                                       "coverage":  0.1111
+                                                   },
+                               "explanation":  "1 gejala cocok pada konsep Bercak daun. 2 gejala belum dijelaskan kandidat ini.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitBlasPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+                                                                 "PengamatanPenyakitBlasPadiKhasMalai",
+                                                                 "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitHawarDaunBakteriPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitBlasPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                }
+                                            ]
+                           }
+                       ]
+    },
+    {
+        "id":  "PADI-BLAS-02",
+        "note":  "1 gejala BercakDaun milik HDB + 2 gejala khas Blas",
+        "request":  {
+                        "symptomIds":  [
+                                           "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                           "PengamatanPenyakitBlasPadiKhasMalai",
+                                           "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                       ],
+                        "plantId":  "Padi",
+                        "topN":  5
+                    },
+        "message":  "Ditemukan 4 kandidat penyakit berdasarkan gejala yang dipilih.",
+        "reasoning":  {
+                          "status":  "UP",
+                          "modelVersion":  "forward-chaining-cf-v1",
+                          "ontologyVersion":  "17cabff2112e",
+                          "checksum":  "17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90",
+                          "categoryCounts":  {
+                                                 "PenyakitVirus":  5,
+                                                 "PenyakitJamur":  26,
+                                                 "PenyakitNematoda":  0,
+                                                 "PenyakitOomycete":  1,
+                                                 "PenyakitBakteri":  5,
+                                                 "PenyakitLainnya":  0,
+                                                 "PenyakitFitoplasma":  1
+                                             }
+                      },
+        "warnings":  [
+                         "DISEASE_CATEGORY_UNCLASSIFIED"
+                     ],
+        "candidates":  [
+                           {
+                               "diseaseId":  "PenyakitBlasPadi",
+                               "label":  "Penyakit Blas",
+                               "score":  0.745,
+                               "confidence":  "TINGGI",
+                               "category":  "PenyakitJamur",
+                               "matchedCount":  3,
+                               "selectedCount":  3,
+                               "totalSymptoms":  6,
+                               "scoreComponents":  {
+                                                       "evidence":  0.9933,
+                                                       "completeness":  1,
+                                                       "coverage":  0.5
+                                                   },
+                               "explanation":  "2 gejala cocok persis dan 1 gejala cocok pada konsep Bercak daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                       "PengamatanPenyakitBlasPadiKhasMalai",
+                                                       "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitBlasPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitBlasPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                },
+                                                {
+                                                    "type":  "exact",
+                                                    "ruleId":  "R-EXACT-PenyakitBlasPadi-PengamatanPenyakitBlasPadiKhasMalai",
+                                                    "symptomId":  "PengamatanPenyakitBlasPadiKhasMalai",
+                                                    "matchedObservationId":  "PengamatanPenyakitBlasPadiKhasMalai",
+                                                    "canonicalSymptomId":  null,
+                                                    "canonicalSymptomLabel":  null,
+                                                    "weight":  0.9,
+                                                    "cfAfter":  0.9331
+                                                },
+                                                {
+                                                    "type":  "exact",
+                                                    "ruleId":  "R-EXACT-PenyakitBlasPadi-PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian",
+                                                    "symptomId":  "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian",
+                                                    "matchedObservationId":  "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian",
+                                                    "canonicalSymptomId":  null,
+                                                    "canonicalSymptomLabel":  null,
+                                                    "weight":  0.9,
+                                                    "cfAfter":  0.9933
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitHawarDaunBakteriPadi",
+                               "label":  "Penyakit Hawar Daun Bakteri",
+                               "score":  0.2448,
+                               "confidence":  "RENDAH",
+                               "category":  "PenyakitBakteri",
+                               "matchedCount":  1,
+                               "selectedCount":  3,
+                               "totalSymptoms":  9,
+                               "scoreComponents":  {
+                                                       "evidence":  0.5509,
+                                                       "completeness":  0.3333,
+                                                       "coverage":  0.1111
+                                                   },
+                               "explanation":  "1 gejala cocok persis. 2 gejala belum dijelaskan kandidat ini.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+                                                                 "PengamatanPenyakitBlasPadiKhasMalai",
+                                                                 "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "exact",
+                                                    "ruleId":  "R-EXACT-PenyakitHawarDaunBakteriPadi-PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.5509,
+                                                    "cfAfter":  0.5509
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitKerdilRumputDanKerdilHampaPadi",
+                               "label":  "Penyakit Kerdil Rumput dan Kerdil Hampa",
+                               "score":  0.1653,
+                               "confidence":  "RENDAH",
+                               "category":  null,
+                               "matchedCount":  1,
+                               "selectedCount":  3,
+                               "totalSymptoms":  4,
+                               "scoreComponents":  {
+                                                       "evidence":  0.3305,
+                                                       "completeness":  0.3333,
+                                                       "coverage":  0.25
+                                                   },
+                               "explanation":  "1 gejala cocok pada konsep Bercak daun. 2 gejala belum dijelaskan kandidat ini.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+                                                                 "PengamatanPenyakitBlasPadiKhasMalai",
+                                                                 "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitKerdilRumputDanKerdilHampaPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitKerdilRumputDanKerdilHampaPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitHawarPelepahDaunPadi",
+                               "label":  "Penyakit Hawar Pelepah Daun",
+                               "score":  0.1511,
+                               "confidence":  "RENDAH",
+                               "category":  "PenyakitJamur",
+                               "matchedCount":  1,
+                               "selectedCount":  3,
+                               "totalSymptoms":  7,
+                               "scoreComponents":  {
+                                                       "evidence":  0.3305,
+                                                       "completeness":  0.3333,
+                                                       "coverage":  0.1429
+                                                   },
+                               "explanation":  "1 gejala cocok pada konsep Bercak daun. 2 gejala belum dijelaskan kandidat ini.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+                                                                 "PengamatanPenyakitBlasPadiKhasMalai",
+                                                                 "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitHawarPelepahDaunPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                }
+                                            ]
+                           }
+                       ]
+    },
+    {
+        "id":  "PADI-BERCAK-01",
+        "note":  "hanya 1 gejala generik BercakDaun",
+        "request":  {
+                        "symptomIds":  [
+                                           "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                       ],
+                        "plantId":  "Padi",
+                        "topN":  5
+                    },
+        "message":  "Ditemukan 4 kandidat penyakit berdasarkan gejala yang dipilih.",
+        "reasoning":  {
+                          "status":  "UP",
+                          "modelVersion":  "forward-chaining-cf-v1",
+                          "ontologyVersion":  "17cabff2112e",
+                          "checksum":  "17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90",
+                          "categoryCounts":  {
+                                                 "PenyakitVirus":  5,
+                                                 "PenyakitJamur":  26,
+                                                 "PenyakitNematoda":  0,
+                                                 "PenyakitOomycete":  1,
+                                                 "PenyakitBakteri":  5,
+                                                 "PenyakitLainnya":  0,
+                                                 "PenyakitFitoplasma":  1
+                                             }
+                      },
+        "warnings":  [
+                         "DISEASE_CATEGORY_UNCLASSIFIED"
+                     ],
+        "candidates":  [
+                           {
+                               "diseaseId":  "PenyakitHawarDaunBakteriPadi",
+                               "label":  "Penyakit Hawar Daun Bakteri",
+                               "score":  0.306,
+                               "confidence":  "RENDAH",
+                               "category":  "PenyakitBakteri",
+                               "matchedCount":  1,
+                               "selectedCount":  1,
+                               "totalSymptoms":  9,
+                               "scoreComponents":  {
+                                                       "evidence":  0.5509,
+                                                       "completeness":  1,
+                                                       "coverage":  0.1111
+                                                   },
+                               "explanation":  "1 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "exact",
+                                                    "ruleId":  "R-EXACT-PenyakitHawarDaunBakteriPadi-PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.5509,
+                                                    "cfAfter":  0.5509
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitKerdilRumputDanKerdilHampaPadi",
+                               "label":  "Penyakit Kerdil Rumput dan Kerdil Hampa",
+                               "score":  0.2066,
+                               "confidence":  "RENDAH",
+                               "category":  null,
+                               "matchedCount":  1,
+                               "selectedCount":  1,
+                               "totalSymptoms":  4,
+                               "scoreComponents":  {
+                                                       "evidence":  0.3305,
+                                                       "completeness":  1,
+                                                       "coverage":  0.25
+                                                   },
+                               "explanation":  "1 gejala cocok pada konsep Bercak daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitKerdilRumputDanKerdilHampaPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitKerdilRumputDanKerdilHampaPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitBlasPadi",
+                               "label":  "Penyakit Blas",
+                               "score":  0.1928,
+                               "confidence":  "RENDAH",
+                               "category":  "PenyakitJamur",
+                               "matchedCount":  1,
+                               "selectedCount":  1,
+                               "totalSymptoms":  6,
+                               "scoreComponents":  {
+                                                       "evidence":  0.3305,
+                                                       "completeness":  1,
+                                                       "coverage":  0.1667
+                                                   },
+                               "explanation":  "1 gejala cocok pada konsep Bercak daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitBlasPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitBlasPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                }
+                                            ]
+                           },
+                           {
+                               "diseaseId":  "PenyakitHawarPelepahDaunPadi",
+                               "label":  "Penyakit Hawar Pelepah Daun",
+                               "score":  0.1889,
+                               "confidence":  "RENDAH",
+                               "category":  "PenyakitJamur",
+                               "matchedCount":  1,
+                               "selectedCount":  1,
+                               "totalSymptoms":  7,
+                               "scoreComponents":  {
+                                                       "evidence":  0.3305,
+                                                       "completeness":  1,
+                                                       "coverage":  0.1429
+                                                   },
+                               "explanation":  "1 gejala cocok pada konsep Bercak daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+                               "matchedSymptoms":  [
+                                                       "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                                   ],
+                               "unmatchedSelectedSymptoms":  [
+
+                                                             ],
+                               "evidence":  [
+                                                {
+                                                    "type":  "canonical",
+                                                    "ruleId":  "R-CANON-PenyakitHawarPelepahDaunPadi-BercakDaun",
+                                                    "symptomId":  "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                                    "matchedObservationId":  "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+                                                    "canonicalSymptomId":  "BercakDaun",
+                                                    "canonicalSymptomLabel":  "Bercak daun",
+                                                    "weight":  0.3305,
+                                                    "cfAfter":  0.3305
+                                                }
+                                            ]
+                           }
+                       ]
+    }
+]

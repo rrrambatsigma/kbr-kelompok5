@@ -53,5 +53,11 @@ export const env = {
   reasoningApiUrl: readUrl("REASONING_API_URL", "http://localhost:8082"),
   reasoningTimeoutMs: readInt("REASONING_TIMEOUT_MS", 15000, 100, 300000),
 
+  /**
+   * Opsional. Dipakai health check untuk membandingkan SHA-256 file ontology
+   * dengan checksum yang dilaporkan Java. Kosong = status UNKNOWN.
+   */
+  ontologyFilePath: process.env.ONTOLOGY_FILE_PATH?.trim() || "",
+
   frontendUrl: readUrl("FRONTEND_URL", "http://localhost:5173"),
 } as const;

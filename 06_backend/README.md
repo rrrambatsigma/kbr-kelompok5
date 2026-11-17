@@ -53,8 +53,13 @@ FUSEKI_DATASET=plant-kb
 FUSEKI_TIMEOUT_MS=5000
 REASONING_API_URL=http://localhost:8082
 REASONING_TIMEOUT_MS=15000
+ONTOLOGY_FILE_PATH=E:/kbr-kelompok5/04_ontology/ontology_md.ttl
 FRONTEND_URL=http://localhost:5173
 ```
+
+`ONTOLOGY_FILE_PATH` di Node opsional; dipakai `/api/health/ontology` untuk
+membandingkan SHA-256 file dengan checksum yang dimuat Java. Jika kosong,
+statusnya `UNKNOWN` dan readiness tidak diblokir.
 
 ### Java reasoning API
 
@@ -104,10 +109,14 @@ Cek kesehatan:
 curl http://127.0.0.1:3000/api/health/live
 curl http://127.0.0.1:3000/api/health/ready
 curl http://127.0.0.1:3000/api/health/fuseki
+curl http://127.0.0.1:3000/api/health/ontology
 ```
 
-`/api/health/ready` mengembalikan `503` jika Fuseki atau reasoning API tidak
-siap. `/api/health` dan `/api/health/live` hanya mengecek proses Node.
+`/api/health/ready` mengembalikan `503` jika Fuseki/reasoning tidak siap atau
+checksum ontology berbeda (`ONTOLOGY_MISMATCH`). `/api/health/ontology`
+menampilkan perbandingan file, Java, dan Fuseki untuk diagnostik; endpoint ini
+tetap `200` selama service bisa menjawab. `/api/health` dan `/api/health/live`
+hanya mengecek proses Node.
 
 ## Endpoint
 
@@ -156,8 +165,8 @@ Error:
 {
   "plantId": "Padi",
   "symptomIds": [
-    "GejalaAdapunBentukBercakSendiriDapat_626f021f",
-    "GejalaAkibatnyaLeherMalaiTidakAkan_fe97cd7f"
+    "PengamatanPenyakitBlasPadiBercakDaun",
+    "PengamatanPenyakitBlasPadiKhasMalai"
   ],
   "topN": 5
 }
@@ -171,22 +180,42 @@ Aturan validasi:
 - Duplikat dihapus dan menghasilkan warning `DUPLICATE_SYMPTOM_IDS_IGNORED`.
 - `topN` integer 1–10, default 5.
 
-Algoritma skor:
+Algoritma reasoning (`forward-chaining-cf-v1`):
 
 ```text
-matched      = jumlah gejala terpilih yang dimiliki penyakit
-matchRatio   = matched / jumlah gejala terpilih
-coverage     = matched / jumlah seluruh gejala penyakit
-score        = 0.7 * matchRatio + 0.3 * coverage
+spec = 0.5 + 0.5 * log((N+1)/(df+1)) / log(N+1)
+w    = min(0.9, bobot_dasar * spec)
+CF   = 1 - produk(1 - w)
+
+completeness = matched / jumlah gejala terpilih
+coverage     = matched / max(jumlah gejala penyakit, 4)
+score        = CF * (0.7 + 0.3*completeness) * (0.5 + 0.5*coverage)
 ```
 
-Kandidat diurutkan berdasarkan `score` desc, `matchedCount` desc, lalu label.
+- `bobot_dasar` = 1 untuk exact match, 0.6 untuk match konsep kanonik.
+- `df` dihitung dari konsep kanonik (`memilikiGejalaKanonik`), bukan ID
+  pengamatan, karena pengamatan bersifat spesifik per penyakit.
+- Penyebut coverage minimal 4: penyakit dengan 1-2 gejala tercatat tidak
+  otomatis mendapat coverage 1.0 (penalti kelengkapan data).
+- Satu observasi penyakit tidak dihitung dua kali.
+- `confidence`: `TINGGI` jika `score >= 0.7` dan bukti >= 2; `SEDANG` jika
+  `score >= 0.4` dan bukti >= 2; selain itu `RENDAH`. Satu bukti selalu
+  `RENDAH`.
+
+Kandidat diurutkan berdasarkan `score` desc, jumlah bukti desc, lalu label.
 Response berisi `matchedSymptoms`, `unmatchedSelectedSymptoms`, `category`,
-dan `controls`.
+`controls`, `confidence`, `evidence`, `explanation`, dan `scoreComponents`.
+`matchedSymptoms` berisi gejala yang dipilih user; `evidence.matchedObservationId`
+menunjukkan observasi milik penyakit yang menjadi dasar kecocokan (penting untuk
+match kanonik). `reasoning.modelVersion` menandai versi model. Node meneruskan
+`X-Request-Id` ke Java; Java mengembalikannya di header dan `meta.requestId`.
 
 Jika reasoning API mati/timeout, diagnosis tetap `200` dengan
 `reasoning.status = "DEGRADED"`, `category = null`, dan warning
 `REASONING_UNAVAILABLE`.
+
+Detail metode, rumus, dan validasi M5: `../08_documentation/reasoning.md`.
+Skenario demo: `../08_documentation/demo-m5.md`.
 
 ### Reasoning (Java)
 
@@ -229,6 +258,7 @@ kategori yang dikarang.
 | 503 | `FUSEKI_UNAVAILABLE` | Fuseki mati/timeout |
 | 503 | `REASONING_UNAVAILABLE` | Reasoning API mati/timeout |
 | 503 | `ONTOLOGY_NOT_LOADED` | Ontology belum dimuat |
+| 503 | `ONTOLOGY_MISMATCH` | Checksum file Node berbeda dengan yang dimuat Java |
 | 504 | `REASONING_TIMEOUT` | Reasoning melebihi batas waktu |
 
 ## Konsistensi ontology
@@ -250,14 +280,24 @@ Jika checksum Fuseki dan Java berbeda, jangan anggap sistem siap.
 # Smoke test end-to-end (semua service harus hidup)
 .\06_backend\scripts\smoke-test.ps1
 
+# Integration test Node ↔ Java (checksum, request id, reload)
+.\06_backend\scripts\integration-test.ps1
+
 # Node: unit test scoring + validasi
 cd .\06_backend\node-api
 npm run typecheck
 npm test
 
+# Inspect dataset diagnosis ternormalisasi (butuh Fuseki hidup)
+npm run dataset:inspect -- Padi
+
 # Java: golden inference test + context load
 cd .\06_backend\reasoning-api
 .\mvnw.cmd test
+
+# Validasi reasoning end-to-end (Fuseki, Java, Node harus hidup)
+cd ..\..\05_reasoning_tests
+node run.mjs --perf
 ```
 
 ## Troubleshooting
@@ -268,6 +308,7 @@ cd .\06_backend\reasoning-api
 | `readiness` DOWN, reasoning DOWN | Java belum selesai load / mati | Cek log Java, `GET /api/reasoning/status` |
 | `ONTOLOGY_NOT_LOADED` | File ontology tidak ditemukan | Set `ONTOLOGY_FILE_PATH`, cek log startup |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
+| `ONTOLOGY_MISMATCH` | Checksum file Node berbeda dengan Java | Samakan `ONTOLOGY_FILE_PATH`, reload Java |
 | `totalTriples` bukan 16391 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
 | Port sudah dipakai | Proses lama masih hidup | Hentikan proses pada port 3000/3030/8082 |
 

@@ -69,3 +69,9 @@ export class ReasoningError extends AppError {
     super(code, status, message);
   }
 }
+
+export class OntologyMismatchError extends AppError {
+  constructor(message: string) {
+    super("ONTOLOGY_MISMATCH", 503, message);
+  }
+}

@@ -10,6 +10,7 @@
     "prestart": "npm run clean && npm run build",
     "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
+    "dataset:inspect": "tsx scripts/inspect-dataset.ts",
     "test": "tsx --test test/*.test.ts"
   },
   "keywords": [],

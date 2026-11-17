@@ -9,7 +9,11 @@ const router = Router();
 
 router.post("/", async (req, res) => {
   const input = parseDiagnosisInput(req.body);
-  const result = await diagnose(input);
+  const requestId =
+    typeof res.locals.requestId === "string"
+      ? res.locals.requestId
+      : undefined;
+  const result = await diagnose(input, requestId);
   res.status(200).json(ok(res, result));
 });
 

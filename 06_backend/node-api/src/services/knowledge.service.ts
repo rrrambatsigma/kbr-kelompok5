@@ -72,11 +72,48 @@ export interface DiseaseDetail extends DiseaseSummary {
   riskFactors: NamedEntity[];
 }
 
+export interface CanonicalSymptom {
+  id: string;
+  iri: string;
+  label: string;
+}
+
+export interface DiagnosisSymptom {
+  id: string;
+  iri: string;
+  label: string;
+  canonical: CanonicalSymptom | null;
+}
+
 export interface DiagnosisDisease {
   id: string;
   iri: string;
   label: string;
-  symptoms: Array<{ id: string; iri: string; label: string }>;
+  symptoms: DiagnosisSymptom[];
+  riskFactors: NamedEntity[];
+  description: string | null;
+  severity: string | null;
+}
+
+export interface DiagnosisDatasetStats {
+  diseaseCount: number;
+  diseaseWithSymptomsCount: number;
+  symptomObservationCount: number;
+  canonicalObservationCount: number;
+  canonicalConceptCount: number;
+}
+
+/**
+ * Bentuk data ternormalisasi yang menjadi input mesin reasoning.
+ *
+ * Layer ini sengaja tidak mengetahui SPARQL/ontology mentah; engine hanya
+ * menerima struktur ini. Dengan begitu ontology sementara bisa diganti tanpa
+ * mengubah engine.
+ */
+export interface DiagnosisDataset {
+  plant: PlantSummary;
+  diseases: DiagnosisDisease[];
+  stats: DiagnosisDatasetStats;
 }
 
 function labelOrFallback(binding: SparqlBinding, iri: string): string {
@@ -418,46 +455,183 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
 
 export async function getDiagnosisDataset(
   plantId: string
-): Promise<DiagnosisDisease[]> {
+): Promise<DiagnosisDataset> {
   const plantIri = toIri(plantId);
 
-  const bindings = await rows(`
-    ${PREFIXES}
-    SELECT ?disease ?diseaseLabel ?symptom ?symptomLabel
-    WHERE {
-      ?disease ptp:menyerangTanaman <${plantIri}> ;
-               ptp:memilikiGejala ?symptom .
-      OPTIONAL { ?disease rdfs:label ?diseaseLabel }
-      OPTIONAL { ?symptom rdfs:label ?symptomLabel }
-    }
-  `);
+  const [plants, diseaseRows, symptomRows, riskRows] = await Promise.all([
+    listPlants(),
+    rows(`
+      ${PREFIXES}
+      SELECT ?disease ?label ?description ?severity
+      WHERE {
+        ?disease a ptp:Penyakit ;
+                 ptp:menyerangTanaman <${plantIri}> .
+        OPTIONAL { ?disease rdfs:label ?label }
+        OPTIONAL { ?disease ptp:deskripsiPenyakit ?description }
+        OPTIONAL { ?disease ptp:tingkatKeparahan ?severity }
+      }
+      ORDER BY ?label
+    `),
+    rows(`
+      ${PREFIXES}
+      SELECT ?disease ?symptom ?symptomLabel ?canonical ?canonicalLabel
+      WHERE {
+        ?disease ptp:menyerangTanaman <${plantIri}> ;
+                 ptp:memilikiGejala ?symptom .
+        OPTIONAL { ?symptom rdfs:label ?symptomLabel }
+        OPTIONAL {
+          ?symptom ptp:memilikiGejalaKanonik ?canonical .
+          OPTIONAL { ?canonical rdfs:label ?canonicalLabel }
+        }
+      }
+    `),
+    rows(`
+      ${PREFIXES}
+      SELECT DISTINCT ?disease ?factor ?factorLabel
+      WHERE {
+        ?disease ptp:menyerangTanaman <${plantIri}> ;
+                 ptp:dipengaruhiOleh ?factor .
+        OPTIONAL { ?factor rdfs:label ?factorLabel }
+      }
+      ORDER BY ?factorLabel
+    `),
+  ]);
+
+  const plant = plants.find((item) => item.iri === plantIri);
+
+  if (plant === undefined) {
+    throw new NotFoundError(`Tanaman tidak ditemukan: ${plantId}`);
+  }
 
   const byDisease = new Map<string, DiagnosisDisease>();
 
-  for (const binding of bindings) {
-    const diseaseIri = requireTerm(binding, "disease", "penyakit");
-    const symptomIri = requireTerm(binding, "symptom", "gejala");
+  const ensureDisease = (
+    iri: string,
+    binding: SparqlBinding
+  ): DiagnosisDisease => {
+    let disease = byDisease.get(iri);
 
-    let disease = byDisease.get(diseaseIri);
     if (disease === undefined) {
       disease = {
-        id: localName(diseaseIri),
-        iri: diseaseIri,
-        label: termValue(binding, "diseaseLabel") ?? localName(diseaseIri),
+        id: localName(iri),
+        iri,
+        label: labelOrFallback(binding, iri),
         symptoms: [],
+        riskFactors: [],
+        description: termValue(binding, "description") ?? null,
+        severity: termValue(binding, "severity") ?? null,
       };
-      byDisease.set(diseaseIri, disease);
+      byDisease.set(iri, disease);
     }
 
-    if (!disease.symptoms.some((item) => item.iri === symptomIri)) {
-      disease.symptoms.push({
-        id: localName(symptomIri),
-        iri: symptomIri,
-        label: termValue(binding, "symptomLabel") ?? localName(symptomIri),
+    return disease;
+  };
+
+  // Penyakit tetap dimasukkan walau belum punya gejala, supaya layer data
+  // jujur tentang isi ontology dan engine bisa memberi warning yang tepat.
+  for (const row of diseaseRows) {
+    ensureDisease(requireTerm(row, "disease", "penyakit"), row);
+  }
+
+  for (const row of symptomRows) {
+    const disease = ensureDisease(
+      requireTerm(row, "disease", "penyakit"),
+      row
+    );
+    const symptomIri = requireTerm(row, "symptom", "gejala");
+
+    if (disease.symptoms.some((item) => item.iri === symptomIri)) {
+      continue;
+    }
+
+    const canonicalIri = termValue(row, "canonical");
+
+    disease.symptoms.push({
+      id: localName(symptomIri),
+      iri: symptomIri,
+      label: termValue(row, "symptomLabel") ?? localName(symptomIri),
+      canonical:
+        canonicalIri === undefined
+          ? null
+          : {
+              id: localName(canonicalIri),
+              iri: canonicalIri,
+              label:
+                termValue(row, "canonicalLabel") ?? localName(canonicalIri),
+            },
+    });
+  }
+
+  for (const row of riskRows) {
+    const disease = byDisease.get(
+      requireTerm(row, "disease", "penyakit")
+    );
+
+    if (disease === undefined) {
+      continue;
+    }
+
+    const factorIri = requireTerm(row, "factor", "faktor risiko");
+
+    if (!disease.riskFactors.some((item) => item.iri === factorIri)) {
+      disease.riskFactors.push({
+        id: localName(factorIri),
+        iri: factorIri,
+        label: labelOrFallback(row, factorIri),
       });
     }
   }
-  return [...byDisease.values()];
+
+  const diseases = [...byDisease.values()];
+
+  // Urutan stabil: penting untuk hasil diagnosis yang deterministik.
+  diseases.sort(
+    (left, right) =>
+      left.label.localeCompare(right.label, "id") ||
+      left.iri.localeCompare(right.iri)
+  );
+
+  for (const disease of diseases) {
+    disease.symptoms.sort(
+      (left, right) =>
+        left.label.localeCompare(right.label, "id") ||
+        left.iri.localeCompare(right.iri)
+    );
+    disease.riskFactors.sort(
+      (left, right) =>
+        left.label.localeCompare(right.label, "id") ||
+        left.iri.localeCompare(right.iri)
+    );
+  }
+
+  const observedSymptoms = new Set<string>();
+  const canonicalObservations = new Set<string>();
+  const canonicalConcepts = new Set<string>();
+
+  for (const disease of diseases) {
+    for (const symptom of disease.symptoms) {
+      observedSymptoms.add(symptom.iri);
+
+      if (symptom.canonical !== null) {
+        canonicalObservations.add(symptom.iri);
+        canonicalConcepts.add(symptom.canonical.iri);
+      }
+    }
+  }
+
+  return {
+    plant,
+    diseases,
+    stats: {
+      diseaseCount: diseases.length,
+      diseaseWithSymptomsCount: diseases.filter(
+        (disease) => disease.symptoms.length > 0
+      ).length,
+      symptomObservationCount: observedSymptoms.size,
+      canonicalObservationCount: canonicalObservations.size,
+      canonicalConceptCount: canonicalConcepts.size,
+    },
+  };
 }
 
 export async function getControlsForDiseases(

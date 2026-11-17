@@ -1,0 +1,194 @@
+[
+  {
+    "id": "PADI-AMBIG-HDB-01",
+    "type": "ambiguous",
+    "plantId": "Padi",
+    "symptoms": [
+      {
+        "id": "PengamatanPenyakitHawarDaunBakteriPadiIstilahKresekSendiriDiambilBahasa",
+        "label": "Pengamatan gejala Penyakit Hawar Daun Bakteri"
+      },
+      {
+        "id": "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+        "label": "Bercak daun pada Penyakit Hawar Pelepah Daun"
+      },
+      {
+        "id": "PengamatanPenyakitKerdilRumputDanKerdilHampaPadiKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Kerdil Rumput dan Kerdil Hampa"
+      }
+    ],
+    "expectedDiseaseId": "PenyakitHawarDaunBakteriPadi",
+    "expectedTopK": 3,
+    "source": "ontology-temporary",
+    "ontology": "temporary-v2",
+    "verified": false,
+    "notes": "1 gejala khas HDB + 2 gejala generik milik penyakit lain"
+  },
+  {
+    "id": "KEDELAI-AMBIG-KARAT-01",
+    "type": "ambiguous",
+    "plantId": "Kedelai",
+    "symptoms": [
+      {
+        "id": "PengamatanPenyakitKaratDaunKedelaiKumpulanUrediaP",
+        "label": "Pengamatan gejala Penyakit Karat Daun"
+      },
+      {
+        "id": "PengamatanPenyakitBercakBijiUnguKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Bercak Biji Ungu"
+      },
+      {
+        "id": "PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"
+      }
+    ],
+    "expectedDiseaseId": "PenyakitKaratDaunKedelai",
+    "expectedTopK": 3,
+    "source": "ontology-temporary",
+    "ontology": "temporary-v2",
+    "verified": false,
+    "notes": "1 gejala khas karat + bercak + klorosis dari penyakit lain"
+  },
+  {
+    "id": "JAGUNG-AMBIG-BULAI-01",
+    "type": "ambiguous",
+    "plantId": "Jagung",
+    "symptoms": [
+      {
+        "id": "PengamatanPenyakitBulaiJagungMulaiMuncul15Hingga17",
+        "label": "Pengamatan gejala Penyakit Bulai"
+      },
+      {
+        "id": "PengamatanPenyakitKaratDaunJagungKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Karat Daun"
+      },
+      {
+        "id": "PengamatanPenyakitLayuStewartJagungKerdilTanaman",
+        "label": "Kerdil tanaman pada Penyakit Layu Stewart"
+      }
+    ],
+    "expectedDiseaseId": "PenyakitBulaiJagung",
+    "expectedTopK": 3,
+    "source": "ontology-temporary",
+    "ontology": "temporary-v2",
+    "verified": false,
+    "notes": "1 gejala khas bulai + klorosis + kerdil dari penyakit lain"
+  },
+  {
+    "id": "UBIKAYU-AMBIG-HDB-01",
+    "type": "ambiguous",
+    "plantId": "UbiKayu",
+    "symptoms": [
+      {
+        "id": "PengamatanHawarDaunBakteriUbiKayuHawarDaun",
+        "label": "Hawar daun pada Hawar daun bakteri"
+      },
+      {
+        "id": "PengamatanBercakDaunCoklatUbiKayuBercakDaun",
+        "label": "Bercak daun pada Bercak daun Coklat"
+      },
+      {
+        "id": "PengamatanBusukPangkalBatangUbiKayuLayuDaun",
+        "label": "Layu daun pada Busuk pangkal batang"
+      }
+    ],
+    "expectedDiseaseId": "HawarDaunBakteriUbiKayu",
+    "expectedTopK": 3,
+    "source": "ontology-temporary",
+    "ontology": "temporary-v2",
+    "verified": false,
+    "notes": "hawar HDB + bercak + layu dari penyakit lain"
+  },
+  {
+    "id": "KACANGTANAH-AMBIG-KARAT-01",
+    "type": "ambiguous",
+    "plantId": "KacangTanah",
+    "symptoms": [
+      {
+        "id": "PengamatanPenyakitKaratDaunKacangTanahTumbuhPustulMerupakanKumpulanSpora",
+        "label": "Pengamatan gejala KARAT"
+      },
+      {
+        "id": "PengamatanPenyakitBercakDaunKacangTanahBercakDaun",
+        "label": "Bercak daun pada Penyakit Bercak Daun"
+      },
+      {
+        "id": "PengamatanPenyakitBercakDaunKacangTanahKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Bercak Daun"
+      }
+    ],
+    "expectedDiseaseId": "PenyakitKaratDaunKacangTanah",
+    "expectedTopK": 3,
+    "source": "ontology-temporary",
+    "ontology": "temporary-v2",
+    "verified": false,
+    "notes": "pustul karat + bercak + klorosis dari penyakit lain"
+  },
+  {
+    "id": "UBIJALAR-AMBIG-BERCAKKUNING-01",
+    "type": "ambiguous",
+    "plantId": "UbiJalar",
+    "symptoms": [
+      {
+        "id": "PengamatanPenyakitBercakKuningUbiJalarPucukMati",
+        "label": "Pucuk mati pada Penyakit bercak kuning"
+      },
+      {
+        "id": "PengamatanPenyakitKudisUbiJalarBercakDaun",
+        "label": "Bercak daun pada Penyakit kudis"
+      },
+      {
+        "id": "PengamatanLayuFusariumUbiJalarKlorosisDaun",
+        "label": "Klorosis daun pada layu fusarium"
+      }
+    ],
+    "expectedDiseaseId": "PenyakitBercakKuningUbiJalar",
+    "expectedTopK": 3,
+    "source": "ontology-temporary",
+    "ontology": "temporary-v2",
+    "verified": false,
+    "notes": "pucuk mati + bercak + klorosis dari penyakit lain"
+  },
+  {
+    "id": "PADI-PURE-HDB-01",
+    "type": "ambiguous",
+    "plantId": "Padi",
+    "symptoms": [
+      {
+        "id": "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+        "label": "Bercak daun pada Penyakit Hawar Pelepah Daun"
+      },
+      {
+        "id": "PengamatanPenyakitKerdilRumputDanKerdilHampaPadiKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Kerdil Rumput dan Kerdil Hampa"
+      }
+    ],
+    "expectedDiseaseId": "PenyakitHawarDaunBakteriPadi",
+    "expectedTopK": 3,
+    "source": "ontology-temporary",
+    "ontology": "temporary-v2",
+    "verified": false,
+    "notes": "tanpa exact match target; murni pencocokan kanonik"
+  },
+  {
+    "id": "KACANGTANAH-PURE-KARAT-01",
+    "type": "ambiguous",
+    "plantId": "KacangTanah",
+    "symptoms": [
+      {
+        "id": "PengamatanPenyakitBercakDaunKacangTanahBercakDaun",
+        "label": "Bercak daun pada Penyakit Bercak Daun"
+      },
+      {
+        "id": "PengamatanPenyakitBercakDaunKacangTanahKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Bercak Daun"
+      }
+    ],
+    "expectedDiseaseId": "PenyakitKaratDaunKacangTanah",
+    "expectedTopK": 3,
+    "source": "ontology-temporary",
+    "ontology": "temporary-v2",
+    "verified": false,
+    "notes": "tanpa exact match target; murni pencocokan kanonik"
+  }
+]

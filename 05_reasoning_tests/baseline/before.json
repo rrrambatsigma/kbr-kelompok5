@@ -1,0 +1,136 @@
+﻿[
+    {
+        "id":  "PADI-BLAS-01",
+        "note":  "3 gejala khas Blas",
+        "request":  {
+                        "symptomIds":  [
+                                           "PengamatanPenyakitBlasPadiBercakDaun",
+                                           "PengamatanPenyakitBlasPadiKhasMalai",
+                                           "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                       ],
+                        "plantId":  "Padi",
+                        "topN":  5
+                    },
+        "reasoning":  {
+                          "status":  "UP",
+                          "ontologyVersion":  "17cabff2112e",
+                          "checksum":  "17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90",
+                          "categoryCounts":  {
+                                                 "PenyakitVirus":  5,
+                                                 "PenyakitJamur":  26,
+                                                 "PenyakitNematoda":  0,
+                                                 "PenyakitOomycete":  1,
+                                                 "PenyakitBakteri":  5,
+                                                 "PenyakitLainnya":  0,
+                                                 "PenyakitFitoplasma":  1
+                                             }
+                      },
+        "warnings":  [
+
+                     ],
+        "candidates":  [
+                           {
+                               "diseaseId":  "PenyakitBlasPadi",
+                               "label":  "Penyakit Blas",
+                               "score":  0.85,
+                               "matchRatio":  1,
+                               "coverage":  0.5,
+                               "matchedCount":  3,
+                               "totalSymptoms":  6,
+                               "category":  "PenyakitJamur"
+                           }
+                       ]
+    },
+    {
+        "id":  "PADI-BLAS-02",
+        "note":  "1 gejala BercakDaun milik HDB + 2 gejala khas Blas",
+        "request":  {
+                        "symptomIds":  [
+                                           "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
+                                           "PengamatanPenyakitBlasPadiKhasMalai",
+                                           "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+                                       ],
+                        "plantId":  "Padi",
+                        "topN":  5
+                    },
+        "reasoning":  {
+                          "status":  "UP",
+                          "ontologyVersion":  "17cabff2112e",
+                          "checksum":  "17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90",
+                          "categoryCounts":  {
+                                                 "PenyakitVirus":  5,
+                                                 "PenyakitJamur":  26,
+                                                 "PenyakitNematoda":  0,
+                                                 "PenyakitOomycete":  1,
+                                                 "PenyakitBakteri":  5,
+                                                 "PenyakitLainnya":  0,
+                                                 "PenyakitFitoplasma":  1
+                                             }
+                      },
+        "warnings":  [
+
+                     ],
+        "candidates":  [
+                           {
+                               "diseaseId":  "PenyakitBlasPadi",
+                               "label":  "Penyakit Blas",
+                               "score":  0.5667,
+                               "matchRatio":  0.6667,
+                               "coverage":  0.3333,
+                               "matchedCount":  2,
+                               "totalSymptoms":  6,
+                               "category":  "PenyakitJamur"
+                           },
+                           {
+                               "diseaseId":  "PenyakitHawarDaunBakteriPadi",
+                               "label":  "Penyakit Hawar Daun Bakteri",
+                               "score":  0.2667,
+                               "matchRatio":  0.3333,
+                               "coverage":  0.1111,
+                               "matchedCount":  1,
+                               "totalSymptoms":  9,
+                               "category":  "PenyakitBakteri"
+                           }
+                       ]
+    },
+    {
+        "id":  "PADI-BERCAK-01",
+        "note":  "hanya 1 gejala generik BercakDaun",
+        "request":  {
+                        "symptomIds":  [
+                                           "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun"
+                                       ],
+                        "plantId":  "Padi",
+                        "topN":  5
+                    },
+        "reasoning":  {
+                          "status":  "UP",
+                          "ontologyVersion":  "17cabff2112e",
+                          "checksum":  "17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90",
+                          "categoryCounts":  {
+                                                 "PenyakitVirus":  5,
+                                                 "PenyakitJamur":  26,
+                                                 "PenyakitNematoda":  0,
+                                                 "PenyakitOomycete":  1,
+                                                 "PenyakitBakteri":  5,
+                                                 "PenyakitLainnya":  0,
+                                                 "PenyakitFitoplasma":  1
+                                             }
+                      },
+        "warnings":  [
+
+                     ],
+        "candidates":  [
+                           {
+                               "diseaseId":  "PenyakitHawarDaunBakteriPadi",
+                               "label":  "Penyakit Hawar Daun Bakteri",
+                               "score":  0.7333,
+                               "matchRatio":  1,
+                               "coverage":  0.1111,
+                               "matchedCount":  1,
+                               "totalSymptoms":  9,
+                               "category":  "PenyakitBakteri"
+                           }
+                       ]
+    }
+]

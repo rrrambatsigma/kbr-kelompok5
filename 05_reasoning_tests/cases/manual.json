@@ -1,0 +1,336 @@
+﻿[
+    {
+        "id":  "PADI-BLAS-01",
+        "type":  "gold",
+        "plantId":  "Padi",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitBlasPadiBercakDaun",
+                             "label":  "Bercak daun pada Penyakit Blas"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBlasPadiKhasMalai",
+                             "label":  "Pengamatan gejala Penyakit Blas"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian",
+                             "label":  "Pengamatan gejala Penyakit Blas"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitBlasPadi",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "3 gejala khas Blas"
+    },
+    {
+        "id":  "PADI-HDB-01",
+        "type":  "gold",
+        "plantId":  "Padi",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitHawarDaunBakteriPadiHawarDaun",
+                             "label":  "Hawar daun pada Penyakit Hawar Daun Bakteri"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitHawarDaunBakteriPadiKlorosisDaun",
+                             "label":  "Klorosis daun pada Penyakit Hawar Daun Bakteri"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitHawarDaunBakteriPadiLayuDaun",
+                             "label":  "Layu daun pada Penyakit Hawar Daun Bakteri"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitHawarDaunBakteriPadi",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "3 gejala kanonik HDB"
+    },
+    {
+        "id":  "KEDELAI-KARAT-01",
+        "type":  "gold",
+        "plantId":  "Kedelai",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunKedelaiBercakDaun",
+                             "label":  "Bercak daun pada KARAT"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunKedelaiKlorosisDaun",
+                             "label":  "Klorosis daun pada KARAT"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunKedelaiKumpulanUrediaP",
+                             "label":  "Pengamatan gejala Penyakit Karat Daun"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitKaratDaunKedelai",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "bercak + klorosis + uredia"
+    },
+    {
+        "id":  "KEDELAI-BIJIUNGU-01",
+        "type":  "gold",
+        "plantId":  "Kedelai",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitBercakBijiUnguKedelaiBercakDaun",
+                             "label":  "Bercak daun pada Penyakit Bercak Biji Ungu"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBercakBijiUnguKedelaiHawarDaun",
+                             "label":  "Hawar daun pada Penyakit Bercak Biji Ungu"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBercakBijiUnguKedelaiUnguBijiMenutupiSebagianSeluruh",
+                             "label":  "Pengamatan gejala Penyakit Bercak Biji Ungu"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitBercakBijiUnguKedelai",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "bercak + hawar + biji ungu"
+    },
+    {
+        "id":  "JAGUNG-BULAI-01",
+        "type":  "gold",
+        "plantId":  "Jagung",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitBulaiJagungKlorosisDaun",
+                             "label":  "Klorosis daun pada Penyakit Bulai"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBulaiJagungKerdilTanaman",
+                             "label":  "Kerdil tanaman pada Penyakit Bulai"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBulaiJagungPertumbuhanTerhambat",
+                             "label":  "Pertumbuhan terhambat pada Penyakit Bulai"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitBulaiJagung",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "klorosis + kerdil + pertumbuhan terhambat"
+    },
+    {
+        "id":  "JAGUNG-KARAT-01",
+        "type":  "gold",
+        "plantId":  "Jagung",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunJagungKlorosisDaun",
+                             "label":  "Klorosis daun pada Penyakit Karat Daun"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunJagungBintilBerbentukBulatOvalSaling",
+                             "label":  "Pengamatan gejala Penyakit Karat Daun"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunJagungBintilPecahSporaKeluarTerbawa",
+                             "label":  "Pengamatan gejala Penyakit Karat Daun"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitKaratDaunJagung",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "klorosis + bintil karat"
+    },
+    {
+        "id":  "UBIJALAR-KUDIS-01",
+        "type":  "gold",
+        "plantId":  "UbiJalar",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitKudisUbiJalarBercakDaun",
+                             "label":  "Bercak daun pada Penyakit kudis"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitKudisUbiJalarAwalnyaBerwarnaKuningCoklatKekuningan",
+                             "label":  "Pengamatan gejala Penyakit kudis"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitKudisUbiJalarMenjadiTidakProduktifFotosintesisTingkat",
+                             "label":  "Pengamatan gejala Penyakit kudis"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitKudisUbiJalar",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "bercak + perubahan warna + tidak produktif"
+    },
+    {
+        "id":  "UBIJALAR-BUSUKHITAM-01",
+        "type":  "gold",
+        "plantId":  "UbiJalar",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukAkar",
+                             "label":  "Busuk akar pada Penyakit busuk hitam (black rot)"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataUmbiTahapAwalTerdapat",
+                             "label":  "Pengamatan gejala Penyakit busuk hitam (black rot)"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataABPascapanenC",
+                             "label":  "Pengamatan gejala Penyakit busuk hitam (black rot)"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitBusukHitamBlackRotUbiJalar",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "busuk akar + gejala umbi"
+    },
+    {
+        "id":  "UBIKAYU-BUSUKAKAR-01",
+        "type":  "gold",
+        "plantId":  "UbiKayu",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanBusukAkarUbiKayuBusukAkar",
+                             "label":  "Busuk akar pada Busuk akar"
+                         },
+                         {
+                             "id":  "PengamatanBusukAkarUbiKayuBusukBatang",
+                             "label":  "Busuk batang pada Busuk akar"
+                         }
+                     ],
+        "expectedDiseaseId":  "BusukAkarUbiKayu",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "busuk akar + busuk batang"
+    },
+    {
+        "id":  "UBIKAYU-HDB-01",
+        "type":  "gold",
+        "plantId":  "UbiKayu",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanHawarDaunBakteriUbiKayuHawarDaun",
+                             "label":  "Hawar daun pada Hawar daun bakteri"
+                         },
+                         {
+                             "id":  "PengamatanHawarDaunBakteriUbiKayuLayuDaun",
+                             "label":  "Layu daun pada Hawar daun bakteri"
+                         }
+                     ],
+        "expectedDiseaseId":  "HawarDaunBakteriUbiKayu",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "hawar + layu daun"
+    },
+    {
+        "id":  "KACANGTANAH-BERCAK-01",
+        "type":  "gold",
+        "plantId":  "KacangTanah",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitBercakDaunKacangTanahBercakDaun",
+                             "label":  "Bercak daun pada Penyakit Bercak Daun"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBercakDaunKacangTanahKlorosisDaun",
+                             "label":  "Klorosis daun pada Penyakit Bercak Daun"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitBercakDaunKacangTanahUmumnyaBintikBintikKecilDikelilingi",
+                             "label":  "Pengamatan gejala Penyakit Bercak Daun"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitBercakDaunKacangTanah",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "bercak + klorosis + bintik khas"
+    },
+    {
+        "id":  "KACANGTANAH-KARAT-01",
+        "type":  "gold",
+        "plantId":  "KacangTanah",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunKacangTanahBercakDaun",
+                             "label":  "Bercak daun pada KARAT"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunKacangTanahKlorosisDaun",
+                             "label":  "Klorosis daun pada KARAT"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitKaratDaunKacangTanahTumbuhPustulMerupakanKumpulanSpora",
+                             "label":  "Pengamatan gejala KARAT"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitKaratDaunKacangTanah",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "bercak + klorosis + pustul"
+    },
+    {
+        "id":  "KACANGHIJAU-LAYU-01",
+        "type":  "gold",
+        "plantId":  "KacangHijau",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitLayuKacangHijauLayuDaun",
+                             "label":  "Layu daun pada LAYU"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitLayuKacangHijauTerinfeksiSelanjutnyaMenjadiAkhirnyaMati",
+                             "label":  "Pengamatan gejala LAYU"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitLayuKacangHijau",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "layu + tanaman mati"
+    },
+    {
+        "id":  "KACANGHIJAU-EMBUN-01",
+        "type":  "gold",
+        "plantId":  "KacangHijau",
+        "symptoms":  [
+                         {
+                             "id":  "PengamatanPenyakitEmbunTepungKacangHijauHampirSamaTepung",
+                             "label":  "Pengamatan gejala EMBUN TEPUNG"
+                         },
+                         {
+                             "id":  "PengamatanPenyakitEmbunTepungKacangHijauTepungAdanyaTepungPutihMerupakan",
+                             "label":  "Pengamatan gejala EMBUN TEPUNG"
+                         }
+                     ],
+        "expectedDiseaseId":  "PenyakitEmbunTepungKacangHijau",
+        "expectedTopK":  3,
+        "source":  "ontology-temporary",
+        "ontology":  "temporary-v2",
+        "verified":  false,
+        "notes":  "dua gejala embun tepung"
+    }
+]

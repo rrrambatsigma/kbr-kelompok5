@@ -1,11 +1,17 @@
-import { InvalidRequestError, NotFoundError } from "../lib/errors.js";
-import { compareCandidates, scoreCandidate } from "../lib/scoring.js";
+import { InvalidRequestError } from "../lib/errors.js";
+import { reason } from "../lib/reasoning/engine.js";
+import { explainCandidate } from "../lib/reasoning/explain.js";
+import {
+  REASONING_MODEL_VERSION,
+  type Confidence,
+  type ReasoningEvidence,
+  type ScoreComponents,
+} from "../lib/reasoning/types.js";
 import {
   getControlsForDiseases,
   getDiagnosisDataset,
-  listPlants,
-  toIri,
   type DiagnosisDisease,
+  type DiagnosisSymptom,
   type NamedEntity,
 } from "./knowledge.service.js";
 import {
@@ -20,7 +26,7 @@ export interface DiagnosisInput {
   topN: number;
 }
 
-export interface DiagnosisSymptom {
+export interface DiagnosisSymptomView {
   id: string;
   iri: string;
   label: string;
@@ -36,14 +42,19 @@ export interface DiagnosisCandidate {
   matchedCount: number;
   selectedCount: number;
   totalSymptoms: number;
-  matchedSymptoms: DiagnosisSymptom[];
-  unmatchedSelectedSymptoms: DiagnosisSymptom[];
+  matchedSymptoms: DiagnosisSymptomView[];
+  unmatchedSelectedSymptoms: DiagnosisSymptomView[];
   category: string | null;
   controls: NamedEntity[];
+  confidence: Confidence;
+  evidence: ReasoningEvidence[];
+  explanation: string;
+  scoreComponents: ScoreComponents;
 }
 
 export interface DiagnosisReasoningInfo {
   status: "UP" | "DEGRADED";
+  modelVersion: string;
   ontologyVersion: string | null;
   checksum: string | null;
   categoryCounts: Record<string, number> | null;
@@ -55,7 +66,7 @@ export interface DiagnosisResult {
     plantIri: string;
     plantLabel: string | null;
     symptomIds: string[];
-    symptoms: DiagnosisSymptom[];
+    symptoms: DiagnosisSymptomView[];
     topN: number;
   };
   candidates: DiagnosisCandidate[];
@@ -151,8 +162,8 @@ function dedupePreservingOrder(values: string[]): {
 
 function symptomIndex(
   diseases: DiagnosisDisease[]
-): Map<string, DiagnosisSymptom> {
-  const index = new Map<string, DiagnosisSymptom>();
+): Map<string, DiagnosisSymptomView> {
+  const index = new Map<string, DiagnosisSymptomView>();
 
   for (const disease of diseases) {
     for (const symptom of disease.symptoms) {
@@ -169,21 +180,18 @@ function symptomIndex(
   return index;
 }
 
-export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> {
-  const plantIri = toIri(input.plantId);
-
-  const [plants, dataset] = await Promise.all([
-    listPlants(),
-    getDiagnosisDataset(input.plantId),
-  ]);
-
-  const plant = plants.find((item) => item.iri === plantIri);
-
-  if (plant === undefined) {
-    throw new NotFoundError(`Tanaman tidak ditemukan: ${input.plantId}`);
-  }
-
+export async function diagnose(
+  input: DiagnosisInput,
+  requestId?: string
+): Promise<DiagnosisResult> {
+  const dataset = await getDiagnosisDataset(input.plantId);
+  const plant = dataset.plant;
+  const plantIri = plant.iri;
   const plantLabel = plant.label;
+
+  const diseasesWithSymptoms = dataset.diseases.filter(
+    (disease) => disease.symptoms.length > 0
+  );
 
   const warnings: string[] = [];
 
@@ -195,7 +203,7 @@ export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> 
     warnings.push("DUPLICATE_SYMPTOM_IDS_IGNORED");
   }
 
-  if (dataset.length === 0) {
+  if (diseasesWithSymptoms.length === 0) {
     warnings.push("NO_DISEASE_DATA_FOR_PLANT");
     return {
       input: {
@@ -209,6 +217,7 @@ export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> 
       candidates: [],
       reasoning: {
         status: "DEGRADED",
+        modelVersion: REASONING_MODEL_VERSION,
         ontologyVersion: null,
         checksum: null,
         categoryCounts: null,
@@ -219,8 +228,8 @@ export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> 
     };
   }
 
-  const symptomsById = symptomIndex(dataset);
-  const selectedSymptoms: DiagnosisSymptom[] = [];
+  const symptomsById = symptomIndex(diseasesWithSymptoms);
+  const selectedSymptoms: DiagnosisSymptomView[] = [];
   const unknownSymptoms: string[] = [];
 
   for (const id of selectedIds) {
@@ -244,40 +253,19 @@ export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> 
 
   const selected = selectedSymptoms.map((symptom) => symptom.id);
 
-  const scored = dataset.map((disease) => {
-    const score = scoreCandidate(
-      selected,
-      disease.symptoms.map((symptom) => symptom.id)
-    );
+  const reasoningResult = reason(dataset, selected, { topN: input.topN });
+  const top = reasoningResult.candidates;
+  const topIris = top.map((candidate) => candidate.disease.iri);
 
-    return {
-      disease,
-      score,
-    };
-  });
-
-  const matchedCandidates = scored
-    .filter((entry) => entry.score.matchedCount > 0)
-    .sort((left, right) =>
-      compareCandidates(
-        {
-          score: left.score.score,
-          matchedCount: left.score.matchedCount,
-          label: left.disease.label,
-        },
-        {
-          score: right.score.score,
-          matchedCount: right.score.matchedCount,
-          label: right.disease.label,
-        }
-      )
-    );
-
-  const top = matchedCandidates.slice(0, input.topN);
-  const topIris = top.map((entry) => entry.disease.iri);
+  for (const warning of reasoningResult.warnings) {
+    if (!warnings.includes(warning)) {
+      warnings.push(warning);
+    }
+  }
 
   let reasoning: DiagnosisReasoningInfo = {
     status: "DEGRADED",
+    modelVersion: REASONING_MODEL_VERSION,
     ontologyVersion: null,
     checksum: null,
     categoryCounts: null,
@@ -286,8 +274,8 @@ export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> 
 
   try {
     const [categoryData, status] = await Promise.all([
-      getDiseaseCategories(topIris),
-      getReasoningStatus(),
+      getDiseaseCategories(topIris, requestId),
+      getReasoningStatus(requestId),
     ]);
 
     categories = categoryData.categories;
@@ -295,7 +283,7 @@ export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> 
   } catch (error) {
     warnings.push("REASONING_UNAVAILABLE");
     console.warn(
-      "Diagnosis berjalan tanpa reasoning API:",
+      `[${requestId ?? "-"}] Diagnosis berjalan tanpa reasoning API:`,
       error instanceof Error ? error.message : String(error)
     );
   }
@@ -304,39 +292,39 @@ export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> 
 
   let unclassifiedCount = 0;
 
-  const candidates: DiagnosisCandidate[] = top.map((entry) => {
-    const matchedSet = new Set(
-      entry.disease.symptoms.map((symptom) => symptom.id)
-    );
-
-    const category = categories[entry.disease.iri] ?? null;
+  const candidates: DiagnosisCandidate[] = top.map((candidate) => {
+    const category = categories[candidate.disease.iri] ?? null;
     if (category === null && reasoning.status === "UP") {
       unclassifiedCount++;
     }
 
     return {
-      diseaseId: entry.disease.id,
-      diseaseIri: entry.disease.iri,
-      label: entry.disease.label,
-      score: entry.score.score,
-      matchRatio: entry.score.matchRatio,
-      coverage: entry.score.coverage,
-      matchedCount: entry.score.matchedCount,
-      selectedCount: entry.score.selectedCount,
-      totalSymptoms: entry.score.totalSymptoms,
-      matchedSymptoms: selectedSymptoms.filter((symptom) =>
-        matchedSet.has(symptom.id)
-      ),
-      unmatchedSelectedSymptoms: selectedSymptoms.filter(
-        (symptom) => !matchedSet.has(symptom.id)
+      diseaseId: candidate.disease.id,
+      diseaseIri: candidate.disease.iri,
+      label: candidate.disease.label,
+      score: candidate.score,
+      matchRatio: candidate.scoreComponents.completeness,
+      coverage: candidate.scoreComponents.coverage,
+      matchedCount: candidate.evidence.length,
+      selectedCount: selected.length,
+      totalSymptoms: candidate.disease.symptoms.length,
+      matchedSymptoms: candidate.matchedSymptoms.map(toSymptomView),
+      unmatchedSelectedSymptoms: candidate.unexplainedSymptoms.map(
+        toSymptomView
       ),
       category,
-      controls: controlsByDisease[entry.disease.iri] ?? [],
+      controls: controlsByDisease[candidate.disease.iri] ?? [],
+      confidence: candidate.confidence,
+      evidence: candidate.evidence,
+      explanation: explainCandidate(candidate),
+      scoreComponents: candidate.scoreComponents,
     };
   });
 
-  if (matchedCandidates.length === 0) {
-    warnings.push("NO_MATCHING_DISEASE");
+  if (candidates.length === 0) {
+    if (!warnings.includes("NO_MATCHING_DISEASE")) {
+      warnings.push("NO_MATCHING_DISEASE");
+    }
   }
 
   if (unclassifiedCount > 0) {
@@ -355,7 +343,7 @@ export async function diagnose(input: DiagnosisInput): Promise<DiagnosisResult> 
     candidates,
     reasoning,
     warnings,
-    message: buildMessage(candidates.length, matchedCandidates.length),
+    message: buildMessage(candidates.length, reasoningResult.totalMatched),
   };
 }
 
@@ -365,9 +353,18 @@ function toReasoningInfo(
 ): DiagnosisReasoningInfo {
   return {
     status: status.ready ? "UP" : "DEGRADED",
+    modelVersion: REASONING_MODEL_VERSION,
     ontologyVersion: status.version ?? null,
     checksum: status.checksum ?? null,
     categoryCounts: counts,
+  };
+}
+
+function toSymptomView(symptom: DiagnosisSymptom): DiagnosisSymptomView {
+  return {
+    id: symptom.id,
+    iri: symptom.iri,
+    label: symptom.label,
   };
 }
 

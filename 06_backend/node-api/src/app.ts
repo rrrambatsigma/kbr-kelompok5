@@ -34,6 +34,7 @@ app.get("/", (_req, res) => {
         "GET /api/health/live",
         "GET /api/health/ready",
         "GET /api/health/fuseki",
+        "GET /api/health/ontology",
         "GET /api/plants",
         "GET /api/plants/:id",
         "GET /api/diseases",
