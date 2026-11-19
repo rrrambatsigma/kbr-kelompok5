@@ -100,3 +100,6 @@ target/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Screenshot/browser artifacts dari sesi pengembangan
+.openchamber/

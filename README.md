@@ -28,3 +28,8 @@ untuk mendukung diagnosis awal penyakit tanaman pangan tropis.
 - **Milestone 7 — Pengujian dan evaluasi backend: laporan tersedia.**
   Hasil 35 test Node, 4 test Java, smoke/integration test, 75 kasus evaluasi,
   dan uji ketahanan ada di `08_documentation/backend-test-report.md`.
+- **Frontend TaniCare: MVP tersedia.**
+  React + Vite + TypeScript di `07_frontend`, terintegrasi dengan Node API
+  untuk diagnosis dan knowledge base.
+  Lihat `08_documentation/frontend-setup.md` dan
+  `08_documentation/frontend-api-integration-map.md`.
