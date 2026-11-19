@@ -1,0 +1,6 @@
+condition_id,plant,condition_local,condition_label,condition_class,source_id,locator,quote,confidence,review_status,notes
+PGC_001,Padi,KondisiCurahHujanTinggi,Curah hujan tinggi,CurahHujan,SRC_EXT_040,Climate requirement,"A rainfall of 1000 mm to 2000 mm is ideal for rice growing.",high,verified,Rice water requirement.
+PGC_002,Jagung,KondisiSuhuSedang,Suhu sedang,Suhu,SRC_EXT_041,Temperature requirements,"However, the optimal average temperatures for the entire crop growing season ranges between 68 F to 73 F (20-22 C).",high,verified,Corn temperature requirement.
+PGC_003,UbiJalar,KondisiTanahGembur,Tanah gembur,Tanah,SRC_EXT_042,Soil,"They grow best in a well-drained, loamy to sandy soil.",high,verified,Sweetpotato soil requirement.
+PGC_004,KacangTanah,KondisiSuhuHangat,Suhu hangat,Suhu,SRC_EXT_043,Temperature,"Optimum temperatures for growing groundnut are 25-30 C.",high,verified,Groundnut temperature requirement.
+PGC_005,KacangHijau,KondisiSuhuHangat,Suhu hangat,Suhu,SRC_EXT_044,Climate,"A warm humid climate with temperature ranging from 25 C to 35 C, with 400-550 mm rainfall, well distributed during the growing period of 60 - 90 days, is suitable for its cultivation.",high,verified,Mungbean climate requirement.

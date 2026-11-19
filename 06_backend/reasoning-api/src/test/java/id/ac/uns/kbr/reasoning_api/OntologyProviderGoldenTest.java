@@ -44,9 +44,9 @@ class OntologyProviderGoldenTest {
             Map<String, Long> counts =
                     (Map<String, Long>) status.get("diseaseCategoryCounts");
 
-            assertEquals(26L, counts.get("PenyakitJamur"));
-            assertEquals(5L, counts.get("PenyakitBakteri"));
-            assertEquals(5L, counts.get("PenyakitVirus"));
+            assertEquals(34L, counts.get("PenyakitJamur"));
+            assertEquals(7L, counts.get("PenyakitBakteri"));
+            assertEquals(10L, counts.get("PenyakitVirus"));
             assertEquals(1L, counts.get("PenyakitOomycete"));
             assertEquals(1L, counts.get("PenyakitFitoplasma"));
             assertEquals(0L, counts.get("PenyakitNematoda"));

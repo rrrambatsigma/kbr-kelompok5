@@ -228,7 +228,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
         "FaktorBudidaya",
         "Faktor kebersihan lahan dan sisa tanaman.",
     ),
-    "Drainase": ("Drainase", "FaktorBudidaya", "Faktor pengaturan drainase."),
     "PenggunaanBenih": (
         "Penggunaan Benih",
         "FaktorBudidaya",
@@ -236,11 +235,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     ),
     "Pemupukan": ("Pemupukan", "FaktorBudidaya", "Faktor pemupukan."),
     "JarakTanam": ("Jarak Tanam", "FaktorBudidaya", "Faktor jarak tanam."),
-    "FaktorRotasiTanaman": (
-        "Faktor Rotasi Tanaman",
-        "FaktorBudidaya",
-        "Faktor pergiliran tanaman.",
-    ),
     "Pengairan": ("Pengairan", "FaktorBudidaya", "Faktor pengairan."),
     "FaktorLahan": ("Faktor Lahan", "FaktorRisiko", "Faktor kondisi lahan."),
     "KondisiTanah": ("Kondisi Tanah", "FaktorLahan", "Faktor kondisi tanah."),
@@ -585,9 +579,9 @@ OBJECT_PROPERTIES: dict[str, dict] = {
     },
     "memilikiObservasi": {
         "label": "memiliki observasi",
-        "comment": "Diagnosis memiliki observasi gejala.",
+        "comment": "Diagnosis memiliki observasi gejala atau faktor lingkungan.",
         "domain": "Diagnosis",
-        "range": "Observasi",
+        "range": "EntitasKBR",
     },
     "menghasilkanPenyakit": {
         "label": "menghasilkan penyakit",
@@ -850,6 +844,12 @@ MD_OBJECT_PROPERTIES: dict[str, dict] = {
         "label": "memiliki kondisi tumbuh",
         "comment": "Tanaman pangan memiliki kondisi lingkungan tumbuh yang terkontrol.",
         "domain": "TanamanPangan",
+        "range": "FaktorLingkungan",
+    },
+    "menggambarkanKondisi": {
+        "label": "menggambarkan kondisi",
+        "comment": "Observasi lingkungan menggambarkan kondisi lingkungan yang terkontrol.",
+        "domain": "ObservasiLingkungan",
         "range": "FaktorLingkungan",
     },
 }

@@ -29,6 +29,9 @@ KondisiDrainaseBaik,FaktorLingkungan,Drainase baik,derived,,kondisi tumbuh terko
 KondisiDrainaseBuruk,FaktorLingkungan,Drainase buruk,derived,,kondisi tumbuh terkontrol
 KondisiIklimBasah,FaktorLingkungan,Iklim basah,derived,,kondisi tumbuh terkontrol
 KondisiIklimKering,FaktorLingkungan,Iklim kering,derived,,kondisi tumbuh terkontrol
+KondisiKelembapanTanahRendah,FaktorLingkungan,Kelembapan tanah rendah,derived,,kondisi tumbuh terkontrol
+KondisiKelembapanTanahSedang,FaktorLingkungan,Kelembapan tanah sedang,derived,,kondisi tumbuh terkontrol
+KondisiKelembapanTanahTinggi,FaktorLingkungan,Kelembapan tanah tinggi,derived,,kondisi tumbuh terkontrol
 KondisiKelembapanTinggi,FaktorRisiko,Kelembapan tinggi,ontology,,faktor risiko existing
 KondisiKelembapanUdaraRendah,FaktorLingkungan,Kelembapan udara rendah,derived,,kondisi tumbuh terkontrol
 KondisiKelembapanUdaraSedang,FaktorLingkungan,Kelembapan udara sedang,derived,,kondisi tumbuh terkontrol
@@ -39,7 +42,6 @@ KondisiSuhuDingin,FaktorLingkungan,Suhu dingin,derived,,kondisi tumbuh terkontro
 KondisiSuhuHangat,FaktorLingkungan,Suhu hangat,derived,,kondisi tumbuh terkontrol
 KondisiSuhuRendah,FaktorRisiko,Suhu rendah,ontology,,faktor risiko existing
 KondisiSuhuSedang,FaktorLingkungan,Suhu sedang,derived,,kondisi tumbuh terkontrol
-KondisiSuhuTinggi,FaktorRisiko,Suhu tinggi,ontology,,faktor risiko existing
 KondisiTanahAsam,FaktorLingkungan,Tanah asam,derived,,kondisi tumbuh terkontrol
 KondisiTanahBasa,FaktorLingkungan,Tanah basa,derived,,kondisi tumbuh terkontrol
 KondisiTanahBerpasir,FaktorLingkungan,Tanah berpasir,derived,,kondisi tumbuh terkontrol

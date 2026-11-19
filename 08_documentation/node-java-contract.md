@@ -105,7 +105,7 @@ Response `data`:
   "categories": {
     "http://.../PenyakitBlasPadi": "PenyakitJamur"
   },
-  "counts": { "PenyakitJamur": 26 },
+  "counts": { "PenyakitJamur": 34 },
   "unclassifiedDiseaseCount": 15,
   "requestedCount": 1,
   "foundCount": 1,

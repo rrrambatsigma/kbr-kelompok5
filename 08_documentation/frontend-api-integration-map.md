@@ -107,7 +107,7 @@ Response `data` (disederhanakan):
   "reasoning": {
     "status": "UP",
     "modelVersion": "forward-chaining-cf-v1",
-    "ontologyVersion": "17cabff2112e",
+    "ontologyVersion": "bbf9c78eca83",
     "checksum": "..."
   },
   "warnings": [],

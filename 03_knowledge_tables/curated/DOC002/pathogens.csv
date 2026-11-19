@@ -88,19 +88,24 @@ PAT_094,Pratylenchus coffeae,Pratylenchus coffeae,nematoda,,,209,DOC002_C209_02,
 PAT_095,Meloidogyne spp,Meloidogyne spp,nematoda,,,209,DOC002_C209_02,Nama tingkat genus; sumber tidak menyebut spesiesnya.,verified
 PAT_096,Ganoderma boninense,Ganoderma boninense,jamur,DOC002_C213_01,yang disebabkan oleh Ganoderma adalah salah satu jenis jamur patogen yang paling merusak di Asia Tenggara,213,,,verified
 PAT_097,Phytophthora palmivora,Phytophthora palmivora,oomycete,DOC002_C217_02,Patogen genus Oomycete ini disebut sebagai jamur patogen yang memiliki dampak yang besar.,217,,,verified
-PAT_098,Cercospora henningsii,Cercospora henningsii,unknown,,,91,,Sumber mencantumkan Cercosporidium henningsii sebagai sinonim.,verified
-PAT_099,Cercosporidium henningsii,Cercosporidium henningsii,unknown,,,91,,Sinonim dari Cercospora henningsii menurut sumber.,verified
-PAT_100,Cercospora. viscosae,Cercospora. viscosae,unknown,,,92,,Tanda titik setelah genus tercetak di sumber; dipertahankan verbatim.,verified
-PAT_101,Phaeoramularia manihotis,Phaeoramularia manihotis,unknown,,,92,,,verified
-PAT_102,Colletotricum spp,Colletotricum spp,unknown,,,92,,Salah eja di sumber (Colletotrichum spp.); dipertahankan verbatim.,verified
-PAT_103,Xanthomonas Campestrispv. Manihotis,Xanthomonas Campestrispv. Manihotis,unknown,,,92,,Spasi hilang di sumber; varian dari Xanthomonas campestris pv. manihotis pada tabel 5.2.,verified
+PAT_098,Cercospora henningsii,Cercospora henningsii,jamur,SRC_EXT_029,"Brown and white leaf spots are relatively minor diseases of cassava caused by fungi.",91,,Sumber mencantumkan Cercosporidium henningsii sebagai sinonim.,verified
+PAT_099,Cercosporidium henningsii,Cercosporidium henningsii,jamur,SRC_EXT_029,"Brown and white leaf spots are relatively minor diseases of cassava caused by fungi.",91,,Sinonim dari Cercospora henningsii menurut sumber.,verified
+PAT_100,Cercospora. viscosae,Cercospora. viscosae,jamur,SRC_EXT_029,"Brown and white leaf spots are relatively minor diseases of cassava caused by fungi.",92,,Tanda titik setelah genus tercetak di sumber; dipertahankan verbatim.,verified
+PAT_101,Phaeoramularia manihotis,Phaeoramularia manihotis,jamur,SRC_EXT_029,"Brown and white leaf spots are relatively minor diseases of cassava caused by fungi.",92,,,verified
+PAT_102,Colletotricum spp,Colletotricum spp,jamur,SRC_EXT_029,The disease is caused by a fungus (Collectothricum gloeosporioides) that is also capable of causing diseases on other food crops.,92,,Salah eja di sumber (Colletotrichum spp.); dipertahankan verbatim.,verified
+PAT_103,Xanthomonas Campestrispv. Manihotis,Xanthomonas Campestrispv. Manihotis,bakteri,SRC_EXT_029,The disease is caused by a bacterium (Xanthomonas campestris pv. manihotis).,92,,Spasi hilang di sumber; varian dari Xanthomonas campestris pv. manihotis pada tabel 5.2.,verified
 PAT_104,Fitoplasma,Fitoplasma,fitoplasma,,,92,,"Nama kelompok pada sel tabel, bukan binomial; dipertahankan verbatim.",verified
-PAT_105,Begomovirus,Begomovirus,unknown,,,92,,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.,verified
-PAT_106,Ipomovirus,Ipomovirus,unknown,,,92,,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.,verified
-PAT_107,Xanthomonas campestris pv. Manihotis,Xanthomonas campestris pv. Manihotis,unknown,,,94,,,verified
-PAT_108,Elsinoe brasiliensis,Elsinoe brasiliensis,unknown,,,94,,,verified
-PAT_109,Diplodia spp,Diplodia spp,unknown,,,94,,,verified
-PAT_110,Botryodiplodia spp,Botryodiplodia spp,unknown,,,94,,,verified
-PAT_111,Phytophthora spp,Phytophthora spp,unknown,,,94,,,verified
-PAT_112,Polyporus sulphureus,Polyporus sulphureus,unknown,,,95,,,verified
-PAT_113,Collectothricum gloeosporioides,Collectothricum gloeosporioides,unknown,,,93,,,verified
+PAT_105,Begomovirus,Begomovirus,virus,SRC_EXT_033,"Cassava mosaic geminiviruses (CMGs) causal agent of cassava mosaic disease (CMD) comprise several species of circular single strand DNA (ssDNA) viruses belonging to the genus Begomovirus, family Geminiviridae.",92,,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.,verified
+PAT_106,Ipomovirus,Ipomovirus,virus,SRC_EXT_033,"cassava brown streak ipomoviruses (CBSIs) causal of CBSD comprises two positive sense single strand RNA (ss RNA) genomes, belonging to the genus Ipomovirus, family Potyviridae",92,,Nama genus virus pada sel tabel; kelompok takson tidak disebut pada baris tabel.,verified
+PAT_107,Xanthomonas campestris pv. Manihotis,Xanthomonas campestris pv. Manihotis,bakteri,SRC_EXT_029,The disease is caused by a bacterium (Xanthomonas campestris pv. manihotis).,94,,,verified
+PAT_108,Elsinoe brasiliensis,Elsinoe brasiliensis,jamur,SRC_EXT_032,Superelongation disease (SED) is a fungal disease that affects cassava in the Caribbean.,94,,,verified
+PAT_109,Diplodia spp,Diplodia spp,jamur,,,94,,Genus Diplodia adalah jamur; sumber tabel tidak menyebut kelompok takson.,verified
+PAT_110,Botryodiplodia spp,Botryodiplodia spp,jamur,SRC_EXT_029,A number of fungal species including Botryodiplodia theobromae cause rots of this kind in several soil types.,94,,,verified
+PAT_111,Phytophthora spp,Phytophthora spp,oomycete,,,94,,Genus Phytophthora adalah oomycete; sumber tabel tidak menyebut kelompok takson.,verified
+PAT_112,Polyporus sulphureus,Polyporus sulphureus,jamur,SRC_EXT_029,a parasitic mushroom (Polyporus sulphureus),95,,,verified
+PAT_113,Collectothricum gloeosporioides,Collectothricum gloeosporioides,jamur,SRC_EXT_029,The disease is caused by a fungus (Collectothricum gloeosporioides) that is also capable of causing diseases on other food crops.,93,,,verified
+PAT_125,Fungi/Jamur,Fungi/Jamur,jamur,,,94,DOC002_P094_B001,"Tabel 5.2 batang menyebut Fungi/Jamur; nama spesifik tidak tersedia.",verified
+PAT_126,Rice ragged stunt virus,Rice ragged stunt virus,virus,,,34,DOC002_P034_B010,Penyebab kerdil rumput tipe 1 dan tipe 2.,verified
+PAT_127,Rice grassy stunt virus,Rice grassy stunt virus,virus,,,34,DOC002_P034_B010,Penyebab kerdil hampa.,verified
+PAT_128,Peanut mottle virus,Peanut mottle virus,virus,,,72,DOC002_P072_B003,Penyebab penyakit belang kacang tanah.,verified
+PAT_129,Peanut stripe virus,Peanut stripe virus,virus,,,72,DOC002_P072_B003,Penyebab penyakit belang kacang tanah.,verified

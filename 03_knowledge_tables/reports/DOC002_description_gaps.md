@@ -6,58 +6,56 @@ Sumber baris: `DOC002_descriptions.csv`; seluruh literal verbatim dari sumber.
 |---|---:|
 | BagianTanaman | 10 |
 | FaktorLingkungan | 15 |
-| Gejala | 79 |
-| GejalaAkar | 7 |
-| GejalaBatang | 26 |
-| GejalaBiji | 7 |
+| Gejala | 70 |
+| GejalaAkar | 8 |
+| GejalaBatang | 27 |
+| GejalaBiji | 6 |
 | GejalaBuah | 2 |
-| GejalaDaun | 62 |
-| GejalaMalai | 2 |
+| GejalaDaun | 72 |
+| GejalaMalai | 3 |
 | GejalaPolong | 3 |
-| GejalaUmbi | 1 |
+| GejalaUmbi | 2 |
 | Legum | 3 |
-| Patogen | 15 |
 | PengendalianBiologis | 8 |
-| PengendalianFisik | 1 |
-| PengendalianKimiawi | 6 |
-| PengendalianKulturTeknis | 14 |
+| PengendalianFisik | 2 |
+| PengendalianKimiawi | 8 |
+| PengendalianKulturTeknis | 17 |
 | PengendalianMekanis | 1 |
+| PengendalianTerpadu | 1 |
 | Penyakit | 53 |
 | Serealia | 2 |
 | UmbiUmbian | 2 |
-| Varietas | 34 |
-| owl:Class | 67 |
-| **Total baris** | **420** |
+| Varietas | 35 |
+| owl:Class | 65 |
+| **Total baris** | **415** |
 
 | Status verifikasi | Jumlah |
 |---|---:|
-| auto_ok | 299 |
-| needs_review | 121 |
+| auto_ok | 301 |
+| needs_review | 114 |
 
 | Asal baris | Jumlah |
 |---|---:|
-| disalin dari deskripsi kanonik | 219 |
-| kalimat terkait istilah kelas, bukan definisi | 64 |
+| disalin dari deskripsi kanonik | 230 |
+| kalimat terkait istilah kelas, bukan definisi | 62 |
 | disalin dari fakta enrichment | 60 |
-| frasa kunci pada kalimat sumber | 44 |
-| fallback korpus dokumen penuh (di luar filter 7 tanaman) | 8 |
-| definisi sumber | 7 |
-| kata kunci, bukan frasa utuh | 7 |
-| sel deskripsi pada baris tabel sumber | 4 |
-| kata terakhir frasa (manihotis) | 3 |
-| kata terakhir frasa (henningsii) | 1 |
-| kata terakhir frasa (gloeosporioides) | 1 |
-| kata terakhir frasa (spp) | 1 |
+| frasa kunci pada kalimat sumber | 38 |
+| fallback korpus dokumen penuh (di luar filter 7 tanaman) | 11 |
+| definisi sumber | 8 |
+| kata kunci, bukan frasa utuh | 5 |
 | bukti tautan kondisi | 1 |
 
-Individu sasaran: 223, terisi: 206, kosong: 17.
-Kelas: 89, terisi: 67, kosong: 22.
+Individu sasaran: 202, terisi: 183, kosong: 19.
+Kelas: 87, terisi: 65, kosong: 22.
 
 ## Individu tanpa deskripsi
 
 | Subjek | Kelas | Frasa pencarian |
 |---|---|---|
 | KondisiIklimBasah | FaktorLingkungan | Iklim basah |
+| KondisiKelembapanTanahRendah | FaktorLingkungan | Kelembapan tanah rendah |
+| KondisiKelembapanTanahSedang | FaktorLingkungan | Kelembapan tanah sedang |
+| KondisiKelembapanTanahTinggi | FaktorLingkungan | Kelembapan tanah tinggi |
 | KondisiKelembapanUdaraRendah | FaktorLingkungan | Kelembapan udara rendah |
 | KondisiKelembapanUdaraSedang | FaktorLingkungan | Kelembapan udara sedang |
 | KondisiKelembapanUdaraTinggi | FaktorLingkungan | Kelembapan udara tinggi |
@@ -65,13 +63,12 @@ Kelas: 89, terisi: 67, kosong: 22.
 | KondisiTanahBerpasir | FaktorLingkungan | Tanah berpasir |
 | KondisiTanahLiat | FaktorLingkungan | Tanah liat |
 | KondisiTanahNetral | FaktorLingkungan | Tanah netral |
-| PengamatanBercakDaunPutihUbiKayuKecilBulatBerwarnaPutih | Gejala | Pengamatan gejala Bercak daun putih |
-| PengamatanPenyakitAntraknosaKedelaiTruncatumMelakukanPenetrasiJaringanMembentuk | Gejala | Pengamatan gejala Penyakit Antraknosa |
+| PengamatanBercakDaunPutihUbiKayuBercakTanaman | Gejala | Bercak pada tanaman pada Bercak daun putih |
+| PengamatanPenyakitAntraknosaKedelaiKematianTanaman | Gejala | Kematian tanaman pada Penyakit Antraknosa |
+| PengamatanPenyakitAntraknosaKedelaiNekrosisTanaman | Gejala | Nekrosis pada tanaman pada Penyakit Antraknosa |
 | PengamatanPenyakitBercakDaunKacangTanahBerbedaBedaTergantungSpesiesPatogennya | Gejala | Pengamatan gejala Penyakit Bercak Daun |
 | PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataABPascapanenC | Gejala | Pengamatan gejala Penyakit busuk hitam (black rot) |
-| PengamatanPenyakitEmbunPalsuDownyMildewKedelaiManshuricaAwalnyaTerdapatAdanya | Gejala | Pengamatan gejala Penyakit Embun Palsu (Downy mildew) |
 | PengamatanPenyakitHawarBakteriBacterialBlightKedelaiAkibatMakaBenihDihasilkanMenjadi | Gejala | Pengamatan gejala Penyakit Hawar Bakteri (Bacterial Blight) |
-| PengamatanPenyakitHawarBakteriBacterialBlightKedelaiGlycineDiawaliMunculnyaAwalnyaBerwarna | Gejala | Pengamatan gejala Penyakit Hawar Bakteri (Bacterial Blight) |
 | PengamatanPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiMenusukkanAlatMulutStyletSehat | Gejala | Pengamatan gejala Penyakit Kerdil Kedelai (Soybean Stunt Virus) |
 | PengamatanPenyakitRebahKecambahKedelaiSolaniMakaBenihTidakBerkecambah | Gejala | Pengamatan gejala Penyakit Rebah Kecambah |
 

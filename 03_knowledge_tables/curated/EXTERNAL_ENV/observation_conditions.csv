@@ -1,0 +1,93 @@
+﻿obs_id,condition_local,condition_label,reason,confidence,review_status
+OBS_EXT_001,KondisiSuhuHangat,Suhu hangat,Suhu optimal 30 °C.,high,verified
+OBS_EXT_002,KondisiMusimHujan,Musim hujan,Peningkatan populasi pada musim hujan.,high,verified
+OBS_EXT_003,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Teks menyebut kelembapan tinggi.,high,verified
+OBS_EXT_004,KondisiSuhuHangat,Suhu hangat,"Suhu 26–30 °C, RH tinggi, dan daun basah.",high,verified
+OBS_EXT_004,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,"Suhu 26–30 °C, RH tinggi, dan daun basah.",high,verified
+OBS_EXT_005,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,RH tinggi dan daun basah berkepanjangan.,high,verified
+OBS_EXT_006,KondisiSuhuSedang,Suhu sedang,Suhu moderat 18–27 °C.,medium,verified
+OBS_EXT_007,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Daun basah enam jam untuk infeksi.,high,verified
+OBS_EXT_008,KondisiKelembapanUdaraSedang,Kelembapan udara sedang,RH di sekitar tanaman memengaruhi penyakit; arah tidak eksplisit.,low,verified
+OBS_EXT_009,KondisiSuhuSedang,Suhu sedang,Suhu di sekitar tanaman memengaruhi penyakit; nilai tidak eksplisit.,low,verified
+OBS_EXT_010,KondisiSuhuHangat,Suhu hangat,Suhu hangat 25–30 °C dan RH tinggi.,high,verified
+OBS_EXT_010,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Suhu hangat 25–30 °C dan RH tinggi.,high,verified
+OBS_EXT_011,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,RH >90%.,high,verified
+OBS_EXT_012,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Kondisi sangat basah dan air bebas pada daun.,high,verified
+OBS_EXT_013,KondisiSuhuSedang,Suhu sedang,Suhu 18–24 °C.,medium,verified
+OBS_EXT_014,KondisiKelembapanUdaraRendah,Kelembapan udara rendah,RH rendah dan daun basah terbatas.,high,verified
+OBS_EXT_015,KondisiIklimBasah,Iklim basah,Curah hujan dan RH sebagai faktor iklim.,medium,verified
+OBS_EXT_015,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Curah hujan dan RH sebagai faktor iklim.,medium,verified
+OBS_EXT_016,KondisiIklimBasah,Iklim basah,Curah hujan dan RH sebagai faktor iklim.,medium,verified
+OBS_EXT_016,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Curah hujan dan RH sebagai faktor iklim.,medium,verified
+OBS_EXT_017,KondisiSuhuHangat,Suhu hangat,Cuaca hangat dan lembap.,high,verified
+OBS_EXT_017,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Cuaca hangat dan lembap.,high,verified
+OBS_EXT_018,KondisiSuhuSedang,Suhu sedang,Suhu 20–30 °C dan RH >78%.,high,verified
+OBS_EXT_018,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Suhu 20–30 °C dan RH >78%.,high,verified
+OBS_EXT_019,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,RH >78%.,high,verified
+OBS_EXT_020,KondisiSuhuSedang,Suhu sedang,Suhu 18–32 °C dan RH tinggi.,medium,verified
+OBS_EXT_020,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Suhu 18–32 °C dan RH tinggi.,medium,verified
+OBS_EXT_021,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,RH >90% selama beberapa jam.,high,verified
+OBS_EXT_022,KondisiSuhuSedang,Suhu sedang,Suhu sejuk 20–24 °C dan lembap.,high,verified
+OBS_EXT_022,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Suhu sejuk 20–24 °C dan lembap.,high,verified
+OBS_EXT_023,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Cuaca lembap.,high,verified
+OBS_EXT_024,KondisiSuhuHangat,Suhu hangat,Suhu 25–34 °C.,high,verified
+OBS_EXT_025,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,RH >70%.,high,verified
+OBS_EXT_026,KondisiCurahHujanTinggi,Curah hujan tinggi,Hujan lebat dan angin kencang.,high,verified
+OBS_EXT_027,KondisiMusimHujan,Musim hujan,Migrasi vektor lebih tinggi pada musim hujan.,high,verified
+OBS_EXT_028,KondisiIklimBasah,Iklim basah,Kondisi tropis dengan padi sepanjang tahun.,medium,verified
+OBS_EXT_029,KondisiSuhuHangat,Suhu hangat,Suhu ≥30 °C dan kelembapan tinggi.,high,verified
+OBS_EXT_029,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Suhu ≥30 °C dan kelembapan tinggi.,high,verified
+OBS_EXT_030,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Kelembapan tinggi.,high,verified
+OBS_EXT_031,KondisiSuhuDingin,Suhu dingin,Musim dingin ringan.,medium,verified
+OBS_EXT_032,KondisiSuhuHangat,Suhu hangat,Suhu infeksi optimal 30 °C.,high,verified
+OBS_EXT_033,KondisiKelembapanTanahSedang,Kelembapan tanah sedang,Kadar air tanah 28–75%.,medium,verified
+OBS_EXT_034,KondisiSuhuSedang,Suhu sedang,Suhu 20–29 °C.,medium,verified
+OBS_EXT_035,KondisiSuhuSedang,Suhu sedang,Suhu lapang 23–27 °C.,medium,verified
+OBS_EXT_036,KondisiSuhuHangat,Suhu hangat,Suhu 25–37 °C.,high,verified
+OBS_EXT_037,KondisiKelembapanTanahTinggi,Kelembapan tanah tinggi,Tanah basah pada suhu optimum.,high,verified
+OBS_EXT_038,KondisiSuhuHangat,Suhu hangat,Suhu 25–30 °C dan RH 98–100%.,high,verified
+OBS_EXT_038,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Suhu 25–30 °C dan RH 98–100%.,high,verified
+OBS_EXT_039,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,RH 98–100%.,high,verified
+OBS_EXT_040,KondisiSuhuHangat,Suhu hangat,Suhu optimal 27–35 °C.,high,verified
+OBS_EXT_041,KondisiKelembapanTanahTinggi,Kelembapan tanah tinggi,Tanah jenuh air dan kelembapan tinggi.,high,verified
+OBS_EXT_041,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Tanah jenuh air dan kelembapan tinggi.,high,verified
+OBS_EXT_042,KondisiSuhuHangat,Suhu hangat,Suhu optimal 30 °C.,high,verified
+OBS_EXT_043,KondisiMusimHujan,Musim hujan,Peningkatan populasi pada musim hujan.,high,verified
+OBS_EXT_044,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Kelembapan tinggi.,high,verified
+OBS_EXT_045,KondisiIklimBasah,Iklim basah,"Suhu, curah hujan, dan angin memengaruhi populasi vektor.",low,verified
+OBS_EXT_046,KondisiCurahHujanSedang,Curah hujan sedang,Curah hujan memengaruhi ekspresi gejala; arah tidak eksplisit.,low,verified
+OBS_EXT_047,KondisiSuhuSedang,Suhu sedang,Suhu memengaruhi ekspresi gejala; nilai tidak eksplisit.,low,verified
+OBS_EXT_048,KondisiMusimHujan,Musim hujan,Pemanjangan internodus pada musim hujan.,high,verified
+OBS_EXT_049,KondisiIklimBasah,Iklim basah,Daerah lembap dan sejuk.,high,verified
+OBS_EXT_049,KondisiSuhuDingin,Suhu dingin,Daerah lembap dan sejuk.,high,verified
+OBS_EXT_050,KondisiSuhuDingin,Suhu dingin,"Cuaca sejuk, lembap, dan hujan.",high,verified
+OBS_EXT_050,KondisiIklimBasah,Iklim basah,"Cuaca sejuk, lembap, dan hujan.",high,verified
+OBS_EXT_050,KondisiCurahHujanTinggi,Curah hujan tinggi,"Cuaca sejuk, lembap, dan hujan.",high,verified
+OBS_EXT_051,KondisiIklimBasah,Iklim basah,Lingkungan lembap; hutan lembap versus savana kering.,high,verified
+OBS_EXT_052,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Zona RH tinggi.,high,verified
+OBS_EXT_053,KondisiIklimBasah,Iklim basah,Daerah lebih basah dan hangat.,high,verified
+OBS_EXT_053,KondisiSuhuHangat,Suhu hangat,Daerah lebih basah dan hangat.,high,verified
+OBS_EXT_054,KondisiKelembapanTanahTinggi,Kelembapan tanah tinggi,Tanah tergenang.,high,verified
+OBS_EXT_054,KondisiDrainaseBuruk,Drainase buruk,Tanah tergenang.,high,verified
+OBS_EXT_055,KondisiKelembapanTanahTinggi,Kelembapan tanah tinggi,Tanah tergenang.,high,verified
+OBS_EXT_055,KondisiDrainaseBuruk,Drainase buruk,Tanah tergenang.,high,verified
+OBS_EXT_056,KondisiKelembapanTanahTinggi,Kelembapan tanah tinggi,Tanah tergenang.,high,verified
+OBS_EXT_056,KondisiDrainaseBuruk,Drainase buruk,Tanah tergenang.,high,verified
+OBS_EXT_057,KondisiMusimKemarau,Musim kemarau,Insidensi lebih rendah pada musim kemarau.,high,verified
+OBS_EXT_057,KondisiCurahHujanRendah,Curah hujan rendah,Insidensi lebih rendah pada musim kemarau.,high,verified
+OBS_EXT_058,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Kelembapan tinggi atau musim hujan.,high,verified
+OBS_EXT_059,KondisiMusimHujan,Musim hujan,Musim hujan.,high,verified
+OBS_EXT_060,KondisiSuhuHangat,Suhu hangat,Cuaca hangat dan lembap.,high,verified
+OBS_EXT_060,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Cuaca hangat dan lembap.,high,verified
+OBS_EXT_061,KondisiSuhuHangat,Suhu hangat,Kelembapan tinggi dan suhu hangat.,high,verified
+OBS_EXT_061,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Kelembapan tinggi dan suhu hangat.,high,verified
+OBS_EXT_062,KondisiSuhuDingin,Suhu dingin,Suhu sejuk dan hujan sering.,high,verified
+OBS_EXT_062,KondisiCurahHujanTinggi,Curah hujan tinggi,Suhu sejuk dan hujan sering.,high,verified
+OBS_EXT_063,KondisiCahayaRendah,Cahaya rendah,Lahan tegalan di bawah tegakan pohon jati.,medium,verified
+OBS_EXT_064,KondisiSuhuDingin,Suhu dingin,Cuaca sejuk dan basah.,high,verified
+OBS_EXT_064,KondisiIklimBasah,Iklim basah,Cuaca sejuk dan basah.,high,verified
+OBS_EXT_065,KondisiCahayaRendah,Cahaya rendah,Lahan tegalan di bawah tegakan pohon jati.,medium,verified
+OBS_EXT_066,KondisiKelembapanTanahTinggi,Kelembapan tanah tinggi,Tanah jenuh air dan kelembapan tinggi.,high,verified
+OBS_EXT_066,KondisiKelembapanUdaraTinggi,Kelembapan udara tinggi,Tanah jenuh air dan kelembapan tinggi.,high,verified
+OBS_EXT_067,KondisiSuhuSedang,Suhu sedang,Cuaca memengaruhi populasi vektor; kondisi spesifik tidak eksplisit.,low,verified
+OBS_EXT_068,KondisiIklimBasah,Iklim basah,"Suhu, curah hujan, dan angin memengaruhi populasi vektor.",low,verified

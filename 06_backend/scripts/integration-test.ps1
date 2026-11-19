@@ -48,7 +48,7 @@ $body = @{
     symptomIds = @(
         "PengamatanPenyakitBlasPadiBercakDaun",
         "PengamatanPenyakitBlasPadiKhasMalai",
-        "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian"
+        "PengamatanPenyakitBlasPadiMalaiPatah"
     )
     topN = 5
 } | ConvertTo-Json -Depth 5

@@ -5,11 +5,11 @@ pakar penyakit tanaman pangan. Fokusnya backend: bagaimana gejala yang dipilih
 diubah menjadi kandidat penyakit, bagaimana keyakinan dihitung, dan bagaimana
 hasilnya divalidasi.
 
-Ontology yang dipakai saat dokumen ini ditulis masih **sementara**
-(`04_ontology/ontology_md.ttl`, checksum `17cabff2...`). Ontology final masih
-dikerjakan anggota tim lain. Karena itu backend dibuat tahan ganti ontology:
-kosakata dipusatkan di `src/config/ontology.ts`, dan properti opsional boleh
-hilang tanpa mematikan diagnosis.
+Ontology yang dipakai adalah `04_ontology/ontology_md.ttl` (checksum
+`bbf9c78e...`), hasil penggabungan ontology final dengan enrichment. Backend
+tetap dibuat tahan ganti ontology: kosakata dipusatkan di
+`src/config/ontology.ts`, dan properti opsional boleh hilang tanpa mematikan
+diagnosis.
 
 ## 1. Ruang lingkup
 
@@ -26,28 +26,28 @@ Yang tidak termasuk M5:
 - Frontend.
 - Input kondisi lingkungan/fase.
 - SWRL untuk ranking.
-- Perbaikan 131 gejala yang belum dipetakan.
+- Perbaikan 64 gejala yang belum dipetakan.
 - Ontology final.
 
 ## 2. Sumber pengetahuan
 
 | Item | Nilai |
 |---|---:|
-| Triple ontology | 16.391 |
-| Kelas | 89 |
-| Individu | 1.182 |
+| Triple ontology | 18.981 |
+| Kelas | 87 |
+| Individu | 1.368 |
 | Tanaman | 7 |
 | Penyakit | 53 |
-| Pengamatan gejala | 222 |
-| Pengamatan dengan konsep kanonik | 91 |
-| Konsep kanonik terpakai | 11 |
-| Tautan penyakit-patogen | 71 |
-| Tautan pengendalian | 192 |
-| Tautan faktor risiko (`dipengaruhiOleh`) | 22 |
+| Pengamatan gejala | 231 |
+| Pengamatan dengan konsep kanonik | 167 |
+| Konsep kanonik terpakai | 24 |
+| Tautan penyakit-patogen | 76 |
+| Tautan pengendalian | 226 |
+| Tautan faktor risiko (`dipengaruhiOleh`) | 82 |
 | `deskripsiPenyakit` | 53 |
-| `tingkatKeparahan` | 9 |
-| Penyakit tanpa kategori | 15 |
-| Penyakit tanpa patogen | 3 |
+| `tingkatKeparahan` | 14 |
+| Penyakit tanpa kategori | 0 |
+| Penyakit tanpa patogen | 0 |
 
 Catatan data:
 
@@ -249,13 +249,13 @@ Harness ada di `05_reasoning_tests/`.
 | Sanity | 53 | Satu kasus per penyakit; regression |
 | Negative | 5 | Validasi input/error |
 
-Hasil 16 November 2026:
+Hasil 19 November 2026:
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
 | Top-1 fokus (gold + ambiguous) | 0,636 | **0,909** |
 | Top-3 fokus | 0,909 | **1,000** |
-| MRR fokus | 0,750 | **0,955** |
+| MRR fokus | 0,742 | **0,955** |
 | Top-1 ambiguous | 0,000 | **0,750** |
 | Top-3 ambiguous | 0,750 | **1,000** |
 | Top-1 gold | 1,000 | 1,000 |
@@ -293,9 +293,10 @@ kasus yang sama.
 1. **Ontology sementara.** ID dan cakupan bisa berubah saat TTL final masuk.
 2. **Gold dan sanity di-seed dari ontology.** Angka 100% pada gold/sanity bukan
    akurasi independen. Halaman DOC002 belum diverifikasi.
-3. **131 dari 222 pengamatan belum punya konsep kanonik.** Untuk gejala ini,
+3. **64 dari 231 pengamatan belum punya konsep kanonik.** Untuk gejala ini,
    hanya exact match yang bekerja.
-4. **15 penyakit tanpa kategori, 3 tanpa patogen.** Response harus null-safe.
+4. **0 penyakit tanpa kategori, 0 tanpa patogen.** Semua penyakit sudah punya
+   patogen dan kategori; response tetap null-safe untuk data baru.
 5. **Faktor risiko dan severity sparse.** `tingkatKeparahan` masih teks bebas.
 6. **Open-world assumption.** Gejala yang tidak dipilih bukan bukti negatif;
    penalti completeness hanya eksplisit di skor, bukan inferensi OWL.
@@ -366,9 +367,10 @@ M5 selesai untuk ruang lingkup backend:
 
 - Engine reasoning aktif di `POST /api/diagnosis`.
 - Validasi dan dokumentasi tersedia.
-- 35 test Node dan 4 test Java lulus.
-- Ontology masih sementara; saat TTL final masuk, jalankan ulang
-  `generate-sanity.mjs` dan `run.mjs`.
+- 35 test Node, 4 test Java, 112 test `03_knowledge_tables` (8 skip), dan
+  64 test `04_ontology` lulus.
+- Ontology final sudah masuk; `generate-sanity.mjs` dan `run.mjs` dijalankan
+  ulang pada 19 Nov 2026.
 
 M6 (integrasi Node–Java) sudah diimplementasikan pada lingkup inti:
 

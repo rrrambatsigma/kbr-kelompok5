@@ -131,3 +131,8 @@ DIS_041,PAT_111,,sel tabel T5.3_AKAR baris 1,needs_review
 DIS_042,PAT_009,,sel tabel T5.3_AKAR baris 2,needs_review
 DIS_043,PAT_112,,sel tabel T5.3_AKAR baris 3,needs_review
 DIS_110,PAT_113,,sel tabel T5.2_BATANG baris 1,needs_review
+DIS_039,PAT_125,DOC002_P094_B001,Tabel 5.2 batang: nekrosis titik tunas disebabkan Fungi/Jamur.,verified
+DIS_005,PAT_126,DOC002_P034_B010,Penyakit kerdil rumput disebabkan virus kerdil rumput tipe 1 dan tipe 2.,verified
+DIS_005,PAT_127,DOC002_P034_B010,Penyakit kerdil hampa disebabkan virus kerdil hampa.,verified
+DIS_022,PAT_128,DOC002_P072_B003,Penyakit belang disebabkan Peanut mottle virus.,verified
+DIS_022,PAT_129,DOC002_P072_B003,Penyakit belang juga disebabkan Peanut stripe virus.,verified
