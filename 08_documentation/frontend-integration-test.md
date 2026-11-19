@@ -26,6 +26,8 @@ Lingkungan:
 | Daftar tanaman | `GET /api/plants` | 7 tanaman tampil |
 | Preview penyakit | `GET /api/diseases` | 53 penyakit; Padi/Jagung tampil |
 | Gejala Padi | `GET /api/symptoms?plantId=Padi` | 26 gejala tampil, dikelompokkan per bagian |
+| Fase Padi | `GET /api/phases?plantId=Padi` | 2 fase tampil (anakan, matang susu) |
+| Fase Ubi Kayu | `GET /api/phases?plantId=UbiKayu` | Empty state, diagnosis tetap bisa lanjut |
 | Diagnosis | `POST /api/diagnosis` | 200; Blas top-1 |
 | Detail penyakit | `GET /api/diseases/PenyakitBulaiJagung` | Detail patogen/gejala/pengendalian tampil |
 | Empty result | direct `/diagnosis/result` | Empty state tampil |
@@ -38,24 +40,30 @@ Langkah yang dilakukan:
 1. Buka `/`.
 2. Klik “Mulai Diagnosis”.
 3. Pilih Padi.
-4. Pilih 3 gejala:
+4. Pada langkah “Fase Tumbuh”, pilih “Fase anakan” (opsional).
+5. Pilih 3 gejala:
    - Bercak daun pada Penyakit Blas
    - Pengamatan gejala Penyakit Blas (gejala umum)
    - Pengamatan gejala Penyakit Blas (malai)
-5. Lanjutkan → Konfirmasi.
-6. Klik “Proses Diagnosis”.
+6. Lanjutkan → Konfirmasi.
+7. Klik “Proses Diagnosis”.
 
 Hasil:
 
 ```text
 URL: /diagnosis/result
+Fase: Fase anakan
 Top candidate: Penyakit Blas
+Status fase kandidat: Fase belum tercatat (Blas belum punya tautan fase)
 Skor: 75% (0.7466)
 Confidence: TINGGI
 Penjelasan: 3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.
 Patogen: Magnaporthe grisea
 Kandidat lain: 3 (Kerdil, Hawar Pelepah, HDB)
 ```
+
+Skenario fase cocok: pilih Padi → Fase anakan → gejala Hawar Pelepah
+Padi. Kandidat Hawar Pelepah harus menampilkan “Sesuai fase”.
 
 Payload yang dikirim benar-benar berasal dari form dan response berasal dari
 backend. Tidak ada hasil statis.
@@ -93,8 +101,7 @@ backend. Tidak ada hasil statis.
 
 ## Gap yang belum diuji karena backend belum mendukung
 
-- Varietas, fase pertumbuhan, bagian tanaman, dan kondisi lingkungan sebagai
-  input diagnosis.
+- Varietas, bagian tanaman, dan kondisi lingkungan sebagai input diagnosis.
 - Filter tipe patogen pada katalog.
 - Foto penyakit.
 - Statistik “entri tervalidasi”/“gejala klinis” yang berbeda dari count API.

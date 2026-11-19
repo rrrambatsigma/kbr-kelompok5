@@ -35,15 +35,28 @@ function symptom(id: string, canonicalId?: string): DiagnosisSymptom {
   };
 }
 
-function disease(id: string, symptoms: DiagnosisSymptom[]): DiagnosisDisease {
+function disease(
+  id: string,
+  symptoms: DiagnosisSymptom[],
+  phases: DiagnosisDisease["phases"] = []
+): DiagnosisDisease {
   return {
     id,
     iri: `http://test.local/${id}`,
     label: id,
     symptoms,
     riskFactors: [],
+    phases,
     description: null,
     severity: null,
+  };
+}
+
+function phase(id: string): DiagnosisDisease["phases"][number] {
+  return {
+    id,
+    iri: `http://test.local/${id}`,
+    label: id,
   };
 }
 
@@ -290,4 +303,52 @@ test("prepareDataset: df dan indeks kanonik", () => {
   assert.equal(prepared.observationDf.get("http://test.local/s1"), 1);
   assert.equal(prepared.canonicalDf.get("http://test.local/c1"), 2);
   assert.equal(prepared.canonicalObservationCount, 2);
+});
+
+test("engine: fase cocok menaikkan skor tanpa menambah bukti gejala", () => {
+  const selectedPhase = phase("FaseAnakanTanaman");
+  const d1 = disease("D1", [symptom("s1")], [selectedPhase]);
+  const d2 = disease("D2", [symptom("s2")]);
+  const data = dataset([d1, d2]);
+
+  const withoutPhase = reason(data, ["s1", "s2"], { topN: 5 });
+  const withPhase = reason(data, ["s1", "s2"], {
+    topN: 5,
+    phaseIri: selectedPhase.iri,
+  });
+
+  const before = withoutPhase.candidates.find((item) => item.disease.id === "D1")!;
+  const after = withPhase.candidates.find((item) => item.disease.id === "D1")!;
+  const other = withPhase.candidates.find((item) => item.disease.id === "D2")!;
+
+  assert.equal(before.phaseMatch, "unknown");
+  assert.equal(after.phaseMatch, "match");
+  assert.equal(after.scoreComponents.phase, 1.05);
+  assert.ok(after.score > before.score);
+  assert.equal(after.evidence.length, before.evidence.length);
+  assert.equal(other.phaseMatch, "unknown");
+});
+
+test("engine: fase berbeda atau data fase kosong tidak menghukum kandidat", () => {
+  const selectedPhase = phase("FaseAnakanTanaman");
+  const otherPhase = phase("FaseGeneratifUmum");
+  const d1 = disease("D1", [symptom("s1")], [selectedPhase]);
+  const d2 = disease("D2", [symptom("s2")], [otherPhase]);
+  const data = dataset([d1, d2]);
+
+  const withoutPhase = reason(data, ["s1", "s2"], { topN: 5 });
+  const withPhase = reason(data, ["s1", "s2"], {
+    topN: 5,
+    phaseIri: selectedPhase.iri,
+  });
+
+  const d1Before = withoutPhase.candidates.find((item) => item.disease.id === "D1")!;
+  const d2Before = withoutPhase.candidates.find((item) => item.disease.id === "D2")!;
+  const d1After = withPhase.candidates.find((item) => item.disease.id === "D1")!;
+  const d2After = withPhase.candidates.find((item) => item.disease.id === "D2")!;
+
+  assert.equal(d1After.phaseMatch, "match");
+  assert.equal(d2After.phaseMatch, "mismatch");
+  assert.equal(d2After.score, d2Before.score);
+  assert.ok(d1After.score > d1Before.score);
 });

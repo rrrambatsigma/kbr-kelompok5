@@ -32,6 +32,9 @@ Assert-Equal $diseases.data.count 53 "disease count"
 $symptoms = Invoke-RestMethod "$BaseUrl/api/symptoms?plantId=Padi"
 Assert-Equal $symptoms.data.count 26 "Padi symptom count"
 
+$phases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=Padi"
+Assert-Equal $phases.data.count 2 "Padi phase count"
+
 $symptomIds = @(
     $symptoms.data.items |
         Select-Object -First 3 |
@@ -66,5 +69,5 @@ if ($diagnosis.data.reasoning.status -ne "UP") {
     throw "diagnosis: reasoning tidak UP"
 }
 
-Write-Host "OK: plants=7, diseases=53, padiSymptoms=$($symptoms.data.count), candidates=$($diagnosis.data.candidates.Count)"
+Write-Host "OK: plants=7, diseases=53, padiSymptoms=$($symptoms.data.count), padiPhases=$($phases.data.count), candidates=$($diagnosis.data.candidates.Count)"
 Write-Host "Top candidate: $($first.label) (score=$($first.score), category=$($first.category))"

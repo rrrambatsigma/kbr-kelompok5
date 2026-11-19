@@ -5,7 +5,7 @@ Backend sistem pakar penyakit tanaman pangan dengan arsitektur:
 ```text
 React
   │
-  ├─ GET  /api/plants, /api/diseases, /api/symptoms
+  ├─ GET  /api/plants, /api/diseases, /api/symptoms, /api/phases
   │        └─ Node/Express → Fuseki/TDB2 (SPARQL read-only)
   │
   └─ POST /api/diagnosis
@@ -165,8 +165,14 @@ Error:
 | GET | `/api/diseases` | Daftar penyakit; filter `?plantId=Padi` |
 | GET | `/api/diseases/:id` | Detail penyakit, gejala, pengendalian, patogen |
 | GET | `/api/symptoms` | Daftar gejala; filter `?plantId=Padi` |
+| GET | `/api/phases` | Daftar fase pertumbuhan; filter `?plantId=Padi` |
 
 `:id` menerima local name (`Padi`, `PenyakitBlasPadi`) atau IRI penuh.
+
+`GET /api/phases?plantId=Padi` mengembalikan fase yang benar-benar dipakai
+oleh penyakit pada tanaman tersebut, lengkap dengan `diseaseCount`. Tanaman
+yang belum punya tautan fase (mis. Ubi Jalar, Ubi Kayu) mengembalikan
+`count: 0`; ini bukan error.
 
 ### Diagnosis
 
@@ -175,6 +181,7 @@ Error:
 ```json
 {
   "plantId": "Padi",
+  "phaseId": "FaseAnakanTanaman",
   "symptomIds": [
     "PengamatanPenyakitBlasPadiBercakDaun",
     "PengamatanPenyakitBlasPadiKhasMalai"
@@ -186,6 +193,8 @@ Error:
 Aturan validasi:
 
 - `plantId` wajib dan harus ada.
+- `phaseId` opsional; jika diisi harus merupakan fase yang tersedia untuk
+  tanaman tersebut. Fase milik tanaman lain ditolak `400`.
 - `symptomIds` 1–100 ID, tidak boleh kosong.
 - ID gejala harus dikenali untuk tanaman tersebut.
 - Duplikat dihapus dan menghasilkan warning `DUPLICATE_SYMPTOM_IDS_IGNORED`.
@@ -200,10 +209,13 @@ CF   = 1 - produk(1 - w)
 
 completeness = matched / jumlah gejala terpilih
 coverage     = matched / max(jumlah gejala penyakit, 4)
-score        = CF * (0.7 + 0.3*completeness) * (0.5 + 0.5*coverage)
+faktor_fase  = 1.05 jika fase cocok, selain itu 1.0
+score        = CF * (0.7 + 0.3*completeness) * (0.5 + 0.5*coverage) * faktor_fase
 ```
 
 - `bobot_dasar` = 1 untuk exact match, 0.6 untuk match konsep kanonik.
+- Fase pertumbuhan bersifat opsional dan hanya menjadi faktor ranking lembut.
+  Kandidat tanpa data fase atau dengan fase berbeda tidak dihukum.
 - `df` dihitung dari konsep kanonik (`memilikiGejalaKanonik`), bukan ID
   pengamatan, karena pengamatan bersifat spesifik per penyakit.
 - Penyebut coverage minimal 4: penyakit dengan 1-2 gejala tercatat tidak
@@ -215,7 +227,9 @@ score        = CF * (0.7 + 0.3*completeness) * (0.5 + 0.5*coverage)
 
 Kandidat diurutkan berdasarkan `score` desc, jumlah bukti desc, lalu label.
 Response berisi `matchedSymptoms`, `unmatchedSelectedSymptoms`, `category`,
-`controls`, `confidence`, `evidence`, `explanation`, dan `scoreComponents`.
+`controls`, `confidence`, `phaseMatch`, `evidence`, `explanation`, dan
+`scoreComponents` (termasuk `phase`). `input` memuat `phaseId`, `phaseIri`, dan
+`phaseLabel` bila fase dikirim.
 `matchedSymptoms` berisi gejala yang dipilih user; `evidence.matchedObservationId`
 menunjukkan observasi milik penyakit yang menjadi dasar kecocokan (penting untuk
 match kanonik). `reasoning.modelVersion` menandai versi model. Node meneruskan

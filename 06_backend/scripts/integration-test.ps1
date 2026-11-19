@@ -42,7 +42,14 @@ Assert-Equal $health.data.checks.fileMatchesJava $true "checksum file vs Java"
 Assert-Equal $health.data.checks.fusekiHasV2Fingerprint $true "fingerprint Fuseki"
 Assert-Equal $health.data.java.checksum $health.data.file.sha256 "checksum detail"
 
-# 4. Diagnosis nyata: Blas harus dapat kategori dari Java
+# 4. Fase pertumbuhan tersedia hanya untuk tanaman yang punya tautan
+$phases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=Padi"
+Assert-Equal $phases.data.count 2 "Padi phase count"
+Assert-Equal $phases.data.items[0].id "FaseAnakanTanaman" "first Padi phase"
+$emptyPhases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=UbiKayu"
+Assert-Equal $emptyPhases.data.count 0 "UbiKayu phase count"
+
+# 5. Diagnosis nyata: Blas harus dapat kategori dari Java
 $body = @{
     plantId = "Padi"
     symptomIds = @(
@@ -61,7 +68,29 @@ Assert-Equal $diagnosis.data.reasoning.modelVersion "forward-chaining-cf-v1" "mo
 Assert-Equal $diagnosis.data.candidates[0].diseaseId "PenyakitBlasPadi" "top candidate"
 Assert-Equal $diagnosis.data.candidates[0].category "PenyakitJamur" "category from Java"
 
-# 5. Reload atomik tidak mengubah checksum
+# 6. Diagnosis dengan fase pertumbuhan
+$phaseBody = @{
+    plantId = "Padi"
+    phaseId = "FaseAnakanTanaman"
+    symptomIds = @(
+        "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+        "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
+        "PengamatanPenyakitHawarPelepahDaunPadiHDPDilihatSelubung"
+    )
+    topN = 5
+} | ConvertTo-Json -Depth 5
+
+$phaseDiagnosis = Invoke-RestMethod "$BaseUrl/api/diagnosis" `
+    -Method Post -ContentType "application/json" -Body $phaseBody
+
+Assert-Equal $phaseDiagnosis.data.input.phaseId "FaseAnakanTanaman" "phase input"
+$phaseCandidate = $phaseDiagnosis.data.candidates |
+    Where-Object { $_.diseaseId -eq "PenyakitHawarPelepahDaunPadi" } |
+    Select-Object -First 1
+Assert-True ($null -ne $phaseCandidate) "phase candidate missing"
+Assert-Equal $phaseCandidate.phaseMatch "match" "phase match"
+
+# 7. Reload atomik tidak mengubah checksum
 $reload = Invoke-RestMethod "$ReasoningUrl/api/ontology/reload" `
     -Method Post -Headers @{ "X-Request-Id" = "m6-reload" }
 Assert-Equal $reload.data.ready $true "ready after reload"
@@ -88,4 +117,24 @@ try {
 Assert-Equal $badStatus 400 "negative HTTP status"
 Assert-Equal $badCode "INVALID_REQUEST" "negative error code"
 
-Write-Host "OK: readiness, checksum, diagnosis, reload, negative"
+$badPhaseBody = @{
+    plantId = "Padi"
+    phaseId = "FasePembibitanTanaman"
+    symptomIds = @("PengamatanPenyakitBlasPadiBercakDaun")
+} | ConvertTo-Json
+
+$badPhaseStatus = $null
+$badPhaseCode = $null
+try {
+    Invoke-RestMethod "$BaseUrl/api/diagnosis" `
+        -Method Post -ContentType "application/json" -Body $badPhaseBody | Out-Null
+} catch {
+    $badPhaseStatus = $_.Exception.Response.StatusCode.value__
+    $badPhase = $_.ErrorDetails.Message | ConvertFrom-Json
+    $badPhaseCode = $badPhase.error.code
+}
+
+Assert-Equal $badPhaseStatus 400 "negative phase HTTP status"
+Assert-Equal $badPhaseCode "INVALID_REQUEST" "negative phase error code"
+
+Write-Host "OK: readiness, checksum, phases, diagnosis, reload, negative"

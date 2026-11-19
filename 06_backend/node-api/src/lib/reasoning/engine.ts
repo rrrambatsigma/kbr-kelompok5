@@ -18,6 +18,7 @@ import { evidenceWeight, specificity } from "./specificity.js";
 import {
   DEFAULT_REASONING_OPTIONS,
   REASONING_MODEL_VERSION,
+  type PhaseMatch,
   type ReasoningCandidate,
   type ReasoningEvidence,
   type ReasoningOptions,
@@ -80,6 +81,7 @@ export function reason(
       options.canonicalWeight ?? DEFAULT_REASONING_OPTIONS.canonicalWeight,
     evidenceFloor:
       options.evidenceFloor ?? DEFAULT_REASONING_OPTIONS.evidenceFloor,
+    phaseIri: options.phaseIri ?? null,
   };
   const warnings = new Set<string>();
   const prepared = prepareDataset(dataset);
@@ -108,6 +110,16 @@ export function reason(
 
   for (const preparedDisease of prepared.diseases) {
     const disease = preparedDisease.disease;
+    const phaseMatch: PhaseMatch =
+      opts.phaseIri === null
+        ? "unknown"
+        : disease.phases.some((phase) => phase.iri === opts.phaseIri)
+          ? "match"
+          : disease.phases.length > 0
+            ? "mismatch"
+            : "unknown";
+    const phaseFactor =
+      phaseMatch === "match" ? REASONING_CONFIG.phaseMatchFactor : 1;
     const evidence: ReasoningEvidence[] = [];
     const matchedSymptoms: DiagnosisSymptom[] = [];
     const unexplainedSymptoms: DiagnosisSymptom[] = [];
@@ -189,7 +201,7 @@ export function reason(
             disease.symptoms.length,
             REASONING_CONFIG.minCoverageDenominator
           );
-    const score = scoreCandidate(cf, completeness, coverage);
+    const score = scoreCandidate(cf, completeness, coverage, phaseFactor);
 
     if (score < opts.evidenceFloor) {
       continue;
@@ -199,6 +211,7 @@ export function reason(
       disease,
       score,
       confidence: classifyConfidence(score, evidence.length),
+      phaseMatch,
       evidence,
       matchedSymptoms,
       unexplainedSymptoms,
@@ -206,6 +219,7 @@ export function reason(
         evidence: round4(cf),
         completeness: round4(completeness),
         coverage: round4(coverage),
+        phase: round4(phaseFactor),
       },
     });
   }

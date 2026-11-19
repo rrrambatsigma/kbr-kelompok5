@@ -27,6 +27,7 @@ console.log(
           (symptom) => symptom.canonical !== null
         ).length,
         riskFactors: disease.riskFactors.map((factor) => factor.label),
+        phases: disease.phases.map((phase) => phase.label),
         hasDescription: disease.description !== null,
         severity: disease.severity,
       })),

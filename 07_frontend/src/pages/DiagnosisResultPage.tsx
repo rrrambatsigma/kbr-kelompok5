@@ -41,6 +41,18 @@ function evidenceLabel(evidence: ReasoningEvidence): string {
   return "Cocok persis dengan pengamatan";
 }
 
+function phaseMatchLabel(
+  match: DiagnosisCandidate["phaseMatch"]
+): string {
+  if (match === "match") {
+    return "Sesuai fase";
+  }
+  if (match === "mismatch") {
+    return "Fase berbeda";
+  }
+  return "Fase belum tercatat";
+}
+
 function EvidenceRow({ evidence }: { evidence: ReasoningEvidence }) {
   return (
     <li className="flex items-start gap-2 rounded-xl border border-border bg-white p-3">
@@ -67,9 +79,11 @@ function EvidenceRow({ evidence }: { evidence: ReasoningEvidence }) {
 function CandidateCard({
   candidate,
   rank,
+  showPhase,
 }: {
   candidate: DiagnosisCandidate;
   rank: number;
+  showPhase: boolean;
 }) {
   return (
     <article className="card flex flex-col gap-3 p-4">
@@ -85,6 +99,11 @@ function CandidateCard({
             <p className="mt-0.5 text-[11px] text-muted">
               {categoryLabel(candidate.category)}
             </p>
+            {showPhase && (
+              <p className="mt-1 text-[11px] font-semibold text-secondary">
+                {phaseMatchLabel(candidate.phaseMatch)}
+              </p>
+            )}
           </div>
         </div>
         <Badge tone={confidenceTone(candidate.confidence)}>
@@ -235,6 +254,12 @@ export function DiagnosisResultPage() {
             <Leaf className="h-3 w-3" aria-hidden="true" />
             {draft.plant?.label ?? result.input.plantLabel ?? result.input.plantId}
           </Badge>
+          {result.input.phaseLabel !== null && (
+            <Badge tone="neutral">
+              <Leaf className="h-3 w-3" aria-hidden="true" />
+              Fase: {result.input.phaseLabel}
+            </Badge>
+          )}
           <Badge tone="neutral">{result.input.symptoms.length} gejala</Badge>
           <Badge tone="neutral">{result.input.topN} kandidat diminta</Badge>
         </div>
@@ -287,6 +312,11 @@ export function DiagnosisResultPage() {
               <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
                 {confidenceLabel(topCandidate.confidence)}
               </span>
+              {result.input.phaseLabel !== null && (
+                <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
+                  {phaseMatchLabel(topCandidate.phaseMatch)}
+                </span>
+              )}
             </div>
           </div>
 
@@ -441,6 +471,7 @@ export function DiagnosisResultPage() {
                     key={candidate.diseaseId}
                     candidate={candidate}
                     rank={index + 2}
+                    showPhase={result.input.phaseId !== null}
                   />
                 ))}
               </div>
