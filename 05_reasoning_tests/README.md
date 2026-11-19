@@ -1,31 +1,30 @@
 # Reasoning Tests — Milestone 5
 
-Folder ini berisi verifikasi integrasi dan (selanjutnya) kasus uji reasoning
-diagnosis. Ontology yang dipakai saat ini adalah **ontology sementara**
-(`04_ontology/ontology_md.ttl`, 16.391 triple). Ontology final masih dikerjakan
-oleh anggota tim lain.
+Folder ini berisi verifikasi integrasi dan kasus uji reasoning diagnosis.
+Ontology yang dipakai adalah **ontology gabungan** dari branch
+`feat/ontology-baru` (`04_ontology/ontology_md.ttl`, 18.981 triple).
 
-## Status verifikasi integrasi (16 Nov 2026)
+## Status verifikasi integrasi (19 Nov 2026)
 
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
-| Ontology | `ontology_md.ttl`, 16.391 triple | v2 sementara |
-| SHA-256 ontology | `17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90` | cocok dengan Java |
+| Ontology | `ontology_md.ttl`, 18.981 triple | v3 gabungan |
+| SHA-256 ontology | `bbf9c78eca83ca04b3185bbba2f1faac29ec062fafa07dbc09adca18307f1175` | cocok dengan Java |
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
-| Smoke test | plants=7, diseases=53, Padi symptoms=29 | OK |
+| Smoke test | plants=7, diseases=53, Padi symptoms=26 | OK |
 
 Pemeriksaan yang lolos:
 
-- [x] `totalTriples = 16.391`
-- [x] Fingerprint v2: `deskripsiPenyakit = 53`, `memilikiKondisiTumbuh = 4`
+- [x] `totalTriples = 18.981`
+- [x] Fingerprint v2: `deskripsiPenyakit = 53`, `memilikiKondisiTumbuh = 9`
 - [x] Java memuat `ontology_md.ttl` dan checksum-nya sama dengan file
 - [x] Ontology konsisten (Openllet)
-- [x] Kategori: Jamur 26, Bakteri 5, Virus 5, Oomycete 1, Fitoplasma 1,
-      Nematoda 0, Lainnya 0; 15 penyakit belum berkategori
+- [x] Kategori: Jamur 34, Bakteri 7, Virus 10, Oomycete 1, Fitoplasma 1,
+      Nematoda 0, Lainnya 0; 0 penyakit belum berkategori
 - [x] `/api/health/ready` = UP
-- [x] `npm run typecheck`, `npm test` (10 test) hijau
+- [x] `npm run typecheck`, `npm test` (35 test) hijau
 - [x] `mvnw test` (4 test, termasuk golden Openllet) hijau
 - [x] `smoke-test.ps1` OK
 
@@ -33,27 +32,27 @@ Pemeriksaan yang lolos:
 
 | Item | Jumlah |
 |---|---:|
-| Pengamatan gejala yang dipakai penyakit | 222 |
-| Pengamatan dengan `memilikiGejalaKanonik` | 91 |
-| Konsep kanonik yang terpakai | 11 |
+| Pengamatan gejala yang dipakai penyakit | 231 |
+| Pengamatan dengan `memilikiGejalaKanonik` | 167 |
+| Konsep kanonik yang terpakai | 24 |
 | Penyakit dengan gejala | 53 |
-| Tautan `dipengaruhiOleh` | 22 |
-| Tautan `dikendalikanDengan` | 192 |
-| Tautan `disebabkanOleh` | 71 |
+| Tautan `dipengaruhiOleh` | 82 |
+| Tautan `dikendalikanDengan` | 226 |
+| Tautan `disebabkanOleh` | 76 |
 | `deskripsiPenyakit` | 53 |
-| `tingkatKeparahan` | 9 |
+| `tingkatKeparahan` | 14 |
 
 Sebaran per tanaman:
 
 | Tanaman | Penyakit | Pengamatan gejala |
 |---|---:|---:|
-| Jagung | 5 | 27 |
-| Kacang hijau | 3 | 7 |
-| Kacang tanah | 4 | 20 |
-| Kedelai | 15 | 90 |
-| Padi | 5 | 29 |
-| Ubi jalar | 4 | 24 |
-| Ubi kayu | 17 | 25 |
+| Jagung | 5 | 28 |
+| Kacang hijau | 3 | 6 |
+| Kacang tanah | 4 | 23 |
+| Kedelai | 15 | 88 |
+| Padi | 5 | 26 |
+| Ubi jalar | 4 | 30 |
+| Ubi kayu | 17 | 30 |
 
 ## Layer data ternormalisasi (Langkah 2)
 
@@ -75,17 +74,17 @@ Setiap penyakit membawa:
 - `description` dari `deskripsiPenyakit`
 - `severity` dari `tingkatKeparahan`
 
-Statistik dataset per tanaman (16 Nov 2026):
+Statistik dataset per tanaman (19 Nov 2026):
 
 | Tanaman | Penyakit | Pengamatan | Punya kanonik | Konsep kanonik |
 |---|---:|---:|---:|---:|
-| Padi | 5 | 29 | 13 | 7 |
-| Kedelai | 15 | 90 | 30 | 9 |
-| Jagung | 5 | 27 | 10 | 7 |
-| Ubi jalar | 4 | 24 | 8 | 6 |
-| Ubi kayu | 17 | 25 | 21 | 11 |
-| Kacang tanah | 4 | 20 | 7 | 4 |
-| Kacang hijau | 3 | 7 | 2 | 2 |
+| Padi | 5 | 26 | 19 | 11 |
+| Kedelai | 15 | 88 | 64 | 21 |
+| Jagung | 5 | 28 | 14 | 10 |
+| Ubi jalar | 4 | 30 | 19 | 13 |
+| Ubi kayu | 17 | 30 | 29 | 17 |
+| Kacang tanah | 4 | 23 | 18 | 12 |
+| Kacang hijau | 3 | 6 | 4 | 4 |
 
 Periksa dataset tanpa mengubah kode:
 
@@ -247,13 +246,13 @@ node run.mjs --base-url http://127.0.0.1:3000
 node run.mjs --out hasil-lain
 ```
 
-Hasil 16 Nov 2026 (ontology `17cabff2...`):
+Hasil 19 Nov 2026 (ontology `bbf9c78e...`):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
 | Top-1 fokus (gold + ambiguous) | 0,636 | **0,909** |
 | Top-3 fokus | 0,909 | **1,000** |
-| MRR fokus | 0,750 | **0,955** |
+| MRR fokus | 0,742 | **0,955** |
 | Top-1 ambiguous | 0,000 | **0,750** |
 | Top-3 ambiguous | 0,750 | **1,000** |
 | Top-1 gold | 1,000 | 1,000 |
@@ -271,7 +270,7 @@ Catatan penting:
   independen.
 - Kasus `sanity` dibuat dari gejala penyakit itu sendiri; hanya regression.
 - Kasus `ambiguous` sengaja mencampur gejala generik milik penyakit lain;
-  inilah yang membedakan model lama (0% top-1) dari model baru (100% top-1).
+  inilah yang membedakan model lama (0% top-1) dari model baru (75% top-1).
 - Baseline dihitung ulang pada kasus yang sama, bukan dari `before.json`.
 
 ## Dokumentasi M5

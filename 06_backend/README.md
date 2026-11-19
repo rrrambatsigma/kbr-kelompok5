@@ -39,6 +39,17 @@ Script `scripts/start-fuseki.ps1` dan `scripts/load-ontology.ps1` memakai
 default `E:\apache-jena-fuseki-6.2.0\apache-jena-fuseki-6.2.0\fuseki-server.jar`.
 Jika lokasi berbeda, berikan parameter `-FusekiJar "<path>"`.
 
+## Ontology yang dimuat
+
+File `04_ontology/ontology_md.ttl` berisi **18.981 triple**, **1.368 individu**,
+**87 kelas**, dan **4 aturan SWRL**. Fuseki memuat file yang sama lewat
+`scripts/load-ontology.ps1`; Java memuatnya lewat `ONTOLOGY_FILE_PATH`.
+
+SWRL tidak dieksekusi oleh Fuseki maupun Openllet. Aturan SWRL dijalankan
+offline dengan Pellet (lihat `04_ontology/tests/test_swrl_reasoning.py`);
+backend hanya memakai Openllet untuk konsistensi dan inferensi kategori
+penyakit.
+
 ## Konfigurasi
 
 ### Node API (`node-api/.env`)
@@ -230,19 +241,21 @@ Skenario demo: `../08_documentation/demo-m5.md`.
 Kategori yang diinferensi Openllet:
 
 ```text
-PenyakitJamur       = 26
-PenyakitBakteri     = 5
-PenyakitVirus       = 5
+PenyakitJamur       = 34
+PenyakitBakteri     = 7
+PenyakitVirus       = 10
 PenyakitOomycete    = 1
 PenyakitFitoplasma  = 1
 PenyakitNematoda    = 0
 PenyakitLainnya     = 0
 ```
 
-Ada 15 penyakit yang tidak masuk kategori mana pun karena tidak memiliki
-relasi `disebabkanOleh` ke kelompok patogen yang dikenal (`Jamur`, `Bakteri`,
-`Virus`, `Oomycete`, `Fitoplasma`, `Nematoda`). Penyakit tersebut dikembalikan
-dengan `category: null` dan warning `DISEASE_CATEGORY_UNCLASSIFIED`; tidak ada
+Semua 53 penyakit memiliki relasi `disebabkanOleh` ke patogen yang dikenal,
+sehingga `unclassifiedDiseaseCount = 0`. Dua penyakit ubi kayu memiliki
+patogen jamur sekaligus oomycete; backend memilih satu kategori dengan
+prioritas `Jamur → Bakteri → Virus → Oomycete → Fitoplasma → Nematoda`.
+Jika ada penyakit tanpa kategori, response tetap mengembalikan
+`category: null` dan warning `DISEASE_CATEGORY_UNCLASSIFIED`; tidak ada
 kategori yang dikarang.
 
 ## Kode error
@@ -309,7 +322,7 @@ node run.mjs --perf
 | `ONTOLOGY_NOT_LOADED` | File ontology tidak ditemukan | Set `ONTOLOGY_FILE_PATH`, cek log startup |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
 | `ONTOLOGY_MISMATCH` | Checksum file Node berbeda dengan Java | Samakan `ONTOLOGY_FILE_PATH`, reload Java |
-| `totalTriples` bukan 16391 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
+| `totalTriples` bukan 18981 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
 | Port sudah dipakai | Proses lama masih hidup | Hentikan proses pada port 3000/3030/8082 |
 
 ## Catatan keamanan

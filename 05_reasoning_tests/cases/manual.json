@@ -13,8 +13,8 @@
                              "label":  "Pengamatan gejala Penyakit Blas"
                          },
                          {
-                             "id":  "PengamatanPenyakitBlasPadiBerwarnaAbuAbuPutihBagian",
-                             "label":  "Pengamatan gejala Penyakit Blas"
+                             "id":  "PengamatanPenyakitBlasPadiMalaiPatah",
+                             "label":  "Malai patah pada Penyakit Blas"
                          }
                      ],
         "expectedDiseaseId":  "PenyakitBlasPadi",
@@ -63,8 +63,8 @@
                              "label":  "Klorosis daun pada KARAT"
                          },
                          {
-                             "id":  "PengamatanPenyakitKaratDaunKedelaiKumpulanUrediaP",
-                             "label":  "Pengamatan gejala Penyakit Karat Daun"
+                             "id":  "PengamatanPenyakitKaratDaunKedelaiBercakTanaman",
+                             "label":  "Bercak tanaman pada Penyakit Karat Daun"
                          }
                      ],
         "expectedDiseaseId":  "PenyakitKaratDaunKedelai",
@@ -88,8 +88,8 @@
                              "label":  "Hawar daun pada Penyakit Bercak Biji Ungu"
                          },
                          {
-                             "id":  "PengamatanPenyakitBercakBijiUnguKedelaiUnguBijiMenutupiSebagianSeluruh",
-                             "label":  "Pengamatan gejala Penyakit Bercak Biji Ungu"
+                             "id":  "PengamatanPenyakitBercakBijiUnguKedelaiNekrosisDaun",
+                             "label":  "Nekrosis daun pada Penyakit Bercak Biji Ungu"
                          }
                      ],
         "expectedDiseaseId":  "PenyakitBercakBijiUnguKedelai",
@@ -159,8 +159,8 @@
                              "label":  "Bercak daun pada Penyakit kudis"
                          },
                          {
-                             "id":  "PengamatanPenyakitKudisUbiJalarAwalnyaBerwarnaKuningCoklatKekuningan",
-                             "label":  "Pengamatan gejala Penyakit kudis"
+                             "id":  "PengamatanPenyakitKudisUbiJalarKlorosisTanaman",
+                             "label":  "Klorosis tanaman pada Penyakit kudis"
                          },
                          {
                              "id":  "PengamatanPenyakitKudisUbiJalarMenjadiTidakProduktifFotosintesisTingkat",
@@ -184,8 +184,8 @@
                              "label":  "Busuk akar pada Penyakit busuk hitam (black rot)"
                          },
                          {
-                             "id":  "PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataUmbiTahapAwalTerdapat",
-                             "label":  "Pengamatan gejala Penyakit busuk hitam (black rot)"
+                             "id":  "PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukTanaman",
+                             "label":  "Busuk tanaman pada Penyakit busuk hitam (black rot)"
                          },
                          {
                              "id":  "PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataABPascapanenC",
@@ -255,8 +255,8 @@
                              "label":  "Klorosis daun pada Penyakit Bercak Daun"
                          },
                          {
-                             "id":  "PengamatanPenyakitBercakDaunKacangTanahUmumnyaBintikBintikKecilDikelilingi",
-                             "label":  "Pengamatan gejala Penyakit Bercak Daun"
+                             "id":  "PengamatanPenyakitBercakDaunKacangTanahBercakTanaman",
+                             "label":  "Bercak tanaman pada Penyakit Bercak Daun"
                          }
                      ],
         "expectedDiseaseId":  "PenyakitBercakDaunKacangTanah",
@@ -280,8 +280,8 @@
                              "label":  "Klorosis daun pada KARAT"
                          },
                          {
-                             "id":  "PengamatanPenyakitKaratDaunKacangTanahTumbuhPustulMerupakanKumpulanSpora",
-                             "label":  "Pengamatan gejala KARAT"
+                             "id":  "PengamatanPenyakitKaratDaunKacangTanahBercakTanaman",
+                             "label":  "Bercak tanaman pada KARAT"
                          }
                      ],
         "expectedDiseaseId":  "PenyakitKaratDaunKacangTanah",
@@ -301,8 +301,8 @@
                              "label":  "Layu daun pada LAYU"
                          },
                          {
-                             "id":  "PengamatanPenyakitLayuKacangHijauTerinfeksiSelanjutnyaMenjadiAkhirnyaMati",
-                             "label":  "Pengamatan gejala LAYU"
+                             "id":  "PengamatanPenyakitLayuKacangHijauBusukTanaman",
+                             "label":  "Busuk tanaman pada LAYU"
                          }
                      ],
         "expectedDiseaseId":  "PenyakitLayuKacangHijau",
@@ -318,12 +318,8 @@
         "plantId":  "KacangHijau",
         "symptoms":  [
                          {
-                             "id":  "PengamatanPenyakitEmbunTepungKacangHijauHampirSamaTepung",
-                             "label":  "Pengamatan gejala EMBUN TEPUNG"
-                         },
-                         {
-                             "id":  "PengamatanPenyakitEmbunTepungKacangHijauTepungAdanyaTepungPutihMerupakan",
-                             "label":  "Pengamatan gejala EMBUN TEPUNG"
+                             "id":  "PengamatanPenyakitEmbunTepungKacangHijauTepungDaun",
+                             "label":  "Tepung daun pada EMBUN TEPUNG"
                          }
                      ],
         "expectedDiseaseId":  "PenyakitEmbunTepungKacangHijau",
@@ -331,6 +327,6 @@
         "source":  "ontology-temporary",
         "ontology":  "temporary-v2",
         "verified":  false,
-        "notes":  "dua gejala embun tepung"
+        "notes":  "gejala tepung daun"
     }
 ]

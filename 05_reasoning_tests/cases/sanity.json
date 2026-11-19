@@ -30,12 +30,12 @@
     "plantId": "Jagung",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBusukPelepahJagungBusukBatang",
-        "label": "Busuk batang pada Penyakit Busuk Pelepah"
+        "id": "PengamatanPenyakitBusukPelepahJagungBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Busuk Pelepah"
       },
       {
-        "id": "PengamatanPenyakitBusukPelepahJagungLanjutMelebarArahTongkolBuah",
-        "label": "Pengamatan gejala Penyakit Busuk Pelepah"
+        "id": "PengamatanPenyakitBusukPelepahJagungBusukBatang",
+        "label": "Busuk batang pada Penyakit Busuk Pelepah"
       }
     ],
     "expectedDiseaseId": "PenyakitBusukPelepahJagung",
@@ -55,12 +55,12 @@
         "label": "Bercak daun pada Penyakit Hawar Daun"
       },
       {
-        "id": "PengamatanPenyakitHawarDaunJagungHawarDaun",
-        "label": "Hawar daun pada Penyakit Hawar Daun"
+        "id": "PengamatanPenyakitHawarDaunJagungBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Hawar Daun"
       },
       {
-        "id": "PengamatanPenyakitHawarDaunJagungDitandaiAdanyaKecilBerwarnaCoklat",
-        "label": "Pengamatan gejala Penyakit Hawar Daun"
+        "id": "PengamatanPenyakitHawarDaunJagungHawarDaun",
+        "label": "Hawar daun pada Penyakit Hawar Daun"
       }
     ],
     "expectedDiseaseId": "PenyakitHawarDaunJagung",
@@ -147,12 +147,8 @@
     "plantId": "KacangHijau",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitEmbunTepungKacangHijauHampirSamaTepung",
-        "label": "Pengamatan gejala EMBUN TEPUNG"
-      },
-      {
-        "id": "PengamatanPenyakitEmbunTepungKacangHijauTepungAdanyaTepungPutihMerupakan",
-        "label": "Pengamatan gejala EMBUN TEPUNG"
+        "id": "PengamatanPenyakitEmbunTepungKacangHijauTepungDaun",
+        "label": "Tepung pada daun pada EMBUN TEPUNG"
       }
     ],
     "expectedDiseaseId": "PenyakitEmbunTepungKacangHijau",
@@ -168,15 +164,15 @@
     "plantId": "KacangHijau",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitLayuKacangHijauBusukTanaman",
+        "label": "Busuk pada tanaman pada LAYU"
+      },
+      {
         "id": "PengamatanPenyakitLayuKacangHijauLayuDaun",
         "label": "Layu daun pada LAYU"
       },
       {
         "id": "PengamatanPenyakitLayuKacangHijauMiseliaBerwarnaPutihTingkatLanjut",
-        "label": "Pengamatan gejala LAYU"
-      },
-      {
-        "id": "PengamatanPenyakitLayuKacangHijauTerinfeksiSelanjutnyaMenjadiAkhirnyaMati",
         "label": "Pengamatan gejala LAYU"
       }
     ],
@@ -193,16 +189,16 @@
     "plantId": "KacangTanah",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitBelangMottleKacangTanahBelangTanaman",
+        "label": "Belang pada tanaman pada Penyakit Belang (Mottle)"
+      },
+      {
         "id": "PengamatanPenyakitBelangMottleKacangTanahKlorosisDaun",
         "label": "Klorosis daun pada Penyakit Belang (Mottle)"
       },
       {
-        "id": "PengamatanPenyakitBelangMottleKacangTanahMosaikDaun",
-        "label": "Mosaik daun pada Penyakit Belang (Mottle)"
-      },
-      {
-        "id": "PengamatanPenyakitBelangMottleKacangTanahKadangKadangPStVBerupaGaris",
-        "label": "Pengamatan gejala Penyakit Belang (Mottle)"
+        "id": "PengamatanPenyakitBelangMottleKacangTanahKlorosisTanaman",
+        "label": "Klorosis pada tanaman pada Penyakit Belang (Mottle)"
       }
     ],
     "expectedDiseaseId": "PenyakitBelangMottleKacangTanah",
@@ -222,12 +218,12 @@
         "label": "Bercak daun pada Penyakit Bercak Daun"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunKacangTanahKlorosisDaun",
-        "label": "Klorosis daun pada Penyakit Bercak Daun"
+        "id": "PengamatanPenyakitBercakDaunKacangTanahBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bercak Daun"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunKacangTanahBerbedaBedaTergantungSpesiesPatogennya",
-        "label": "Pengamatan gejala Penyakit Bercak Daun"
+        "id": "PengamatanPenyakitBercakDaunKacangTanahDaunBerlubang",
+        "label": "Daun berlubang pada Penyakit Bercak Daun"
       }
     ],
     "expectedDiseaseId": "PenyakitBercakDaunKacangTanah",
@@ -247,12 +243,12 @@
         "label": "Bercak daun pada KARAT"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunKacangTanahKlorosisDaun",
-        "label": "Klorosis daun pada KARAT"
+        "id": "PengamatanPenyakitKaratDaunKacangTanahBercakTanaman",
+        "label": "Bercak pada tanaman pada KARAT"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunKacangTanahTumbuhPustulMerupakanKumpulanSpora",
-        "label": "Pengamatan gejala KARAT"
+        "id": "PengamatanPenyakitKaratDaunKacangTanahKlorosisDaun",
+        "label": "Klorosis daun pada KARAT"
       }
     ],
     "expectedDiseaseId": "PenyakitKaratDaunKacangTanah",
@@ -268,12 +264,12 @@
     "plantId": "KacangTanah",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitLayuBakteriKacangTanahLayuDaun",
-        "label": "Layu daun pada Penyakit Layu Bakteri"
+        "id": "PengamatanPenyakitLayuBakteriKacangTanahKematianTanaman",
+        "label": "Kematian tanaman pada Penyakit Layu Bakteri"
       },
       {
-        "id": "PengamatanPenyakitLayuBakteriKacangTanahDiikutiKematianSebagianSeluruhCabang",
-        "label": "Pengamatan gejala Penyakit Layu Bakteri"
+        "id": "PengamatanPenyakitLayuBakteriKacangTanahLayuDaun",
+        "label": "Layu daun pada Penyakit Layu Bakteri"
       }
     ],
     "expectedDiseaseId": "PenyakitLayuBakteriKacangTanah",
@@ -293,12 +289,12 @@
         "label": "Bercak daun pada Penyakit Antraknosa"
       },
       {
-        "id": "PengamatanPenyakitAntraknosaKedelaiBagianBatangTangkaiPolong",
-        "label": "Pengamatan gejala ANTRAKNOSA"
+        "id": "PengamatanPenyakitAntraknosaKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Antraknosa"
       },
       {
-        "id": "PengamatanPenyakitAntraknosaKedelaiKondisiLembapMenggulungGugurPolong",
-        "label": "Pengamatan gejala ANTRAKNOSA"
+        "id": "PengamatanPenyakitAntraknosaKedelaiDaunRontok",
+        "label": "Daun rontok pada ANTRAKNOSA"
       }
     ],
     "expectedDiseaseId": "PenyakitAntraknosaKedelai",
@@ -318,12 +314,12 @@
         "label": "Bercak daun pada Penyakit Bakteri Pustul"
       },
       {
-        "id": "PengamatanPenyakitBakteriPustulKedelaiAwalMunculnyaBerukuranKecil",
-        "label": "Pengamatan gejala Penyakit Bakteri Pustul"
+        "id": "PengamatanPenyakitBakteriPustulKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bakteri Pustul"
       },
       {
-        "id": "PengamatanPenyakitBakteriPustulKedelaiKemudianBerkembangMenjadiBerwarnaKuning",
-        "label": "Pengamatan gejala Penyakit Bakteri Pustul"
+        "id": "PengamatanPenyakitBakteriPustulKedelaiDaunRontok",
+        "label": "Daun rontok pada Penyakit Bakteri Pustul"
       }
     ],
     "expectedDiseaseId": "PenyakitBakteriPustulKedelai",
@@ -343,12 +339,12 @@
         "label": "Bercak daun pada Penyakit Bercak Biji Ungu"
       },
       {
-        "id": "PengamatanPenyakitBercakBijiUnguKedelaiHawarDaun",
-        "label": "Hawar daun pada Penyakit Bercak Biji Ungu"
+        "id": "PengamatanPenyakitBercakBijiUnguKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bercak Biji Ungu"
       },
       {
-        "id": "PengamatanPenyakitBercakBijiUnguKedelaiAwalTidakTerlihatSakitDisebabkan",
-        "label": "Pengamatan gejala Penyakit Bercak Biji Ungu"
+        "id": "PengamatanPenyakitBercakBijiUnguKedelaiHawarDaun",
+        "label": "Hawar daun pada Penyakit Bercak Biji Ungu"
       }
     ],
     "expectedDiseaseId": "PenyakitBercakBijiUnguKedelai",
@@ -368,11 +364,11 @@
         "label": "Bercak daun pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiIntensitasBintikMenjadiBerkembangBagian",
-        "label": "Pengamatan gejala Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"
+        "id": "PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiMunculAdanyaBintikBintikKecil",
+        "id": "PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiPengaturanJarakTanamTidakMemengaruhi",
         "label": "Pengamatan gejala Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"
       }
     ],
@@ -393,12 +389,12 @@
         "label": "Bercak daun pada Penyakit Bercak Target"
       },
       {
-        "id": "PengamatanPenyakitBercakTargetKedelaiAdaHaloLingkaranBerwarnaKuning",
-        "label": "Pengamatan gejala Penyakit Bercak Target"
+        "id": "PengamatanPenyakitBercakTargetKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bercak Target"
       },
       {
-        "id": "PengamatanPenyakitBercakTargetKedelaiBentukTidakBeraturanAdanyaLingkaran",
-        "label": "Pengamatan gejala Penyakit Bercak Target"
+        "id": "PengamatanPenyakitBercakTargetKedelaiKlorosisTanaman",
+        "label": "Klorosis pada tanaman pada Penyakit Bercak Target"
       }
     ],
     "expectedDiseaseId": "PenyakitBercakTargetKedelai",
@@ -418,12 +414,12 @@
         "label": "Bercak daun pada Penyakit Embun Palsu (Downy mildew)"
       },
       {
-        "id": "PengamatanPenyakitEmbunPalsuDownyMildewKedelaiKlorosisDaun",
-        "label": "Klorosis daun pada Penyakit Embun Palsu (Downy mildew)"
+        "id": "PengamatanPenyakitEmbunPalsuDownyMildewKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Embun Palsu (Downy mildew)"
       },
       {
-        "id": "PengamatanPenyakitEmbunPalsuDownyMildewKedelaiPermukaanBawahWarnaCoklatTerdapat",
-        "label": "Pengamatan gejala EMBUN BULU"
+        "id": "PengamatanPenyakitEmbunPalsuDownyMildewKedelaiKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Embun Palsu (Downy mildew)"
       }
     ],
     "expectedDiseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
@@ -441,6 +437,10 @@
       {
         "id": "PengamatanPenyakitEmbunTepungPowderyMildewKedelaiBercakDaun",
         "label": "Bercak daun pada Penyakit Embun Tepung (Powdery Mildew)"
+      },
+      {
+        "id": "PengamatanPenyakitEmbunTepungPowderyMildewKedelaiTepungDaun",
+        "label": "Tepung pada daun pada Penyakit Embun Tepung (Powdery Mildew)"
       }
     ],
     "expectedDiseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
@@ -460,12 +460,12 @@
         "label": "Bercak daun pada Penyakit Hawar Bakteri (Bacterial Blight)"
       },
       {
-        "id": "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiAkibatMakaBenihDihasilkanMenjadi",
-        "label": "Pengamatan gejala Penyakit Hawar Bakteri (Bacterial Blight)"
+        "id": "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Hawar Bakteri (Bacterial Blight)"
       },
       {
-        "id": "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiDisebabkanP",
-        "label": "Pengamatan gejala Penyakit Hawar Bakteri (Bacterial Blight)"
+        "id": "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiDaunBerlubang",
+        "label": "Daun berlubang pada Penyakit Hawar Bakteri (Bacterial Blight)"
       }
     ],
     "expectedDiseaseId": "PenyakitHawarBakteriBacterialBlightKedelai",
@@ -485,12 +485,12 @@
         "label": "Bercak daun pada KARAT"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunKedelaiKlorosisDaun",
-        "label": "Klorosis daun pada KARAT"
+        "id": "PengamatanPenyakitKaratDaunKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Karat Daun"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunKedelaiMenyebabkanMenjadiKeringRontokWaktunya",
-        "label": "Pengamatan gejala KARAT"
+        "id": "PengamatanPenyakitKaratDaunKedelaiDaunKering",
+        "label": "Daun kering pada KARAT"
       }
     ],
     "expectedDiseaseId": "PenyakitKaratDaunKedelai",
@@ -535,12 +535,12 @@
         "label": "Busuk akar pada Penyakit Layu Fusarium"
       },
       {
-        "id": "PengamatanPenyakitLayuFusariumKedelaiLayuDaun",
-        "label": "Layu daun pada Penyakit Layu Fusarium"
+        "id": "PengamatanPenyakitLayuFusariumKedelaiKematianTanaman",
+        "label": "Kematian tanaman pada Penyakit Layu Fusarium"
       },
       {
-        "id": "PengamatanPenyakitLayuFusariumKedelaiAkibatMakaMenunjukkanKematianMendadak",
-        "label": "Pengamatan gejala Penyakit Layu Fusarium"
+        "id": "PengamatanPenyakitLayuFusariumKedelaiLayuDaun",
+        "label": "Layu daun pada Penyakit Layu Fusarium"
       }
     ],
     "expectedDiseaseId": "PenyakitLayuFusariumKedelai",
@@ -556,16 +556,16 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiBelangTanaman",
+        "label": "Belang pada tanaman pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"
+      },
+      {
         "id": "PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiKerdilTanaman",
         "label": "Kerdil tanaman pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"
       },
       {
         "id": "PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiKlorosisDaun",
         "label": "Klorosis daun pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"
-      },
-      {
-        "id": "PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiMosaikDaun",
-        "label": "Mosaik daun pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"
       }
     ],
     "expectedDiseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
@@ -581,16 +581,16 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitRebahKecambahKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Rebah Kecambah"
+      },
+      {
         "id": "PengamatanPenyakitRebahKecambahKedelaiBusukAkar",
         "label": "Busuk akar pada Penyakit Rebah Kecambah"
       },
       {
         "id": "PengamatanPenyakitRebahKecambahKedelaiBusukBatang",
         "label": "Busuk batang pada Penyakit Rebah Kecambah"
-      },
-      {
-        "id": "PengamatanPenyakitRebahKecambahKedelaiLayuDaun",
-        "label": "Layu daun pada Penyakit Rebah Kecambah"
       }
     ],
     "expectedDiseaseId": "PenyakitRebahKecambahKedelai",
@@ -606,16 +606,16 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitRebahSemaiKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Rebah Semai"
+      },
+      {
         "id": "PengamatanPenyakitRebahSemaiKedelaiBusukBatang",
         "label": "Busuk batang pada Penyakit Rebah Semai"
       },
       {
         "id": "PengamatanPenyakitRebahSemaiKedelaiKlorosisDaun",
         "label": "Klorosis daun pada Penyakit Rebah Semai"
-      },
-      {
-        "id": "PengamatanPenyakitRebahSemaiKedelaiLayuDaun",
-        "label": "Layu daun pada Penyakit Rebah Semai"
       }
     ],
     "expectedDiseaseId": "PenyakitRebahSemaiKedelai",
@@ -660,12 +660,12 @@
         "label": "Bercak daun pada Penyakit Blas"
       },
       {
-        "id": "PengamatanPenyakitBlasPadiAdapunBentukWarnaUkuranBervariasi",
-        "label": "Pengamatan gejala Penyakit Blas"
+        "id": "PengamatanPenyakitBlasPadiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Blas"
       },
       {
-        "id": "PengamatanPenyakitBlasPadiAkibatnyaLeherMalaiTidakLagi",
-        "label": "Pengamatan gejala Penyakit Blas"
+        "id": "PengamatanPenyakitBlasPadiMalaiPatah",
+        "label": "Malai patah pada Penyakit Blas"
       }
     ],
     "expectedDiseaseId": "PenyakitBlasPadi",
@@ -710,12 +710,12 @@
         "label": "Bercak daun pada Penyakit Hawar Pelepah Daun"
       },
       {
-        "id": "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
-        "label": "Busuk batang pada Penyakit Hawar Pelepah Daun"
+        "id": "PengamatanPenyakitHawarPelepahDaunPadiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Hawar Pelepah Daun"
       },
       {
-        "id": "PengamatanPenyakitHawarPelepahDaunPadiAdapunBentukSendiriBerupaBulat",
-        "label": "Pengamatan gejala Penyakit Hawar Pelepah Daun"
+        "id": "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
+        "label": "Busuk batang pada Penyakit Hawar Pelepah Daun"
       }
     ],
     "expectedDiseaseId": "PenyakitHawarPelepahDaunPadi",
@@ -756,16 +756,16 @@
     "plantId": "Padi",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitTungroPadiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Tungro"
+      },
+      {
         "id": "PengamatanPenyakitTungroPadiKerdilTanaman",
         "label": "Kerdil tanaman pada Penyakit Tungro"
       },
       {
         "id": "PengamatanPenyakitTungroPadiKlorosisDaun",
         "label": "Klorosis daun pada Penyakit Tungro"
-      },
-      {
-        "id": "PengamatanPenyakitTungroPadiPertumbuhanTerhambat",
-        "label": "Pertumbuhan terhambat pada Penyakit Tungro"
       }
     ],
     "expectedDiseaseId": "PenyakitTungroPadi",
@@ -781,16 +781,16 @@
     "plantId": "UbiJalar",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitBercakKuningUbiJalarBelangTanaman",
+        "label": "Belang pada tanaman pada Penyakit bercak kuning"
+      },
+      {
         "id": "PengamatanPenyakitBercakKuningUbiJalarBercakDaun",
         "label": "Bercak daun pada Penyakit bercak kuning"
       },
       {
-        "id": "PengamatanPenyakitBercakKuningUbiJalarKlorosisDaun",
-        "label": "Klorosis daun pada Penyakit bercak kuning"
-      },
-      {
-        "id": "PengamatanPenyakitBercakKuningUbiJalarCooperAndJones2006Bahwa",
-        "label": "Pengamatan gejala Penyakit bercak kuning"
+        "id": "PengamatanPenyakitBercakKuningUbiJalarBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit bercak kuning"
       }
     ],
     "expectedDiseaseId": "PenyakitBercakKuningUbiJalar",
@@ -806,16 +806,16 @@
     "plantId": "UbiJalar",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitBusukHitamBlackRotUbiJalarBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit busuk hitam (black rot)"
+      },
+      {
         "id": "PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukAkar",
         "label": "Busuk akar pada Penyakit busuk hitam (black rot)"
       },
       {
-        "id": "PengamatanPenyakitBusukHitamBlackRotUbiJalar2018MenjelaskanBahwaC",
-        "label": "Pengamatan gejala Penyakit busuk hitam (black rot)"
-      },
-      {
-        "id": "PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataABPascapanenC",
-        "label": "Pengamatan gejala Penyakit busuk hitam (black rot)"
+        "id": "PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukTanaman",
+        "label": "Busuk pada tanaman pada Penyakit busuk hitam (black rot)"
       }
     ],
     "expectedDiseaseId": "PenyakitBusukHitamBlackRotUbiJalar",
@@ -835,12 +835,12 @@
         "label": "Bercak daun pada Penyakit kudis"
       },
       {
-        "id": "PengamatanPenyakitKudisUbiJalarAwalnyaBerwarnaKuningCoklatKekuningan",
-        "label": "Pengamatan gejala Penyakit kudis"
+        "id": "PengamatanPenyakitKudisUbiJalarBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit kudis"
       },
       {
-        "id": "PengamatanPenyakitKudisUbiJalarInokulumBiasanyaBerasalBahanTanam",
-        "label": "Pengamatan gejala Penyakit kudis"
+        "id": "PengamatanPenyakitKudisUbiJalarKlorosisTanaman",
+        "label": "Klorosis pada tanaman pada Penyakit kudis"
       }
     ],
     "expectedDiseaseId": "PenyakitKudisUbiJalar",
@@ -856,16 +856,16 @@
     "plantId": "UbiJalar",
     "symptoms": [
       {
+        "id": "PengamatanLayuFusariumUbiJalarBusukTanaman",
+        "label": "Busuk pada tanaman pada layu fusarium"
+      },
+      {
+        "id": "PengamatanLayuFusariumUbiJalarKematianTanaman",
+        "label": "Kematian tanaman pada layu fusarium"
+      },
+      {
         "id": "PengamatanLayuFusariumUbiJalarKerdilTanaman",
         "label": "Kerdil tanaman pada layu fusarium"
-      },
-      {
-        "id": "PengamatanLayuFusariumUbiJalarKlorosisDaun",
-        "label": "Klorosis daun pada layu fusarium"
-      },
-      {
-        "id": "PengamatanLayuFusariumUbiJalarLayuDaun",
-        "label": "Layu daun pada layu fusarium"
       }
     ],
     "expectedDiseaseId": "LayuFusariumUbiJalar",
@@ -949,8 +949,8 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanBercakDaunPutihUbiKayuKecilBulatBerwarnaPutih",
-        "label": "Pengamatan gejala Bercak daun putih"
+        "id": "PengamatanBercakDaunPutihUbiKayuBercakTanaman",
+        "label": "Bercak pada tanaman pada Bercak daun putih"
       }
     ],
     "expectedDiseaseId": "BercakDaunPutihUbiKayu",
@@ -965,6 +965,10 @@
     "type": "sanity",
     "plantId": "UbiKayu",
     "symptoms": [
+      {
+        "id": "PengamatanBusukUmbiUbiKayuBusukTanaman",
+        "label": "Busuk pada tanaman pada Busuk Umbi"
+      },
       {
         "id": "PengamatanBusukUmbiUbiKayuLayuDaun",
         "label": "Layu daun pada Busuk Umbi"
@@ -1092,6 +1096,10 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
+        "id": "PengamatanHawarBakteriUbiKayuKlorosisTanaman",
+        "label": "Klorosis pada tanaman pada Hawar bakteri"
+      },
+      {
         "id": "PengamatanHawarBakteriUbiKayuPucukMati",
         "label": "Pucuk mati pada Hawar bakteri"
       }
@@ -1113,12 +1121,12 @@
         "label": "Bercak daun pada Hawar daun bakteri"
       },
       {
-        "id": "PengamatanHawarDaunBakteriUbiKayuHawarDaun",
-        "label": "Hawar daun pada Hawar daun bakteri"
+        "id": "PengamatanHawarDaunBakteriUbiKayuDaunRontok",
+        "label": "Daun rontok pada Hawar daun bakteri"
       },
       {
-        "id": "PengamatanHawarDaunBakteriUbiKayuLayuDaun",
-        "label": "Layu daun pada Hawar daun bakteri"
+        "id": "PengamatanHawarDaunBakteriUbiKayuHawarDaun",
+        "label": "Hawar daun pada Hawar daun bakteri"
       }
     ],
     "expectedDiseaseId": "HawarDaunBakteriUbiKayu",
@@ -1134,8 +1142,12 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuUtamaDitandaiMunculnyaGelapAbu",
-        "label": "Pengamatan gejala Nekrosis pada titik tunas (Cassava bud necrosis)"
+        "id": "PengamatanNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuBercakTanaman",
+        "label": "Bercak pada tanaman pada Nekrosis pada titik tunas (Cassava bud necrosis)"
+      },
+      {
+        "id": "PengamatanNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuNekrosisTanaman",
+        "label": "Nekrosis pada tanaman pada Nekrosis pada titik tunas (Cassava bud necrosis)"
       }
     ],
     "expectedDiseaseId": "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
@@ -1168,8 +1180,8 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanSuperelongasiUbiKayuPemanjanganRuasBatangBerlebihanBatang",
-        "label": "Pengamatan gejala Superelongasi"
+        "id": "PengamatanSuperelongasiUbiKayuPertumbuhanAbnormal",
+        "label": "Pertumbuhan abnormal pada Superelongasi"
       }
     ],
     "expectedDiseaseId": "SuperelongasiUbiKayu",

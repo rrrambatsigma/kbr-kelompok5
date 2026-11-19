@@ -1,17 +1,27 @@
 {
-  "generatedAt": "2026-11-16T05:28:47.649Z",
+  "generatedAt": "2026-11-19T08:54:23.343Z",
   "baseUrl": "http://127.0.0.1:3000",
   "topN": 10,
   "reasoning": {
     "modelVersion": "forward-chaining-cf-v1",
     "ontology": {
-      "version": "17cabff2112e",
-      "checksum": "17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90"
+      "version": "bbf9c78eca83",
+      "checksum": "bbf9c78eca83ca04b3185bbba2f1faac29ec062fafa07dbc09adca18307f1175"
     }
   },
   "validation": {
     "errors": [],
-    "warnings": []
+    "warnings": [
+      "KEDELAI-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakTanaman (case: \"Bercak tanaman pada Penyakit Karat Daun\", ontology: \"Bercak pada tanaman pada Penyakit Karat Daun\")",
+      "UBIJALAR-KUDIS-01: label berbeda untuk PengamatanPenyakitKudisUbiJalarKlorosisTanaman (case: \"Klorosis tanaman pada Penyakit kudis\", ontology: \"Klorosis pada tanaman pada Penyakit kudis\")",
+      "UBIJALAR-BUSUKHITAM-01: label berbeda untuk PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukTanaman (case: \"Busuk tanaman pada Penyakit busuk hitam (black rot)\", ontology: \"Busuk pada tanaman pada Penyakit busuk hitam (black rot)\")",
+      "KACANGTANAH-BERCAK-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahBercakTanaman (case: \"Bercak tanaman pada Penyakit Bercak Daun\", ontology: \"Bercak pada tanaman pada Penyakit Bercak Daun\")",
+      "KACANGTANAH-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakTanaman (case: \"Bercak tanaman pada KARAT\", ontology: \"Bercak pada tanaman pada KARAT\")",
+      "KACANGHIJAU-LAYU-01: label berbeda untuk PengamatanPenyakitLayuKacangHijauBusukTanaman (case: \"Busuk tanaman pada LAYU\", ontology: \"Busuk pada tanaman pada LAYU\")",
+      "KACANGHIJAU-EMBUN-01: label berbeda untuk PengamatanPenyakitEmbunTepungKacangHijauTepungDaun (case: \"Tepung daun pada EMBUN TEPUNG\", ontology: \"Tepung pada daun pada EMBUN TEPUNG\")",
+      "KEDELAI-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakTanaman (case: \"Bercak tanaman pada Penyakit Karat Daun\", ontology: \"Bercak pada tanaman pada Penyakit Karat Daun\")",
+      "KACANGTANAH-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakTanaman (case: \"Bercak tanaman pada KARAT\", ontology: \"Bercak pada tanaman pada KARAT\")"
+    ]
   },
   "summary": {
     "totalNormal": 75,
@@ -33,7 +43,7 @@
       "top3": 73,
       "top1Rate": 0.8933,
       "top3Rate": 0.9733,
-      "mrr": 0.9267
+      "mrr": 0.9244
     },
     "focus": {
       "count": 22,
@@ -51,7 +61,7 @@
       "top3": 20,
       "top1Rate": 0.6364,
       "top3Rate": 0.9091,
-      "mrr": 0.75
+      "mrr": 0.7424
     },
     "gold": {
       "count": 14,
@@ -87,7 +97,7 @@
       "top3": 6,
       "top1Rate": 0,
       "top3Rate": 0.75,
-      "mrr": 0.3125
+      "mrr": 0.2917
     },
     "negativePassed": 5,
     "negativeTotal": 5,
@@ -152,7 +162,7 @@
         "top3": 6,
         "top1Rate": 0,
         "top3Rate": 0.75,
-        "mrr": 0.3125
+        "mrr": 0.2917
       }
     }
   },
@@ -234,7 +244,7 @@
         "top3": 7,
         "top1Rate": 0.8571,
         "top3Rate": 1,
-        "mrr": 0.9286
+        "mrr": 0.9048
       }
     },
     "UbiKayu": {
@@ -307,14 +317,14 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7466,
+      "expectedScore": 0.8711,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBlasPadi",
           "label": "Penyakit Blas",
-          "score": 0.7466,
+          "score": 0.8711,
           "confidence": "TINGGI"
         },
         {
@@ -326,7 +336,7 @@
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.1511,
+          "score": 0.1587,
           "confidence": "RENDAH"
         }
       ],
@@ -334,13 +344,11 @@
         {
           "diseaseId": "PenyakitBlasPadi",
           "label": "Penyakit Blas",
-          "score": 0.85,
+          "score": 0.925,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "PADI-HDB-01",
@@ -381,9 +389,7 @@
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "KEDELAI-KARAT-01",
@@ -393,26 +399,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6577,
+      "expectedScore": 0.6476,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitKaratDaunKedelai",
           "label": "Penyakit Karat Daun",
-          "score": 0.6577,
+          "score": 0.6476,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
           "label": "Penyakit Embun Palsu (Downy mildew)",
-          "score": 0.3457,
-          "confidence": "RENDAH"
+          "score": 0.4972,
+          "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitRebahSemaiKedelai",
-          "label": "Penyakit Rebah Semai",
-          "score": 0.1949,
+          "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+          "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
+          "score": 0.386,
           "confidence": "RENDAH"
         }
       ],
@@ -420,7 +426,7 @@
         {
           "diseaseId": "PenyakitKaratDaunKedelai",
           "label": "Penyakit Karat Daun",
-          "score": 0.8,
+          "score": 0.8125,
           "matched": 3
         }
       ],
@@ -434,26 +440,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6639,
+      "expectedScore": 0.6804,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBercakBijiUnguKedelai",
           "label": "Penyakit Bercak Biji Ungu",
-          "score": 0.6639,
+          "score": 0.6804,
           "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
-          "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.1754,
+          "diseaseId": "PenyakitAntraknosaKedelai",
+          "label": "Penyakit Antraknosa",
+          "score": 0.372,
           "confidence": "RENDAH"
         },
         {
-          "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
-          "label": "Penyakit Embun Tepung (Powdery Mildew)",
-          "score": 0.1754,
+          "diseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
+          "label": "Penyakit Embun Palsu (Downy mildew)",
+          "score": 0.3536,
           "confidence": "RENDAH"
         }
       ],
@@ -461,7 +467,7 @@
         {
           "diseaseId": "PenyakitBercakBijiUnguKedelai",
           "label": "Penyakit Bercak Biji Ungu",
-          "score": 0.8,
+          "score": 0.8125,
           "matched": 3
         }
       ],
@@ -475,15 +481,15 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7058,
-      "expectedConfidence": "TINGGI",
+      "expectedScore": 0.6793,
+      "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.7058,
-          "confidence": "TINGGI"
+          "score": 0.6793,
+          "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitLayuStewartJagung",
@@ -502,7 +508,7 @@
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.8286,
+          "score": 0.8125,
           "matched": 3
         }
       ],
@@ -535,7 +541,7 @@
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.1682,
+          "score": 0.1655,
           "confidence": "RENDAH"
         }
       ],
@@ -557,20 +563,20 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7474,
+      "expectedScore": 0.706,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitKudisUbiJalar",
           "label": "Penyakit kudis",
-          "score": 0.7474,
+          "score": 0.706,
           "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitBercakKuningUbiJalar",
           "label": "Penyakit bercak kuning",
-          "score": 0.1844,
+          "score": 0.3488,
           "confidence": "RENDAH"
         }
       ],
@@ -578,7 +584,7 @@
         {
           "diseaseId": "PenyakitKudisUbiJalar",
           "label": "Penyakit kudis",
-          "score": 0.85,
+          "score": 0.8286,
           "matched": 3
         }
       ],
@@ -592,15 +598,21 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7493,
+      "expectedScore": 0.7474,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBusukHitamBlackRotUbiJalar",
           "label": "Penyakit busuk hitam (black rot)",
-          "score": 0.7493,
+          "score": 0.7474,
           "confidence": "TINGGI"
+        },
+        {
+          "diseaseId": "LayuFusariumUbiJalar",
+          "label": "layu fusarium",
+          "score": 0.1778,
+          "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
@@ -648,13 +660,11 @@
         {
           "diseaseId": "BusukAkarUbiKayu",
           "label": "Busuk akar",
-          "score": 0.9,
+          "score": 0.85,
           "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "UBIKAYU-HDB-01",
@@ -691,13 +701,11 @@
         {
           "diseaseId": "HawarDaunBakteriUbiKayu",
           "label": "Hawar daun bakteri",
-          "score": 0.9,
+          "score": 0.85,
           "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "KACANGTANAH-BERCAK-01",
@@ -707,26 +715,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6569,
+      "expectedScore": 0.6332,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBercakDaunKacangTanah",
           "label": "Penyakit Bercak Daun",
-          "score": 0.6569,
+          "score": 0.6332,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.4062,
+          "score": 0.6073,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBelangMottleKacangTanah",
           "label": "Penyakit Belang (Mottle)",
-          "score": 0.1594,
+          "score": 0.1562,
           "confidence": "RENDAH"
         }
       ],
@@ -738,9 +746,7 @@
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "KACANGTANAH-KARAT-01",
@@ -750,26 +756,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.8621,
+      "expectedScore": 0.7599,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.8621,
+          "score": 0.7599,
           "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitBercakDaunKacangTanah",
           "label": "Penyakit Bercak Daun",
-          "score": 0.331,
-          "confidence": "RENDAH"
+          "score": 0.5061,
+          "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBelangMottleKacangTanah",
           "label": "Penyakit Belang (Mottle)",
-          "score": 0.1594,
+          "score": 0.1562,
           "confidence": "RENDAH"
         }
       ],
@@ -777,13 +783,11 @@
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 1,
+          "score": 0.88,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "KACANGHIJAU-LAYU-01",
@@ -822,15 +826,15 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7425,
-      "expectedConfidence": "TINGGI",
-      "expectedExplanation": "2 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+      "expectedScore": 0.5625,
+      "expectedConfidence": "RENDAH",
+      "expectedExplanation": "1 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitEmbunTepungKacangHijau",
           "label": "Penyakit Embun Tepung",
-          "score": 0.7425,
-          "confidence": "TINGGI"
+          "score": 0.5625,
+          "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
@@ -838,7 +842,7 @@
           "diseaseId": "PenyakitEmbunTepungKacangHijau",
           "label": "Penyakit Embun Tepung",
           "score": 1,
-          "matched": 2
+          "matched": 1
         }
       ],
       "warnings": []
@@ -851,15 +855,15 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7058,
-      "expectedConfidence": "TINGGI",
+      "expectedScore": 0.6793,
+      "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.7058,
-          "confidence": "TINGGI"
+          "score": 0.6793,
+          "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitLayuStewartJagung",
@@ -878,7 +882,7 @@
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.8286,
+          "score": 0.8125,
           "matched": 3
         }
       ],
@@ -892,15 +896,21 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7425,
+      "expectedScore": 0.727,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "2 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBusukPelepahJagung",
           "label": "Penyakit Busuk Pelepah",
-          "score": 0.7425,
+          "score": 0.727,
           "confidence": "TINGGI"
+        },
+        {
+          "diseaseId": "PenyakitHawarDaunJagung",
+          "label": "Penyakit Hawar Daun",
+          "score": 0.221,
+          "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
@@ -921,15 +931,21 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.8741,
+      "expectedScore": 0.8723,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitHawarDaunJagung",
           "label": "Penyakit Hawar Daun",
-          "score": 0.8741,
+          "score": 0.8723,
           "confidence": "TINGGI"
+        },
+        {
+          "diseaseId": "PenyakitBusukPelepahJagung",
+          "label": "Penyakit Busuk Pelepah",
+          "score": 0.208,
+          "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
@@ -969,7 +985,7 @@
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.1682,
+          "score": 0.1655,
           "confidence": "RENDAH"
         }
       ],
@@ -1004,7 +1020,7 @@
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.365,
+          "score": 0.3549,
           "confidence": "RENDAH"
         },
         {
@@ -1061,15 +1077,15 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7425,
-      "expectedConfidence": "TINGGI",
-      "expectedExplanation": "2 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+      "expectedScore": 0.5625,
+      "expectedConfidence": "RENDAH",
+      "expectedExplanation": "1 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitEmbunTepungKacangHijau",
           "label": "Penyakit Embun Tepung",
-          "score": 0.7425,
-          "confidence": "TINGGI"
+          "score": 0.5625,
+          "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
@@ -1077,7 +1093,7 @@
           "diseaseId": "PenyakitEmbunTepungKacangHijau",
           "label": "Penyakit Embun Tepung",
           "score": 1,
-          "matched": 2
+          "matched": 1
         }
       ],
       "warnings": []
@@ -1119,26 +1135,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7468,
+      "expectedScore": 0.701,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBelangMottleKacangTanah",
           "label": "Penyakit Belang (Mottle)",
-          "score": 0.7468,
+          "score": 0.701,
           "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.1708,
+          "score": 0.3569,
           "confidence": "RENDAH"
         },
         {
           "diseaseId": "PenyakitBercakDaunKacangTanah",
           "label": "Penyakit Bercak Daun",
-          "score": 0.1518,
+          "score": 0.3116,
           "confidence": "RENDAH"
         }
       ],
@@ -1146,13 +1162,11 @@
         {
           "diseaseId": "PenyakitBelangMottleKacangTanah",
           "label": "Penyakit Belang (Mottle)",
-          "score": 0.85,
+          "score": 0.8286,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-PenyakitBercakDaunKacangTanah",
@@ -1162,26 +1176,20 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6569,
+      "expectedScore": 0.6589,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBercakDaunKacangTanah",
           "label": "Penyakit Bercak Daun",
-          "score": 0.6569,
+          "score": 0.6589,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.4062,
-          "confidence": "SEDANG"
-        },
-        {
-          "diseaseId": "PenyakitBelangMottleKacangTanah",
-          "label": "Penyakit Belang (Mottle)",
-          "score": 0.1594,
+          "score": 0.3996,
           "confidence": "RENDAH"
         }
       ],
@@ -1193,9 +1201,7 @@
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-PenyakitKaratDaunKacangTanah",
@@ -1205,26 +1211,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.8621,
+      "expectedScore": 0.7599,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.8621,
+          "score": 0.7599,
           "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitBercakDaunKacangTanah",
           "label": "Penyakit Bercak Daun",
-          "score": 0.331,
-          "confidence": "RENDAH"
+          "score": 0.5061,
+          "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBelangMottleKacangTanah",
           "label": "Penyakit Belang (Mottle)",
-          "score": 0.1594,
+          "score": 0.1562,
           "confidence": "RENDAH"
         }
       ],
@@ -1232,13 +1238,11 @@
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 1,
+          "score": 0.88,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-PenyakitLayuBakteriKacangTanah",
@@ -1277,27 +1281,27 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7113,
-      "expectedConfidence": "TINGGI",
+      "expectedScore": 0.6771,
+      "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitAntraknosaKedelai",
           "label": "Penyakit Antraknosa",
-          "score": 0.7113,
-          "confidence": "TINGGI"
+          "score": 0.6771,
+          "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
-          "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.1754,
-          "confidence": "RENDAH"
+          "diseaseId": "PenyakitBakteriPustulKedelai",
+          "label": "Penyakit Bakteri Pustul",
+          "score": 0.6034,
+          "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
-          "label": "Penyakit Embun Tepung (Powdery Mildew)",
-          "score": 0.1754,
-          "confidence": "RENDAH"
+          "diseaseId": "PenyakitHawarBakteriBacterialBlightKedelai",
+          "label": "Penyakit Hawar Bakteri (Bacterial Blight)",
+          "score": 0.5387,
+          "confidence": "SEDANG"
         }
       ],
       "legacyTop": [
@@ -1318,34 +1322,34 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7113,
+      "expectedScore": 0.7583,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBakteriPustulKedelai",
           "label": "Penyakit Bakteri Pustul",
-          "score": 0.7113,
+          "score": 0.7583,
           "confidence": "TINGGI"
         },
         {
-          "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
-          "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.1754,
-          "confidence": "RENDAH"
+          "diseaseId": "PenyakitAntraknosaKedelai",
+          "label": "Penyakit Antraknosa",
+          "score": 0.5387,
+          "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
-          "label": "Penyakit Embun Tepung (Powdery Mildew)",
-          "score": 0.1754,
-          "confidence": "RENDAH"
+          "diseaseId": "PenyakitHawarBakteriBacterialBlightKedelai",
+          "label": "Penyakit Hawar Bakteri (Bacterial Blight)",
+          "score": 0.5387,
+          "confidence": "SEDANG"
         }
       ],
       "legacyTop": [
         {
           "diseaseId": "PenyakitBakteriPustulKedelai",
           "label": "Penyakit Bakteri Pustul",
-          "score": 0.8286,
+          "score": 0.88,
           "matched": 3
         }
       ],
@@ -1359,26 +1363,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6639,
+      "expectedScore": 0.6752,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBercakBijiUnguKedelai",
           "label": "Penyakit Bercak Biji Ungu",
-          "score": 0.6639,
+          "score": 0.6752,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
           "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.1754,
+          "score": 0.386,
           "confidence": "RENDAH"
         },
         {
-          "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
-          "label": "Penyakit Embun Tepung (Powdery Mildew)",
-          "score": 0.1754,
+          "diseaseId": "PenyakitBercakTargetKedelai",
+          "label": "Penyakit Bercak Target",
+          "score": 0.386,
           "confidence": "RENDAH"
         }
       ],
@@ -1386,7 +1390,7 @@
         {
           "diseaseId": "PenyakitBercakBijiUnguKedelai",
           "label": "Penyakit Bercak Biji Ungu",
-          "score": 0.8,
+          "score": 0.8125,
           "matched": 3
         }
       ],
@@ -1400,26 +1404,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.8714,
+      "expectedScore": 0.8593,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
           "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.8714,
+          "score": 0.8593,
           "confidence": "TINGGI"
-        },
-        {
-          "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
-          "label": "Penyakit Embun Tepung (Powdery Mildew)",
-          "score": 0.1754,
-          "confidence": "RENDAH"
         },
         {
           "diseaseId": "PenyakitBercakTargetKedelai",
           "label": "Penyakit Bercak Target",
-          "score": 0.1684,
+          "score": 0.386,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "PenyakitBakteriPustulKedelai",
+          "label": "Penyakit Bakteri Pustul",
+          "score": 0.3603,
           "confidence": "RENDAH"
         }
       ],
@@ -1427,7 +1431,7 @@
         {
           "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
           "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.925,
+          "score": 1,
           "matched": 3
         }
       ],
@@ -1441,34 +1445,34 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7967,
+      "expectedScore": 0.8242,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBercakTargetKedelai",
           "label": "Penyakit Bercak Target",
-          "score": 0.7967,
+          "score": 0.8242,
           "confidence": "TINGGI"
         },
         {
-          "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
-          "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.1754,
-          "confidence": "RENDAH"
+          "diseaseId": "PenyakitBakteriPustulKedelai",
+          "label": "Penyakit Bakteri Pustul",
+          "score": 0.5966,
+          "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
-          "label": "Penyakit Embun Tepung (Powdery Mildew)",
-          "score": 0.1754,
-          "confidence": "RENDAH"
+          "diseaseId": "PenyakitHawarBakteriBacterialBlightKedelai",
+          "label": "Penyakit Hawar Bakteri (Bacterial Blight)",
+          "score": 0.5327,
+          "confidence": "SEDANG"
         }
       ],
       "legacyTop": [
         {
           "diseaseId": "PenyakitBercakTargetKedelai",
           "label": "Penyakit Bercak Target",
-          "score": 0.88,
+          "score": 0.925,
           "matched": 3
         }
       ],
@@ -1482,26 +1486,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6783,
+      "expectedScore": 0.628,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
           "label": "Penyakit Embun Palsu (Downy mildew)",
-          "score": 0.6783,
+          "score": 0.628,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitKaratDaunKedelai",
           "label": "Penyakit Karat Daun",
-          "score": 0.338,
-          "confidence": "RENDAH"
+          "score": 0.5127,
+          "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitRebahSemaiKedelai",
-          "label": "Penyakit Rebah Semai",
-          "score": 0.1949,
+          "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+          "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
+          "score": 0.386,
           "confidence": "RENDAH"
         }
       ],
@@ -1509,7 +1513,7 @@
         {
           "diseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
           "label": "Penyakit Embun Palsu (Downy mildew)",
-          "score": 0.8125,
+          "score": 0.8,
           "matched": 3
         }
       ],
@@ -1523,26 +1527,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.3655,
-      "expectedConfidence": "RENDAH",
-      "expectedExplanation": "1 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+      "expectedScore": 0.7189,
+      "expectedConfidence": "TINGGI",
+      "expectedExplanation": "2 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
           "label": "Penyakit Embun Tepung (Powdery Mildew)",
-          "score": 0.3655,
-          "confidence": "RENDAH"
+          "score": 0.7189,
+          "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
           "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.2193,
+          "score": 0.1864,
           "confidence": "RENDAH"
         },
         {
           "diseaseId": "PenyakitBercakTargetKedelai",
           "label": "Penyakit Bercak Target",
-          "score": 0.2105,
+          "score": 0.1864,
           "confidence": "RENDAH"
         }
       ],
@@ -1551,7 +1555,7 @@
           "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
           "label": "Penyakit Embun Tepung (Powdery Mildew)",
           "score": 1,
-          "matched": 1
+          "matched": 2
         }
       ],
       "warnings": []
@@ -1564,26 +1568,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7469,
+      "expectedScore": 0.7015,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitHawarBakteriBacterialBlightKedelai",
           "label": "Penyakit Hawar Bakteri (Bacterial Blight)",
-          "score": 0.7469,
+          "score": 0.7015,
           "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
           "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
-          "score": 0.1754,
+          "score": 0.386,
           "confidence": "RENDAH"
         },
         {
-          "diseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
-          "label": "Penyakit Embun Tepung (Powdery Mildew)",
-          "score": 0.1754,
+          "diseaseId": "PenyakitBercakTargetKedelai",
+          "label": "Penyakit Bercak Target",
+          "score": 0.386,
           "confidence": "RENDAH"
         }
       ],
@@ -1591,7 +1595,7 @@
         {
           "diseaseId": "PenyakitHawarBakteriBacterialBlightKedelai",
           "label": "Penyakit Hawar Bakteri (Bacterial Blight)",
-          "score": 0.85,
+          "score": 0.8286,
           "matched": 3
         }
       ],
@@ -1605,26 +1609,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6577,
+      "expectedScore": 0.6752,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitKaratDaunKedelai",
           "label": "Penyakit Karat Daun",
-          "score": 0.6577,
+          "score": 0.6752,
           "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
-          "label": "Penyakit Embun Palsu (Downy mildew)",
-          "score": 0.3457,
+          "diseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+          "label": "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)",
+          "score": 0.386,
           "confidence": "RENDAH"
         },
         {
-          "diseaseId": "PenyakitRebahSemaiKedelai",
-          "label": "Penyakit Rebah Semai",
-          "score": 0.1949,
+          "diseaseId": "PenyakitBercakTargetKedelai",
+          "label": "Penyakit Bercak Target",
+          "score": 0.386,
           "confidence": "RENDAH"
         }
       ],
@@ -1632,7 +1636,7 @@
         {
           "diseaseId": "PenyakitKaratDaunKedelai",
           "label": "Penyakit Karat Daun",
-          "score": 0.8,
+          "score": 0.8125,
           "matched": 3
         }
       ],
@@ -1659,14 +1663,14 @@
         {
           "diseaseId": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
           "label": "Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)",
-          "score": 0.4394,
+          "score": 0.4185,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
           "label": "Penyakit Mosaik Kedelai (Soybean Mosaic Virus)",
-          "score": 0.3923,
-          "confidence": "RENDAH"
+          "score": 0.4036,
+          "confidence": "SEDANG"
         }
       ],
       "legacyTop": [
@@ -1687,20 +1691,20 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.8707,
+      "expectedScore": 0.7901,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitLayuFusariumKedelai",
           "label": "Penyakit Layu Fusarium",
-          "score": 0.8707,
+          "score": 0.7901,
           "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitRebahKecambahKedelai",
           "label": "Penyakit Rebah Kecambah",
-          "score": 0.402,
+          "score": 0.5796,
           "confidence": "SEDANG"
         },
         {
@@ -1714,7 +1718,7 @@
         {
           "diseaseId": "PenyakitLayuFusariumKedelai",
           "label": "Penyakit Layu Fusarium",
-          "score": 0.925,
+          "score": 0.88,
           "matched": 3
         }
       ],
@@ -1728,34 +1732,34 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6736,
-      "expectedConfidence": "SEDANG",
+      "expectedScore": 0.7085,
+      "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
           "label": "Penyakit Mosaik Kedelai (Soybean Mosaic Virus)",
-          "score": 0.6736,
-          "confidence": "SEDANG"
+          "score": 0.7085,
+          "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
           "label": "Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)",
-          "score": 0.6563,
+          "score": 0.404,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
           "label": "Penyakit Kerdil Kedelai (Soybean Stunt Virus)",
-          "score": 0.4708,
-          "confidence": "SEDANG"
+          "score": 0.225,
+          "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
         {
           "diseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
           "label": "Penyakit Mosaik Kedelai (Soybean Mosaic Virus)",
-          "score": 0.8125,
+          "score": 0.8286,
           "matched": 3
         }
       ],
@@ -1769,27 +1773,27 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.6808,
+      "expectedScore": 0.6758,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitRebahKecambahKedelai",
           "label": "Penyakit Rebah Kecambah",
-          "score": 0.6808,
-          "confidence": "SEDANG"
-        },
-        {
-          "diseaseId": "PenyakitLayuFusariumKedelai",
-          "label": "Penyakit Layu Fusarium",
-          "score": 0.4824,
+          "score": 0.6758,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitRebahSemaiKedelai",
           "label": "Penyakit Rebah Semai",
-          "score": 0.4502,
+          "score": 0.4144,
           "confidence": "SEDANG"
+        },
+        {
+          "diseaseId": "PenyakitLayuFusariumKedelai",
+          "label": "Penyakit Layu Fusarium",
+          "score": 0.2309,
+          "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
@@ -1810,26 +1814,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7872,
+      "expectedScore": 0.7779,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitRebahSemaiKedelai",
           "label": "Penyakit Rebah Semai",
-          "score": 0.7872,
+          "score": 0.7779,
           "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitRebahKecambahKedelai",
           "label": "Penyakit Rebah Kecambah",
-          "score": 0.402,
-          "confidence": "SEDANG"
+          "score": 0.37,
+          "confidence": "RENDAH"
         },
         {
-          "diseaseId": "PenyakitLayuFusariumKedelai",
-          "label": "Penyakit Layu Fusarium",
-          "score": 0.225,
+          "diseaseId": "PenyakitKaratDaunKedelai",
+          "label": "Penyakit Karat Daun",
+          "score": 0.3422,
           "confidence": "RENDAH"
         }
       ],
@@ -1851,20 +1855,20 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7838,
+      "expectedScore": 0.7349,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
           "label": "Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)",
-          "score": 0.7838,
+          "score": 0.7349,
           "confidence": "TINGGI"
         },
         {
           "diseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
           "label": "Penyakit Mosaik Kedelai (Soybean Mosaic Virus)",
-          "score": 0.564,
+          "score": 0.586,
           "confidence": "SEDANG"
         },
         {
@@ -1878,7 +1882,7 @@
         {
           "diseaseId": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
           "label": "Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)",
-          "score": 0.88,
+          "score": 0.85,
           "matched": 3
         }
       ],
@@ -1892,26 +1896,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7466,
+      "expectedScore": 0.8598,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBlasPadi",
           "label": "Penyakit Blas",
-          "score": 0.7466,
+          "score": 0.8598,
           "confidence": "TINGGI"
-        },
-        {
-          "diseaseId": "PenyakitKerdilRumputDanKerdilHampaPadi",
-          "label": "Penyakit Kerdil Rumput dan Kerdil Hampa",
-          "score": 0.1653,
-          "confidence": "RENDAH"
         },
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.1511,
+          "score": 0.3634,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "PenyakitTungroPadi",
+          "label": "Penyakit Tungro",
+          "score": 0.1839,
           "confidence": "RENDAH"
         }
       ],
@@ -1919,13 +1923,11 @@
         {
           "diseaseId": "PenyakitBlasPadi",
           "label": "Penyakit Blas",
-          "score": 0.85,
+          "score": 0.925,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-PenyakitHawarDaunBakteriPadi",
@@ -1966,9 +1968,7 @@
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-PenyakitHawarPelepahDaunPadi",
@@ -1978,26 +1978,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7111,
+      "expectedScore": 0.7861,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.7111,
+          "score": 0.7861,
           "confidence": "TINGGI"
-        },
-        {
-          "diseaseId": "PenyakitKerdilRumputDanKerdilHampaPadi",
-          "label": "Penyakit Kerdil Rumput dan Kerdil Hampa",
-          "score": 0.1653,
-          "confidence": "RENDAH"
         },
         {
           "diseaseId": "PenyakitBlasPadi",
           "label": "Penyakit Blas",
-          "score": 0.1542,
+          "score": 0.3894,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "PenyakitTungroPadi",
+          "label": "Penyakit Tungro",
+          "score": 0.1839,
           "confidence": "RENDAH"
         }
       ],
@@ -2005,13 +2005,11 @@
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.8286,
+          "score": 0.88,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-PenyakitKerdilRumputDanKerdilHampaPadi",
@@ -2052,9 +2050,7 @@
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-PenyakitTungroPadi",
@@ -2064,14 +2060,14 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.8646,
+      "expectedScore": 0.8349,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitTungroPadi",
           "label": "Penyakit Tungro",
-          "score": 0.8646,
+          "score": 0.8349,
           "confidence": "TINGGI"
         },
         {
@@ -2081,9 +2077,9 @@
           "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitHawarDaunBakteriPadi",
-          "label": "Penyakit Hawar Daun Bakteri",
-          "score": 0.1635,
+          "diseaseId": "PenyakitBlasPadi",
+          "label": "Penyakit Blas",
+          "score": 0.1839,
           "confidence": "RENDAH"
         }
       ],
@@ -2091,13 +2087,11 @@
         {
           "diseaseId": "PenyakitTungroPadi",
           "label": "Penyakit Tungro",
-          "score": 1,
+          "score": 0.925,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-PenyakitBercakKuningUbiJalar",
@@ -2107,26 +2101,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7413,
-      "expectedConfidence": "TINGGI",
+      "expectedScore": 0.6569,
+      "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBercakKuningUbiJalar",
           "label": "Penyakit bercak kuning",
-          "score": 0.7413,
-          "confidence": "TINGGI"
-        },
-        {
-          "diseaseId": "LayuFusariumUbiJalar",
-          "label": "layu fusarium",
-          "score": 0.1844,
-          "confidence": "RENDAH"
+          "score": 0.6569,
+          "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitKudisUbiJalar",
           "label": "Penyakit kudis",
-          "score": 0.1844,
+          "score": 0.3482,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "PenyakitBusukHitamBlackRotUbiJalar",
+          "label": "Penyakit busuk hitam (black rot)",
+          "score": 0.1594,
           "confidence": "RENDAH"
         }
       ],
@@ -2134,7 +2128,7 @@
         {
           "diseaseId": "PenyakitBercakKuningUbiJalar",
           "label": "Penyakit bercak kuning",
-          "score": 0.85,
+          "score": 0.8,
           "matched": 3
         }
       ],
@@ -2148,15 +2142,27 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7493,
+      "expectedScore": 0.739,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBusukHitamBlackRotUbiJalar",
           "label": "Penyakit busuk hitam (black rot)",
-          "score": 0.7493,
+          "score": 0.739,
           "confidence": "TINGGI"
+        },
+        {
+          "diseaseId": "LayuFusariumUbiJalar",
+          "label": "layu fusarium",
+          "score": 0.1778,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "PenyakitKudisUbiJalar",
+          "label": "Penyakit kudis",
+          "score": 0.1562,
+          "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
@@ -2177,20 +2183,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7474,
-      "expectedConfidence": "TINGGI",
+      "expectedScore": 0.6785,
+      "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitKudisUbiJalar",
           "label": "Penyakit kudis",
-          "score": 0.7474,
-          "confidence": "TINGGI"
+          "score": 0.6785,
+          "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBercakKuningUbiJalar",
           "label": "Penyakit bercak kuning",
-          "score": 0.1844,
+          "score": 0.5061,
+          "confidence": "SEDANG"
+        },
+        {
+          "diseaseId": "PenyakitBusukHitamBlackRotUbiJalar",
+          "label": "Penyakit busuk hitam (black rot)",
+          "score": 0.1594,
           "confidence": "RENDAH"
         }
       ],
@@ -2198,7 +2210,7 @@
         {
           "diseaseId": "PenyakitKudisUbiJalar",
           "label": "Penyakit kudis",
-          "score": 0.85,
+          "score": 0.8286,
           "matched": 3
         }
       ],
@@ -2212,19 +2224,19 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.7474,
-      "expectedConfidence": "TINGGI",
+      "expectedScore": 0.6852,
+      "expectedConfidence": "SEDANG",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "LayuFusariumUbiJalar",
           "label": "layu fusarium",
-          "score": 0.7474,
-          "confidence": "TINGGI"
+          "score": 0.6852,
+          "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitBercakKuningUbiJalar",
-          "label": "Penyakit bercak kuning",
+          "diseaseId": "PenyakitBusukHitamBlackRotUbiJalar",
+          "label": "Penyakit busuk hitam (black rot)",
           "score": 0.1844,
           "confidence": "RENDAH"
         }
@@ -2233,7 +2245,7 @@
         {
           "diseaseId": "LayuFusariumUbiJalar",
           "label": "layu fusarium",
-          "score": 0.85,
+          "score": 0.8125,
           "matched": 3
         }
       ],
@@ -2272,9 +2284,7 @@
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-AntraknosaUbiKayuDaun",
@@ -2315,9 +2325,7 @@
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-BercakDaunCoklatUbiKayu",
@@ -2358,9 +2366,7 @@
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-BercakDaunBaurUbiKayu",
@@ -2401,9 +2407,7 @@
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-BercakDaunPutihUbiKayu",
@@ -2413,14 +2417,20 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.5625,
+      "expectedScore": 0.5062,
       "expectedConfidence": "RENDAH",
       "expectedExplanation": "1 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "BercakDaunPutihUbiKayu",
           "label": "Bercak daun putih",
-          "score": 0.5625,
+          "score": 0.5062,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
+          "label": "Nekrosis pada titik tunas (Cassava bud necrosis)",
+          "score": 0.3037,
           "confidence": "RENDAH"
         }
       ],
@@ -2432,9 +2442,7 @@
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-BusukUmbiUbiKayu",
@@ -2444,26 +2452,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.451,
-      "expectedConfidence": "RENDAH",
-      "expectedExplanation": "1 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+      "expectedScore": 0.7291,
+      "expectedConfidence": "TINGGI",
+      "expectedExplanation": "2 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "BusukUmbiUbiKayu",
           "label": "Busuk Umbi",
-          "score": 0.451,
-          "confidence": "RENDAH"
+          "score": 0.7291,
+          "confidence": "TINGGI"
         },
         {
           "diseaseId": "AntraknosaUbiKayuDaun",
           "label": "Antraknosa",
-          "score": 0.2706,
+          "score": 0.23,
           "confidence": "RENDAH"
         },
         {
           "diseaseId": "BusukPangkalBatangUbiKayu",
           "label": "Busuk pangkal batang",
-          "score": 0.2706,
+          "score": 0.23,
           "confidence": "RENDAH"
         }
       ],
@@ -2472,12 +2480,10 @@
           "diseaseId": "BusukUmbiUbiKayu",
           "label": "Busuk Umbi",
           "score": 1,
-          "matched": 1
+          "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-BusukAkarUbiKayu",
@@ -2514,13 +2520,11 @@
         {
           "diseaseId": "BusukAkarUbiKayu",
           "label": "Busuk akar",
-          "score": 1,
+          "score": 0.925,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-BusukAkarDanUmbiUbiKayu",
@@ -2555,9 +2559,7 @@
           "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-BusukPangkalBatangUbiKayu",
@@ -2598,9 +2600,7 @@
           "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-CassavaBrownStreakDiseaseCBSDUbiKayu",
@@ -2641,9 +2641,7 @@
           "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-CassavaMosaicBegomovirusCMBsUbiKayu",
@@ -2678,9 +2676,7 @@
           "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-HawarBakteriUbiKayu",
@@ -2690,20 +2686,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.5062,
-      "expectedConfidence": "RENDAH",
-      "expectedExplanation": "1 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+      "expectedScore": 0.7229,
+      "expectedConfidence": "TINGGI",
+      "expectedExplanation": "2 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "HawarBakteriUbiKayu",
           "label": "Hawar bakteri",
-          "score": 0.5062,
-          "confidence": "RENDAH"
+          "score": 0.7229,
+          "confidence": "TINGGI"
         },
         {
           "diseaseId": "AntraknosaUbiKayuBatang",
           "label": "Antraknosa",
-          "score": 0.3037,
+          "score": 0.2582,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "BusukAkarUbiKayu",
+          "label": "Busuk akar",
+          "score": 0.2582,
           "confidence": "RENDAH"
         }
       ],
@@ -2712,12 +2714,10 @@
           "diseaseId": "HawarBakteriUbiKayu",
           "label": "Hawar bakteri",
           "score": 1,
-          "matched": 1
+          "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-HawarDaunBakteriUbiKayu",
@@ -2727,25 +2727,25 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.8682,
+      "expectedScore": 0.8726,
       "expectedConfidence": "TINGGI",
       "expectedExplanation": "3 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "HawarDaunBakteriUbiKayu",
           "label": "Hawar daun bakteri",
-          "score": 0.8682,
+          "score": 0.8726,
           "confidence": "TINGGI"
-        },
-        {
-          "diseaseId": "AntraknosaUbiKayuDaun",
-          "label": "Antraknosa",
-          "score": 0.2165,
-          "confidence": "RENDAH"
         },
         {
           "diseaseId": "BercakDaunBaurUbiKayu",
           "label": "Bercak daun baur",
+          "score": 0.2165,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "BercakDaunCoklatUbiKayu",
+          "label": "Bercak daun Coklat",
           "score": 0.2165,
           "confidence": "RENDAH"
         }
@@ -2754,13 +2754,11 @@
         {
           "diseaseId": "HawarDaunBakteriUbiKayu",
           "label": "Hawar daun bakteri",
-          "score": 1,
+          "score": 0.925,
           "matched": 3
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
@@ -2770,14 +2768,20 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 1,
-      "expectedScore": 0.5625,
-      "expectedConfidence": "RENDAH",
-      "expectedExplanation": "1 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
+      "expectedScore": 0.7357,
+      "expectedConfidence": "TINGGI",
+      "expectedExplanation": "2 gejala cocok persis. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
           "label": "Nekrosis pada titik tunas (Cassava bud necrosis)",
-          "score": 0.5625,
+          "score": 0.7357,
+          "confidence": "TINGGI"
+        },
+        {
+          "diseaseId": "BercakDaunPutihUbiKayu",
+          "label": "Bercak daun putih",
+          "score": 0.2582,
           "confidence": "RENDAH"
         }
       ],
@@ -2786,12 +2790,10 @@
           "diseaseId": "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
           "label": "Nekrosis pada titik tunas (Cassava bud necrosis)",
           "score": 1,
-          "matched": 1
+          "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-SapuSetanWitchesBroomUbiKayu",
@@ -2849,9 +2851,7 @@
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "SANITY-TanamanKerdilStuntUbiKayu",
@@ -2880,9 +2880,7 @@
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "PADI-AMBIG-HDB-01",
@@ -2911,7 +2909,7 @@
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.2518,
+          "score": 0.2644,
           "confidence": "RENDAH"
         }
       ],
@@ -2925,7 +2923,7 @@
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.2762,
+          "score": 0.2933,
           "matched": 1
         },
         {
@@ -2935,9 +2933,7 @@
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "KEDELAI-AMBIG-KARAT-01",
@@ -2947,46 +2943,46 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 3,
-      "expectedScore": 0.641,
+      "expectedScore": 0.5729,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "1 gejala cocok persis dan 2 gejala cocok pada konsep Bercak daun dan Klorosis daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitKaratDaunKedelai",
           "label": "Penyakit Karat Daun",
-          "score": 0.641,
+          "score": 0.5729,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
           "label": "Penyakit Embun Palsu (Downy mildew)",
-          "score": 0.3457,
-          "confidence": "RENDAH"
+          "score": 0.4972,
+          "confidence": "SEDANG"
         },
         {
-          "diseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
-          "label": "Penyakit Mosaik Kedelai (Soybean Mosaic Virus)",
-          "score": 0.3046,
-          "confidence": "RENDAH"
+          "diseaseId": "PenyakitBercakBijiUnguKedelai",
+          "label": "Penyakit Bercak Biji Ungu",
+          "score": 0.4085,
+          "confidence": "SEDANG"
         }
       ],
       "legacyTop": [
         {
           "diseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
           "label": "Penyakit Mosaik Kedelai (Soybean Mosaic Virus)",
-          "score": 0.2708,
+          "score": 0.2762,
           "matched": 1
         },
         {
           "diseaseId": "PenyakitBercakBijiUnguKedelai",
           "label": "Penyakit Bercak Biji Ungu",
-          "score": 0.2667,
+          "score": 0.2708,
           "matched": 1
         },
         {
           "diseaseId": "PenyakitKaratDaunKedelai",
           "label": "Penyakit Karat Daun",
-          "score": 0.2667,
+          "score": 0.2708,
           "matched": 1
         }
       ],
@@ -3000,14 +2996,14 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 2,
-      "expectedScore": 0.6879,
+      "expectedScore": 0.6621,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "1 gejala cocok persis dan 2 gejala cocok pada konsep Klorosis daun dan Kerdil tanaman. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.6879,
+          "score": 0.6621,
           "confidence": "SEDANG"
         },
         {
@@ -3033,7 +3029,7 @@
         {
           "diseaseId": "PenyakitBulaiJagung",
           "label": "Penyakit Bulai",
-          "score": 0.2762,
+          "score": 0.2708,
           "matched": 1
         },
         {
@@ -3092,13 +3088,11 @@
         {
           "diseaseId": "HawarDaunBakteriUbiKayu",
           "label": "Hawar daun bakteri",
-          "score": 0.3333,
+          "score": 0.3083,
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "KACANGTANAH-AMBIG-KARAT-01",
@@ -3108,26 +3102,26 @@
       "expectedTopK": 3,
       "rank": 1,
       "legacyRank": 2,
-      "expectedScore": 0.8402,
-      "expectedConfidence": "TINGGI",
+      "expectedScore": 0.6913,
+      "expectedConfidence": "SEDANG",
       "expectedExplanation": "1 gejala cocok persis dan 2 gejala cocok pada konsep Bercak daun dan Klorosis daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.8402,
-          "confidence": "TINGGI"
+          "score": 0.6913,
+          "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBercakDaunKacangTanah",
           "label": "Penyakit Bercak Daun",
-          "score": 0.4692,
+          "score": 0.6074,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBelangMottleKacangTanah",
           "label": "Penyakit Belang (Mottle)",
-          "score": 0.1594,
+          "score": 0.1562,
           "confidence": "RENDAH"
         }
       ],
@@ -3141,13 +3135,11 @@
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.3333,
+          "score": 0.2933,
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "UBIJALAR-AMBIG-BERCAKKUNING-01",
@@ -3156,47 +3148,47 @@
       "expectedDiseaseId": "PenyakitBercakKuningUbiJalar",
       "expectedTopK": 3,
       "rank": 1,
-      "legacyRank": 2,
-      "expectedScore": 0.7226,
-      "expectedConfidence": "TINGGI",
+      "legacyRank": 3,
+      "expectedScore": 0.6423,
+      "expectedConfidence": "SEDANG",
       "expectedExplanation": "1 gejala cocok persis dan 2 gejala cocok pada konsep Bercak daun dan Klorosis daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
         {
           "diseaseId": "PenyakitBercakKuningUbiJalar",
           "label": "Penyakit bercak kuning",
-          "score": 0.7226,
-          "confidence": "TINGGI"
-        },
-        {
-          "diseaseId": "LayuFusariumUbiJalar",
-          "label": "layu fusarium",
-          "score": 0.3074,
-          "confidence": "RENDAH"
+          "score": 0.6423,
+          "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitKudisUbiJalar",
           "label": "Penyakit kudis",
-          "score": 0.3074,
+          "score": 0.3011,
+          "confidence": "RENDAH"
+        },
+        {
+          "diseaseId": "LayuFusariumUbiJalar",
+          "label": "layu fusarium",
+          "score": 0.2964,
           "confidence": "RENDAH"
         }
       ],
       "legacyTop": [
         {
+          "diseaseId": "PenyakitKudisUbiJalar",
+          "label": "Penyakit kudis",
+          "score": 0.2762,
+          "matched": 1
+        },
+        {
           "diseaseId": "LayuFusariumUbiJalar",
           "label": "layu fusarium",
-          "score": 0.2833,
+          "score": 0.2708,
           "matched": 1
         },
         {
           "diseaseId": "PenyakitBercakKuningUbiJalar",
           "label": "Penyakit bercak kuning",
-          "score": 0.2833,
-          "matched": 1
-        },
-        {
-          "diseaseId": "PenyakitKudisUbiJalar",
-          "label": "Penyakit kudis",
-          "score": 0.2833,
+          "score": 0.2667,
           "matched": 1
         }
       ],
@@ -3229,7 +3221,7 @@
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.2676,
+          "score": 0.2809,
           "confidence": "RENDAH"
         }
       ],
@@ -3243,13 +3235,11 @@
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.3929,
+          "score": 0.41,
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "KACANGTANAH-PURE-KARAT-01",
@@ -3259,7 +3249,7 @@
       "expectedTopK": 3,
       "rank": 2,
       "legacyRank": null,
-      "expectedScore": 0.4514,
+      "expectedScore": 0.4213,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "2 gejala cocok pada konsep Bercak daun dan Klorosis daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
@@ -3272,13 +3262,13 @@
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.4514,
+          "score": 0.4213,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBelangMottleKacangTanah",
           "label": "Penyakit Belang (Mottle)",
-          "score": 0.1694,
+          "score": 0.1659,
           "confidence": "RENDAH"
         }
       ],
@@ -3290,9 +3280,7 @@
           "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     }
   ],
   "top1Misses": [
@@ -3323,7 +3311,7 @@
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.2676,
+          "score": 0.2809,
           "confidence": "RENDAH"
         }
       ],
@@ -3337,13 +3325,11 @@
         {
           "diseaseId": "PenyakitHawarPelepahDaunPadi",
           "label": "Penyakit Hawar Pelepah Daun",
-          "score": 0.3929,
+          "score": 0.41,
           "matched": 1
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     },
     {
       "id": "KACANGTANAH-PURE-KARAT-01",
@@ -3353,7 +3339,7 @@
       "expectedTopK": 3,
       "rank": 2,
       "legacyRank": null,
-      "expectedScore": 0.4514,
+      "expectedScore": 0.4213,
       "expectedConfidence": "SEDANG",
       "expectedExplanation": "2 gejala cocok pada konsep Bercak daun dan Klorosis daun. Kandidat ini menjelaskan seluruh gejala yang dipilih.",
       "top": [
@@ -3366,13 +3352,13 @@
         {
           "diseaseId": "PenyakitKaratDaunKacangTanah",
           "label": "Penyakit Karat Daun",
-          "score": 0.4514,
+          "score": 0.4213,
           "confidence": "SEDANG"
         },
         {
           "diseaseId": "PenyakitBelangMottleKacangTanah",
           "label": "Penyakit Belang (Mottle)",
-          "score": 0.1694,
+          "score": 0.1659,
           "confidence": "RENDAH"
         }
       ],
@@ -3384,9 +3370,7 @@
           "matched": 2
         }
       ],
-      "warnings": [
-        "DISEASE_CATEGORY_UNCLASSIFIED"
-      ]
+      "warnings": []
     }
   ],
   "negative": [
@@ -3442,8 +3426,7 @@
       "actualErrorCode": null,
       "expectedWarning": "DUPLICATE_SYMPTOM_IDS_IGNORED",
       "warnings": [
-        "DUPLICATE_SYMPTOM_IDS_IGNORED",
-        "DISEASE_CATEGORY_UNCLASSIFIED"
+        "DUPLICATE_SYMPTOM_IDS_IGNORED"
       ],
       "pass": true,
       "notes": "duplikat dihapus dengan warning"
@@ -3455,8 +3438,8 @@
   },
   "performance": {
     "samples": 20,
-    "p50Ms": 35.6242,
-    "p95Ms": 64.8554
+    "p50Ms": 25.2254,
+    "p95Ms": 38.9938
   },
   "thresholds": [
     {
@@ -3486,19 +3469,19 @@
   ],
   "confidenceCalibration": {
     "TINGGI": {
-      "count": 12,
-      "top1": 12,
-      "top3": 12
+      "count": 8,
+      "top1": 8,
+      "top3": 8
     },
     "SEDANG": {
-      "count": 9,
-      "top1": 8,
-      "top3": 9
+      "count": 12,
+      "top1": 11,
+      "top3": 12
     },
     "RENDAH": {
-      "count": 1,
-      "top1": 0,
-      "top3": 1
+      "count": 2,
+      "top1": 1,
+      "top3": 2
     }
   }
 }

@@ -1,9 +1,9 @@
 # Hasil Validasi Reasoning Diagnosis
 
-- Waktu: 2026-11-16T05:28:47.649Z
+- Waktu: 2026-11-19T08:54:23.343Z
 - Base URL: http://127.0.0.1:3000
 - Model: forward-chaining-cf-v1
-- Ontology: 17cabff2112e / 17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90
+- Ontology: bbf9c78eca83 / bbf9c78eca83ca04b3185bbba2f1faac29ec062fafa07dbc09adca18307f1175
 
 ## Ringkasan (fokus: gold + ambiguous)
 
@@ -11,7 +11,7 @@
 |---|---:|---:|---:|
 | Top-1 | 0.636 | 0.909 | +0.273 |
 | Top-3 | 0.909 | 1.000 | +0.091 |
-| MRR | 0.750 | 0.955 | +0.204 |
+| MRR | 0.742 | 0.955 | +0.212 |
 
 Kasus fokus: **22**; semua kasus normal: **75**; error request: **0**; negative: **5/5** lulus.
 Sanity (53 kasus) tidak masuk fokus karena dibuat dari gejala penyakit itu sendiri.
@@ -59,9 +59,21 @@ Sanity (53 kasus) tidak masuk fokus karena dibuat dari gejala penyakit itu sendi
 
 | Confidence | Kasus | Top-1 | Top-3 |
 |---|---:|---:|---:|
-| TINGGI | 12 | 100.0% | 100.0% |
-| SEDANG | 9 | 88.9% | 100.0% |
-| RENDAH | 1 | 0.0% | 100.0% |
+| TINGGI | 8 | 100.0% | 100.0% |
+| SEDANG | 12 | 91.7% | 100.0% |
+| RENDAH | 2 | 50.0% | 100.0% |
+
+## Peringatan validasi
+
+- KEDELAI-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakTanaman (case: "Bercak tanaman pada Penyakit Karat Daun", ontology: "Bercak pada tanaman pada Penyakit Karat Daun")
+- UBIJALAR-KUDIS-01: label berbeda untuk PengamatanPenyakitKudisUbiJalarKlorosisTanaman (case: "Klorosis tanaman pada Penyakit kudis", ontology: "Klorosis pada tanaman pada Penyakit kudis")
+- UBIJALAR-BUSUKHITAM-01: label berbeda untuk PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukTanaman (case: "Busuk tanaman pada Penyakit busuk hitam (black rot)", ontology: "Busuk pada tanaman pada Penyakit busuk hitam (black rot)")
+- KACANGTANAH-BERCAK-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada Penyakit Bercak Daun", ontology: "Bercak pada tanaman pada Penyakit Bercak Daun")
+- KACANGTANAH-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada KARAT", ontology: "Bercak pada tanaman pada KARAT")
+- KACANGHIJAU-LAYU-01: label berbeda untuk PengamatanPenyakitLayuKacangHijauBusukTanaman (case: "Busuk tanaman pada LAYU", ontology: "Busuk pada tanaman pada LAYU")
+- KACANGHIJAU-EMBUN-01: label berbeda untuk PengamatanPenyakitEmbunTepungKacangHijauTepungDaun (case: "Tepung daun pada EMBUN TEPUNG", ontology: "Tepung pada daun pada EMBUN TEPUNG")
+- KEDELAI-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakTanaman (case: "Bercak tanaman pada Penyakit Karat Daun", ontology: "Bercak pada tanaman pada Penyakit Karat Daun")
+- KACANGTANAH-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada KARAT", ontology: "Bercak pada tanaman pada KARAT")
 
 ## Kasus gagal
 
@@ -70,14 +82,14 @@ Tidak ada kasus yang gagal.
 ## Top-1 meleset (masih dalam top-3)
 
 - **PADI-PURE-HDB-01** expected `PenyakitHawarDaunBakteriPadi`, rank 2
-  - top-3: PenyakitKerdilRumputDanKerdilHampaPadi (0.556, SEDANG); PenyakitHawarDaunBakteriPadi (0.352, RENDAH); PenyakitHawarPelepahDaunPadi (0.268, RENDAH)
+  - top-3: PenyakitKerdilRumputDanKerdilHampaPadi (0.556, SEDANG); PenyakitHawarDaunBakteriPadi (0.352, RENDAH); PenyakitHawarPelepahDaunPadi (0.281, RENDAH)
 - **KACANGTANAH-PURE-KARAT-01** expected `PenyakitKaratDaunKacangTanah`, rank 2
-  - top-3: PenyakitBercakDaunKacangTanah (0.521, SEDANG); PenyakitKaratDaunKacangTanah (0.451, SEDANG); PenyakitBelangMottleKacangTanah (0.169, RENDAH)
+  - top-3: PenyakitBercakDaunKacangTanah (0.521, SEDANG); PenyakitKaratDaunKacangTanah (0.421, SEDANG); PenyakitBelangMottleKacangTanah (0.166, RENDAH)
 
 ## Determinism & performa
 
 - Determinism: stabil (PADI-BLAS-01)
-- Performa: p50 35.6242 ms; p95 64.8554 ms (20 sampel)
+- Performa: p50 25.2254 ms; p95 38.9938 ms (20 sampel)
 
 ## Catatan
 

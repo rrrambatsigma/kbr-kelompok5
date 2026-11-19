@@ -25,7 +25,7 @@ Lingkungan:
 |---|---|---|
 | Daftar tanaman | `GET /api/plants` | 7 tanaman tampil |
 | Preview penyakit | `GET /api/diseases` | 53 penyakit; Padi/Jagung tampil |
-| Gejala Padi | `GET /api/symptoms?plantId=Padi` | 29 gejala tampil, dikelompokkan per bagian |
+| Gejala Padi | `GET /api/symptoms?plantId=Padi` | 26 gejala tampil, dikelompokkan per bagian |
 | Diagnosis | `POST /api/diagnosis` | 200; Blas top-1 |
 | Detail penyakit | `GET /api/diseases/PenyakitBulaiJagung` | Detail patogen/gejala/pengendalian tampil |
 | Empty result | direct `/diagnosis/result` | Empty state tampil |

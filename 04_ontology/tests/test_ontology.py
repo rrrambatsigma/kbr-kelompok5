@@ -2,7 +2,7 @@
 
 Sebagian test bersifat read-only terhadap artefak ``ontology.ttl``; satu test
 gerbang membangun ulang ontologi lewat ``build_ontology.build()``; satu test
-menjalankan reasoner HermiT lewat owlready2 bila Java tersedia.
+menjalankan reasoner Pellet lewat owlready2 bila Java tersedia.
 Jalankan dari ``04_ontology``::
 
     python -m unittest discover -s tests -p "test_*.py"
@@ -264,7 +264,9 @@ class OntologyArtifactTest(unittest.TestCase):
                 types = {local(cls) for cls in self.graph.objects(observation, RDF.type) if isinstance(cls, URIRef)}
                 self.assertTrue(any(is_descendant(cls, "Gejala") for cls in types))
                 self.assertEqual(len(list(self.graph.objects(observation, KBR["memilikiGejalaKanonik"]))), 1)
-                self.assertTrue(list(self.graph.objects(observation, KBR["terdapatPada"])))
+                canonical = local(self.graph.value(observation, KBR["memilikiGejalaKanonik"]))
+                if bo.CANONICAL_SYMPTOMS[canonical]["part"]:
+                    self.assertTrue(list(self.graph.objects(observation, KBR["terdapatPada"])))
 
     def test_unmapped_symptoms_match_report(self) -> None:
         symptom_observations = set(self.graph.objects(None, KBR["memilikiGejala"]))
@@ -305,6 +307,26 @@ class OntologyArtifactTest(unittest.TestCase):
                 self.assertIn((KBR[row["condition"]], RDF.type, OWL.NamedIndividual), self.graph)
                 self.assertTrue(list(self.graph.objects(KBR[row["condition"]], KBR["memengaruhiPenyakit"])))
 
+    def test_environment_control_context_excluded(self) -> None:
+        for node in (
+            "ObservasiPenyakitHawarDaunBakteriPadiSuhuSamaDengan55Celsius",
+            "ObservasiLayuFusariumUbiJalarSuhu13Sampai16Celsius",
+            "ObservasiLayuFusariumUbiJalarKelembapanSamaDengan85Persen",
+            "ObservasiLayuFusariumUbiJalarSuhu29Sampai32Celsius",
+        ):
+            with self.subTest(node=node):
+                self.assertNotIn(
+                    (KBR[node], RDF.type, KBR["ObservasiLingkungan"]), self.graph
+                )
+        self.assertNotIn(
+            (
+                KBR["PenyakitLayuFusariumKedelai"],
+                KBR["dipengaruhiOleh"],
+                KBR["KondisiCurahHujanTinggi"],
+            ),
+            self.graph,
+        )
+
     def test_varieties_and_phases(self) -> None:
         for row in self.report["varieties"]["items"]:
             with self.subTest(variety=row["local"]):
@@ -314,6 +336,29 @@ class OntologyArtifactTest(unittest.TestCase):
             with self.subTest(phase=row["phase"]):
                 self.assertIn((KBR[row["phase"]], RDF.type, OWL.NamedIndividual), self.graph)
                 self.assertIn((KBR[row["disease"]], KBR["menyerangFase"], KBR[row["phase"]]), self.graph)
+
+    def test_curated_metadata_applied(self) -> None:
+        for row in self.report["metadata"]:
+            disease = KBR[row["disease"]]
+            gap = row["gap"]
+            value = row["value"]
+            with self.subTest(gap=gap, disease=row["disease"], value=value):
+                if gap == "severity":
+                    self.assertIn(value, {str(item) for item in self.graph.objects(disease, KBR["tingkatKeparahan"])})
+                    self.assertTrue(list(self.graph.objects(disease, KBR["didukungOleh"])))
+                elif gap == "english":
+                    self.assertIn(value, {str(item) for item in self.graph.objects(disease, KBR["namaInggrisPenyakit"])})
+                    self.assertTrue(list(self.graph.objects(disease, KBR["didukungOleh"])))
+                elif gap == "phase":
+                    self.assertIn((disease, KBR["menyerangFase"], KBR[value]), self.graph)
+                    self.assertTrue(list(self.graph.objects(KBR[value], KBR["didukungOleh"])))
+                elif gap == "variety":
+                    local = "Varietas" + bo.pascal(value)
+                    self.assertTrue(
+                        (KBR[local], KBR["tahanTerhadap"], disease) in self.graph
+                        or (KBR[local], KBR["rentanTerhadap"], disease) in self.graph
+                    )
+                    self.assertTrue(list(self.graph.objects(KBR[local], KBR["didukungOleh"])))
 
 
 class OntologyAxiomTest(unittest.TestCase):
@@ -480,8 +525,8 @@ class BuildGateTest(unittest.TestCase):
         )
 
 
-@unittest.skipUnless(shutil.which("java"), "Java tidak tersedia untuk HermiT")
-class HermiTReasoningTest(unittest.TestCase):
+@unittest.skipUnless(shutil.which("java"), "Java tidak tersedia untuk Pellet")
+class PelletReasoningTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         try:
@@ -492,13 +537,15 @@ class HermiTReasoningTest(unittest.TestCase):
             raise AssertionError(
                 f"artefak hilang: {OWL_ARTIFACT} — jalankan python build_ontology.py dulu"
             )
-        from owlready2 import World, sync_reasoner
+        from owlready2 import World
+
+        from reasoner_utils import sync_reasoner_for_tests
 
         cls.world = World()
         cls.onto = cls.world.get_ontology(tbox.ONTOLOGY_IRI)
         with OWL_ARTIFACT.open("rb") as handle:
             cls.onto.load(fileobj=handle, format="rdfxml")
-        sync_reasoner(cls.onto, debug=0)
+        sync_reasoner_for_tests(cls.onto)
         cls.report = read_json(REPORT)
 
     def test_ontology_is_consistent(self) -> None:

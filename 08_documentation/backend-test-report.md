@@ -1,6 +1,6 @@
 # Laporan Pengujian dan Evaluasi Backend (M7)
 
-Tanggal: 16 November 2026
+Tanggal: 19 November 2026
 
 Lingkungan:
 
@@ -8,9 +8,9 @@ Lingkungan:
 - Node.js 24.21.0, npm 11.19.0
 - Java runtime 23.0.1; Maven toolchain Java 21.0.13
 - Apache Jena Fuseki 6.2.0
-- Ontology sementara `ontology_md.ttl`
-- Checksum `17cabff2112e3e8dea6b12d1d4c1c2ced1790c46e16475c81c4f207c8f16bf90`
-- Dataset Fuseki `plant-kb`, 16.391 triple
+- Ontology gabungan `ontology_md.ttl`
+- Checksum `bbf9c78eca83ca04b3185bbba2f1faac29ec062fafa07dbc09adca18307f1175`
+- Dataset Fuseki `plant-kb`, 18.981 triple
 
 ## Ringkasan
 
@@ -18,6 +18,7 @@ Backend **lolos pengujian teknis** untuk lingkup M5–M6:
 
 - 35 test Node lulus.
 - 4 test Java lulus.
+- 112 test `03_knowledge_tables` lulus (8 skip), 64 test `04_ontology` lulus.
 - Smoke test dan integration test lulus.
 - 75 kasus evaluasi reasoning + 5 negative berjalan.
 - Health check dan checksum konsisten.
@@ -35,8 +36,10 @@ di-seed dari ontology.
 | `npm test` | PASS | 35 test |
 | `npm run build` | PASS | `tsc` sukses |
 | `mvnw.cmd test` | PASS | 4 test, termasuk golden Openllet |
-| `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptoms=29 |
+| `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptoms=26 |
 | `integration-test.ps1` | PASS | readiness, checksum, diagnosis, reload, negative |
+| `unittest` `03_knowledge_tables` | PASS | 112 test, 8 skip |
+| `unittest` `04_ontology` | PASS | 64 test, termasuk Pellet/SWRL |
 
 Test Node mencakup:
 
@@ -51,7 +54,7 @@ Test Node mencakup:
 | Pemeriksaan | Hasil |
 |---|---|
 | `/api/health/live` | `UP` |
-| `/api/health/fuseki` | `UP`, 16.391 triple |
+| `/api/health/fuseki` | `UP`, 18.981 triple |
 | `/api/health/ontology` | `OK` |
 | `checks.fileMatchesJava` | `true` |
 | `checks.fusekiHasV2Fingerprint` | `true` |
@@ -59,19 +62,19 @@ Test Node mencakup:
 | Dependency Fuseki/Reasoning/Ontology | `UP` / `UP` / `UP-OK` |
 | Java loaded/ready/consistent | `true` / `true` / `true` |
 | Checksum file = Java | `true` |
-| Class/individual/object/data property | 89 / 1.182 / 30 / 33 |
+| Class/individual/object/data property | 87 / 1.368 / 31 / 33 |
 
 Kategori Openllet:
 
 ```text
-PenyakitJamur      26
-PenyakitBakteri     5
-PenyakitVirus       5
+PenyakitJamur      34
+PenyakitBakteri     7
+PenyakitVirus      10
 PenyakitOomycete    1
 PenyakitFitoplasma  1
 PenyakitNematoda    0
 PenyakitLainnya     0
-Unclassified       15
+Unclassified        0
 ```
 
 Jumlah data API:
@@ -79,7 +82,7 @@ Jumlah data API:
 ```text
 plants = 7
 diseases = 53
-Padi symptoms = 29
+Padi symptoms = 26
 ```
 
 ## 3. Kontrak API dan edge case
@@ -115,13 +118,13 @@ harness rank = 1; baseline legacyRank = 3
 
 ## 4. Evaluasi reasoning
 
-Sumber: `05_reasoning_tests/results.json`, dijalankan 16 Nov 2026.
+Sumber: `05_reasoning_tests/results.json`, dijalankan 19 Nov 2026.
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
 | Top-1 fokus (gold+ambiguous) | 0,6364 | **0,9091** |
 | Top-3 fokus | 0,9091 | **1,0000** |
-| MRR fokus | 0,7500 | **0,9545** |
+| MRR fokus | 0,7424 | **0,9545** |
 | Top-1 ambiguous | 0,0000 | **0,7500** |
 | Top-3 ambiguous | 0,7500 | **1,0000** |
 | Top-1 gold | 1,0000 | 1,0000 |
@@ -190,7 +193,7 @@ Setelah Java dinyalakan lagi, readiness kembali `UP`.
 | Reasoning dependency | `UP` |
 | `/api/health/ontology` | `DOWN`, warning Fuseki |
 
-Setelah Fuseki dinyalakan lagi, readiness kembali `UP`, triple tetap 16.391.
+Setelah Fuseki dinyalakan lagi, readiness kembali `UP`, triple tetap 18.981.
 
 ## 7. Observability
 

@@ -30,8 +30,8 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitKaratDaunKedelaiKumpulanUrediaP",
-        "label": "Pengamatan gejala Penyakit Karat Daun"
+        "id": "PengamatanPenyakitKaratDaunKedelaiBercakTanaman",
+        "label": "Bercak tanaman pada Penyakit Karat Daun"
       },
       {
         "id": "PengamatanPenyakitBercakBijiUnguKedelaiBercakDaun",
@@ -105,8 +105,8 @@
     "plantId": "KacangTanah",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitKaratDaunKacangTanahTumbuhPustulMerupakanKumpulanSpora",
-        "label": "Pengamatan gejala KARAT"
+        "id": "PengamatanPenyakitKaratDaunKacangTanahBercakTanaman",
+        "label": "Bercak tanaman pada KARAT"
       },
       {
         "id": "PengamatanPenyakitBercakDaunKacangTanahBercakDaun",
@@ -122,7 +122,7 @@
     "source": "ontology-temporary",
     "ontology": "temporary-v2",
     "verified": false,
-    "notes": "pustul karat + bercak + klorosis dari penyakit lain"
+    "notes": "bercak tanaman karat + bercak + klorosis dari penyakit lain"
   },
   {
     "id": "UBIJALAR-AMBIG-BERCAKKUNING-01",

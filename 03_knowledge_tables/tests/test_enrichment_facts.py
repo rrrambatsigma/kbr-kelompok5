@@ -139,12 +139,20 @@ class TestEnrichmentFacts(unittest.TestCase):
 
     def test_risk_factors_existing_and_clean(self) -> None:
         existing = {local for local, _cls, _pattern in bo.ENV_PATTERNS}
+        links = set()
         for row in self.rows:
             if row["predicate"] != "dipengaruhiOleh":
                 continue
+            links.add((row["subject_local"], row["object_local"]))
             self.assertIn(row["object_local"], existing)
             self.assertNotIn("perlakuan panas", row["evidence_quote"].lower())
             self.assertNotIn("pengendalian", row["evidence_quote"].lower())
+        self.assertEqual(len(links), 8)
+        self.assertNotIn(
+            ("PenyakitBusukHitamBlackRotUbiJalar", "KondisiSuhuTinggi"), links
+        )
+        self.assertNotIn(("PenyakitLayuKacangHijau", "KondisiSuhuTinggi"), links)
+        self.assertNotIn(("PenyakitLayuKacangHijau", "KondisiSuhuRendah"), links)
 
     def test_entities_cover_scope_and_vocabulary(self) -> None:
         by_entity = {(row["entity_local"], row["entity_class"]) for row in self.entities}
@@ -205,9 +213,7 @@ class TestEnrichmentFacts(unittest.TestCase):
     def test_gap_report(self) -> None:
         self.assertIn("Penyakit tanpa tautan patogen di curated", self.report)
         self.assertIn("Penyakit tanpa pengendalian tingkat penyakit", self.report)
-        self.assertIn("DIS_005", self.report)
-        self.assertIn("DIS_022", self.report)
-        self.assertIn("DIS_039", self.report)
+        self.assertIn("Jumlah: **0**", self.report)
         self.assertIn("baris tabel", self.report)
 
 

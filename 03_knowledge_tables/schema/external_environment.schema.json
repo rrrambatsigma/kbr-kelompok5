@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "document_id": "EXTERNAL_ENV",
+  "description": "Skema sumber eksternal dan kartu bukti lingkungan untuk melengkapi relasi dipengaruhiOleh pada 7 tanaman. Sumber eksternal dipisahkan dari DOC002-DOC005.",
+  "tables": {
+    "source_registry": {
+      "file": "01_knowledge_sources/external/source_registry.csv",
+      "primary_key": "source_id",
+      "columns": {
+        "source_id": {"type": "string", "pattern": "^SRC_EXT_\\d{3}$"},
+        "title": {"type": "string", "min_length": 1},
+        "authors": {"type": "string", "nullable": true},
+        "year": {"type": "integer", "nullable": true},
+        "source_type": {"type": "string", "min_length": 1},
+        "url": {"type": "string", "min_length": 1},
+        "doi": {"type": "string", "nullable": true},
+        "publisher": {"type": "string", "nullable": true},
+        "accessed_at": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "language": {"type": "string", "min_length": 2},
+        "license": {"type": "string", "nullable": true},
+        "verification_status": {
+          "type": "enum",
+          "values": ["verified", "verified_access_vector_only", "blocked_403", "binary_pdf", "candidate"]
+        },
+        "notes": {"type": "string", "nullable": true}
+      }
+    },
+    "evidence_cards": {
+      "file": "03_knowledge_tables/curated/EXTERNAL_ENV/evidence_cards.csv",
+      "primary_key": "card_id",
+      "columns": {
+        "card_id": {"type": "string", "pattern": "^CARD_EXT_\\d{3}$"},
+        "source_id": {"type": "string", "foreign_key": "source_registry.source_id"},
+        "plant": {"type": "string", "enum": ["Padi", "Kedelai", "Jagung", "UbiJalar", "UbiKayu", "KacangTanah", "KacangHijau"]},
+        "disease_local": {"type": "string", "min_length": 1},
+        "factor_local": {"type": "string", "min_length": 1},
+        "factor_class": {"type": "string", "note": "Kelas TBox untuk observasi, misalnya Suhu, KelembapanUdara, Musim."},
+        "relation_type": {"type": "enum", "values": ["direct", "vector_mediated", "control_only"]},
+        "min_value": {"type": "number", "nullable": true},
+        "max_value": {"type": "number", "nullable": true},
+        "unit": {"type": "string", "nullable": true},
+        "locator": {"type": "string", "min_length": 1},
+        "quote": {"type": "string", "min_length": 1, "note": "Kutipan verbatim dari sumber."},
+        "confidence": {"type": "enum", "values": ["high", "medium", "low"]},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified", "rejected"]},
+        "notes": {"type": "string", "nullable": true}
+      }
+    },
+    "observations": {
+      "file": "03_knowledge_tables/curated/EXTERNAL_ENV/environment_observations.csv",
+      "primary_key": "obs_id",
+      "columns": {
+        "obs_id": {"type": "string", "pattern": "^OBS_EXT_\\d{3}$"},
+        "card_id": {"type": "string", "foreign_key": "evidence_cards.card_id"},
+        "plant": {"type": "string", "enum": ["Padi", "Kedelai", "Jagung", "UbiJalar", "UbiKayu", "KacangTanah", "KacangHijau"]},
+        "disease_local": {"type": "string", "min_length": 1},
+        "factor_local": {"type": "string", "min_length": 1},
+        "factor_class": {"type": "string", "min_length": 1},
+        "min_value": {"type": "number", "nullable": true},
+        "max_value": {"type": "number", "nullable": true},
+        "unit": {"type": "string", "nullable": true},
+        "operator": {"type": "string", "nullable": true},
+        "condition": {"type": "string", "nullable": true},
+        "quote": {"type": "string", "min_length": 1},
+        "source_id": {"type": "string", "foreign_key": "source_registry.source_id"},
+        "confidence": {"type": "enum", "values": ["high", "medium", "low"]},
+        "review_status": {"type": "enum", "values": ["auto_ok", "needs_review", "verified", "rejected"]},
+        "notes": {"type": "string", "nullable": true}
+      }
+    }
+  },
+  "invariants": [
+    "Setiap card dan observation harus merujuk source_id yang ada di source_registry.",
+    "Hanya baris dengan review_status verified dan relation_type direct atau vector_mediated yang menghasilkan relasi dipengaruhiOleh.",
+    "relation_type control_only tidak boleh menghasilkan dipengaruhiOleh.",
+    "relation_type vector_mediated wajib memiliki kutipan yang menyebut vektor/perantara dan faktor lingkungan.",
+    "Nilai min/max harus numerik dan min <= max bila keduanya terisi.",
+    "quote harus berupa substring verbatim dari sumber setelah normalisasi spasi.",
+    "disease_local dan factor_class harus ada di ontology_md.ttl/TBox."
+  ]
+}

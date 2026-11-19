@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import json
 import shutil
+import sys
 import unittest
 from pathlib import Path
 
@@ -13,6 +14,7 @@ from rdflib.namespace import OWL, RDF, RDFS
 
 ONTO_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = ONTO_DIR.parent
+sys.path.insert(0, str(ONTO_DIR))
 PTP = "http://kbr.kelompok5.org/penyakit-tanaman-pangan#"
 KBR = lambda name: URIRef(PTP + name)  # noqa: E731
 
@@ -24,11 +26,17 @@ TABLE_DIR = PROJECT_ROOT / "03_knowledge_tables"
 FACTS = TABLE_DIR / "auto" / "DOC002_md" / "DOC002_enrichment_facts.csv"
 ENTITIES = TABLE_DIR / "auto" / "DOC002_md" / "DOC002_enrichment_entities.csv"
 DESCRIPTIONS = TABLE_DIR / "auto" / "DOC002_md" / "DOC002_descriptions.csv"
+EXT_FACTS = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_facts.csv"
+EXT_ENTITIES = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_entities.csv"
+EXT_DESCRIPTIONS = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_descriptions.csv"
 
 SCOPE_PLANTS = {"Padi", "Kedelai", "Jagung", "UbiJalar", "UbiKayu", "KacangTanah", "KacangHijau"}
 
 COMMENT_GAPS = {
     "KondisiIklimBasah",
+    "KondisiKelembapanTanahRendah",
+    "KondisiKelembapanTanahSedang",
+    "KondisiKelembapanTanahTinggi",
     "KondisiKelembapanUdaraRendah",
     "KondisiKelembapanUdaraSedang",
     "KondisiKelembapanUdaraTinggi",
@@ -44,6 +52,10 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def read_csv_optional(path: Path) -> list[dict[str, str]]:
+    return read_csv(path) if path.exists() else []
+
+
 class TestOntologyMd(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -52,9 +64,9 @@ class TestOntologyMd(unittest.TestCase):
         cls.canonical = Graph()
         cls.canonical.parse(CANONICAL, format="turtle")
         cls.report = json.loads(REPORT.read_text(encoding="utf-8"))
-        cls.facts = read_csv(FACTS)
-        cls.entities = read_csv(ENTITIES)
-        cls.descriptions = read_csv(DESCRIPTIONS)
+        cls.facts = read_csv(FACTS) + read_csv_optional(EXT_FACTS)
+        cls.entities = read_csv(ENTITIES) + read_csv_optional(EXT_ENTITIES)
+        cls.descriptions = read_csv(DESCRIPTIONS) + read_csv_optional(EXT_DESCRIPTIONS)
 
     def objects(self, subject: str, predicate: str) -> set:
         return set(self.graph.objects(KBR(subject), KBR(predicate)))
@@ -83,7 +95,7 @@ class TestOntologyMd(unittest.TestCase):
             for row in self.entities
             if row["entity_class"] == "FaktorLingkungan"
         }
-        self.assertEqual(len(conditions), 25)
+        self.assertEqual(len(conditions), 30)
         for local in conditions:
             uri = KBR(local)
             self.assertIn((uri, RDF.type, KBR("FaktorLingkungan")), self.graph)
@@ -99,6 +111,17 @@ class TestOntologyMd(unittest.TestCase):
             self.report["predicate_counts"]["tingkatKeparahan"],
         )
         self.assertGreaterEqual(len(list(self.graph.triples((None, KBR("dipengaruhiOleh"), None)))), 13)
+
+    def test_false_environment_links_not_enriched(self) -> None:
+        forbidden = {
+            ("PenyakitBusukHitamBlackRotUbiJalar", "KondisiSuhuTinggi"),
+            ("PenyakitLayuKacangHijau", "KondisiSuhuTinggi"),
+            ("PenyakitLayuKacangHijau", "KondisiSuhuRendah"),
+            ("PenyakitLayuFusariumKedelai", "KondisiCurahHujanTinggi"),
+        }
+        for disease, condition in forbidden:
+            with self.subTest(disease=disease, condition=condition):
+                self.assertNotIn(KBR(condition), self.objects(disease, "dipengaruhiOleh"))
 
     def test_literals_are_indonesian(self) -> None:
         for predicate in ("deskripsiTanaman", "deskripsiPenyakit", "tingkatKeparahan"):
@@ -120,7 +143,10 @@ class TestOntologyMd(unittest.TestCase):
         self.assertEqual(self.report["total_triples"], len(self.graph))
         self.assertEqual(self.report["base_triples"], len(self.canonical))
         self.assertEqual(self.report["added_triples"], len(self.graph) - len(self.canonical))
-        self.assertEqual(self.report["facts"], len(self.facts))
+        self.assertEqual(
+            self.report["facts"],
+            len(self.facts) + self.report.get("growth_condition_facts", 0),
+        )
         self.assertEqual(self.report["entities"], len(self.entities))
         self.assertEqual(self.report["descriptions"], len(self.descriptions))
         self.assertEqual(
@@ -139,7 +165,7 @@ class TestOntologyMd(unittest.TestCase):
             for row in self.entities
             if row["entity_class"] == "FaktorLingkungan"
         }
-        self.assertEqual(len(conditions), 25)
+        self.assertEqual(len(conditions), 30)
         for local in conditions:
             self.assertIn(
                 (KBR(local), RDF.type, OWL.NamedIndividual),
@@ -201,7 +227,15 @@ class TestOntologyMd(unittest.TestCase):
         self.assertEqual(individuals - commented_individuals, COMMENT_GAPS)
 
     def test_comments_are_indonesian_literals(self) -> None:
-        for obj in self.graph.objects(None, RDFS.comment):
+        for subject, obj in self.graph.subject_objects(RDFS.comment):
+            if (subject, RDF.type, OWL.Class) not in self.graph and (
+                subject,
+                RDF.type,
+                OWL.NamedIndividual,
+            ) not in self.graph:
+                # SWRL rules carry metadata comments that are not ontology
+                # descriptions; they are covered by the SWRL tests instead.
+                continue
             self.assertIsInstance(obj, Literal)
             self.assertEqual(obj.language, "id")
             self.assertTrue(str(obj).strip())
@@ -210,7 +244,7 @@ class TestOntologyMd(unittest.TestCase):
         self.assertFalse(list(self.canonical.triples((KBR("memilikiKondisiTumbuh"), None, None))))
 
 
-@unittest.skipUnless(shutil.which("java"), "Java tidak tersedia untuk HermiT")
+@unittest.skipUnless(shutil.which("java"), "Java tidak tersedia untuk Pellet")
 class TestOntologyMdReasoning(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -223,13 +257,15 @@ class TestOntologyMdReasoning(unittest.TestCase):
                 f"artefak hilang: {OWL_ARTIFACT} - jalankan python build_ontology_md.py dulu"
             )
 
-        from owlready2 import World, sync_reasoner
+        from owlready2 import World
+
+        from reasoner_utils import sync_reasoner_for_tests
 
         cls.world = World()
         cls.onto = cls.world.get_ontology(PTP.rstrip("#"))
         with OWL_ARTIFACT.open("rb") as handle:
             cls.onto.load(fileobj=handle, format="rdfxml")
-        sync_reasoner(cls.onto, debug=0)
+        sync_reasoner_for_tests(cls.onto)
 
     def test_ontology_is_consistent(self) -> None:
         try:
