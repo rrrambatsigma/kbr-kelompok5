@@ -1,6 +1,6 @@
 # Gap dan cakupan enrichment DOC002/DOC005
 
-Scope: 7 tanaman utama. Fakta: **84**.
+Scope: 7 tanaman utama. Fakta: **81**.
 
 ## Ringkasan predikat
 
@@ -8,7 +8,7 @@ Scope: 7 tanaman utama. Fakta: **84**.
 |---|---:|
 | `deskripsiPenyakit` | 53 |
 | `deskripsiTanaman` | 7 |
-| `dipengaruhiOleh` | 11 |
+| `dipengaruhiOleh` | 8 |
 | `memilikiKondisiTumbuh` | 4 |
 | `tingkatKeparahan` | 9 |
 
@@ -56,18 +56,10 @@ Tidak ada — terisi penuh.
 
 ## Penyakit tanpa tautan patogen di curated
 
-Jumlah: **3**
+Jumlah: **0**
 
 Tautan belum ada di curated; kutipan di bawah adalah kandidat bukti, bukan tautan final.
 
-- `DIS_005` Penyakit Kerdil Rumput dan Kerdil Hampa (Padi)
-  - bukti: Penyakit kerdil rumput disebabkan oleh virus kerdil rumput tipe 1 dan virus kerdil rumput tipe 2, sedangkan penyakit kerdil hampa disebabkan oleh virus kerdil hampa.
-  - bukti: Kedua virus tersebut dapat ditularkan oleh wereng coklat (Nilaparvata lugens) (Senewe et al. 2020).
-- `DIS_022` Penyakit Belang (Mottle) (Kacang tanah)
-  - bukti: Penyakit belang merupakan penyakit yang disebabkan oleh virus.
-  - bukti: Virus yang menyerang yaitu Peanut mottle virus (PeMoV) maupun Peanut stripe virus (PStV).
-  - bukti: Serangga vektor yang membawa virus menginfeksi tanaman kacang tanah adalah Aphids sp. Aphis dengan tipe mulut mencucuk menghisap merupakan vektor PStV yang efisien.
-- `DIS_039` Nekrosis pada titik tunas (Cassava bud necrosis) (Ubi kayu)
 
 ## Penyakit tanpa pengendalian tingkat penyakit
 

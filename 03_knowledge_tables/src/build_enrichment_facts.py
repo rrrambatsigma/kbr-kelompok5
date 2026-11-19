@@ -103,6 +103,9 @@ CONDITION_LABELS = {
     "KondisiKelembapanUdaraRendah": "Kelembapan udara rendah",
     "KondisiKelembapanUdaraSedang": "Kelembapan udara sedang",
     "KondisiKelembapanUdaraTinggi": "Kelembapan udara tinggi",
+    "KondisiKelembapanTanahRendah": "Kelembapan tanah rendah",
+    "KondisiKelembapanTanahSedang": "Kelembapan tanah sedang",
+    "KondisiKelembapanTanahTinggi": "Kelembapan tanah tinggi",
     "KondisiCahayaRendah": "Cahaya rendah",
     "KondisiCahayaSedang": "Cahaya sedang",
     "KondisiCahayaTinggi": "Cahaya tinggi",
@@ -130,7 +133,7 @@ RISK_POSITIVE_RE = re.compile(
 )
 RISK_NEGATIVE_RE = re.compile(
     r"pengendalian|perlakuan|aplikasi|fungisida|bakterisida|disemprot|direndam|pemanasan|"
-    r"panas kering|mengeliminasi|membunuh|dikendalikan|insektisida",
+    r"panas kering|mengeliminasi|membunuh|dikendalikan|insektisida|bertahan|menurun",
     re.I,
 )
 ABBREVIATION_END_RE = re.compile(r"(?:\bet al\.|\b[A-Z]\.|\b(?:sp|spp|No|Gambar|Tabel)\.)$")

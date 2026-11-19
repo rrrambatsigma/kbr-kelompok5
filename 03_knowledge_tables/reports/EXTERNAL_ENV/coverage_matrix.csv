@@ -1,0 +1,54 @@
+﻿plant,disease_local,disease_label,status,observation_count,external_observation_count,internal_observation_count,source_ids,notes
+Padi,PenyakitBlasPadi,Penyakit Blas,covered,1,0,1,ontology.ttl,baseline ontology
+Padi,PenyakitHawarDaunBakteriPadi,Penyakit Hawar Daun Bakteri,covered,3,3,0,CARD_EXT_024;CARD_EXT_025;CARD_EXT_026,terverifikasi eksternal
+Padi,PenyakitHawarPelepahDaunPadi,Penyakit Hawar Pelepah Daun,covered,2,2,0,CARD_EXT_008;CARD_EXT_009,terverifikasi eksternal
+Padi,PenyakitKerdilRumputDanKerdilHampaPadi,Penyakit Kerdil Rumput dan Kerdil Hampa,covered,1,1,0,CARD_EXT_028,terverifikasi eksternal
+Padi,PenyakitTungroPadi,Penyakit Tungro,covered,1,1,0,CARD_EXT_027,terverifikasi eksternal
+Kedelai,PenyakitAntraknosaKedelai,Penyakit Antraknosa,covered,1,1,0,CARD_EXT_060,terverifikasi eksternal
+Kedelai,PenyakitBakteriPustulKedelai,Penyakit Bakteri Pustul,covered,2,2,0,CARD_EXT_004;CARD_EXT_005,terverifikasi eksternal
+Kedelai,PenyakitBercakBijiUnguKedelai,Penyakit Bercak Biji Ungu,covered,1,1,0,CARD_EXT_061,terverifikasi eksternal
+Kedelai,PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai,Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot),covered,2,2,0,CARD_EXT_010;CARD_EXT_011,terverifikasi eksternal
+Kedelai,PenyakitBercakTargetKedelai,Penyakit Bercak Target,covered,1,1,0,CARD_EXT_012,terverifikasi eksternal
+Kedelai,PenyakitEmbunPalsuDownyMildewKedelai,Penyakit Embun Palsu (Downy mildew),covered,2,0,2,DOC005_C026_01,baseline internal saja
+Kedelai,PenyakitEmbunTepungPowderyMildewKedelai,Penyakit Embun Tepung (Powdery Mildew),covered,2,2,0,CARD_EXT_013;CARD_EXT_014,terverifikasi eksternal
+Kedelai,PenyakitHawarBakteriBacterialBlightKedelai,Penyakit Hawar Bakteri (Bacterial Blight),covered,1,1,0,CARD_EXT_062,terverifikasi eksternal
+Kedelai,PenyakitKaratDaunKedelai,Penyakit Karat Daun,covered,2,0,2,DOC002_P043_B008;DOC005_C017_01,baseline internal saja
+Kedelai,PenyakitKerdilKedelaiSoybeanStuntVirusKedelai,Penyakit Kerdil Kedelai (Soybean Stunt Virus),covered,1,1,0,CARD_EXT_063,terverifikasi eksternal
+Kedelai,PenyakitLayuFusariumKedelai,Penyakit Layu Fusarium,covered,1,1,0,CARD_EXT_064,terverifikasi eksternal
+Kedelai,PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai,Penyakit Mosaik Kedelai (Soybean Mosaic Virus),covered,1,1,0,CARD_EXT_065,terverifikasi eksternal
+Kedelai,PenyakitRebahKecambahKedelai,Penyakit Rebah Kecambah,covered,1,0,1,ontology.ttl,baseline ontology
+Kedelai,PenyakitRebahSemaiKedelai,Penyakit Rebah Semai,covered,1,1,0,CARD_EXT_066,terverifikasi eksternal
+Kedelai,PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai,Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus),covered,1,1,0,CARD_EXT_067,terverifikasi eksternal
+Jagung,PenyakitBulaiJagung,Penyakit Bulai,covered,2,0,2,ontology.ttl,baseline ontology
+Jagung,PenyakitBusukPelepahJagung,Penyakit Busuk Pelepah,covered,2,2,0,CARD_EXT_029;CARD_EXT_030,terverifikasi eksternal
+Jagung,PenyakitHawarDaunJagung,Penyakit Hawar Daun,covered,2,2,0,CARD_EXT_006;CARD_EXT_007,terverifikasi eksternal
+Jagung,PenyakitKaratDaunJagung,Penyakit Karat Daun,covered,2,0,2,ontology.ttl,baseline ontology
+Jagung,PenyakitLayuStewartJagung,Penyakit Layu Stewart,covered,1,1,0,CARD_EXT_031,terverifikasi eksternal
+UbiJalar,LayuFusariumUbiJalar,layu fusarium,covered,2,2,0,CARD_EXT_032;CARD_EXT_033,terverifikasi eksternal
+UbiJalar,PenyakitBercakKuningUbiJalar,Penyakit bercak kuning,covered,1,1,0,CARD_EXT_034,terverifikasi eksternal
+UbiJalar,PenyakitBusukHitamBlackRotUbiJalar,Penyakit busuk hitam (black rot),covered,1,1,0,CARD_EXT_035,terverifikasi eksternal
+UbiJalar,PenyakitKudisUbiJalar,Penyakit kudis,covered,2,0,2,DOC002_P083_B005;DOC002_P083_B006,baseline internal saja
+UbiKayu,AntraknosaUbiKayuBatang,Antraknosa,covered,1,1,0,CARD_EXT_015,terverifikasi eksternal
+UbiKayu,AntraknosaUbiKayuDaun,Antraknosa,covered,1,1,0,CARD_EXT_016,terverifikasi eksternal
+UbiKayu,BercakDaunBaurUbiKayu,Bercak daun baur,covered,1,1,0,CARD_EXT_053,terverifikasi eksternal
+UbiKayu,BercakDaunCoklatUbiKayu,Bercak daun Coklat,covered,1,1,0,CARD_EXT_017,terverifikasi eksternal
+UbiKayu,BercakDaunPutihUbiKayu,Bercak daun putih,covered,2,2,0,CARD_EXT_049;CARD_EXT_050,terverifikasi eksternal
+UbiKayu,BusukAkarDanUmbiUbiKayu,Busuk akar dan umbi,covered,1,1,0,CARD_EXT_054,terverifikasi eksternal
+UbiKayu,BusukAkarUbiKayu,Busuk akar,covered,1,1,0,CARD_EXT_055,terverifikasi eksternal
+UbiKayu,BusukPangkalBatangUbiKayu,Busuk pangkal batang,covered,2,2,0,CARD_EXT_058;CARD_EXT_059,terverifikasi eksternal
+UbiKayu,BusukUmbiUbiKayu,Busuk Umbi,covered,1,1,0,CARD_EXT_056,terverifikasi eksternal
+UbiKayu,CassavaBrownStreakDiseaseCBSDUbiKayu,Cassava Brown Streak Disease (CBSD),covered,2,2,0,CARD_EXT_046;CARD_EXT_047,terverifikasi eksternal
+UbiKayu,CassavaMosaicBegomovirusCMBsUbiKayu,Cassava Mosaic Begomovirus (CMBs),covered,1,1,0,CARD_EXT_045,terverifikasi eksternal
+UbiKayu,HawarBakteriUbiKayu,Hawar bakteri,covered,3,3,0,CARD_EXT_042;CARD_EXT_043;CARD_EXT_044,terverifikasi eksternal
+UbiKayu,HawarDaunBakteriUbiKayu,Hawar daun bakteri,covered,3,3,0,CARD_EXT_001;CARD_EXT_002;CARD_EXT_003,terverifikasi eksternal
+UbiKayu,NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu,Nekrosis pada titik tunas (Cassava bud necrosis),covered,2,2,0,CARD_EXT_051;CARD_EXT_052,terverifikasi eksternal
+UbiKayu,SapuSetanWitchesBroomUbiKayu,Sapu setan (Witches broom),covered,1,1,0,CARD_EXT_057,terverifikasi eksternal
+UbiKayu,SuperelongasiUbiKayu,Superelongasi,covered,1,1,0,CARD_EXT_048,terverifikasi eksternal
+UbiKayu,TanamanKerdilStuntUbiKayu,Tanaman kerdil (stunt),covered,1,1,0,CARD_EXT_068,terverifikasi eksternal
+KacangTanah,PenyakitBelangMottleKacangTanah,Penyakit Belang (Mottle),covered,2,0,2,DOC002_P074_B006,baseline internal saja
+KacangTanah,PenyakitBercakDaunKacangTanah,Penyakit Bercak Daun,covered,2,2,0,CARD_EXT_020;CARD_EXT_021,terverifikasi eksternal
+KacangTanah,PenyakitKaratDaunKacangTanah,Penyakit Karat Daun,covered,2,2,0,CARD_EXT_018;CARD_EXT_019,terverifikasi eksternal
+KacangTanah,PenyakitLayuBakteriKacangTanah,Penyakit Layu Bakteri,covered,2,2,0,CARD_EXT_036;CARD_EXT_037,terverifikasi eksternal
+KacangHijau,PenyakitBercakDaunKacangHijau,Penyakit Bercak Daun,covered,2,2,0,CARD_EXT_038;CARD_EXT_039,terverifikasi eksternal
+KacangHijau,PenyakitEmbunTepungKacangHijau,Penyakit Embun Tepung,covered,2,2,0,CARD_EXT_022;CARD_EXT_023,terverifikasi eksternal
+KacangHijau,PenyakitLayuKacangHijau,Penyakit Layu,covered,2,2,0,CARD_EXT_040;CARD_EXT_041,terverifikasi eksternal

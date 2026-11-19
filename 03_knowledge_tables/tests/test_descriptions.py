@@ -21,6 +21,9 @@ SOURCE_DIR = PROJECT_ROOT / "00_sumber_data"
 
 EXPECTED_MISSING_INDIVIDUALS = [
     "KondisiIklimBasah",
+    "KondisiKelembapanTanahRendah",
+    "KondisiKelembapanTanahSedang",
+    "KondisiKelembapanTanahTinggi",
     "KondisiKelembapanUdaraRendah",
     "KondisiKelembapanUdaraSedang",
     "KondisiKelembapanUdaraTinggi",
@@ -28,13 +31,12 @@ EXPECTED_MISSING_INDIVIDUALS = [
     "KondisiTanahBerpasir",
     "KondisiTanahLiat",
     "KondisiTanahNetral",
-    "PengamatanBercakDaunPutihUbiKayuKecilBulatBerwarnaPutih",
-    "PengamatanPenyakitAntraknosaKedelaiTruncatumMelakukanPenetrasiJaringanMembentuk",
+    "PengamatanBercakDaunPutihUbiKayuBercakTanaman",
+    "PengamatanPenyakitAntraknosaKedelaiKematianTanaman",
+    "PengamatanPenyakitAntraknosaKedelaiNekrosisTanaman",
     "PengamatanPenyakitBercakDaunKacangTanahBerbedaBedaTergantungSpesiesPatogennya",
     "PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataABPascapanenC",
-    "PengamatanPenyakitEmbunPalsuDownyMildewKedelaiManshuricaAwalnyaTerdapatAdanya",
     "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiAkibatMakaBenihDihasilkanMenjadi",
-    "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiGlycineDiawaliMunculnyaAwalnyaBerwarna",
     "PengamatanPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiMenusukkanAlatMulutStyletSehat",
     "PengamatanPenyakitRebahKecambahKedelaiSolaniMakaBenihTidakBerkecambah",
 ]
