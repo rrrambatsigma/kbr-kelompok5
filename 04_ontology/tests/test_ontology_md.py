@@ -9,13 +9,14 @@ import sys
 import unittest
 from pathlib import Path
 
-from rdflib import BNode, Graph, Literal, URIRef
+from rdflib import BNode, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import OWL, RDF, RDFS
 
 ONTO_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = ONTO_DIR.parent
 sys.path.insert(0, str(ONTO_DIR))
 PTP = "http://kbr.kelompok5.org/penyakit-tanaman-pangan#"
+SWRL = Namespace("http://www.w3.org/2003/11/swrl#")
 KBR = lambda name: URIRef(PTP + name)  # noqa: E731
 
 ARTIFACT = ONTO_DIR / "ontology_md.ttl"
@@ -32,19 +33,7 @@ EXT_DESCRIPTIONS = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_descripti
 
 SCOPE_PLANTS = {"Padi", "Kedelai", "Jagung", "UbiJalar", "UbiKayu", "KacangTanah", "KacangHijau"}
 
-COMMENT_GAPS = {
-    "KondisiIklimBasah",
-    "KondisiKelembapanTanahRendah",
-    "KondisiKelembapanTanahSedang",
-    "KondisiKelembapanTanahTinggi",
-    "KondisiKelembapanUdaraRendah",
-    "KondisiKelembapanUdaraSedang",
-    "KondisiKelembapanUdaraTinggi",
-    "KondisiTanahBasa",
-    "KondisiTanahBerpasir",
-    "KondisiTanahLiat",
-    "KondisiTanahNetral",
-}
+COMMENT_GAPS: set[str] = set()
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -76,6 +65,18 @@ class TestOntologyMd(unittest.TestCase):
         self.assertTrue(REPORT.exists())
         self.assertEqual(self.report["output"], "04_ontology/ontology_md.ttl")
         self.assertTrue(self.report["canonical_untouched"])
+
+    def test_swrl_rules_use_typed_atom_lists(self) -> None:
+        rules = set(self.graph.subjects(RDF.type, SWRL.Imp))
+        self.assertEqual(len(rules), 4)
+        for imp in rules:
+            for predicate in (SWRL.body, SWRL.head):
+                lists = list(self.graph.objects(imp, predicate))
+                self.assertEqual(len(lists), 1, f"{imp} punya {predicate} tidak tunggal")
+                node = lists[0]
+                while node and node != RDF.nil:
+                    self.assertIn((node, RDF.type, SWRL.AtomList), self.graph)
+                    node = next(self.graph.objects(node, RDF.rest), None)
 
     def test_property_definition(self) -> None:
         prop = KBR("memilikiKondisiTumbuh")

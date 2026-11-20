@@ -33,14 +33,14 @@ API Spring Boot untuk memuat ontologi.
 
 ## Angka kunci
 
-- Ontologi kanonik: **16.721 triple**, **1.206 individu**, **87 kelas**,
-  **53 penyakit**, **7 tanaman**, **78 tautan penyakit-patogen**.
-- `ontology_md.ttl`: **18.973 triple**, **1.368 individu**, **4 aturan SWRL**.
-- **240 baris gejala** menjadi **167 pengamatan kanonik**; **64** belum dipetakan.
-- **226 tautan `dikendalikanDengan`**; **38** baris pengendalian belum dipetakan.
+- Ontologi kanonik: **16.732 triple**, **1.204 individu**, **87 kelas**,
+  **29 object property**, **53 penyakit**, **7 tanaman**, **78 tautan penyakit-patogen**.
+- `ontology_md.ttl`: **19.021 triple**, **1.366 individu**, **4 aturan SWRL**.
+- **240 baris gejala** menjadi **171 pengamatan kanonik**; **58** belum dipetakan.
+- **226 tautan `dikendalikanDengan`**; **37** baris pengendalian belum dipetakan.
 - **40 varietas**, **12 tautan fase**, **17 baris metadata terkurasi**.
 - **68 observasi lingkungan eksternal** dan **92 tautan kondisi**.
-- **942 fakta enrichment** dan **551 deskripsi `rdfs:comment`**.
+- **942 fakta enrichment** dan **561 deskripsi `rdfs:comment`**.
 - Audit terbaru: **severity 39**, **fase 42**, **varietas tahan 45**, dan
   **nama Inggris 43** masih kosong. Angka ini best-effort, bukan target yang
   dipaksakan.
@@ -90,7 +90,7 @@ python -m unittest discover -s tests -p "test_*.py"
 Status terakhir:
 
 - `03_knowledge_tables`: **79 test OK**, 25 skipped.
-- `04_ontology`: **64 test OK**, termasuk test Pellet/SWRL.
+- `04_ontology`: **68 test OK**, termasuk test Pellet/SWRL.
 
 Test SWRL membutuhkan Java dan `owlready2`. Jika Java tidak tersedia, test
 reasoning di-skip.

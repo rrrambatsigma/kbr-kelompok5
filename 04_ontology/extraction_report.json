@@ -7,10 +7,10 @@
     "control_records_disease": 257,
     "control_records_chapter": 45,
     "metadata_rows": 17,
-    "named_individuals": 1206,
-    "triples": 16721,
+    "named_individuals": 1204,
+    "triples": 16732,
     "classes": 87,
-    "object_properties": 28,
+    "object_properties": 29,
     "data_properties": 33
   },
   "controls": {
@@ -214,6 +214,14 @@
       },
       {
         "disease": "PenyakitTungroPadi",
+        "actions": [
+          "PengendalianVektor"
+        ],
+        "category": "",
+        "source": "DOC002"
+      },
+      {
+        "disease": "PenyakitKerdilRumputDanKerdilHampaPadi",
         "actions": [
           "PengendalianVektor"
         ],
@@ -2245,10 +2253,11 @@
       "BercakDaun": 23,
       "KlorosisDaun": 18,
       "LayuDaun": 12,
+      "PertumbuhanAbnormal": 6,
       "HawarDaun": 4,
       "KlorosisTanaman": 13,
       "NekrosisTanaman": 5,
-      "BercakTanaman": 22,
+      "BercakTanaman": 23,
       "MalaiPatah": 1,
       "BusukBatang": 6,
       "KerdilTanaman": 9,
@@ -2259,7 +2268,6 @@
       "DaunRontok": 6,
       "TepungDaun": 4,
       "NekrosisDaun": 5,
-      "PertumbuhanAbnormal": 3,
       "DaunBerlubang": 2,
       "BelangTanaman": 3,
       "MosaikDaun": 5,
@@ -2267,9 +2275,9 @@
       "PucukMati": 3,
       "BusukBuah": 1
     },
-    "total": 231,
-    "canonical_groups": 167,
-    "unmapped": 64
+    "total": 229,
+    "canonical_groups": 171,
+    "unmapped": 58
   },
   "environment": {
     "numeric": [
@@ -3608,8 +3616,8 @@
   ],
   "data_quality": {
     "fragment_quotes": 210,
-    "unmapped_symptoms": 64,
-    "unmapped_controls": 38,
+    "unmapped_symptoms": 58,
+    "unmapped_controls": 37,
     "unknown_pathogens": 0,
     "diseases_without_explicit_part": 0,
     "diseases_without_pathogen": [],

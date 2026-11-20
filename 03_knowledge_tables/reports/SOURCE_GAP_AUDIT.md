@@ -9,8 +9,8 @@ Sumber yang diaudit: `00_sumber_data/05_PenyakitUtamaKedelai.md`, `00_sumber_dat
 | Item | Jumlah |
 |---|---:|
 | Penyakit | 53 |
-| Gejala belum dipetakan | 64 |
-| Pengendalian belum dipetakan | 38 |
+| Gejala belum dipetakan | 58 |
+| Pengendalian belum dipetakan | 37 |
 | Baris audit metadata | 169 |
 | Unit sumber menyebut drainase | 3 |
 | Unit sumber menyebut rotasi/pergiliran | 26 |
@@ -204,70 +204,64 @@ Semua baris di bawah berasal dari sumber. Status `available` berarti teks bukti 
 
 | # | Tanaman | Penyakit | Triase awal | Kutipan | Sumber | Chunk |
 |---:|---|---|---|---|---|---|
-| 1 | Padi | Penyakit Hawar Daun Bakteri | butuh_konsep_baru | gejala khas dari penyakit ini adalah tepi bergelombang atau penggulungan yang terlihat jelas pada helaian daun. | DOC002 | DOC002_C027_01 |
-| 2 | Padi | Penyakit Hawar Daun Bakteri | ambigu | sementara itu, fase kresek ditandai terutama oleh infeksi sistemis karena pada fase ini gejala penyakit biasanya muncul 1-2 minggu setelah transplantasi persemaian ke lapangan. | DOC002 | DOC002_C027_03 |
-| 3 | Padi | Penyakit Hawar Daun Bakteri | butuh_konsep_baru | istilah kresek sendiri diambil dari bahasa jawa yang berarti suara daun-daun yang mati yang bergesekan satu sama lain menyerupai suara kresek (goto, 1992). | DOC002 | DOC002_C027_03 |
-| 4 | Padi | Penyakit Blas | butuh_konsep_baru | gejala khas dari penyakit ini, yaitu blas daun dan blas malai. | DOC002 | DOC002_C029_04 |
-| 5 | Padi | Penyakit Hawar Pelepah Daun | butuh_konsep_baru | gejala penyakit hdp dapat dilihat pada selubung daun. | DOC002 | DOC002_C032_02 |
-| 6 | Padi | Penyakit Hawar Pelepah Daun | ambigu | gejala tersebut dapat ditemukan pada padi fase anakan sampai fase matang susu. | DOC002 | DOC002_C032_02 |
-| 7 | Padi | Penyakit Kerdil Rumput dan Kerdil Hampa | bukan_gejala | infeksi pada daun bendera dapat menyebabkan daun menjadi abnormal di mana daun akan terpelintir dan memendek seperti pada gambar 1.8. | DOC002 | DOC002_C035_01 |
-| 8 | Kedelai | Penyakit Rebah Semai | ambigu | gejala yang muncul pada tanaman yang terserang s. | DOC002 | DOC002_C038_03 |
-| 9 | Kedelai | Penyakit Rebah Kecambah | butuh_konsep_baru | solani maka benih tidak akan berkecambah atau mati. | DOC002 | DOC002_C040_02 |
-| 10 | Kedelai | Penyakit Rebah Kecambah | butuh_konsep_baru | solani akan menunjukkan gejala adanya lekukan coklat dan berkembang menjadi warna hitam pada pangkal akar muda yang terinfeksi (muslim et al., 2019). | DOC002 | DOC002_C040_02 |
-| 11 | Kedelai | Penyakit Layu Fusarium | bukan_gejala | gejala penyakit yang disebabkan oleh patogen fusarium spp. | DOC002 | DOC002_C042_01 |
-| 12 | Kedelai | Penyakit Karat Daun | bukan_gejala | akibat serangan oleh patogen ini menyebabkan penurunan produksi polong kedelai mencapai 30-60%. | DOC002 | DOC002_C043_03 |
-| 13 | Kedelai | Penyakit Karat Daun | butuh_konsep_baru | intensitas serangan berat pada saat pengisian polong. | DOC002 | DOC002_C043_03 |
-| 14 | Kedelai | Penyakit Embun Palsu (Downy mildew) | ambigu | gejala yang muncul pada tanaman yang terinfeksi p. | DOC002 | DOC002_C046_02 |
-| 15 | Kedelai | Penyakit Embun Palsu (Downy mildew) | bukan_gejala | daun menjadi kaku seperti gejala tanaman yang terinfeksi virus. | DOC002 | DOC002_C046_02 |
-| 16 | Kedelai | Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) | bukan_gejala | pengaturan jarak tanam pada beberapa varietas kedelai tidak memengaruhi terhadap intensitas serangan c. | DOC002 | DOC002_C048_02 |
-| 17 | Kedelai | Penyakit Bercak Target | bukan_gejala | gejala juga dapat muncul pada bagian tanaman seperti batang dan polong yang terinfeksi patogen c. | DOC002 | DOC002_C051_02 |
-| 18 | Kedelai | Penyakit Bercak Biji Ungu | bukan_gejala | gejala pada tanaman kedelai yang terinfeksi patogen c. | DOC002 | DOC002_C053_01 |
-| 19 | Kedelai | Penyakit Bercak Biji Ungu | ambigu | gejala ini biasanya dianggap sebagai gejala karena pengaruh cahaya matahari. | DOC002 | DOC002_C053_01 |
-| 20 | Kedelai | Penyakit Bercak Biji Ungu | ambigu | pada gejala awal tanaman tidak terlihat sakit karena gejala yang disebabkan oleh c. | DOC002 | DOC002_C054_01 |
-| 21 | Kedelai | Penyakit Bercak Biji Ungu | bukan_gejala | budidaya tanaman kedelai juga dihadapkan dengan adanya serangan dari bakteri penyebab penyakit. | DOC002 | DOC002_C054_02 |
-| 22 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | bukan_gejala | gejala tanaman yang disebabkan oleh patogen p. | DOC002 | DOC002_C054_03 |
-| 23 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | bukan_gejala | akibat serangan patogen ini maka benih yang dihasilkan menjadi berukuran kecil dan warnanya akan berubah. | DOC002 | DOC002_C054_03 |
-| 24 | Kedelai | Penyakit Bakteri Pustul | bukan_gejala | gejala yang muncul akibat serangan patogen x. | DOC002 | DOC002_C056_02 |
-| 25 | Kedelai | Penyakit Mosaik Kedelai (Soybean Mosaic Virus) | bukan_gejala | tanaman dapat menunjukkan gejala yang sama atau berbeda akibat patogen smv. | DOC002 | DOC002_C057_03 |
-| 26 | Kedelai | Penyakit Mosaik Kedelai (Soybean Mosaic Virus) | bukan_gejala | hal ini dipengaruhi oleh beberapa faktor seperti umur tanaman saat terinfeksi patogen smv, kondisi lingkungan pada saat adanya infeksi, virus yang menginfeksi benih dan sumber inokulum di lapangan menunjukkan gejala yang | DOC002 | DOC002_C057_03 |
-| 27 | Kedelai | Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) | ambigu | gejala akan semakin berkembang seiring dengan meningkatnya umur tanaman. | DOC002 | DOC002_C059_01 |
-| 28 | Kedelai | Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) | butuh_konsep_baru | pada gejala yang parah maka tanaman kedelai akan menunjukkan gejala yang semakin beragam dan kompleks serta diikuti dengan gejala mal formasi pada daun tanaman kedelai (sulandari et al., 2014). | DOC002 | DOC002_C059_01 |
-| 29 | Kedelai | Penyakit Kerdil Kedelai (Soybean Stunt Virus) | bukan_gejala | yang menusukkan alat mulut stylet pada tanaman sehat sehingga virus akan memperbanyak diri dan membentuk partikel virus yang baru pada tanaman yang sehat sehingga tanaman yang sehat akan terinfeksi dan menunjukkan gejala | DOC002 | DOC002_C061_02 |
-| 30 | KacangTanah | Penyakit Bercak Daun | bukan_gejala | gejala berbeda-beda tergantung dari spesies patogennya (cercospora arachidicola dan c. | DOC002 | DOC002_C065_01 |
-| 31 | KacangTanah | Penyakit Bercak Daun | butuh_konsep_baru | serangan penyakit berdampak pada pengurangan jumlah polong dan berat biji per tanaman sehingga dapat mengakibatkan penurunan hasil dan produksi sebesar 50%. | DOC002 | DOC002_C065_01 |
-| 32 | KacangTanah | Penyakit Belang (Mottle) | ambigu | kadang-kadang gejala oleh pstv berupa garis putus-putus berwarna hijau gelap (stripe). | DOC002 | DOC002_C072_01 |
-| 33 | KacangTanah | Penyakit Belang (Mottle) | bukan_gejala | tetapi umumnya gejala kedua virus ini sukar dibedakan. | DOC002 | DOC002_C072_01 |
-| 34 | KacangTanah | Penyakit Belang (Mottle) | bukan_gejala | gejala serangan dan makroskopis ditunjukkan gambar 4. | DOC002 | DOC002_C072_01 |
-| 35 | UbiJalar | layu fusarium | bukan_gejala | tanaman merambat berwarna kecokelatan (1b dan e), tanaman yang mati sering terdapat miselium berwarna merah muda dengan makrokonidia dan mikrokonidia patogen (1c dan f). | DOC002 | DOC002_C080_01 |
-| 36 | UbiJalar | layu fusarium | bukan_gejala | gejala serangan fusarium pada umbi ubi jalar berupa kanker melingkar permukaan yang minimal memengaruhi jaringan di bawahnya, berwarna coklat pucat sampai kehitaman kering, rerata diameter awalnya 2-4 mm, luka dapat tumb | DOC002 | DOC002_C080_01 |
-| 37 | UbiJalar | Penyakit kudis | bukan_gejala | daun menjadi tidak produktif dalam fotosintesis jika pada tingkat serangan berat, sehingga hasil ubi rendah dan bahkan tidak menghasilkan sama sekali (rukmana, 1997). | DOC002 | DOC002_C083_01 |
-| 38 | UbiJalar | Penyakit kudis | bukan_gejala | sumber inokulum penyakit kudis biasanya berasal dari bahan tanam (setek) yang terinfeksi jamur, penyakit ini menyebar lebih cepat ke tanaman yang sehat percikan air hujan yang disertai angin, lebih banyak terjadi seranga | DOC002 | DOC002_C083_01 |
-| 39 | UbiJalar | Penyakit kudis | ambigu | selain itu, faktor lingkungan juga memengaruhi perubahan ketahanan ubi jalar terhadap penyakit kudis (roosda et al., 20013), sehingga kultivar yang tahan dapat berubah menjadi tidak tahan dan periode inkubasi juga memeng | DOC002 | DOC002_C083_01 |
-| 40 | UbiJalar | Penyakit kudis | bukan_gejala | hasil penelitian martanto (2010) menjelaskan bahwa tanaman ubi jalar membentuk lapisan gabus untuk mempertahankan diri dari serangan penyakit kudis (gambar 3a dan b). | DOC002 | DOC002_C083_02 |
-| 41 | UbiJalar | Penyakit bercak kuning | bukan_gejala | informasi penelitian di indonesia terkait virus pada ubi jalar masih sedikit, namun yang paling dominan adalah serangan spfmv. | DOC002 | DOC002_C085_01 |
-| 42 | UbiJalar | Penyakit bercak kuning | bukan_gejala | menurut cooper and jones (2006) bahwa variabilitas dalam ekspresi gejala disebabkan karena beberapa faktor seperti kondisi lingkungan, strain virus, spesies atau genotipe tanaman inang, umur dan fisiologi inang. | DOC002 | DOC002_C086_01 |
-| 43 | UbiJalar | Penyakit busuk hitam (black rot) | ambigu | (2018) menjelaskan bahwa gejala serangan c. | DOC002 | DOC002_C087_01 |
-| 44 | UbiJalar | Penyakit busuk hitam (black rot) | bukan_gejala | gambar 4.6: gejala dan bentuk mikroskopis c. | DOC002 | DOC002_C088_02 |
-| 45 | UbiJalar | Penyakit busuk hitam (black rot) | bukan_gejala | fimbriata, (a&b) gejala pascapanen pada ubi jalar (c&d) anterior dan posterior koloni spl17100 pada media pda yang diinkubasi selama 7 hari pada 25 °c, e,g,h) aleurokonidiophore dengan aleurokonidia, f) perithecium denga | DOC002 | DOC002_C088_02 |
-| 46 | Jagung | Penyakit Karat Daun | ambigu | bintil berbentuk bulat atau oval dan dapat saling bergabung. | DOC002 | DOC002_C103_03 |
-| 47 | Jagung | Penyakit Karat Daun | bukan_gejala | jika bintil pecah, spora akan keluar dan terbawa angin maupun percikan air hujan sehingga menjadi sumber inokulum baru dan dapat menginfeksi tanaman lain. | DOC002 | DOC002_C103_03 |
-| 48 | Jagung | Penyakit Karat Daun | butuh_konsep_baru | gejala karat biasanya diawali dari daun bagian bawah dan berkembang ke daun bagian atas, umumnya muncul pada masa generatif (puspawati and sudarma, 2016). | DOC002 | DOC002_C103_03 |
-| 49 | Jagung | Penyakit Karat Daun | butuh_konsep_baru | keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%. | DOC002 | DOC002_C103_03 |
-| 50 | Jagung | Penyakit Karat Daun | bukan_gejala | perkembangan penyakit dipengaruhi oleh kondisi lingkungan seperti suhu dan kelembaban. | DOC002 | DOC002_C103_03 |
-| 51 | Jagung | Penyakit Karat Daun | bukan_gejala | suhu 25.2°c – 28.8°c merupakan suhu optimum perkembangan penyakit karat. | DOC002 | DOC002_C103_03 |
-| 52 | Jagung | Penyakit Karat Daun | bukan_gejala | semakin tinggi kelembaban maka laju infeksi akan meningkat pada batas tertentu. | DOC002 | DOC002_C103_03 |
-| 53 | Jagung | Penyakit Karat Daun | bukan_gejala | laju infeksi ditentukan oleh kenaikan suhu dan kelembaban, meningkatnya suhu dapat menurunkan laju infeksi dan sebaliknya meningkatnya kelembaban dapat meningkatkan laju infeksi (puspawati and sudarma, 2016). | DOC002 | DOC002_C103_03 |
-| 54 | Jagung | Penyakit Karat Daun | ambigu | menurut hamidson et al., (2019) keparahan penyakit karat jagung dapat mencapai 79.9% hingga 83.15%. | DOC002 | DOC002_C103_03 |
-| 55 | Jagung | Penyakit Karat Daun | bukan_gejala | penyakit karat akan berkembang lebih baik pada suhu yang rendah dan kelembaban tinggi. | DOC002 | DOC002_C103_03 |
-| 56 | Jagung | Penyakit Bulai | ambigu | penyakit jagung mulai muncul antara 15 hingga 17 hari setelah infeksi (habibi et al., 2017). | DOC002 | DOC002_C105_02 |
-| 57 | Jagung | Penyakit Bulai | bukan_gejala | kecepatan angin, kelembaban yang tinggi lebih dari 90% dan suhu di bawah 24°c dapat meningkatkan laju infeksi penyakit bulai. | DOC002 | DOC002_C105_02 |
-| 58 | Jagung | Penyakit Bulai | ambigu | penyakit bulai menyerang tanaman pada fase vegetatif dan infeksi akan berkurang saat tanaman semakin tua karena semakin dewasa tanaman akan lebih tahan terhadap penyakit bulai (purwanto et al., 2016). | DOC002 | DOC002_C105_02 |
-| 59 | Jagung | Penyakit Bulai | ambigu | kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37% dan bergantung pada kondisi lingkungan tiap wilayah (kurniawan et al., 2017). | DOC002 | DOC002_C105_02 |
-| 60 | Kedelai | Penyakit Embun Palsu (Downy mildew) | butuh_konsep_baru | pada permukaan bawah daun warna coklat tersebut terdapat tubuh buah miselium dan sporangium berupa benang-benang halus yang berwarna putih kecoklatan menyerupai bulu, oleh karena itu disebut embun bulu. | DOC005 | DOC005_C026_02 |
-| 61 | Kedelai | Penyakit Antraknosa | butuh_konsep_baru | gejala penyakit antraknosa pada kedelai dapat ditemukan pada bagian batang, tangkai daun, daun, dan polong. | DOC005 | DOC005_C031_02 |
-| 62 | KacangHijau | Penyakit Bercak Daun | bukan_gejala | pada varietas rentan menyebabkan gejala defoliasi prematur pengurangan ukuran polong dan biji (grewal et al. 1980). | DOC005 | DOC005_C059_02 |
-| 63 | KacangHijau | Penyakit Layu | bukan_gejala | miselia berwarna putih akan ditemukan di sekitar gejala, dan pada gejala tingkat lanjut akan ditemukan sejumlah sclerosia pada akar (jin hyeuk 2017) dan daun dekat permukaan tanah (gambar 25). | DOC005 | DOC005_C064_03 |
-| 64 | UbiKayu | Tanaman kerdil (stunt) | bukan_gejala | tanaman tidak tumbuh secara normal, gejala ini umumnya terjadi pada tanaman yang mengalami infeksi awal oleh virus ini. tanaman yang terinfeksi virus ini umumnya akan memiliki batang yang berukuran kecil | DOC002 | T5.2_BATANG#4 |
+| 1 | Padi | Penyakit Hawar Daun Bakteri | ambigu | sementara itu, fase kresek ditandai terutama oleh infeksi sistemis karena pada fase ini gejala penyakit biasanya muncul 1-2 minggu setelah transplantasi persemaian ke lapangan. | DOC002 | DOC002_C027_03 |
+| 2 | Padi | Penyakit Hawar Daun Bakteri | butuh_konsep_baru | istilah kresek sendiri diambil dari bahasa jawa yang berarti suara daun-daun yang mati yang bergesekan satu sama lain menyerupai suara kresek (goto, 1992). | DOC002 | DOC002_C027_03 |
+| 3 | Padi | Penyakit Blas | butuh_konsep_baru | gejala khas dari penyakit ini, yaitu blas daun dan blas malai. | DOC002 | DOC002_C029_04 |
+| 4 | Padi | Penyakit Hawar Pelepah Daun | butuh_konsep_baru | gejala penyakit hdp dapat dilihat pada selubung daun. | DOC002 | DOC002_C032_02 |
+| 5 | Padi | Penyakit Hawar Pelepah Daun | ambigu | gejala tersebut dapat ditemukan pada padi fase anakan sampai fase matang susu. | DOC002 | DOC002_C032_02 |
+| 6 | Padi | Penyakit Kerdil Rumput dan Kerdil Hampa | bukan_gejala | infeksi pada daun bendera dapat menyebabkan daun menjadi abnormal di mana daun akan terpelintir dan memendek seperti pada gambar 1.8. | DOC002 | DOC002_C035_01 |
+| 7 | Kedelai | Penyakit Rebah Semai | ambigu | gejala yang muncul pada tanaman yang terserang s. | DOC002 | DOC002_C038_03 |
+| 8 | Kedelai | Penyakit Rebah Kecambah | butuh_konsep_baru | solani akan menunjukkan gejala adanya lekukan coklat dan berkembang menjadi warna hitam pada pangkal akar muda yang terinfeksi (muslim et al., 2019). | DOC002 | DOC002_C040_02 |
+| 9 | Kedelai | Penyakit Layu Fusarium | bukan_gejala | gejala penyakit yang disebabkan oleh patogen fusarium spp. | DOC002 | DOC002_C042_01 |
+| 10 | Kedelai | Penyakit Karat Daun | bukan_gejala | akibat serangan oleh patogen ini menyebabkan penurunan produksi polong kedelai mencapai 30-60%. | DOC002 | DOC002_C043_03 |
+| 11 | Kedelai | Penyakit Karat Daun | butuh_konsep_baru | intensitas serangan berat pada saat pengisian polong. | DOC002 | DOC002_C043_03 |
+| 12 | Kedelai | Penyakit Embun Palsu (Downy mildew) | ambigu | gejala yang muncul pada tanaman yang terinfeksi p. | DOC002 | DOC002_C046_02 |
+| 13 | Kedelai | Penyakit Embun Palsu (Downy mildew) | bukan_gejala | daun menjadi kaku seperti gejala tanaman yang terinfeksi virus. | DOC002 | DOC002_C046_02 |
+| 14 | Kedelai | Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) | bukan_gejala | pengaturan jarak tanam pada beberapa varietas kedelai tidak memengaruhi terhadap intensitas serangan c. | DOC002 | DOC002_C048_02 |
+| 15 | Kedelai | Penyakit Bercak Target | bukan_gejala | gejala juga dapat muncul pada bagian tanaman seperti batang dan polong yang terinfeksi patogen c. | DOC002 | DOC002_C051_02 |
+| 16 | Kedelai | Penyakit Bercak Biji Ungu | bukan_gejala | gejala pada tanaman kedelai yang terinfeksi patogen c. | DOC002 | DOC002_C053_01 |
+| 17 | Kedelai | Penyakit Bercak Biji Ungu | ambigu | gejala ini biasanya dianggap sebagai gejala karena pengaruh cahaya matahari. | DOC002 | DOC002_C053_01 |
+| 18 | Kedelai | Penyakit Bercak Biji Ungu | ambigu | pada gejala awal tanaman tidak terlihat sakit karena gejala yang disebabkan oleh c. | DOC002 | DOC002_C054_01 |
+| 19 | Kedelai | Penyakit Bercak Biji Ungu | bukan_gejala | budidaya tanaman kedelai juga dihadapkan dengan adanya serangan dari bakteri penyebab penyakit. | DOC002 | DOC002_C054_02 |
+| 20 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | bukan_gejala | gejala tanaman yang disebabkan oleh patogen p. | DOC002 | DOC002_C054_03 |
+| 21 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | bukan_gejala | akibat serangan patogen ini maka benih yang dihasilkan menjadi berukuran kecil dan warnanya akan berubah. | DOC002 | DOC002_C054_03 |
+| 22 | Kedelai | Penyakit Bakteri Pustul | bukan_gejala | gejala yang muncul akibat serangan patogen x. | DOC002 | DOC002_C056_02 |
+| 23 | Kedelai | Penyakit Mosaik Kedelai (Soybean Mosaic Virus) | bukan_gejala | tanaman dapat menunjukkan gejala yang sama atau berbeda akibat patogen smv. | DOC002 | DOC002_C057_03 |
+| 24 | Kedelai | Penyakit Mosaik Kedelai (Soybean Mosaic Virus) | bukan_gejala | hal ini dipengaruhi oleh beberapa faktor seperti umur tanaman saat terinfeksi patogen smv, kondisi lingkungan pada saat adanya infeksi, virus yang menginfeksi benih dan sumber inokulum di lapangan menunjukkan gejala yang | DOC002 | DOC002_C057_03 |
+| 25 | Kedelai | Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) | ambigu | gejala akan semakin berkembang seiring dengan meningkatnya umur tanaman. | DOC002 | DOC002_C059_01 |
+| 26 | Kedelai | Penyakit Kerdil Kedelai (Soybean Stunt Virus) | bukan_gejala | yang menusukkan alat mulut stylet pada tanaman sehat sehingga virus akan memperbanyak diri dan membentuk partikel virus yang baru pada tanaman yang sehat sehingga tanaman yang sehat akan terinfeksi dan menunjukkan gejala | DOC002 | DOC002_C061_02 |
+| 27 | KacangTanah | Penyakit Bercak Daun | bukan_gejala | gejala berbeda-beda tergantung dari spesies patogennya (cercospora arachidicola dan c. | DOC002 | DOC002_C065_01 |
+| 28 | KacangTanah | Penyakit Bercak Daun | butuh_konsep_baru | serangan penyakit berdampak pada pengurangan jumlah polong dan berat biji per tanaman sehingga dapat mengakibatkan penurunan hasil dan produksi sebesar 50%. | DOC002 | DOC002_C065_01 |
+| 29 | KacangTanah | Penyakit Belang (Mottle) | bukan_gejala | tetapi umumnya gejala kedua virus ini sukar dibedakan. | DOC002 | DOC002_C072_01 |
+| 30 | KacangTanah | Penyakit Belang (Mottle) | bukan_gejala | gejala serangan dan makroskopis ditunjukkan gambar 4. | DOC002 | DOC002_C072_01 |
+| 31 | UbiJalar | layu fusarium | bukan_gejala | tanaman merambat berwarna kecokelatan (1b dan e), tanaman yang mati sering terdapat miselium berwarna merah muda dengan makrokonidia dan mikrokonidia patogen (1c dan f). | DOC002 | DOC002_C080_01 |
+| 32 | UbiJalar | layu fusarium | bukan_gejala | gejala serangan fusarium pada umbi ubi jalar berupa kanker melingkar permukaan yang minimal memengaruhi jaringan di bawahnya, berwarna coklat pucat sampai kehitaman kering, rerata diameter awalnya 2-4 mm, luka dapat tumb | DOC002 | DOC002_C080_01 |
+| 33 | UbiJalar | Penyakit kudis | bukan_gejala | daun menjadi tidak produktif dalam fotosintesis jika pada tingkat serangan berat, sehingga hasil ubi rendah dan bahkan tidak menghasilkan sama sekali (rukmana, 1997). | DOC002 | DOC002_C083_01 |
+| 34 | UbiJalar | Penyakit kudis | bukan_gejala | sumber inokulum penyakit kudis biasanya berasal dari bahan tanam (setek) yang terinfeksi jamur, penyakit ini menyebar lebih cepat ke tanaman yang sehat percikan air hujan yang disertai angin, lebih banyak terjadi seranga | DOC002 | DOC002_C083_01 |
+| 35 | UbiJalar | Penyakit kudis | ambigu | selain itu, faktor lingkungan juga memengaruhi perubahan ketahanan ubi jalar terhadap penyakit kudis (roosda et al., 20013), sehingga kultivar yang tahan dapat berubah menjadi tidak tahan dan periode inkubasi juga memeng | DOC002 | DOC002_C083_01 |
+| 36 | UbiJalar | Penyakit kudis | bukan_gejala | hasil penelitian martanto (2010) menjelaskan bahwa tanaman ubi jalar membentuk lapisan gabus untuk mempertahankan diri dari serangan penyakit kudis (gambar 3a dan b). | DOC002 | DOC002_C083_02 |
+| 37 | UbiJalar | Penyakit bercak kuning | bukan_gejala | informasi penelitian di indonesia terkait virus pada ubi jalar masih sedikit, namun yang paling dominan adalah serangan spfmv. | DOC002 | DOC002_C085_01 |
+| 38 | UbiJalar | Penyakit bercak kuning | bukan_gejala | menurut cooper and jones (2006) bahwa variabilitas dalam ekspresi gejala disebabkan karena beberapa faktor seperti kondisi lingkungan, strain virus, spesies atau genotipe tanaman inang, umur dan fisiologi inang. | DOC002 | DOC002_C086_01 |
+| 39 | UbiJalar | Penyakit busuk hitam (black rot) | ambigu | (2018) menjelaskan bahwa gejala serangan c. | DOC002 | DOC002_C087_01 |
+| 40 | UbiJalar | Penyakit busuk hitam (black rot) | bukan_gejala | gambar 4.6: gejala dan bentuk mikroskopis c. | DOC002 | DOC002_C088_02 |
+| 41 | UbiJalar | Penyakit busuk hitam (black rot) | bukan_gejala | fimbriata, (a&b) gejala pascapanen pada ubi jalar (c&d) anterior dan posterior koloni spl17100 pada media pda yang diinkubasi selama 7 hari pada 25 °c, e,g,h) aleurokonidiophore dengan aleurokonidia, f) perithecium denga | DOC002 | DOC002_C088_02 |
+| 42 | Jagung | Penyakit Karat Daun | butuh_konsep_baru | gejala karat biasanya diawali dari daun bagian bawah dan berkembang ke daun bagian atas, umumnya muncul pada masa generatif (puspawati and sudarma, 2016). | DOC002 | DOC002_C103_03 |
+| 43 | Jagung | Penyakit Karat Daun | butuh_konsep_baru | keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%. | DOC002 | DOC002_C103_03 |
+| 44 | Jagung | Penyakit Karat Daun | bukan_gejala | perkembangan penyakit dipengaruhi oleh kondisi lingkungan seperti suhu dan kelembaban. | DOC002 | DOC002_C103_03 |
+| 45 | Jagung | Penyakit Karat Daun | bukan_gejala | suhu 25.2°c – 28.8°c merupakan suhu optimum perkembangan penyakit karat. | DOC002 | DOC002_C103_03 |
+| 46 | Jagung | Penyakit Karat Daun | bukan_gejala | semakin tinggi kelembaban maka laju infeksi akan meningkat pada batas tertentu. | DOC002 | DOC002_C103_03 |
+| 47 | Jagung | Penyakit Karat Daun | bukan_gejala | laju infeksi ditentukan oleh kenaikan suhu dan kelembaban, meningkatnya suhu dapat menurunkan laju infeksi dan sebaliknya meningkatnya kelembaban dapat meningkatkan laju infeksi (puspawati and sudarma, 2016). | DOC002 | DOC002_C103_03 |
+| 48 | Jagung | Penyakit Karat Daun | ambigu | menurut hamidson et al., (2019) keparahan penyakit karat jagung dapat mencapai 79.9% hingga 83.15%. | DOC002 | DOC002_C103_03 |
+| 49 | Jagung | Penyakit Karat Daun | bukan_gejala | penyakit karat akan berkembang lebih baik pada suhu yang rendah dan kelembaban tinggi. | DOC002 | DOC002_C103_03 |
+| 50 | Jagung | Penyakit Bulai | ambigu | penyakit jagung mulai muncul antara 15 hingga 17 hari setelah infeksi (habibi et al., 2017). | DOC002 | DOC002_C105_02 |
+| 51 | Jagung | Penyakit Bulai | bukan_gejala | kecepatan angin, kelembaban yang tinggi lebih dari 90% dan suhu di bawah 24°c dapat meningkatkan laju infeksi penyakit bulai. | DOC002 | DOC002_C105_02 |
+| 52 | Jagung | Penyakit Bulai | ambigu | penyakit bulai menyerang tanaman pada fase vegetatif dan infeksi akan berkurang saat tanaman semakin tua karena semakin dewasa tanaman akan lebih tahan terhadap penyakit bulai (purwanto et al., 2016). | DOC002 | DOC002_C105_02 |
+| 53 | Jagung | Penyakit Bulai | ambigu | kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37% dan bergantung pada kondisi lingkungan tiap wilayah (kurniawan et al., 2017). | DOC002 | DOC002_C105_02 |
+| 54 | Kedelai | Penyakit Embun Palsu (Downy mildew) | butuh_konsep_baru | pada permukaan bawah daun warna coklat tersebut terdapat tubuh buah miselium dan sporangium berupa benang-benang halus yang berwarna putih kecoklatan menyerupai bulu, oleh karena itu disebut embun bulu. | DOC005 | DOC005_C026_02 |
+| 55 | Kedelai | Penyakit Antraknosa | butuh_konsep_baru | gejala penyakit antraknosa pada kedelai dapat ditemukan pada bagian batang, tangkai daun, daun, dan polong. | DOC005 | DOC005_C031_02 |
+| 56 | KacangHijau | Penyakit Bercak Daun | bukan_gejala | pada varietas rentan menyebabkan gejala defoliasi prematur pengurangan ukuran polong dan biji (grewal et al. 1980). | DOC005 | DOC005_C059_02 |
+| 57 | KacangHijau | Penyakit Layu | bukan_gejala | miselia berwarna putih akan ditemukan di sekitar gejala, dan pada gejala tingkat lanjut akan ditemukan sejumlah sclerosia pada akar (jin hyeuk 2017) dan daun dekat permukaan tanah (gambar 25). | DOC005 | DOC005_C064_03 |
+| 58 | UbiKayu | Tanaman kerdil (stunt) | bukan_gejala | tanaman tidak tumbuh secara normal, gejala ini umumnya terjadi pada tanaman yang mengalami infeksi awal oleh virus ini. tanaman yang terinfeksi virus ini umumnya akan memiliki batang yang berukuran kecil | DOC002 | T5.2_BATANG#4 |
 
 ## Pengendalian belum dipetakan
 
@@ -275,42 +269,41 @@ Semua baris di bawah berasal dari sumber. Status `available` berarti teks bukti 
 |---:|---|---|---|---|---|---|
 | 1 | Padi | Penyakit Blas | butuh_konsep_baru | beberapa strategi pengendalian telah disarikan miah et al. | DOC002 | DOC002_C030_02 |
 | 2 | Padi | Penyakit Kerdil Rumput dan Kerdil Hampa | butuh_konsep_baru | strategi pengendalian penyakit kerdil rumput dan kerdil hampa hampir sama dengan pengendalian penyakit tungro. | DOC002 | DOC002_C035_03 |
-| 3 | Padi | Penyakit Kerdil Rumput dan Kerdil Hampa | butuh_konsep_baru | selain mengendalikan patogennya, vektornya pun harus dikendalikan. | DOC002 | DOC002_C035_03 |
-| 4 | Kedelai | Penyakit Rebah Semai | ambigu | rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, cruciferaceae, cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (sumartini, 2012). | DOC002 | DOC002_C040_01 |
-| 5 | Kedelai | Penyakit Rebah Semai | butuh_konsep_baru | hasil penelitian yang dilakukan oleh fitria and masnilah, (2020) pada beberapa varietas kedelai terhadap patogen s. | DOC002 | DOC002_C040_01 |
-| 6 | Kedelai | Penyakit Rebah Semai | bukan_tindakan | rolfsii sebesar 20-85% (marwan et al., 2017). | DOC002 | DOC002_C040_01 |
-| 7 | Kedelai | Penyakit Rebah Semai | bukan_tindakan | rolfsii dengan melilitkan hifanya dengan membentuk haustorium pada hifa patogen kemudian menghasilkan enzim kitinase yang menyebabkan dinding sel patogen lisis dan rusak (chamzurni et al., 2011). | DOC002 | DOC002_C040_01 |
-| 8 | Kedelai | Penyakit Rebah Kecambah | butuh_konsep_baru | menurut inayati and yusnawan, (2017) pengendalian penyakit yang disebabkan oleh r. | DOC002 | DOC002_C041_02 |
-| 9 | Kedelai | Penyakit Layu Fusarium | butuh_konsep_baru | oxysporum mengurangi intensitas patogen (kaya et al., 2020). | DOC002 | DOC002_C043_02 |
-| 10 | Kedelai | Penyakit Karat Daun | butuh_konsep_baru | hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. | DOC002 | DOC002_C044_02 |
-| 11 | Kedelai | Penyakit Embun Tepung (Powdery Mildew) | butuh_konsep_baru | mampu menekan penyakit embun tepung pada tanaman pepaya (firnando et al., 2020). | DOC002 | DOC002_C046_01 |
-| 12 | Kedelai | Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) | butuh_konsep_baru | siklus penyakit terjadi melalui penggunaan benih yang terinfeksi patogen c. | DOC002 | DOC002_C048_02 |
-| 13 | Kedelai | Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) | butuh_konsep_baru | menurut inayati and yusnawan, (2017) pengendalian c. | DOC002 | DOC002_C048_02 |
-| 14 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | bukan_tindakan | syringae pada tanaman kedelai (majid, 2016). | DOC002 | DOC002_C055_02 |
-| 15 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | ambigu | syringae menjadi awal pengelolaan perkembangan penyakit. | DOC002 | DOC002_C055_02 |
-| 16 | KacangTanah | Penyakit Bercak Daun | butuh_konsep_baru | berbagai upaya pengendalian telah banyak dilakukan untuk dapat mengurangi kerusakan akibat penyakit bercak daun. | DOC002 | DOC002_C066_04 |
-| 17 | KacangTanah | Penyakit Bercak Daun | ambigu | mikroorganisme ini biasanya berasal dari daerah perakaran atau endofit dan juga dari jaringan endofit daun. | DOC002 | DOC002_C066_04 |
-| 18 | KacangTanah | Penyakit Bercak Daun | bukan_tindakan | menurut istifadah dan sari (2017), jamur t. | DOC002 | DOC002_C067_01 |
-| 19 | KacangTanah | Penyakit Bercak Daun | ambigu | arachidicola mengalami resistensi dan lingkungan mendukung dalam perkembangan patogen | DOC002 | DOC002_C068_02 |
-| 20 | KacangTanah | Penyakit Bercak Daun | ambigu | karat daun merupakan penyakit tular udara yang penyebarannya melalui angin dan percikan air hujan. | DOC002 | DOC002_C070_01 |
-| 21 | KacangTanah | Penyakit Belang (Mottle) | bukan_tindakan | pengujian ketahanan tanaman terhadap pstv pernah dilakukan terhadap 11.000 genotipe menunjukkan semua genotipe rentan terhadap pstv. | DOC002 | DOC002_C073_03 |
-| 22 | KacangTanah | Penyakit Belang (Mottle) | bukan_tindakan | pendekatan bioteknologi melalui rekayasa genetik untuk menghasilkan tanaman transgenik diharapkan mampu membantu upaya memperoleh tanaman kacang tanah yang terinfeksi pstv. | DOC002 | DOC002_C073_03 |
-| 23 | KacangTanah | Penyakit Belang (Mottle) | butuh_konsep_baru | penggunaan tanaman dari benih yang sebelumnya terinfeksi pstv akan menyebabkan ledakan penyakit terutama saat populasi vektor tinggi. | DOC002 | DOC002_C073_04 |
-| 24 | KacangTanah | Penyakit Belang (Mottle) | butuh_konsep_baru | infeksi benih 2-5% dapat menyebabkan endemis penyakit saat panen. | DOC002 | DOC002_C073_04 |
-| 25 | KacangTanah | Penyakit Belang (Mottle) | ambigu | karena penularan dapat terjadi dengan sangat cepat sebelum serangga mati. | DOC002 | DOC002_C073_05 |
-| 26 | KacangTanah | Penyakit Belang (Mottle) | butuh_konsep_baru | pertumbuhan tanaman yang tegar akan mampu mengurangi kehilangan hasil akibat infeksi pstv. | DOC002 | DOC002_C073_05 |
-| 27 | KacangTanah | Penyakit Belang (Mottle) | ambigu | infeksi pstv pada kacang tanah pada musim hujan dapat lebih ringan dibanding musim kemarau | DOC002 | DOC002_C073_05 |
-| 28 | KacangTanah | Penyakit Layu Bakteri | duplikat_parafrase | beberapa mikroba telah diteliti dan dilaporkan mampu berperan sebagai agens pengendali hayati penyakit layu bakteri r. | DOC002 | DOC002_C077_02 |
-| 29 | KacangTanah | Penyakit Layu Bakteri | bukan_tindakan | solanacearum pada tanaman aromatik nilam. | DOC002 | DOC002_C077_02 |
-| 30 | UbiJalar | layu fusarium | ambigu | oxysporum (scattolini, hernandez and gonzales, 2020). | DOC002 | DOC002_C082_02 |
-| 31 | Jagung | Penyakit Hawar Daun | butuh_konsep_baru | aplikasi dilakukan sebanyak enam kali (pada umur 28, 35, 42, 49, 56, 63 hari setelah tanam) dengan cara penyemprotan ke bagian daun. | DOC002 | DOC002_C102_02 |
-| 32 | Jagung | Penyakit Bulai | butuh_konsep_baru | oleh karena itu, diperlukan pengendalian yang lebih ramah lingkungan. | DOC002 | DOC002_C106_02 |
-| 33 | Jagung | Penyakit Bulai | butuh_konsep_baru | tanaman yang diberikan perlakuan v1p2 yaitu kombinasi varietas pioneer 27 dan isolat p. | DOC002 | DOC002_C106_02 |
-| 34 | Jagung | Penyakit Layu Stewart | bukan_tindakan | hasilnya menunjukkan bahwa perkembangan penyakit dapat terhambat dengan kemampuan penekanan penyakit sebesar 76.92% hingga 92.30%. | DOC002 | DOC002_C108_02 |
-| 35 | KacangTanah | Pengendalian umum KacangTanah | bukan_tindakan | menurut istifadah dan sari (2017), jamur t. | DOC002 | DOC002_C067_01 |
-| 36 | KacangTanah | Pengendalian umum KacangTanah | ambigu | arachidicola mengalami resistensi dan lingkungan mendukung dalam perkembangan patogen | DOC002 | DOC002_C068_02 |
-| 37 | KacangTanah | Pengendalian umum KacangTanah | duplikat_parafrase | beberapa mikroba telah diteliti dan dilaporkan mampu berperan sebagai agens pengendali hayati penyakit layu bakteri r. | DOC002 | DOC002_C077_02 |
-| 38 | KacangTanah | Pengendalian umum KacangTanah | bukan_tindakan | solanacearum pada tanaman aromatik nilam. | DOC002 | DOC002_C077_02 |
+| 3 | Kedelai | Penyakit Rebah Semai | ambigu | rolfsii memiliki kisaran inang yang luas seperti famili leguminoceae, cruciferaceae, cucurbitaceae, tanaman pisang, jeruk, gandum, padi, tebu, bit, keladi, bahkan tanaman rempah (sumartini, 2012). | DOC002 | DOC002_C040_01 |
+| 4 | Kedelai | Penyakit Rebah Semai | butuh_konsep_baru | hasil penelitian yang dilakukan oleh fitria and masnilah, (2020) pada beberapa varietas kedelai terhadap patogen s. | DOC002 | DOC002_C040_01 |
+| 5 | Kedelai | Penyakit Rebah Semai | bukan_tindakan | rolfsii sebesar 20-85% (marwan et al., 2017). | DOC002 | DOC002_C040_01 |
+| 6 | Kedelai | Penyakit Rebah Semai | bukan_tindakan | rolfsii dengan melilitkan hifanya dengan membentuk haustorium pada hifa patogen kemudian menghasilkan enzim kitinase yang menyebabkan dinding sel patogen lisis dan rusak (chamzurni et al., 2011). | DOC002 | DOC002_C040_01 |
+| 7 | Kedelai | Penyakit Rebah Kecambah | butuh_konsep_baru | menurut inayati and yusnawan, (2017) pengendalian penyakit yang disebabkan oleh r. | DOC002 | DOC002_C041_02 |
+| 8 | Kedelai | Penyakit Layu Fusarium | butuh_konsep_baru | oxysporum mengurangi intensitas patogen (kaya et al., 2020). | DOC002 | DOC002_C043_02 |
+| 9 | Kedelai | Penyakit Karat Daun | butuh_konsep_baru | hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru. | DOC002 | DOC002_C044_02 |
+| 10 | Kedelai | Penyakit Embun Tepung (Powdery Mildew) | butuh_konsep_baru | mampu menekan penyakit embun tepung pada tanaman pepaya (firnando et al., 2020). | DOC002 | DOC002_C046_01 |
+| 11 | Kedelai | Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) | butuh_konsep_baru | siklus penyakit terjadi melalui penggunaan benih yang terinfeksi patogen c. | DOC002 | DOC002_C048_02 |
+| 12 | Kedelai | Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) | butuh_konsep_baru | menurut inayati and yusnawan, (2017) pengendalian c. | DOC002 | DOC002_C048_02 |
+| 13 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | bukan_tindakan | syringae pada tanaman kedelai (majid, 2016). | DOC002 | DOC002_C055_02 |
+| 14 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | ambigu | syringae menjadi awal pengelolaan perkembangan penyakit. | DOC002 | DOC002_C055_02 |
+| 15 | KacangTanah | Penyakit Bercak Daun | butuh_konsep_baru | berbagai upaya pengendalian telah banyak dilakukan untuk dapat mengurangi kerusakan akibat penyakit bercak daun. | DOC002 | DOC002_C066_04 |
+| 16 | KacangTanah | Penyakit Bercak Daun | ambigu | mikroorganisme ini biasanya berasal dari daerah perakaran atau endofit dan juga dari jaringan endofit daun. | DOC002 | DOC002_C066_04 |
+| 17 | KacangTanah | Penyakit Bercak Daun | bukan_tindakan | menurut istifadah dan sari (2017), jamur t. | DOC002 | DOC002_C067_01 |
+| 18 | KacangTanah | Penyakit Bercak Daun | ambigu | arachidicola mengalami resistensi dan lingkungan mendukung dalam perkembangan patogen | DOC002 | DOC002_C068_02 |
+| 19 | KacangTanah | Penyakit Bercak Daun | ambigu | karat daun merupakan penyakit tular udara yang penyebarannya melalui angin dan percikan air hujan. | DOC002 | DOC002_C070_01 |
+| 20 | KacangTanah | Penyakit Belang (Mottle) | bukan_tindakan | pengujian ketahanan tanaman terhadap pstv pernah dilakukan terhadap 11.000 genotipe menunjukkan semua genotipe rentan terhadap pstv. | DOC002 | DOC002_C073_03 |
+| 21 | KacangTanah | Penyakit Belang (Mottle) | bukan_tindakan | pendekatan bioteknologi melalui rekayasa genetik untuk menghasilkan tanaman transgenik diharapkan mampu membantu upaya memperoleh tanaman kacang tanah yang terinfeksi pstv. | DOC002 | DOC002_C073_03 |
+| 22 | KacangTanah | Penyakit Belang (Mottle) | butuh_konsep_baru | penggunaan tanaman dari benih yang sebelumnya terinfeksi pstv akan menyebabkan ledakan penyakit terutama saat populasi vektor tinggi. | DOC002 | DOC002_C073_04 |
+| 23 | KacangTanah | Penyakit Belang (Mottle) | butuh_konsep_baru | infeksi benih 2-5% dapat menyebabkan endemis penyakit saat panen. | DOC002 | DOC002_C073_04 |
+| 24 | KacangTanah | Penyakit Belang (Mottle) | ambigu | karena penularan dapat terjadi dengan sangat cepat sebelum serangga mati. | DOC002 | DOC002_C073_05 |
+| 25 | KacangTanah | Penyakit Belang (Mottle) | butuh_konsep_baru | pertumbuhan tanaman yang tegar akan mampu mengurangi kehilangan hasil akibat infeksi pstv. | DOC002 | DOC002_C073_05 |
+| 26 | KacangTanah | Penyakit Belang (Mottle) | ambigu | infeksi pstv pada kacang tanah pada musim hujan dapat lebih ringan dibanding musim kemarau | DOC002 | DOC002_C073_05 |
+| 27 | KacangTanah | Penyakit Layu Bakteri | duplikat_parafrase | beberapa mikroba telah diteliti dan dilaporkan mampu berperan sebagai agens pengendali hayati penyakit layu bakteri r. | DOC002 | DOC002_C077_02 |
+| 28 | KacangTanah | Penyakit Layu Bakteri | bukan_tindakan | solanacearum pada tanaman aromatik nilam. | DOC002 | DOC002_C077_02 |
+| 29 | UbiJalar | layu fusarium | ambigu | oxysporum (scattolini, hernandez and gonzales, 2020). | DOC002 | DOC002_C082_02 |
+| 30 | Jagung | Penyakit Hawar Daun | butuh_konsep_baru | aplikasi dilakukan sebanyak enam kali (pada umur 28, 35, 42, 49, 56, 63 hari setelah tanam) dengan cara penyemprotan ke bagian daun. | DOC002 | DOC002_C102_02 |
+| 31 | Jagung | Penyakit Bulai | butuh_konsep_baru | oleh karena itu, diperlukan pengendalian yang lebih ramah lingkungan. | DOC002 | DOC002_C106_02 |
+| 32 | Jagung | Penyakit Bulai | butuh_konsep_baru | tanaman yang diberikan perlakuan v1p2 yaitu kombinasi varietas pioneer 27 dan isolat p. | DOC002 | DOC002_C106_02 |
+| 33 | Jagung | Penyakit Layu Stewart | bukan_tindakan | hasilnya menunjukkan bahwa perkembangan penyakit dapat terhambat dengan kemampuan penekanan penyakit sebesar 76.92% hingga 92.30%. | DOC002 | DOC002_C108_02 |
+| 34 | KacangTanah | Pengendalian umum KacangTanah | bukan_tindakan | menurut istifadah dan sari (2017), jamur t. | DOC002 | DOC002_C067_01 |
+| 35 | KacangTanah | Pengendalian umum KacangTanah | ambigu | arachidicola mengalami resistensi dan lingkungan mendukung dalam perkembangan patogen | DOC002 | DOC002_C068_02 |
+| 36 | KacangTanah | Pengendalian umum KacangTanah | duplikat_parafrase | beberapa mikroba telah diteliti dan dilaporkan mampu berperan sebagai agens pengendali hayati penyakit layu bakteri r. | DOC002 | DOC002_C077_02 |
+| 37 | KacangTanah | Pengendalian umum KacangTanah | bukan_tindakan | solanacearum pada tanaman aromatik nilam. | DOC002 | DOC002_C077_02 |
 
 ## Drainase dan rotasi
 

@@ -73,6 +73,14 @@ def _nl(text: str) -> str:
     return text.replace("\r\n", "\n").replace("\r", "\n")
 
 
+def _mark_swrl_atom_list(graph: Graph, node) -> None:
+    seen = set()
+    while node and node != RDF.nil and node not in seen:
+        seen.add(node)
+        graph.add((node, RDF.type, SWRL.AtomList))
+        node = next(graph.objects(node, RDF.rest), None)
+
+
 def add_swrl_rules(graph: Graph) -> int:
     if not SWRL_RULES_TTL.exists():
         return 0
@@ -80,6 +88,10 @@ def add_swrl_rules(graph: Graph) -> int:
     rules.parse(SWRL_RULES_TTL, format="turtle")
     for triple in rules:
         graph.add(triple)
+    for imp in rules.subjects(RDF.type, SWRL.Imp):
+        for predicate in (SWRL.body, SWRL.head):
+            for atom_list in rules.objects(imp, predicate):
+                _mark_swrl_atom_list(graph, atom_list)
     return len(list(rules.subjects(RDF.type, SWRL.Imp)))
 
 

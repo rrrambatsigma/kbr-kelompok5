@@ -6,6 +6,7 @@ import csv
 import json
 import re
 import sys
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -90,6 +91,47 @@ def display_path(path: Path) -> str:
         return str(path.relative_to(PROJECT_ROOT)).replace("\\", "/")
     except ValueError:
         return str(path).replace("\\", "/")
+
+
+def ascii_words(text: str) -> list[str]:
+    replacements = {
+        "%": " Persen ",
+        "≥": " Minimal ",
+        "≤": " Maksimal ",
+        "<=": " Maksimal ",
+        ">=": " Minimal ",
+        ">": " DiAtas ",
+        "<": " DiBawah ",
+        "&": " Dan ",
+        "+": " Dan ",
+        "°C": " C ",
+    }
+    value = text or ""
+    for old, new in replacements.items():
+        value = value.replace(old, new)
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
+    return re.findall(r"[A-Za-z0-9]+", value)
+
+
+def pascal_words(text: str) -> str:
+    return "".join(token[:1].upper() + token[1:] for token in ascii_words(text))
+
+
+def semantic_observation_local(factor_local: str, factor_class: str, disease_local: str) -> str:
+    factor = pascal_words(factor_local) or pascal_words(factor_class) or "ObservasiLingkungan"
+    disease = re.sub(r"[^A-Za-z0-9]", "", disease_local or "") or "Penyakit"
+    disease = disease[:1].upper() + disease[1:]
+    return f"{factor}Pada{disease}"
+
+
+def claim_local(base: str, used: set[str]) -> str:
+    candidate = base
+    suffix = 2
+    while candidate in used:
+        candidate = f"{base}{suffix}"
+        suffix += 1
+    used.add(candidate)
+    return candidate
 
 
 def load_disease_labels() -> tuple[set[str], dict[str, str]]:
@@ -250,6 +292,7 @@ def build() -> tuple[
     condition_entities: set[str] = set()
     condition_links = 0
     conditions_used: set[str] = set()
+    used_entity_locals: set[str] = set()
 
     for obs in observations:
         obs_id = (obs.get("obs_id") or "").strip()
@@ -284,7 +327,11 @@ def build() -> tuple[
         relation_counts[relation] += 1
         disease_label = disease_labels.get(disease, disease)
         label = f"{factor_local} pada {disease_label}"
-        evidence_id = obs_id.replace("OBS_EXT_", "BUKTI_EXT_", 1)
+        obs_local = claim_local(
+            semantic_observation_local(factor_local, factor_class, disease),
+            used_entity_locals,
+        )
+        evidence_id = claim_local(f"Bukti{obs_local}", used_entity_locals)
         evidence_label = f"Bukti sumber: {factor_local} pada {disease_label}"
         source_document = source_id
         source_type = "external_evidence"
@@ -293,7 +340,7 @@ def build() -> tuple[
 
         entities.append(
             {
-                "entity_local": obs_id,
+                "entity_local": obs_local,
                 "entity_class": "ObservasiLingkungan",
                 "label": label,
                 "source_document": source_document,
@@ -303,7 +350,7 @@ def build() -> tuple[
         )
         entities.append(
             {
-                "entity_local": obs_id,
+                "entity_local": obs_local,
                 "entity_class": factor_class,
                 "label": label,
                 "source_document": source_document,
@@ -323,7 +370,7 @@ def build() -> tuple[
         )
         descriptions.append(
             {
-                "subject_local": obs_id,
+                "subject_local": obs_local,
                 "subject_class": "ObservasiLingkungan",
                 "literal_value": f"Observasi lingkungan: {factor_local} pada {disease_label}.",
                 "literal_lang": "id",
@@ -376,9 +423,9 @@ def build() -> tuple[
                 }
             )
 
-        add_fact(obs_id, "memengaruhiPenyakit", object_local=disease, object_class="Penyakit")
-        add_fact(disease, "dipengaruhiOleh", object_local=obs_id, object_class="ObservasiLingkungan")
-        add_fact(obs_id, "didukungOleh", object_local=evidence_id, object_class="BuktiSumber")
+        add_fact(obs_local, "memengaruhiPenyakit", object_local=disease, object_class="Penyakit")
+        add_fact(disease, "dipengaruhiOleh", object_local=obs_local, object_class="ObservasiLingkungan")
+        add_fact(obs_local, "didukungOleh", object_local=evidence_id, object_class="BuktiSumber")
         for condition in conditions_by_obs.get(obs_id, []):
             condition_local = (condition.get("condition_local") or "").strip()
             condition_label = (condition.get("condition_label") or condition_local).strip()
@@ -395,7 +442,7 @@ def build() -> tuple[
                     }
                 )
             add_fact(
-                obs_id,
+                obs_local,
                 "menggambarkanKondisi",
                 object_local=condition_local,
                 object_class="FaktorLingkungan",
@@ -406,26 +453,26 @@ def build() -> tuple[
         min_value = parse_number(obs.get("min_value", ""))
         max_value = parse_number(obs.get("max_value", ""))
         if min_value is not None and max_value is not None and min_value == max_value:
-            add_fact(obs_id, "nilaiTunggal", literal_value=format_number(min_value), literal_lang="")
+            add_fact(obs_local, "nilaiTunggal", literal_value=format_number(min_value), literal_lang="")
         else:
             if min_value is not None:
-                add_fact(obs_id, "nilaiMin", literal_value=format_number(min_value), literal_lang="")
+                add_fact(obs_local, "nilaiMin", literal_value=format_number(min_value), literal_lang="")
             if max_value is not None:
-                add_fact(obs_id, "nilaiMaks", literal_value=format_number(max_value), literal_lang="")
+                add_fact(obs_local, "nilaiMaks", literal_value=format_number(max_value), literal_lang="")
         unit = (obs.get("satuan") or obs.get("unit") or "").strip()
         if unit:
-            add_fact(obs_id, "satuan", literal_value=unit, literal_lang="")
+            add_fact(obs_local, "satuan", literal_value=unit, literal_lang="")
         if (obs.get("operator") or "").strip():
             operator = (obs.get("operator") or "").strip()
             add_fact(
-                obs_id,
+                obs_local,
                 "operatorNilai",
                 literal_value=OPERATOR_LABELS.get(operator, operator),
                 literal_lang="",
             )
         if (obs.get("condition") or "").strip():
-            add_fact(obs_id, "kondisi", literal_value=(obs.get("condition") or "").strip())
-        add_fact(obs_id, "klasifikasiTurunan", literal_value=factor_local)
+            add_fact(obs_local, "kondisi", literal_value=(obs.get("condition") or "").strip())
+        add_fact(obs_local, "klasifikasiTurunan", literal_value=factor_local)
 
         evidence_facts = [
             ("dokumenSumber", source_id, ""),

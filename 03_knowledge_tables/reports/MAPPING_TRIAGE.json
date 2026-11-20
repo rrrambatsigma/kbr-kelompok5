@@ -1,32 +1,20 @@
 {
   "summary": {
-    "total": 102,
-    "symptoms": 64,
-    "controls": 38,
+    "total": 95,
+    "symptoms": 58,
+    "controls": 37,
     "counts": {
-      "gejala:ambigu": 19,
-      "gejala:bukan_gejala": 39,
-      "gejala:butuh_konsep_baru": 6,
+      "gejala:ambigu": 15,
+      "gejala:bukan_gejala": 38,
+      "gejala:butuh_konsep_baru": 5,
       "pengendalian:ambigu": 10,
       "pengendalian:bukan_tindakan": 9,
       "pengendalian:duplikat_parafrase": 6,
-      "pengendalian:tindakan_nyata": 13
+      "pengendalian:tindakan_nyata": 12
     },
     "errors": []
   },
   "rows": [
-    {
-      "kind": "gejala",
-      "plant": "Padi",
-      "disease": "PenyakitHawarDaunBakteriPadi",
-      "label": "Penyakit Hawar Daun Bakteri",
-      "source": "DOC002",
-      "source_id": "SYM_005",
-      "chunk_id": "DOC002_C027_01",
-      "text": "Gejala khas dari penyakit ini adalah tepi bergelombang atau penggulungan yang terlihat jelas pada helaian daun.",
-      "category": "ambigu",
-      "reason": "Tidak ada pola gejala yang cukup jelas."
-    },
     {
       "kind": "gejala",
       "plant": "Padi",
@@ -110,18 +98,6 @@
       "text": "Gejala yang muncul pada tanaman yang terserang S.",
       "category": "ambigu",
       "reason": "Tidak ada pola gejala yang cukup jelas."
-    },
-    {
-      "kind": "gejala",
-      "plant": "Kedelai",
-      "disease": "PenyakitRebahKecambahKedelai",
-      "label": "Penyakit Rebah Kecambah",
-      "source": "DOC002",
-      "source_id": "SYM_039",
-      "chunk_id": "DOC002_C040_02",
-      "text": "solani maka benih tidak akan berkecambah atau mati.",
-      "category": "butuh_konsep_baru",
-      "reason": "Gejala nyata belum masuk kosakata kanonik."
     },
     {
       "kind": "gejala",
@@ -342,18 +318,6 @@
     {
       "kind": "gejala",
       "plant": "Kedelai",
-      "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
-      "label": "Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)",
-      "source": "DOC002",
-      "source_id": "SYM_116",
-      "chunk_id": "DOC002_C059_01",
-      "text": "Pada gejala yang parah maka tanaman kedelai akan menunjukkan gejala yang semakin beragam dan kompleks serta diikuti dengan gejala mal formasi pada daun tanaman kedelai (Sulandari et al., 2014).",
-      "category": "ambigu",
-      "reason": "Tidak ada pola gejala yang cukup jelas."
-    },
-    {
-      "kind": "gejala",
-      "plant": "Kedelai",
       "disease": "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
       "label": "Penyakit Kerdil Kedelai (Soybean Stunt Virus)",
       "source": "DOC002",
@@ -384,18 +348,6 @@
       "source_id": "SYM_128",
       "chunk_id": "DOC002_C065_01",
       "text": "Serangan penyakit berdampak pada pengurangan jumlah polong dan berat biji per tanaman sehingga dapat mengakibatkan penurunan hasil dan produksi sebesar 50%.",
-      "category": "ambigu",
-      "reason": "Tidak ada pola gejala yang cukup jelas."
-    },
-    {
-      "kind": "gejala",
-      "plant": "KacangTanah",
-      "disease": "PenyakitBelangMottleKacangTanah",
-      "label": "Penyakit Belang (Mottle)",
-      "source": "DOC002",
-      "source_id": "SYM_137",
-      "chunk_id": "DOC002_C072_01",
-      "text": "Kadang-kadang gejala oleh PStV berupa garis putus-putus berwarna hijau gelap (stripe).",
       "category": "ambigu",
       "reason": "Tidak ada pola gejala yang cukup jelas."
     },
@@ -552,30 +504,6 @@
       "source_id": "SYM_176",
       "chunk_id": "DOC002_C088_02",
       "text": "fimbriata, (a&b) gejala pascapanen pada ubi jalar (c&d) Anterior dan posterior koloni SPL17100 pada media PDA yang diinkubasi selama 7 hari pada 25 °C, e,g,h) aleurokonidiophore dengan aleurokonidia, f) perithecium dengan leher panjang (i&j) konidia silinder (Sumber: Paul et al., 2018) Hasil penelitian Zhang et al.",
-      "category": "bukan_gejala",
-      "reason": "Konteks patogen/lingkungan/pengendalian/metadata, bukan deskripsi gejala."
-    },
-    {
-      "kind": "gejala",
-      "plant": "Jagung",
-      "disease": "PenyakitKaratDaunJagung",
-      "label": "Penyakit Karat Daun",
-      "source": "DOC002",
-      "source_id": "SYM_182",
-      "chunk_id": "DOC002_C103_03",
-      "text": "Bintil berbentuk bulat atau oval dan dapat saling bergabung.",
-      "category": "ambigu",
-      "reason": "Tidak ada pola gejala yang cukup jelas."
-    },
-    {
-      "kind": "gejala",
-      "plant": "Jagung",
-      "disease": "PenyakitKaratDaunJagung",
-      "label": "Penyakit Karat Daun",
-      "source": "DOC002",
-      "source_id": "SYM_183",
-      "chunk_id": "DOC002_C103_03",
-      "text": "Jika bintil pecah, spora akan keluar dan terbawa angin maupun percikan air hujan sehingga menjadi sumber inokulum baru dan dapat menginfeksi tanaman lain.",
       "category": "bukan_gejala",
       "reason": "Konteks patogen/lingkungan/pengendalian/metadata, bukan deskripsi gejala."
     },
@@ -804,18 +732,6 @@
       "source_id": "CTL_025",
       "chunk_id": "DOC002_C035_03",
       "text": "Strategi pengendalian penyakit kerdil rumput dan kerdil hampa hampir sama dengan pengendalian penyakit tungro.",
-      "category": "tindakan_nyata",
-      "reason": "Tindakan nyata yang belum punya aksi kanonik."
-    },
-    {
-      "kind": "pengendalian",
-      "plant": "Padi",
-      "disease": "PenyakitKerdilRumputDanKerdilHampaPadi",
-      "label": "Penyakit Kerdil Rumput dan Kerdil Hampa",
-      "source": "DOC002",
-      "source_id": "CTL_026",
-      "chunk_id": "DOC002_C035_03",
-      "text": "Selain mengendalikan patogennya, vektornya pun harus dikendalikan.",
       "category": "tindakan_nyata",
       "reason": "Tindakan nyata yang belum punya aksi kanonik."
     },
