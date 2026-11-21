@@ -10,12 +10,14 @@ import {
 
 import type {
   DiagnosisResult,
+  Phase,
   Plant,
   Symptom,
 } from "../types/api";
 
 interface DiagnosisDraft {
   plant: Plant | null;
+  phase: Phase | null;
   symptoms: Symptom[];
   topN: number;
 }
@@ -24,6 +26,7 @@ interface DiagnosisContextValue {
   draft: DiagnosisDraft;
   result: DiagnosisResult | null;
   setPlant: (plant: Plant | null) => void;
+  setPhase: (phase: Phase | null) => void;
   setSymptoms: (symptoms: Symptom[]) => void;
   setTopN: (topN: number) => void;
   setResult: (result: DiagnosisResult | null) => void;
@@ -34,6 +37,7 @@ const STORAGE_KEY = "tanicare.diagnosis.v1";
 
 const emptyDraft: DiagnosisDraft = {
   plant: null,
+  phase: null,
   symptoms: [],
   topN: 5,
 };
@@ -61,6 +65,7 @@ function readStoredState(): StoredState {
     return {
       draft: {
         plant: parsed.draft.plant ?? null,
+        phase: parsed.draft.phase ?? null,
         symptoms: Array.isArray(parsed.draft.symptoms)
           ? parsed.draft.symptoms
           : [],
@@ -92,9 +97,17 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
       draft: {
         ...current.draft,
         plant,
+        phase: null,
         symptoms: [],
       },
       result: null,
+    }));
+  }, []);
+
+  const setPhase = useCallback((phase: Phase | null) => {
+    setState((current) => ({
+      ...current,
+      draft: { ...current.draft, phase },
     }));
   }, []);
 
@@ -125,12 +138,22 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
       draft: state.draft,
       result: state.result,
       setPlant,
+      setPhase,
       setSymptoms,
       setTopN,
       setResult,
       reset,
     }),
-    [state.draft, state.result, setPlant, setSymptoms, setTopN, setResult, reset]
+    [
+      state.draft,
+      state.result,
+      setPlant,
+      setPhase,
+      setSymptoms,
+      setTopN,
+      setResult,
+      reset,
+    ]
   );
 
   return (

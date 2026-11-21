@@ -68,6 +68,7 @@ Jika backend gagal, UI menampilkan `ErrorState` dengan tombol coba lagi.
 `DiagnosisContext` menyimpan:
 
 - tanaman terpilih
+- fase pertumbuhan terpilih (opsional)
 - gejala terpilih
 - `topN`
 - hasil diagnosis terakhir
@@ -113,10 +114,15 @@ Komponen memakai radius 1rem/1.5rem, border tipis, dan shadow minimal.
 Confidence ditampilkan sebagai “skor kecocokan” (persentase) + label
 `TINGGI/SEDANG/RENDAH`, bukan certainty factor statistik.
 
+Halaman hasil juga menampilkan card **“Faktor risiko & pemicu”** dari field
+`riskFactors` pada kandidat diagnosis. Faktor risiko hanya untuk konteks dan
+tidak mengubah ranking.
+
 ## Batasan yang disengaja
 
-- Wizard 3 tahap karena API diagnosis hanya menerima tanaman + gejala + topN.
-- Tidak ada varietas/fase/lingkungan sebagai input.
+- Wizard 4 tahap: tanaman, fase tumbuh opsional, gejala, lalu konfirmasi.
+- Fase pertumbuhan didukung lewat `phaseId`; varietas dan kondisi lingkungan
+  belum menjadi input.
 - Tidak ada filter tipe patogen di katalog karena list endpoint tidak membawa
   field tersebut.
 - Tidak ada foto penyakit; UI memakai ilustrasi/gradient dan data tekstual.

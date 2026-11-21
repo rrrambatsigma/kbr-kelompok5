@@ -58,8 +58,31 @@ test("parseDiagnosisInput applies defaults and trims values", () => {
   });
 
   assert.equal(parsed.plantId, "Padi");
+  assert.equal(parsed.phaseId, null);
   assert.deepEqual(parsed.symptomIds, ["GejalaA", "GejalaB"]);
   assert.equal(parsed.topN, 5);
+});
+
+test("parseDiagnosisInput accepts and trims phaseId", () => {
+  const parsed = parseDiagnosisInput({
+    plantId: "Padi",
+    phaseId: " FaseAnakanTanaman ",
+    symptomIds: ["GejalaA"],
+  });
+
+  assert.equal(parsed.phaseId, "FaseAnakanTanaman");
+});
+
+test("parseDiagnosisInput rejects empty phaseId", () => {
+  assert.throws(
+    () =>
+      parseDiagnosisInput({
+        plantId: "Padi",
+        phaseId: "  ",
+        symptomIds: ["GejalaA"],
+      }),
+    InvalidRequestError
+  );
 });
 
 test("parseDiagnosisInput rejects empty symptom list", () => {

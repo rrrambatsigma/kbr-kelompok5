@@ -71,9 +71,10 @@ npm test         # Vitest
 
 ## Batasan saat ini
 
-Wizard diagnosis memakai tanaman + gejala + jumlah kandidat, sesuai kontrak
-`POST /api/diagnosis`. Varietas, fase pertumbuhan, bagian tanaman, dan kondisi
-lingkungan belum didukung sebagai input backend.
+Wizard diagnosis memakai tanaman + fase pertumbuhan opsional + gejala + jumlah
+kandidat, sesuai kontrak `POST /api/diagnosis`. Fase hanya ditawarkan bila
+knowledge base punya datanya; varietas, bagian tanaman, dan kondisi lingkungan
+belum didukung sebagai input backend.
 
 ## Troubleshooting
 

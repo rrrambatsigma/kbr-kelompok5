@@ -55,6 +55,17 @@ export const OPTIONAL_ONTOLOGY_VOCABULARY = {
   ],
 } as const;
 
+/** Urutan tampilan fase pertumbuhan (kelas ontology, bukan individu). */
+export const PHASE_ORDER = [
+  "FasePembibitan",
+  "FaseVegetatif",
+  "FaseAnakan",
+  "FasePembungaan",
+  "FaseGeneratif",
+  "FasePemasakan",
+  "FasePanen",
+] as const;
+
 export function ptpIri(localName: string): string {
   return `${PTP_NAMESPACE}${localName}`;
 }

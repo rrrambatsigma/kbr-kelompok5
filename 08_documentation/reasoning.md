@@ -19,12 +19,13 @@ Yang termasuk M5:
 - Pembobotan specificitas gejala.
 - Kombinasi bukti dengan certainty factor (CF).
 - `confidence`, `evidence`, dan `explanation` di response.
+- Input fase pertumbuhan opsional sebagai faktor ranking lembut.
 - Harness validasi dengan metrik top-1, top-3, dan MRR.
 
 Yang tidak termasuk M5:
 
 - Frontend.
-- Input kondisi lingkungan/fase.
+- Input kondisi lingkungan.
 - SWRL untuk ranking.
 - Perbaikan 64 gejala yang belum dipetakan.
 - Ontology final.
@@ -44,6 +45,8 @@ Yang tidak termasuk M5:
 | Tautan penyakit-patogen | 76 |
 | Tautan pengendalian | 226 |
 | Tautan faktor risiko (`dipengaruhiOleh`) | 82 |
+| Individu fase pertumbuhan | 5 |
+| Tautan penyakit–fase (`menyerangFase`) | 12 |
 | `deskripsiPenyakit` | 53 |
 | `tingkatKeparahan` | 14 |
 | Penyakit tanpa kategori | 0 |
@@ -59,6 +62,11 @@ Catatan data:
   Nilainya belum dipakai sebagai bobot numerik.
 - `dipengaruhiOleh` terkadang menunjuk observasi lingkungan, bukan individu
   `FaktorRisiko`. Di M5, data ini hanya dipakai sebagai konteks/penjelasan.
+- Fase pertumbuhan hanya tersedia untuk 5 dari 7 tanaman (12 tautan penyakit).
+  Ubi Jalar dan Ubi Kayu belum punya data fase. Karena itu `phaseId` bersifat
+  opsional; fase tidak pernah menjadi filter keras.
+- Fase yang cocok memberi faktor ranking `1.05`; fase berbeda atau kandidat
+  tanpa data fase tidak dihukum.
 
 ## 3. Arsitektur
 
@@ -164,12 +172,18 @@ kali, termasuk saat dua gejala terpilih memiliki kanonik yang sama.
 ```text
 completeness = matched / jumlah gejala terpilih
 coverage     = matched / max(jumlah gejala penyakit, 4)
+faktor_fase  = 1.05 jika fase cocok, selain itu 1.0
 
-score = CF * (0.7 + 0.3 * completeness) * (0.5 + 0.5 * coverage)
+score = CF * (0.7 + 0.3 * completeness) * (0.5 + 0.5 * coverage) * faktor_fase
 ```
 
 Penyebut minimum 4 adalah penalti kelengkapan data: penyakit dengan 1–2 gejala
 tercatat tidak otomatis mendapat `coverage = 1.0`.
+
+Fase pertumbuhan tidak dihitung sebagai bukti gejala. Fase hanya memberi
+faktor ranking kecil saat `phaseId` yang dipilih cocok dengan `menyerangFase`
+milik penyakit. Kandidat dengan fase berbeda atau tanpa data fase tetap
+mendapat faktor `1.0`; tidak ada penalti dan tidak ada filter keras.
 
 ### 6.4 Keyakinan
 
@@ -196,7 +210,7 @@ Kasus `PADI-BLAS-02`:
 - `CF = 1 − (1−0,3305)(1−0,9)(1−0,9) = 0,9933`.
 - `completeness = 3/3 = 1`.
 - `coverage = 3/max(6,4) = 0,5`.
-- `score = 0,9933 × (0,7+0,3) × (0,5+0,25) = 0,745`.
+- `score = 0,9933 × (0,7+0,3) × (0,5+0,25) × 1,0 = 0,745`.
 - `confidence = TINGGI` (3 bukti, skor >= 0,7).
 
 Explanation yang dihasilkan:
@@ -211,6 +225,7 @@ Explanation yang dihasilkan:
 ```json
 {
   "plantId": "Padi",
+  "phaseId": "FaseAnakan",
   "symptomIds": [
     "PengamatanPenyakitBlasPadiBercakDaun",
     "PengamatanPenyakitBlasPadiKhasMalai"
@@ -219,22 +234,29 @@ Explanation yang dihasilkan:
 }
 ```
 
+`phaseId` opsional. Jika diisi, nilainya harus fase yang tersedia untuk
+tanaman tersebut; fase milik tanaman lain menghasilkan `400`.
+
 Field penting per kandidat:
 
 | Field | Arti |
 |---|---|
-| `score` | Skor akhir 0–1 |
+| `score` | Skor akhir 0–1, sudah termasuk faktor fase bila cocok |
 | `confidence` | `TINGGI` / `SEDANG` / `RENDAH` |
-| `scoreComponents` | `evidence` (CF), `completeness`, `coverage` |
+| `phaseMatch` | `match` / `mismatch` / `unknown` |
+| `scoreComponents` | `evidence` (CF), `completeness`, `coverage`, `phase` |
 | `matchedSymptoms` | Gejala yang dipilih dan dijelaskan kandidat |
 | `unmatchedSelectedSymptoms` | Gejala yang dipilih tetapi tidak dijelaskan |
 | `evidence` | Bukti `exact`/`canonical` + `ruleId` + bobot + `cfAfter` |
 | `explanation` | Narasi alasan dalam bahasa Indonesia |
 | `category` | Kategori hasil inferensi Openllet, atau `null` |
 | `controls` | Pengendalian dari ontology |
+| `riskFactors` | Faktor risiko/pemicu dari relasi `dipengaruhiOleh`; hanya informasi, bukan komponen skor |
 
-`reasoning.modelVersion` menandai versi model (`forward-chaining-cf-v1`), dan
-`reasoning.ontologyVersion`/`checksum` menandai ontology yang dimuat Java.
+`input.phaseId`, `input.phaseIri`, dan `input.phaseLabel` berisi fase yang
+dipakai (atau `null`). `reasoning.modelVersion` menandai versi model
+(`forward-chaining-cf-v1`), dan `reasoning.ontologyVersion`/`checksum` menandai
+ontology yang dimuat Java.
 `evidence.matchedObservationId` menunjukkan observasi milik penyakit yang
 menjadi dasar kecocokan; ini penting untuk match kanonik.
 

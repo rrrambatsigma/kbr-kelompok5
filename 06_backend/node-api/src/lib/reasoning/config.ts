@@ -36,4 +36,11 @@ export const REASONING_CONFIG = {
 
   /** Jumlah bukti minimum untuk boleh berlabel SEDANG/TINGGI. */
   minEvidenceForConfidence: 2,
+
+  /**
+   * Faktor ranking lembut saat fase pertumbuhan yang dipilih cocok dengan
+   * `menyerangFase` milik penyakit. Fase bukan bukti gejala, jadi faktornya
+   * kecil dan tidak pernah menghukum kandidat yang tidak punya data fase.
+   */
+  phaseMatchFactor: 1.05,
 } as const;

@@ -16,10 +16,11 @@ Lingkungan:
 
 Backend **lolos pengujian teknis** untuk lingkup M5–M6:
 
-- 35 test Node lulus.
+- 39 test Node lulus.
 - 4 test Java lulus.
+- 10 test frontend lulus; build frontend lulus.
 - 112 test `03_knowledge_tables` lulus (8 skip), 64 test `04_ontology` lulus.
-- Smoke test dan integration test lulus.
+- Smoke test dan integration test lulus, termasuk fase pertumbuhan.
 - 75 kasus evaluasi reasoning + 5 negative berjalan.
 - Health check dan checksum konsisten.
 - Fallback `DEGRADED` dan `503 FUSEKI_UNAVAILABLE` terbukti.
@@ -33,11 +34,13 @@ di-seed dari ontology.
 | Pemeriksaan | Hasil | Bukti |
 |---|---|---|
 | `npm run typecheck` | PASS | tanpa error |
-| `npm test` | PASS | 35 test |
+| `npm test` | PASS | 39 test |
 | `npm run build` | PASS | `tsc` sukses |
 | `mvnw.cmd test` | PASS | 4 test, termasuk golden Openllet |
-| `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptoms=26 |
-| `integration-test.ps1` | PASS | readiness, checksum, diagnosis, reload, negative |
+| `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptoms=26, Padi phases=2 |
+| `integration-test.ps1` | PASS | readiness, checksum, phases, diagnosis, reload, negative |
+| Frontend `npm test` | PASS | 10 test |
+| Frontend `npm run build` | PASS | `tsc` + Vite sukses |
 | `unittest` `03_knowledge_tables` | PASS | 112 test, 8 skip |
 | `unittest` `04_ontology` | PASS | 64 test, termasuk Pellet/SWRL |
 
@@ -45,9 +48,9 @@ Test Node mencakup:
 
 - 8 test client Node–Java: sukses, error envelope, invalid JSON, retry 503,
   timeout tanpa retry, server mati, header request ID, body kategori.
-- 17 test engine: exact/kanonik, specificitas, CF, completeness/coverage,
-  confidence, determinism, dataset kosong, evidence floor.
-- 10 test lama: scoring, parsing, util Fuseki.
+- 19 test engine: exact/kanonik, specificitas, CF, completeness/coverage,
+  confidence, determinism, dataset kosong, evidence floor, faktor fase.
+- 12 test scoring/parsing/util: termasuk validasi dan trim `phaseId`.
 
 ## 2. Kesehatan dan konsistensi
 
@@ -83,11 +86,13 @@ Jumlah data API:
 plants = 7
 diseases = 53
 Padi symptoms = 26
+Padi phases = 2
+UbiKayu phases = 0
 ```
 
 ## 3. Kontrak API dan edge case
 
-Semua 14 skenario pemeriksaan manual lulus:
+Semua 18 skenario pemeriksaan manual lulus:
 
 | Kasus | Expected | Hasil |
 |---|---|---|
@@ -105,6 +110,10 @@ Semua 14 skenario pemeriksaan manual lulus:
 | Gejala tak dikenal | 400 `INVALID_REQUEST` | PASS |
 | JSON invalid | 400 `INVALID_REQUEST` | PASS |
 | Endpoint tak dikenal | 404 `NOT_FOUND` | PASS |
+| `GET /api/phases?plantId=Padi` | 200, 2 fase | PASS |
+| `GET /api/phases?plantId=UbiKayu` | 200, 0 fase | PASS |
+| Diagnosis Hawar Pelepah + fase anakan | 200, `phaseMatch=match` | PASS |
+| Fase milik tanaman lain | 400 `INVALID_REQUEST` | PASS |
 
 Kasus ambigu kanonik:
 
@@ -220,6 +229,9 @@ dua warning degradasi yang memang disengaja saat Java dimatikan.
 7. **`/api/ontology/reload` belum berautentikasi.** Aman selama bind localhost.
 8. **Warning `DISEASE_CATEGORY_UNCLASSIFIED` muncul wajar** saat kandidat berisi
    penyakit tanpa patogen yang dikenal.
+9. **Data fase belum lengkap.** Hanya 5 dari 7 tanaman dan 12 tautan
+   penyakit–fase; Ubi Jalar/Ubi Kayu belum punya fase. Karena itu fase dibuat
+   opsional dan tidak menjadi filter keras.
 
 ## 9. Rekomendasi
 
@@ -230,6 +242,8 @@ dua warning degradasi yang memang disengaja saat Java dimatikan.
 4. Kalibrasi coverage/prior untuk dua kasus rank 2.
 5. Tambah uji konkuren (mis. 10–20 request paralel) bila diperlukan.
 6. Pertimbangkan token admin untuk `/api/ontology/reload` jika port dibuka.
+7. Lengkapi tautan `menyerangFase` untuk Ubi Jalar, Ubi Kayu, dan penyakit
+   yang belum punya fase agar input fase lebih berguna.
 
 ## 10. Reproduksi
 

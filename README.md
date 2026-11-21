@@ -124,7 +124,7 @@ npm run dev
 Endpoint utama:
 
 - Node `:3000` — `GET /api/plants`, `/api/diseases`, `/api/symptoms`,
-  `POST /api/diagnosis`, dan `/api/health/*`.
+  `/api/phases`, `POST /api/diagnosis`, dan `/api/health/*`.
 - Java `:8082` — `GET /api/reasoning/status`,
   `POST /api/reasoning/disease-categories`, `POST /api/ontology/reload`.
 - Fuseki `:3030` — dataset `plant-kb` (SPARQL read-only).
@@ -134,15 +134,16 @@ Detail konfigurasi, kontrak, dan troubleshooting ada di `06_backend/README.md`.
 ## Status backend (M5–M7)
 
 - **M5 — Reasoning diagnosis:** engine exact/kanonik + certainty factor,
-  `confidence`/`evidence`/`explanation`, harness validasi.
-  Lihat `08_documentation/reasoning.md`.
+  `confidence`/`evidence`/`explanation`, input fase pertumbuhan opsional,
+  harness validasi. Lihat `08_documentation/reasoning.md`.
 - **M6 — Integrasi Node ↔ Java:** kontrak, client HTTP + retry/timeout, health
   checksum/fingerprint, request id, dan integration test.
   Lihat `08_documentation/node-java-contract.md` dan
   `08_documentation/node-java-runbook.md`.
-- **M7 - Pengujian dan evaluasi:** 35 test Node, 4 test Java, 112 test
-  `03_knowledge_tables` (8 skip), 64 test `04_ontology`, smoke/integration
-  test, 75 kasus evaluasi, dan uji ketahanan.
+- **M7 - Pengujian dan evaluasi:** 39 test Node, 10 test frontend, 4 test Java,
+  112 test `03_knowledge_tables` (8 skip), 64 test `04_ontology`,
+  smoke/integration test (termasuk fase pertumbuhan), 75 kasus evaluasi, dan
+  uji ketahanan.
   Lihat `08_documentation/backend-test-report.md`.
 
 ## Batasan

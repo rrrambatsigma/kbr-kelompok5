@@ -29,7 +29,13 @@ import type {
   DiseaseDetail,
   ReasoningEvidence,
 } from "../types/api";
-import { confidenceLabel, confidenceTone, categoryLabel, scorePercent } from "../utils/format";
+import {
+  categoryLabel,
+  confidenceLabel,
+  confidenceTone,
+  formatRiskFactorLabel,
+  scorePercent,
+} from "../utils/format";
 
 function evidenceLabel(evidence: ReasoningEvidence): string {
   if (evidence.type === "condition") {
@@ -39,6 +45,18 @@ function evidenceLabel(evidence: ReasoningEvidence): string {
     return `Cocok melalui konsep ${evidence.canonicalSymptomLabel ?? "kanonik"}`;
   }
   return "Cocok persis dengan pengamatan";
+}
+
+function phaseMatchLabel(
+  match: DiagnosisCandidate["phaseMatch"]
+): string {
+  if (match === "match") {
+    return "Sesuai fase";
+  }
+  if (match === "mismatch") {
+    return "Fase berbeda";
+  }
+  return "Fase belum tercatat";
 }
 
 function EvidenceRow({ evidence }: { evidence: ReasoningEvidence }) {
@@ -67,9 +85,11 @@ function EvidenceRow({ evidence }: { evidence: ReasoningEvidence }) {
 function CandidateCard({
   candidate,
   rank,
+  showPhase,
 }: {
   candidate: DiagnosisCandidate;
   rank: number;
+  showPhase: boolean;
 }) {
   return (
     <article className="card flex flex-col gap-3 p-4">
@@ -85,6 +105,11 @@ function CandidateCard({
             <p className="mt-0.5 text-[11px] text-muted">
               {categoryLabel(candidate.category)}
             </p>
+            {showPhase && (
+              <p className="mt-1 text-[11px] font-semibold text-secondary">
+                {phaseMatchLabel(candidate.phaseMatch)}
+              </p>
+            )}
           </div>
         </div>
         <Badge tone={confidenceTone(candidate.confidence)}>
@@ -165,6 +190,23 @@ export function DiagnosisResultPage() {
     }));
   }, [detail, topCandidate]);
 
+  const riskFactors = useMemo(() => {
+    const candidateFactors = topCandidate?.riskFactors ?? [];
+    const source =
+      candidateFactors.length > 0
+        ? candidateFactors
+        : (detail?.riskFactors ?? []);
+    const seen = new Set<string>();
+
+    return source.filter((factor) => {
+      if (seen.has(factor.id)) {
+        return false;
+      }
+      seen.add(factor.id);
+      return true;
+    });
+  }, [detail, topCandidate]);
+
   if (result === null || topCandidate === null) {
     return (
       <div className="mx-auto max-w-4xl space-y-6">
@@ -235,6 +277,12 @@ export function DiagnosisResultPage() {
             <Leaf className="h-3 w-3" aria-hidden="true" />
             {draft.plant?.label ?? result.input.plantLabel ?? result.input.plantId}
           </Badge>
+          {result.input.phaseLabel !== null && (
+            <Badge tone="neutral">
+              <Leaf className="h-3 w-3" aria-hidden="true" />
+              Fase: {result.input.phaseLabel}
+            </Badge>
+          )}
           <Badge tone="neutral">{result.input.symptoms.length} gejala</Badge>
           <Badge tone="neutral">{result.input.topN} kandidat diminta</Badge>
         </div>
@@ -287,6 +335,11 @@ export function DiagnosisResultPage() {
               <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
                 {confidenceLabel(topCandidate.confidence)}
               </span>
+              {result.input.phaseLabel !== null && (
+                <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
+                  {phaseMatchLabel(topCandidate.phaseMatch)}
+                </span>
+              )}
             </div>
           </div>
 
@@ -382,6 +435,50 @@ export function DiagnosisResultPage() {
           </section>
 
           <section className="card space-y-4 p-5 sm:p-6">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5 text-warning" aria-hidden="true" />
+                <h2 className="font-heading text-lg font-bold text-foreground">
+                  Faktor risiko &amp; pemicu
+                </h2>
+              </div>
+              <Badge tone={riskFactors.length > 0 ? "warning" : "neutral"}>
+                {riskFactors.length} faktor
+              </Badge>
+            </div>
+
+            {riskFactors.length === 0 ? (
+              <p className="text-sm leading-6 text-muted">
+                Belum ada faktor risiko yang tercatat untuk penyakit ini di
+                knowledge base.
+              </p>
+            ) : (
+              <ul className="space-y-2">
+                {riskFactors.map((factor) => (
+                  <li
+                    key={factor.id}
+                    className="flex items-start gap-2.5 rounded-xl border border-warning/15 bg-[#fffaf5] p-3"
+                  >
+                    <span
+                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-warning"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm leading-6 text-foreground">
+                      {formatRiskFactorLabel(factor.label)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <p className="text-[10px] leading-4 text-muted">
+              Berdasarkan relasi <code>dipengaruhiOleh</code> pada knowledge
+              base. Faktor risiko membantu menjelaskan kondisi yang meningkatkan
+              peluang penyakit, bukan diagnosis pasti.
+            </p>
+          </section>
+
+          <section className="card space-y-4 p-5 sm:p-6">
             <div className="flex items-center gap-2">
               <FileText className="h-5 w-5 text-secondary" aria-hidden="true" />
               <h2 className="font-heading text-lg font-bold text-foreground">
@@ -441,6 +538,7 @@ export function DiagnosisResultPage() {
                     key={candidate.diseaseId}
                     candidate={candidate}
                     rank={index + 2}
+                    showPhase={result.input.phaseId !== null}
                   />
                 ))}
               </div>
