@@ -169,10 +169,12 @@ Error:
 
 `:id` menerima local name (`Padi`, `PenyakitBlasPadi`) atau IRI penuh.
 
-`GET /api/phases?plantId=Padi` mengembalikan fase yang benar-benar dipakai
-oleh penyakit pada tanaman tersebut, lengkap dengan `diseaseCount`. Tanaman
-yang belum punya tautan fase (mis. Ubi Jalar, Ubi Kayu) mengembalikan
-`count: 0`; ini bukan error.
+`GET /api/phases?plantId=Padi` mengembalikan **7 kelas fase** dari ontology
+(`FasePembibitan`, `FaseVegetatif`, `FaseAnakan`, `FasePembungaan`,
+`FaseGeneratif`, `FasePemasakan`, `FasePanen`) lengkap dengan `diseaseCount`
+per tanaman. Kelas yang belum punya tautan penyakit tetap dikembalikan dengan
+`diseaseCount: 0`; ini bukan error. ID fase yang dipakai di request adalah ID
+kelas, bukan ID individu fase.
 
 ### Diagnosis
 
@@ -181,7 +183,7 @@ yang belum punya tautan fase (mis. Ubi Jalar, Ubi Kayu) mengembalikan
 ```json
 {
   "plantId": "Padi",
-  "phaseId": "FaseAnakanTanaman",
+  "phaseId": "FaseAnakan",
   "symptomIds": [
     "PengamatanPenyakitBlasPadiBercakDaun",
     "PengamatanPenyakitBlasPadiKhasMalai"
@@ -193,8 +195,10 @@ yang belum punya tautan fase (mis. Ubi Jalar, Ubi Kayu) mengembalikan
 Aturan validasi:
 
 - `plantId` wajib dan harus ada.
-- `phaseId` opsional; jika diisi harus merupakan fase yang tersedia untuk
-  tanaman tersebut. Fase milik tanaman lain ditolak `400`.
+- `phaseId` opsional; jika diisi harus salah satu dari 7 kelas fase. Fase yang
+  valid tetapi belum punya tautan penyakit tetap diterima dengan
+  `phaseMatch = "unknown"`/`"mismatch"`; ID fase yang tidak dikenal ditolak
+  `400`.
 - `symptomIds` 1–100 ID, tidak boleh kosong.
 - ID gejala harus dikenali untuk tanaman tersebut.
 - Duplikat dihapus dan menghasilkan warning `DUPLICATE_SYMPTOM_IDS_IGNORED`.
@@ -227,9 +231,10 @@ score        = CF * (0.7 + 0.3*completeness) * (0.5 + 0.5*coverage) * faktor_fas
 
 Kandidat diurutkan berdasarkan `score` desc, jumlah bukti desc, lalu label.
 Response berisi `matchedSymptoms`, `unmatchedSelectedSymptoms`, `category`,
-`controls`, `confidence`, `phaseMatch`, `evidence`, `explanation`, dan
-`scoreComponents` (termasuk `phase`). `input` memuat `phaseId`, `phaseIri`, dan
-`phaseLabel` bila fase dikirim.
+`controls`, `riskFactors`, `confidence`, `phaseMatch`, `evidence`,
+`explanation`, dan `scoreComponents` (termasuk `phase`). `riskFactors` berasal
+dari relasi `dipengaruhiOleh` dan hanya untuk informasi, bukan komponen skor.
+`input` memuat `phaseId`, `phaseIri`, dan `phaseLabel` bila fase dikirim.
 `matchedSymptoms` berisi gejala yang dipilih user; `evidence.matchedObservationId`
 menunjukkan observasi milik penyakit yang menjadi dasar kecocokan (penting untuk
 match kanonik). `reasoning.modelVersion` menandai versi model. Node meneruskan

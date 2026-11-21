@@ -225,7 +225,7 @@ Explanation yang dihasilkan:
 ```json
 {
   "plantId": "Padi",
-  "phaseId": "FaseAnakanTanaman",
+  "phaseId": "FaseAnakan",
   "symptomIds": [
     "PengamatanPenyakitBlasPadiBercakDaun",
     "PengamatanPenyakitBlasPadiKhasMalai"
@@ -251,6 +251,7 @@ Field penting per kandidat:
 | `explanation` | Narasi alasan dalam bahasa Indonesia |
 | `category` | Kategori hasil inferensi Openllet, atau `null` |
 | `controls` | Pengendalian dari ontology |
+| `riskFactors` | Faktor risiko/pemicu dari relasi `dipengaruhiOleh`; hanya informasi, bukan komponen skor |
 
 `input.phaseId`, `input.phaseIri`, dan `input.phaseLabel` berisi fase yang
 dipakai (atau `null`). `reasoning.modelVersion` menandai versi model

@@ -358,7 +358,9 @@ export function DiagnosisPage() {
                           {phase.label}
                         </span>
                         <span className="text-xs text-muted">
-                          {phase.diseaseCount} penyakit pada fase ini
+                          {phase.diseaseCount === 0
+                            ? "Belum ada penyakit tertaut"
+                            : `${phase.diseaseCount} penyakit pada fase ini`}
                         </span>
                       </button>
                     );

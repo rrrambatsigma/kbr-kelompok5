@@ -53,6 +53,22 @@ export function pluralize(
   return `${count} ${count === 1 ? singular : plural}`;
 }
 
+/**
+ * Membersihkan artefak penulisan label faktor risiko dari sumber/ontology.
+ * Hanya untuk tampilan; data asli tidak diubah.
+ */
+export function formatRiskFactorLabel(label: string): string {
+  return label
+    .replace(/Koma/gi, ",")
+    .replace(/Sampai/gi, " sampai ")
+    .replace(/\uFFFD\s*C/g, "°C")
+    .replace(/Celsius/gi, "°C")
+    .replace(/Persen/gi, "%")
+    .replace(/\s+/g, " ")
+    .replace(/\s+([,.;])/g, "$1")
+    .trim();
+}
+
 export function formatDate(value: string | null | undefined): string {
   if (!value) {
     return "-";

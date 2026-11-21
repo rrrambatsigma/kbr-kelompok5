@@ -121,6 +121,7 @@ export interface DiagnosisCandidate {
   unmatchedSelectedSymptoms: DiagnosisSymptom[];
   category: string | null;
   controls: NamedEntity[];
+  riskFactors: NamedEntity[];
   confidence: Confidence;
   phaseMatch: "match" | "mismatch" | "unknown";
   evidence: ReasoningEvidence[];

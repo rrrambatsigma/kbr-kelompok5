@@ -72,15 +72,17 @@ Item:
 
 ```json
 {
-  "id": "FaseAnakanTanaman",
-  "iri": "http://.../FaseAnakanTanaman",
-  "label": "Fase anakan",
+  "id": "FaseAnakan",
+  "iri": "http://.../FaseAnakan",
+  "label": "Fase Anakan",
   "diseaseCount": 1
 }
 ```
 
-Tanaman tanpa data fase mengembalikan `items: []`; UI menampilkan empty state
-dan tetap mengizinkan diagnosis tanpa fase.
+Endpoint selalu mengembalikan 7 kelas fase:
+`FasePembibitan`, `FaseVegetatif`, `FaseAnakan`, `FasePembungaan`,
+`FaseGeneratif`, `FasePemasakan`, `FasePanen`. `diseaseCount` bisa `0`;
+fase tetap bisa dipilih dan diagnosis tidak error.
 
 ### `POST /api/diagnosis`
 
@@ -89,7 +91,7 @@ Request:
 ```json
 {
   "plantId": "Padi",
-  "phaseId": "FaseAnakanTanaman",
+  "phaseId": "FaseAnakan",
   "symptomIds": ["PengamatanPenyakitBlasPadiBercakDaun"],
   "topN": 5
 }
@@ -104,9 +106,9 @@ Response `data` (disederhanakan):
   "input": {
     "plantId": "Padi",
     "plantLabel": "Padi",
-    "phaseId": "FaseAnakanTanaman",
-    "phaseIri": "http://.../FaseAnakanTanaman",
-    "phaseLabel": "Fase anakan",
+    "phaseId": "FaseAnakan",
+    "phaseIri": "http://.../FaseAnakan",
+    "phaseLabel": "Fase Anakan",
     "symptomIds": ["..."],
     "symptoms": [{ "id": "...", "label": "..." }],
     "topN": 5
@@ -132,7 +134,14 @@ Response `data` (disederhanakan):
         "coverage": 0.5,
         "phase": 1.05
       },
-      "controls": []
+      "controls": [],
+      "riskFactors": [
+        {
+          "id": "KondisiMusimHujan",
+          "iri": "http://.../KondisiMusimHujan",
+          "label": "Musim hujan"
+        }
+      ]
     }
   ],
   "reasoning": {
@@ -145,6 +154,9 @@ Response `data` (disederhanakan):
   "message": "..."
 }
 ```
+
+Setiap kandidat membawa `riskFactors[]` dari relasi `dipengaruhiOleh`. Field ini
+hanya untuk informasi dan tidak memengaruhi `score`/ranking.
 
 ### `GET /api/diseases`
 

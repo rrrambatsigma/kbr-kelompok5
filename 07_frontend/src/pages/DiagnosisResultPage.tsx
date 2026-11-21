@@ -29,7 +29,13 @@ import type {
   DiseaseDetail,
   ReasoningEvidence,
 } from "../types/api";
-import { confidenceLabel, confidenceTone, categoryLabel, scorePercent } from "../utils/format";
+import {
+  categoryLabel,
+  confidenceLabel,
+  confidenceTone,
+  formatRiskFactorLabel,
+  scorePercent,
+} from "../utils/format";
 
 function evidenceLabel(evidence: ReasoningEvidence): string {
   if (evidence.type === "condition") {
@@ -182,6 +188,23 @@ export function DiagnosisResultPage() {
       ...control,
       description: null,
     }));
+  }, [detail, topCandidate]);
+
+  const riskFactors = useMemo(() => {
+    const candidateFactors = topCandidate?.riskFactors ?? [];
+    const source =
+      candidateFactors.length > 0
+        ? candidateFactors
+        : (detail?.riskFactors ?? []);
+    const seen = new Set<string>();
+
+    return source.filter((factor) => {
+      if (seen.has(factor.id)) {
+        return false;
+      }
+      seen.add(factor.id);
+      return true;
+    });
   }, [detail, topCandidate]);
 
   if (result === null || topCandidate === null) {
@@ -409,6 +432,50 @@ export function DiagnosisResultPage() {
                 </ul>
               </div>
             )}
+          </section>
+
+          <section className="card space-y-4 p-5 sm:p-6">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5 text-warning" aria-hidden="true" />
+                <h2 className="font-heading text-lg font-bold text-foreground">
+                  Faktor risiko &amp; pemicu
+                </h2>
+              </div>
+              <Badge tone={riskFactors.length > 0 ? "warning" : "neutral"}>
+                {riskFactors.length} faktor
+              </Badge>
+            </div>
+
+            {riskFactors.length === 0 ? (
+              <p className="text-sm leading-6 text-muted">
+                Belum ada faktor risiko yang tercatat untuk penyakit ini di
+                knowledge base.
+              </p>
+            ) : (
+              <ul className="space-y-2">
+                {riskFactors.map((factor) => (
+                  <li
+                    key={factor.id}
+                    className="flex items-start gap-2.5 rounded-xl border border-warning/15 bg-[#fffaf5] p-3"
+                  >
+                    <span
+                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-warning"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm leading-6 text-foreground">
+                      {formatRiskFactorLabel(factor.label)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <p className="text-[10px] leading-4 text-muted">
+              Berdasarkan relasi <code>dipengaruhiOleh</code> pada knowledge
+              base. Faktor risiko membantu menjelaskan kondisi yang meningkatkan
+              peluang penyakit, bukan diagnosis pasti.
+            </p>
           </section>
 
           <section className="card space-y-4 p-5 sm:p-6">

@@ -1,4 +1,5 @@
 import { ptpNamespace } from "../config/fuseki.js";
+import { PHASE_ORDER } from "../config/ontology.js";
 import { InvalidRequestError, NotFoundError } from "../lib/errors.js";
 import {
   ask,
@@ -11,6 +12,7 @@ import {
 
 const PREFIXES = `
 PREFIX ptp: <${ptpNamespace}>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 `;
 
@@ -118,6 +120,8 @@ export interface DiagnosisDatasetStats {
 export interface DiagnosisDataset {
   plant: PlantSummary;
   diseases: DiagnosisDisease[];
+  /** Semua kelas fase yang bisa dipilih, termasuk yang belum punya tautan. */
+  phaseOptions: PhaseSummary[];
   stats: DiagnosisDatasetStats;
 }
 
@@ -177,17 +181,21 @@ export async function listPhases(plantId?: string): Promise<PhaseSummary[]> {
     ${PREFIXES}
     SELECT ?phase ?label (COUNT(DISTINCT ?disease) AS ?diseaseCount)
     WHERE {
-      ?disease a ptp:Penyakit ;
-               ptp:menyerangTanaman ?plant ;
-               ptp:menyerangFase ?phase .
+      ?phase a owl:Class ;
+             rdfs:subClassOf+ ptp:FasePertumbuhan .
       OPTIONAL { ?phase rdfs:label ?label }
-      ${plantFilter}
+      OPTIONAL {
+        ?disease ptp:menyerangTanaman ?plant ;
+                 ptp:menyerangFase ?phaseIndividual .
+        ?phaseIndividual a ?phaseType .
+        ?phaseType rdfs:subClassOf* ?phase .
+        ${plantFilter}
+      }
     }
     GROUP BY ?phase ?label
-    ORDER BY ?label
   `);
 
-  return result.results.bindings.map((binding) => {
+  const phases = result.results.bindings.map((binding) => {
     const iri = termValue(binding, "phase");
     if (iri === undefined) {
       throw new InvalidRequestError("Fuseki mengembalikan fase tanpa IRI");
@@ -198,6 +206,20 @@ export async function listPhases(plantId?: string): Promise<PhaseSummary[]> {
       label: labelOrFallback(binding, iri),
       diseaseCount: requireIntegerTerm(binding, "diseaseCount"),
     };
+  });
+
+  return phases.sort((left, right) => {
+    const leftOrder = PHASE_ORDER.indexOf(
+      left.id as (typeof PHASE_ORDER)[number]
+    );
+    const rightOrder = PHASE_ORDER.indexOf(
+      right.id as (typeof PHASE_ORDER)[number]
+    );
+    return (
+      (leftOrder === -1 ? PHASE_ORDER.length : leftOrder) -
+        (rightOrder === -1 ? PHASE_ORDER.length : rightOrder) ||
+      left.label.localeCompare(right.label, "id")
+    );
   });
 }
 
@@ -501,7 +523,7 @@ export async function getDiagnosisDataset(
 ): Promise<DiagnosisDataset> {
   const plantIri = toIri(plantId);
 
-  const [plants, diseaseRows, symptomRows, riskRows, phaseRows] =
+  const [plants, diseaseRows, symptomRows, riskRows, phaseRows, phaseOptions] =
     await Promise.all([
       listPlants(),
       rows(`
@@ -544,11 +566,14 @@ export async function getDiagnosisDataset(
         SELECT DISTINCT ?disease ?phase ?label
         WHERE {
           ?disease ptp:menyerangTanaman <${plantIri}> ;
-                   ptp:menyerangFase ?phase .
+                   ptp:menyerangFase ?phaseIndividual .
+          ?phaseIndividual a ?phase .
+          ?phase rdfs:subClassOf+ ptp:FasePertumbuhan .
           OPTIONAL { ?phase rdfs:label ?label }
         }
         ORDER BY ?label
       `),
+      listPhases(plantId),
     ]);
 
   const plant = plants.find((item) => item.iri === plantIri);
@@ -632,7 +657,8 @@ export async function getDiagnosisDataset(
       disease.riskFactors.push({
         id: localName(factorIri),
         iri: factorIri,
-        label: labelOrFallback(row, factorIri),
+        label:
+          termValue(row, "factorLabel") ?? localName(factorIri),
       });
     }
   }
@@ -702,6 +728,7 @@ export async function getDiagnosisDataset(
   return {
     plant,
     diseases,
+    phaseOptions,
     stats: {
       diseaseCount: diseases.length,
       diseaseWithSymptomsCount: diseases.filter(

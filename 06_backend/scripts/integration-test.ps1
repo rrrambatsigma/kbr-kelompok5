@@ -42,12 +42,12 @@ Assert-Equal $health.data.checks.fileMatchesJava $true "checksum file vs Java"
 Assert-Equal $health.data.checks.fusekiHasV2Fingerprint $true "fingerprint Fuseki"
 Assert-Equal $health.data.java.checksum $health.data.file.sha256 "checksum detail"
 
-# 4. Fase pertumbuhan tersedia hanya untuk tanaman yang punya tautan
+# 4. Tujuh kelas fase selalu tersedia, dengan diseaseCount per tanaman
 $phases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=Padi"
-Assert-Equal $phases.data.count 2 "Padi phase count"
-Assert-Equal $phases.data.items[0].id "FaseAnakanTanaman" "first Padi phase"
+Assert-Equal $phases.data.count 7 "Padi phase count"
+Assert-Equal $phases.data.items[0].id "FasePembibitan" "first Padi phase"
 $emptyPhases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=UbiKayu"
-Assert-Equal $emptyPhases.data.count 0 "UbiKayu phase count"
+Assert-Equal $emptyPhases.data.count 7 "UbiKayu phase count"
 
 # 5. Diagnosis nyata: Blas harus dapat kategori dari Java
 $body = @{
@@ -67,11 +67,16 @@ Assert-Equal $diagnosis.data.reasoning.status "UP" "reasoning diagnosis"
 Assert-Equal $diagnosis.data.reasoning.modelVersion "forward-chaining-cf-v1" "model version"
 Assert-Equal $diagnosis.data.candidates[0].diseaseId "PenyakitBlasPadi" "top candidate"
 Assert-Equal $diagnosis.data.candidates[0].category "PenyakitJamur" "category from Java"
+$riskFactors = @($diagnosis.data.candidates[0].riskFactors)
+$musimHujan = @($riskFactors | Where-Object { $_.id -eq "KondisiMusimHujan" })
+Assert-True ($riskFactors.Count -ge 1) "riskFactors Blas harus berisi minimal satu faktor"
+Assert-True ($musimHujan.Count -ge 1) "riskFactors Blas harus memuat KondisiMusimHujan"
+Assert-Equal $musimHujan[0].label "Musim hujan" "label faktor risiko"
 
 # 6. Diagnosis dengan fase pertumbuhan
 $phaseBody = @{
     plantId = "Padi"
-    phaseId = "FaseAnakanTanaman"
+    phaseId = "FaseAnakan"
     symptomIds = @(
         "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
         "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
@@ -83,12 +88,29 @@ $phaseBody = @{
 $phaseDiagnosis = Invoke-RestMethod "$BaseUrl/api/diagnosis" `
     -Method Post -ContentType "application/json" -Body $phaseBody
 
-Assert-Equal $phaseDiagnosis.data.input.phaseId "FaseAnakanTanaman" "phase input"
+Assert-Equal $phaseDiagnosis.data.input.phaseId "FaseAnakan" "phase input"
 $phaseCandidate = $phaseDiagnosis.data.candidates |
     Where-Object { $_.diseaseId -eq "PenyakitHawarPelepahDaunPadi" } |
     Select-Object -First 1
 Assert-True ($null -ne $phaseCandidate) "phase candidate missing"
 Assert-Equal $phaseCandidate.phaseMatch "match" "phase match"
+
+# 6b. Fase tanpa tautan tetap diterima, bukan 400
+$unlinkedPhaseBody = @{
+    plantId = "Padi"
+    phaseId = "FasePembibitan"
+    symptomIds = @(
+        "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+        "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
+        "PengamatanPenyakitHawarPelepahDaunPadiHDPDilihatSelubung"
+    )
+    topN = 5
+} | ConvertTo-Json -Depth 5
+
+$unlinkedPhaseDiagnosis = Invoke-RestMethod "$BaseUrl/api/diagnosis" `
+    -Method Post -ContentType "application/json" -Body $unlinkedPhaseBody
+Assert-Equal $unlinkedPhaseDiagnosis.data.input.phaseId "FasePembibitan" "unlinked phase input"
+Assert-True ($unlinkedPhaseDiagnosis.data.candidates.Count -ge 1) "unlinked phase candidates"
 
 # 7. Reload atomik tidak mengubah checksum
 $reload = Invoke-RestMethod "$ReasoningUrl/api/ontology/reload" `

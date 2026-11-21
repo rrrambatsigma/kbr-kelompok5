@@ -49,6 +49,7 @@ export interface DiagnosisCandidate {
   unmatchedSelectedSymptoms: DiagnosisSymptomView[];
   category: string | null;
   controls: NamedEntity[];
+  riskFactors: NamedEntity[];
   confidence: Confidence;
   phaseMatch: PhaseMatch;
   evidence: ReasoningEvidence[];
@@ -205,16 +206,11 @@ function findPhase(
   dataset: DiagnosisDataset,
   phaseId: string
 ): NamedEntity | null {
-  for (const disease of dataset.diseases) {
-    const phase = disease.phases.find(
-      (item) => item.id === phaseId || item.iri === phaseId
-    );
-    if (phase !== undefined) {
-      return phase;
-    }
-  }
+  const phase = dataset.phaseOptions.find(
+    (item) => item.id === phaseId || item.iri === phaseId
+  );
 
-  return null;
+  return phase ?? null;
 }
 
 function explainWithPhase(
@@ -396,6 +392,11 @@ export async function diagnose(
       ),
       category,
       controls: controlsByDisease[candidate.disease.iri] ?? [],
+      riskFactors: candidate.disease.riskFactors.map((factor) => ({
+        id: factor.id,
+        iri: factor.iri,
+        label: factor.label,
+      })),
       confidence: candidate.confidence,
       phaseMatch: candidate.phaseMatch,
       evidence: candidate.evidence,

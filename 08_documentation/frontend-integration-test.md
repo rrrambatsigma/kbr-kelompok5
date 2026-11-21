@@ -1,6 +1,6 @@
 # Frontend Integration Test — TaniCare
 
-Tanggal: 17 November 2026
+Tanggal: 19 November 2026
 
 Lingkungan:
 
@@ -15,7 +15,7 @@ Lingkungan:
 | Pemeriksaan | Hasil |
 |---|---|
 | `npm run build` | PASS |
-| `npm test` | PASS — 7 test |
+| `npm test` | PASS - 11 test |
 | TypeScript `tsc --noEmit` | PASS |
 | Console error kritis | Tidak ada |
 
@@ -40,7 +40,7 @@ Langkah yang dilakukan:
 1. Buka `/`.
 2. Klik “Mulai Diagnosis”.
 3. Pilih Padi.
-4. Pada langkah “Fase Tumbuh”, pilih “Fase anakan” (opsional).
+4. Pada langkah "Fase Tumbuh", pilih "Fase Anakan" (opsional).
 5. Pilih 3 gejala:
    - Bercak daun pada Penyakit Blas
    - Pengamatan gejala Penyakit Blas (gejala umum)
@@ -52,7 +52,7 @@ Hasil:
 
 ```text
 URL: /diagnosis/result
-Fase: Fase anakan
+Fase: Fase Anakan
 Top candidate: Penyakit Blas
 Status fase kandidat: Fase belum tercatat (Blas belum punya tautan fase)
 Skor: 75% (0.7466)
@@ -62,11 +62,36 @@ Patogen: Magnaporthe grisea
 Kandidat lain: 3 (Kerdil, Hawar Pelepah, HDB)
 ```
 
-Skenario fase cocok: pilih Padi → Fase anakan → gejala Hawar Pelepah
+Skenario fase cocok: pilih Padi → Fase Anakan → gejala Hawar Pelepah
 Padi. Kandidat Hawar Pelepah harus menampilkan “Sesuai fase”.
 
 Payload yang dikirim benar-benar berasal dari form dan response berasal dari
 backend. Tidak ada hasil statis.
+
+## Pengujian fase pertumbuhan
+
+Halaman fase menampilkan **7 kelas fase**:
+
+1. Fase Pembibitan
+2. Fase Vegetatif
+3. Fase Anakan
+4. Fase Pembungaan
+5. Fase Generatif
+6. Fase Pemasakan
+7. Fase Panen
+
+Untuk Padi, Fase Anakan dan Fase Pemasakan menampilkan `1 penyakit`; lima
+lainnya menampilkan “Belum ada penyakit tertaut”. Semua tetap bisa dipilih.
+Fase yang tidak punya tautan tidak menghasilkan error; `phaseMatch` mengikuti
+data penyakit.
+
+## Pengujian faktor risiko
+
+- Diagnosis Blas: card “Faktor risiko & pemicu” menampilkan **Musim hujan**.
+- Diagnosis HDB: card menampilkan beberapa faktor (suhu, kelembapan, hujan
+  lebat) sesuai relasi `dipengaruhiOleh`.
+- Faktor risiko tidak mengubah skor atau ranking; nilainya hanya informasi.
+- Jika kandidat tidak punya faktor, UI menampilkan empty state.
 
 ## Pengujian Knowledge Base
 

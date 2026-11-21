@@ -114,6 +114,10 @@ Komponen memakai radius 1rem/1.5rem, border tipis, dan shadow minimal.
 Confidence ditampilkan sebagai “skor kecocokan” (persentase) + label
 `TINGGI/SEDANG/RENDAH`, bukan certainty factor statistik.
 
+Halaman hasil juga menampilkan card **“Faktor risiko & pemicu”** dari field
+`riskFactors` pada kandidat diagnosis. Faktor risiko hanya untuk konteks dan
+tidak mengubah ranking.
+
 ## Batasan yang disengaja
 
 - Wizard 4 tahap: tanaman, fase tumbuh opsional, gejala, lalu konfirmasi.

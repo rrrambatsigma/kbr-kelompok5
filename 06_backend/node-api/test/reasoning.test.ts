@@ -88,6 +88,7 @@ function dataset(diseases: DiagnosisDisease[]): DiagnosisDataset {
       diseaseCount: diseases.length,
     },
     diseases,
+    phaseOptions: [],
     stats: {
       diseaseCount: diseases.length,
       diseaseWithSymptomsCount: diseases.filter(
