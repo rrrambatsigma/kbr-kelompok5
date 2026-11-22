@@ -20,7 +20,7 @@ Backend **lolos pengujian teknis** untuk lingkup M5–M6:
 - 4 test Java lulus.
 - 11 test frontend lulus; build frontend lulus.
 - 115 test `03_knowledge_tables` lulus (8 skip), 68 test `04_ontology` lulus.
-- Smoke test dan integration test lulus, termasuk fase pertumbuhan.
+- Smoke test dan integration test lulus pada dataset baru (19.021 triple), termasuk fase pertumbuhan.
 - 75 kasus evaluasi reasoning + 5 negative berjalan.
 - Health check dan checksum konsisten.
 - Fallback `DEGRADED` dan `503 FUSEKI_UNAVAILABLE` terbukti.
@@ -37,7 +37,7 @@ di-seed dari ontology.
 | `npm test` | PASS | 39 test |
 | `npm run build` | PASS | `tsc` sukses |
 | `mvnw.cmd test` | PASS | 4 test, termasuk golden Openllet |
-| `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptoms=26, Padi phases=2 |
+| `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptoms=26, Padi phases=7 |
 | `integration-test.ps1` | PASS | readiness, checksum, phases, diagnosis, reload, negative |
 | Frontend `npm test` | PASS | 11 test |
 | Frontend `npm run build` | PASS | `tsc` + Vite sukses |
@@ -86,8 +86,8 @@ Jumlah data API:
 plants = 7
 diseases = 53
 Padi symptoms = 26
-Padi phases = 2
-UbiKayu phases = 0
+Padi phases = 7
+UbiKayu phases = 7
 ```
 
 ## 3. Kontrak API dan edge case
@@ -110,8 +110,8 @@ Semua 18 skenario pemeriksaan manual lulus:
 | Gejala tak dikenal | 400 `INVALID_REQUEST` | PASS |
 | JSON invalid | 400 `INVALID_REQUEST` | PASS |
 | Endpoint tak dikenal | 404 `NOT_FOUND` | PASS |
-| `GET /api/phases?plantId=Padi` | 200, 2 fase | PASS |
-| `GET /api/phases?plantId=UbiKayu` | 200, 0 fase | PASS |
+| `GET /api/phases?plantId=Padi` | 200, 7 fase | PASS |
+| `GET /api/phases?plantId=UbiKayu` | 200, 7 fase | PASS |
 | Diagnosis Hawar Pelepah + fase anakan | 200, `phaseMatch=match` | PASS |
 | Fase milik tanaman lain | 400 `INVALID_REQUEST` | PASS |
 

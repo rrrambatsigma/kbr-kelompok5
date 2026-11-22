@@ -76,15 +76,15 @@
     "plantId": "Jagung",
     "symptoms": [
       {
+        "id": "PengamatanPenyakitKaratDaunJagungBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Karat Daun"
+      },
+      {
         "id": "PengamatanPenyakitKaratDaunJagungKlorosisDaun",
         "label": "Klorosis daun pada Penyakit Karat Daun"
       },
       {
         "id": "PengamatanPenyakitKaratDaunJagungBerkembangSuhuKelembaban",
-        "label": "Pengamatan gejala Penyakit Karat Daun"
-      },
-      {
-        "id": "PengamatanPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang",
         "label": "Pengamatan gejala Penyakit Karat Daun"
       }
     ],
