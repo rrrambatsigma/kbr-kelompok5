@@ -140,8 +140,8 @@ Detail konfigurasi, kontrak, dan troubleshooting ada di `06_backend/README.md`.
   checksum/fingerprint, request id, dan integration test.
   Lihat `08_documentation/node-java-contract.md` dan
   `08_documentation/node-java-runbook.md`.
-- **M7 - Pengujian dan evaluasi:** 39 test Node, 10 test frontend, 4 test Java,
-  112 test `03_knowledge_tables` (8 skip), 64 test `04_ontology`,
+- **M7 - Pengujian dan evaluasi:** 39 test Node, 11 test frontend, 4 test Java,
+  115 test `03_knowledge_tables` (8 skip), 68 test `04_ontology`,
   smoke/integration test (termasuk fase pertumbuhan), 75 kasus evaluasi, dan
   uji ketahanan.
   Lihat `08_documentation/backend-test-report.md`.

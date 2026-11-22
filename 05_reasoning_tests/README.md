@@ -2,14 +2,19 @@
 
 Folder ini berisi verifikasi integrasi dan kasus uji reasoning diagnosis.
 Ontology yang dipakai adalah **ontology gabungan** dari branch
-`feat/ontology-baru` (`04_ontology/ontology_md.ttl`, 18.981 triple).
+`feat/ontology-baru` (`04_ontology/ontology_md.ttl`, 19.021 triple).
+
+> **Diperbarui 22 November 2026** setelah merge `feat/ontology-baru` ke
+> `feat/rambat-baru`: ontology naik dari 18.981 ke **19.021 triple**. Angka
+> runtime di bagian ini berasal dari verifikasi 19 November 2026; jalankan
+> ulang `load-ontology.ps1 -Reset` lalu `node run.mjs` untuk verifikasi baru.
 
 ## Status verifikasi integrasi (19 Nov 2026)
 
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
-| Ontology | `ontology_md.ttl`, 18.981 triple | v3 gabungan |
-| SHA-256 ontology | `bbf9c78eca83ca04b3185bbba2f1faac29ec062fafa07dbc09adca18307f1175` | cocok dengan Java |
+| Ontology | `ontology_md.ttl`, 19.021 triple | v3 gabungan |
+| SHA-256 ontology | `65f92b9452f9a63f71ebd24b52ae237cfb303c12230054bf785a441ebbe168a5` | cocok dengan Java |
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
@@ -17,14 +22,14 @@ Ontology yang dipakai adalah **ontology gabungan** dari branch
 
 Pemeriksaan yang lolos:
 
-- [x] `totalTriples = 18.981`
+- [x] `totalTriples = 19.021`
 - [x] Fingerprint v2: `deskripsiPenyakit = 53`, `memilikiKondisiTumbuh = 9`
 - [x] Java memuat `ontology_md.ttl` dan checksum-nya sama dengan file
 - [x] Ontology konsisten (Openllet)
 - [x] Kategori: Jamur 34, Bakteri 7, Virus 10, Oomycete 1, Fitoplasma 1,
       Nematoda 0, Lainnya 0; 0 penyakit belum berkategori
 - [x] `/api/health/ready` = UP
-- [x] `npm run typecheck`, `npm test` (35 test) hijau
+- [x] `npm run typecheck`, `npm test` (39 test) hijau
 - [x] `mvnw test` (4 test, termasuk golden Openllet) hijau
 - [x] `smoke-test.ps1` OK
 
@@ -32,8 +37,8 @@ Pemeriksaan yang lolos:
 
 | Item | Jumlah |
 |---|---:|
-| Pengamatan gejala yang dipakai penyakit | 231 |
-| Pengamatan dengan `memilikiGejalaKanonik` | 167 |
+| Pengamatan gejala yang dipakai penyakit | 229 |
+| Pengamatan dengan `memilikiGejalaKanonik` | 171 |
 | Konsep kanonik yang terpakai | 24 |
 | Penyakit dengan gejala | 53 |
 | Tautan `dipengaruhiOleh` | 82 |
@@ -74,16 +79,16 @@ Setiap penyakit membawa:
 - `description` dari `deskripsiPenyakit`
 - `severity` dari `tingkatKeparahan`
 
-Statistik dataset per tanaman (19 Nov 2026):
+Statistik dataset per tanaman (22 Nov 2026):
 
 | Tanaman | Penyakit | Pengamatan | Punya kanonik | Konsep kanonik |
 |---|---:|---:|---:|---:|
-| Padi | 5 | 26 | 19 | 11 |
-| Kedelai | 15 | 88 | 64 | 21 |
-| Jagung | 5 | 28 | 14 | 10 |
+| Padi | 5 | 26 | 20 | 12 |
+| Kedelai | 15 | 87 | 65 | 21 |
+| Jagung | 5 | 28 | 16 | 11 |
 | Ubi jalar | 4 | 30 | 19 | 13 |
 | Ubi kayu | 17 | 30 | 29 | 17 |
-| Kacang tanah | 4 | 23 | 18 | 12 |
+| Kacang tanah | 4 | 22 | 18 | 12 |
 | Kacang hijau | 3 | 6 | 4 | 4 |
 
 Periksa dataset tanpa mengubah kode:
@@ -208,7 +213,7 @@ Temuan:
 
 Baseline sesudah engine: `baseline/after.json`.
 
-Test: **35 test** lulus (10 test lama, 17 test reasoning, 8 test client Node–Java).
+Test: **39 test** lulus (termasuk test reasoning dan client Node–Java).
 
 ## Validasi (Langkah 4)
 

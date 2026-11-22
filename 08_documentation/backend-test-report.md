@@ -1,6 +1,6 @@
 # Laporan Pengujian dan Evaluasi Backend (M7)
 
-Tanggal: 19 November 2026
+Tanggal: 19 November 2026 (diperbarui 22 November 2026 setelah merge `feat/ontology-baru`)
 
 Lingkungan:
 
@@ -9,8 +9,8 @@ Lingkungan:
 - Java runtime 23.0.1; Maven toolchain Java 21.0.13
 - Apache Jena Fuseki 6.2.0
 - Ontology gabungan `ontology_md.ttl`
-- Checksum `bbf9c78eca83ca04b3185bbba2f1faac29ec062fafa07dbc09adca18307f1175`
-- Dataset Fuseki `plant-kb`, 18.981 triple
+- Checksum `65f92b9452f9a63f71ebd24b52ae237cfb303c12230054bf785a441ebbe168a5`
+- Dataset Fuseki `plant-kb`, 19.021 triple
 
 ## Ringkasan
 
@@ -18,8 +18,8 @@ Backend **lolos pengujian teknis** untuk lingkup M5–M6:
 
 - 39 test Node lulus.
 - 4 test Java lulus.
-- 10 test frontend lulus; build frontend lulus.
-- 112 test `03_knowledge_tables` lulus (8 skip), 64 test `04_ontology` lulus.
+- 11 test frontend lulus; build frontend lulus.
+- 115 test `03_knowledge_tables` lulus (8 skip), 68 test `04_ontology` lulus.
 - Smoke test dan integration test lulus, termasuk fase pertumbuhan.
 - 75 kasus evaluasi reasoning + 5 negative berjalan.
 - Health check dan checksum konsisten.
@@ -39,10 +39,10 @@ di-seed dari ontology.
 | `mvnw.cmd test` | PASS | 4 test, termasuk golden Openllet |
 | `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptoms=26, Padi phases=2 |
 | `integration-test.ps1` | PASS | readiness, checksum, phases, diagnosis, reload, negative |
-| Frontend `npm test` | PASS | 10 test |
+| Frontend `npm test` | PASS | 11 test |
 | Frontend `npm run build` | PASS | `tsc` + Vite sukses |
-| `unittest` `03_knowledge_tables` | PASS | 112 test, 8 skip |
-| `unittest` `04_ontology` | PASS | 64 test, termasuk Pellet/SWRL |
+| `unittest` `03_knowledge_tables` | PASS | 115 test, 8 skip |
+| `unittest` `04_ontology` | PASS | 68 test, termasuk Pellet/SWRL |
 
 Test Node mencakup:
 
@@ -57,7 +57,7 @@ Test Node mencakup:
 | Pemeriksaan | Hasil |
 |---|---|
 | `/api/health/live` | `UP` |
-| `/api/health/fuseki` | `UP`, 18.981 triple |
+| `/api/health/fuseki` | `UP`, 19.021 triple |
 | `/api/health/ontology` | `OK` |
 | `checks.fileMatchesJava` | `true` |
 | `checks.fusekiHasV2Fingerprint` | `true` |
@@ -65,7 +65,7 @@ Test Node mencakup:
 | Dependency Fuseki/Reasoning/Ontology | `UP` / `UP` / `UP-OK` |
 | Java loaded/ready/consistent | `true` / `true` / `true` |
 | Checksum file = Java | `true` |
-| Class/individual/object/data property | 87 / 1.368 / 31 / 33 |
+| Class/individual/object/data property | 87 / 1.366 / 31 / 33 |
 
 Kategori Openllet:
 
@@ -202,7 +202,7 @@ Setelah Java dinyalakan lagi, readiness kembali `UP`.
 | Reasoning dependency | `UP` |
 | `/api/health/ontology` | `DOWN`, warning Fuseki |
 
-Setelah Fuseki dinyalakan lagi, readiness kembali `UP`, triple tetap 18.981.
+Setelah Fuseki dinyalakan lagi, readiness kembali `UP`, triple tetap 19.021.
 
 ## 7. Observability
 

@@ -134,11 +134,11 @@
                              "label":  "Klorosis daun pada Penyakit Karat Daun"
                          },
                          {
-                             "id":  "PengamatanPenyakitKaratDaunJagungBintilBerbentukBulatOvalSaling",
-                             "label":  "Pengamatan gejala Penyakit Karat Daun"
+                             "id":  "PengamatanPenyakitKaratDaunJagungBercakTanaman",
+                             "label":  "Bercak tanaman pada Penyakit Karat Daun"
                          },
                          {
-                             "id":  "PengamatanPenyakitKaratDaunJagungBintilPecahSporaKeluarTerbawa",
+                             "id":  "PengamatanPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang",
                              "label":  "Pengamatan gejala Penyakit Karat Daun"
                          }
                      ],

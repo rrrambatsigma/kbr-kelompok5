@@ -121,7 +121,7 @@ python 03_knowledge_tables/src/build_coverage_matrix.py
 python 03_knowledge_tables/src/build_kb_completeness_report.py
 
 # dari folder ini
-python -m unittest discover -s tests -p "test_*.py"   # 112 test, 8 skip
+python -m unittest discover -s tests -p "test_*.py"   # 115 test, 8 skip
 ```
 
 Test yang membutuhkan artefak `02_extraction/extracted_text/*.jsonl` akan
