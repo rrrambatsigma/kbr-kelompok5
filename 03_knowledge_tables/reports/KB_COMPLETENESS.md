@@ -21,8 +21,8 @@ Sumber: `04_ontology/ontology_md.ttl`
 | Tanpa deskripsi penyakit | 0 |
 | Tanpa nama Inggris | 43 |
 | Tanaman tanpa kondisi tumbuh | 0 |
-| Gejala belum dipetakan | 64 |
-| Pengendalian belum dipetakan | 38 |
+| Gejala belum dipetakan | 58 |
+| Pengendalian belum dipetakan | 37 |
 
 ## Klasifikasi gap
 
@@ -34,8 +34,8 @@ Sumber: `04_ontology/ontology_md.ttl`
 | Tanpa pengendalian sama sekali | 0 | Inti | DOC002/DOC005 | Isi aksi pengendalian |
 | Tanpa bagian tanaman | 0 | Inti | DOC002/DOC005 | Isi bagian tanaman |
 | Tanaman tanpa kondisi tumbuh | 0 | Inti | DOC002/DOC005/EXTERNAL_ENV | Isi kondisi tumbuh |
-| Gejala belum dipetakan | 64 | Mapping | DOC002/DOC005 | Triage lalu petakan/exception |
-| Pengendalian belum dipetakan | 38 | Mapping | DOC002/DOC005 | Triage lalu petakan/exception |
+| Gejala belum dipetakan | 58 | Mapping | DOC002/DOC005 | Triage lalu petakan/exception |
+| Pengendalian belum dipetakan | 37 | Mapping | DOC002/DOC005 | Triage lalu petakan/exception |
 | Tanpa severity | 39 | Best-effort | DOC002/DOC005 | Isi bila sumber eksplisit |
 | Tanpa fase | 42 | Best-effort | DOC002/DOC005 | Isi bila sumber eksplisit |
 | Tanpa varietas tahan | 45 | Best-effort | DOC002/DOC005 | Isi bila sumber eksplisit |
@@ -72,9 +72,9 @@ Sumber: `04_ontology/ontology_md.ttl`
 | UbiKayu | Hawar daun bakteri | 3 | ok | fallback | 1 | - | - | 4 | 0 | ya |
 | UbiJalar | layu fusarium | 2 | ok | specific | 3 | - | - | 8 | 0 | ya |
 | UbiKayu | Nekrosis pada titik tunas (Cassava bud necrosis) | 2 | ok | fallback | 1 | - | - | 2 | 0 | ya |
-| Kedelai | Penyakit Antraknosa | 1 | ok | specific | 3 | - | ya | 7 | 0 | ya |
+| Kedelai | Penyakit Antraknosa | 1 | ok | specific | 3 | - | ya | 8 | 0 | ya |
 | Kedelai | Penyakit Bakteri Pustul | 2 | ok | specific | 2 | - | - | 5 | 0 | ya |
-| KacangTanah | Penyakit Belang (Mottle) | 2 | ok | specific | 1 | - | - | 7 | 0 | ya |
+| KacangTanah | Penyakit Belang (Mottle) | 2 | ok | specific | 1 | - | - | 6 | 0 | ya |
 | Kedelai | Penyakit Bercak Biji Ungu | 1 | ok | specific | 1 | - | - | 8 | 0 | ya |
 | KacangHijau | Penyakit Bercak Daun | 2 | ok | specific | 3 | ya | ya | 2 | 0 | ya |
 | KacangTanah | Penyakit Bercak Daun | 2 | ok | specific | 3 | ya | ya | 9 | 6 | ya |
@@ -92,7 +92,7 @@ Sumber: `04_ontology/ontology_md.ttl`
 | Padi | Penyakit Hawar Daun Bakteri | 3 | ok | specific | 1 | ya | - | 9 | 0 | ya |
 | Jagung | Penyakit Hawar Daun | 2 | ok | specific | 1 | ya | ya | 4 | 0 | ya |
 | Padi | Penyakit Hawar Pelepah Daun | 2 | ok | specific | 1 | ya | ya | 5 | 0 | ya |
-| Jagung | Penyakit Karat Daun | 2 | ok | specific | 1 | ya | ya | 11 | 0 | ya |
+| Jagung | Penyakit Karat Daun | 2 | ok | specific | 1 | ya | ya | 10 | 0 | ya |
 | KacangTanah | Penyakit Karat Daun | 2 | ok | specific | 1 | ya | - | 5 | 2 | ya |
 | Kedelai | Penyakit Karat Daun | 2 | ok | specific | 1 | ya | - | 8 | 6 | ya |
 | Kedelai | Penyakit Kerdil Kedelai (Soybean Stunt Virus) | 1 | ok | specific | 1 | - | - | 4 | 0 | ya |
@@ -101,11 +101,11 @@ Sumber: `04_ontology/ontology_md.ttl`
 | KacangTanah | Penyakit Layu Bakteri | 2 | ok | specific | 2 | - | - | 2 | 0 | ya |
 | Kedelai | Penyakit Layu Fusarium | 1 | ok | specific | 1 | - | - | 5 | 0 | ya |
 | KacangHijau | Penyakit Layu | 2 | ok | specific | 2 | - | ya | 3 | 2 | ya |
-| Jagung | Penyakit Layu Stewart | 1 | ok | specific | 1 | ya | ya | 3 | 0 | ya |
+| Jagung | Penyakit Layu Stewart | 1 | ok | specific | 1 | ya | ya | 4 | 0 | ya |
 | Kedelai | Penyakit Mosaik Kedelai (Soybean Mosaic Virus) | 1 | ok | specific | 1 | - | - | 7 | 0 | ya |
-| Kedelai | Penyakit Rebah Kecambah | 1 | ok | specific | 2 | - | - | 8 | 0 | ya |
+| Kedelai | Penyakit Rebah Kecambah | 1 | ok | specific | 2 | - | - | 7 | 0 | ya |
 | Kedelai | Penyakit Rebah Semai | 1 | ok | specific | 3 | - | ya | 5 | 6 | ya |
-| Kedelai | Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) | 1 | ok | specific | 1 | - | - | 6 | 0 | ya |
+| Kedelai | Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) | 1 | ok | specific | 1 | - | - | 5 | 0 | ya |
 | Padi | Penyakit Tungro | 1 | ok | specific | 2 | - | - | 4 | 4 | ya |
 | UbiKayu | Sapu setan (Witches broom) | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |
 | UbiKayu | Superelongasi | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |

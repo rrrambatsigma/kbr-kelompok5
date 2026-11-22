@@ -260,6 +260,14 @@ ptp:alasanKecocokan a owl:DatatypeProperty ;
     rdfs:range rdf:PlainLiteral ;
     skos:prefLabel "alasan kecocokan"@id .
 
+ptp:bagianDari a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "bagian dari"@id ;
+    rdfs:comment "Bagian tanaman merupakan bagian dari bagian tanaman lain."@id ;
+    rdfs:domain ptp:BagianTanaman ;
+    rdfs:range ptp:BagianTanaman ;
+    skos:prefLabel "bagian dari"@id .
+
 ptp:catatanKualitas a owl:DatatypeProperty ;
     rdfs:label "catatan kualitas"@id ;
     rdfs:comment "Catatan kualitas atau keterbatasan kutipan sumber."@id ;
@@ -741,19 +749,6 @@ ptp:BuktiGejalaPenyakitAntraknosaKedelaiJaringanTerinfeksiMakaAdaDitutupi a ptp:
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     skos:prefLabel "Bukti gejala Penyakit Antraknosa"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
-
-ptp:BuktiGejalaPenyakitAntraknosaKedelaiKondisiLembapMenggulungGugurPolong a ptp:BuktiGejala,
-        owl:NamedIndividual ;
-    rdfs:label "Bukti gejala ANTRAKNOSA"@id ;
-    ptp:dokumenSumber "DOC005" ;
-    ptp:halamanSumber "31" ;
-    ptp:idChunkSumber "DOC005_C031_02" ;
-    ptp:identifierSumber "SYM_615" ;
-    ptp:kutipanNormalisasi "Pada kondisi lembap, daun akan menggulung dan mudah gugur, sedangkan pada polong akan terlihat acervuli yang membentuk pola cincin konsentris (Gambar 6b)."@id ;
-    ptp:kutipanSumber "Pada kondisi lembap, daun akan menggulung dan mudah gugur, sedangkan pada polong akan terlihat acervuli yang membentuk pola cincin konsentris (Gambar 6b)."@id ;
-    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
-    skos:prefLabel "Bukti gejala ANTRAKNOSA"@id ;
-    prov:wasDerivedFrom ptp:BukuDOC005 .
 
 ptp:BuktiGejalaPenyakitAntraknosaKedelaiTerbentukAcervuliKonidia a ptp:BuktiGejala,
         owl:NamedIndividual ;
@@ -2053,19 +2048,6 @@ ptp:BuktiGejalaPenyakitKaratDaunJagungBerkembangSuhuKelembaban a ptp:BuktiGejala
     skos:prefLabel "Bukti gejala Penyakit Karat Daun"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
-ptp:BuktiGejalaPenyakitKaratDaunJagungBerupaBintilKecilTimbulBerwarna a ptp:BuktiGejala,
-        owl:NamedIndividual ;
-    rdfs:label "Bukti gejala Penyakit Karat Daun"@id ;
-    ptp:dokumenSumber "DOC002" ;
-    ptp:halamanSumber "103" ;
-    ptp:idChunkSumber "DOC002_C103_03" ;
-    ptp:identifierSumber "SYM_181" ;
-    ptp:kutipanNormalisasi "Gejala karat daun berupa bintil kecil timbul berwarna kuning kecokelatan (oranye) yang terdapat pada permukaan atas daun."@id ;
-    ptp:kutipanSumber "Gejala karat daun berupa bintil kecil timbul berwarna kuning kecokelatan (oranye) yang terdapat pada permukaan atas daun."@id ;
-    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
-    skos:prefLabel "Bukti gejala Penyakit Karat Daun"@id ;
-    prov:wasDerivedFrom ptp:BukuDOC002 .
-
 ptp:BuktiGejalaPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang a ptp:BuktiGejala,
         owl:NamedIndividual ;
     rdfs:label "Bukti gejala Penyakit Karat Daun"@id ;
@@ -3338,19 +3320,6 @@ ptp:BuktiPengendalianPenyakitKaratDaunKedelaiHampirDipatahkanKetahanannya a ptp:
     ptp:kutipanSumber "Hampir beberapa varietas unggul kedelai dapat dipatahkan ketahanannya oleh ras patogen yang baru."@id ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     skos:prefLabel "Bukti pengendalian Penyakit Karat Daun"@id ;
-    prov:wasDerivedFrom ptp:BukuDOC002 .
-
-ptp:BuktiPengendalianPenyakitKerdilRumputDanKerdilHampaPadiSelainMengendalikanPatogennyaVektornyaPun a ptp:BuktiPengendalian,
-        owl:NamedIndividual ;
-    rdfs:label "Bukti pengendalian Penyakit Kerdil Rumput dan Kerdil Hampa"@id ;
-    ptp:dokumenSumber "DOC002" ;
-    ptp:halamanSumber "35" ;
-    ptp:idChunkSumber "DOC002_C035_03" ;
-    ptp:identifierSumber "CTL_026" ;
-    ptp:kutipanNormalisasi "Selain mengendalikan patogennya, vektornya pun harus dikendalikan."@id ;
-    ptp:kutipanSumber "Selain mengendalikan patogennya, vektornya pun harus dikendalikan."@id ;
-    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
-    skos:prefLabel "Bukti pengendalian Penyakit Kerdil Rumput dan Kerdil Hampa"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
 ptp:BuktiPengendalianPenyakitKerdilRumputDanKerdilHampaPadiStrategiPengendalianRumputHampaHampir a ptp:BuktiPengendalian,
@@ -4810,15 +4779,6 @@ ptp:PengamatanPenyakitBakteriPustulKedelaiMunculAkibatX a ptp:Gejala,
     rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Pengamatan gejala Penyakit Bakteri Pustul"@id .
 
-ptp:PengamatanPenyakitBelangMottleKacangTanahKadangKadangPStVBerupaGaris a ptp:Gejala,
-        owl:NamedIndividual ;
-    rdfs:label "Pengamatan gejala Penyakit Belang (Mottle)"@id ;
-    ptp:deskripsiGejala "Kadang-kadang gejala oleh PStV berupa garis putus-putus berwarna hijau gelap (stripe)."@id ;
-    ptp:didukungOleh ptp:BuktiGejalaPenyakitBelangMottleKacangTanahKadangKadangPStVBerupaGaris ;
-    ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah ;
-    rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
-    skos:prefLabel "Pengamatan gejala Penyakit Belang (Mottle)"@id .
-
 ptp:PengamatanPenyakitBelangMottleKacangTanahMakroskopisDitunjukkanGambar4 a ptp:Gejala,
         owl:NamedIndividual ;
     rdfs:label "Pengamatan gejala Penyakit Belang (Mottle)"@id ;
@@ -5076,16 +5036,6 @@ ptp:PengamatanPenyakitHawarDaunBakteriPadiIstilahKresekSendiriDiambilBahasa a pt
     rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Pengamatan gejala Penyakit Hawar Daun Bakteri"@id .
 
-ptp:PengamatanPenyakitHawarDaunBakteriPadiKhasTepiBergelombangPenggulunganTerlihat a ptp:GejalaDaun,
-        owl:NamedIndividual ;
-    rdfs:label "Pengamatan gejala Penyakit Hawar Daun Bakteri"@id ;
-    ptp:deskripsiGejala "Gejala khas dari penyakit ini adalah tepi bergelombang atau penggulungan yang terlihat jelas pada helaian daun."@id ;
-    ptp:didukungOleh ptp:BuktiGejalaPenyakitHawarDaunBakteriPadiKhasTepiBergelombangPenggulunganTerlihat ;
-    ptp:merupakanGejalaDari ptp:PenyakitHawarDaunBakteriPadi ;
-    ptp:terdapatPada ptp:Daun ;
-    rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
-    skos:prefLabel "Pengamatan gejala Penyakit Hawar Daun Bakteri"@id .
-
 ptp:PengamatanPenyakitHawarDaunBakteriPadiSementaraFaseKresekDitandaiTerutama a ptp:Gejala,
         owl:NamedIndividual ;
     rdfs:label "Pengamatan gejala Penyakit Hawar Daun Bakteri"@id ;
@@ -5130,24 +5080,6 @@ ptp:PengamatanPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang a ptp:
     ptp:didukungOleh ptp:BuktiGejalaPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang ;
     ptp:merupakanGejalaDari ptp:PenyakitKaratDaunJagung ;
     ptp:terdapatPada ptp:Daun ;
-    rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
-    skos:prefLabel "Pengamatan gejala Penyakit Karat Daun"@id .
-
-ptp:PengamatanPenyakitKaratDaunJagungBintilBerbentukBulatOvalSaling a ptp:Gejala,
-        owl:NamedIndividual ;
-    rdfs:label "Pengamatan gejala Penyakit Karat Daun"@id ;
-    ptp:deskripsiGejala "Bintil berbentuk bulat atau oval dan dapat saling bergabung."@id ;
-    ptp:didukungOleh ptp:BuktiGejalaPenyakitKaratDaunJagungBintilBerbentukBulatOvalSaling ;
-    ptp:merupakanGejalaDari ptp:PenyakitKaratDaunJagung ;
-    rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
-    skos:prefLabel "Pengamatan gejala Penyakit Karat Daun"@id .
-
-ptp:PengamatanPenyakitKaratDaunJagungBintilPecahSporaKeluarTerbawa a ptp:Gejala,
-        owl:NamedIndividual ;
-    rdfs:label "Pengamatan gejala Penyakit Karat Daun"@id ;
-    ptp:deskripsiGejala "Jika bintil pecah, spora akan keluar dan terbawa angin maupun percikan air hujan sehingga menjadi sumber inokulum baru dan dapat menginfeksi tanaman lain."@id ;
-    ptp:didukungOleh ptp:BuktiGejalaPenyakitKaratDaunJagungBintilPecahSporaKeluarTerbawa ;
-    ptp:merupakanGejalaDari ptp:PenyakitKaratDaunJagung ;
     rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Pengamatan gejala Penyakit Karat Daun"@id .
 
@@ -5320,14 +5252,6 @@ ptp:PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiMenunjukkanSamaBerbe
     rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Pengamatan gejala Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"@id .
 
-ptp:PengamatanPenyakitRebahKecambahKedelaiSolaniMakaBenihTidakBerkecambah a ptp:Gejala,
-        owl:NamedIndividual ;
-    rdfs:label "Pengamatan gejala Penyakit Rebah Kecambah"@id ;
-    ptp:didukungOleh ptp:BuktiGejalaPenyakitRebahKecambahKedelaiSolaniMakaBenihTidakBerkecambah ;
-    ptp:merupakanGejalaDari ptp:PenyakitRebahKecambahKedelai ;
-    rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
-    skos:prefLabel "Pengamatan gejala Penyakit Rebah Kecambah"@id .
-
 ptp:PengamatanPenyakitRebahKecambahKedelaiSolaniMenunjukkanAdanyaLekukanCoklat a ptp:GejalaAkar,
         owl:NamedIndividual ;
     rdfs:label "Pengamatan gejala Penyakit Rebah Kecambah"@id ;
@@ -5345,16 +5269,6 @@ ptp:PengamatanPenyakitRebahSemaiKedelaiMunculTerserangS a ptp:Gejala,
     ptp:merupakanGejalaDari ptp:PenyakitRebahSemaiKedelai ;
     rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Pengamatan gejala Penyakit Rebah Semai"@id .
-
-ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiParahMakaMenunjukkanSemakinBeragam a ptp:GejalaDaun,
-        owl:NamedIndividual ;
-    rdfs:label "Pengamatan gejala Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)"@id ;
-    ptp:deskripsiGejala "Pada gejala yang parah maka tanaman kedelai akan menunjukkan gejala yang semakin beragam dan kompleks serta diikuti dengan gejala mal formasi pada daun tanaman kedelai (Sulandari et al., 2014)."@id ;
-    ptp:didukungOleh ptp:BuktiGejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiParahMakaMenunjukkanSemakinBeragam ;
-    ptp:merupakanGejalaDari ptp:PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai ;
-    ptp:terdapatPada ptp:Daun ;
-    rdfs:comment "Pengamatan gejala yang belum dipetakan ke konsep kanonik."@id ;
-    skos:prefLabel "Pengamatan gejala Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)"@id .
 
 ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiSemakinBerkembangSeiringMeningkatnyaUmur a ptp:Gejala,
         owl:NamedIndividual ;
@@ -6248,18 +6162,18 @@ ptp:BuktiGejalaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuUtamaDitandaiMuncu
     skos:prefLabel "Bukti gejala Nekrosis pada titik tunas (Cassava bud necrosis)"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
-ptp:BuktiGejalaPenyakitAntraknosaKedelaiBagianBiasanyaMenyebabkanMenjadiMenggulung a ptp:BuktiGejala,
+ptp:BuktiGejalaPenyakitAntraknosaKedelaiKondisiLembapMenggulungGugurPolong a ptp:BuktiGejala,
         owl:NamedIndividual ;
     rdfs:label "Bukti gejala Penyakit Antraknosa"@id ;
-    ptp:dokumenSumber "DOC002" ;
-    ptp:halamanSumber "49" ;
-    ptp:idChunkSumber "DOC002_C049_02" ;
-    ptp:identifierSumber "SYM_076" ;
-    ptp:kutipanNormalisasi "Pada bagian daun biasanya bercak menyebabkan daun menjadi menggulung dan adanya nekrotik dan bercak coklat gelap pada daun (Gambar 2.10)."@id ;
-    ptp:kutipanSumber "Pada bagian daun biasanya bercak menyebabkan daun menjadi menggulung dan adanya nekrotik dan bercak coklat gelap pada daun (Gambar 2.10)."@id ;
+    ptp:dokumenSumber "DOC005" ;
+    ptp:halamanSumber "31" ;
+    ptp:idChunkSumber "DOC005_C031_02" ;
+    ptp:identifierSumber "SYM_615" ;
+    ptp:kutipanNormalisasi "Pada kondisi lembap, daun akan menggulung dan mudah gugur, sedangkan pada polong akan terlihat acervuli yang membentuk pola cincin konsentris (Gambar 6b)."@id ;
+    ptp:kutipanSumber "Pada kondisi lembap, daun akan menggulung dan mudah gugur, sedangkan pada polong akan terlihat acervuli yang membentuk pola cincin konsentris (Gambar 6b)."@id ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     skos:prefLabel "Bukti gejala Penyakit Antraknosa"@id ;
-    prov:wasDerivedFrom ptp:BukuDOC002 .
+    prov:wasDerivedFrom ptp:BukuDOC005 .
 
 ptp:BuktiGejalaPenyakitAntraknosaKedelaiTruncatumMelakukanPenetrasiJaringanMembentuk a ptp:BuktiGejala,
         owl:NamedIndividual ;
@@ -6575,6 +6489,19 @@ ptp:BuktiGejalaPenyakitHawarPelepahDaunPadiKondisiLembabMembusukMenjadiRebah a p
     ptp:kutipanSumber "Pada saat kondisi lembab, bercak juga akan ditemukan pada daun padi dan pelepah daun membusuk sehingga padi menjadi rebah dan gabah menjadi kopong (Harahap & Tjahjono, 1992) seperti pada Gambar 1.6."@id ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     skos:prefLabel "Bukti gejala Penyakit Hawar Pelepah Daun"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC002 .
+
+ptp:BuktiGejalaPenyakitKaratDaunJagungBerupaBintilKecilTimbulBerwarna a ptp:BuktiGejala,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti gejala Penyakit Karat Daun"@id ;
+    ptp:dokumenSumber "DOC002" ;
+    ptp:halamanSumber "103" ;
+    ptp:idChunkSumber "DOC002_C103_03" ;
+    ptp:identifierSumber "SYM_181" ;
+    ptp:kutipanNormalisasi "Gejala karat daun berupa bintil kecil timbul berwarna kuning kecokelatan (oranye) yang terdapat pada permukaan atas daun."@id ;
+    ptp:kutipanSumber "Gejala karat daun berupa bintil kecil timbul berwarna kuning kecokelatan (oranye) yang terdapat pada permukaan atas daun."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti gejala Penyakit Karat Daun"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
 ptp:BuktiGejalaPenyakitKaratDaunKacangTanahAwalDitandaiMunculnyaKlorotikKecil a ptp:BuktiGejala,
@@ -9364,6 +9291,19 @@ ptp:BuktiPengendalianPenyakitKaratDaunKedelaiWilisDena a ptp:BuktiPengendalian,
     skos:prefLabel "Bukti pengendalian Penyakit Karat Daun"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
+ptp:BuktiPengendalianPenyakitKerdilRumputDanKerdilHampaPadiSelainMengendalikanPatogennyaVektornyaPun a ptp:BuktiPengendalian,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti pengendalian Penyakit Kerdil Rumput dan Kerdil Hampa"@id ;
+    ptp:dokumenSumber "DOC002" ;
+    ptp:halamanSumber "35" ;
+    ptp:idChunkSumber "DOC002_C035_03" ;
+    ptp:identifierSumber "CTL_026" ;
+    ptp:kutipanNormalisasi "Selain mengendalikan patogennya, vektornya pun harus dikendalikan."@id ;
+    ptp:kutipanSumber "Selain mengendalikan patogennya, vektornya pun harus dikendalikan."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti pengendalian Penyakit Kerdil Rumput dan Kerdil Hampa"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC002 .
+
 ptp:BuktiPengendalianPenyakitKerdilRumputDanKerdilHampaPadiTindakanAlternatifTerakhirPenggunaanPestisida a ptp:BuktiPengendalian,
         owl:NamedIndividual ;
     rdfs:label "Bukti pengendalian Penyakit Kerdil Rumput dan Kerdil Hampa"@id ;
@@ -10800,6 +10740,20 @@ ptp:PengamatanPenyakitAntraknosaKedelaiNekrosisTanaman a ptp:Gejala,
     rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Nekrosis pada tanaman pada Penyakit Antraknosa"@id .
 
+ptp:PengamatanPenyakitAntraknosaKedelaiPertumbuhanAbnormal a ptp:GejalaDaun,
+        ptp:GejalaPolong,
+        owl:NamedIndividual ;
+    rdfs:label "Pertumbuhan abnormal pada Penyakit Antraknosa"@id ;
+    ptp:deskripsiGejala "Pada bagian daun biasanya bercak menyebabkan daun menjadi menggulung dan adanya nekrotik dan bercak coklat gelap pada daun (Gambar 2.10)."@id ;
+    ptp:didukungOleh ptp:BuktiGejalaPenyakitAntraknosaKedelaiBagianBiasanyaMenyebabkanMenjadiMenggulung,
+        ptp:BuktiGejalaPenyakitAntraknosaKedelaiKondisiLembapMenggulungGugurPolong ;
+    ptp:memilikiGejalaKanonik ptp:PertumbuhanAbnormal ;
+    ptp:merupakanGejalaDari ptp:PenyakitAntraknosaKedelai ;
+    ptp:terdapatPada ptp:Daun,
+        ptp:Polong ;
+    rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
+    skos:prefLabel "Pertumbuhan abnormal pada Penyakit Antraknosa"@id .
+
 ptp:PengamatanPenyakitBakteriPustulKedelaiBercakDaun a ptp:GejalaDaun,
         owl:NamedIndividual ;
     rdfs:label "Bercak daun pada Penyakit Bakteri Pustul"@id ;
@@ -10849,8 +10803,9 @@ ptp:PengamatanPenyakitBakteriPustulKedelaiKlorosisTanaman a ptp:Gejala,
 ptp:PengamatanPenyakitBelangMottleKacangTanahBelangTanaman a ptp:Gejala,
         owl:NamedIndividual ;
     rdfs:label "Belang pada tanaman pada Penyakit Belang (Mottle)"@id ;
-    ptp:deskripsiGejala "Infeksi yang terjadi saat tanaman masih muda sering menyebabkan timbulnya gejala berupa belang dengan cincin-cincin klorosis."@id ;
-    ptp:didukungOleh ptp:BuktiGejalaPenyakitBelangMottleKacangTanahTerjadiMudaSeringMenyebabkanTimbulnya ;
+    ptp:deskripsiGejala "Kadang-kadang gejala oleh PStV berupa garis putus-putus berwarna hijau gelap (stripe)."@id ;
+    ptp:didukungOleh ptp:BuktiGejalaPenyakitBelangMottleKacangTanahKadangKadangPStVBerupaGaris,
+        ptp:BuktiGejalaPenyakitBelangMottleKacangTanahTerjadiMudaSeringMenyebabkanTimbulnya ;
     ptp:memilikiGejalaKanonik ptp:BelangTanaman ;
     ptp:merupakanGejalaDari ptp:PenyakitBelangMottleKacangTanah ;
     rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
@@ -11551,6 +11506,17 @@ ptp:PengamatanPenyakitHawarDaunBakteriPadiNekrosisTanaman a ptp:Gejala,
     rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Nekrosis pada tanaman pada Penyakit Hawar Daun Bakteri"@id .
 
+ptp:PengamatanPenyakitHawarDaunBakteriPadiPertumbuhanAbnormal a ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Pertumbuhan abnormal pada Penyakit Hawar Daun Bakteri"@id ;
+    ptp:deskripsiGejala "Gejala khas dari penyakit ini adalah tepi bergelombang atau penggulungan yang terlihat jelas pada helaian daun."@id ;
+    ptp:didukungOleh ptp:BuktiGejalaPenyakitHawarDaunBakteriPadiKhasTepiBergelombangPenggulunganTerlihat ;
+    ptp:memilikiGejalaKanonik ptp:PertumbuhanAbnormal ;
+    ptp:merupakanGejalaDari ptp:PenyakitHawarDaunBakteriPadi ;
+    ptp:terdapatPada ptp:Daun ;
+    rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
+    skos:prefLabel "Pertumbuhan abnormal pada Penyakit Hawar Daun Bakteri"@id .
+
 ptp:PengamatanPenyakitHawarDaunJagungBercakDaun a ptp:GejalaDaun,
         owl:NamedIndividual ;
     rdfs:label "Bercak daun pada Penyakit Hawar Daun"@id ;
@@ -11630,6 +11596,19 @@ ptp:PengamatanPenyakitHawarPelepahDaunPadiBusukBatang a ptp:GejalaBatang,
         ptp:Daun ;
     rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Busuk batang pada Penyakit Hawar Pelepah Daun"@id .
+
+ptp:PengamatanPenyakitKaratDaunJagungBercakTanaman a ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Bercak pada tanaman pada Penyakit Karat Daun"@id ;
+    ptp:deskripsiGejala "Gejala karat daun berupa bintil kecil timbul berwarna kuning kecokelatan (oranye) yang terdapat pada permukaan atas daun."@id ;
+    ptp:didukungOleh ptp:BuktiGejalaPenyakitKaratDaunJagungBerupaBintilKecilTimbulBerwarna,
+        ptp:BuktiGejalaPenyakitKaratDaunJagungBintilBerbentukBulatOvalSaling,
+        ptp:BuktiGejalaPenyakitKaratDaunJagungBintilPecahSporaKeluarTerbawa ;
+    ptp:memilikiGejalaKanonik ptp:BercakTanaman ;
+    ptp:merupakanGejalaDari ptp:PenyakitKaratDaunJagung ;
+    ptp:terdapatPada ptp:Daun ;
+    rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
+    skos:prefLabel "Bercak pada tanaman pada Penyakit Karat Daun"@id .
 
 ptp:PengamatanPenyakitKaratDaunJagungKlorosisDaun a ptp:GejalaDaun,
         owl:NamedIndividual ;
@@ -12013,6 +11992,17 @@ ptp:PengamatanPenyakitLayuStewartJagungLayuDaun a ptp:GejalaDaun,
     rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
     skos:prefLabel "Layu daun pada Penyakit Layu Stewart"@id .
 
+ptp:PengamatanPenyakitLayuStewartJagungPertumbuhanAbnormal a ptp:GejalaDaun,
+        owl:NamedIndividual ;
+    rdfs:label "Pertumbuhan abnormal pada Penyakit Layu Stewart"@id ;
+    ptp:deskripsiGejala "Daun bergejala layu stewart berwarna hijau pucat hingga kekuningan dengan garis linier dengan tepi lurus maupun bergelombang yang sejajar tulang daun, layu dan kerdil (Rahma et al., 2014)."@id ;
+    ptp:didukungOleh ptp:BuktiGejalaPenyakitLayuStewartJagungBergejalaStewartBerwarnaPucatHingga ;
+    ptp:memilikiGejalaKanonik ptp:PertumbuhanAbnormal ;
+    ptp:merupakanGejalaDari ptp:PenyakitLayuStewartJagung ;
+    ptp:terdapatPada ptp:Daun ;
+    rdfs:comment "Pengamatan gejala yang dipetakan ke konsep kanonik."@id ;
+    skos:prefLabel "Pertumbuhan abnormal pada Penyakit Layu Stewart"@id .
+
 ptp:PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiBelangTanaman a ptp:Gejala,
         owl:NamedIndividual ;
     rdfs:label "Belang pada tanaman pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"@id ;
@@ -12124,7 +12114,8 @@ ptp:PengamatanPenyakitRebahKecambahKedelaiKematianTanaman a ptp:GejalaBatang,
     rdfs:label "Kematian tanaman pada Penyakit Rebah Kecambah"@id ;
     ptp:deskripsiGejala "Akibatnya tanaman mati sebelum muncul pada permukaan tanah atau yang disebut dengan pre emergence damping off."@id ;
     ptp:didukungOleh ptp:BuktiGejalaPenyakitRebahKecambahKedelaiAkibatnyaMatiMunculPermukaanPre,
-        ptp:BuktiGejalaPenyakitRebahKecambahKedelaiMunculSetelahBenihTumbuhPermukaan ;
+        ptp:BuktiGejalaPenyakitRebahKecambahKedelaiMunculSetelahBenihTumbuhPermukaan,
+        ptp:BuktiGejalaPenyakitRebahKecambahKedelaiSolaniMakaBenihTidakBerkecambah ;
     ptp:memilikiGejalaKanonik ptp:KematianTanaman ;
     ptp:merupakanGejalaDari ptp:PenyakitRebahKecambahKedelai ;
     ptp:terdapatPada ptp:Batang ;
@@ -12235,7 +12226,8 @@ ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiPertumbuhanA
         owl:NamedIndividual ;
     rdfs:label "Pertumbuhan abnormal pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)"@id ;
     ptp:deskripsiGejala "Gejala yang ditunjukkan oleh patogen CMMV pada tanaman kedelai adalah pada daun tanaman terdapat belang secara sistemik, bagian tulang daun terdapat klorosis serta daun yang terinfeksi CMMV mengalami malformasi (Gambar 2.18)."@id ;
-    ptp:didukungOleh ptp:BuktiGejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiDitunjukkanCMMVTerdapatBelangSistemik ;
+    ptp:didukungOleh ptp:BuktiGejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiDitunjukkanCMMVTerdapatBelangSistemik,
+        ptp:BuktiGejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiParahMakaMenunjukkanSemakinBeragam ;
     ptp:memilikiGejalaKanonik ptp:PertumbuhanAbnormal ;
     ptp:merupakanGejalaDari ptp:PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai ;
     ptp:terdapatPada ptp:Daun ;
@@ -12408,6 +12400,19 @@ ptp:BuktiGejalaLayuFusariumUbiJalarBerikutnyaAkhirnyaMati a ptp:BuktiGejala,
     skos:prefLabel "Bukti gejala layu fusarium"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
+ptp:BuktiGejalaPenyakitAntraknosaKedelaiBagianBiasanyaMenyebabkanMenjadiMenggulung a ptp:BuktiGejala,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti gejala Penyakit Antraknosa"@id ;
+    ptp:dokumenSumber "DOC002" ;
+    ptp:halamanSumber "49" ;
+    ptp:idChunkSumber "DOC002_C049_02" ;
+    ptp:identifierSumber "SYM_076" ;
+    ptp:kutipanNormalisasi "Pada bagian daun biasanya bercak menyebabkan daun menjadi menggulung dan adanya nekrotik dan bercak coklat gelap pada daun (Gambar 2.10)."@id ;
+    ptp:kutipanSumber "Pada bagian daun biasanya bercak menyebabkan daun menjadi menggulung dan adanya nekrotik dan bercak coklat gelap pada daun (Gambar 2.10)."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti gejala Penyakit Antraknosa"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC002 .
+
 ptp:BuktiGejalaPenyakitBercakKuningUbiJalarKuningDisebabkanSweetPotatoFeathery a ptp:BuktiGejala,
         owl:NamedIndividual ;
     rdfs:label "Bukti gejala Penyakit bercak kuning"@id ;
@@ -12471,19 +12476,6 @@ ptp:BuktiGejalaPenyakitLayuFusariumKedelaiFusariumAkarMenginfeksiMenyebabkanKema
     ptp:kutipanSumber "Penyakit layu Fusarium dikenal dengan penyakit busuk akar yang menginfeksi tanaman kedelai dan menyebabkan kematian (Bawa et al., 2018)."@id ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     skos:prefLabel "Bukti gejala Penyakit Layu Fusarium"@id ;
-    prov:wasDerivedFrom ptp:BukuDOC002 .
-
-ptp:BuktiGejalaPenyakitLayuStewartJagungBergejalaStewartBerwarnaPucatHingga a ptp:BuktiGejala,
-        owl:NamedIndividual ;
-    rdfs:label "Bukti gejala Penyakit Layu Stewart"@id ;
-    ptp:dokumenSumber "DOC002" ;
-    ptp:halamanSumber "107" ;
-    ptp:idChunkSumber "DOC002_C107_02" ;
-    ptp:identifierSumber "SYM_199" ;
-    ptp:kutipanNormalisasi "Daun bergejala layu stewart berwarna hijau pucat hingga kekuningan dengan garis linier dengan tepi lurus maupun bergelombang yang sejajar tulang daun, layu dan kerdil (Rahma et al., 2014)."@id ;
-    ptp:kutipanSumber "Daun bergejala layu stewart berwarna hijau pucat hingga kekuningan dengan garis linier dengan tepi lurus maupun bergelombang yang sejajar tulang daun, layu dan kerdil (Rahma et al., 2014)."@id ;
-    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
-    skos:prefLabel "Bukti gejala Penyakit Layu Stewart"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
 ptp:BuktiGejalaPenyakitRebahKecambahKedelaiAkibatAkarTerinfeksiKemudianMenyebar a ptp:BuktiGejala,
@@ -13508,16 +13500,6 @@ ptp:PengendalianTerpadu a owl:Class ;
     rdfs:subClassOf ptp:Pengendalian ;
     skos:prefLabel "Pengendalian Terpadu"@id .
 
-ptp:PertumbuhanAbnormal a ptp:GejalaKanonik,
-        owl:NamedIndividual ;
-    rdfs:label "Pertumbuhan abnormal"@id ;
-    ptp:merupakanKanonikDari ptp:PengamatanPenyakitEmbunPalsuDownyMildewKedelaiPertumbuhanAbnormal,
-        ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiPertumbuhanAbnormal,
-        ptp:PengamatanSuperelongasiUbiKayuPertumbuhanAbnormal ;
-    rdfs:comment "Konsep kanonik untuk malformasi atau bentuk pertumbuhan yang tidak normal."@id ;
-    skos:altLabel "pertumbuhan abnormal"@id ;
-    skos:prefLabel "Pertumbuhan abnormal"@id .
-
 ptp:PucukMati a ptp:GejalaKanonik,
         owl:NamedIndividual ;
     rdfs:label "Pucuk mati"@id ;
@@ -13667,6 +13649,19 @@ ptp:BuktiGejalaPenyakitBulaiJagungDitandaiMengalamiKlorosisSejajarTulang a ptp:B
     ptp:kutipanSumber "Gejala bulai pada tanaman jagung ditandai dengan daun mengalami klorosis sejajar dengan tulang daun, pertumbuhan terhambat (kerdil), berbentuk kipas dan adanya lapisan tepung berwarna putih pada permukaan daun bagian bawah, yang biasanya hanya terlihat di pagi hari."@id ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     skos:prefLabel "Bukti gejala Penyakit Bulai"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC002 .
+
+ptp:BuktiGejalaPenyakitLayuStewartJagungBergejalaStewartBerwarnaPucatHingga a ptp:BuktiGejala,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti gejala Penyakit Layu Stewart"@id ;
+    ptp:dokumenSumber "DOC002" ;
+    ptp:halamanSumber "107" ;
+    ptp:idChunkSumber "DOC002_C107_02" ;
+    ptp:identifierSumber "SYM_199" ;
+    ptp:kutipanNormalisasi "Daun bergejala layu stewart berwarna hijau pucat hingga kekuningan dengan garis linier dengan tepi lurus maupun bergelombang yang sejajar tulang daun, layu dan kerdil (Rahma et al., 2014)."@id ;
+    ptp:kutipanSumber "Daun bergejala layu stewart berwarna hijau pucat hingga kekuningan dengan garis linier dengan tepi lurus maupun bergelombang yang sejajar tulang daun, layu dan kerdil (Rahma et al., 2014)."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti gejala Penyakit Layu Stewart"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
 ptp:BuktiGejalaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiSMVMenunjukkanAdanyaUkuranMenjadi a ptp:BuktiGejala,
@@ -14654,6 +14649,19 @@ ptp:PenyakitBusukPelepahJagung a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit Busuk Pelepah"@id .
 
+ptp:PertumbuhanAbnormal a ptp:GejalaKanonik,
+        owl:NamedIndividual ;
+    rdfs:label "Pertumbuhan abnormal"@id ;
+    ptp:merupakanKanonikDari ptp:PengamatanPenyakitAntraknosaKedelaiPertumbuhanAbnormal,
+        ptp:PengamatanPenyakitEmbunPalsuDownyMildewKedelaiPertumbuhanAbnormal,
+        ptp:PengamatanPenyakitHawarDaunBakteriPadiPertumbuhanAbnormal,
+        ptp:PengamatanPenyakitLayuStewartJagungPertumbuhanAbnormal,
+        ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiPertumbuhanAbnormal,
+        ptp:PengamatanSuperelongasiUbiKayuPertumbuhanAbnormal ;
+    rdfs:comment "Konsep kanonik untuk malformasi atau bentuk pertumbuhan yang tidak normal."@id ;
+    skos:altLabel "pertumbuhan abnormal"@id ;
+    skos:prefLabel "Pertumbuhan abnormal"@id .
+
 ptp:SolarisasiTanah a ptp:PengendalianFisik,
         owl:NamedIndividual ;
     rdfs:label "Solarisasi tanah"@id ;
@@ -15003,12 +15011,13 @@ ptp:PengendalianBiologis a owl:Class ;
 ptp:PengendalianVektor a ptp:PengendalianKimiawi,
         owl:NamedIndividual ;
     rdfs:label "Pengendalian vektor"@id ;
-    ptp:deskripsiPengendalian "Pengendalian dapat dilakukan dengan benih yang bebas dari patogen SSV, melakukan pergiliran tanaman pada daerah endemik, pada benih yang akan ditanam sebaiknya diberikan seed treatment dengan insektisida thiamethoxam dan mengendalikan populasi serangga vektor dengan pestisida kimia yaitu insektisida berbahan aktif imidakloprid secara tepat dan bijaksana (Inayati and Yusnawan, 2017)."@id ;
+    ptp:deskripsiPengendalian "Selain mengendalikan patogennya, vektornya pun harus dikendalikan."@id ;
     ptp:didukungOleh ptp:BuktiPengendalianPenyakitBelangMottleKacangTanahPemantulanSinarMenyilaukanMengurangiPopulasi,
         ptp:BuktiPengendalianPenyakitBelangMottleKacangTanahPengendalianDilakukanInsektisida,
         ptp:BuktiPengendalianPenyakitBelangMottleKacangTanahTerusMenerusDiikutiFamiliSama,
         ptp:BuktiPengendalianPenyakitBercakKuningUbiJalarPengendalianDilakukanBibitSetekBahan,
         ptp:BuktiPengendalianPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiPengendalianDilakukanBenihBebasSSV,
+        ptp:BuktiPengendalianPenyakitKerdilRumputDanKerdilHampaPadiSelainMengendalikanPatogennyaVektornyaPun,
         ptp:BuktiPengendalianPenyakitKerdilRumputDanKerdilHampaPadiTindakanAlternatifTerakhirPenggunaanPestisida,
         ptp:BuktiPengendalianPenyakitTungroPadiTindakanAlternatifTerakhirPenggunaanPestisida ;
     ptp:mengendalikanPenyakit ptp:PenyakitBelangMottleKacangTanah,
@@ -15019,12 +15028,6 @@ ptp:PengendalianVektor a ptp:PengendalianKimiawi,
     ptp:namaPengendalian "Pengendalian vektor"@id ;
     rdfs:comment "Tindakan kanonik pengendalian serangga atau organisme vektor penyakit."@id ;
     skos:prefLabel "Pengendalian vektor"@id .
-
-ptp:GejalaPolong a owl:Class ;
-    rdfs:label "Gejala Polong"@id ;
-    rdfs:comment "Gejala yang diamati pada polong."@id ;
-    rdfs:subClassOf ptp:Gejala ;
-    skos:prefLabel "Gejala Polong"@id .
 
 ptp:ObservasiLingkungan a owl:Class ;
     rdfs:label "Observasi Lingkungan"@id ;
@@ -15096,6 +15099,12 @@ ptp:Biji a ptp:BagianTanaman,
     rdfs:label "Biji"@id ;
     rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala."@id ;
     skos:prefLabel "Biji"@id .
+
+ptp:GejalaPolong a owl:Class ;
+    rdfs:label "Gejala Polong"@id ;
+    rdfs:comment "Gejala yang diamati pada polong."@id ;
+    rdfs:subClassOf ptp:Gejala ;
+    skos:prefLabel "Gejala Polong"@id .
 
 ptp:LayuDaun a ptp:GejalaKanonik,
         owl:NamedIndividual ;
@@ -15306,12 +15315,6 @@ ptp:PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:altLabel "Soybean Mosaic Virus"@id ;
     skos:prefLabel "Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"@id .
-
-ptp:Pucuk a ptp:BagianTanaman,
-        owl:NamedIndividual ;
-    rdfs:label "Pucuk"@id ;
-    rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala."@id ;
-    skos:prefLabel "Pucuk"@id .
 
 ptp:KacangTanah a ptp:Legum,
         owl:NamedIndividual ;
@@ -15542,6 +15545,13 @@ ptp:PenyakitLayuKacangHijau a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:altLabel "LAYU"@id ;
     skos:prefLabel "Penyakit Layu"@id .
+
+ptp:Pucuk a ptp:BagianTanaman,
+        owl:NamedIndividual ;
+    rdfs:label "Pucuk"@id ;
+    ptp:bagianDari ptp:Batang ;
+    rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala."@id ;
+    skos:prefLabel "Pucuk"@id .
 
 ptp:Observasi a owl:Class ;
     rdfs:label "Observasi"@id ;
@@ -15845,54 +15855,6 @@ ptp:PenyakitLayuFusariumKedelai a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit Layu Fusarium"@id .
 
-ptp:PenyakitLayuStewartJagung a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit Layu Stewart"@id ;
-    ptp:berkaitanPengendalian ptp:PengelolaanGulma,
-        ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanBacillus,
-        ptp:PenggunaanBenihSehat,
-        ptp:PenggunaanInsektisida,
-        ptp:PenggunaanPseudomonas,
-        ptp:PenggunaanVarietasTahan,
-        ptp:PerlakuanBenih,
-        ptp:SanitasiLahan ;
-    ptp:didukungOleh ptp:BuktiMetadataPhasePenyakitLayuStewartJagungGambar66StewartLapangan,
-        ptp:BuktiMetadataSeverityPenyakitLayuStewartJagungPertamaKaliAdaBogorIndonesia,
-        ptp:BuktiPatogenPenyakitLayuStewartJagungStewartDisebabkanPantoeaStewartiiSubsp,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungAlternatifTerakhirPerlakuanKimiaPestisida,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungAplikasiDilakukanPerendamanBenihSelama,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungDjaenuddinMuis2018MengatakanPengendalian,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungHasilnyaMenunjukkanBahwaPerkembanganTerhambat,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungPengendalianStewartDilakukanMemberikanPerlakuan,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungRahmaEtAl2016Mengisolasi,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungRizobakteriaMeningkatkanPertumbuhanTerdapatBerperan,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungSelainBenihBersertifikatBebasMemanfaatkan,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungSelainRizobakteriaRambeEtAl,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungTidakMenunjukkanReaksiHipersensitifDikelompokkan,
-        ptp:BuktiPenyakitPenyakitLayuStewartJagungStewart ;
-    ptp:dikendalikanDengan ptp:PengelolaanGulma,
-        ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanBacillus,
-        ptp:PenggunaanBenihSehat,
-        ptp:PenggunaanInsektisida,
-        ptp:PenggunaanPseudomonas,
-        ptp:PenggunaanVarietasTahan,
-        ptp:PerlakuanBenih,
-        ptp:SanitasiLahan ;
-    ptp:disebabkanOleh ptp:PantoeaStewartii ;
-    ptp:identifierSumber "DIS_047" ;
-    ptp:memilikiGejala ptp:PengamatanPenyakitLayuStewartJagungKerdilTanaman,
-        ptp:PengamatanPenyakitLayuStewartJagungKlorosisDaun,
-        ptp:PengamatanPenyakitLayuStewartJagungLayuDaun ;
-    ptp:memilikiReferensi ptp:BukuDOC002 ;
-    ptp:menyerangBagian ptp:Daun ;
-    ptp:menyerangFase ptp:FaseGeneratifUmum ;
-    ptp:menyerangTanaman ptp:Jagung ;
-    ptp:tingkatKeparahan "Pertama kali dilaporkan ada di Bogor, Indonesia oleh (Rahma et al., 2014) dengan kejadian penyakit antara 23.67% hingga 31.45%."@id ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:prefLabel "Penyakit Layu Stewart"@id .
-
 ptp:PengelolaanGulma a ptp:PengendalianKulturTeknis,
         owl:NamedIndividual ;
     rdfs:label "Pengelolaan gulma"@id ;
@@ -16059,11 +16021,54 @@ ptp:PenyakitLayuBakteriKacangTanah a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit Layu Bakteri"@id .
 
-ptp:Virus a owl:Class ;
-    rdfs:label "Virus"@id ;
-    rdfs:comment "Patogen kelompok virus."@id ;
-    rdfs:subClassOf ptp:Patogen ;
-    skos:prefLabel "Virus"@id .
+ptp:PenyakitLayuStewartJagung a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Layu Stewart"@id ;
+    ptp:berkaitanPengendalian ptp:PengelolaanGulma,
+        ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanBacillus,
+        ptp:PenggunaanBenihSehat,
+        ptp:PenggunaanInsektisida,
+        ptp:PenggunaanPseudomonas,
+        ptp:PenggunaanVarietasTahan,
+        ptp:PerlakuanBenih,
+        ptp:SanitasiLahan ;
+    ptp:didukungOleh ptp:BuktiMetadataPhasePenyakitLayuStewartJagungGambar66StewartLapangan,
+        ptp:BuktiMetadataSeverityPenyakitLayuStewartJagungPertamaKaliAdaBogorIndonesia,
+        ptp:BuktiPatogenPenyakitLayuStewartJagungStewartDisebabkanPantoeaStewartiiSubsp,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungAlternatifTerakhirPerlakuanKimiaPestisida,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungAplikasiDilakukanPerendamanBenihSelama,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungDjaenuddinMuis2018MengatakanPengendalian,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungHasilnyaMenunjukkanBahwaPerkembanganTerhambat,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungPengendalianStewartDilakukanMemberikanPerlakuan,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungRahmaEtAl2016Mengisolasi,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungRizobakteriaMeningkatkanPertumbuhanTerdapatBerperan,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungSelainBenihBersertifikatBebasMemanfaatkan,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungSelainRizobakteriaRambeEtAl,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungTidakMenunjukkanReaksiHipersensitifDikelompokkan,
+        ptp:BuktiPenyakitPenyakitLayuStewartJagungStewart ;
+    ptp:dikendalikanDengan ptp:PengelolaanGulma,
+        ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanBacillus,
+        ptp:PenggunaanBenihSehat,
+        ptp:PenggunaanInsektisida,
+        ptp:PenggunaanPseudomonas,
+        ptp:PenggunaanVarietasTahan,
+        ptp:PerlakuanBenih,
+        ptp:SanitasiLahan ;
+    ptp:disebabkanOleh ptp:PantoeaStewartii ;
+    ptp:identifierSumber "DIS_047" ;
+    ptp:memilikiGejala ptp:PengamatanPenyakitLayuStewartJagungKerdilTanaman,
+        ptp:PengamatanPenyakitLayuStewartJagungKlorosisDaun,
+        ptp:PengamatanPenyakitLayuStewartJagungLayuDaun,
+        ptp:PengamatanPenyakitLayuStewartJagungPertumbuhanAbnormal ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangFase ptp:FaseGeneratifUmum ;
+    ptp:menyerangTanaman ptp:Jagung ;
+    ptp:tingkatKeparahan "Pertama kali dilaporkan ada di Bogor, Indonesia oleh (Rahma et al., 2014) dengan kejadian penyakit antara 23.67% hingga 31.45%."@id ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:prefLabel "Penyakit Layu Stewart"@id .
 
 ptp:PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai a ptp:Penyakit,
         owl:NamedIndividual ;
@@ -16096,7 +16101,6 @@ ptp:PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai a ptp:Penyakit,
     ptp:memilikiGejala ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiKerdilTanaman,
         ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiKlorosisDaun,
         ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiMosaikDaun,
-        ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiParahMakaMenunjukkanSemakinBeragam,
         ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiPertumbuhanAbnormal,
         ptp:PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiSemakinBerkembangSeiringMeningkatnyaUmur ;
     ptp:memilikiReferensi ptp:BukuDOC002 ;
@@ -16106,6 +16110,12 @@ ptp:PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:altLabel "Cowpea Mild Mottle Virus"@id ;
     skos:prefLabel "Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)"@id .
+
+ptp:Virus a owl:Class ;
+    rdfs:label "Virus"@id ;
+    rdfs:comment "Patogen kelompok virus."@id ;
+    rdfs:subClassOf ptp:Patogen ;
+    skos:prefLabel "Virus"@id .
 
 ptp:KlorosisDaun a ptp:GejalaKanonik,
         owl:NamedIndividual ;
@@ -16239,12 +16249,6 @@ ptp:PenyakitEmbunPalsuDownyMildewKedelai a ptp:Penyakit,
         "EMBUN BULU"@id ;
     skos:prefLabel "Penyakit Embun Palsu (Downy mildew)"@id .
 
-ptp:Polong a ptp:BagianTanaman,
-        owl:NamedIndividual ;
-    rdfs:label "Polong"@id ;
-    rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala."@id ;
-    skos:prefLabel "Polong"@id .
-
 ptp:UbiKayu a ptp:UmbiUmbian,
         owl:NamedIndividual ;
     rdfs:label "Ubi kayu"@id ;
@@ -16341,6 +16345,50 @@ ptp:GejalaAkar a owl:Class ;
     rdfs:subClassOf ptp:Gejala ;
     skos:prefLabel "Gejala Akar"@id .
 
+ptp:PenyakitRebahKecambahKedelai a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Rebah Kecambah"@id ;
+    ptp:berkaitanPengendalian ptp:PengairanDanDrainase,
+        ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanBacillus,
+        ptp:PenggunaanFungisida,
+        ptp:PenggunaanTrichoderma,
+        ptp:PerlakuanBenih,
+        ptp:RotasiTanaman,
+        ptp:SanitasiLahan ;
+    ptp:didukungOleh ptp:BuktiLingkunganPenyakitRebahKecambahKedelaiSolaniDilakukanTeknikPengendalianKultur,
+        ptp:BuktiPatogenPenyakitRebahKecambahKedelaiRebahKecambahDisebabkanRhizoctoniaSolani,
+        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiAplikasiRizobakteriPemacuTumbuhMenekan,
+        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiFajarfika2021PerlakuanBenihFungisida,
+        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiInayatiAndYusnawan2017Pengendalian,
+        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiPenggunaanAgensHayatiAntagonisBacillus,
+        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiSolaniDilakukanTeknikPengendalianKultur,
+        ptp:BuktiPenyakitPenyakitRebahKecambahKedelaiRebahKecambah ;
+    ptp:dikendalikanDengan ptp:PengairanDanDrainase,
+        ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanBacillus,
+        ptp:PenggunaanFungisida,
+        ptp:PenggunaanTrichoderma,
+        ptp:PerlakuanBenih,
+        ptp:RotasiTanaman,
+        ptp:SanitasiLahan ;
+    ptp:dipengaruhiOleh ptp:KondisiMusimHujan ;
+    ptp:disebabkanOleh ptp:RhizoctoniaSolani ;
+    ptp:identifierSumber "DIS_007" ;
+    ptp:memilikiGejala ptp:PengamatanPenyakitRebahKecambahKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitRebahKecambahKedelaiBusukAkar,
+        ptp:PengamatanPenyakitRebahKecambahKedelaiBusukBatang,
+        ptp:PengamatanPenyakitRebahKecambahKedelaiBusukTanaman,
+        ptp:PengamatanPenyakitRebahKecambahKedelaiKematianTanaman,
+        ptp:PengamatanPenyakitRebahKecambahKedelaiLayuDaun,
+        ptp:PengamatanPenyakitRebahKecambahKedelaiSolaniMenunjukkanAdanyaLekukanCoklat ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Akar,
+        ptp:Batang ;
+    ptp:menyerangTanaman ptp:Kedelai ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:prefLabel "Penyakit Rebah Kecambah"@id .
+
 ptp:PenyakitTungroPadi a ptp:Penyakit,
         owl:NamedIndividual ;
     rdfs:label "Penyakit Tungro"@id ;
@@ -16379,6 +16427,12 @@ ptp:PenyakitTungroPadi a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit Tungro"@id .
 
+ptp:Polong a ptp:BagianTanaman,
+        owl:NamedIndividual ;
+    rdfs:label "Polong"@id ;
+    rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala."@id ;
+    skos:prefLabel "Polong"@id .
+
 ptp:PenggunaanBenihSehat a ptp:PengendalianKulturTeknis,
         owl:NamedIndividual ;
     rdfs:label "Penggunaan benih sehat"@id ;
@@ -16408,6 +16462,102 @@ ptp:PenggunaanBenihSehat a ptp:PengendalianKulturTeknis,
     ptp:namaPengendalian "Penggunaan benih sehat"@id ;
     rdfs:comment "Tindakan kanonik penggunaan benih sehat atau bersertifikat."@id ;
     skos:prefLabel "Penggunaan benih sehat"@id .
+
+ptp:PenyakitBercakKuningUbiJalar a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit bercak kuning"@id ;
+    ptp:berkaitanPengendalian ptp:KulturMeristem,
+        ptp:PengendalianVektor,
+        ptp:PenggunaanVarietasTahan,
+        ptp:RotasiTanaman,
+        ptp:SanitasiLahan,
+        ptp:SeleksiBahanTanam ;
+    ptp:didukungOleh ptp:BuktiPatogenPenyakitBercakKuningUbiJalarMenginfeksiAntaranyaSweetPotatoFeathery,
+        ptp:BuktiPatogenPenyakitBercakKuningUbiJalarMenginfeksiAntaranyaSweetPotatoFeathery2,
+        ptp:BuktiPatogenPenyakitBercakKuningUbiJalarMenginfeksiAntaranyaSweetPotatoFeathery3,
+        ptp:BuktiPengendalianPenyakitBercakKuningUbiJalarBarahimaAndPurnomo2003Bahwa,
+        ptp:BuktiPengendalianPenyakitBercakKuningUbiJalarPengendalianDilakukanBibitSetekBahan,
+        ptp:BuktiPenyakitPenyakitBercakKuningUbiJalarKuning ;
+    ptp:dikendalikanDengan ptp:KulturMeristem,
+        ptp:PengendalianVektor,
+        ptp:PenggunaanVarietasTahan,
+        ptp:RotasiTanaman,
+        ptp:SanitasiLahan,
+        ptp:SeleksiBahanTanam ;
+    ptp:disebabkanOleh ptp:SweetPotatoChloroticFleckVirus,
+        ptp:SweetPotatoFeatheryMottleVirus,
+        ptp:SweetPotatoMildMottleVirus ;
+    ptp:identifierSumber "DIS_026" ;
+    ptp:memilikiGejala ptp:PengamatanPenyakitBercakKuningUbiJalarBelangTanaman,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarBercakDaun,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarBercakTanaman,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarCooperAndJones2006Bahwa,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarInformasiIndonesiaSedikitDominanSPFMV,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarKlorosisDaun,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarKlorosisTanaman,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarNekrosisDaun,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarPucukMati ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun,
+        ptp:Pucuk ;
+    ptp:menyerangTanaman ptp:UbiJalar ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:prefLabel "Penyakit bercak kuning"@id .
+
+ptp:PenyakitKaratDaunJagung a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Karat Daun"@id ;
+    ptp:berkaitanPengendalian ptp:PengaturanJarakTanam,
+        ptp:PengaturanKelembapan,
+        ptp:PengelolaanGulma,
+        ptp:PenggunaanVarietasTahan,
+        ptp:SanitasiLahan ;
+    ptp:didukungOleh ptp:BuktiLingkunganPenyakitKaratDaunJagungBerkembangSuhuKelembaban,
+        ptp:BuktiLingkunganPenyakitKaratDaunJagungSuhu252C28,
+        ptp:BuktiMetadataPhasePenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang,
+        ptp:BuktiMetadataSeverityPenyakitKaratDaunJagungDisebabkanBerkisar2667Hingga,
+        ptp:BuktiPatogenPenyakitKaratDaunJagungDisebabkanPucciniaPolysoraUnderw,
+        ptp:BuktiPengendalianPenyakitKaratDaunJagungSelainPenggunaanDilakukanMenekanPerkembangan,
+        ptp:BuktiPengendalianPenyakitKaratDaunJagungTingginyaDisebabkanBuruknyaSanitasiLahan,
+        ptp:BuktiPengendalianPenyakitKaratDaunJagungUpayaPengendalianDilakukanJarakTanam,
+        ptp:BuktiPenyakitPenyakitKaratDaunJagungTanpaTeks ;
+    ptp:dikendalikanDengan ptp:PengaturanJarakTanam,
+        ptp:PengaturanKelembapan,
+        ptp:PengelolaanGulma,
+        ptp:PenggunaanVarietasTahan,
+        ptp:SanitasiLahan ;
+    ptp:dipengaruhiOleh ptp:KondisiSuhuRendah,
+        ptp:ObservasiPenyakitKaratDaunJagungSuhu25Koma2Sampai28Koma8Celsius ;
+    ptp:disebabkanOleh ptp:PucciniaPolysora ;
+    ptp:identifierSumber "DIS_045" ;
+    ptp:memilikiGejala ptp:PengamatanPenyakitKaratDaunJagungBercakTanaman,
+        ptp:PengamatanPenyakitKaratDaunJagungBerkembangSuhuKelembaban,
+        ptp:PengamatanPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang,
+        ptp:PengamatanPenyakitKaratDaunJagungDisebabkanBerkisar2667Hingga,
+        ptp:PengamatanPenyakitKaratDaunJagungHamidsonEtAl2019Mencapai,
+        ptp:PengamatanPenyakitKaratDaunJagungKlorosisDaun,
+        ptp:PengamatanPenyakitKaratDaunJagungLajuDitentukanKenaikanSuhuKelembaban,
+        ptp:PengamatanPenyakitKaratDaunJagungPerkembanganDipengaruhiKondisiLingkunganSuhu,
+        ptp:PengamatanPenyakitKaratDaunJagungSemakinKelembabanMakaLajuMeningkat,
+        ptp:PengamatanPenyakitKaratDaunJagungSuhu252C28 ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangFase ptp:FaseGeneratifUmum ;
+    ptp:menyerangTanaman ptp:Jagung ;
+    ptp:tingkatKeparahan "Keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%."@id ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:prefLabel "Penyakit Karat Daun"@id .
+
+ptp:EntitasKBR a owl:Class ;
+    rdfs:label "Entitas KBR"@id ;
+    rdfs:comment "Kelas akar seluruh entitas knowledge base penyakit tanaman pangan."@id ;
+    skos:prefLabel "Entitas KBR"@id .
+
+ptp:PengendalianKulturTeknis a owl:Class ;
+    rdfs:label "Pengendalian Kultur Teknis"@id ;
+    rdfs:comment "Pengendalian melalui praktik budidaya."@id ;
+    rdfs:subClassOf ptp:Pengendalian ;
+    skos:prefLabel "Pengendalian Kultur Teknis"@id .
 
 ptp:PenyakitAntraknosaKedelai a ptp:Penyakit,
         owl:NamedIndividual ;
@@ -16452,7 +16602,8 @@ ptp:PenyakitAntraknosaKedelai a ptp:Penyakit,
         ptp:PengamatanPenyakitAntraknosaKedelaiDaunRontok,
         ptp:PengamatanPenyakitAntraknosaKedelaiKematianTanaman,
         ptp:PengamatanPenyakitAntraknosaKedelaiNekrosisDaun,
-        ptp:PengamatanPenyakitAntraknosaKedelaiNekrosisTanaman ;
+        ptp:PengamatanPenyakitAntraknosaKedelaiNekrosisTanaman,
+        ptp:PengamatanPenyakitAntraknosaKedelaiPertumbuhanAbnormal ;
     ptp:memilikiReferensi ptp:BukuDOC002,
         ptp:BukuDOC005 ;
     ptp:menyerangBagian ptp:Batang,
@@ -16463,333 +16614,6 @@ ptp:PenyakitAntraknosaKedelai a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:altLabel "ANTRAKNOSA"@id ;
     skos:prefLabel "Penyakit Antraknosa"@id .
-
-ptp:PenyakitBercakKuningUbiJalar a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit bercak kuning"@id ;
-    ptp:berkaitanPengendalian ptp:KulturMeristem,
-        ptp:PengendalianVektor,
-        ptp:PenggunaanVarietasTahan,
-        ptp:RotasiTanaman,
-        ptp:SanitasiLahan,
-        ptp:SeleksiBahanTanam ;
-    ptp:didukungOleh ptp:BuktiPatogenPenyakitBercakKuningUbiJalarMenginfeksiAntaranyaSweetPotatoFeathery,
-        ptp:BuktiPatogenPenyakitBercakKuningUbiJalarMenginfeksiAntaranyaSweetPotatoFeathery2,
-        ptp:BuktiPatogenPenyakitBercakKuningUbiJalarMenginfeksiAntaranyaSweetPotatoFeathery3,
-        ptp:BuktiPengendalianPenyakitBercakKuningUbiJalarBarahimaAndPurnomo2003Bahwa,
-        ptp:BuktiPengendalianPenyakitBercakKuningUbiJalarPengendalianDilakukanBibitSetekBahan,
-        ptp:BuktiPenyakitPenyakitBercakKuningUbiJalarKuning ;
-    ptp:dikendalikanDengan ptp:KulturMeristem,
-        ptp:PengendalianVektor,
-        ptp:PenggunaanVarietasTahan,
-        ptp:RotasiTanaman,
-        ptp:SanitasiLahan,
-        ptp:SeleksiBahanTanam ;
-    ptp:disebabkanOleh ptp:SweetPotatoChloroticFleckVirus,
-        ptp:SweetPotatoFeatheryMottleVirus,
-        ptp:SweetPotatoMildMottleVirus ;
-    ptp:identifierSumber "DIS_026" ;
-    ptp:memilikiGejala ptp:PengamatanPenyakitBercakKuningUbiJalarBelangTanaman,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarBercakDaun,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarBercakTanaman,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarCooperAndJones2006Bahwa,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarInformasiIndonesiaSedikitDominanSPFMV,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarKlorosisDaun,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarKlorosisTanaman,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarNekrosisDaun,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarPucukMati ;
-    ptp:memilikiReferensi ptp:BukuDOC002 ;
-    ptp:menyerangBagian ptp:Daun,
-        ptp:Pucuk ;
-    ptp:menyerangTanaman ptp:UbiJalar ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:prefLabel "Penyakit bercak kuning"@id .
-
-ptp:PenyakitRebahKecambahKedelai a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit Rebah Kecambah"@id ;
-    ptp:berkaitanPengendalian ptp:PengairanDanDrainase,
-        ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanBacillus,
-        ptp:PenggunaanFungisida,
-        ptp:PenggunaanTrichoderma,
-        ptp:PerlakuanBenih,
-        ptp:RotasiTanaman,
-        ptp:SanitasiLahan ;
-    ptp:didukungOleh ptp:BuktiLingkunganPenyakitRebahKecambahKedelaiSolaniDilakukanTeknikPengendalianKultur,
-        ptp:BuktiPatogenPenyakitRebahKecambahKedelaiRebahKecambahDisebabkanRhizoctoniaSolani,
-        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiAplikasiRizobakteriPemacuTumbuhMenekan,
-        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiFajarfika2021PerlakuanBenihFungisida,
-        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiInayatiAndYusnawan2017Pengendalian,
-        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiPenggunaanAgensHayatiAntagonisBacillus,
-        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiSolaniDilakukanTeknikPengendalianKultur,
-        ptp:BuktiPenyakitPenyakitRebahKecambahKedelaiRebahKecambah ;
-    ptp:dikendalikanDengan ptp:PengairanDanDrainase,
-        ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanBacillus,
-        ptp:PenggunaanFungisida,
-        ptp:PenggunaanTrichoderma,
-        ptp:PerlakuanBenih,
-        ptp:RotasiTanaman,
-        ptp:SanitasiLahan ;
-    ptp:dipengaruhiOleh ptp:KondisiMusimHujan ;
-    ptp:disebabkanOleh ptp:RhizoctoniaSolani ;
-    ptp:identifierSumber "DIS_007" ;
-    ptp:memilikiGejala ptp:PengamatanPenyakitRebahKecambahKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitRebahKecambahKedelaiBusukAkar,
-        ptp:PengamatanPenyakitRebahKecambahKedelaiBusukBatang,
-        ptp:PengamatanPenyakitRebahKecambahKedelaiBusukTanaman,
-        ptp:PengamatanPenyakitRebahKecambahKedelaiKematianTanaman,
-        ptp:PengamatanPenyakitRebahKecambahKedelaiLayuDaun,
-        ptp:PengamatanPenyakitRebahKecambahKedelaiSolaniMakaBenihTidakBerkecambah,
-        ptp:PengamatanPenyakitRebahKecambahKedelaiSolaniMenunjukkanAdanyaLekukanCoklat ;
-    ptp:memilikiReferensi ptp:BukuDOC002 ;
-    ptp:menyerangBagian ptp:Akar,
-        ptp:Batang ;
-    ptp:menyerangTanaman ptp:Kedelai ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:prefLabel "Penyakit Rebah Kecambah"@id .
-
-ptp:EntitasKBR a owl:Class ;
-    rdfs:label "Entitas KBR"@id ;
-    rdfs:comment "Kelas akar seluruh entitas knowledge base penyakit tanaman pangan."@id ;
-    skos:prefLabel "Entitas KBR"@id .
-
-ptp:PengendalianKulturTeknis a owl:Class ;
-    rdfs:label "Pengendalian Kultur Teknis"@id ;
-    rdfs:comment "Pengendalian melalui praktik budidaya."@id ;
-    rdfs:subClassOf ptp:Pengendalian ;
-    skos:prefLabel "Pengendalian Kultur Teknis"@id .
-
-ptp:PenyakitBulaiJagung a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit Bulai"@id ;
-    ptp:berkaitanPengendalian ptp:PemupukanBerimbang,
-        ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanFungisida,
-        ptp:PenggunaanPseudomonas,
-        ptp:PenggunaanVarietasTahan ;
-    ptp:didukungOleh ptp:BuktiLingkunganPenyakitBulaiJagungKecepatanAnginKelembaban90Suhu,
-        ptp:BuktiMetadataSeverityPenyakitBulaiJagungDisebabkanBervariasi1933Sampai,
-        ptp:BuktiPatogenPenyakitBulaiJagungDisebabkanPeronosclerosporaSp,
-        ptp:BuktiPatogenPenyakitBulaiJagungRustianiEtAl2015Melaporkan,
-        ptp:BuktiPengendalianPenyakitBulaiJagungDiperlukanPengendalianRamahLingkungan,
-        ptp:BuktiPengendalianPenyakitBulaiJagungFluorescensAMempunyai,
-        ptp:BuktiPengendalianPenyakitBulaiJagungFluorescensMemberikanTerinduksiMengeluarkanSenyawa,
-        ptp:BuktiPengendalianPenyakitBulaiJagungFungisidaDigunakanMenekanPerkecambahanKonidia,
-        ptp:BuktiPengendalianPenyakitBulaiJagungLajuAsianHoneyKecilDibandingkan,
-        ptp:BuktiPengendalianPenyakitBulaiJagungPemberianPupukKaliumMenurunkanLaju,
-        ptp:BuktiPengendalianPenyakitBulaiJagungPengendalianAgensHayatiDimanfaatkanMenghambat,
-        ptp:BuktiPengendalianPenyakitBulaiJagungPengendalianDilakukanAsianHoneyMempunyai,
-        ptp:BuktiPengendalianPenyakitBulaiJagungPengendalianLapanganDilakukanPetaniFungisida,
-        ptp:BuktiPengendalianPenyakitBulaiJagungPenggunaanBahanKimiaBerkepanjanganDosis,
-        ptp:BuktiPengendalianPenyakitBulaiJagungPerlakuanV1P2KombinasiPioneer27,
-        ptp:BuktiPengendalianPenyakitBulaiJagungUlhaqAndMasnilah2019Melaporkan,
-        ptp:BuktiPengendalianPenyakitBulaiJagungUlhaqAndMasnilah2019Mengatakan,
-        ptp:BuktiPengendalianPenyakitBulaiJagungWidiantiniEtAl2018Melaporkan,
-        ptp:BuktiPenyakitPenyakitBulaiJagungTanpaTeks ;
-    ptp:dikendalikanDengan ptp:PemupukanBerimbang,
-        ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanFungisida,
-        ptp:PenggunaanPseudomonas,
-        ptp:PenggunaanVarietasTahan ;
-    ptp:dipengaruhiOleh ptp:ObservasiPenyakitBulaiJagungKelembapan90Persen,
-        ptp:ObservasiPenyakitBulaiJagungSuhu24Celsius ;
-    ptp:disebabkanOleh ptp:PeronosclerosporaMaydis,
-        ptp:PeronosclerosporaSp ;
-    ptp:identifierSumber "DIS_046" ;
-    ptp:memilikiGejala ptp:PengamatanPenyakitBulaiJagungDisebabkanBervariasi1933Sampai,
-        ptp:PengamatanPenyakitBulaiJagungKecepatanAnginKelembaban90Suhu,
-        ptp:PengamatanPenyakitBulaiJagungKerdilTanaman,
-        ptp:PengamatanPenyakitBulaiJagungKlorosisDaun,
-        ptp:PengamatanPenyakitBulaiJagungMenyerangFaseVegetatifBerkurangSemakin,
-        ptp:PengamatanPenyakitBulaiJagungMulaiMuncul15Hingga17,
-        ptp:PengamatanPenyakitBulaiJagungPertumbuhanTerhambat,
-        ptp:PengamatanPenyakitBulaiJagungTepungDaun ;
-    ptp:memilikiReferensi ptp:BukuDOC002 ;
-    ptp:menyerangBagian ptp:Daun ;
-    ptp:menyerangFase ptp:FaseVegetatifUmum ;
-    ptp:menyerangTanaman ptp:Jagung ;
-    ptp:tingkatKeparahan "Kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37% dan bergantung pada kondisi lingkungan tiap wilayah (Kurniawan et al., 2017)."@id ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:prefLabel "Penyakit Bulai"@id .
-
-ptp:PenyakitKaratDaunJagung a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit Karat Daun"@id ;
-    ptp:berkaitanPengendalian ptp:PengaturanJarakTanam,
-        ptp:PengaturanKelembapan,
-        ptp:PengelolaanGulma,
-        ptp:PenggunaanVarietasTahan,
-        ptp:SanitasiLahan ;
-    ptp:didukungOleh ptp:BuktiLingkunganPenyakitKaratDaunJagungBerkembangSuhuKelembaban,
-        ptp:BuktiLingkunganPenyakitKaratDaunJagungSuhu252C28,
-        ptp:BuktiMetadataPhasePenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang,
-        ptp:BuktiMetadataSeverityPenyakitKaratDaunJagungDisebabkanBerkisar2667Hingga,
-        ptp:BuktiPatogenPenyakitKaratDaunJagungDisebabkanPucciniaPolysoraUnderw,
-        ptp:BuktiPengendalianPenyakitKaratDaunJagungSelainPenggunaanDilakukanMenekanPerkembangan,
-        ptp:BuktiPengendalianPenyakitKaratDaunJagungTingginyaDisebabkanBuruknyaSanitasiLahan,
-        ptp:BuktiPengendalianPenyakitKaratDaunJagungUpayaPengendalianDilakukanJarakTanam,
-        ptp:BuktiPenyakitPenyakitKaratDaunJagungTanpaTeks ;
-    ptp:dikendalikanDengan ptp:PengaturanJarakTanam,
-        ptp:PengaturanKelembapan,
-        ptp:PengelolaanGulma,
-        ptp:PenggunaanVarietasTahan,
-        ptp:SanitasiLahan ;
-    ptp:dipengaruhiOleh ptp:KondisiSuhuRendah,
-        ptp:ObservasiPenyakitKaratDaunJagungSuhu25Koma2Sampai28Koma8Celsius ;
-    ptp:disebabkanOleh ptp:PucciniaPolysora ;
-    ptp:identifierSumber "DIS_045" ;
-    ptp:memilikiGejala ptp:PengamatanPenyakitKaratDaunJagungBerkembangSuhuKelembaban,
-        ptp:PengamatanPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang,
-        ptp:PengamatanPenyakitKaratDaunJagungBintilBerbentukBulatOvalSaling,
-        ptp:PengamatanPenyakitKaratDaunJagungBintilPecahSporaKeluarTerbawa,
-        ptp:PengamatanPenyakitKaratDaunJagungDisebabkanBerkisar2667Hingga,
-        ptp:PengamatanPenyakitKaratDaunJagungHamidsonEtAl2019Mencapai,
-        ptp:PengamatanPenyakitKaratDaunJagungKlorosisDaun,
-        ptp:PengamatanPenyakitKaratDaunJagungLajuDitentukanKenaikanSuhuKelembaban,
-        ptp:PengamatanPenyakitKaratDaunJagungPerkembanganDipengaruhiKondisiLingkunganSuhu,
-        ptp:PengamatanPenyakitKaratDaunJagungSemakinKelembabanMakaLajuMeningkat,
-        ptp:PengamatanPenyakitKaratDaunJagungSuhu252C28 ;
-    ptp:memilikiReferensi ptp:BukuDOC002 ;
-    ptp:menyerangBagian ptp:Daun ;
-    ptp:menyerangFase ptp:FaseGeneratifUmum ;
-    ptp:menyerangTanaman ptp:Jagung ;
-    ptp:tingkatKeparahan "Keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%."@id ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:prefLabel "Penyakit Karat Daun"@id .
-
-ptp:PenyakitRebahSemaiKedelai a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit Rebah Semai"@id ;
-    ptp:berkaitanPengendalian ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanBacillus,
-        ptp:PenggunaanBeauveria,
-        ptp:PenggunaanTrichoderma,
-        ptp:PenggunaanVarietasTahan,
-        ptp:RotasiTanaman,
-        ptp:SolarisasiTanah ;
-    ptp:didukungOleh ptp:BuktiMetadataPhasePenyakitRebahSemaiKedelaiAdanyaTularMenginfeksiFasePembibitan,
-        ptp:BuktiPatogenPenyakitRebahSemaiKedelaiMenginfeksiPersemaianSatunyaSclerotiumRolfsii,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiAplikasiAntagonisBacillusSp,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiDilakukanFitriaAndMasnilah2020,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiHarzianumBeauveriaBassianaMenginduksiTingkat,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPemanfaatanEndofitMenghambatMatiSemai,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPengendalianAgensHayatiAntagonisDilakukan,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPengendalianMenjadiPengendalianEfektif,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPenggunaanCendawanAntagonisTrichodermaVirens,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPenggunaanPlantGrowthPromotingRhizobacteria,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiBahwaDena1Tingkat,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiDilakukanSolarisasiHamdaniAnd,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiKisaranLuasFamiliLeguminoceae,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiMelilitkanHifanyaMembentukHaustorium,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiRotasiPergiliranLahanKurang,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiSebesar2085Marwan,
-        ptp:BuktiPenyakitPenyakitRebahSemaiKedelaiRebahSemai ;
-    ptp:dikendalikanDengan ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanBacillus,
-        ptp:PenggunaanBeauveria,
-        ptp:PenggunaanTrichoderma,
-        ptp:PenggunaanVarietasTahan,
-        ptp:RotasiTanaman,
-        ptp:SolarisasiTanah ;
-    ptp:disebabkanOleh ptp:SclerotiumRolfsii ;
-    ptp:identifierSumber "DIS_006" ;
-    ptp:memilikiGejala ptp:PengamatanPenyakitRebahSemaiKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitRebahSemaiKedelaiBusukBatang,
-        ptp:PengamatanPenyakitRebahSemaiKedelaiKlorosisDaun,
-        ptp:PengamatanPenyakitRebahSemaiKedelaiLayuDaun,
-        ptp:PengamatanPenyakitRebahSemaiKedelaiMunculTerserangS ;
-    ptp:memilikiReferensi ptp:BukuDOC002 ;
-    ptp:menyerangBagian ptp:Akar,
-        ptp:Batang,
-        ptp:Daun ;
-    ptp:menyerangFase ptp:FasePembibitanTanaman ;
-    ptp:menyerangTanaman ptp:Kedelai ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:prefLabel "Penyakit Rebah Semai"@id .
-
-ptp:BercakTanaman a ptp:GejalaKanonik,
-        owl:NamedIndividual ;
-    rdfs:label "Bercak pada tanaman"@id ;
-    ptp:merupakanKanonikDari ptp:PengamatanBercakDaunPutihUbiKayuBercakTanaman,
-        ptp:PengamatanNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuBercakTanaman,
-        ptp:PengamatanPenyakitAntraknosaKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitBakteriPustulKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitBercakBijiUnguKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitBercakDaunKacangTanahBercakTanaman,
-        ptp:PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitBercakKuningUbiJalarBercakTanaman,
-        ptp:PengamatanPenyakitBercakTargetKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitBlasPadiBercakTanaman,
-        ptp:PengamatanPenyakitBusukHitamBlackRotUbiJalarBercakTanaman,
-        ptp:PengamatanPenyakitBusukPelepahJagungBercakTanaman,
-        ptp:PengamatanPenyakitEmbunPalsuDownyMildewKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitHawarBakteriBacterialBlightKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitHawarDaunJagungBercakTanaman,
-        ptp:PengamatanPenyakitHawarPelepahDaunPadiBercakTanaman,
-        ptp:PengamatanPenyakitKaratDaunKacangTanahBercakTanaman,
-        ptp:PengamatanPenyakitKaratDaunKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitKudisUbiJalarBercakTanaman,
-        ptp:PengamatanPenyakitRebahKecambahKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitRebahSemaiKedelaiBercakTanaman,
-        ptp:PengamatanPenyakitTungroPadiBercakTanaman ;
-    rdfs:comment "Konsep generik untuk bercak, noda, lesi, atau bintik tanpa bagian tanaman eksplisit."@id ;
-    skos:altLabel "bercak pada tanaman"@id ;
-    skos:prefLabel "Bercak pada tanaman"@id .
-
-ptp:FasePertumbuhan a owl:Class ;
-    rdfs:label "Fase Pertumbuhan"@id ;
-    rdfs:comment "Fase pertumbuhan tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
-    owl:disjointWith ptp:BagianTanaman,
-        ptp:BuktiSumber,
-        ptp:Diagnosis,
-        ptp:FaktorRisiko,
-        ptp:Gejala,
-        ptp:GejalaKanonik,
-        ptp:Observasi,
-        ptp:Patogen,
-        ptp:Pengendalian,
-        ptp:Penyakit,
-        ptp:Referensi,
-        ptp:RekomendasiPengendalian,
-        ptp:TanamanPangan,
-        ptp:Varietas ;
-    skos:prefLabel "Fase Pertumbuhan"@id .
-
-ptp:PenggunaanBacillus a ptp:PengendalianBiologis,
-        owl:NamedIndividual ;
-    rdfs:label "Penggunaan Bacillus"@id ;
-    ptp:deskripsiPengendalian "Pengendalian hayati dengan agens biokontrol yang telah dilaporkan mampu menekan penyakit hawar daun bakteri di antaranya mikoriza, Paeobacillus polymyxa, Pseudomonas sp."@id ;
-    ptp:didukungOleh ptp:BuktiPengendalianPenyakitBakteriPustulKedelaiPengendalianPustulAgensHayatiAntagonis,
-        ptp:BuktiPengendalianPenyakitBlasPadiPengendalianHayatiPenggunaanAgensAntagonis,
-        ptp:BuktiPengendalianPenyakitBusukPelepahJagungHalTerjadiBSubtilisMenekan,
-        ptp:BuktiPengendalianPenyakitHawarBakteriBacterialBlightKedelaiBacillusSubtilisPseudomonasFluorescensMerupakan,
-        ptp:BuktiPengendalianPenyakitHawarDaunBakteriPadiPengendalianHayatiAgensBiokontrolMenekan,
-        ptp:BuktiPengendalianPenyakitKaratDaunKedelaiPemanfaatanAgensHayatiBacillusItalic,
-        ptp:BuktiPengendalianPenyakitLayuBakteriKacangTanahAeroginosaBulkholderiaCepaciaBacillusSubtilis,
-        ptp:BuktiPengendalianPenyakitLayuBakteriKacangTanahSubtilisDiaplikasikanMelaluiBenihMenekan,
-        ptp:BuktiPengendalianPenyakitLayuBakteriKacangTanahSubtilisMenekanHingga61Pengendalian,
-        ptp:BuktiPengendalianPenyakitLayuStewartJagungSelainRizobakteriaRambeEtAl,
-        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiPenggunaanAgensHayatiAntagonisBacillus,
-        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiAplikasiAntagonisBacillusSp,
-        ptp:BuktiPengendalianUmumKacangTanahAeroginosaBulkholderiaCepaciaBacillusSubtilis,
-        ptp:BuktiPengendalianUmumKacangTanahSubtilisDiaplikasikanMelaluiBenihMenekan,
-        ptp:BuktiPengendalianUmumKacangTanahSubtilisMenekanHingga61Pengendalian ;
-    ptp:mengendalikanPenyakit ptp:PenyakitBakteriPustulKedelai,
-        ptp:PenyakitBlasPadi,
-        ptp:PenyakitBusukPelepahJagung,
-        ptp:PenyakitHawarBakteriBacterialBlightKedelai,
-        ptp:PenyakitHawarDaunBakteriPadi,
-        ptp:PenyakitKaratDaunKedelai,
-        ptp:PenyakitLayuBakteriKacangTanah,
-        ptp:PenyakitLayuStewartJagung,
-        ptp:PenyakitRebahKecambahKedelai,
-        ptp:PenyakitRebahSemaiKedelai ;
-    ptp:namaPengendalian "Penggunaan Bacillus"@id ;
-    rdfs:comment "Tindakan kanonik penggunaan Bacillus."@id ;
-    skos:prefLabel "Penggunaan Bacillus"@id .
 
 ptp:PenyakitBelangMottleKacangTanah a ptp:Penyakit,
         owl:NamedIndividual ;
@@ -16849,7 +16673,6 @@ ptp:PenyakitBelangMottleKacangTanah a ptp:Penyakit,
         ptp:PeanutStripeVirus ;
     ptp:identifierSumber "DIS_022" ;
     ptp:memilikiGejala ptp:PengamatanPenyakitBelangMottleKacangTanahBelangTanaman,
-        ptp:PengamatanPenyakitBelangMottleKacangTanahKadangKadangPStVBerupaGaris,
         ptp:PengamatanPenyakitBelangMottleKacangTanahKlorosisDaun,
         ptp:PengamatanPenyakitBelangMottleKacangTanahKlorosisTanaman,
         ptp:PengamatanPenyakitBelangMottleKacangTanahMakroskopisDitunjukkanGambar4,
@@ -16862,6 +16685,162 @@ ptp:PenyakitBelangMottleKacangTanah a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:altLabel "Mottle"@id ;
     skos:prefLabel "Penyakit Belang (Mottle)"@id .
+
+ptp:PenyakitBulaiJagung a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Bulai"@id ;
+    ptp:berkaitanPengendalian ptp:PemupukanBerimbang,
+        ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanFungisida,
+        ptp:PenggunaanPseudomonas,
+        ptp:PenggunaanVarietasTahan ;
+    ptp:didukungOleh ptp:BuktiLingkunganPenyakitBulaiJagungKecepatanAnginKelembaban90Suhu,
+        ptp:BuktiMetadataSeverityPenyakitBulaiJagungDisebabkanBervariasi1933Sampai,
+        ptp:BuktiPatogenPenyakitBulaiJagungDisebabkanPeronosclerosporaSp,
+        ptp:BuktiPatogenPenyakitBulaiJagungRustianiEtAl2015Melaporkan,
+        ptp:BuktiPengendalianPenyakitBulaiJagungDiperlukanPengendalianRamahLingkungan,
+        ptp:BuktiPengendalianPenyakitBulaiJagungFluorescensAMempunyai,
+        ptp:BuktiPengendalianPenyakitBulaiJagungFluorescensMemberikanTerinduksiMengeluarkanSenyawa,
+        ptp:BuktiPengendalianPenyakitBulaiJagungFungisidaDigunakanMenekanPerkecambahanKonidia,
+        ptp:BuktiPengendalianPenyakitBulaiJagungLajuAsianHoneyKecilDibandingkan,
+        ptp:BuktiPengendalianPenyakitBulaiJagungPemberianPupukKaliumMenurunkanLaju,
+        ptp:BuktiPengendalianPenyakitBulaiJagungPengendalianAgensHayatiDimanfaatkanMenghambat,
+        ptp:BuktiPengendalianPenyakitBulaiJagungPengendalianDilakukanAsianHoneyMempunyai,
+        ptp:BuktiPengendalianPenyakitBulaiJagungPengendalianLapanganDilakukanPetaniFungisida,
+        ptp:BuktiPengendalianPenyakitBulaiJagungPenggunaanBahanKimiaBerkepanjanganDosis,
+        ptp:BuktiPengendalianPenyakitBulaiJagungPerlakuanV1P2KombinasiPioneer27,
+        ptp:BuktiPengendalianPenyakitBulaiJagungUlhaqAndMasnilah2019Melaporkan,
+        ptp:BuktiPengendalianPenyakitBulaiJagungUlhaqAndMasnilah2019Mengatakan,
+        ptp:BuktiPengendalianPenyakitBulaiJagungWidiantiniEtAl2018Melaporkan,
+        ptp:BuktiPenyakitPenyakitBulaiJagungTanpaTeks ;
+    ptp:dikendalikanDengan ptp:PemupukanBerimbang,
+        ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanFungisida,
+        ptp:PenggunaanPseudomonas,
+        ptp:PenggunaanVarietasTahan ;
+    ptp:dipengaruhiOleh ptp:ObservasiPenyakitBulaiJagungKelembapan90Persen,
+        ptp:ObservasiPenyakitBulaiJagungSuhu24Celsius ;
+    ptp:disebabkanOleh ptp:PeronosclerosporaMaydis,
+        ptp:PeronosclerosporaSp ;
+    ptp:identifierSumber "DIS_046" ;
+    ptp:memilikiGejala ptp:PengamatanPenyakitBulaiJagungDisebabkanBervariasi1933Sampai,
+        ptp:PengamatanPenyakitBulaiJagungKecepatanAnginKelembaban90Suhu,
+        ptp:PengamatanPenyakitBulaiJagungKerdilTanaman,
+        ptp:PengamatanPenyakitBulaiJagungKlorosisDaun,
+        ptp:PengamatanPenyakitBulaiJagungMenyerangFaseVegetatifBerkurangSemakin,
+        ptp:PengamatanPenyakitBulaiJagungMulaiMuncul15Hingga17,
+        ptp:PengamatanPenyakitBulaiJagungPertumbuhanTerhambat,
+        ptp:PengamatanPenyakitBulaiJagungTepungDaun ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangFase ptp:FaseVegetatifUmum ;
+    ptp:menyerangTanaman ptp:Jagung ;
+    ptp:tingkatKeparahan "Kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37% dan bergantung pada kondisi lingkungan tiap wilayah (Kurniawan et al., 2017)."@id ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:prefLabel "Penyakit Bulai"@id .
+
+ptp:PenyakitRebahSemaiKedelai a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Rebah Semai"@id ;
+    ptp:berkaitanPengendalian ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanBacillus,
+        ptp:PenggunaanBeauveria,
+        ptp:PenggunaanTrichoderma,
+        ptp:PenggunaanVarietasTahan,
+        ptp:RotasiTanaman,
+        ptp:SolarisasiTanah ;
+    ptp:didukungOleh ptp:BuktiMetadataPhasePenyakitRebahSemaiKedelaiAdanyaTularMenginfeksiFasePembibitan,
+        ptp:BuktiPatogenPenyakitRebahSemaiKedelaiMenginfeksiPersemaianSatunyaSclerotiumRolfsii,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiAplikasiAntagonisBacillusSp,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiDilakukanFitriaAndMasnilah2020,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiHarzianumBeauveriaBassianaMenginduksiTingkat,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPemanfaatanEndofitMenghambatMatiSemai,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPengendalianAgensHayatiAntagonisDilakukan,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPengendalianMenjadiPengendalianEfektif,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPenggunaanCendawanAntagonisTrichodermaVirens,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiPenggunaanPlantGrowthPromotingRhizobacteria,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiBahwaDena1Tingkat,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiDilakukanSolarisasiHamdaniAnd,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiKisaranLuasFamiliLeguminoceae,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiMelilitkanHifanyaMembentukHaustorium,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiRotasiPergiliranLahanKurang,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiRolfsiiSebesar2085Marwan,
+        ptp:BuktiPenyakitPenyakitRebahSemaiKedelaiRebahSemai ;
+    ptp:dikendalikanDengan ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanBacillus,
+        ptp:PenggunaanBeauveria,
+        ptp:PenggunaanTrichoderma,
+        ptp:PenggunaanVarietasTahan,
+        ptp:RotasiTanaman,
+        ptp:SolarisasiTanah ;
+    ptp:disebabkanOleh ptp:SclerotiumRolfsii ;
+    ptp:identifierSumber "DIS_006" ;
+    ptp:memilikiGejala ptp:PengamatanPenyakitRebahSemaiKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitRebahSemaiKedelaiBusukBatang,
+        ptp:PengamatanPenyakitRebahSemaiKedelaiKlorosisDaun,
+        ptp:PengamatanPenyakitRebahSemaiKedelaiLayuDaun,
+        ptp:PengamatanPenyakitRebahSemaiKedelaiMunculTerserangS ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Akar,
+        ptp:Batang,
+        ptp:Daun ;
+    ptp:menyerangFase ptp:FasePembibitanTanaman ;
+    ptp:menyerangTanaman ptp:Kedelai ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:prefLabel "Penyakit Rebah Semai"@id .
+
+ptp:FasePertumbuhan a owl:Class ;
+    rdfs:label "Fase Pertumbuhan"@id ;
+    rdfs:comment "Fase pertumbuhan tanaman."@id ;
+    rdfs:subClassOf ptp:EntitasKBR ;
+    owl:disjointWith ptp:BagianTanaman,
+        ptp:BuktiSumber,
+        ptp:Diagnosis,
+        ptp:FaktorRisiko,
+        ptp:Gejala,
+        ptp:GejalaKanonik,
+        ptp:Observasi,
+        ptp:Patogen,
+        ptp:Pengendalian,
+        ptp:Penyakit,
+        ptp:Referensi,
+        ptp:RekomendasiPengendalian,
+        ptp:TanamanPangan,
+        ptp:Varietas ;
+    skos:prefLabel "Fase Pertumbuhan"@id .
+
+ptp:PenggunaanBacillus a ptp:PengendalianBiologis,
+        owl:NamedIndividual ;
+    rdfs:label "Penggunaan Bacillus"@id ;
+    ptp:deskripsiPengendalian "Pengendalian hayati dengan agens biokontrol yang telah dilaporkan mampu menekan penyakit hawar daun bakteri di antaranya mikoriza, Paeobacillus polymyxa, Pseudomonas sp."@id ;
+    ptp:didukungOleh ptp:BuktiPengendalianPenyakitBakteriPustulKedelaiPengendalianPustulAgensHayatiAntagonis,
+        ptp:BuktiPengendalianPenyakitBlasPadiPengendalianHayatiPenggunaanAgensAntagonis,
+        ptp:BuktiPengendalianPenyakitBusukPelepahJagungHalTerjadiBSubtilisMenekan,
+        ptp:BuktiPengendalianPenyakitHawarBakteriBacterialBlightKedelaiBacillusSubtilisPseudomonasFluorescensMerupakan,
+        ptp:BuktiPengendalianPenyakitHawarDaunBakteriPadiPengendalianHayatiAgensBiokontrolMenekan,
+        ptp:BuktiPengendalianPenyakitKaratDaunKedelaiPemanfaatanAgensHayatiBacillusItalic,
+        ptp:BuktiPengendalianPenyakitLayuBakteriKacangTanahAeroginosaBulkholderiaCepaciaBacillusSubtilis,
+        ptp:BuktiPengendalianPenyakitLayuBakteriKacangTanahSubtilisDiaplikasikanMelaluiBenihMenekan,
+        ptp:BuktiPengendalianPenyakitLayuBakteriKacangTanahSubtilisMenekanHingga61Pengendalian,
+        ptp:BuktiPengendalianPenyakitLayuStewartJagungSelainRizobakteriaRambeEtAl,
+        ptp:BuktiPengendalianPenyakitRebahKecambahKedelaiPenggunaanAgensHayatiAntagonisBacillus,
+        ptp:BuktiPengendalianPenyakitRebahSemaiKedelaiAplikasiAntagonisBacillusSp,
+        ptp:BuktiPengendalianUmumKacangTanahAeroginosaBulkholderiaCepaciaBacillusSubtilis,
+        ptp:BuktiPengendalianUmumKacangTanahSubtilisDiaplikasikanMelaluiBenihMenekan,
+        ptp:BuktiPengendalianUmumKacangTanahSubtilisMenekanHingga61Pengendalian ;
+    ptp:mengendalikanPenyakit ptp:PenyakitBakteriPustulKedelai,
+        ptp:PenyakitBlasPadi,
+        ptp:PenyakitBusukPelepahJagung,
+        ptp:PenyakitHawarBakteriBacterialBlightKedelai,
+        ptp:PenyakitHawarDaunBakteriPadi,
+        ptp:PenyakitKaratDaunKedelai,
+        ptp:PenyakitLayuBakteriKacangTanah,
+        ptp:PenyakitLayuStewartJagung,
+        ptp:PenyakitRebahKecambahKedelai,
+        ptp:PenyakitRebahSemaiKedelai ;
+    ptp:namaPengendalian "Penggunaan Bacillus"@id ;
+    rdfs:comment "Tindakan kanonik penggunaan Bacillus."@id ;
+    skos:prefLabel "Penggunaan Bacillus"@id .
 
 ptp:PerlakuanBenih a ptp:PengendalianKulturTeknis,
         owl:NamedIndividual ;
@@ -16925,6 +16904,36 @@ ptp:BercakDaun a ptp:GejalaKanonik,
     rdfs:comment "Konsep kanonik untuk gejala bercak atau noda pada daun."@id ;
     skos:altLabel "bercak daun"@id ;
     skos:prefLabel "Bercak daun"@id .
+
+ptp:BercakTanaman a ptp:GejalaKanonik,
+        owl:NamedIndividual ;
+    rdfs:label "Bercak pada tanaman"@id ;
+    ptp:merupakanKanonikDari ptp:PengamatanBercakDaunPutihUbiKayuBercakTanaman,
+        ptp:PengamatanNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuBercakTanaman,
+        ptp:PengamatanPenyakitAntraknosaKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitBakteriPustulKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitBercakBijiUnguKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitBercakDaunKacangTanahBercakTanaman,
+        ptp:PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitBercakKuningUbiJalarBercakTanaman,
+        ptp:PengamatanPenyakitBercakTargetKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitBlasPadiBercakTanaman,
+        ptp:PengamatanPenyakitBusukHitamBlackRotUbiJalarBercakTanaman,
+        ptp:PengamatanPenyakitBusukPelepahJagungBercakTanaman,
+        ptp:PengamatanPenyakitEmbunPalsuDownyMildewKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitHawarBakteriBacterialBlightKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitHawarDaunJagungBercakTanaman,
+        ptp:PengamatanPenyakitHawarPelepahDaunPadiBercakTanaman,
+        ptp:PengamatanPenyakitKaratDaunJagungBercakTanaman,
+        ptp:PengamatanPenyakitKaratDaunKacangTanahBercakTanaman,
+        ptp:PengamatanPenyakitKaratDaunKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitKudisUbiJalarBercakTanaman,
+        ptp:PengamatanPenyakitRebahKecambahKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitRebahSemaiKedelaiBercakTanaman,
+        ptp:PengamatanPenyakitTungroPadiBercakTanaman ;
+    rdfs:comment "Konsep generik untuk bercak, noda, lesi, atau bintik tanpa bagian tanaman eksplisit."@id ;
+    skos:altLabel "bercak pada tanaman"@id ;
+    skos:prefLabel "Bercak pada tanaman"@id .
 
 ptp:PenyakitBlasPadi a ptp:Penyakit,
         owl:NamedIndividual ;
@@ -17048,37 +17057,17 @@ ptp:PenyakitHawarDaunBakteriPadi a ptp:Penyakit,
     ptp:memilikiGejala ptp:PengamatanPenyakitHawarDaunBakteriPadiBercakDaun,
         ptp:PengamatanPenyakitHawarDaunBakteriPadiHawarDaun,
         ptp:PengamatanPenyakitHawarDaunBakteriPadiIstilahKresekSendiriDiambilBahasa,
-        ptp:PengamatanPenyakitHawarDaunBakteriPadiKhasTepiBergelombangPenggulunganTerlihat,
         ptp:PengamatanPenyakitHawarDaunBakteriPadiKlorosisDaun,
         ptp:PengamatanPenyakitHawarDaunBakteriPadiKlorosisTanaman,
         ptp:PengamatanPenyakitHawarDaunBakteriPadiLayuDaun,
         ptp:PengamatanPenyakitHawarDaunBakteriPadiNekrosisTanaman,
+        ptp:PengamatanPenyakitHawarDaunBakteriPadiPertumbuhanAbnormal,
         ptp:PengamatanPenyakitHawarDaunBakteriPadiSementaraFaseKresekDitandaiTerutama ;
     ptp:memilikiReferensi ptp:BukuDOC002 ;
     ptp:menyerangBagian ptp:Daun ;
     ptp:menyerangTanaman ptp:Padi ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit Hawar Daun Bakteri"@id .
-
-ptp:BagianTanaman a owl:Class ;
-    rdfs:label "Bagian Tanaman"@id ;
-    rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala atau serangan."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
-    owl:disjointWith ptp:BuktiSumber,
-        ptp:Diagnosis,
-        ptp:FaktorRisiko,
-        ptp:FasePertumbuhan,
-        ptp:Gejala,
-        ptp:GejalaKanonik,
-        ptp:Observasi,
-        ptp:Patogen,
-        ptp:Pengendalian,
-        ptp:Penyakit,
-        ptp:Referensi,
-        ptp:RekomendasiPengendalian,
-        ptp:TanamanPangan,
-        ptp:Varietas ;
-    skos:prefLabel "Bagian Tanaman"@id .
 
 ptp:Referensi a owl:Class ;
     rdfs:label "Referensi"@id ;
@@ -17250,6 +17239,26 @@ ptp:PenyakitKudisUbiJalar a ptp:Penyakit,
     ptp:menyerangTanaman ptp:UbiJalar ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit kudis"@id .
+
+ptp:BagianTanaman a owl:Class ;
+    rdfs:label "Bagian Tanaman"@id ;
+    rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala atau serangan."@id ;
+    rdfs:subClassOf ptp:EntitasKBR ;
+    owl:disjointWith ptp:BuktiSumber,
+        ptp:Diagnosis,
+        ptp:FaktorRisiko,
+        ptp:FasePertumbuhan,
+        ptp:Gejala,
+        ptp:GejalaKanonik,
+        ptp:Observasi,
+        ptp:Patogen,
+        ptp:Pengendalian,
+        ptp:Penyakit,
+        ptp:Referensi,
+        ptp:RekomendasiPengendalian,
+        ptp:TanamanPangan,
+        ptp:Varietas ;
+    skos:prefLabel "Bagian Tanaman"@id .
 
 ptp:Kedelai a ptp:Legum,
         owl:NamedIndividual ;
@@ -17810,18 +17819,18 @@ ptp:Penyakit a owl:Class ;
     rdfs:label "Penyakit"@id ;
     rdfs:comment "Penyakit tanaman pangan yang dicatat dalam sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ptp:menyerangTanaman ;
+            owl:someValuesFrom ptp:TanamanPangan ],
+        [ a owl:Restriction ;
+            owl:onProperty ptp:memilikiGejala ;
+            owl:someValuesFrom ptp:Gejala ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ptp:Patogen ;
             owl:onProperty ptp:disebabkanOleh ],
         [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass ptp:Referensi ;
             owl:onProperty ptp:memilikiReferensi ],
-        [ a owl:Restriction ;
-            owl:onProperty ptp:memilikiGejala ;
-            owl:someValuesFrom ptp:Gejala ],
-        [ a owl:Restriction ;
-            owl:onProperty ptp:menyerangTanaman ;
-            owl:someValuesFrom ptp:TanamanPangan ],
         ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
@@ -17868,6 +17877,7 @@ ptp:GejalaDaun a owl:Class ;
 ptp:Daun a ptp:BagianTanaman,
         owl:NamedIndividual ;
     rdfs:label "Daun"@id ;
+    ptp:bagianDari ptp:Pucuk ;
     rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala."@id ;
     skos:prefLabel "Daun"@id .
 
@@ -17943,23 +17953,23 @@ ptp:BukuDOC002 a ptp:Buku,
     skos:prefLabel "Penyakit Tanaman dan Pengendaliannya"@id .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePembungaan ptp:FasePemasakan ptp:FasePanen ) .
+    owl:members ( ptp:FaktorLingkungan ptp:FaktorBudidaya ptp:FaktorLahan ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:FaktorLingkungan ptp:FaktorBudidaya ptp:FaktorLahan ) .
+    owl:members ( ptp:PengendalianKulturTeknis ptp:PengendalianMekanis ptp:PengendalianBiologis ptp:PengendalianKimiawi ptp:PengendalianFisik ptp:PengendalianTerpadu ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:VarietasUnggul ptp:VarietasLokal ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Jamur ptp:Bakteri ptp:Virus ptp:Nematoda ptp:Oomycete ptp:Fitoplasma ptp:OrganismeLain ) .
+    owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:Buku ptp:JurnalIlmiah ptp:ArtikelIlmiah ptp:PublikasiInstansi ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
+    owl:members ( ptp:Jamur ptp:Bakteri ptp:Virus ptp:Nematoda ptp:Oomycete ptp:Fitoplasma ptp:OrganismeLain ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:PengendalianKulturTeknis ptp:PengendalianMekanis ptp:PengendalianBiologis ptp:PengendalianKimiawi ptp:PengendalianFisik ptp:PengendalianTerpadu ) .
+    owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePembungaan ptp:FasePemasakan ptp:FasePanen ) .
 

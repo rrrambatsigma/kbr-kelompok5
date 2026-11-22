@@ -20,17 +20,6 @@ GAPS = TABLE_DIR / "reports" / "DOC002_description_gaps.md"
 SOURCE_DIR = PROJECT_ROOT / "00_sumber_data"
 
 EXPECTED_MISSING_INDIVIDUALS = [
-    "KondisiIklimBasah",
-    "KondisiKelembapanTanahRendah",
-    "KondisiKelembapanTanahSedang",
-    "KondisiKelembapanTanahTinggi",
-    "KondisiKelembapanUdaraRendah",
-    "KondisiKelembapanUdaraSedang",
-    "KondisiKelembapanUdaraTinggi",
-    "KondisiTanahBasa",
-    "KondisiTanahBerpasir",
-    "KondisiTanahLiat",
-    "KondisiTanahNetral",
     "PengamatanBercakDaunPutihUbiKayuBercakTanaman",
     "PengamatanPenyakitAntraknosaKedelaiKematianTanaman",
     "PengamatanPenyakitAntraknosaKedelaiNekrosisTanaman",
@@ -38,7 +27,6 @@ EXPECTED_MISSING_INDIVIDUALS = [
     "PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataABPascapanenC",
     "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiAkibatMakaBenihDihasilkanMenjadi",
     "PengamatanPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiMenusukkanAlatMulutStyletSehat",
-    "PengamatanPenyakitRebahKecambahKedelaiSolaniMakaBenihTidakBerkecambah",
 ]
 EXPECTED_MISSING_CLASSES = [
     "ArtikelIlmiah",
@@ -243,9 +231,15 @@ class TestDescriptionsCsv(unittest.TestCase):
         self.assertEqual(missing_individuals, EXPECTED_MISSING_INDIVIDUALS)
         self.assertEqual(missing_classes, EXPECTED_MISSING_CLASSES)
 
-    def test_condition_labels_without_source_are_not_fabricated(self) -> None:
+    def test_missing_subjects_without_source_are_not_fabricated(self) -> None:
         for local in EXPECTED_MISSING_INDIVIDUALS:
             self.assertNotIn(local, self.by_subject)
+
+    def test_derived_condition_definitions_are_explicit(self) -> None:
+        for local, comment in bd.DERIVED_CONDITION_COMMENTS.items():
+            self.assertIn(local, self.by_subject)
+            self.assertEqual(self.by_subject[local]["literal_value"], comment)
+            self.assertEqual(self.by_subject[local]["source_type"], "controlled_vocabulary")
 
     def test_gap_report_lists_every_missing_subject(self) -> None:
         text = GAPS.read_text(encoding="utf-8")

@@ -459,6 +459,13 @@ OBJECT_PROPERTIES: dict[str, dict] = {
         "domain": "Gejala",
         "range": "BagianTanaman",
     },
+    "bagianDari": {
+        "label": "bagian dari",
+        "comment": "Bagian tanaman merupakan bagian dari bagian tanaman lain.",
+        "domain": "BagianTanaman",
+        "range": "BagianTanaman",
+        "transitive": True,
+    },
     "disebabkanOleh": {
         "label": "disebabkan oleh",
         "comment": "Penyakit disebabkan oleh patogen.",

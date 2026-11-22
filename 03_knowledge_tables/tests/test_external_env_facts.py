@@ -18,6 +18,7 @@ DISEASE = "PenyakitBlasPadi"
 SOURCE_ID = "SRC_EXT_001"
 CARD_ID = "CARD_EXT_001"
 OBS_ID = "OBS_EXT_001"
+OBS_LOCAL = "MusimHujanPadaPenyakitBlasPadi"
 
 
 def source_row(*, source_id: str = SOURCE_ID, status: str = "verified") -> dict[str, str]:
@@ -113,6 +114,31 @@ class TestExternalEnvironmentFacts(unittest.TestCase):
         )
         self.assertEqual(report["relation_counts"].get("control_only", 0), 0)
 
+    def test_observation_ids_are_semantic(self) -> None:
+        entities, facts, descriptions, _report = self._build(card_row(), observation_row())
+        locals_ = {row["entity_local"] for row in entities}
+        self.assertIn(OBS_LOCAL, locals_)
+        self.assertIn(f"Bukti{OBS_LOCAL}", locals_)
+        self.assertFalse(any(local.startswith(("OBS_", "BUKTI_")) for local in locals_))
+        fact_subjects = {row["subject_local"] for row in facts}
+        self.assertIn(OBS_LOCAL, fact_subjects)
+        self.assertIn(DISEASE, fact_subjects)
+        self.assertFalse(any(subject.startswith(("OBS_", "BUKTI_")) for subject in fact_subjects))
+        self.assertTrue(descriptions)
+        self.assertTrue(
+            all(not row["subject_local"].startswith(("OBS_", "BUKTI_")) for row in descriptions)
+        )
+
+    def test_semantic_id_sanitiser(self) -> None:
+        self.assertEqual(
+            ext.semantic_observation_local("Kelembapan relatif >90%", "KelembapanUdara", DISEASE),
+            "KelembapanRelatifDiAtas90PersenPadaPenyakitBlasPadi",
+        )
+        self.assertEqual(
+            ext.semantic_observation_local("Suhu 25-34°C", "Suhu", DISEASE),
+            "Suhu2534CPadaPenyakitBlasPadi",
+        )
+
     def test_vector_requires_vector_and_environment_evidence(self) -> None:
         vector_quote = "Penyakit ditularkan oleh wereng pada musim hujan."
         source = source_row()
@@ -181,7 +207,7 @@ class TestExternalEnvironmentFacts(unittest.TestCase):
         values = {
             fact["predicate"]: fact["literal_value"]
             for fact in facts
-            if fact["subject_local"] == OBS_ID
+            if fact["subject_local"] == OBS_LOCAL
         }
         self.assertEqual(values.get("nilaiMin"), "30")
         self.assertNotIn("nilaiMaks", values)
