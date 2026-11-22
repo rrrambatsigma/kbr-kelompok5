@@ -37,6 +37,10 @@ export interface Symptom extends NamedEntity {
   partLabel: string | null;
 }
 
+export interface Phase extends NamedEntity {
+  diseaseCount: number;
+}
+
 export interface DiseaseSummary extends NamedEntity {
   plantId: string | null;
   plantLabel: string | null;
@@ -94,6 +98,7 @@ export interface ScoreComponents {
   evidence: number;
   completeness: number;
   coverage: number;
+  phase: number;
 }
 
 export interface DiagnosisSymptom {
@@ -116,7 +121,9 @@ export interface DiagnosisCandidate {
   unmatchedSelectedSymptoms: DiagnosisSymptom[];
   category: string | null;
   controls: NamedEntity[];
+  riskFactors: NamedEntity[];
   confidence: Confidence;
+  phaseMatch: "match" | "mismatch" | "unknown";
   evidence: ReasoningEvidence[];
   explanation: string;
   scoreComponents: ScoreComponents;
@@ -135,6 +142,9 @@ export interface DiagnosisResult {
     plantId: string;
     plantIri: string;
     plantLabel: string | null;
+    phaseId: string | null;
+    phaseIri: string | null;
+    phaseLabel: string | null;
     symptomIds: string[];
     symptoms: DiagnosisSymptom[];
     topN: number;
@@ -147,6 +157,7 @@ export interface DiagnosisResult {
 
 export interface DiagnosisRequest {
   plantId: string;
+  phaseId?: string;
   symptomIds: string[];
   topN?: number;
 }

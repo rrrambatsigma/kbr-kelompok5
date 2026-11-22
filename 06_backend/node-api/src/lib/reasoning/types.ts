@@ -23,6 +23,8 @@ export type {
 
 export type Confidence = "TINGGI" | "SEDANG" | "RENDAH";
 
+export type PhaseMatch = "match" | "mismatch" | "unknown";
+
 export const REASONING_MODEL_VERSION = "forward-chaining-cf-v1";
 
 interface EvidenceBase {
@@ -61,12 +63,15 @@ export interface ScoreComponents {
   completeness: number;
   /** Proporsi gejala penyakit yang terjelaskan. */
   coverage: number;
+  /** Faktor ranking fase pertumbuhan; 1.0 jika tidak ada kecocokan. */
+  phase: number;
 }
 
 export interface ReasoningCandidate {
   disease: DiagnosisDisease;
   score: number;
   confidence: Confidence;
+  phaseMatch: PhaseMatch;
   evidence: ReasoningEvidence[];
   matchedSymptoms: DiagnosisSymptom[];
   unexplainedSymptoms: DiagnosisSymptom[];
@@ -83,6 +88,8 @@ export interface ReasoningOptions {
   canonicalWeight: number;
   /** Ambang minimum CF agar kandidat dipertimbangkan. */
   evidenceFloor: number;
+  /** IRI fase pertumbuhan yang dipilih, atau null bila tidak diisi. */
+  phaseIri: string | null;
 }
 
 export interface ReasoningResult {
@@ -97,4 +104,5 @@ export const DEFAULT_REASONING_OPTIONS: ReasoningOptions = {
   topN: 5,
   canonicalWeight: REASONING_CONFIG.canonicalWeight,
   evidenceFloor: 0.01,
+  phaseIri: null,
 };

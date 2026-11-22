@@ -21,13 +21,15 @@ import { Spinner } from "../components/common/Spinner";
 import { Stepper } from "../components/common/Stepper";
 import { useDiagnosis } from "../context/DiagnosisContext";
 import { listPlants } from "../services/api/plants";
+import { listPhases } from "../services/api/phases";
 import { listSymptoms } from "../services/api/symptoms";
 import { submitDiagnosis } from "../services/api/diagnosis";
-import type { Plant, Symptom } from "../types/api";
+import type { Phase, Plant, Symptom } from "../types/api";
 import { friendlyApiError } from "../utils/apiError";
 
 const steps = [
   { label: "Cari Tanaman", shortLabel: "Tanaman" },
+  { label: "Fase Tumbuh", shortLabel: "Fase" },
   { label: "Pilih Gejala", shortLabel: "Gejala" },
   { label: "Konfirmasi", shortLabel: "Konfirmasi" },
 ];
@@ -50,6 +52,7 @@ export function DiagnosisPage() {
   const {
     draft,
     setPlant,
+    setPhase,
     setSymptoms: setDraftSymptoms,
     setTopN,
     setResult,
@@ -58,10 +61,13 @@ export function DiagnosisPage() {
 
   const [step, setStep] = useState(1);
   const [plants, setPlants] = useState<Plant[]>([]);
+  const [phases, setPhases] = useState<Phase[]>([]);
   const [symptoms, setSymptoms] = useState<Symptom[]>([]);
   const [loadingPlants, setLoadingPlants] = useState(true);
+  const [loadingPhases, setLoadingPhases] = useState(false);
   const [loadingSymptoms, setLoadingSymptoms] = useState(false);
   const [plantsError, setPlantsError] = useState<string | null>(null);
+  const [phasesError, setPhasesError] = useState<string | null>(null);
   const [symptomsError, setSymptomsError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -84,6 +90,26 @@ export function DiagnosisPage() {
   }, [loadPlants]);
 
   const plantId = draft.plant?.id ?? null;
+
+  const loadPhases = useCallback(async (selectedPlantId: string) => {
+    setLoadingPhases(true);
+    setPhasesError(null);
+    try {
+      setPhases(await listPhases(selectedPlantId));
+    } catch (error) {
+      setPhasesError(friendlyApiError(error));
+    } finally {
+      setLoadingPhases(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (plantId === null) {
+      setPhases([]);
+      return;
+    }
+    void loadPhases(plantId);
+  }, [plantId, loadPhases]);
 
   const loadSymptoms = useCallback(async (selectedPlantId: string) => {
     setLoadingSymptoms(true);
@@ -137,7 +163,8 @@ export function DiagnosisPage() {
   };
 
   const canContinueStep1 = draft.plant !== null;
-  const canContinueStep2 = draft.symptoms.length > 0;
+  const canContinueStep2 = true;
+  const canContinueStep3 = draft.symptoms.length > 0;
 
   const handleReset = () => {
     reset();
@@ -157,6 +184,7 @@ export function DiagnosisPage() {
     try {
       const result = await submitDiagnosis({
         plantId: draft.plant.id,
+        ...(draft.phase === null ? {} : { phaseId: draft.phase.id }),
         symptomIds: draft.symptoms.map((symptom) => symptom.id),
         topN: draft.topN,
       });
@@ -251,8 +279,8 @@ export function DiagnosisPage() {
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
             <p className="text-xs text-muted">
-              Varietas, fase pertumbuhan, dan kondisi lingkungan belum tersedia
-              sebagai input backend. Diagnosis memakai tanaman dan gejala.
+              Pilih tanaman, lalu tentukan fase pertumbuhan bila datanya
+              tersedia. Fase bersifat opsional dan tidak menghalangi diagnosis.
             </p>
             <Button
               onClick={() => setStep(2)}
@@ -266,6 +294,130 @@ export function DiagnosisPage() {
       )}
 
       {step === 2 && (
+        <section className="space-y-5">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="font-heading text-lg font-bold text-foreground">
+                Fase pertumbuhan {draft.plant?.label ?? "tanaman"}
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                Fase bersifat opsional. Pilih fase yang paling mendekati kondisi
+                tanaman saat ini.
+              </p>
+            </div>
+            <Badge tone={draft.phase === null ? "neutral" : "success"}>
+              {draft.phase?.label ?? "Belum dipilih"}
+            </Badge>
+          </div>
+
+          {loadingPhases && <Spinner label="Memuat fase pertumbuhan" />}
+          {phasesError && (
+            <ErrorState
+              message={phasesError}
+              onRetry={() => {
+                if (plantId !== null) {
+                  void loadPhases(plantId);
+                }
+              }}
+            />
+          )}
+
+          {!loadingPhases && !phasesError && (
+            <>
+              {phases.length === 0 ? (
+                <div className="card flex flex-col items-center gap-2 p-10 text-center">
+                  <Leaf className="h-6 w-6 text-muted" aria-hidden="true" />
+                  <p className="font-heading text-sm font-bold text-foreground">
+                    Belum ada data fase pertumbuhan
+                  </p>
+                  <p className="max-w-md text-xs leading-5 text-muted">
+                    Knowledge base belum mencatat fase untuk tanaman ini. Anda
+                    tetap bisa melanjutkan diagnosis dengan tanaman dan gejala.
+                  </p>
+                </div>
+              ) : (
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {phases.map((phase) => {
+                    const selected = draft.phase?.id === phase.id;
+                    return (
+                      <button
+                        key={phase.id}
+                        type="button"
+                        onClick={() => setPhase(selected ? null : phase)}
+                        className={`card flex flex-col items-start gap-2 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-secondary/50 ${
+                          selected
+                            ? "border-primary-container ring-2 ring-primary-soft/60"
+                            : ""
+                        }`}
+                        aria-pressed={selected}
+                      >
+                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-low text-primary">
+                          <Leaf className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                        <span className="font-heading text-base font-bold text-foreground">
+                          {phase.label}
+                        </span>
+                        <span className="text-xs text-muted">
+                          {phase.diseaseCount === 0
+                            ? "Belum ada penyakit tertaut"
+                            : `${phase.diseaseCount} penyakit pada fase ini`}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
+              {phases.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setPhase(null)}
+                  className={`card flex w-full items-start gap-3 p-4 text-left transition-all hover:border-secondary/50 ${
+                    draft.phase === null
+                      ? "border-primary-container ring-2 ring-primary-soft/60"
+                      : ""
+                  }`}
+                  aria-pressed={draft.phase === null}
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-surface-low text-primary">
+                    <Leaf className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                  <span>
+                    <span className="block font-heading text-sm font-bold text-foreground">
+                      Lewati tanpa fase
+                    </span>
+                    <span className="mt-1 block text-xs text-muted">
+                      Gunakan hanya tanaman dan gejala yang dipilih.
+                    </span>
+                  </span>
+                </button>
+              )}
+            </>
+          )}
+
+          <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
+            <Button variant="ghost" onClick={() => setStep(1)}>
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              Kembali
+            </Button>
+            <div className="flex gap-2">
+              <Button variant="secondary" onClick={handleReset}>
+                <RotateCcw className="h-4 w-4" aria-hidden="true" />
+                Reset
+              </Button>
+              <Button
+                onClick={() => setStep(3)}
+                disabled={!canContinueStep2}
+              >
+                Lanjutkan
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {step === 3 && (
         <section className="space-y-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -364,7 +516,7 @@ export function DiagnosisPage() {
           )}
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
-            <Button variant="ghost" onClick={() => setStep(1)}>
+            <Button variant="ghost" onClick={() => setStep(2)}>
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               Kembali
             </Button>
@@ -374,8 +526,8 @@ export function DiagnosisPage() {
                 Reset
               </Button>
               <Button
-                onClick={() => setStep(3)}
-                disabled={!canContinueStep2}
+                onClick={() => setStep(4)}
+                disabled={!canContinueStep3}
               >
                 Lanjutkan
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -385,7 +537,7 @@ export function DiagnosisPage() {
         </section>
       )}
 
-      {step === 3 && (
+      {step === 4 && (
         <section className="grid gap-5 lg:grid-cols-12">
           <div className="card space-y-5 p-6 lg:col-span-7">
             <div>
@@ -398,7 +550,7 @@ export function DiagnosisPage() {
               </p>
             </div>
 
-            <dl className="grid gap-4 sm:grid-cols-2">
+            <dl className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-xl bg-surface-low p-4">
                 <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">
                   Tanaman
@@ -408,6 +560,19 @@ export function DiagnosisPage() {
                 </dd>
                 <dd className="text-xs italic text-muted">
                   {draft.plant?.scientificName ?? ""}
+                </dd>
+              </div>
+              <div className="rounded-xl bg-surface-low p-4">
+                <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">
+                  Fase tumbuh
+                </dt>
+                <dd className="mt-1 font-heading text-base font-bold text-primary">
+                  {draft.phase?.label ?? "Tidak diisi"}
+                </dd>
+                <dd className="text-xs text-muted">
+                  {draft.phase === null
+                    ? "Diagnosis memakai tanaman dan gejala."
+                    : `${draft.phase.diseaseCount} penyakit pada fase ini`}
                 </dd>
               </div>
               <div className="rounded-xl bg-surface-low p-4">
@@ -456,7 +621,7 @@ export function DiagnosisPage() {
             )}
 
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
-              <Button variant="ghost" onClick={() => setStep(2)}>
+              <Button variant="ghost" onClick={() => setStep(3)}>
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Ubah gejala
               </Button>

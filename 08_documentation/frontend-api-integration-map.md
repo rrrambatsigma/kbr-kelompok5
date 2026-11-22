@@ -17,6 +17,7 @@ VITE_API_BASE_URL=http://localhost:3000
 | Daftar tanaman | `/api/plants` | GET | Available | Home, Diagnosis |
 | Detail tanaman | `/api/plants/:id` | GET | Available | Belum dipakai UI |
 | Daftar gejala per tanaman | `/api/symptoms?plantId=` | GET | Available | Diagnosis |
+| Daftar fase per tanaman | `/api/phases?plantId=` | GET | Available | Diagnosis |
 | Diagnosis | `/api/diagnosis` | POST | Available | Diagnosis |
 | Daftar penyakit | `/api/diseases` | GET | Available | Home, Knowledge Base |
 | Detail penyakit | `/api/diseases/:id` | GET | Available | Disease Detail, Result |
@@ -59,6 +60,30 @@ Response item:
 
 `partId`/`partLabel` bisa `null`; UI memakai kelompok “Gejala umum”.
 
+### `GET /api/phases`
+
+Query `plantId` opsional:
+
+```http
+GET /api/phases?plantId=Padi
+```
+
+Item:
+
+```json
+{
+  "id": "FaseAnakan",
+  "iri": "http://.../FaseAnakan",
+  "label": "Fase Anakan",
+  "diseaseCount": 1
+}
+```
+
+Endpoint selalu mengembalikan 7 kelas fase:
+`FasePembibitan`, `FaseVegetatif`, `FaseAnakan`, `FasePembungaan`,
+`FaseGeneratif`, `FasePemasakan`, `FasePanen`. `diseaseCount` bisa `0`;
+fase tetap bisa dipilih dan diagnosis tidak error.
+
 ### `POST /api/diagnosis`
 
 Request:
@@ -66,10 +91,13 @@ Request:
 ```json
 {
   "plantId": "Padi",
+  "phaseId": "FaseAnakan",
   "symptomIds": ["PengamatanPenyakitBlasPadiBercakDaun"],
   "topN": 5
 }
 ```
+
+`phaseId` opsional dan harus milik tanaman yang dipilih.
 
 Response `data` (disederhanakan):
 
@@ -78,6 +106,9 @@ Response `data` (disederhanakan):
   "input": {
     "plantId": "Padi",
     "plantLabel": "Padi",
+    "phaseId": "FaseAnakan",
+    "phaseIri": "http://.../FaseAnakan",
+    "phaseLabel": "Fase Anakan",
     "symptomIds": ["..."],
     "symptoms": [{ "id": "...", "label": "..." }],
     "topN": 5
@@ -89,6 +120,7 @@ Response `data` (disederhanakan):
       "score": 0.7466,
       "confidence": "TINGGI",
       "category": "PenyakitJamur",
+      "phaseMatch": "match",
       "matchedCount": 3,
       "selectedCount": 3,
       "totalSymptoms": 6,
@@ -99,9 +131,17 @@ Response `data` (disederhanakan):
       "scoreComponents": {
         "evidence": 0.9955,
         "completeness": 1,
-        "coverage": 0.5
+        "coverage": 0.5,
+        "phase": 1.05
       },
-      "controls": []
+      "controls": [],
+      "riskFactors": [
+        {
+          "id": "KondisiMusimHujan",
+          "iri": "http://.../KondisiMusimHujan",
+          "label": "Musim hujan"
+        }
+      ]
     }
   ],
   "reasoning": {
@@ -114,6 +154,9 @@ Response `data` (disederhanakan):
   "message": "..."
 }
 ```
+
+Setiap kandidat membawa `riskFactors[]` dari relasi `dipengaruhiOleh`. Field ini
+hanya untuk informasi dan tidak memengaruhi `score`/ranking.
 
 ### `GET /api/diseases`
 
@@ -152,7 +195,7 @@ UI hanya menampilkan field yang ada.
 | Kebutuhan UI | Status | Catatan |
 |---|---|---|
 | Varietas | Missing | Tidak ada endpoint varietas |
-| Fase pertumbuhan sebagai pilihan | Missing | Hanya muncul di detail penyakit, bukan input diagnosis |
+| Fase pertumbuhan sebagai pilihan | Didukung | `GET /api/phases?plantId=...`; `phaseId` opsional di `POST /api/diagnosis` |
 | Daftar bagian tanaman global | Missing | Bagian hanya tersedia per penyakit/gejala |
 | Kondisi lingkungan sebagai input | Missing | `dipengaruhiOleh` ada di ontology, tetapi tidak dipakai diagnosis |
 | Filter tipe patogen di katalog | Missing | List penyakit tidak membawa tipe patogen |

@@ -11,6 +11,7 @@ const server = app.listen(env.port, env.host, () => {
   console.log(`Server:        ${baseUrl}`);
   console.log(`Liveness:      ${baseUrl}/api/health/live`);
   console.log(`Readiness:     ${baseUrl}/api/health/ready`);
+  console.log(`Phases:        ${baseUrl}/api/phases`);
   console.log(`Diagnosis:     POST ${baseUrl}/api/diagnosis`);
   console.log("------------------------------------");
 });

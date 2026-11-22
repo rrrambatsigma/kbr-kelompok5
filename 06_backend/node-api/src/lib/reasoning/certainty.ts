@@ -36,18 +36,21 @@ export function combineEvidence(weights: readonly number[]): number {
 export function scoreCandidate(
   evidence: number,
   completeness: number,
-  coverage: number
+  coverage: number,
+  phaseFactor = 1
 ): number {
   const cf = clamp(evidence, 0, 1);
   const complete = clamp(completeness, 0, 1);
   const cover = clamp(coverage, 0, 1);
+  const phase = Math.max(1, phaseFactor);
 
   const score =
     cf *
     (REASONING_CONFIG.completenessFloor +
       (1 - REASONING_CONFIG.completenessFloor) * complete) *
     (REASONING_CONFIG.coverageFloor +
-      (1 - REASONING_CONFIG.coverageFloor) * cover);
+      (1 - REASONING_CONFIG.coverageFloor) * cover) *
+    phase;
 
   return round4(score);
 }

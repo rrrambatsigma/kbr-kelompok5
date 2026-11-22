@@ -42,7 +42,14 @@ Assert-Equal $health.data.checks.fileMatchesJava $true "checksum file vs Java"
 Assert-Equal $health.data.checks.fusekiHasV2Fingerprint $true "fingerprint Fuseki"
 Assert-Equal $health.data.java.checksum $health.data.file.sha256 "checksum detail"
 
-# 4. Diagnosis nyata: Blas harus dapat kategori dari Java
+# 4. Tujuh kelas fase selalu tersedia, dengan diseaseCount per tanaman
+$phases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=Padi"
+Assert-Equal $phases.data.count 7 "Padi phase count"
+Assert-Equal $phases.data.items[0].id "FasePembibitan" "first Padi phase"
+$emptyPhases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=UbiKayu"
+Assert-Equal $emptyPhases.data.count 7 "UbiKayu phase count"
+
+# 5. Diagnosis nyata: Blas harus dapat kategori dari Java
 $body = @{
     plantId = "Padi"
     symptomIds = @(
@@ -60,8 +67,52 @@ Assert-Equal $diagnosis.data.reasoning.status "UP" "reasoning diagnosis"
 Assert-Equal $diagnosis.data.reasoning.modelVersion "forward-chaining-cf-v1" "model version"
 Assert-Equal $diagnosis.data.candidates[0].diseaseId "PenyakitBlasPadi" "top candidate"
 Assert-Equal $diagnosis.data.candidates[0].category "PenyakitJamur" "category from Java"
+$riskFactors = @($diagnosis.data.candidates[0].riskFactors)
+$musimHujan = @($riskFactors | Where-Object { $_.id -eq "KondisiMusimHujan" })
+Assert-True ($riskFactors.Count -ge 1) "riskFactors Blas harus berisi minimal satu faktor"
+Assert-True ($musimHujan.Count -ge 1) "riskFactors Blas harus memuat KondisiMusimHujan"
+Assert-Equal $musimHujan[0].label "Musim hujan" "label faktor risiko"
 
-# 5. Reload atomik tidak mengubah checksum
+# 6. Diagnosis dengan fase pertumbuhan
+$phaseBody = @{
+    plantId = "Padi"
+    phaseId = "FaseAnakan"
+    symptomIds = @(
+        "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+        "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
+        "PengamatanPenyakitHawarPelepahDaunPadiHDPDilihatSelubung"
+    )
+    topN = 5
+} | ConvertTo-Json -Depth 5
+
+$phaseDiagnosis = Invoke-RestMethod "$BaseUrl/api/diagnosis" `
+    -Method Post -ContentType "application/json" -Body $phaseBody
+
+Assert-Equal $phaseDiagnosis.data.input.phaseId "FaseAnakan" "phase input"
+$phaseCandidate = $phaseDiagnosis.data.candidates |
+    Where-Object { $_.diseaseId -eq "PenyakitHawarPelepahDaunPadi" } |
+    Select-Object -First 1
+Assert-True ($null -ne $phaseCandidate) "phase candidate missing"
+Assert-Equal $phaseCandidate.phaseMatch "match" "phase match"
+
+# 6b. Fase tanpa tautan tetap diterima, bukan 400
+$unlinkedPhaseBody = @{
+    plantId = "Padi"
+    phaseId = "FasePembibitan"
+    symptomIds = @(
+        "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
+        "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
+        "PengamatanPenyakitHawarPelepahDaunPadiHDPDilihatSelubung"
+    )
+    topN = 5
+} | ConvertTo-Json -Depth 5
+
+$unlinkedPhaseDiagnosis = Invoke-RestMethod "$BaseUrl/api/diagnosis" `
+    -Method Post -ContentType "application/json" -Body $unlinkedPhaseBody
+Assert-Equal $unlinkedPhaseDiagnosis.data.input.phaseId "FasePembibitan" "unlinked phase input"
+Assert-True ($unlinkedPhaseDiagnosis.data.candidates.Count -ge 1) "unlinked phase candidates"
+
+# 7. Reload atomik tidak mengubah checksum
 $reload = Invoke-RestMethod "$ReasoningUrl/api/ontology/reload" `
     -Method Post -Headers @{ "X-Request-Id" = "m6-reload" }
 Assert-Equal $reload.data.ready $true "ready after reload"
@@ -88,4 +139,24 @@ try {
 Assert-Equal $badStatus 400 "negative HTTP status"
 Assert-Equal $badCode "INVALID_REQUEST" "negative error code"
 
-Write-Host "OK: readiness, checksum, diagnosis, reload, negative"
+$badPhaseBody = @{
+    plantId = "Padi"
+    phaseId = "FasePembibitanTanaman"
+    symptomIds = @("PengamatanPenyakitBlasPadiBercakDaun")
+} | ConvertTo-Json
+
+$badPhaseStatus = $null
+$badPhaseCode = $null
+try {
+    Invoke-RestMethod "$BaseUrl/api/diagnosis" `
+        -Method Post -ContentType "application/json" -Body $badPhaseBody | Out-Null
+} catch {
+    $badPhaseStatus = $_.Exception.Response.StatusCode.value__
+    $badPhase = $_.ErrorDetails.Message | ConvertFrom-Json
+    $badPhaseCode = $badPhase.error.code
+}
+
+Assert-Equal $badPhaseStatus 400 "negative phase HTTP status"
+Assert-Equal $badPhaseCode "INVALID_REQUEST" "negative phase error code"
+
+Write-Host "OK: readiness, checksum, phases, diagnosis, reload, negative"

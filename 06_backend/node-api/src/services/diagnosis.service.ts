@@ -4,12 +4,14 @@ import { explainCandidate } from "../lib/reasoning/explain.js";
 import {
   REASONING_MODEL_VERSION,
   type Confidence,
+  type PhaseMatch,
   type ReasoningEvidence,
   type ScoreComponents,
 } from "../lib/reasoning/types.js";
 import {
   getControlsForDiseases,
   getDiagnosisDataset,
+  type DiagnosisDataset,
   type DiagnosisDisease,
   type DiagnosisSymptom,
   type NamedEntity,
@@ -22,6 +24,7 @@ import {
 
 export interface DiagnosisInput {
   plantId: string;
+  phaseId: string | null;
   symptomIds: string[];
   topN: number;
 }
@@ -46,7 +49,9 @@ export interface DiagnosisCandidate {
   unmatchedSelectedSymptoms: DiagnosisSymptomView[];
   category: string | null;
   controls: NamedEntity[];
+  riskFactors: NamedEntity[];
   confidence: Confidence;
+  phaseMatch: PhaseMatch;
   evidence: ReasoningEvidence[];
   explanation: string;
   scoreComponents: ScoreComponents;
@@ -65,6 +70,9 @@ export interface DiagnosisResult {
     plantId: string;
     plantIri: string;
     plantLabel: string | null;
+    phaseId: string | null;
+    phaseIri: string | null;
+    phaseLabel: string | null;
     symptomIds: string[];
     symptoms: DiagnosisSymptomView[];
     topN: number;
@@ -89,6 +97,19 @@ export function parseDiagnosisInput(body: unknown): DiagnosisInput {
   const plantId = body["plantId"];
   if (typeof plantId !== "string" || plantId.trim() === "") {
     details.push({ field: "plantId", message: "plantId wajib diisi" });
+  }
+
+  const rawPhaseId = body["phaseId"];
+  let phaseId: string | null = null;
+  if (rawPhaseId !== undefined && rawPhaseId !== null) {
+    if (typeof rawPhaseId !== "string" || rawPhaseId.trim() === "") {
+      details.push({
+        field: "phaseId",
+        message: "phaseId harus string tidak kosong",
+      });
+    } else {
+      phaseId = rawPhaseId.trim();
+    }
   }
 
   const symptomIds = body["symptomIds"];
@@ -137,6 +158,7 @@ export function parseDiagnosisInput(body: unknown): DiagnosisInput {
 
   return {
     plantId: (plantId as string).trim(),
+    phaseId,
     symptomIds: (symptomIds as string[]).map((value) => value.trim()),
     topN,
   };
@@ -180,6 +202,37 @@ function symptomIndex(
   return index;
 }
 
+function findPhase(
+  dataset: DiagnosisDataset,
+  phaseId: string
+): NamedEntity | null {
+  const phase = dataset.phaseOptions.find(
+    (item) => item.id === phaseId || item.iri === phaseId
+  );
+
+  return phase ?? null;
+}
+
+function explainWithPhase(
+  base: string,
+  phaseMatch: PhaseMatch,
+  phaseLabel: string | null
+): string {
+  if (phaseLabel === null) {
+    return base;
+  }
+
+  if (phaseMatch === "match") {
+    return `${base} ${phaseLabel} juga tercatat sebagai fase rentan penyakit ini.`;
+  }
+
+  if (phaseMatch === "mismatch") {
+    return `${base} ${phaseLabel} tidak tercatat sebagai fase rentan kandidat ini.`;
+  }
+
+  return `${base} Data fase pertumbuhan untuk kandidat ini belum tersedia.`;
+}
+
 export async function diagnose(
   input: DiagnosisInput,
   requestId?: string
@@ -188,6 +241,25 @@ export async function diagnose(
   const plant = dataset.plant;
   const plantIri = plant.iri;
   const plantLabel = plant.label;
+
+  const selectedPhase =
+    input.phaseId === null ? null : findPhase(dataset, input.phaseId);
+
+  if (input.phaseId !== null && selectedPhase === null) {
+    throw new InvalidRequestError(
+      "Fase pertumbuhan tidak dikenali untuk tanaman ini",
+      [
+        {
+          field: "phaseId",
+          message: `Fase tidak ditemukan pada tanaman ${input.plantId}: ${input.phaseId}`,
+        },
+      ]
+    );
+  }
+
+  const phaseId = selectedPhase?.id ?? null;
+  const phaseIri = selectedPhase?.iri ?? null;
+  const phaseLabel = selectedPhase?.label ?? null;
 
   const diseasesWithSymptoms = dataset.diseases.filter(
     (disease) => disease.symptoms.length > 0
@@ -210,6 +282,9 @@ export async function diagnose(
         plantId: input.plantId,
         plantIri,
         plantLabel,
+        phaseId,
+        phaseIri,
+        phaseLabel,
         symptomIds: selectedIds,
         symptoms: [],
         topN: input.topN,
@@ -253,7 +328,10 @@ export async function diagnose(
 
   const selected = selectedSymptoms.map((symptom) => symptom.id);
 
-  const reasoningResult = reason(dataset, selected, { topN: input.topN });
+  const reasoningResult = reason(dataset, selected, {
+    topN: input.topN,
+    phaseIri,
+  });
   const top = reasoningResult.candidates;
   const topIris = top.map((candidate) => candidate.disease.iri);
 
@@ -314,9 +392,19 @@ export async function diagnose(
       ),
       category,
       controls: controlsByDisease[candidate.disease.iri] ?? [],
+      riskFactors: candidate.disease.riskFactors.map((factor) => ({
+        id: factor.id,
+        iri: factor.iri,
+        label: factor.label,
+      })),
       confidence: candidate.confidence,
+      phaseMatch: candidate.phaseMatch,
       evidence: candidate.evidence,
-      explanation: explainCandidate(candidate),
+      explanation: explainWithPhase(
+        explainCandidate(candidate),
+        candidate.phaseMatch,
+        phaseLabel
+      ),
       scoreComponents: candidate.scoreComponents,
     };
   });
@@ -336,6 +424,9 @@ export async function diagnose(
       plantId: input.plantId,
       plantIri,
       plantLabel,
+      phaseId,
+      phaseIri,
+      phaseLabel,
       symptomIds: selected,
       symptoms: selectedSymptoms,
       topN: input.topN,

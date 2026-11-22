@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   categoryLabel,
   confidenceLabel,
+  formatRiskFactorLabel,
   scorePercent,
 } from "./format";
 
@@ -24,5 +25,17 @@ describe("format helpers", () => {
     expect(confidenceLabel("TINGGI")).toContain("tinggi");
     expect(confidenceLabel("SEDANG")).toContain("sedang");
     expect(confidenceLabel("RENDAH")).toContain("rendah");
+  });
+
+  it("membersihkan artefak label faktor risiko", () => {
+    expect(
+      formatRiskFactorLabel("Suhu 25Koma2Sampai28Koma8Celsius")
+    ).toBe("Suhu 25,2 sampai 28,8°C");
+    expect(formatRiskFactorLabel("Kelembapan relatif >70Persen")).toBe(
+      "Kelembapan relatif >70%"
+    );
+    expect(formatRiskFactorLabel("Suhu 25-34\uFFFD C")).toBe(
+      "Suhu 25-34°C"
+    );
   });
 });
