@@ -30,7 +30,7 @@ Pemeriksaan yang lolos:
 - [x] Kategori: Jamur 34, Bakteri 7, Virus 10, Oomycete 1, Fitoplasma 1,
       Nematoda 0, Lainnya 0; 0 penyakit belum berkategori
 - [x] `/api/health/ready` = UP
-- [x] `npm run typecheck`, `npm test` (39 test) hijau
+- [x] `npm run typecheck`, `npm test` (52 test) hijau
 - [x] `mvnw test` (4 test, termasuk golden Openllet) hijau
 - [x] `smoke-test.ps1` OK
 
@@ -214,7 +214,7 @@ Temuan:
 
 Baseline sesudah engine: `baseline/after.json`.
 
-Test: **39 test** lulus (termasuk test reasoning dan client Node–Java).
+Test: **52 test** lulus (termasuk test reasoning dan client Node–Java).
 
 ## Validasi (Langkah 4)
 

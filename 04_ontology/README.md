@@ -8,6 +8,12 @@ dari DOC002 + DOC005, lalu divalidasi sebelum artefak ditulis.
 Cakupan tanaman: **Padi, Kedelai, Jagung, Ubi Jalar, Ubi Kayu, Kacang Tanah,
 Kacang Hijau**. Tanaman di luar cakupan tidak dibuat sebagai individu.
 
+> **Catatan (ABox runtime).** Kelas `ptp:Diagnosis` dan
+> `ptp:KandidatDiagnosis` memang disiapkan untuk catatan diagnosis, tetapi
+> instance-nya **tidak** ditulis ke `ontology_md.ttl`. Kasus pengguna hidup di
+> dataset Fuseki terpisah `plant-kb-kasus` agar ontology kurasi tetap statis
+> dan tidak tercemar. Lihat `08_documentation/case-log.md`.
+
 ## Artefak dan angka saat ini
 
 | Artefak | Isi |

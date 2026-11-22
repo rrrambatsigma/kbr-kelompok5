@@ -108,7 +108,10 @@ Urutan yang benar:
 # 1. Muat ontology ke TDB2 (Fuseki harus berhenti)
 .\06_backend\scripts\load-ontology.ps1 -Reset
 
-# 2. Jalankan Fuseki read-only
+# 1b. Sekali saja: siapkan dataset log kasus (Fuseki harus berhenti)
+.\06_backend\scripts\init-case-store.ps1
+
+# 2. Jalankan Fuseki (plant-kb read-only + plant-kb-kasus writable)
 .\06_backend\scripts\start-fuseki.ps1
 
 # 3. Jalankan Java reasoning API
@@ -124,10 +127,12 @@ npm run dev
 Endpoint utama:
 
 - Node `:3000` — `GET /api/plants`, `/api/diseases`, `/api/symptoms`,
-  `/api/phases`, `POST /api/diagnosis`, dan `/api/health/*`.
+  `/api/phases`, `POST /api/diagnosis`, `POST /api/symptoms/match`,
+  `POST /api/cases`, `GET /api/cases`, `/api/health/*`.
 - Java `:8082` — `GET /api/reasoning/status`,
   `POST /api/reasoning/disease-categories`, `POST /api/ontology/reload`.
-- Fuseki `:3030` — dataset `plant-kb` (SPARQL read-only).
+- Fuseki `:3030` — dataset `plant-kb` (read-only) dan `plant-kb-kasus`
+  (log kasus, writable).
 
 Detail konfigurasi, kontrak, dan troubleshooting ada di `06_backend/README.md`.
 
@@ -140,11 +145,15 @@ Detail konfigurasi, kontrak, dan troubleshooting ada di `06_backend/README.md`.
   checksum/fingerprint, request id, dan integration test.
   Lihat `08_documentation/node-java-contract.md` dan
   `08_documentation/node-java-runbook.md`.
-- **M7 - Pengujian dan evaluasi:** 39 test Node, 11 test frontend, 4 test Java,
+- **M7 - Pengujian dan evaluasi:** 52 test Node, 11 test frontend, 4 test Java,
   115 test `03_knowledge_tables` (8 skip), 68 test `04_ontology`,
   smoke/integration test (termasuk fase pertumbuhan), 75 kasus evaluasi, dan
   uji ketahanan.
   Lihat `08_documentation/backend-test-report.md`.
+- **Log kasus & CBR (eksperimen):** ABox runtime untuk kasus pengguna di
+  dataset terpisah `plant-kb-kasus`, input gejala dengan kata sendiri,
+  halaman `/riwayat`, dan badge "kasus serupa". Tidak mengubah skor diagnosis.
+  Lihat `08_documentation/case-log.md`.
 
 ## Batasan
 

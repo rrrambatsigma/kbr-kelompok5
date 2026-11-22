@@ -61,11 +61,19 @@ PORT=3000
 HOST=127.0.0.1
 FUSEKI_BASE_URL=http://localhost:3030
 FUSEKI_DATASET=plant-kb
+FUSEKI_CASE_DATASET=plant-kb-kasus
 FUSEKI_TIMEOUT_MS=5000
 REASONING_API_URL=http://localhost:8082
 REASONING_TIMEOUT_MS=15000
 ONTOLOGY_FILE_PATH=E:/kbr-kelompok5/04_ontology/ontology_md.ttl
 FRONTEND_URL=http://localhost:5173
+
+CASE_LOG_ENABLED=true
+CBR_INCLUDE_UNVERIFIED=false
+CBR_MIN_OVERLAP=1
+CBR_TIMEOUT_MS=2000
+SYMPTOM_MATCH_LIMIT=5
+SYMPTOM_MATCH_MIN_SCORE=0.35
 ```
 
 `ONTOLOGY_FILE_PATH` di Node opsional; dipakai `/api/health/ontology` untuk
@@ -95,7 +103,10 @@ Urutan yang benar:
 # 1. Muat ontology ke TDB2 (Fuseki harus berhenti)
 .\06_backend\scripts\load-ontology.ps1 -Reset
 
-# 2. Jalankan Fuseki read-only
+# 1b. Sekali saja: siapkan dataset log kasus (Fuseki harus berhenti)
+.\06_backend\scripts\init-case-store.ps1
+
+# 2. Jalankan Fuseki (plant-kb read-only + plant-kb-kasus writable)
 .\06_backend\scripts\start-fuseki.ps1
 
 # 3. Jalankan Java reasoning API
@@ -121,6 +132,7 @@ curl http://127.0.0.1:3000/api/health/live
 curl http://127.0.0.1:3000/api/health/ready
 curl http://127.0.0.1:3000/api/health/fuseki
 curl http://127.0.0.1:3000/api/health/ontology
+curl http://127.0.0.1:3000/api/health/cases
 ```
 
 `/api/health/ready` mengembalikan `503` jika Fuseki/reasoning tidak siap atau
@@ -247,6 +259,27 @@ Jika reasoning API mati/timeout, diagnosis tetap `200` dengan
 Detail metode, rumus, dan validasi M5: `../08_documentation/reasoning.md`.
 Skenario demo: `../08_documentation/demo-m5.md`.
 
+### Log kasus dan CBR
+
+Dataset `plant-kb-kasus` menyimpan kasus pengguna (ABox runtime). Konsep dan
+alur lengkap ada di `08_documentation/case-log.md`.
+
+| Method | Path | Keterangan |
+|---|---|---|
+| POST | `/api/cases` | Simpan kasus; server menjalankan ulang diagnosis |
+| GET | `/api/cases` | Daftar kasus; filter `plantId`, `status`, `limit`, `offset` |
+| GET | `/api/cases/stats` | Agregat total/terverifikasi/per tanaman |
+| GET | `/api/cases/:id` | Detail + kandidat |
+| POST | `/api/cases/:id/verify` | Verifikasi; body `{ "diseaseId": "..." }` opsional |
+| DELETE | `/api/cases/:id` | Hapus kasus + kandidat |
+| POST | `/api/symptoms/match` | Saran ID gejala dari teks bebas |
+| GET | `/api/health/cases` | Status case store |
+
+`POST /api/diagnosis` menambahkan `similarCases` di setiap kandidat
+(`count`, `maxOverlap`, `lastSeen`) dari kasus terverifikasi. CBR **tidak**
+mengubah skor. Kalau case store mati, diagnosis tetap `200` dan hanya
+menambahkan warning `CASE_STORE_UNAVAILABLE`.
+
 ### Reasoning (Java)
 
 | Method | Path | Keterangan |
@@ -342,12 +375,19 @@ node run.mjs --perf
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
 | `ONTOLOGY_MISMATCH` | Checksum file Node berbeda dengan Java | Samakan `ONTOLOGY_FILE_PATH`, reload Java |
 | `totalTriples` bukan 19021 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
+| `/api/health/cases` DOWN | Dataset `plant-kb-kasus` belum dibuat | Jalankan `init-case-store.ps1` (Fuseki harus mati) |
+| `CASE_STORE_UNAVAILABLE` | Case store mati/timeout | Cek dataset `plant-kb-kasus`; diagnosis tetap jalan |
+| `plant-kb-kasus` 404 | Config Fuseki lama | Pastikan `config.ttl` memuat `<#service-kasus>`, restart Fuseki |
 | Port sudah dipakai | Proses lama masih hidup | Hentikan proses pada port 3000/3030/8082 |
 
 ## Catatan keamanan
 
-- Fuseki dijalankan `--localhost` dan **read-only** (tanpa service update).
+- Fuseki dijalankan `--localhost`. Dataset `plant-kb` **read-only**; hanya
+  `plant-kb-kasus` yang punya service update.
 - `start-fuseki.ps1` memakai `fuseki-config/shiro.ini` lewat opsi `--shiro`.
 - Java dan Node bind ke `127.0.0.1` secara default.
 - Tidak ada kredensial default di `shiro.ini`.
-- Jangan commit `fuseki-data/`, `dist/`, `target/`, `node_modules/`, atau `.env`.
+- Endpoint verifikasi/hapus kasus belum punya autentikasi; aman hanya karena
+  localhost.
+- Jangan commit `fuseki-data/`, `fuseki-data-kasus/`, `dist/`, `target/`,
+  `node_modules/`, atau `.env`.
