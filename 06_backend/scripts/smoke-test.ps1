@@ -33,7 +33,7 @@ $symptoms = Invoke-RestMethod "$BaseUrl/api/symptoms?plantId=Padi"
 Assert-Equal $symptoms.data.count 26 "Padi symptom count"
 
 $phases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=Padi"
-Assert-Equal $phases.data.count 2 "Padi phase count"
+Assert-Equal $phases.data.count 7 "Padi phase count"
 
 $symptomIds = @(
     $symptoms.data.items |

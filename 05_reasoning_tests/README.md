@@ -5,11 +5,12 @@ Ontology yang dipakai adalah **ontology gabungan** dari branch
 `feat/ontology-baru` (`04_ontology/ontology_md.ttl`, 19.021 triple).
 
 > **Diperbarui 22 November 2026** setelah merge `feat/ontology-baru` ke
-> `feat/rambat-baru`: ontology naik dari 18.981 ke **19.021 triple**. Angka
-> runtime di bagian ini berasal dari verifikasi 19 November 2026; jalankan
-> ulang `load-ontology.ps1 -Reset` lalu `node run.mjs` untuk verifikasi baru.
+> `feat/rambat-baru`: ontology naik dari 18.981 ke **19.021 triple**. Bagian
+> status di bawah sudah diverifikasi ulang pada 22 November 2026 dengan dataset
+> Fuseki baru (`load-ontology.ps1 -Reset`), termasuk `smoke-test.ps1`,
+> `integration-test.ps1`, dan `node run.mjs`.
 
-## Status verifikasi integrasi (19 Nov 2026)
+## Status verifikasi integrasi (22 Nov 2026)
 
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
@@ -251,7 +252,7 @@ node run.mjs --base-url http://127.0.0.1:3000
 node run.mjs --out hasil-lain
 ```
 
-Hasil 19 Nov 2026 (ontology `bbf9c78e...`):
+Hasil 22 Nov 2026 (ontology `65f92b94...`):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|

@@ -271,7 +271,7 @@ Harness ada di `05_reasoning_tests/`.
 | Sanity | 53 | Satu kasus per penyakit; regression |
 | Negative | 5 | Validasi input/error |
 
-Hasil 19 November 2026:
+Hasil 22 November 2026 (dijalankan ulang pada ontology 19.021 triple):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
@@ -392,7 +392,7 @@ M5 selesai untuk ruang lingkup backend:
 - 39 test Node, 4 test Java, 115 test `03_knowledge_tables` (8 skip), dan
   68 test `04_ontology` lulus.
 - Ontology final sudah masuk; `generate-sanity.mjs` dan `run.mjs` dijalankan
-  ulang pada 19 Nov 2026.
+  ulang pada 22 Nov 2026.
 
 M6 (integrasi Node–Java) sudah diimplementasikan pada lingkup inti:
 

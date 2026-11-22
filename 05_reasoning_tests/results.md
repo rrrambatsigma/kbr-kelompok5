@@ -1,9 +1,9 @@
 # Hasil Validasi Reasoning Diagnosis
 
-- Waktu: 2026-11-19T08:54:23.343Z
+- Waktu: 2026-11-22T07:58:52.326Z
 - Base URL: http://127.0.0.1:3000
 - Model: forward-chaining-cf-v1
-- Ontology: bbf9c78eca83 / bbf9c78eca83ca04b3185bbba2f1faac29ec062fafa07dbc09adca18307f1175
+- Ontology: 65f92b9452f9 / 65f92b9452f9a63f71ebd24b52ae237cfb303c12230054bf785a441ebbe168a5
 
 ## Ringkasan (fokus: gold + ambiguous)
 
@@ -84,12 +84,12 @@ Tidak ada kasus yang gagal.
 - **PADI-PURE-HDB-01** expected `PenyakitHawarDaunBakteriPadi`, rank 2
   - top-3: PenyakitKerdilRumputDanKerdilHampaPadi (0.556, SEDANG); PenyakitHawarDaunBakteriPadi (0.352, RENDAH); PenyakitHawarPelepahDaunPadi (0.281, RENDAH)
 - **KACANGTANAH-PURE-KARAT-01** expected `PenyakitKaratDaunKacangTanah`, rank 2
-  - top-3: PenyakitBercakDaunKacangTanah (0.521, SEDANG); PenyakitKaratDaunKacangTanah (0.421, SEDANG); PenyakitBelangMottleKacangTanah (0.166, RENDAH)
+  - top-3: PenyakitBercakDaunKacangTanah (0.521, SEDANG); PenyakitKaratDaunKacangTanah (0.421, SEDANG); PenyakitBelangMottleKacangTanah (0.169, RENDAH)
 
 ## Determinism & performa
 
 - Determinism: stabil (PADI-BLAS-01)
-- Performa: p50 25.2254 ms; p95 38.9938 ms (20 sampel)
+- Performa: p50 36.5967 ms; p95 69.7361 ms (20 sampel)
 
 ## Catatan
 
