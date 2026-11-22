@@ -268,6 +268,36 @@ class OntologyArtifactTest(unittest.TestCase):
                 if bo.CANONICAL_SYMPTOMS[canonical]["part"]:
                     self.assertTrue(list(self.graph.objects(observation, KBR["terdapatPada"])))
 
+    def test_mapping_expansions(self) -> None:
+        self.assertEqual(
+            bo.match_canonical_symptoms("Bintil berbentuk bulat atau oval dan dapat saling bergabung."),
+            ["BercakTanaman"],
+        )
+        self.assertEqual(
+            bo.match_canonical_symptoms(
+                "Kadang-kadang gejala oleh PStV berupa garis putus-putus berwarna hijau gelap."
+            ),
+            ["BelangTanaman"],
+        )
+        self.assertIn(
+            "PertumbuhanAbnormal",
+            bo.match_canonical_symptoms(
+                "Tepi bergelombang atau penggulungan yang terlihat jelas pada helaian daun."
+            ),
+        )
+        self.assertIn(
+            "KematianTanaman",
+            bo.match_canonical_symptoms("Benih tidak akan berkecambah atau mati."),
+        )
+        self.assertIn(
+            "PengendalianVektor",
+            bo.match_control_actions(
+                "Selain mengendalikan patogennya, vektornya pun harus dikendalikan.",
+                "",
+                "DOC002",
+            ),
+        )
+
     def test_unmapped_symptoms_match_report(self) -> None:
         symptom_observations = set(self.graph.objects(None, KBR["memilikiGejala"]))
         mapped = set(self.graph.subjects(KBR["memilikiGejalaKanonik"], None))
@@ -498,6 +528,12 @@ class OntologyAxiomTest(unittest.TestCase):
             ),
             "Q/D: exactly 1 xsd:integer tahunTerbit",
         )
+
+    def test_transitive_bagian_dari(self) -> None:
+        prop = KBR["bagianDari"]
+        self.assertIn((prop, RDF.type, OWL.TransitiveProperty), self.graph)
+        self.assertIn((KBR["Daun"], prop, KBR["Pucuk"]), self.graph)
+        self.assertIn((KBR["Pucuk"], prop, KBR["Batang"]), self.graph)
 
     def test_property_chain_members(self) -> None:
         chains = list(self.graph.objects(None, OWL.propertyChainAxiom))

@@ -34,13 +34,13 @@ Yang tidak termasuk M5:
 
 | Item | Nilai |
 |---|---:|
-| Triple ontology | 18.981 |
+| Triple ontology | 19.021 |
 | Kelas | 87 |
-| Individu | 1.368 |
+| Individu | 1.366 |
 | Tanaman | 7 |
 | Penyakit | 53 |
-| Pengamatan gejala | 231 |
-| Pengamatan dengan konsep kanonik | 167 |
+| Pengamatan gejala | 229 |
+| Pengamatan dengan konsep kanonik | 171 |
 | Konsep kanonik terpakai | 24 |
 | Tautan penyakit-patogen | 76 |
 | Tautan pengendalian | 226 |
@@ -315,7 +315,7 @@ kasus yang sama.
 1. **Ontology sementara.** ID dan cakupan bisa berubah saat TTL final masuk.
 2. **Gold dan sanity di-seed dari ontology.** Angka 100% pada gold/sanity bukan
    akurasi independen. Halaman DOC002 belum diverifikasi.
-3. **64 dari 231 pengamatan belum punya konsep kanonik.** Untuk gejala ini,
+3. **58 dari 229 pengamatan belum punya konsep kanonik.** Untuk gejala ini,
    hanya exact match yang bekerja.
 4. **0 penyakit tanpa kategori, 0 tanpa patogen.** Semua penyakit sudah punya
    patogen dan kategori; response tetap null-safe untuk data baru.
@@ -389,8 +389,8 @@ M5 selesai untuk ruang lingkup backend:
 
 - Engine reasoning aktif di `POST /api/diagnosis`.
 - Validasi dan dokumentasi tersedia.
-- 35 test Node, 4 test Java, 112 test `03_knowledge_tables` (8 skip), dan
-  64 test `04_ontology` lulus.
+- 39 test Node, 4 test Java, 115 test `03_knowledge_tables` (8 skip), dan
+  68 test `04_ontology` lulus.
 - Ontology final sudah masuk; `generate-sanity.mjs` dan `run.mjs` dijalankan
   ulang pada 19 Nov 2026.
 

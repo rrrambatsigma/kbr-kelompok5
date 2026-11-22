@@ -78,6 +78,20 @@ MIRROR_CANONICAL = {
 }
 MIRROR_CLASSES = {"Penyakit", "TanamanPangan", "Gejala", "Pengendalian"}
 
+DERIVED_CONDITION_COMMENTS = {
+    "KondisiIklimBasah": "Kategori faktor lingkungan untuk iklim basah.",
+    "KondisiKelembapanTanahRendah": "Kategori faktor lingkungan untuk kelembapan tanah rendah.",
+    "KondisiKelembapanTanahSedang": "Kategori faktor lingkungan untuk kelembapan tanah sedang.",
+    "KondisiKelembapanTanahTinggi": "Kategori faktor lingkungan untuk kelembapan tanah tinggi.",
+    "KondisiKelembapanUdaraRendah": "Kategori faktor lingkungan untuk kelembapan udara rendah.",
+    "KondisiKelembapanUdaraSedang": "Kategori faktor lingkungan untuk kelembapan udara sedang.",
+    "KondisiKelembapanUdaraTinggi": "Kategori faktor lingkungan untuk kelembapan udara tinggi.",
+    "KondisiTanahBasa": "Kategori faktor lingkungan untuk tanah basa.",
+    "KondisiTanahBerpasir": "Kategori faktor lingkungan untuk tanah berpasir.",
+    "KondisiTanahLiat": "Kategori faktor lingkungan untuk tanah liat.",
+    "KondisiTanahNetral": "Kategori faktor lingkungan untuk tanah netral.",
+}
+
 EXTRACT_CLASSES = (
     "Patogen",
     "Varietas",
@@ -597,6 +611,20 @@ def extract_rows(
             }
         if match is None:
             match = table_row_match(target.phrase, document_units)
+        if match is None and target.local in DERIVED_CONDITION_COMMENTS:
+            match = {
+                "literal_value": DERIVED_CONDITION_COMMENTS[target.local],
+                "source_document": "derived",
+                "source_type": "controlled_vocabulary",
+                "source_id": "",
+                "evidence_quote": "",
+                "page": "",
+                "line_start": "",
+                "line_end": "",
+                "confidence": "high",
+                "review_status": "auto_ok",
+                "notes": "definisi kategori turunan; bukan kutipan sumber",
+            }
         if match is None:
             continue
         rows.append(

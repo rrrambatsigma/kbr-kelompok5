@@ -91,6 +91,11 @@ class TestSwrlReasoning(unittest.TestCase):
         )
         self.assertIn("HawarDaunBakteriUbiKayu", inferred)
 
+    def test_transitive_bagian_dari_infers_chain(self) -> None:
+        inferred = inferred_names(self.world, self.onto.Daun, "bagianDari")
+        self.assertIn("Pucuk", inferred)
+        self.assertIn("Batang", inferred)
+
     def test_specific_control_rule_infers_recommendation(self) -> None:
         inferred = inferred_names(
             self.world, self.blas_diagnosis, "merekomendasikanPengendalian"

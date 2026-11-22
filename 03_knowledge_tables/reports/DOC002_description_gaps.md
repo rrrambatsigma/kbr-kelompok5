@@ -5,13 +5,13 @@ Sumber baris: `DOC002_descriptions.csv`; seluruh literal verbatim dari sumber.
 | Kelompok subjek | Jumlah |
 |---|---:|
 | BagianTanaman | 10 |
-| FaktorLingkungan | 15 |
-| Gejala | 70 |
+| FaktorLingkungan | 26 |
+| Gejala | 67 |
 | GejalaAkar | 8 |
 | GejalaBatang | 27 |
 | GejalaBiji | 6 |
 | GejalaBuah | 2 |
-| GejalaDaun | 72 |
+| GejalaDaun | 74 |
 | GejalaMalai | 3 |
 | GejalaPolong | 3 |
 | GejalaUmbi | 2 |
@@ -27,42 +27,32 @@ Sumber baris: `DOC002_descriptions.csv`; seluruh literal verbatim dari sumber.
 | UmbiUmbian | 2 |
 | Varietas | 35 |
 | owl:Class | 65 |
-| **Total baris** | **415** |
+| **Total baris** | **425** |
 
 | Status verifikasi | Jumlah |
 |---|---:|
-| auto_ok | 301 |
+| auto_ok | 311 |
 | needs_review | 114 |
 
 | Asal baris | Jumlah |
 |---|---:|
-| disalin dari deskripsi kanonik | 230 |
+| disalin dari deskripsi kanonik | 229 |
 | kalimat terkait istilah kelas, bukan definisi | 62 |
 | disalin dari fakta enrichment | 60 |
 | frasa kunci pada kalimat sumber | 38 |
 | fallback korpus dokumen penuh (di luar filter 7 tanaman) | 11 |
+| definisi kategori turunan | 11 |
 | definisi sumber | 8 |
 | kata kunci, bukan frasa utuh | 5 |
 | bukti tautan kondisi | 1 |
 
-Individu sasaran: 202, terisi: 183, kosong: 19.
+Individu sasaran: 198, terisi: 191, kosong: 7.
 Kelas: 87, terisi: 65, kosong: 22.
 
 ## Individu tanpa deskripsi
 
 | Subjek | Kelas | Frasa pencarian |
 |---|---|---|
-| KondisiIklimBasah | FaktorLingkungan | Iklim basah |
-| KondisiKelembapanTanahRendah | FaktorLingkungan | Kelembapan tanah rendah |
-| KondisiKelembapanTanahSedang | FaktorLingkungan | Kelembapan tanah sedang |
-| KondisiKelembapanTanahTinggi | FaktorLingkungan | Kelembapan tanah tinggi |
-| KondisiKelembapanUdaraRendah | FaktorLingkungan | Kelembapan udara rendah |
-| KondisiKelembapanUdaraSedang | FaktorLingkungan | Kelembapan udara sedang |
-| KondisiKelembapanUdaraTinggi | FaktorLingkungan | Kelembapan udara tinggi |
-| KondisiTanahBasa | FaktorLingkungan | Tanah basa |
-| KondisiTanahBerpasir | FaktorLingkungan | Tanah berpasir |
-| KondisiTanahLiat | FaktorLingkungan | Tanah liat |
-| KondisiTanahNetral | FaktorLingkungan | Tanah netral |
 | PengamatanBercakDaunPutihUbiKayuBercakTanaman | Gejala | Bercak pada tanaman pada Bercak daun putih |
 | PengamatanPenyakitAntraknosaKedelaiKematianTanaman | Gejala | Kematian tanaman pada Penyakit Antraknosa |
 | PengamatanPenyakitAntraknosaKedelaiNekrosisTanaman | Gejala | Nekrosis pada tanaman pada Penyakit Antraknosa |
@@ -70,7 +60,6 @@ Kelas: 87, terisi: 65, kosong: 22.
 | PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataABPascapanenC | Gejala | Pengamatan gejala Penyakit busuk hitam (black rot) |
 | PengamatanPenyakitHawarBakteriBacterialBlightKedelaiAkibatMakaBenihDihasilkanMenjadi | Gejala | Pengamatan gejala Penyakit Hawar Bakteri (Bacterial Blight) |
 | PengamatanPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiMenusukkanAlatMulutStyletSehat | Gejala | Pengamatan gejala Penyakit Kerdil Kedelai (Soybean Stunt Virus) |
-| PengamatanPenyakitRebahKecambahKedelaiSolaniMakaBenihTidakBerkecambah | Gejala | Pengamatan gejala Penyakit Rebah Kecambah |
 
 ## Kelas tanpa deskripsi
 

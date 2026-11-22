@@ -120,6 +120,10 @@ PART_LABELS = {
     "Pucuk": "Pucuk",
     "Bunga": "Bunga",
 }
+PART_OF = {
+    "Daun": "Pucuk",
+    "Pucuk": "Batang",
+}
 PART_SUBCLASS = {
     "Daun": "GejalaDaun",
     "Batang": "GejalaBatang",
@@ -264,12 +268,12 @@ CANONICAL_SYMPTOMS: dict[str, dict[str, str]] = {
 
 CANONICAL_SYMPTOM_RULES: list[tuple[str, tuple[tuple[str, ...], ...]]] = [
     ("BercakDaun", (("bercak", "noda", "lesi", "lesio", "bintik", "pustul"), ("daun",))),
-    ("BercakTanaman", (("bercak", "noda", "lesi", "lesio", "bintik", "pustul"),)),
+    ("BercakTanaman", (("bercak", "noda", "lesi", "lesio", "bintik", "bintil", "pustul"),)),
     ("HawarDaun", (("hawar",), ("daun", "pelepah"))),
     ("KlorosisDaun", (("klorosis", "klorotik", "menguning", "kekuningan", "kuning"), ("daun",))),
     ("KlorosisTanaman", (("klorosis", "klorotik", "menguning", "kekuningan", "kuning"),)),
     ("MosaikDaun", (("mosaik", "belang", "mottle"), ("daun",))),
-    ("BelangTanaman", (("mosaik", "belang", "mottle"),)),
+    ("BelangTanaman", (("mosaik", "belang", "mottle", "garis putus-putus"),)),
     ("NekrosisDaun", (("nekrotik", "nekrosis"), ("daun",))),
     ("NekrosisTanaman", (("nekrotik", "nekrosis"),)),
     ("DaunKering", (("kering",), ("daun",))),
@@ -283,11 +287,11 @@ CANONICAL_SYMPTOM_RULES: list[tuple[str, tuple[tuple[str, ...], ...]]] = [
     ("BusukAkar", (("busuk",), ("akar",))),
     ("BusukBuah", (("busuk",), ("buah",))),
     ("BusukTanaman", (("busuk", "membusuk"),)),
-    ("KematianTanaman", (("kematian", "tanaman mati"),)),
+    ("KematianTanaman", (("kematian", "tanaman mati", "tidak berkecambah", "tidak akan berkecambah"),)),
     ("MalaiKosong", (("malai",), ("kosong", "hampa"))),
     ("PucukMati", (("pucuk", "tunas"), ("mati", "nekrosis", "membusuk"))),
     ("PertumbuhanTerhambat", (("terhambat", "pertumbuhan tidak normal", "tidak tumbuh normal"),)),
-    ("PertumbuhanAbnormal", (("malformasi", "deformasi", "bentuk tidak normal", "tidak normal"),)),
+    ("PertumbuhanAbnormal", (("malformasi", "mal formasi", "deformasi", "bentuk tidak normal", "menggulung", "penggulungan", "bergelombang", "tidak normal"),)),
 ]
 
 CONTROL_ACTIONS: dict[str, dict] = {
@@ -802,8 +806,8 @@ def match_control_actions(text: str, category: str, source: str) -> list[str]:
         (r"\b(?:rotasi|pergiliran)\b", "RotasiTanaman"),
         (r"\b(?:sanitasi|membersihkan|pembersihan)\b.*\b(?:sisa|gulma|tanaman)\b", "SanitasiLahan"),
         (r"\b(?:tanaman|varietas)\b.*\b(?:bukan\s+inang|inang\s+alternatif)\b", "PenggunaanTanamanBukanInang"),
-        (r"\b(?:pengendalian|mengendalikan)\b.*\bvektor\b", "PengendalianVektor"),
-        (r"\bvektor\b.*\bdikendalikan\b", "PengendalianVektor"),
+        (r"\b(?:pengendalian|mengendalikan)\b.*\bvektor\w*", "PengendalianVektor"),
+        (r"\bvektor\w*\b.*\bdikendalikan\b", "PengendalianVektor"),
         (r"\b(?:kultur\s+meristem|meristem)\b", "KulturMeristem"),
         (r"\b(?:pengelolaan|pengendalian)\b.*\bterpadu\b", "PengelolaanTerpadu"),
         (r"\b(?:1|satu)\s+teknik\s+pengendalian\b", "PengelolaanTerpadu"),
@@ -1507,6 +1511,9 @@ def build_bagi_tanaman(builder: Builder) -> None:
         uri = builder.individual(part, "BagianTanaman")
         builder.label(uri, label)
         builder.comment(uri, "Bagian tanaman yang dapat menjadi lokasi gejala.")
+
+    for child, parent in PART_OF.items():
+        builder.link(KBR[child], "bagianDari", KBR[parent])
 
 
 def build_canonical_symptoms(builder: Builder) -> None:

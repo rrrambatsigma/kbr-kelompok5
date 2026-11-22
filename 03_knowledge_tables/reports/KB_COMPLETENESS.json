@@ -17,8 +17,8 @@
     "description_missing": 0,
     "english_name_missing": 43,
     "growth_conditions_missing_plants": 0,
-    "unmapped_symptoms": 64,
-    "unmapped_controls": 38,
+    "unmapped_symptoms": 58,
+    "unmapped_controls": 37,
     "unknown_pathogens_report": 0
   },
   "rows": [
@@ -273,7 +273,7 @@
       "part_count": 3,
       "severity": false,
       "phase": true,
-      "symptom_count": 7,
+      "symptom_count": 8,
       "resistant_varieties": 0,
       "description": true,
       "english_name": false
@@ -305,7 +305,7 @@
       "part_count": 1,
       "severity": false,
       "phase": false,
-      "symptom_count": 7,
+      "symptom_count": 6,
       "resistant_varieties": 0,
       "description": true,
       "english_name": true
@@ -593,7 +593,7 @@
       "part_count": 1,
       "severity": true,
       "phase": true,
-      "symptom_count": 11,
+      "symptom_count": 10,
       "resistant_varieties": 0,
       "description": true,
       "english_name": false
@@ -737,7 +737,7 @@
       "part_count": 1,
       "severity": true,
       "phase": true,
-      "symptom_count": 3,
+      "symptom_count": 4,
       "resistant_varieties": 0,
       "description": true,
       "english_name": false
@@ -769,7 +769,7 @@
       "part_count": 2,
       "severity": false,
       "phase": false,
-      "symptom_count": 8,
+      "symptom_count": 7,
       "resistant_varieties": 0,
       "description": true,
       "english_name": false
@@ -801,7 +801,7 @@
       "part_count": 1,
       "severity": false,
       "phase": false,
-      "symptom_count": 6,
+      "symptom_count": 5,
       "resistant_varieties": 0,
       "description": true,
       "english_name": true

@@ -1,137 +1,137 @@
 ﻿subject_local,subject_class,literal_value,literal_lang,source_document,source_id,review_status
-OBS_EXT_001,ObservasiLingkungan,Observasi lingkungan: Suhu pada Hawar daun bakteri.,id,SRC_EXT_001,CARD_EXT_001,verified
-BUKTI_EXT_001,BuktiSumber,Bukti sumber: Suhu pada Hawar daun bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_001,verified
-OBS_EXT_002,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Hawar daun bakteri.,id,SRC_EXT_001,CARD_EXT_002,verified
-BUKTI_EXT_002,BuktiSumber,Bukti sumber: Musim hujan pada Hawar daun bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_002,verified
-OBS_EXT_003,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Hawar daun bakteri.,id,SRC_EXT_001,CARD_EXT_003,verified
-BUKTI_EXT_003,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Hawar daun bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_003,verified
-OBS_EXT_004,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Bakteri Pustul.,id,SRC_EXT_002,CARD_EXT_004,verified
-BUKTI_EXT_004,BuktiSumber,Bukti sumber: Suhu pada Penyakit Bakteri Pustul; SRC_EXT_002.,id,SRC_EXT_002,CARD_EXT_004,verified
-OBS_EXT_005,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi dan daun basah pada Penyakit Bakteri Pustul.,id,SRC_EXT_002,CARD_EXT_005,verified
-BUKTI_EXT_005,BuktiSumber,Bukti sumber: Kelembapan tinggi dan daun basah pada Penyakit Bakteri Pustul; SRC_EXT_002.,id,SRC_EXT_002,CARD_EXT_005,verified
-OBS_EXT_006,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Hawar Daun.,id,SRC_EXT_003,CARD_EXT_006,verified
-BUKTI_EXT_006,BuktiSumber,Bukti sumber: Suhu pada Penyakit Hawar Daun; SRC_EXT_003.,id,SRC_EXT_003,CARD_EXT_006,verified
-OBS_EXT_007,ObservasiLingkungan,Observasi lingkungan: Daun basah pada Penyakit Hawar Daun.,id,SRC_EXT_003,CARD_EXT_007,verified
-BUKTI_EXT_007,BuktiSumber,Bukti sumber: Daun basah pada Penyakit Hawar Daun; SRC_EXT_003.,id,SRC_EXT_003,CARD_EXT_007,verified
-OBS_EXT_008,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif pada Penyakit Hawar Pelepah Daun.,id,SRC_EXT_005,CARD_EXT_008,verified
-BUKTI_EXT_008,BuktiSumber,Bukti sumber: Kelembapan relatif pada Penyakit Hawar Pelepah Daun; SRC_EXT_005.,id,SRC_EXT_005,CARD_EXT_008,verified
-OBS_EXT_009,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Hawar Pelepah Daun.,id,SRC_EXT_005,CARD_EXT_009,verified
-BUKTI_EXT_009,BuktiSumber,Bukti sumber: Suhu pada Penyakit Hawar Pelepah Daun; SRC_EXT_005.,id,SRC_EXT_005,CARD_EXT_009,verified
-OBS_EXT_010,ObservasiLingkungan,Observasi lingkungan: Suhu optimal pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot).,id,SRC_EXT_010,CARD_EXT_010,verified
-BUKTI_EXT_010,BuktiSumber,Bukti sumber: Suhu optimal pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot); SRC_EXT_010.,id,SRC_EXT_010,CARD_EXT_010,verified
-OBS_EXT_011,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif >90% pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot).,id,SRC_EXT_010,CARD_EXT_011,verified
-BUKTI_EXT_011,BuktiSumber,Bukti sumber: Kelembapan relatif >90% pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot); SRC_EXT_010.,id,SRC_EXT_010,CARD_EXT_011,verified
-OBS_EXT_012,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi dan daun basah pada Penyakit Bercak Target.,id,SRC_EXT_011,CARD_EXT_012,verified
-BUKTI_EXT_012,BuktiSumber,Bukti sumber: Kelembapan tinggi dan daun basah pada Penyakit Bercak Target; SRC_EXT_011.,id,SRC_EXT_011,CARD_EXT_012,verified
-OBS_EXT_013,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Embun Tepung (Powdery Mildew).,id,SRC_EXT_012,CARD_EXT_013,verified
-BUKTI_EXT_013,BuktiSumber,Bukti sumber: Suhu pada Penyakit Embun Tepung (Powdery Mildew); SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_013,verified
-OBS_EXT_014,ObservasiLingkungan,Observasi lingkungan: Kelembapan rendah dengan daun basah terbatas pada Penyakit Embun Tepung (Powdery Mildew).,id,SRC_EXT_012,CARD_EXT_014,verified
-BUKTI_EXT_014,BuktiSumber,Bukti sumber: Kelembapan rendah dengan daun basah terbatas pada Penyakit Embun Tepung (Powdery Mildew); SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_014,verified
-OBS_EXT_015,ObservasiLingkungan,Observasi lingkungan: Curah hujan dan kelembapan relatif pada Antraknosa.,id,SRC_EXT_013,CARD_EXT_015,verified
-BUKTI_EXT_015,BuktiSumber,Bukti sumber: Curah hujan dan kelembapan relatif pada Antraknosa; SRC_EXT_013.,id,SRC_EXT_013,CARD_EXT_015,verified
-OBS_EXT_016,ObservasiLingkungan,Observasi lingkungan: Curah hujan dan kelembapan relatif pada Antraknosa.,id,SRC_EXT_013,CARD_EXT_016,verified
-BUKTI_EXT_016,BuktiSumber,Bukti sumber: Curah hujan dan kelembapan relatif pada Antraknosa; SRC_EXT_013.,id,SRC_EXT_013,CARD_EXT_016,verified
-OBS_EXT_017,ObservasiLingkungan,Observasi lingkungan: Cuaca hangat dan lembap pada Bercak daun Coklat.,id,SRC_EXT_014,CARD_EXT_017,verified
-BUKTI_EXT_017,BuktiSumber,Bukti sumber: Cuaca hangat dan lembap pada Bercak daun Coklat; SRC_EXT_014.,id,SRC_EXT_014,CARD_EXT_017,verified
-OBS_EXT_018,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Karat Daun.,id,SRC_EXT_015,CARD_EXT_018,verified
-BUKTI_EXT_018,BuktiSumber,Bukti sumber: Suhu pada Penyakit Karat Daun; SRC_EXT_015.,id,SRC_EXT_015,CARD_EXT_018,verified
-OBS_EXT_019,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif >78% pada Penyakit Karat Daun.,id,SRC_EXT_015,CARD_EXT_019,verified
-BUKTI_EXT_019,BuktiSumber,Bukti sumber: Kelembapan relatif >78% pada Penyakit Karat Daun; SRC_EXT_015.,id,SRC_EXT_015,CARD_EXT_019,verified
-OBS_EXT_020,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Bercak Daun.,id,SRC_EXT_016,CARD_EXT_020,verified
-BUKTI_EXT_020,BuktiSumber,Bukti sumber: Suhu pada Penyakit Bercak Daun; SRC_EXT_016.,id,SRC_EXT_016,CARD_EXT_020,verified
-OBS_EXT_021,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif >90% pada Penyakit Bercak Daun.,id,SRC_EXT_016,CARD_EXT_021,verified
-BUKTI_EXT_021,BuktiSumber,Bukti sumber: Kelembapan relatif >90% pada Penyakit Bercak Daun; SRC_EXT_016.,id,SRC_EXT_016,CARD_EXT_021,verified
-OBS_EXT_022,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Embun Tepung.,id,SRC_EXT_017,CARD_EXT_022,verified
-BUKTI_EXT_022,BuktiSumber,Bukti sumber: Suhu pada Penyakit Embun Tepung; SRC_EXT_017.,id,SRC_EXT_017,CARD_EXT_022,verified
-OBS_EXT_023,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Penyakit Embun Tepung.,id,SRC_EXT_017,CARD_EXT_023,verified
-BUKTI_EXT_023,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Penyakit Embun Tepung; SRC_EXT_017.,id,SRC_EXT_017,CARD_EXT_023,verified
-OBS_EXT_024,ObservasiLingkungan,Observasi lingkungan: Suhu 25–34°C pada Penyakit Hawar Daun Bakteri.,id,SRC_EXT_018,CARD_EXT_024,verified
-BUKTI_EXT_024,BuktiSumber,Bukti sumber: Suhu 25–34°C pada Penyakit Hawar Daun Bakteri; SRC_EXT_018.,id,SRC_EXT_018,CARD_EXT_024,verified
-OBS_EXT_025,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif >70% pada Penyakit Hawar Daun Bakteri.,id,SRC_EXT_018,CARD_EXT_025,verified
-BUKTI_EXT_025,BuktiSumber,Bukti sumber: Kelembapan relatif >70% pada Penyakit Hawar Daun Bakteri; SRC_EXT_018.,id,SRC_EXT_018,CARD_EXT_025,verified
-OBS_EXT_026,ObservasiLingkungan,Observasi lingkungan: Hujan lebat dan angin kencang pada Penyakit Hawar Daun Bakteri.,id,SRC_EXT_018,CARD_EXT_026,verified
-BUKTI_EXT_026,BuktiSumber,Bukti sumber: Hujan lebat dan angin kencang pada Penyakit Hawar Daun Bakteri; SRC_EXT_018.,id,SRC_EXT_018,CARD_EXT_026,verified
-OBS_EXT_027,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Penyakit Tungro.,id,SRC_EXT_019,CARD_EXT_027,verified
-BUKTI_EXT_027,BuktiSumber,Bukti sumber: Musim hujan pada Penyakit Tungro; SRC_EXT_019.,id,SRC_EXT_019,CARD_EXT_027,verified
-OBS_EXT_028,ObservasiLingkungan,Observasi lingkungan: Kondisi tropis dengan padi sepanjang tahun pada Penyakit Kerdil Rumput dan Kerdil Hampa.,id,SRC_EXT_020,CARD_EXT_028,verified
-BUKTI_EXT_028,BuktiSumber,Bukti sumber: Kondisi tropis dengan padi sepanjang tahun pada Penyakit Kerdil Rumput dan Kerdil Hampa; SRC_EXT_020.,id,SRC_EXT_020,CARD_EXT_028,verified
-OBS_EXT_029,ObservasiLingkungan,Observasi lingkungan: Suhu ≥30°C pada Penyakit Busuk Pelepah.,id,SRC_EXT_024,CARD_EXT_029,verified
-BUKTI_EXT_029,BuktiSumber,Bukti sumber: Suhu ≥30°C pada Penyakit Busuk Pelepah; SRC_EXT_024.,id,SRC_EXT_024,CARD_EXT_029,verified
-OBS_EXT_030,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Penyakit Busuk Pelepah.,id,SRC_EXT_024,CARD_EXT_030,verified
-BUKTI_EXT_030,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Penyakit Busuk Pelepah; SRC_EXT_024.,id,SRC_EXT_024,CARD_EXT_030,verified
-OBS_EXT_031,ObservasiLingkungan,Observasi lingkungan: Musim dingin ringan pada Penyakit Layu Stewart.,id,SRC_EXT_021,CARD_EXT_031,verified
-BUKTI_EXT_031,BuktiSumber,Bukti sumber: Musim dingin ringan pada Penyakit Layu Stewart; SRC_EXT_021.,id,SRC_EXT_021,CARD_EXT_031,verified
-OBS_EXT_032,ObservasiLingkungan,Observasi lingkungan: Suhu infeksi optimal pada layu fusarium.,id,SRC_EXT_023,CARD_EXT_032,verified
-BUKTI_EXT_032,BuktiSumber,Bukti sumber: Suhu infeksi optimal pada layu fusarium; SRC_EXT_023.,id,SRC_EXT_023,CARD_EXT_032,verified
-OBS_EXT_033,ObservasiLingkungan,Observasi lingkungan: Kelembapan tanah 28–75% pada layu fusarium.,id,SRC_EXT_023,CARD_EXT_033,verified
-BUKTI_EXT_033,BuktiSumber,Bukti sumber: Kelembapan tanah 28–75% pada layu fusarium; SRC_EXT_023.,id,SRC_EXT_023,CARD_EXT_033,verified
-OBS_EXT_034,ObservasiLingkungan,Observasi lingkungan: Suhu 20–29°C pada Penyakit bercak kuning.,id,SRC_EXT_025,CARD_EXT_034,verified
-BUKTI_EXT_034,BuktiSumber,Bukti sumber: Suhu 20–29°C pada Penyakit bercak kuning; SRC_EXT_025.,id,SRC_EXT_025,CARD_EXT_034,verified
-OBS_EXT_035,ObservasiLingkungan,Observasi lingkungan: Suhu lapang 23–27°C pada Penyakit busuk hitam (black rot).,id,SRC_EXT_022,CARD_EXT_035,verified
-BUKTI_EXT_035,BuktiSumber,Bukti sumber: Suhu lapang 23–27°C pada Penyakit busuk hitam (black rot); SRC_EXT_022.,id,SRC_EXT_022,CARD_EXT_035,verified
-OBS_EXT_036,ObservasiLingkungan,Observasi lingkungan: Suhu 25–37°C pada Penyakit Layu Bakteri.,id,SRC_EXT_026,CARD_EXT_036,verified
-BUKTI_EXT_036,BuktiSumber,Bukti sumber: Suhu 25–37°C pada Penyakit Layu Bakteri; SRC_EXT_026.,id,SRC_EXT_026,CARD_EXT_036,verified
-OBS_EXT_037,ObservasiLingkungan,Observasi lingkungan: Tanah basah pada Penyakit Layu Bakteri.,id,SRC_EXT_026,CARD_EXT_037,verified
-BUKTI_EXT_037,BuktiSumber,Bukti sumber: Tanah basah pada Penyakit Layu Bakteri; SRC_EXT_026.,id,SRC_EXT_026,CARD_EXT_037,verified
-OBS_EXT_038,ObservasiLingkungan,Observasi lingkungan: Suhu 25–30°C pada Penyakit Bercak Daun.,id,SRC_EXT_027,CARD_EXT_038,verified
-BUKTI_EXT_038,BuktiSumber,Bukti sumber: Suhu 25–30°C pada Penyakit Bercak Daun; SRC_EXT_027.,id,SRC_EXT_027,CARD_EXT_038,verified
-OBS_EXT_039,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif 98–100% pada Penyakit Bercak Daun.,id,SRC_EXT_027,CARD_EXT_039,verified
-BUKTI_EXT_039,BuktiSumber,Bukti sumber: Kelembapan relatif 98–100% pada Penyakit Bercak Daun; SRC_EXT_027.,id,SRC_EXT_027,CARD_EXT_039,verified
-OBS_EXT_040,ObservasiLingkungan,Observasi lingkungan: Suhu 27–35°C pada Penyakit Layu.,id,SRC_EXT_028,CARD_EXT_040,verified
-BUKTI_EXT_040,BuktiSumber,Bukti sumber: Suhu 27–35°C pada Penyakit Layu; SRC_EXT_028.,id,SRC_EXT_028,CARD_EXT_040,verified
-OBS_EXT_041,ObservasiLingkungan,Observasi lingkungan: Tanah jenuh air dan kelembapan tinggi pada Penyakit Layu.,id,SRC_EXT_028,CARD_EXT_041,verified
-BUKTI_EXT_041,BuktiSumber,Bukti sumber: Tanah jenuh air dan kelembapan tinggi pada Penyakit Layu; SRC_EXT_028.,id,SRC_EXT_028,CARD_EXT_041,verified
-OBS_EXT_042,ObservasiLingkungan,Observasi lingkungan: Suhu optimal pada Hawar bakteri.,id,SRC_EXT_001,CARD_EXT_042,verified
-BUKTI_EXT_042,BuktiSumber,Bukti sumber: Suhu optimal pada Hawar bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_042,verified
-OBS_EXT_043,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Hawar bakteri.,id,SRC_EXT_001,CARD_EXT_043,verified
-BUKTI_EXT_043,BuktiSumber,Bukti sumber: Musim hujan pada Hawar bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_043,verified
-OBS_EXT_044,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Hawar bakteri.,id,SRC_EXT_001,CARD_EXT_044,verified
-BUKTI_EXT_044,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Hawar bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_044,verified
-OBS_EXT_045,ObservasiLingkungan,"Observasi lingkungan: Suhu, curah hujan, dan angin pada Cassava Mosaic Begomovirus (CMBs).",id,SRC_EXT_031,CARD_EXT_045,verified
-BUKTI_EXT_045,BuktiSumber,"Bukti sumber: Suhu, curah hujan, dan angin pada Cassava Mosaic Begomovirus (CMBs); SRC_EXT_031.",id,SRC_EXT_031,CARD_EXT_045,verified
-OBS_EXT_046,ObservasiLingkungan,Observasi lingkungan: Curah hujan pada Cassava Brown Streak Disease (CBSD).,id,SRC_EXT_033,CARD_EXT_046,verified
-BUKTI_EXT_046,BuktiSumber,Bukti sumber: Curah hujan pada Cassava Brown Streak Disease (CBSD); SRC_EXT_033.,id,SRC_EXT_033,CARD_EXT_046,verified
-OBS_EXT_047,ObservasiLingkungan,Observasi lingkungan: Suhu pada Cassava Brown Streak Disease (CBSD).,id,SRC_EXT_033,CARD_EXT_047,verified
-BUKTI_EXT_047,BuktiSumber,Bukti sumber: Suhu pada Cassava Brown Streak Disease (CBSD); SRC_EXT_033.,id,SRC_EXT_033,CARD_EXT_047,verified
-OBS_EXT_048,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Superelongasi.,id,SRC_EXT_032,CARD_EXT_048,verified
-BUKTI_EXT_048,BuktiSumber,Bukti sumber: Musim hujan pada Superelongasi; SRC_EXT_032.,id,SRC_EXT_032,CARD_EXT_048,verified
-OBS_EXT_049,ObservasiLingkungan,Observasi lingkungan: Iklim lembap dan sejuk pada Bercak daun putih.,id,SRC_EXT_030,CARD_EXT_049,verified
-BUKTI_EXT_049,BuktiSumber,Bukti sumber: Iklim lembap dan sejuk pada Bercak daun putih; SRC_EXT_030.,id,SRC_EXT_030,CARD_EXT_049,verified
-OBS_EXT_050,ObservasiLingkungan,Observasi lingkungan: Cuaca sejuk dan hujan pada Bercak daun putih.,id,SRC_EXT_030,CARD_EXT_050,verified
-BUKTI_EXT_050,BuktiSumber,Bukti sumber: Cuaca sejuk dan hujan pada Bercak daun putih; SRC_EXT_030.,id,SRC_EXT_030,CARD_EXT_050,verified
-OBS_EXT_051,ObservasiLingkungan,Observasi lingkungan: Iklim lembap pada Nekrosis pada titik tunas (Cassava bud necrosis).,id,SRC_EXT_029,CARD_EXT_051,verified
-BUKTI_EXT_051,BuktiSumber,Bukti sumber: Iklim lembap pada Nekrosis pada titik tunas (Cassava bud necrosis); SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_051,verified
-OBS_EXT_052,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Nekrosis pada titik tunas (Cassava bud necrosis).,id,SRC_EXT_029,CARD_EXT_052,verified
-BUKTI_EXT_052,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Nekrosis pada titik tunas (Cassava bud necrosis); SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_052,verified
-OBS_EXT_053,ObservasiLingkungan,Observasi lingkungan: Iklim lembap dan hangat pada Bercak daun baur.,id,SRC_EXT_034,CARD_EXT_053,verified
-BUKTI_EXT_053,BuktiSumber,Bukti sumber: Iklim lembap dan hangat pada Bercak daun baur; SRC_EXT_034.,id,SRC_EXT_034,CARD_EXT_053,verified
-OBS_EXT_054,ObservasiLingkungan,Observasi lingkungan: Tanah tergenang pada Busuk akar dan umbi.,id,SRC_EXT_029,CARD_EXT_054,verified
-BUKTI_EXT_054,BuktiSumber,Bukti sumber: Tanah tergenang pada Busuk akar dan umbi; SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_054,verified
-OBS_EXT_055,ObservasiLingkungan,Observasi lingkungan: Tanah tergenang pada Busuk akar.,id,SRC_EXT_029,CARD_EXT_055,verified
-BUKTI_EXT_055,BuktiSumber,Bukti sumber: Tanah tergenang pada Busuk akar; SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_055,verified
-OBS_EXT_056,ObservasiLingkungan,Observasi lingkungan: Tanah tergenang pada Busuk Umbi.,id,SRC_EXT_029,CARD_EXT_056,verified
-BUKTI_EXT_056,BuktiSumber,Bukti sumber: Tanah tergenang pada Busuk Umbi; SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_056,verified
-OBS_EXT_057,ObservasiLingkungan,Observasi lingkungan: Musim kemarau pada Sapu setan (Witches broom).,id,SRC_EXT_035,CARD_EXT_057,verified
-BUKTI_EXT_057,BuktiSumber,Bukti sumber: Musim kemarau pada Sapu setan (Witches broom); SRC_EXT_035.,id,SRC_EXT_035,CARD_EXT_057,verified
-OBS_EXT_058,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Busuk pangkal batang.,id,SRC_EXT_036,CARD_EXT_058,verified
-BUKTI_EXT_058,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Busuk pangkal batang; SRC_EXT_036.,id,SRC_EXT_036,CARD_EXT_058,verified
-OBS_EXT_059,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Busuk pangkal batang.,id,SRC_EXT_036,CARD_EXT_059,verified
-BUKTI_EXT_059,BuktiSumber,Bukti sumber: Musim hujan pada Busuk pangkal batang; SRC_EXT_036.,id,SRC_EXT_036,CARD_EXT_059,verified
-OBS_EXT_060,ObservasiLingkungan,Observasi lingkungan: Cuaca hangat dan lembap pada Penyakit Antraknosa.,id,SRC_EXT_012,CARD_EXT_060,verified
-BUKTI_EXT_060,BuktiSumber,Bukti sumber: Cuaca hangat dan lembap pada Penyakit Antraknosa; SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_060,verified
-OBS_EXT_061,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi dan suhu hangat pada Penyakit Bercak Biji Ungu.,id,SRC_EXT_012,CARD_EXT_061,verified
-BUKTI_EXT_061,BuktiSumber,Bukti sumber: Kelembapan tinggi dan suhu hangat pada Penyakit Bercak Biji Ungu; SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_061,verified
-OBS_EXT_062,ObservasiLingkungan,Observasi lingkungan: Suhu sejuk dan hujan sering pada Penyakit Hawar Bakteri (Bacterial Blight).,id,SRC_EXT_012,CARD_EXT_062,verified
-BUKTI_EXT_062,BuktiSumber,Bukti sumber: Suhu sejuk dan hujan sering pada Penyakit Hawar Bakteri (Bacterial Blight); SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_062,verified
-OBS_EXT_063,ObservasiLingkungan,Observasi lingkungan: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Kerdil Kedelai (Soybean Stunt Virus).,id,SRC_EXT_037,CARD_EXT_063,verified
-BUKTI_EXT_063,BuktiSumber,Bukti sumber: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Kerdil Kedelai (Soybean Stunt Virus); SRC_EXT_037.,id,SRC_EXT_037,CARD_EXT_063,verified
-OBS_EXT_064,ObservasiLingkungan,Observasi lingkungan: Cuaca sejuk dan basah pada Penyakit Layu Fusarium.,id,SRC_EXT_038,CARD_EXT_064,verified
-BUKTI_EXT_064,BuktiSumber,Bukti sumber: Cuaca sejuk dan basah pada Penyakit Layu Fusarium; SRC_EXT_038.,id,SRC_EXT_038,CARD_EXT_064,verified
-OBS_EXT_065,ObservasiLingkungan,Observasi lingkungan: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus).,id,SRC_EXT_037,CARD_EXT_065,verified
-BUKTI_EXT_065,BuktiSumber,Bukti sumber: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus); SRC_EXT_037.,id,SRC_EXT_037,CARD_EXT_065,verified
-OBS_EXT_066,ObservasiLingkungan,Observasi lingkungan: Tanah jenuh air dan kelembapan tinggi pada Penyakit Rebah Semai.,id,SRC_EXT_028,CARD_EXT_066,verified
-BUKTI_EXT_066,BuktiSumber,Bukti sumber: Tanah jenuh air dan kelembapan tinggi pada Penyakit Rebah Semai; SRC_EXT_028.,id,SRC_EXT_028,CARD_EXT_066,verified
-OBS_EXT_067,ObservasiLingkungan,Observasi lingkungan: Cuaca memengaruhi populasi Bemisia tabaci pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus).,id,SRC_EXT_039,CARD_EXT_067,verified
-BUKTI_EXT_067,BuktiSumber,Bukti sumber: Cuaca memengaruhi populasi Bemisia tabaci pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus); SRC_EXT_039.,id,SRC_EXT_039,CARD_EXT_067,verified
-OBS_EXT_068,ObservasiLingkungan,"Observasi lingkungan: Suhu, curah hujan, dan angin pada Tanaman kerdil (stunt).",id,SRC_EXT_031,CARD_EXT_068,verified
-BUKTI_EXT_068,BuktiSumber,"Bukti sumber: Suhu, curah hujan, dan angin pada Tanaman kerdil (stunt); SRC_EXT_031.",id,SRC_EXT_031,CARD_EXT_068,verified
+SuhuPadaHawarDaunBakteriUbiKayu,ObservasiLingkungan,Observasi lingkungan: Suhu pada Hawar daun bakteri.,id,SRC_EXT_001,CARD_EXT_001,verified
+BuktiSuhuPadaHawarDaunBakteriUbiKayu,BuktiSumber,Bukti sumber: Suhu pada Hawar daun bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_001,verified
+MusimHujanPadaHawarDaunBakteriUbiKayu,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Hawar daun bakteri.,id,SRC_EXT_001,CARD_EXT_002,verified
+BuktiMusimHujanPadaHawarDaunBakteriUbiKayu,BuktiSumber,Bukti sumber: Musim hujan pada Hawar daun bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_002,verified
+KelembapanTinggiPadaHawarDaunBakteriUbiKayu,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Hawar daun bakteri.,id,SRC_EXT_001,CARD_EXT_003,verified
+BuktiKelembapanTinggiPadaHawarDaunBakteriUbiKayu,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Hawar daun bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_003,verified
+SuhuPadaPenyakitBakteriPustulKedelai,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Bakteri Pustul.,id,SRC_EXT_002,CARD_EXT_004,verified
+BuktiSuhuPadaPenyakitBakteriPustulKedelai,BuktiSumber,Bukti sumber: Suhu pada Penyakit Bakteri Pustul; SRC_EXT_002.,id,SRC_EXT_002,CARD_EXT_004,verified
+KelembapanTinggiDanDaunBasahPadaPenyakitBakteriPustulKedelai,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi dan daun basah pada Penyakit Bakteri Pustul.,id,SRC_EXT_002,CARD_EXT_005,verified
+BuktiKelembapanTinggiDanDaunBasahPadaPenyakitBakteriPustulKedelai,BuktiSumber,Bukti sumber: Kelembapan tinggi dan daun basah pada Penyakit Bakteri Pustul; SRC_EXT_002.,id,SRC_EXT_002,CARD_EXT_005,verified
+SuhuPadaPenyakitHawarDaunJagung,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Hawar Daun.,id,SRC_EXT_003,CARD_EXT_006,verified
+BuktiSuhuPadaPenyakitHawarDaunJagung,BuktiSumber,Bukti sumber: Suhu pada Penyakit Hawar Daun; SRC_EXT_003.,id,SRC_EXT_003,CARD_EXT_006,verified
+DaunBasahPadaPenyakitHawarDaunJagung,ObservasiLingkungan,Observasi lingkungan: Daun basah pada Penyakit Hawar Daun.,id,SRC_EXT_003,CARD_EXT_007,verified
+BuktiDaunBasahPadaPenyakitHawarDaunJagung,BuktiSumber,Bukti sumber: Daun basah pada Penyakit Hawar Daun; SRC_EXT_003.,id,SRC_EXT_003,CARD_EXT_007,verified
+KelembapanRelatifPadaPenyakitHawarPelepahDaunPadi,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif pada Penyakit Hawar Pelepah Daun.,id,SRC_EXT_005,CARD_EXT_008,verified
+BuktiKelembapanRelatifPadaPenyakitHawarPelepahDaunPadi,BuktiSumber,Bukti sumber: Kelembapan relatif pada Penyakit Hawar Pelepah Daun; SRC_EXT_005.,id,SRC_EXT_005,CARD_EXT_008,verified
+SuhuPadaPenyakitHawarPelepahDaunPadi,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Hawar Pelepah Daun.,id,SRC_EXT_005,CARD_EXT_009,verified
+BuktiSuhuPadaPenyakitHawarPelepahDaunPadi,BuktiSumber,Bukti sumber: Suhu pada Penyakit Hawar Pelepah Daun; SRC_EXT_005.,id,SRC_EXT_005,CARD_EXT_009,verified
+SuhuOptimalPadaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai,ObservasiLingkungan,Observasi lingkungan: Suhu optimal pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot).,id,SRC_EXT_010,CARD_EXT_010,verified
+BuktiSuhuOptimalPadaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai,BuktiSumber,Bukti sumber: Suhu optimal pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot); SRC_EXT_010.,id,SRC_EXT_010,CARD_EXT_010,verified
+KelembapanRelatifDiAtas90PersenPadaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif >90% pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot).,id,SRC_EXT_010,CARD_EXT_011,verified
+BuktiKelembapanRelatifDiAtas90PersenPadaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai,BuktiSumber,Bukti sumber: Kelembapan relatif >90% pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot); SRC_EXT_010.,id,SRC_EXT_010,CARD_EXT_011,verified
+KelembapanTinggiDanDaunBasahPadaPenyakitBercakTargetKedelai,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi dan daun basah pada Penyakit Bercak Target.,id,SRC_EXT_011,CARD_EXT_012,verified
+BuktiKelembapanTinggiDanDaunBasahPadaPenyakitBercakTargetKedelai,BuktiSumber,Bukti sumber: Kelembapan tinggi dan daun basah pada Penyakit Bercak Target; SRC_EXT_011.,id,SRC_EXT_011,CARD_EXT_012,verified
+SuhuPadaPenyakitEmbunTepungPowderyMildewKedelai,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Embun Tepung (Powdery Mildew).,id,SRC_EXT_012,CARD_EXT_013,verified
+BuktiSuhuPadaPenyakitEmbunTepungPowderyMildewKedelai,BuktiSumber,Bukti sumber: Suhu pada Penyakit Embun Tepung (Powdery Mildew); SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_013,verified
+KelembapanRendahDenganDaunBasahTerbatasPadaPenyakitEmbunTepungPowderyMildewKedelai,ObservasiLingkungan,Observasi lingkungan: Kelembapan rendah dengan daun basah terbatas pada Penyakit Embun Tepung (Powdery Mildew).,id,SRC_EXT_012,CARD_EXT_014,verified
+BuktiKelembapanRendahDenganDaunBasahTerbatasPadaPenyakitEmbunTepungPowderyMildewKedelai,BuktiSumber,Bukti sumber: Kelembapan rendah dengan daun basah terbatas pada Penyakit Embun Tepung (Powdery Mildew); SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_014,verified
+CurahHujanDanKelembapanRelatifPadaAntraknosaUbiKayuBatang,ObservasiLingkungan,Observasi lingkungan: Curah hujan dan kelembapan relatif pada Antraknosa.,id,SRC_EXT_013,CARD_EXT_015,verified
+BuktiCurahHujanDanKelembapanRelatifPadaAntraknosaUbiKayuBatang,BuktiSumber,Bukti sumber: Curah hujan dan kelembapan relatif pada Antraknosa; SRC_EXT_013.,id,SRC_EXT_013,CARD_EXT_015,verified
+CurahHujanDanKelembapanRelatifPadaAntraknosaUbiKayuDaun,ObservasiLingkungan,Observasi lingkungan: Curah hujan dan kelembapan relatif pada Antraknosa.,id,SRC_EXT_013,CARD_EXT_016,verified
+BuktiCurahHujanDanKelembapanRelatifPadaAntraknosaUbiKayuDaun,BuktiSumber,Bukti sumber: Curah hujan dan kelembapan relatif pada Antraknosa; SRC_EXT_013.,id,SRC_EXT_013,CARD_EXT_016,verified
+CuacaHangatDanLembapPadaBercakDaunCoklatUbiKayu,ObservasiLingkungan,Observasi lingkungan: Cuaca hangat dan lembap pada Bercak daun Coklat.,id,SRC_EXT_014,CARD_EXT_017,verified
+BuktiCuacaHangatDanLembapPadaBercakDaunCoklatUbiKayu,BuktiSumber,Bukti sumber: Cuaca hangat dan lembap pada Bercak daun Coklat; SRC_EXT_014.,id,SRC_EXT_014,CARD_EXT_017,verified
+SuhuPadaPenyakitKaratDaunKacangTanah,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Karat Daun.,id,SRC_EXT_015,CARD_EXT_018,verified
+BuktiSuhuPadaPenyakitKaratDaunKacangTanah,BuktiSumber,Bukti sumber: Suhu pada Penyakit Karat Daun; SRC_EXT_015.,id,SRC_EXT_015,CARD_EXT_018,verified
+KelembapanRelatifDiAtas78PersenPadaPenyakitKaratDaunKacangTanah,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif >78% pada Penyakit Karat Daun.,id,SRC_EXT_015,CARD_EXT_019,verified
+BuktiKelembapanRelatifDiAtas78PersenPadaPenyakitKaratDaunKacangTanah,BuktiSumber,Bukti sumber: Kelembapan relatif >78% pada Penyakit Karat Daun; SRC_EXT_015.,id,SRC_EXT_015,CARD_EXT_019,verified
+SuhuPadaPenyakitBercakDaunKacangTanah,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Bercak Daun.,id,SRC_EXT_016,CARD_EXT_020,verified
+BuktiSuhuPadaPenyakitBercakDaunKacangTanah,BuktiSumber,Bukti sumber: Suhu pada Penyakit Bercak Daun; SRC_EXT_016.,id,SRC_EXT_016,CARD_EXT_020,verified
+KelembapanRelatifDiAtas90PersenPadaPenyakitBercakDaunKacangTanah,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif >90% pada Penyakit Bercak Daun.,id,SRC_EXT_016,CARD_EXT_021,verified
+BuktiKelembapanRelatifDiAtas90PersenPadaPenyakitBercakDaunKacangTanah,BuktiSumber,Bukti sumber: Kelembapan relatif >90% pada Penyakit Bercak Daun; SRC_EXT_016.,id,SRC_EXT_016,CARD_EXT_021,verified
+SuhuPadaPenyakitEmbunTepungKacangHijau,ObservasiLingkungan,Observasi lingkungan: Suhu pada Penyakit Embun Tepung.,id,SRC_EXT_017,CARD_EXT_022,verified
+BuktiSuhuPadaPenyakitEmbunTepungKacangHijau,BuktiSumber,Bukti sumber: Suhu pada Penyakit Embun Tepung; SRC_EXT_017.,id,SRC_EXT_017,CARD_EXT_022,verified
+KelembapanTinggiPadaPenyakitEmbunTepungKacangHijau,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Penyakit Embun Tepung.,id,SRC_EXT_017,CARD_EXT_023,verified
+BuktiKelembapanTinggiPadaPenyakitEmbunTepungKacangHijau,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Penyakit Embun Tepung; SRC_EXT_017.,id,SRC_EXT_017,CARD_EXT_023,verified
+Suhu2534CPadaPenyakitHawarDaunBakteriPadi,ObservasiLingkungan,Observasi lingkungan: Suhu 25–34°C pada Penyakit Hawar Daun Bakteri.,id,SRC_EXT_018,CARD_EXT_024,verified
+BuktiSuhu2534CPadaPenyakitHawarDaunBakteriPadi,BuktiSumber,Bukti sumber: Suhu 25–34°C pada Penyakit Hawar Daun Bakteri; SRC_EXT_018.,id,SRC_EXT_018,CARD_EXT_024,verified
+KelembapanRelatifDiAtas70PersenPadaPenyakitHawarDaunBakteriPadi,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif >70% pada Penyakit Hawar Daun Bakteri.,id,SRC_EXT_018,CARD_EXT_025,verified
+BuktiKelembapanRelatifDiAtas70PersenPadaPenyakitHawarDaunBakteriPadi,BuktiSumber,Bukti sumber: Kelembapan relatif >70% pada Penyakit Hawar Daun Bakteri; SRC_EXT_018.,id,SRC_EXT_018,CARD_EXT_025,verified
+HujanLebatDanAnginKencangPadaPenyakitHawarDaunBakteriPadi,ObservasiLingkungan,Observasi lingkungan: Hujan lebat dan angin kencang pada Penyakit Hawar Daun Bakteri.,id,SRC_EXT_018,CARD_EXT_026,verified
+BuktiHujanLebatDanAnginKencangPadaPenyakitHawarDaunBakteriPadi,BuktiSumber,Bukti sumber: Hujan lebat dan angin kencang pada Penyakit Hawar Daun Bakteri; SRC_EXT_018.,id,SRC_EXT_018,CARD_EXT_026,verified
+MusimHujanPadaPenyakitTungroPadi,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Penyakit Tungro.,id,SRC_EXT_019,CARD_EXT_027,verified
+BuktiMusimHujanPadaPenyakitTungroPadi,BuktiSumber,Bukti sumber: Musim hujan pada Penyakit Tungro; SRC_EXT_019.,id,SRC_EXT_019,CARD_EXT_027,verified
+KondisiTropisDenganPadiSepanjangTahunPadaPenyakitKerdilRumputDanKerdilHampaPadi,ObservasiLingkungan,Observasi lingkungan: Kondisi tropis dengan padi sepanjang tahun pada Penyakit Kerdil Rumput dan Kerdil Hampa.,id,SRC_EXT_020,CARD_EXT_028,verified
+BuktiKondisiTropisDenganPadiSepanjangTahunPadaPenyakitKerdilRumputDanKerdilHampaPadi,BuktiSumber,Bukti sumber: Kondisi tropis dengan padi sepanjang tahun pada Penyakit Kerdil Rumput dan Kerdil Hampa; SRC_EXT_020.,id,SRC_EXT_020,CARD_EXT_028,verified
+SuhuMinimal30CPadaPenyakitBusukPelepahJagung,ObservasiLingkungan,Observasi lingkungan: Suhu ≥30°C pada Penyakit Busuk Pelepah.,id,SRC_EXT_024,CARD_EXT_029,verified
+BuktiSuhuMinimal30CPadaPenyakitBusukPelepahJagung,BuktiSumber,Bukti sumber: Suhu ≥30°C pada Penyakit Busuk Pelepah; SRC_EXT_024.,id,SRC_EXT_024,CARD_EXT_029,verified
+KelembapanTinggiPadaPenyakitBusukPelepahJagung,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Penyakit Busuk Pelepah.,id,SRC_EXT_024,CARD_EXT_030,verified
+BuktiKelembapanTinggiPadaPenyakitBusukPelepahJagung,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Penyakit Busuk Pelepah; SRC_EXT_024.,id,SRC_EXT_024,CARD_EXT_030,verified
+MusimDinginRinganPadaPenyakitLayuStewartJagung,ObservasiLingkungan,Observasi lingkungan: Musim dingin ringan pada Penyakit Layu Stewart.,id,SRC_EXT_021,CARD_EXT_031,verified
+BuktiMusimDinginRinganPadaPenyakitLayuStewartJagung,BuktiSumber,Bukti sumber: Musim dingin ringan pada Penyakit Layu Stewart; SRC_EXT_021.,id,SRC_EXT_021,CARD_EXT_031,verified
+SuhuInfeksiOptimalPadaLayuFusariumUbiJalar,ObservasiLingkungan,Observasi lingkungan: Suhu infeksi optimal pada layu fusarium.,id,SRC_EXT_023,CARD_EXT_032,verified
+BuktiSuhuInfeksiOptimalPadaLayuFusariumUbiJalar,BuktiSumber,Bukti sumber: Suhu infeksi optimal pada layu fusarium; SRC_EXT_023.,id,SRC_EXT_023,CARD_EXT_032,verified
+KelembapanTanah2875PersenPadaLayuFusariumUbiJalar,ObservasiLingkungan,Observasi lingkungan: Kelembapan tanah 28–75% pada layu fusarium.,id,SRC_EXT_023,CARD_EXT_033,verified
+BuktiKelembapanTanah2875PersenPadaLayuFusariumUbiJalar,BuktiSumber,Bukti sumber: Kelembapan tanah 28–75% pada layu fusarium; SRC_EXT_023.,id,SRC_EXT_023,CARD_EXT_033,verified
+Suhu2029CPadaPenyakitBercakKuningUbiJalar,ObservasiLingkungan,Observasi lingkungan: Suhu 20–29°C pada Penyakit bercak kuning.,id,SRC_EXT_025,CARD_EXT_034,verified
+BuktiSuhu2029CPadaPenyakitBercakKuningUbiJalar,BuktiSumber,Bukti sumber: Suhu 20–29°C pada Penyakit bercak kuning; SRC_EXT_025.,id,SRC_EXT_025,CARD_EXT_034,verified
+SuhuLapang2327CPadaPenyakitBusukHitamBlackRotUbiJalar,ObservasiLingkungan,Observasi lingkungan: Suhu lapang 23–27°C pada Penyakit busuk hitam (black rot).,id,SRC_EXT_022,CARD_EXT_035,verified
+BuktiSuhuLapang2327CPadaPenyakitBusukHitamBlackRotUbiJalar,BuktiSumber,Bukti sumber: Suhu lapang 23–27°C pada Penyakit busuk hitam (black rot); SRC_EXT_022.,id,SRC_EXT_022,CARD_EXT_035,verified
+Suhu2537CPadaPenyakitLayuBakteriKacangTanah,ObservasiLingkungan,Observasi lingkungan: Suhu 25–37°C pada Penyakit Layu Bakteri.,id,SRC_EXT_026,CARD_EXT_036,verified
+BuktiSuhu2537CPadaPenyakitLayuBakteriKacangTanah,BuktiSumber,Bukti sumber: Suhu 25–37°C pada Penyakit Layu Bakteri; SRC_EXT_026.,id,SRC_EXT_026,CARD_EXT_036,verified
+TanahBasahPadaPenyakitLayuBakteriKacangTanah,ObservasiLingkungan,Observasi lingkungan: Tanah basah pada Penyakit Layu Bakteri.,id,SRC_EXT_026,CARD_EXT_037,verified
+BuktiTanahBasahPadaPenyakitLayuBakteriKacangTanah,BuktiSumber,Bukti sumber: Tanah basah pada Penyakit Layu Bakteri; SRC_EXT_026.,id,SRC_EXT_026,CARD_EXT_037,verified
+Suhu2530CPadaPenyakitBercakDaunKacangHijau,ObservasiLingkungan,Observasi lingkungan: Suhu 25–30°C pada Penyakit Bercak Daun.,id,SRC_EXT_027,CARD_EXT_038,verified
+BuktiSuhu2530CPadaPenyakitBercakDaunKacangHijau,BuktiSumber,Bukti sumber: Suhu 25–30°C pada Penyakit Bercak Daun; SRC_EXT_027.,id,SRC_EXT_027,CARD_EXT_038,verified
+KelembapanRelatif98100PersenPadaPenyakitBercakDaunKacangHijau,ObservasiLingkungan,Observasi lingkungan: Kelembapan relatif 98–100% pada Penyakit Bercak Daun.,id,SRC_EXT_027,CARD_EXT_039,verified
+BuktiKelembapanRelatif98100PersenPadaPenyakitBercakDaunKacangHijau,BuktiSumber,Bukti sumber: Kelembapan relatif 98–100% pada Penyakit Bercak Daun; SRC_EXT_027.,id,SRC_EXT_027,CARD_EXT_039,verified
+Suhu2735CPadaPenyakitLayuKacangHijau,ObservasiLingkungan,Observasi lingkungan: Suhu 27–35°C pada Penyakit Layu.,id,SRC_EXT_028,CARD_EXT_040,verified
+BuktiSuhu2735CPadaPenyakitLayuKacangHijau,BuktiSumber,Bukti sumber: Suhu 27–35°C pada Penyakit Layu; SRC_EXT_028.,id,SRC_EXT_028,CARD_EXT_040,verified
+TanahJenuhAirDanKelembapanTinggiPadaPenyakitLayuKacangHijau,ObservasiLingkungan,Observasi lingkungan: Tanah jenuh air dan kelembapan tinggi pada Penyakit Layu.,id,SRC_EXT_028,CARD_EXT_041,verified
+BuktiTanahJenuhAirDanKelembapanTinggiPadaPenyakitLayuKacangHijau,BuktiSumber,Bukti sumber: Tanah jenuh air dan kelembapan tinggi pada Penyakit Layu; SRC_EXT_028.,id,SRC_EXT_028,CARD_EXT_041,verified
+SuhuOptimalPadaHawarBakteriUbiKayu,ObservasiLingkungan,Observasi lingkungan: Suhu optimal pada Hawar bakteri.,id,SRC_EXT_001,CARD_EXT_042,verified
+BuktiSuhuOptimalPadaHawarBakteriUbiKayu,BuktiSumber,Bukti sumber: Suhu optimal pada Hawar bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_042,verified
+MusimHujanPadaHawarBakteriUbiKayu,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Hawar bakteri.,id,SRC_EXT_001,CARD_EXT_043,verified
+BuktiMusimHujanPadaHawarBakteriUbiKayu,BuktiSumber,Bukti sumber: Musim hujan pada Hawar bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_043,verified
+KelembapanTinggiPadaHawarBakteriUbiKayu,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Hawar bakteri.,id,SRC_EXT_001,CARD_EXT_044,verified
+BuktiKelembapanTinggiPadaHawarBakteriUbiKayu,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Hawar bakteri; SRC_EXT_001.,id,SRC_EXT_001,CARD_EXT_044,verified
+SuhuCurahHujanDanAnginPadaCassavaMosaicBegomovirusCMBsUbiKayu,ObservasiLingkungan,"Observasi lingkungan: Suhu, curah hujan, dan angin pada Cassava Mosaic Begomovirus (CMBs).",id,SRC_EXT_031,CARD_EXT_045,verified
+BuktiSuhuCurahHujanDanAnginPadaCassavaMosaicBegomovirusCMBsUbiKayu,BuktiSumber,"Bukti sumber: Suhu, curah hujan, dan angin pada Cassava Mosaic Begomovirus (CMBs); SRC_EXT_031.",id,SRC_EXT_031,CARD_EXT_045,verified
+CurahHujanPadaCassavaBrownStreakDiseaseCBSDUbiKayu,ObservasiLingkungan,Observasi lingkungan: Curah hujan pada Cassava Brown Streak Disease (CBSD).,id,SRC_EXT_033,CARD_EXT_046,verified
+BuktiCurahHujanPadaCassavaBrownStreakDiseaseCBSDUbiKayu,BuktiSumber,Bukti sumber: Curah hujan pada Cassava Brown Streak Disease (CBSD); SRC_EXT_033.,id,SRC_EXT_033,CARD_EXT_046,verified
+SuhuPadaCassavaBrownStreakDiseaseCBSDUbiKayu,ObservasiLingkungan,Observasi lingkungan: Suhu pada Cassava Brown Streak Disease (CBSD).,id,SRC_EXT_033,CARD_EXT_047,verified
+BuktiSuhuPadaCassavaBrownStreakDiseaseCBSDUbiKayu,BuktiSumber,Bukti sumber: Suhu pada Cassava Brown Streak Disease (CBSD); SRC_EXT_033.,id,SRC_EXT_033,CARD_EXT_047,verified
+MusimHujanPadaSuperelongasiUbiKayu,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Superelongasi.,id,SRC_EXT_032,CARD_EXT_048,verified
+BuktiMusimHujanPadaSuperelongasiUbiKayu,BuktiSumber,Bukti sumber: Musim hujan pada Superelongasi; SRC_EXT_032.,id,SRC_EXT_032,CARD_EXT_048,verified
+IklimLembapDanSejukPadaBercakDaunPutihUbiKayu,ObservasiLingkungan,Observasi lingkungan: Iklim lembap dan sejuk pada Bercak daun putih.,id,SRC_EXT_030,CARD_EXT_049,verified
+BuktiIklimLembapDanSejukPadaBercakDaunPutihUbiKayu,BuktiSumber,Bukti sumber: Iklim lembap dan sejuk pada Bercak daun putih; SRC_EXT_030.,id,SRC_EXT_030,CARD_EXT_049,verified
+CuacaSejukDanHujanPadaBercakDaunPutihUbiKayu,ObservasiLingkungan,Observasi lingkungan: Cuaca sejuk dan hujan pada Bercak daun putih.,id,SRC_EXT_030,CARD_EXT_050,verified
+BuktiCuacaSejukDanHujanPadaBercakDaunPutihUbiKayu,BuktiSumber,Bukti sumber: Cuaca sejuk dan hujan pada Bercak daun putih; SRC_EXT_030.,id,SRC_EXT_030,CARD_EXT_050,verified
+IklimLembapPadaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu,ObservasiLingkungan,Observasi lingkungan: Iklim lembap pada Nekrosis pada titik tunas (Cassava bud necrosis).,id,SRC_EXT_029,CARD_EXT_051,verified
+BuktiIklimLembapPadaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu,BuktiSumber,Bukti sumber: Iklim lembap pada Nekrosis pada titik tunas (Cassava bud necrosis); SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_051,verified
+KelembapanTinggiPadaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Nekrosis pada titik tunas (Cassava bud necrosis).,id,SRC_EXT_029,CARD_EXT_052,verified
+BuktiKelembapanTinggiPadaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Nekrosis pada titik tunas (Cassava bud necrosis); SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_052,verified
+IklimLembapDanHangatPadaBercakDaunBaurUbiKayu,ObservasiLingkungan,Observasi lingkungan: Iklim lembap dan hangat pada Bercak daun baur.,id,SRC_EXT_034,CARD_EXT_053,verified
+BuktiIklimLembapDanHangatPadaBercakDaunBaurUbiKayu,BuktiSumber,Bukti sumber: Iklim lembap dan hangat pada Bercak daun baur; SRC_EXT_034.,id,SRC_EXT_034,CARD_EXT_053,verified
+TanahTergenangPadaBusukAkarDanUmbiUbiKayu,ObservasiLingkungan,Observasi lingkungan: Tanah tergenang pada Busuk akar dan umbi.,id,SRC_EXT_029,CARD_EXT_054,verified
+BuktiTanahTergenangPadaBusukAkarDanUmbiUbiKayu,BuktiSumber,Bukti sumber: Tanah tergenang pada Busuk akar dan umbi; SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_054,verified
+TanahTergenangPadaBusukAkarUbiKayu,ObservasiLingkungan,Observasi lingkungan: Tanah tergenang pada Busuk akar.,id,SRC_EXT_029,CARD_EXT_055,verified
+BuktiTanahTergenangPadaBusukAkarUbiKayu,BuktiSumber,Bukti sumber: Tanah tergenang pada Busuk akar; SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_055,verified
+TanahTergenangPadaBusukUmbiUbiKayu,ObservasiLingkungan,Observasi lingkungan: Tanah tergenang pada Busuk Umbi.,id,SRC_EXT_029,CARD_EXT_056,verified
+BuktiTanahTergenangPadaBusukUmbiUbiKayu,BuktiSumber,Bukti sumber: Tanah tergenang pada Busuk Umbi; SRC_EXT_029.,id,SRC_EXT_029,CARD_EXT_056,verified
+MusimKemarauPadaSapuSetanWitchesBroomUbiKayu,ObservasiLingkungan,Observasi lingkungan: Musim kemarau pada Sapu setan (Witches broom).,id,SRC_EXT_035,CARD_EXT_057,verified
+BuktiMusimKemarauPadaSapuSetanWitchesBroomUbiKayu,BuktiSumber,Bukti sumber: Musim kemarau pada Sapu setan (Witches broom); SRC_EXT_035.,id,SRC_EXT_035,CARD_EXT_057,verified
+KelembapanTinggiPadaBusukPangkalBatangUbiKayu,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi pada Busuk pangkal batang.,id,SRC_EXT_036,CARD_EXT_058,verified
+BuktiKelembapanTinggiPadaBusukPangkalBatangUbiKayu,BuktiSumber,Bukti sumber: Kelembapan tinggi pada Busuk pangkal batang; SRC_EXT_036.,id,SRC_EXT_036,CARD_EXT_058,verified
+MusimHujanPadaBusukPangkalBatangUbiKayu,ObservasiLingkungan,Observasi lingkungan: Musim hujan pada Busuk pangkal batang.,id,SRC_EXT_036,CARD_EXT_059,verified
+BuktiMusimHujanPadaBusukPangkalBatangUbiKayu,BuktiSumber,Bukti sumber: Musim hujan pada Busuk pangkal batang; SRC_EXT_036.,id,SRC_EXT_036,CARD_EXT_059,verified
+CuacaHangatDanLembapPadaPenyakitAntraknosaKedelai,ObservasiLingkungan,Observasi lingkungan: Cuaca hangat dan lembap pada Penyakit Antraknosa.,id,SRC_EXT_012,CARD_EXT_060,verified
+BuktiCuacaHangatDanLembapPadaPenyakitAntraknosaKedelai,BuktiSumber,Bukti sumber: Cuaca hangat dan lembap pada Penyakit Antraknosa; SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_060,verified
+KelembapanTinggiDanSuhuHangatPadaPenyakitBercakBijiUnguKedelai,ObservasiLingkungan,Observasi lingkungan: Kelembapan tinggi dan suhu hangat pada Penyakit Bercak Biji Ungu.,id,SRC_EXT_012,CARD_EXT_061,verified
+BuktiKelembapanTinggiDanSuhuHangatPadaPenyakitBercakBijiUnguKedelai,BuktiSumber,Bukti sumber: Kelembapan tinggi dan suhu hangat pada Penyakit Bercak Biji Ungu; SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_061,verified
+SuhuSejukDanHujanSeringPadaPenyakitHawarBakteriBacterialBlightKedelai,ObservasiLingkungan,Observasi lingkungan: Suhu sejuk dan hujan sering pada Penyakit Hawar Bakteri (Bacterial Blight).,id,SRC_EXT_012,CARD_EXT_062,verified
+BuktiSuhuSejukDanHujanSeringPadaPenyakitHawarBakteriBacterialBlightKedelai,BuktiSumber,Bukti sumber: Suhu sejuk dan hujan sering pada Penyakit Hawar Bakteri (Bacterial Blight); SRC_EXT_012.,id,SRC_EXT_012,CARD_EXT_062,verified
+LahanTegalanDiBawahTegakanPohonJatiPadaPenyakitKerdilKedelaiSoybeanStuntVirusKedelai,ObservasiLingkungan,Observasi lingkungan: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Kerdil Kedelai (Soybean Stunt Virus).,id,SRC_EXT_037,CARD_EXT_063,verified
+BuktiLahanTegalanDiBawahTegakanPohonJatiPadaPenyakitKerdilKedelaiSoybeanStuntVirusKedelai,BuktiSumber,Bukti sumber: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Kerdil Kedelai (Soybean Stunt Virus); SRC_EXT_037.,id,SRC_EXT_037,CARD_EXT_063,verified
+CuacaSejukDanBasahPadaPenyakitLayuFusariumKedelai,ObservasiLingkungan,Observasi lingkungan: Cuaca sejuk dan basah pada Penyakit Layu Fusarium.,id,SRC_EXT_038,CARD_EXT_064,verified
+BuktiCuacaSejukDanBasahPadaPenyakitLayuFusariumKedelai,BuktiSumber,Bukti sumber: Cuaca sejuk dan basah pada Penyakit Layu Fusarium; SRC_EXT_038.,id,SRC_EXT_038,CARD_EXT_064,verified
+LahanTegalanDiBawahTegakanPohonJatiPadaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai,ObservasiLingkungan,Observasi lingkungan: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus).,id,SRC_EXT_037,CARD_EXT_065,verified
+BuktiLahanTegalanDiBawahTegakanPohonJatiPadaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai,BuktiSumber,Bukti sumber: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus); SRC_EXT_037.,id,SRC_EXT_037,CARD_EXT_065,verified
+TanahJenuhAirDanKelembapanTinggiPadaPenyakitRebahSemaiKedelai,ObservasiLingkungan,Observasi lingkungan: Tanah jenuh air dan kelembapan tinggi pada Penyakit Rebah Semai.,id,SRC_EXT_028,CARD_EXT_066,verified
+BuktiTanahJenuhAirDanKelembapanTinggiPadaPenyakitRebahSemaiKedelai,BuktiSumber,Bukti sumber: Tanah jenuh air dan kelembapan tinggi pada Penyakit Rebah Semai; SRC_EXT_028.,id,SRC_EXT_028,CARD_EXT_066,verified
+CuacaMemengaruhiPopulasiBemisiaTabaciPadaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai,ObservasiLingkungan,Observasi lingkungan: Cuaca memengaruhi populasi Bemisia tabaci pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus).,id,SRC_EXT_039,CARD_EXT_067,verified
+BuktiCuacaMemengaruhiPopulasiBemisiaTabaciPadaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai,BuktiSumber,Bukti sumber: Cuaca memengaruhi populasi Bemisia tabaci pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus); SRC_EXT_039.,id,SRC_EXT_039,CARD_EXT_067,verified
+SuhuCurahHujanDanAnginPadaTanamanKerdilStuntUbiKayu,ObservasiLingkungan,"Observasi lingkungan: Suhu, curah hujan, dan angin pada Tanaman kerdil (stunt).",id,SRC_EXT_031,CARD_EXT_068,verified
+BuktiSuhuCurahHujanDanAnginPadaTanamanKerdilStuntUbiKayu,BuktiSumber,"Bukti sumber: Suhu, curah hujan, dan angin pada Tanaman kerdil (stunt); SRC_EXT_031.",id,SRC_EXT_031,CARD_EXT_068,verified
