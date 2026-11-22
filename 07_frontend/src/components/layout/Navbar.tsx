@@ -7,6 +7,7 @@ import { Logo } from "../common/Logo";
 const navItems = [
   { to: "/", label: "Beranda", end: true },
   { to: "/diagnosis", label: "Diagnosis" },
+  { to: "/riwayat", label: "Riwayat" },
   { to: "/knowledge-base", label: "Knowledge Base" },
 ];
 

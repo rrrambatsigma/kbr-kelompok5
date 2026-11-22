@@ -1,4 +1,4 @@
-import { BookOpen, Home, Info, Stethoscope } from "lucide-react";
+import { BookOpen, History, Home, Info, Stethoscope } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 import { Footer } from "../components/layout/Footer";
@@ -7,6 +7,7 @@ import { Logo } from "../components/common/Logo";
 const items = [
   { to: "/", label: "Beranda", icon: Home, end: true },
   { to: "/diagnosis", label: "Diagnosis", icon: Stethoscope },
+  { to: "/riwayat", label: "Riwayat", icon: History },
   { to: "/knowledge-base", label: "Knowledge Base", icon: BookOpen },
   { to: "/#tentang", label: "Tentang Kami", icon: Info },
 ];
