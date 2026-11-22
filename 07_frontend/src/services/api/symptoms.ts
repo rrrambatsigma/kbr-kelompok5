@@ -1,4 +1,4 @@
-import type { Symptom } from "../../types/api";
+import type { Symptom, SymptomMatchResult } from "../../types/api";
 import { apiRequest } from "./client";
 
 interface ListResponse {
@@ -11,4 +11,14 @@ export async function listSymptoms(plantId: string): Promise<Symptom[]> {
     `/api/symptoms?plantId=${encodeURIComponent(plantId)}`
   );
   return data.items;
+}
+
+export async function matchSymptoms(
+  plantId: string,
+  text: string
+): Promise<SymptomMatchResult> {
+  return apiRequest<SymptomMatchResult>("/api/symptoms/match", {
+    method: "POST",
+    body: JSON.stringify({ plantId, text }),
+  });
 }

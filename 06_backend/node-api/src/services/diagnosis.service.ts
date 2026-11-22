@@ -1,4 +1,5 @@
 import { InvalidRequestError } from "../lib/errors.js";
+import { env } from "../config/env.js";
 import { reason } from "../lib/reasoning/engine.js";
 import { explainCandidate } from "../lib/reasoning/explain.js";
 import {
@@ -16,6 +17,10 @@ import {
   type DiagnosisSymptom,
   type NamedEntity,
 } from "./knowledge.service.js";
+import {
+  findSimilarCases,
+  type SimilarCaseInfo,
+} from "./case-store.service.js";
 import {
   getDiseaseCategories,
   getReasoningStatus,
@@ -55,6 +60,11 @@ export interface DiagnosisCandidate {
   evidence: ReasoningEvidence[];
   explanation: string;
   scoreComponents: ScoreComponents;
+  similarCases: {
+    count: number;
+    maxOverlap: number;
+    lastSeen: string | null;
+  };
 }
 
 export interface DiagnosisReasoningInfo {
@@ -235,7 +245,8 @@ function explainWithPhase(
 
 export async function diagnose(
   input: DiagnosisInput,
-  requestId?: string
+  requestId?: string,
+  options: { withCbr?: boolean } = {}
 ): Promise<DiagnosisResult> {
   const dataset = await getDiagnosisDataset(input.plantId);
   const plant = dataset.plant;
@@ -368,6 +379,25 @@ export async function diagnose(
 
   const controlsByDisease = await getControlsForDiseases(topIris);
 
+  let similarCasesByDisease = new Map<string, SimilarCaseInfo>();
+
+  if (options.withCbr !== false && env.caseLogEnabled) {
+    try {
+      similarCasesByDisease = await findSimilarCases(
+        plantIri,
+        selectedSymptoms.map((symptom) => symptom.iri)
+      );
+    } catch (error) {
+      if (!warnings.includes("CASE_STORE_UNAVAILABLE")) {
+        warnings.push("CASE_STORE_UNAVAILABLE");
+      }
+      console.warn(
+        `[${requestId ?? "-"}] Case store tidak tersedia untuk CBR:`,
+        error instanceof Error ? error.message : String(error)
+      );
+    }
+  }
+
   let unclassifiedCount = 0;
 
   const candidates: DiagnosisCandidate[] = top.map((candidate) => {
@@ -406,6 +436,11 @@ export async function diagnose(
         phaseLabel
       ),
       scoreComponents: candidate.scoreComponents,
+      similarCases: similarCasesByDisease.get(candidate.disease.iri) ?? {
+        count: 0,
+        maxOverlap: 0,
+        lastSeen: null,
+      },
     };
   });
 

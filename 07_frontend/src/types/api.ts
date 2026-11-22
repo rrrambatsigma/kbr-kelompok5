@@ -107,6 +107,12 @@ export interface DiagnosisSymptom {
   label: string;
 }
 
+export interface SimilarCases {
+  count: number;
+  maxOverlap: number;
+  lastSeen: string | null;
+}
+
 export interface DiagnosisCandidate {
   diseaseId: string;
   diseaseIri: string;
@@ -127,6 +133,7 @@ export interface DiagnosisCandidate {
   evidence: ReasoningEvidence[];
   explanation: string;
   scoreComponents: ScoreComponents;
+  similarCases: SimilarCases;
 }
 
 export interface DiagnosisReasoningInfo {
@@ -160,6 +167,78 @@ export interface DiagnosisRequest {
   phaseId?: string;
   symptomIds: string[];
   topN?: number;
+}
+
+export interface SymptomSuggestion {
+  id: string;
+  label: string;
+  score: number;
+  matchedTerms: string[];
+}
+
+export interface SymptomMatchResult {
+  plantId: string;
+  text: string;
+  suggestions: SymptomSuggestion[];
+  unmatchedTerms: string[];
+}
+
+export type CaseStatus = "belum_diverifikasi" | "terverifikasi";
+export type CaseSource = "pengguna" | "uji";
+
+export interface CaseCandidate {
+  diseaseId: string;
+  diseaseIri: string;
+  diseaseLabel: string | null;
+  rank: number;
+  score: number;
+  confidence: string;
+  explanation: string;
+}
+
+export interface CaseSummary {
+  id: string;
+  createdAt: string;
+  plantId: string;
+  plantLabel: string | null;
+  phaseId: string | null;
+  symptomCount: number;
+  symptomLabels: string[];
+  note: string | null;
+  freeTextSymptoms: string | null;
+  status: CaseStatus;
+  source: CaseSource;
+  topDiseaseId: string | null;
+  topDiseaseLabel: string | null;
+  topScore: number | null;
+  candidateCount: number;
+}
+
+export interface CaseDetail extends CaseSummary {
+  symptomIds: string[];
+  candidates: CaseCandidate[];
+}
+
+export interface CaseStats {
+  total: number;
+  verified: number;
+  unverified: number;
+  byPlant: Array<{ plantId: string; label: string | null; count: number }>;
+  byDisease: Array<{
+    diseaseId: string;
+    label: string | null;
+    count: number;
+  }>;
+}
+
+export interface SaveCaseRequest {
+  plantId: string;
+  phaseId?: string | null;
+  symptomIds: string[];
+  topN?: number;
+  note?: string;
+  freeTextSymptoms?: string;
+  confirmedDiseaseId?: string;
 }
 
 export interface HealthStatus {

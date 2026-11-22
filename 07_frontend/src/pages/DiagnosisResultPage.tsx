@@ -8,6 +8,7 @@ import {
   Leaf,
   Microscope,
   RefreshCw,
+  Save,
   ShieldCheck,
   Stethoscope,
   XCircle,
@@ -22,6 +23,7 @@ import { ConfidenceMeter } from "../components/common/ConfidenceMeter";
 import { EmptyState } from "../components/common/EmptyState";
 import { PageHeader } from "../components/common/PageHeader";
 import { useDiagnosis } from "../context/DiagnosisContext";
+import { saveCase } from "../services/api/cases";
 import { getDisease } from "../services/api/diseases";
 import type {
   Control,
@@ -29,6 +31,7 @@ import type {
   DiseaseDetail,
   ReasoningEvidence,
 } from "../types/api";
+import { friendlyApiError } from "../utils/apiError";
 import {
   categoryLabel,
   confidenceLabel,
@@ -112,9 +115,16 @@ function CandidateCard({
             )}
           </div>
         </div>
-        <Badge tone={confidenceTone(candidate.confidence)}>
-          {confidenceLabel(candidate.confidence)}
-        </Badge>
+        <div className="flex shrink-0 flex-col items-end gap-1">
+          <Badge tone={confidenceTone(candidate.confidence)}>
+            {confidenceLabel(candidate.confidence)}
+          </Badge>
+          {candidate.similarCases.count > 0 && (
+            <Badge tone="success">
+              {candidate.similarCases.count} kasus serupa
+            </Badge>
+          )}
+        </div>
       </div>
       <div className="flex items-center gap-3">
         <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#dbe5dc]">
@@ -146,6 +156,12 @@ export function DiagnosisResultPage() {
   const { draft, result, reset } = useDiagnosis();
   const [detail, setDetail] = useState<DiseaseDetail | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
+  const [note, setNote] = useState("");
+  const [confirmedDiseaseId, setConfirmedDiseaseId] = useState("");
+  const [saveState, setSaveState] = useState<
+    "idle" | "saving" | "saved" | "error"
+  >("idle");
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   const topCandidate = result?.candidates[0] ?? null;
 
@@ -206,6 +222,35 @@ export function DiagnosisResultPage() {
       return true;
     });
   }, [detail, topCandidate]);
+
+  const handleSaveCase = async () => {
+    if (result === null) {
+      return;
+    }
+
+    setSaveState("saving");
+    setSaveError(null);
+
+    try {
+      await saveCase({
+        plantId: result.input.plantId,
+        phaseId: result.input.phaseId,
+        symptomIds: result.input.symptomIds,
+        topN: result.input.topN,
+        ...(note.trim() === "" ? {} : { note: note.trim() }),
+        ...(draft.symptomQuery.trim() === ""
+          ? {}
+          : { freeTextSymptoms: draft.symptomQuery.trim() }),
+        ...(confirmedDiseaseId === ""
+          ? {}
+          : { confirmedDiseaseId }),
+      });
+      setSaveState("saved");
+    } catch (error) {
+      setSaveState("error");
+      setSaveError(friendlyApiError(error));
+    }
+  };
 
   if (result === null || topCandidate === null) {
     return (
@@ -298,6 +343,76 @@ export function DiagnosisResultPage() {
         </div>
       </section>
 
+      <section className="card space-y-3 p-4 sm:p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="font-heading text-sm font-bold text-foreground">
+              Simpan kasus ke riwayat
+            </p>
+            <p className="mt-1 max-w-2xl text-xs leading-5 text-muted">
+              Kasus yang tersimpan bisa membantu menampilkan bukti &quot;kasus
+              serupa&quot; setelah diverifikasi. Penyimpanan manual, tanpa data
+              pribadi.
+            </p>
+          </div>
+          {saveState === "saved" && <Badge tone="success">Tersimpan</Badge>}
+        </div>
+
+        {saveState === "saved" ? (
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-secondary">
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
+              Kasus berhasil disimpan.
+            </p>
+            <Link to="/riwayat" className="btn-secondary">
+              Lihat riwayat
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        ) : (
+          <>
+            <textarea
+              className="input min-h-20 w-full resize-none"
+              value={note}
+              onChange={(event) => setNote(event.target.value)}
+              maxLength={500}
+              placeholder="Catatan tambahan (opsional), misalnya kondisi lahan atau cuaca."
+              aria-label="Catatan kasus"
+            />
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+              <select
+                className="input flex-1"
+                value={confirmedDiseaseId}
+                onChange={(event) =>
+                  setConfirmedDiseaseId(event.target.value)
+                }
+                aria-label="Penyakit terkonfirmasi"
+              >
+                <option value="">Penyakit terkonfirmasi (opsional)</option>
+                {result.candidates.map((candidate) => (
+                  <option
+                    key={candidate.diseaseId}
+                    value={candidate.diseaseId}
+                  >
+                    {candidate.label}
+                  </option>
+                ))}
+              </select>
+              <Button
+                onClick={() => void handleSaveCase()}
+                disabled={saveState === "saving"}
+              >
+                <Save className="h-4 w-4" aria-hidden="true" />
+                {saveState === "saving" ? "Menyimpan..." : "Simpan kasus"}
+              </Button>
+            </div>
+            {saveError !== null && (
+              <p className="text-xs font-semibold text-danger">{saveError}</p>
+            )}
+          </>
+        )}
+      </section>
+
       <div className="grid gap-5 lg:grid-cols-12">
         <section className="card space-y-5 p-5 sm:p-6 lg:col-span-5">
           <div className="flex items-center justify-between gap-2">
@@ -335,6 +450,11 @@ export function DiagnosisResultPage() {
               <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
                 {confidenceLabel(topCandidate.confidence)}
               </span>
+              {topCandidate.similarCases.count > 0 && (
+                <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
+                  {topCandidate.similarCases.count} kasus serupa
+                </span>
+              )}
               {result.input.phaseLabel !== null && (
                 <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
                   {phaseMatchLabel(topCandidate.phaseMatch)}

@@ -9,7 +9,10 @@ Node–Java. Jalankan dari root repo `E:\kbr-kelompok5`.
 # 1. Muat ontology (Fuseki harus berhenti)
 .\06_backend\scripts\load-ontology.ps1 -Reset
 
-# 2. Fuseki read-only
+# 1b. Sekali saja: siapkan dataset log kasus (Fuseki harus berhenti)
+.\06_backend\scripts\init-case-store.ps1
+
+# 2. Fuseki (plant-kb read-only + plant-kb-kasus writable)
 .\06_backend\scripts\start-fuseki.ps1
 
 # 3. Java reasoning API (terminal 1)
@@ -143,6 +146,8 @@ dan Java.
 | `FUSEKI_UNAVAILABLE` | Fuseki mati/timeout | Nyalakan Fuseki |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
 | `totalTriples` bukan 19.021 | Dataset lama | `load-ontology.ps1 -Reset` |
+| `/api/health/cases` DOWN | Dataset kasus belum dibuat | `init-case-store.ps1` saat Fuseki mati |
+| `CASE_STORE_UNAVAILABLE` | Case store mati/timeout | Cek dataset `plant-kb-kasus`; diagnosis tetap jalan |
 | Port sudah dipakai | Proses lama | Hentikan PID di port 3000/8082/3030 |
 
 ## 8. Uji degraded (manual)

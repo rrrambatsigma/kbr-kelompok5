@@ -1,0 +1,83 @@
+# Kosakata log kasus diagnosis (ABox runtime).
+#
+# File ini dimuat ke graf <urn:kbr:kasus> di dataset plant-kb-kasus.
+# TIDAK dimuat ke ontology_md.ttl dan tidak dibaca oleh reasoner.
+# Kelas inti (ptp:Diagnosis, ptp:KandidatDiagnosis, ptp:memilikiTanaman,
+# ptp:memilikiObservasi, ptp:menghasilkanPenyakit, ptp:peringkat,
+# ptp:skorKecocokan, ptp:tingkatKeyakinan, ptp:alasanKecocokan) sudah
+# didefinisikan di 04_ontology/ontology_md.ttl.
+
+@prefix ptp: <http://kbr.kelompok5.org/penyakit-tanaman-pangan#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:kbr:kasus> a owl:Ontology ;
+    rdfs:label "Log Kasus Diagnosis TaniCare"@id ;
+    rdfs:comment "ABox runtime untuk kasus diagnosis pengguna. Terpisah dari ontology kurasi."@id .
+
+ptp:idKasus a owl:DatatypeProperty ;
+    rdfs:label "id kasus"@id ;
+    rdfs:comment "UUID kasus yang juga dipakai pada IRI kasus."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:string .
+
+ptp:waktuKasus a owl:DatatypeProperty ;
+    rdfs:label "waktu kasus"@id ;
+    rdfs:comment "Waktu kasus disimpan."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:dateTime .
+
+ptp:sumberKasus a owl:DatatypeProperty ;
+    rdfs:label "sumber kasus"@id ;
+    rdfs:comment "Asal kasus: pengguna atau uji."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:string .
+
+ptp:statusVerifikasi a owl:DatatypeProperty ;
+    rdfs:label "status verifikasi"@id ;
+    rdfs:comment "belum_diverifikasi atau terverifikasi oleh ahli."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:string .
+
+ptp:catatanPengguna a owl:DatatypeProperty ;
+    rdfs:label "catatan pengguna"@id ;
+    rdfs:comment "Catatan bebas pengguna. Tidak dipakai mesin reasoning."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:string .
+
+ptp:teksGejalaBebas a owl:DatatypeProperty ;
+    rdfs:label "teks gejala bebas"@id ;
+    rdfs:comment "Teks gejala mentah dari pengguna. Hanya bahan kurasi, bukan fakta ontology."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:string .
+
+ptp:namaTanaman a owl:DatatypeProperty ;
+    rdfs:label "nama tanaman"@id ;
+    rdfs:comment "Label tanaman saat kasus disimpan (denormalisasi untuk tampilan)."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:string .
+
+ptp:namaPenyakit a owl:DatatypeProperty ;
+    rdfs:label "nama penyakit"@id ;
+    rdfs:comment "Label penyakit hasil/kandidat saat kasus disimpan."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:string .
+
+ptp:ringkasanGejala a owl:DatatypeProperty ;
+    rdfs:label "ringkasan gejala"@id ;
+    rdfs:comment "Label gejala terpilih, dipisah ' | ', untuk tampilan riwayat."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range xsd:string .
+
+ptp:faseKasus a owl:ObjectProperty ;
+    rdfs:label "fase kasus"@id ;
+    rdfs:comment "Fase pertumbuhan yang dipilih saat diagnosis."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range ptp:FasePertumbuhan .
+
+ptp:kandidat a owl:ObjectProperty ;
+    rdfs:label "kandidat"@id ;
+    rdfs:comment "Kandidat diagnosis milik sebuah kasus."@id ;
+    rdfs:domain ptp:Diagnosis ;
+    rdfs:range ptp:KandidatDiagnosis .

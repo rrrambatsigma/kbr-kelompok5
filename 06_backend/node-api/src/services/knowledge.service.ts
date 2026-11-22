@@ -88,6 +88,7 @@ export interface DiagnosisSymptom {
   id: string;
   iri: string;
   label: string;
+  description: string | null;
   canonical: CanonicalSymptom | null;
 }
 
@@ -540,11 +541,12 @@ export async function getDiagnosisDataset(
       `),
       rows(`
         ${PREFIXES}
-        SELECT ?disease ?symptom ?symptomLabel ?canonical ?canonicalLabel
+        SELECT ?disease ?symptom ?symptomLabel ?symptomDescription ?canonical ?canonicalLabel
         WHERE {
           ?disease ptp:menyerangTanaman <${plantIri}> ;
                    ptp:memilikiGejala ?symptom .
           OPTIONAL { ?symptom rdfs:label ?symptomLabel }
+          OPTIONAL { ?symptom ptp:deskripsiGejala ?symptomDescription }
           OPTIONAL {
             ?symptom ptp:memilikiGejalaKanonik ?canonical .
             OPTIONAL { ?canonical rdfs:label ?canonicalLabel }
@@ -630,6 +632,7 @@ export async function getDiagnosisDataset(
       id: localName(symptomIri),
       iri: symptomIri,
       label: termValue(row, "symptomLabel") ?? localName(symptomIri),
+      description: termValue(row, "symptomDescription") ?? null,
       canonical:
         canonicalIri === undefined
           ? null

@@ -20,6 +20,7 @@ interface DiagnosisDraft {
   phase: Phase | null;
   symptoms: Symptom[];
   topN: number;
+  symptomQuery: string;
 }
 
 interface DiagnosisContextValue {
@@ -29,6 +30,7 @@ interface DiagnosisContextValue {
   setPhase: (phase: Phase | null) => void;
   setSymptoms: (symptoms: Symptom[]) => void;
   setTopN: (topN: number) => void;
+  setSymptomQuery: (query: string) => void;
   setResult: (result: DiagnosisResult | null) => void;
   reset: () => void;
 }
@@ -40,6 +42,7 @@ const emptyDraft: DiagnosisDraft = {
   phase: null,
   symptoms: [],
   topN: 5,
+  symptomQuery: "",
 };
 
 interface StoredState {
@@ -71,6 +74,10 @@ function readStoredState(): StoredState {
           : [],
         topN:
           typeof parsed.draft.topN === "number" ? parsed.draft.topN : 5,
+        symptomQuery:
+          typeof parsed.draft.symptomQuery === "string"
+            ? parsed.draft.symptomQuery
+            : "",
       },
       result: parsed.result ?? null,
     };
@@ -99,6 +106,7 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
         plant,
         phase: null,
         symptoms: [],
+        symptomQuery: "",
       },
       result: null,
     }));
@@ -125,6 +133,13 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
+  const setSymptomQuery = useCallback((symptomQuery: string) => {
+    setState((current) => ({
+      ...current,
+      draft: { ...current.draft, symptomQuery },
+    }));
+  }, []);
+
   const setResult = useCallback((result: DiagnosisResult | null) => {
     setState((current) => ({ ...current, result }));
   }, []);
@@ -141,6 +156,7 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
       setPhase,
       setSymptoms,
       setTopN,
+      setSymptomQuery,
       setResult,
       reset,
     }),
@@ -151,6 +167,7 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
       setPhase,
       setSymptoms,
       setTopN,
+      setSymptomQuery,
       setResult,
       reset,
     ]

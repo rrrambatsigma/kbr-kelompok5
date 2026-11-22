@@ -6,6 +6,7 @@ import {
   Leaf,
   RotateCcw,
   Search,
+  Sparkles,
   Stethoscope,
 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -22,9 +23,14 @@ import { Stepper } from "../components/common/Stepper";
 import { useDiagnosis } from "../context/DiagnosisContext";
 import { listPlants } from "../services/api/plants";
 import { listPhases } from "../services/api/phases";
-import { listSymptoms } from "../services/api/symptoms";
+import { listSymptoms, matchSymptoms } from "../services/api/symptoms";
 import { submitDiagnosis } from "../services/api/diagnosis";
-import type { Phase, Plant, Symptom } from "../types/api";
+import type {
+  Phase,
+  Plant,
+  Symptom,
+  SymptomSuggestion,
+} from "../types/api";
 import { friendlyApiError } from "../utils/apiError";
 
 const steps = [
@@ -55,6 +61,7 @@ export function DiagnosisPage() {
     setPhase,
     setSymptoms: setDraftSymptoms,
     setTopN,
+    setSymptomQuery,
     setResult,
     reset,
   } = useDiagnosis();
@@ -72,6 +79,10 @@ export function DiagnosisPage() {
   const [search, setSearch] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [suggestions, setSuggestions] = useState<SymptomSuggestion[]>([]);
+  const [unmatchedTerms, setUnmatchedTerms] = useState<string[]>([]);
+  const [matching, setMatching] = useState(false);
+  const [matchError, setMatchError] = useState<string | null>(null);
 
   const loadPlants = useCallback(async () => {
     setLoadingPlants(true);
@@ -160,6 +171,37 @@ export function DiagnosisPage() {
         ? draft.symptoms.filter((item) => item.id !== symptom.id)
         : [...draft.symptoms, symptom]
     );
+  };
+
+  useEffect(() => {
+    setSuggestions([]);
+    setUnmatchedTerms([]);
+    setMatchError(null);
+  }, [plantId]);
+
+  const handleMatch = async () => {
+    if (plantId === null) {
+      return;
+    }
+
+    const text = draft.symptomQuery.trim();
+
+    if (text === "") {
+      return;
+    }
+
+    setMatching(true);
+    setMatchError(null);
+
+    try {
+      const result = await matchSymptoms(plantId, text);
+      setSuggestions(result.suggestions);
+      setUnmatchedTerms(result.unmatchedTerms);
+    } catch (error) {
+      setMatchError(friendlyApiError(error));
+    } finally {
+      setMatching(false);
+    }
   };
 
   const canContinueStep1 = draft.plant !== null;
@@ -452,6 +494,106 @@ export function DiagnosisPage() {
                 onChange={setSearch}
                 placeholder="Cari gejala atau bagian tanaman…"
               />
+
+              <div className="card space-y-3 p-4">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-surface-low text-primary">
+                    <Sparkles className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="font-heading text-sm font-bold text-foreground">
+                      Ketik gejala dengan kata sendiri
+                    </p>
+                    <p className="mt-1 text-xs leading-5 text-muted">
+                      Contoh: &quot;daun menguning dan ada bercak coklat&quot;.
+                      Sistem akan menyarankan gejala yang cocok; pilih saran
+                      untuk menambahkannya.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2 sm:flex-row">
+                  <input
+                    className="input flex-1"
+                    value={draft.symptomQuery}
+                    onChange={(event) =>
+                      setSymptomQuery(event.target.value)
+                    }
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") {
+                        event.preventDefault();
+                        void handleMatch();
+                      }
+                    }}
+                    maxLength={500}
+                    placeholder="Tulis gejala yang terlihat..."
+                    aria-label="Ketik gejala dengan kata sendiri"
+                  />
+                  <Button
+                    variant="secondary"
+                    onClick={() => void handleMatch()}
+                    disabled={
+                      matching || draft.symptomQuery.trim() === ""
+                    }
+                  >
+                    {matching ? "Mencari..." : "Cari gejala"}
+                  </Button>
+                </div>
+
+                {matchError !== null && (
+                  <p className="text-xs font-semibold text-danger">
+                    {matchError}
+                  </p>
+                )}
+
+                {suggestions.length > 0 && (
+                  <div className="space-y-2">
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-muted">
+                      Saran gejala
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {suggestions.map((suggestion) => {
+                        const symptom = symptoms.find(
+                          (item) => item.id === suggestion.id
+                        );
+                        const selected = selectedIds.has(suggestion.id);
+
+                        return (
+                          <button
+                            key={suggestion.id}
+                            type="button"
+                            onClick={() => {
+                              if (symptom !== undefined) {
+                                toggleSymptom(symptom);
+                              }
+                            }}
+                            className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                              selected
+                                ? "border-primary-container bg-primary-soft text-primary"
+                                : "border-border bg-white text-foreground hover:border-secondary/60"
+                            }`}
+                            aria-pressed={selected}
+                          >
+                            {suggestion.label}
+                            <span className="font-mono text-[10px] text-muted">
+                              {Math.round(suggestion.score * 100)}%
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {suggestions.length === 0 && unmatchedTerms.length > 0 && (
+                  <p className="text-xs leading-5 text-muted">
+                    Belum ada gejala yang cocok untuk:{" "}
+                    {unmatchedTerms.join(", ")}. Catatan ini tetap bisa
+                    disimpan bersama kasus.
+                  </p>
+                )}
+              </div>
+
 
               {grouped.length === 0 && (
                 <div className="card flex flex-col items-center gap-2 p-10 text-center">

@@ -11,6 +11,7 @@ import diseasesRouter from "./routes/diseases.routes.js";
 import symptomsRouter from "./routes/symptoms.routes.js";
 import phasesRouter from "./routes/phases.routes.js";
 import diagnosisRouter from "./routes/diagnosis.routes.js";
+import casesRouter from "./routes/cases.routes.js";
 
 const app = express();
 
@@ -41,8 +42,15 @@ app.get("/", (_req, res) => {
         "GET /api/diseases",
         "GET /api/diseases/:id",
         "GET /api/symptoms",
+        "POST /api/symptoms/match",
         "GET /api/phases",
         "POST /api/diagnosis",
+        "POST /api/cases",
+        "GET /api/cases",
+        "GET /api/cases/stats",
+        "GET /api/cases/:id",
+        "POST /api/cases/:id/verify",
+        "DELETE /api/cases/:id",
       ],
     })
   );
@@ -54,6 +62,7 @@ app.use("/api/diseases", diseasesRouter);
 app.use("/api/symptoms", symptomsRouter);
 app.use("/api/phases", phasesRouter);
 app.use("/api/diagnosis", diagnosisRouter);
+app.use("/api/cases", casesRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

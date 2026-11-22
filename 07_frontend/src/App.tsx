@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { DiagnosisProvider } from "./context/DiagnosisContext";
 import { AppShell } from "./layouts/AppShell";
 import { PublicLayout } from "./layouts/PublicLayout";
+import { CaseHistoryPage } from "./pages/CaseHistoryPage";
 import { DiagnosisPage } from "./pages/DiagnosisPage";
 import { DiagnosisResultPage } from "./pages/DiagnosisResultPage";
 import { DiseaseDetailPage } from "./pages/DiseaseDetailPage";
@@ -45,6 +46,7 @@ export default function App() {
           <Route element={<AppShell />}>
             <Route path="diagnosis" element={<DiagnosisPage />} />
             <Route path="diagnosis/result" element={<DiagnosisResultPage />} />
+            <Route path="riwayat" element={<CaseHistoryPage />} />
           </Route>
         </Routes>
       </DiagnosisProvider>

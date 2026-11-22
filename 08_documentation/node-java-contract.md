@@ -216,7 +216,19 @@ sequenceDiagram
 | `ONTOLOGY_REASONING_TIMEOUT_MS` | Java | `120000` |
 | `ONTOLOGY_FAIL_FAST` | Java | `false` |
 
-## 10. Aturan perubahan
+## 10. Log kasus (di luar kontrak Node–Java)
+
+`/api/cases`, `/api/symptoms/match`, dan field `similarCases` **bukan** bagian
+kontrak Node–Java. Datanya hidup di Fuseki (dataset `plant-kb-kasus`) dan
+dilayani Node. Detail ada di `08_documentation/case-log.md`.
+
+Yang tetap perlu dijaga dari kontrak ini:
+
+- `POST /api/diagnosis` tetap `200` walau case store mati; response hanya
+  menambah warning `CASE_STORE_UNAVAILABLE`.
+- CBR tidak mengubah skor, `confidence`, atau `evidence`.
+
+## 11. Aturan perubahan
 
 1. Ubah Java dan Node bersamaan; jangan mengubah field yang sudah dipakai tanpa
    masa transisi.
