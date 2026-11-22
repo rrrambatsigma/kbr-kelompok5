@@ -48,16 +48,21 @@ function describeFetchFailure(error: unknown): string {
   return String(error);
 }
 
-async function postSparql(query: string, accept: string): Promise<Response> {
+async function postQuery(
+  url: string,
+  query: string,
+  accept: string,
+  timeoutMs: number
+): Promise<Response> {
   try {
-    return await fetch(fusekiConfig.queryUrl, {
+    return await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         Accept: accept,
       },
       body: new URLSearchParams({ query }),
-      signal: AbortSignal.timeout(fusekiConfig.timeoutMs),
+      signal: AbortSignal.timeout(timeoutMs),
     });
   } catch (error) {
     throw new FusekiUnavailableError(
@@ -104,7 +109,20 @@ function assertAskResponse(value: unknown): asserts value is SparqlAskResponse {
 }
 
 export async function select(query: string): Promise<SparqlSelectResponse> {
-  const response = await postSparql(query, "application/sparql-results+json");
+  return selectAt(fusekiConfig.queryUrl, query);
+}
+
+export async function selectAt(
+  url: string,
+  query: string,
+  timeoutMs: number = fusekiConfig.timeoutMs
+): Promise<SparqlSelectResponse> {
+  const response = await postQuery(
+    url,
+    query,
+    "application/sparql-results+json",
+    timeoutMs
+  );
 
   if (!response.ok) {
     const upstreamBody = await readErrorBody(response);
@@ -125,7 +143,12 @@ export async function select(query: string): Promise<SparqlSelectResponse> {
 }
 
 export async function ask(query: string): Promise<boolean> {
-  const response = await postSparql(query, "application/sparql-results+json");
+  const response = await postQuery(
+    fusekiConfig.queryUrl,
+    query,
+    "application/sparql-results+json",
+    fusekiConfig.timeoutMs
+  );
 
   if (!response.ok) {
     const upstreamBody = await readErrorBody(response);
@@ -143,6 +166,46 @@ export async function ask(query: string): Promise<boolean> {
   const parsed = await readJson(response);
   assertAskResponse(parsed);
   return parsed.boolean;
+}
+
+/**
+ * Menjalankan SPARQL Update ke dataset kasus (plant-kb-kasus).
+ * Hanya dipakai untuk log kasus; dataset ontology tetap read-only.
+ */
+export async function update(
+  sparqlUpdate: string,
+  timeoutMs: number = fusekiConfig.timeoutMs
+): Promise<void> {
+  let response: Response;
+
+  try {
+    response = await fetch(fusekiConfig.caseUpdateUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/sparql-update",
+        Accept: "*/*",
+      },
+      body: sparqlUpdate,
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+  } catch (error) {
+    throw new FusekiUnavailableError(
+      `Fuseki (case store) tidak dapat dihubungi: ${describeFetchFailure(error)}`
+    );
+  }
+
+  if (!response.ok) {
+    const upstreamBody = await readErrorBody(response);
+    if (response.status >= 500) {
+      throw new FusekiUnavailableError(
+        `Fuseki (case store) mengembalikan HTTP ${response.status}: ${upstreamBody || "tanpa body"}`
+      );
+    }
+    throw new FusekiQueryError(
+      `Update SPARQL ditolak Fuseki: ${upstreamBody || "tanpa body"}`,
+      response.status
+    );
+  }
 }
 
 export function termValue(

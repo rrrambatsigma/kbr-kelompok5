@@ -14,6 +14,7 @@ import {
   select,
 } from "../services/fuseki.service.js";
 import { getReasoningStatus } from "../services/reasoning.service.js";
+import { healthCases } from "../services/case-store.service.js";
 
 interface DependencyStatus {
   status: "UP" | "DOWN";
@@ -78,6 +79,25 @@ router.get("/fuseki", async (_req, res) => {
       .status(503)
       .json(fail(res, "FUSEKI_UNAVAILABLE", messageOf(error)));
   }
+});
+
+router.get("/cases", async (_req, res) => {
+  const health = await healthCases();
+
+  if (health.status === "UP") {
+    res.status(200).json(ok(res, health));
+    return;
+  }
+
+  res
+    .status(503)
+    .json(
+      fail(
+        res,
+        "CASE_STORE_UNAVAILABLE",
+        health.detail ?? "Case store tidak tersedia"
+      )
+    );
 });
 
 /**

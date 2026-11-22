@@ -69,5 +69,27 @@ if ($diagnosis.data.reasoning.status -ne "UP") {
     throw "diagnosis: reasoning tidak UP"
 }
 
-Write-Host "OK: plants=7, diseases=53, padiSymptoms=$($symptoms.data.count), padiPhases=$($phases.data.count), candidates=$($diagnosis.data.candidates.Count)"
+$caseHealth = Invoke-RestMethod "$BaseUrl/api/health/cases"
+Assert-Equal $caseHealth.data.status "UP" "case store health"
+
+$caseStats = Invoke-RestMethod "$BaseUrl/api/cases/stats"
+if ($caseStats.data.total -lt 0) {
+    throw "case stats: total tidak valid"
+}
+
+$matchBody = @{
+    plantId = "Padi"
+    text = "daun menguning dan ada bercak"
+} | ConvertTo-Json -Depth 5
+
+$match = Invoke-RestMethod "$BaseUrl/api/symptoms/match" `
+    -Method Post `
+    -ContentType "application/json" `
+    -Body $matchBody
+
+if ($match.data.suggestions.Count -lt 1) {
+    throw "symptom match: tidak ada saran"
+}
+
+Write-Host "OK: plants=7, diseases=53, padiSymptoms=$($symptoms.data.count), padiPhases=$($phases.data.count), candidates=$($diagnosis.data.candidates.Count), cases=$($caseStats.data.total), matchSuggestions=$($match.data.suggestions.Count)"
 Write-Host "Top candidate: $($first.label) (score=$($first.score), category=$($first.category))"

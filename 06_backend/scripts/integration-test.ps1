@@ -159,4 +159,52 @@ try {
 Assert-Equal $badPhaseStatus 400 "negative phase HTTP status"
 Assert-Equal $badPhaseCode "INVALID_REQUEST" "negative phase error code"
 
-Write-Host "OK: readiness, checksum, phases, diagnosis, reload, negative"
+# 8. Log kasus + CBR
+$caseBody = @{
+    plantId = "Padi"
+    symptomIds = @(
+        "PengamatanPenyakitBlasPadiBercakDaun",
+        "PengamatanPenyakitBlasPadiKhasMalai",
+        "PengamatanPenyakitBlasPadiMalaiPatah"
+    )
+    topN = 5
+    note = "integration test"
+    freeTextSymptoms = "daun menguning dan ada bercak"
+} | ConvertTo-Json -Depth 5
+
+$saved = Invoke-RestMethod "$BaseUrl/api/cases" `
+    -Method Post -ContentType "application/json" -Body $caseBody
+Assert-True ($null -ne $saved.data.id) "case id"
+Assert-Equal $saved.data.status "belum_diverifikasi" "case status awal"
+Assert-Equal $saved.data.freeTextSymptoms "daun menguning dan ada bercak" "case teks bebas"
+Assert-Equal $saved.data.source "pengguna" "case source"
+
+$caseId = $saved.data.id
+
+$verified = Invoke-RestMethod "$BaseUrl/api/cases/$caseId/verify" `
+    -Method Post -ContentType "application/json" -Body "{}"
+Assert-Equal $verified.data.status "terverifikasi" "case status verifikasi"
+
+$withCbr = Invoke-RestMethod "$BaseUrl/api/diagnosis" `
+    -Method Post -ContentType "application/json" -Body $body
+$blasWithCbr = $withCbr.data.candidates |
+    Where-Object { $_.diseaseId -eq "PenyakitBlasPadi" } |
+    Select-Object -First 1
+Assert-True ($null -ne $blasWithCbr) "CBR: kandidat Blas tidak ada"
+Assert-True ($blasWithCbr.similarCases.count -ge 1) "CBR: kasus serupa tidak terhitung"
+
+$matchBody = @{
+    plantId = "Padi"
+    text = "daun menguning dan ada bercak"
+} | ConvertTo-Json -Depth 5
+$match = Invoke-RestMethod "$BaseUrl/api/symptoms/match" `
+    -Method Post -ContentType "application/json" -Body $matchBody
+Assert-True ($match.data.suggestions.Count -ge 1) "symptom match: tidak ada saran"
+
+Invoke-RestMethod "$BaseUrl/api/cases/$caseId" -Method Delete | Out-Null
+
+$remaining = Invoke-RestMethod "$BaseUrl/api/cases?limit=100"
+$stillThere = @($remaining.data.items | Where-Object { $_.id -eq $caseId })
+Assert-Equal $stillThere.Count 0 "case cleanup"
+
+Write-Host "OK: readiness, checksum, phases, diagnosis, reload, negative, case log, CBR"
