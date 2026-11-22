@@ -40,7 +40,7 @@ $arguments = @(
     "--localhost"
 )
 
-Write-Host "Menjalankan Fuseki (read-only) pada http://127.0.0.1:$Port ..."
+Write-Host "Menjalankan Fuseki (plant-kb read-only, plant-kb-kasus writable) pada http://127.0.0.1:$Port ..."
 
 if ($Foreground) {
     Push-Location $configDir
@@ -70,7 +70,7 @@ while ((Get-Date) -lt $deadline) {
     }
     $listening = Get-NetTCPConnection -State Listen -LocalPort $Port -ErrorAction SilentlyContinue
     if ($listening) {
-        Write-Host "Fuseki siap: http://127.0.0.1:$Port/plant-kb (PID $($process.Id))"
+        Write-Host "Fuseki siap: http://127.0.0.1:$Port/plant-kb dan http://127.0.0.1:$Port/plant-kb-kasus (PID $($process.Id))"
         Write-Host "Log: $stdout"
         exit 0
     }

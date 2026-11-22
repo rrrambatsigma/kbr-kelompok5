@@ -15,10 +15,6 @@ if ($OutputDir -eq "") {
     $OutputDir = Join-Path $backendDir "backups"
 }
 
-if (-not (Test-Path $DataDir)) {
-    throw "Folder data Fuseki tidak ditemukan: $DataDir"
-}
-
 $fusekiRunning = Get-NetTCPConnection -State Listen -LocalPort 3030 -ErrorAction SilentlyContinue
 if ($fusekiRunning) {
     Write-Warning "Fuseki masih berjalan. Hentikan dulu agar backup konsisten."
@@ -27,9 +23,28 @@ if ($fusekiRunning) {
 New-Item -ItemType Directory -Force -Path $OutputDir | Out-Null
 
 $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
-$target = Join-Path $OutputDir "fuseki-data-$timestamp.zip"
 
-Write-Host "Membuat backup $DataDir -> $target ..."
-Compress-Archive -Path (Join-Path $DataDir "*") -DestinationPath $target -Force
+$targets = @(
+    @{ Label = "ontology"; Path = $DataDir },
+    @{ Label = "kasus"; Path = (Join-Path $backendDir "fuseki-data-kasus") }
+)
 
-Write-Host "Backup selesai: $target"
+$backedUp = 0
+
+foreach ($target in $targets) {
+    if (-not (Test-Path $target.Path)) {
+        Write-Host "Lewati $($target.Label): $($target.Path) tidak ada."
+        continue
+    }
+
+    $zip = Join-Path $OutputDir "fuseki-$($target.Label)-$timestamp.zip"
+    Write-Host "Membuat backup $($target.Path) -> $zip ..."
+    Compress-Archive -Path (Join-Path $target.Path "*") -DestinationPath $zip -Force
+    $backedUp++
+}
+
+if ($backedUp -eq 0) {
+    throw "Tidak ada dataset yang bisa dibackup."
+}
+
+Write-Host "Backup selesai: $backedUp dataset."

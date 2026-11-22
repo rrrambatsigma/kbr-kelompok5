@@ -27,3 +27,29 @@
         ja:cxtName "arq:queryTimeout" ;
         ja:cxtValue "10000"
     ] .
+
+# ---------------------------------------------------------------------------
+# Log kasus diagnosis (ABox runtime, writable).
+#
+# Terpisah dari plant-kb supaya:
+#   - reload ontology (load-ontology.ps1 -Reset) tidak menghapus kasus;
+#   - reasoner tidak pernah membaca kasus pengguna;
+#   - hak akses bisa berbeda (plant-kb read-only, dataset ini write).
+#
+# Endpoint hanya localhost (lihat shiro.ini dan flag --localhost).
+# ---------------------------------------------------------------------------
+
+<#service-kasus> a fuseki:Service ;
+    fuseki:name "plant-kb-kasus" ;
+    fuseki:serviceQuery "query", "sparql" ;
+    fuseki:serviceUpdate "update" ;
+    fuseki:serviceReadGraphStore "get", "data" ;
+    fuseki:serviceReadWriteGraphStore "post", "put", "delete", "patch" ;
+    fuseki:dataset <#dataset-kasus> .
+
+<#dataset-kasus> a tdb2:DatasetTDB2 ;
+    tdb2:location "../fuseki-data-kasus" ;
+    ja:context [
+        ja:cxtName "arq:queryTimeout" ;
+        ja:cxtValue "10000"
+    ] .
