@@ -213,7 +213,7 @@ sequenceDiagram
 | `SERVER_PORT` | Java | `8082` |
 | `SERVER_ADDRESS` | Java | `127.0.0.1` |
 | `ONTOLOGY_FILE_PATH` | Java | `E:/kbr-kelompok5/04_ontology/ontology_md.ttl` |
-| `ONTOLOGY_REASONING_TIMEOUT_MS` | Java | `120000` |
+| `ONTOLOGY_REASONING_TIMEOUT_MS` | Java | `600000` |
 | `ONTOLOGY_FAIL_FAST` | Java | `false` |
 
 ## 10. Aturan perubahan

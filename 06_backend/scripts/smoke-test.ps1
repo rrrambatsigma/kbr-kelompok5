@@ -21,7 +21,7 @@ Assert-Equal $ready.data.dependencies.fuseki.status "UP" "fuseki readiness"
 Assert-Equal $ready.data.dependencies.reasoning.status "UP" "reasoning readiness"
 
 $fuseki = Invoke-RestMethod "$BaseUrl/api/health/fuseki"
-Assert-Equal $fuseki.data.totalTriples 24833 "triple count"
+Assert-Equal $fuseki.data.totalTriples 32506 "triple count"
 
 $plants = Invoke-RestMethod "$BaseUrl/api/plants"
 Assert-Equal $plants.data.count 7 "plant count"
@@ -30,10 +30,10 @@ $diseases = Invoke-RestMethod "$BaseUrl/api/diseases"
 Assert-Equal $diseases.data.count 53 "disease count"
 
 $symptoms = Invoke-RestMethod "$BaseUrl/api/symptoms?plantId=Padi"
-Assert-Equal $symptoms.data.count 12 "Padi symptom concept count"
+Assert-Equal $symptoms.data.count 13 "Padi symptom concept count"
 
 $phases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=Padi"
-Assert-Equal $phases.data.count 7 "Padi phase count"
+Assert-Equal $phases.data.count 6 "Padi phase count"
 
 $varieties = Invoke-RestMethod "$BaseUrl/api/varieties?plantId=Padi"
 Assert-Equal $varieties.data.count 4 "Padi variety count"

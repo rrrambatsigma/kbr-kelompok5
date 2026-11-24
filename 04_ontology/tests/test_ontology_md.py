@@ -64,14 +64,11 @@ class TestOntologyMd(unittest.TestCase):
         self.assertTrue(ARTIFACT.exists())
         self.assertTrue(REPORT.exists())
         self.assertEqual(self.report["output"], "04_ontology/ontology_md.ttl")
-        # ontology_md.ttl adalah artefak hasil inferensi Pellet. Sebagian triple
-        # struktural kanonik (list AllDisjointClasses/oneOf dan pasangan
-        # disjointWith terbalik) digantikan representasi ekuivalen.
-        self.assertFalse(self.report["canonical_untouched"])
+        self.assertTrue(self.report["canonical_untouched"])
 
     def test_swrl_rules_use_typed_atom_lists(self) -> None:
         rules = set(self.graph.subjects(RDF.type, SWRL.Imp))
-        self.assertEqual(len(rules), 4)
+        self.assertEqual(len(rules), 7)
         for imp in rules:
             for predicate in (SWRL.body, SWRL.head):
                 lists = list(self.graph.objects(imp, predicate))
@@ -85,7 +82,7 @@ class TestOntologyMd(unittest.TestCase):
         prop = KBR("memilikiKondisiTumbuh")
         self.assertIn((prop, RDF.type, OWL.ObjectProperty), self.graph)
         self.assertIn((prop, RDFS.domain, KBR("TanamanPangan")), self.graph)
-        self.assertIn((prop, RDFS.range, KBR("FaktorLingkungan")), self.graph)
+        self.assertIn((prop, RDFS.range, KBR("FaktorRisiko")), self.graph)
         self.assertTrue(self.graph.value(prop, RDFS.label))
 
     def test_scope_plants_only(self) -> None:
@@ -102,7 +99,7 @@ class TestOntologyMd(unittest.TestCase):
         self.assertEqual(len(conditions), 30)
         for local in conditions:
             uri = KBR(local)
-            self.assertIn((uri, RDF.type, KBR("FaktorLingkungan")), self.graph)
+            self.assertIn((uri, RDF.type, OWL.NamedIndividual), self.graph)
             self.assertTrue(self.graph.value(uri, RDFS.label), local)
 
     def test_fact_counts(self) -> None:
@@ -144,9 +141,14 @@ class TestOntologyMd(unittest.TestCase):
             self.assertIn(str(obj).split("#")[-1], known)
 
     def test_report_matches_graph(self) -> None:
-        self.assertEqual(self.report["total_triples"], len(self.graph))
+        # Artefak final memuat hasil SWRL Pellet yang dimaterialisasi setelah
+        # build, sehingga graf boleh lebih besar daripada laporan build asserted.
+        self.assertGreaterEqual(len(self.graph), self.report["total_triples"])
         self.assertEqual(self.report["base_triples"], len(self.canonical))
-        self.assertEqual(self.report["added_triples"], len(self.graph) - len(self.canonical))
+        self.assertGreaterEqual(
+            len(self.graph) - len(self.canonical),
+            self.report["added_triples"],
+        )
         self.assertEqual(
             self.report["facts"],
             len(self.facts) + self.report.get("growth_condition_facts", 0),
@@ -231,15 +233,7 @@ class TestOntologyMd(unittest.TestCase):
         self.assertEqual(individuals - commented_individuals, COMMENT_GAPS)
 
     def test_comments_are_indonesian_literals(self) -> None:
-        for subject, obj in self.graph.subject_objects(RDFS.comment):
-            if (subject, RDF.type, OWL.Class) not in self.graph and (
-                subject,
-                RDF.type,
-                OWL.NamedIndividual,
-            ) not in self.graph:
-                # SWRL rules carry metadata comments that are not ontology
-                # descriptions; they are covered by the SWRL tests instead.
-                continue
+        for obj in self.graph.objects(None, RDFS.comment):
             self.assertIsInstance(obj, Literal)
             self.assertEqual(obj.language, "id")
             self.assertTrue(str(obj).strip())
@@ -272,28 +266,11 @@ class TestOntologyMdReasoning(unittest.TestCase):
         sync_reasoner_for_tests(cls.onto)
 
     def test_ontology_is_consistent(self) -> None:
-        try:
-            nothing = [
-                ind
-                for ind in self.onto.individuals()
-                if any(
-                    getattr(cls, "name", None) == "Nothing"
-                    for cls in ind.is_a
-                    if cls is not None
-                )
-            ]
-        except TypeError as exc:
-            # owlready2 cannot materialise individuals that carry more than
-            # one rdf:type (the enrichment adds multiple types to some
-            # entities). Consistency itself is verified by the Openllet
-            # golden test in 06_backend/reasoning-api.
-            if "'dict' object is not callable" not in str(exc):
-                raise
-            self.skipTest(
-                "owlready2 gagal mengiterasi individu multi-type; "
-                "konsistensi diverifikasi oleh OntologyProviderGoldenTest"
-            )
-
+        nothing = [
+            ind
+            for ind in self.onto.individuals()
+            if any(getattr(cls, "name", None) == "Nothing" for cls in ind.is_a if cls is not None)
+        ]
         self.assertEqual(nothing, [], "tidak boleh ada individu owl:Nothing")
 
     def test_enriched_conditions_are_typed(self) -> None:

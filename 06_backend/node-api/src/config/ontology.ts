@@ -60,7 +60,6 @@ export const PHASE_ORDER = [
   "FasePembibitan",
   "FaseVegetatif",
   "FaseAnakan",
-  "FasePembungaan",
   "FaseGeneratif",
   "FasePemasakan",
   "FasePanen",
@@ -73,7 +72,6 @@ export const DISEASE_CATEGORY_PRIORITY = [
   "PenyakitVirus",
   "PenyakitOomycete",
   "PenyakitFitoplasma",
-  "PenyakitNematoda",
   "PenyakitLainnya",
 ] as const;
 

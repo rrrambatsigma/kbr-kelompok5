@@ -1,51 +1,55 @@
 # Reasoning Tests — Milestone 5
 
 Folder ini berisi verifikasi integrasi dan kasus uji reasoning diagnosis.
-Ontology yang dipakai adalah **ontology gabungan** dari branch
-`feat/ontology-baru` (`04_ontology/ontology_md.ttl`, 24.833 triple).
+Ontology final yang dipakai adalah artefak dari branch `feat/ontology-baru`:
+`04_ontology/ontology_md_inferred.ttl` (32.506 triple, closure Pellet) untuk
+Fuseki dan `04_ontology/ontology_md.ttl` (30.280 triple, 7 aturan SWRL,
+53 diagnosis demo) untuk Java.
 
-> **Diperbarui 24 November 2026:** artefak `ontology_md.ttl` sekarang memuat
-> **inferred axiom Pellet** dari Protégé (kategori penyakit, tipe individu,
-> `owl:disjointWith`, `menyerangBagian`). Triple naik dari 19.021 ke **24.833**.
-> Status di bawah diverifikasi ulang dengan dataset Fuseki baru
-> (`load-ontology.ps1 -Reset`), termasuk `smoke-test.ps1`,
-> `integration-test.ps1`, dan `node run.mjs`.
+> **Status 24 November 2026:** tabel pengujian end-to-end di bawah adalah
+> **snapshot** pada ontology 24.833 triple sebelum merge ontology final.
+> Artefak final sudah lolos gate test ontologi dan unit test backend, tetapi
+> harness ini perlu dijalankan ulang dengan dataset baru
+> (`load-ontology.ps1 -Reset`, lalu `generate-sanity.mjs` dan `run.mjs`) agar
+> angka dan ID observasi di `results.json`/`results.md` diperbarui.
 
-## Status verifikasi integrasi (24 Nov 2026)
+## Status verifikasi integrasi (snapshot 24 Nov 2026)
 
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
-| Ontology | `ontology_md.ttl`, 24.833 triple (termasuk inferred) | v3 + Pellet |
-| SHA-256 ontology | `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4` | cocok dengan Java |
+| Ontology snapshot | `ontology_md.ttl`, 24.833 triple (termasuk inferred) | v3 + Pellet |
+| Ontology final | `ontology_md.ttl` 30.280 triple; `ontology_md_inferred.ttl` 32.506 triple | v4 + 7 SWRL |
+| SHA-256 ontology snapshot | `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4` | cocok dengan Java |
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
-| Smoke test | plants=7, diseases=53, Padi symptom concepts=12, Padi varieties=4 | OK |
+| Smoke test snapshot | plants=7, diseases=53, Padi symptom concepts=12, Padi varieties=4 | OK |
 
-Pemeriksaan yang lolos:
+Pemeriksaan snapshot yang lolos:
 
-- [x] `totalTriples = 24.833`
+- [x] `totalTriples = 24.833` (dataset final: **32.506**)
 - [x] Fingerprint v2: `deskripsiPenyakit = 53`, `memilikiKondisiTumbuh = 9`
 - [x] Java memuat `ontology_md.ttl` dan checksum-nya sama dengan file
 - [x] Ontology konsisten (Openllet)
-- [x] Kategori: Jamur 34, Bakteri 7, Virus 10, Oomycete 1, Fitoplasma 1,
-      Nematoda 0, Lainnya 0; 0 penyakit belum berkategori
+- [x] Kategori snapshot: Jamur 34, Bakteri 7, Virus 10, Oomycete 1,
+      Fitoplasma 1; dataset final menambah Oomycete menjadi 3
 - [x] `/api/health/ready` = UP
 - [x] `npm run typecheck`, `npm test` (40 test) hijau
 - [x] `mvnw test` (4 test, termasuk golden Openllet) hijau
 - [x] `smoke-test.ps1` OK
 
-## Ringkasan data ontology sementara
+## Ringkasan data ontology final
 
 | Item | Jumlah |
 |---|---:|
-| Pengamatan gejala yang dipakai penyakit | 229 |
-| Pengamatan dengan `memilikiGejalaKanonik` | 171 |
-| Konsep kanonik yang terpakai | 24 |
+| Pengamatan gejala yang dipakai penyakit | 227 |
+| Pengamatan dengan `memilikiGejalaKanonik` | 176 |
+| Konsep kanonik yang terpakai | 27 dari 28 |
 | Penyakit dengan gejala | 53 |
+| Diagnosis demo | 53 |
 | Tautan `dipengaruhiOleh` | 82 |
 | Tautan `dikendalikanDengan` | 226 |
-| Tautan `disebabkanOleh` | 76 |
+| Tautan `disebabkanOleh` | 78 |
 | `deskripsiPenyakit` | 53 |
 | `tingkatKeparahan` | 14 |
 
@@ -55,9 +59,9 @@ Sebaran per tanaman:
 |---|---:|---:|
 | Jagung | 5 | 28 |
 | Kacang hijau | 3 | 6 |
-| Kacang tanah | 4 | 23 |
-| Kedelai | 15 | 88 |
-| Padi | 5 | 26 |
+| Kacang tanah | 4 | 22 |
+| Kedelai | 15 | 87 |
+| Padi | 5 | 24 |
 | Ubi jalar | 4 | 30 |
 | Ubi kayu | 17 | 30 |
 
@@ -309,5 +313,7 @@ Catatan penting:
 - [x] Dokumentasi dan demo M5 (Langkah 5).
 - [x] Integrasi Node–Java M6: kontrak, health checksum, request id, integration test.
 
-Catatan: karena ontology masih sementara, kasus uji ditandai
-`"ontology": "temporary-v2"` agar mudah diperbarui saat ontology final masuk.
+Catatan: kasus uji masih ditandai `"ontology": "temporary-v2"` dari snapshot
+sebelumnya. Setelah ontology final dimuat, jalankan ulang `generate-sanity.mjs`
+dan `run.mjs` agar ID observasi, penanda ontology, dan `results.json`
+diperbarui.

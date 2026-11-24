@@ -5,11 +5,12 @@ pakar penyakit tanaman pangan. Fokusnya backend: bagaimana gejala yang dipilih
 diubah menjadi kandidat penyakit, bagaimana keyakinan dihitung, dan bagaimana
 hasilnya divalidasi.
 
-Ontology yang dipakai adalah `04_ontology/ontology_md.ttl` (checksum
-`bbf9c78e...`), hasil penggabungan ontology final dengan enrichment. Backend
-tetap dibuat tahan ganti ontology: kosakata dipusatkan di
-`src/config/ontology.ts`, dan properti opsional boleh hilang tanpa mematikan
-diagnosis.
+Ontology yang dipakai adalah `04_ontology/ontology_md.ttl`
+(checksum `9214ef4e...`; 30.280 triple, 7 aturan SWRL, 53 diagnosis demo) untuk
+Java, dan closure Pellet `04_ontology/ontology_md_inferred.ttl`
+(32.506 triple) untuk Fuseki. Backend tetap dibuat tahan ganti ontology:
+kosakata dipusatkan di `src/config/ontology.ts`, dan properti opsional boleh
+hilang tanpa mematikan diagnosis.
 
 ## 1. Ruang lingkup
 
@@ -27,26 +28,27 @@ Yang tidak termasuk M5:
 - Frontend.
 - Input kondisi lingkungan.
 - SWRL untuk ranking.
-- Perbaikan 64 gejala yang belum dipetakan.
-- Ontology final.
+- Perbaikan 51 gejala yang belum dipetakan (masih terbuka).
 
 ## 2. Sumber pengetahuan
 
 | Item | Nilai |
 |---|---:|
-| Triple ontology | 24.833 |
-| Kelas | 87 |
-| Individu | 1.366 |
+| Triple `ontology_md.ttl` | 30.280 |
+| Triple `ontology_md_inferred.ttl` | 32.506 |
+| Kelas TBox PTP | 71 |
+| Individu | 1.508 |
 | Tanaman | 7 |
 | Penyakit | 53 |
-| Pengamatan gejala | 229 |
-| Pengamatan dengan konsep kanonik | 171 |
-| Konsep kanonik terpakai | 24 |
-| Tautan penyakit-patogen | 76 |
+| Diagnosis demo | 53 |
+| Pengamatan gejala | 227 |
+| Pengamatan dengan konsep kanonik | 176 |
+| Konsep kanonik terpakai | 27 dari 28 |
+| Tautan penyakit-patogen | 78 |
 | Tautan pengendalian | 226 |
 | Tautan faktor risiko (`dipengaruhiOleh`) | 82 |
-| Individu fase pertumbuhan | 5 |
-| Tautan penyakit–fase (`menyerangFase`) | 12 |
+| Individu fase pertumbuhan | 6 |
+| Tautan penyakit–fase (`menyerangFase`) | 13 |
 | `deskripsiPenyakit` | 53 |
 | `tingkatKeparahan` | 14 |
 | Penyakit tanpa kategori | 0 |
@@ -55,8 +57,8 @@ Yang tidak termasuk M5:
 Catatan data:
 
 - Pengamatan gejala bersifat **spesifik per penyakit**
-  (`PengamatanPenyakitBlasPadiBercakDaun`,
-  `PengamatanPenyakitHawarDaunBakteriPadiBercakDaun`). Karena itu exact match
+  (`GejalaPenyakitBlasPadiBercakDaun`,
+  `GejalaPenyakitHawarDaunBakteriPadiBercakDaun`). Karena itu exact match
   berdasarkan ID tidak cukup; dibutuhkan konsep kanonik.
 - `tingkatKeparahan` masih berupa teks bebas dan berstatus `needs_review`.
   Nilainya belum dipakai sebagai bobot numerik.
@@ -271,7 +273,8 @@ Harness ada di `05_reasoning_tests/`.
 | Sanity | 53 | Satu kasus per penyakit; regression |
 | Negative | 5 | Validasi input/error |
 
-Hasil 24 November 2026 (dijalankan ulang pada ontology 24.833 triple):
+Hasil 24 November 2026 (snapshot pada ontology 24.833 triple, sebelum merge
+ontology final 30.280/32.506; harness perlu dijalankan ulang untuk angka final):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|

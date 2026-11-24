@@ -60,7 +60,6 @@ export const PART_WEIGHTS: Record<string, number> = {
   Malai: 1,
   Polong: 1,
   Pucuk: 1,
-  Bunga: 1,
 };
 
 export function partWeight(part: string | null | undefined): number {

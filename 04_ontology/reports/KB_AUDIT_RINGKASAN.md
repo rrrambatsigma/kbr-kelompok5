@@ -4,13 +4,15 @@ Dokumen ini adalah hasil audit langsung terhadap artefak ontologi enrichment,
 bukan salinan ringkasan README. Seluruh angka dihitung ulang dari graph dengan
 `rdflib` (baca-saja, tanpa menjalankan reasoner).
 
-> **Catatan (22 November 2026).** Dokumen ini adalah **snapshot audit 21 November
-> 2026** terhadap ontology sebelum merge `feat/ontology-baru`. Tabel identitas di
-> bawah sudah menunjuk artefak saat ini (**19.021 triple**, **1.366 individu**),
-> tetapi angka rinci di badan dokumen (per kelas, per properti, distribusi
-> observasi) belum dihitung ulang.
+> **Arsip (snapshot audit 21 November 2026).** Angka di dokumen ini adalah
+> kondisi artefak **saat audit**, bukan artefak final. Ontology final
+> (24 November 2026) berisi **30.280 triple** di `ontology_md.ttl`,
+> **32.506 triple** di `ontology_md_inferred.ttl`, **1.508 individu**,
+> **71 kelas TBox PTP**, dan **7 aturan SWRL**. Untuk angka terkini lihat
+> `../README.md`; rincian per kelas/per properti di badan dokumen ini belum
+> dihitung ulang.
 
-| Item | Nilai |
+| Item | Nilai (saat audit) |
 |---|---|
 | Berkas audit | `04_ontology/ontology_md.ttl` |
 | Format | Turtle, namespace `ptp:` |
@@ -20,7 +22,7 @@ bukan salinan ringkasan README. Seluruh angka dihitung ulang dari graph dengan
 | Kelas OWL di graph (termasuk kelas bantu SWRL) | 96 |
 | Object property | 31 |
 | Data property | 33 |
-| Tanggal audit | 21 November 2026 (snapshot; artefak diperbarui 22 November 2026) |
+| Tanggal audit | 21 November 2026 |
 
 Graf `ontology_md.ttl` bersifat berdiri sendiri: seluruh isi `ontology.ttl`
 ditambah TBox/ABox enrichment dan 4 aturan SWRL. Artefak kanonik tidak ditulis

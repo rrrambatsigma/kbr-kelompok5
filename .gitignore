@@ -47,6 +47,7 @@ env/
 
 # Database runtime TDB2 - JANGAN MASUK GIT
 /06_backend/fuseki-data/
+/06_backend/fuseki-data-kasus/
 
 # Log runtime Fuseki
 /06_backend/fuseki-config/logs/

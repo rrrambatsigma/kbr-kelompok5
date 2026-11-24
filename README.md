@@ -17,7 +17,7 @@ menyimpan RDF dan melayani SPARQL read-only.
 | Knowledge tables + audit sumber | Selesai |
 | Ontologi OWL 2 kanonik | Selesai |
 | Enrichment + deskripsi + kondisi tumbuh | Selesai |
-| Reasoning Pellet + 4 aturan SWRL | Selesai |
+| Reasoning Pellet + 7 aturan SWRL | Selesai |
 | Backend Node + Java reasoning + Fuseki | Selesai |
 | Endpoint diagnosis + ranking + evaluasi | Selesai |
 | Frontend TaniCare (React/Vite) | MVP |
@@ -38,16 +38,18 @@ menyimpan RDF dan melayani SPARQL read-only.
 
 ## Angka kunci
 
-- Ontologi kanonik: **16.732 triple**, **1.204 individu**, **87 kelas**,
-  **29 object property**, **53 penyakit**, **7 tanaman**, **78 tautan penyakit-patogen**.
-- `ontology_md.ttl`: **24.833 triple**, **1.366 individu**, **4 aturan SWRL**,
-  termasuk inferred axiom Pellet (kategori penyakit, tipe, `disjointWith`,
-  `menyerangBagian`).
-- **240 baris gejala** menjadi **171 pengamatan kanonik**; **58** belum dipetakan.
+- Ontologi kanonik: **17.002 triple**, **1.247 individu**, **71 kelas**,
+  **32 object property**, **53 penyakit**, **7 tanaman**, **76 tautan penyakit-patogen**.
+- `ontology_md.ttl`: **30.280 triple**, **1.508 individu**, **7 aturan SWRL**,
+  dan **53 diagnosis demo**; memuat hasil SWRL dan enrichment, tetapi belum
+  memuat tipe kategori penyakit.
+- `ontology_md_inferred.ttl`: **32.506 triple**, closure Pellet penuh termasuk
+  kategori penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1).
+- **227 pengamatan gejala** menjadi **176 pengamatan kanonik**; **51** belum dipetakan.
 - **226 tautan `dikendalikanDengan`**; **37** baris pengendalian belum dipetakan.
-- **40 varietas**, **12 tautan fase**, **17 baris metadata terkurasi**.
-- **68 observasi lingkungan eksternal** dan **92 tautan kondisi**.
-- **942 fakta enrichment** dan **561 deskripsi `rdfs:comment`**.
+- **35 tautan varietas**, **13 tautan fase**, **17 baris metadata terkurasi**.
+- **68 observasi lingkungan eksternal** dan **115 tautan klasifikasi kondisi**.
+- **942 fakta enrichment** dan **584 deskripsi `rdfs:comment`**.
 - Audit terbaru: **severity 39**, **fase 42**, **varietas tahan 45**, dan
   **nama Inggris 43** masih kosong. Angka ini best-effort, bukan target yang
   dipaksakan.

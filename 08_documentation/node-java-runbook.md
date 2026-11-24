@@ -106,7 +106,8 @@ cd ..\..\
 
 ## 6. Prosedur update ontology
 
-1. Pastikan file final sudah di `04_ontology/ontology_md.ttl`.
+1. Pastikan artefak final sudah ada: `04_ontology/ontology_md.ttl` (Java) dan
+   `04_ontology/ontology_md_inferred.ttl` (Fuseki).
 2. Hentikan Fuseki.
 3. `.\06_backend\scripts\load-ontology.ps1 -Reset`
 4. Nyalakan Fuseki.
@@ -142,7 +143,7 @@ dan Java.
 | Diagnosis `DEGRADED` | Java mati/timeout | Cek Java, `REASONING_TIMEOUT_MS` |
 | `FUSEKI_UNAVAILABLE` | Fuseki mati/timeout | Nyalakan Fuseki |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
-| `totalTriples` bukan 24.833 | Dataset lama | `load-ontology.ps1 -Reset` |
+| `totalTriples` bukan 32.506 | Dataset lama | `load-ontology.ps1 -Reset` |
 | Port sudah dipakai | Proses lama | Hentikan PID di port 3000/8082/3030 |
 
 ## 8. Uji degraded (manual)

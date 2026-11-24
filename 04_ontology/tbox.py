@@ -79,11 +79,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
         "Penyakit",
         "Penyakit yang disebabkan oleh patogen kelompok virus.",
     ),
-    "PenyakitNematoda": (
-        "Penyakit Nematoda",
-        "Penyakit",
-        "Penyakit yang disebabkan oleh patogen kelompok nematoda.",
-    ),
     "PenyakitOomycete": (
         "Penyakit Oomycete",
         "Penyakit",
@@ -93,11 +88,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
         "Penyakit Fitoplasma",
         "Penyakit",
         "Penyakit yang disebabkan oleh patogen kelompok fitoplasma.",
-    ),
-    "PenyakitPenyebabTidakDiketahui": (
-        "Penyakit dengan Penyebab Tidak Diketahui",
-        "Penyakit",
-        "Penyakit yang sumbernya menyatakan penyebab belum diketahui.",
     ),
     "Gejala": (
         "Gejala",
@@ -113,7 +103,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     "GejalaMalai": ("Gejala Malai", "Gejala", "Gejala yang diamati pada malai."),
     "GejalaPolong": ("Gejala Polong", "Gejala", "Gejala yang diamati pada polong."),
     "GejalaPucuk": ("Gejala Pucuk", "Gejala", "Gejala yang diamati pada pucuk atau tunas."),
-    "GejalaBunga": ("Gejala Bunga", "Gejala", "Gejala yang diamati pada bunga."),
     "GejalaKanonik": (
         "Gejala Kanonik",
         "EntitasKBR",
@@ -127,14 +116,8 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     "Jamur": ("Jamur", "Patogen", "Patogen kelompok jamur."),
     "Bakteri": ("Bakteri", "Patogen", "Patogen kelompok bakteri."),
     "Virus": ("Virus", "Patogen", "Patogen kelompok virus."),
-    "Nematoda": ("Nematoda", "Patogen", "Patogen kelompok nematoda."),
     "Oomycete": ("Oomycete", "Patogen", "Patogen kelompok oomycete."),
     "Fitoplasma": ("Fitoplasma", "Patogen", "Patogen kelompok fitoplasma."),
-    "OrganismeLain": (
-        "Organisme Lain",
-        "Patogen",
-        "Patogen yang kelompok taksonominya tidak termasuk kelompok utama.",
-    ),
     "BagianTanaman": (
         "Bagian Tanaman",
         "EntitasKBR",
@@ -218,24 +201,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
         "FaktorLingkungan",
         "Individu observasi kuantitatif atau kualitatif faktor lingkungan.",
     ),
-    "FaktorBudidaya": (
-        "Faktor Budidaya",
-        "FaktorRisiko",
-        "Faktor praktik budidaya.",
-    ),
-    "FaktorSanitasiLahan": (
-        "Faktor Sanitasi Lahan",
-        "FaktorBudidaya",
-        "Faktor kebersihan lahan dan sisa tanaman.",
-    ),
-    "PenggunaanBenih": (
-        "Penggunaan Benih",
-        "FaktorBudidaya",
-        "Faktor mutu dan asal benih.",
-    ),
-    "Pemupukan": ("Pemupukan", "FaktorBudidaya", "Faktor pemupukan."),
-    "JarakTanam": ("Jarak Tanam", "FaktorBudidaya", "Faktor jarak tanam."),
-    "Pengairan": ("Pengairan", "FaktorBudidaya", "Faktor pengairan."),
     "FaktorLahan": ("Faktor Lahan", "FaktorRisiko", "Faktor kondisi lahan."),
     "KondisiTanah": ("Kondisi Tanah", "FaktorLahan", "Faktor kondisi tanah."),
     "KondisiDrainase": (
@@ -255,11 +220,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
         "Referensi",
         "Referensi berbentuk artikel jurnal.",
     ),
-    "ArtikelIlmiah": (
-        "Artikel Ilmiah",
-        "Referensi",
-        "Referensi berbentuk artikel ilmiah.",
-    ),
     "PublikasiInstansi": (
         "Publikasi Instansi",
         "Referensi",
@@ -274,11 +234,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
         "Varietas Unggul",
         "Varietas",
         "Kategori varietas unggul.",
-    ),
-    "VarietasLokal": (
-        "Varietas Lokal",
-        "Varietas",
-        "Kategori varietas lokal.",
     ),
     "FasePertumbuhan": (
         "Fase Pertumbuhan",
@@ -305,11 +260,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
         "FasePertumbuhan",
         "Fase anakan.",
     ),
-    "FasePembungaan": (
-        "Fase Pembungaan",
-        "FasePertumbuhan",
-        "Fase pembungaan.",
-    ),
     "FasePemasakan": (
         "Fase Pemasakan",
         "FasePertumbuhan",
@@ -329,16 +279,6 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
         "Diagnosis",
         "EntitasKBR",
         "Catatan proses diagnosis tanaman.",
-    ),
-    "KandidatDiagnosis": (
-        "Kandidat Diagnosis",
-        "Diagnosis",
-        "Kandidat penyakit pada suatu proses diagnosis.",
-    ),
-    "RekomendasiPengendalian": (
-        "Rekomendasi Pengendalian",
-        "EntitasKBR",
-        "Rekomendasi pengendalian yang dihasilkan proses diagnosis.",
     ),
     "BuktiSumber": (
         "Bukti Sumber",
@@ -381,7 +321,6 @@ TOP_DOMAINS = [
     "FasePertumbuhan",
     "Observasi",
     "Diagnosis",
-    "RekomendasiPengendalian",
     "BuktiSumber",
 ]
 
@@ -395,7 +334,7 @@ NOMINAL_CLASSES: dict[str, list[str]] = {
 # satu penyakit dapat memiliki lebih dari satu kelompok patogen di sumber.
 ALL_DISJOINT_GROUPS: list[list[str]] = [
     ["Serealia", "Legum", "UmbiUmbian"],
-    ["Jamur", "Bakteri", "Virus", "Nematoda", "Oomycete", "Fitoplasma", "OrganismeLain"],
+    ["Jamur", "Bakteri", "Virus", "Oomycete", "Fitoplasma"],
     [
         "PengendalianKulturTeknis",
         "PengendalianMekanis",
@@ -404,10 +343,9 @@ ALL_DISJOINT_GROUPS: list[list[str]] = [
         "PengendalianFisik",
         "PengendalianTerpadu",
     ],
-    ["FaktorLingkungan", "FaktorBudidaya", "FaktorLahan"],
-    ["FaseVegetatif", "FaseGeneratif", "FasePembibitan", "FaseAnakan", "FasePembungaan", "FasePemasakan", "FasePanen"],
-    ["VarietasUnggul", "VarietasLokal"],
-    ["Buku", "JurnalIlmiah", "ArtikelIlmiah", "PublikasiInstansi"],
+    ["FaktorLingkungan", "FaktorLahan"],
+    ["FaseVegetatif", "FaseGeneratif", "FasePembibitan", "FaseAnakan", "FasePemasakan", "FasePanen"],
+    ["Buku", "JurnalIlmiah", "PublikasiInstansi"],
 ]
 
 OBJECT_PROPERTIES: dict[str, dict] = {
@@ -602,6 +540,24 @@ OBJECT_PROPERTIES: dict[str, dict] = {
         "domain": "Diagnosis",
         "range": "Pengendalian",
     },
+    "kandidatKuat": {
+        "label": "kandidat kuat",
+        "comment": "Diagnosis memiliki kandidat penyakit yang didukung minimal dua gejala kanonik berbeda.",
+        "domain": "Diagnosis",
+        "range": "Penyakit",
+    },
+    "merekomendasikanVarietas": {
+        "label": "merekomendasikan varietas",
+        "comment": "Diagnosis merekomendasikan varietas yang tahan terhadap penyakit kandidat.",
+        "domain": "Diagnosis",
+        "range": "Varietas",
+    },
+    "menandaiRisikoLingkungan": {
+        "label": "menandai risiko lingkungan",
+        "comment": "Diagnosis menandai penyakit yang risikonya meningkat oleh kondisi lingkungan.",
+        "domain": "Diagnosis",
+        "range": "Penyakit",
+    },
 }
 
 SUBPROPERTY_OF: list[tuple[str, str]] = [
@@ -627,7 +583,6 @@ EQUIVALENT_CLASSES: list[tuple[str, str]] = [
     ("PenyakitJamur", "Jamur"),
     ("PenyakitBakteri", "Bakteri"),
     ("PenyakitVirus", "Virus"),
-    ("PenyakitNematoda", "Nematoda"),
     ("PenyakitOomycete", "Oomycete"),
     ("PenyakitFitoplasma", "Fitoplasma"),
 ]
@@ -680,6 +635,12 @@ DATA_PROPERTIES: dict[str, dict] = {
         "comment": "Deskripsi pengamatan gejala menurut sumber.",
         "domain": "Gejala",
         "range": RDF.PlainLiteral,
+    },
+    "kodeGejala": {
+        "label": "kode gejala",
+        "comment": "Kode stabil konsep gejala kanonik untuk pembeda pada SWRL.",
+        "domain": "GejalaKanonik",
+        "range": XSD.string,
     },
     "deskripsiPengendalian": {
         "label": "deskripsi pengendalian",
@@ -753,12 +714,6 @@ DATA_PROPERTIES: dict[str, dict] = {
         "domain": "ObservasiLingkungan",
         "range": XSD.string,
     },
-    "tingkat": {
-        "label": "tingkat",
-        "comment": "Tingkat kualitatif yang dinyatakan sumber.",
-        "domain": "ObservasiLingkungan",
-        "range": RDF.PlainLiteral,
-    },
     "kondisi": {
         "label": "kondisi",
         "comment": "Kondisi lingkungan kualitatif yang dinyatakan sumber.",
@@ -819,30 +774,6 @@ DATA_PROPERTIES: dict[str, dict] = {
         "domain": "BuktiSumber",
         "range": RDF.PlainLiteral,
     },
-    "skorKecocokan": {
-        "label": "skor kecocokan",
-        "comment": "Skor kecocokan kandidat diagnosis.",
-        "domain": "KandidatDiagnosis",
-        "range": XSD.decimal,
-    },
-    "peringkat": {
-        "label": "peringkat",
-        "comment": "Peringkat kandidat diagnosis.",
-        "domain": "KandidatDiagnosis",
-        "range": XSD.integer,
-    },
-    "tingkatKeyakinan": {
-        "label": "tingkat keyakinan",
-        "comment": "Tingkat keyakinan kandidat diagnosis.",
-        "domain": "KandidatDiagnosis",
-        "range": RDF.PlainLiteral,
-    },
-    "alasanKecocokan": {
-        "label": "alasan kecocokan",
-        "comment": "Alasan kecocokan kandidat diagnosis.",
-        "domain": "KandidatDiagnosis",
-        "range": RDF.PlainLiteral,
-    },
 }
 
 
@@ -851,13 +782,13 @@ MD_OBJECT_PROPERTIES: dict[str, dict] = {
         "label": "memiliki kondisi tumbuh",
         "comment": "Tanaman pangan memiliki kondisi lingkungan tumbuh yang terkontrol.",
         "domain": "TanamanPangan",
-        "range": "FaktorLingkungan",
+        "range": "FaktorRisiko",
     },
     "menggambarkanKondisi": {
         "label": "menggambarkan kondisi",
         "comment": "Observasi lingkungan menggambarkan kondisi lingkungan yang terkontrol.",
         "domain": "ObservasiLingkungan",
-        "range": "FaktorLingkungan",
+        "range": "FaktorRisiko",
     },
 }
 

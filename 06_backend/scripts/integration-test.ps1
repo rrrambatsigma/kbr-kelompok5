@@ -42,20 +42,20 @@ Assert-Equal $health.data.checks.fileMatchesJava $true "checksum file vs Java"
 Assert-Equal $health.data.checks.fusekiHasV2Fingerprint $true "fingerprint Fuseki"
 Assert-Equal $health.data.java.checksum $health.data.file.sha256 "checksum detail"
 
-# 4. Tujuh kelas fase selalu tersedia, dengan diseaseCount per tanaman
+# 4. Enam kelas fase selalu tersedia, dengan diseaseCount per tanaman
 $phases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=Padi"
-Assert-Equal $phases.data.count 7 "Padi phase count"
+Assert-Equal $phases.data.count 6 "Padi phase count"
 Assert-Equal $phases.data.items[0].id "FasePembibitan" "first Padi phase"
 $emptyPhases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=UbiKayu"
-Assert-Equal $emptyPhases.data.count 7 "UbiKayu phase count"
+Assert-Equal $emptyPhases.data.count 6 "UbiKayu phase count"
 
 # 5. Diagnosis nyata: Blas harus dapat kategori dari Java
 $body = @{
     plantId = "Padi"
     symptomIds = @(
-        "PengamatanPenyakitBlasPadiBercakDaun",
-        "PengamatanPenyakitBlasPadiKhasMalai",
-        "PengamatanPenyakitBlasPadiMalaiPatah"
+        "GejalaPenyakitBlasPadiBercakDaun",
+        "GejalaPenyakitBlasPadiBercakTanaman",
+        "GejalaPenyakitBlasPadiMalaiPatah"
     )
     topN = 5
 } | ConvertTo-Json -Depth 5
@@ -78,9 +78,9 @@ $phaseBody = @{
     plantId = "Padi"
     phaseId = "FaseAnakan"
     symptomIds = @(
-        "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
-        "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
-        "PengamatanPenyakitHawarPelepahDaunPadiHDPDilihatSelubung"
+        "GejalaPenyakitHawarPelepahDaunPadiBercakDaun",
+        "GejalaPenyakitHawarPelepahDaunPadiBusukBatang",
+        "GejalaPenyakitHawarPelepahDaunPadiBercakTanaman"
     )
     topN = 5
 } | ConvertTo-Json -Depth 5
@@ -100,9 +100,9 @@ $unlinkedPhaseBody = @{
     plantId = "Padi"
     phaseId = "FasePembibitan"
     symptomIds = @(
-        "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
-        "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
-        "PengamatanPenyakitHawarPelepahDaunPadiHDPDilihatSelubung"
+        "GejalaPenyakitHawarPelepahDaunPadiBercakDaun",
+        "GejalaPenyakitHawarPelepahDaunPadiBusukBatang",
+        "GejalaPenyakitHawarPelepahDaunPadiBercakTanaman"
     )
     topN = 5
 } | ConvertTo-Json -Depth 5
@@ -122,7 +122,7 @@ Assert-Equal $reload.meta.requestId "m6-reload" "reload request id"
 # 6. Validasi input tetap bekerja
 $badBody = @{
     plantId = "Padi"
-    symptomIds = @("PengamatanPenyakitKaratDaunKedelaiBercakDaun")
+    symptomIds = @("GejalaPenyakitKaratDaunKedelaiBercakDaun")
 } | ConvertTo-Json
 
 $badStatus = $null
@@ -142,7 +142,7 @@ Assert-Equal $badCode "INVALID_REQUEST" "negative error code"
 $badPhaseBody = @{
     plantId = "Padi"
     phaseId = "FasePembibitanTanaman"
-    symptomIds = @("PengamatanPenyakitBlasPadiBercakDaun")
+    symptomIds = @("GejalaPenyakitBlasPadiBercakDaun")
 } | ConvertTo-Json
 
 $badPhaseStatus = $null
