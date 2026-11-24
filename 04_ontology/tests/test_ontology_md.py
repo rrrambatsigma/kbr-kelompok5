@@ -68,7 +68,7 @@ class TestOntologyMd(unittest.TestCase):
 
     def test_swrl_rules_use_typed_atom_lists(self) -> None:
         rules = set(self.graph.subjects(RDF.type, SWRL.Imp))
-        self.assertEqual(len(rules), 4)
+        self.assertEqual(len(rules), 7)
         for imp in rules:
             for predicate in (SWRL.body, SWRL.head):
                 lists = list(self.graph.objects(imp, predicate))
@@ -82,7 +82,7 @@ class TestOntologyMd(unittest.TestCase):
         prop = KBR("memilikiKondisiTumbuh")
         self.assertIn((prop, RDF.type, OWL.ObjectProperty), self.graph)
         self.assertIn((prop, RDFS.domain, KBR("TanamanPangan")), self.graph)
-        self.assertIn((prop, RDFS.range, KBR("FaktorLingkungan")), self.graph)
+        self.assertIn((prop, RDFS.range, KBR("FaktorRisiko")), self.graph)
         self.assertTrue(self.graph.value(prop, RDFS.label))
 
     def test_scope_plants_only(self) -> None:
@@ -99,7 +99,7 @@ class TestOntologyMd(unittest.TestCase):
         self.assertEqual(len(conditions), 30)
         for local in conditions:
             uri = KBR(local)
-            self.assertIn((uri, RDF.type, KBR("FaktorLingkungan")), self.graph)
+            self.assertIn((uri, RDF.type, OWL.NamedIndividual), self.graph)
             self.assertTrue(self.graph.value(uri, RDFS.label), local)
 
     def test_fact_counts(self) -> None:

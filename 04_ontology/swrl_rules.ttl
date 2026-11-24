@@ -3,6 +3,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Variabel SWRL
@@ -15,6 +16,12 @@
 :eo a swrl:Variable .
 :f a swrl:Variable .
 :c a swrl:Variable .
+:o2 a swrl:Variable .
+:g2 a swrl:Variable .
+:gp2 a swrl:Variable .
+:v a swrl:Variable .
+:gn a swrl:Variable .
+:gn2 a swrl:Variable .
 
 # R1: gejala kanonik yang cocok menghasilkan kandidat penyakit.
 :RuleKandidatGejala
@@ -152,4 +159,146 @@
           swrl:propertyPredicate :merekomendasikanPengendalian ;
           swrl:argument1 :d ;
           swrl:argument2 :c ]
+    ) .
+
+# R5: dua gejala kanonik berbeda menghasilkan kandidat kuat.
+:RuleKandidatKuat
+    a swrl:Imp ;
+    rdfs:label "Kandidat kuat dari dua gejala kanonik berbeda"@id ;
+    swrl:body (
+        [ a swrl:ClassAtom ;
+          swrl:classPredicate :Diagnosis ;
+          swrl:argument1 :d ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiTanaman ;
+          swrl:argument1 :d ;
+          swrl:argument2 :t ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :menyerangTanaman ;
+          swrl:argument1 :p ;
+          swrl:argument2 :t ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiObservasi ;
+          swrl:argument1 :d ;
+          swrl:argument2 :o ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiGejalaKanonik ;
+          swrl:argument1 :o ;
+          swrl:argument2 :g ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiObservasi ;
+          swrl:argument1 :d ;
+          swrl:argument2 :o2 ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiGejalaKanonik ;
+          swrl:argument1 :o2 ;
+          swrl:argument2 :g2 ]
+        [ a swrl:DatavaluedPropertyAtom ;
+          swrl:propertyPredicate :kodeGejala ;
+          swrl:argument1 :g ;
+          swrl:argument2 :gn ]
+        [ a swrl:DatavaluedPropertyAtom ;
+          swrl:propertyPredicate :kodeGejala ;
+          swrl:argument1 :g2 ;
+          swrl:argument2 :gn2 ]
+        [ a swrl:BuiltinAtom ;
+          swrl:builtin swrlb:notEqual ;
+          swrl:arguments ( :gn :gn2 ) ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiGejala ;
+          swrl:argument1 :p ;
+          swrl:argument2 :gp ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiGejalaKanonik ;
+          swrl:argument1 :gp ;
+          swrl:argument2 :g ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiGejala ;
+          swrl:argument1 :p ;
+          swrl:argument2 :gp2 ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiGejalaKanonik ;
+          swrl:argument1 :gp2 ;
+          swrl:argument2 :g2 ]
+    ) ;
+    swrl:head (
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :kandidatKuat ;
+          swrl:argument1 :d ;
+          swrl:argument2 :p ]
+    ) .
+
+# R6: rekomendasi varietas yang tahan terhadap penyakit kandidat.
+:RuleRekomendasiVarietasTahan
+    a swrl:Imp ;
+    rdfs:label "Rekomendasi varietas tahan"@id ;
+    swrl:body (
+        [ a swrl:ClassAtom ;
+          swrl:classPredicate :Diagnosis ;
+          swrl:argument1 :d ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :menghasilkanPenyakit ;
+          swrl:argument1 :d ;
+          swrl:argument2 :p ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :menyerangTanaman ;
+          swrl:argument1 :p ;
+          swrl:argument2 :t ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiVarietas ;
+          swrl:argument1 :t ;
+          swrl:argument2 :v ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :tahanTerhadap ;
+          swrl:argument1 :v ;
+          swrl:argument2 :p ]
+    ) ;
+    swrl:head (
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :merekomendasikanVarietas ;
+          swrl:argument1 :d ;
+          swrl:argument2 :v ]
+    ) .
+
+# R7: kondisi lingkungan yang cocok menandai risiko penyakit.
+:RuleRisikoLingkungan
+    a swrl:Imp ;
+    rdfs:label "Risiko lingkungan"@id ;
+    swrl:body (
+        [ a swrl:ClassAtom ;
+          swrl:classPredicate :Diagnosis ;
+          swrl:argument1 :d ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiTanaman ;
+          swrl:argument1 :d ;
+          swrl:argument2 :t ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :memilikiObservasi ;
+          swrl:argument1 :d ;
+          swrl:argument2 :o ]
+        [ a swrl:ClassAtom ;
+          swrl:classPredicate :ObservasiLingkungan ;
+          swrl:argument1 :o ]
+        [ a swrl:DatavaluedPropertyAtom ;
+          swrl:propertyPredicate :klasifikasiTurunan ;
+          swrl:argument1 :o ;
+          swrl:argument2 :f ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :dipengaruhiOleh ;
+          swrl:argument1 :p ;
+          swrl:argument2 :eo ]
+        [ a swrl:DatavaluedPropertyAtom ;
+          swrl:propertyPredicate :klasifikasiTurunan ;
+          swrl:argument1 :eo ;
+          swrl:argument2 :f ]
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :menyerangTanaman ;
+          swrl:argument1 :p ;
+          swrl:argument2 :t ]
+    ) ;
+    swrl:head (
+        [ a swrl:IndividualPropertyAtom ;
+          swrl:propertyPredicate :menandaiRisikoLingkungan ;
+          swrl:argument1 :d ;
+          swrl:argument2 :p ]
     ) .

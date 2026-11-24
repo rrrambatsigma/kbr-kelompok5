@@ -37,6 +37,7 @@ CURATED5 = TABLE_DIR / "curated" / "DOC005"
 METADATA_CSV = TABLE_DIR / "curated" / "metadata.csv"
 AUTO_DIR = TABLE_DIR / "auto"
 META_PATH = PROJECT_ROOT / "01_knowledge_sources" / "source_metadata" / "manual_metadata.json"
+SOURCE_REGISTRY_CSV = PROJECT_ROOT / "01_knowledge_sources" / "external" / "source_registry.csv"
 DEFAULT_TTL = ONTO_DIR / "ontology.ttl"
 DEFAULT_OWL = ONTO_DIR / "ontology.owl"
 REPORT_PATH = ONTO_DIR / "extraction_report.json"
@@ -77,6 +78,13 @@ PLANT_LABELS = {
 }
 PLANT_ORDER = ["Padi", "Kedelai", "Jagung", "UbiJalar", "UbiKayu", "KacangTanah", "KacangHijau"]
 
+PLANT_SCIENTIFIC_FALLBACK: dict[str, tuple[str, str]] = {
+    "Padi": ("Oryza sativa L.", "https://powo.science.kew.org/results?q=Oryza%20sativa"),
+    "Jagung": ("Zea mays L.", "https://powo.science.kew.org/results?q=Zea%20mays"),
+    "KacangTanah": ("Arachis hypogaea L.", "https://powo.science.kew.org/results?q=Arachis%20hypogaea"),
+    "KacangHijau": ("Vigna radiata (L.) R. Wilczek", "https://powo.science.kew.org/results?q=Vigna%20radiata"),
+}
+
 TAXON_CLASS = {
     "jamur": "Jamur",
     "bakteri": "Bakteri",
@@ -106,7 +114,6 @@ PART_WORDS = {
     "polong": "Polong",
     "pucuk": "Pucuk",
     "tunas": "Pucuk",
-    "bunga": "Bunga",
 }
 PART_LABELS = {
     "Daun": "Daun",
@@ -118,7 +125,6 @@ PART_LABELS = {
     "Malai": "Malai",
     "Polong": "Polong",
     "Pucuk": "Pucuk",
-    "Bunga": "Bunga",
 }
 PART_OF = {
     "Daun": "Pucuk",
@@ -134,7 +140,6 @@ PART_SUBCLASS = {
     "Malai": "GejalaMalai",
     "Polong": "GejalaPolong",
     "Pucuk": "GejalaPucuk",
-    "Bunga": "GejalaBunga",
 }
 TABLE_PART = {"T5.1_DAUN": "daun", "T5.2_BATANG": "batang", "T5.3_AKAR": "akar"}
 
@@ -264,6 +269,21 @@ CANONICAL_SYMPTOMS: dict[str, dict[str, str]] = {
         "part": "",
         "comment": "Konsep kanonik untuk malformasi atau bentuk pertumbuhan yang tidak normal.",
     },
+    "Kresek": {
+        "label": "Kresek",
+        "part": "Daun",
+        "comment": "Konsep kanonik untuk gejala kresek pada hawar daun bakteri padi.",
+    },
+    "LekukanPangkalAkar": {
+        "label": "Lekukan pada pangkal akar",
+        "part": "Akar",
+        "comment": "Konsep kanonik untuk lekukan coklat atau hitam pada pangkal akar.",
+    },
+    "MiseliumPadaTanaman": {
+        "label": "Miselium pada tanaman",
+        "part": "",
+        "comment": "Konsep kanonik untuk tanda miselium pada jaringan tanaman.",
+    },
 }
 
 CANONICAL_SYMPTOM_RULES: list[tuple[str, tuple[tuple[str, ...], ...]]] = [
@@ -280,7 +300,10 @@ CANONICAL_SYMPTOM_RULES: list[tuple[str, tuple[tuple[str, ...], ...]]] = [
     ("DaunRontok", (("rontok", "gugur"), ("daun",))),
     ("DaunBerlubang", (("berlubang",), ("daun",))),
     ("TepungDaun", (("tepung",),)),
-    ("MalaiPatah", (("malai",), ("patah",))),
+    ("MalaiPatah", (("malai",), ("patah", "blas malai"))),
+    ("Kresek", (("kresek",),)),
+    ("LekukanPangkalAkar", (("lekukan",), ("pangkal akar", "pangkal", "akar"))),
+    ("MiseliumPadaTanaman", (("miselium", "miselia"),)),
     ("KerdilTanaman", (("kerdil", "dwarf"),)),
     ("LayuDaun", (("layu",),)),
     ("BusukBatang", (("busuk",), ("batang", "pelepah"))),
@@ -606,6 +629,7 @@ PHASE_DEFS: dict[str, dict[str, str]] = {
     "FasePembibitanTanaman": {"label": "Fase pembibitan", "class": "FasePembibitan"},
     "FaseAnakanTanaman": {"label": "Fase anakan", "class": "FaseAnakan"},
     "FaseMatang": {"label": "Fase matang", "class": "FasePemasakan"},
+    "FasePanenTanaman": {"label": "Fase panen", "class": "FasePanen"},
 }
 PHASE_RE = re.compile(
     r"\bfase\s+(matang\s+susu|vegetatif|generatif|pembibitan|anakan|matang)\b",
@@ -702,23 +726,54 @@ def significant_words(text: str, limit: int = 5) -> str:
     return " ".join(words[:limit])
 
 
+IMPACT_MARKERS = re.compile(
+    r"\b(?:menyebabkan|mengakibatkan|berdampak|menurunkan|mengurangi|"
+    r"kehilangan hasil|defoliasi|pengurangan)\b",
+    re.I,
+)
+
+
+def compact_local(prefix: str, limit: int = 60) -> str:
+    return (prefix or "Entitas")[:limit]
+
+
 def unique_local(prefix: str, text: str, builder: "Builder") -> str:
-    base = prefix + (pascal(significant_words(text)) or "TanpaTeks")
+    base = compact_local(prefix)
     local = base
     counter = 2
     while local in builder.used_locals:
-        local = f"{base}{counter}"
+        suffix = str(counter)
+        local = base[: max(1, 60 - len(suffix))] + suffix
         counter += 1
     return local
 
 
+def disease_part_hint(entry: dict) -> set[str]:
+    name = (entry.get("local") or "").lower()
+    return {part for word, part in PART_WORDS.items() if word in name}
+
+
 def text_parts(text: str) -> list[str]:
-    low = (text or "").lower()
+    value = IMPACT_MARKERS.split(text or "", maxsplit=1)[0]
+    low = value.lower()
     found: list[str] = []
     for word, part in PART_WORDS.items():
         if re.search(r"\b" + re.escape(word), low) and part not in found:
             found.append(part)
     return found
+
+
+def disease_display(entry: dict) -> str:
+    return entry.get("label") or entry.get("nama") or entry.get("local", "")
+
+
+def plant_display(entry: dict) -> str:
+    plant = entry.get("plant_local", "")
+    return PLANT_LABELS.get(plant, plant)
+
+
+def evidence_label(kind: str, entry: dict) -> str:
+    return f"Bukti {kind} {disease_display(entry)} ({plant_display(entry)})"
 
 
 def subsection_parts(subsection: str) -> list[str]:
@@ -837,6 +892,20 @@ def normalize_quote(text: str | None) -> str:
     value = value.replace("\ufffdC", "°C").replace("\ufffd C", "°C")
     value = value.replace("\u2013", "-").replace("\u2014", "-").replace("\u00ad", "")
     return re.sub(r"\s+", " ", value).strip()
+
+
+def short_label(text: str | None, limit: int = 72) -> str:
+    value = normalize_quote(text).rstrip(" .")
+    if len(value) > limit:
+        value = value[:limit].rsplit(" ", 1)[0] + "..."
+    return value
+
+
+def safe_description(text: str | None) -> str:
+    value = normalize_quote(text)
+    if re.search(r"\b(et al\.|dkk\.)\s*$", value, re.I):
+        value = value + " [kutipan sumber terpotong]"
+    return value
 
 
 def is_complete_sentence(text: str) -> bool:
@@ -1496,13 +1565,64 @@ def build_referensi(builder: Builder) -> None:
         builder.plain(uri, "namaPenulis", ", ".join(info.get("authors") or []))
         builder.plain(uri, "identifierSumber", doc_id)
 
+    if not SOURCE_REGISTRY_CSV.exists():
+        return
+    for row in read_csv(SOURCE_REGISTRY_CSV):
+        source_type = (row.get("source_type") or "").strip()
+        if source_type == "journal_article":
+            cls_name, prefix = "JurnalIlmiah", "Jurnal"
+        elif source_type in {"extension_publication", "extension_factsheet", "extension_article"}:
+            cls_name, prefix = "PublikasiInstansi", "Publikasi"
+        else:
+            continue
+        source_id = (row.get("source_id") or "").strip()
+        if not source_id:
+            continue
+        local = prefix + pascal(source_id)
+        uri = builder.ensure_individual(local, cls_name)
+        title = (row.get("title") or "").strip()
+        if not title:
+            continue
+        builder.label(uri, title)
+        builder.comment(uri, f"Referensi eksternal {cls_name.lower()} dari registry sumber.")
+        builder.lang(uri, "judulReferensi", title)
+        builder.integer(uri, "tahunTerbit", (row.get("year") or "").strip())
+        builder.plain(uri, "namaPenulis", (row.get("authors") or "").strip())
+        builder.plain(uri, "identifierSumber", source_id)
+        url = (row.get("url") or "").strip()
+        if url:
+            builder.graph.add((uri, KBR["urlReferensi"], Literal(url, datatype=XSD.anyURI)))
+
+
+def add_equivalences(builder: Builder) -> None:
+    pairs = [
+        ("PhakopsoraPachyrhizi", "PhakopsporaPachyrhizi"),
+        ("XanthomonasCampestrisPvManihotis", "XanthomonasCampestrispvManihotis"),
+        ("CercosporaHenningsii", "CercosporidiumHenningsii"),
+    ]
+    for left, right in pairs:
+        if left in builder.used_locals and right in builder.used_locals:
+            builder.graph.add((KBR[left], OWL.sameAs, KBR[right]))
+            builder.graph.add((KBR[right], OWL.sameAs, KBR[left]))
+
 
 def build_tanaman(builder: Builder) -> None:
     for row in plant_rows_merged():
         uri = builder.individual(row["local"], PLANT_CLASS[row["local"]])
         builder.label(uri, row["label"])
         builder.comment(uri, "Tanaman pangan dalam ruang lingkup knowledge base.")
-        builder.plain(uri, "namaIlmiah", row["scientific_name"] or None)
+        scientific = row["scientific_name"]
+        if not scientific:
+            fallback = PLANT_SCIENTIFIC_FALLBACK.get(row["local"])
+            if fallback:
+                scientific, source_url = fallback
+                builder.graph.add((uri, RDFS.seeAlso, URIRef(source_url)))
+                builder.comment(
+                    uri,
+                    "Nama ilmiah dilengkapi dari Plants of the World Online (Kew) "
+                    "karena tidak tercantum pada sumber utama.",
+                )
+        builder.plain(uri, "namaIlmiah", scientific or None)
         builder.plain(uri, "identifierSumber", ";".join(row["plant_ids"]))
 
 
@@ -1522,6 +1642,7 @@ def build_canonical_symptoms(builder: Builder) -> None:
         builder.label(uri, spec["label"])
         builder.comment(uri, spec["comment"])
         builder.alt(uri, spec["label"].lower())
+        builder.plain(uri, "kodeGejala", local)
 
 
 def build_canonical_controls(builder: Builder) -> None:
@@ -1578,7 +1699,7 @@ def build_penyakit(builder: Builder, entries: list[dict[str, str]], report: dict
                 record,
                 "BuktiPenyakit",
                 reference,
-                f"Bukti penyakit {entry['nama']}",
+                evidence_label("penyakit", entry),
                 cache,
                 report,
             )
@@ -1643,7 +1764,7 @@ def build_patogen(builder: Builder, entries: list[dict[str, str]], records: list
             evidence_record,
             "BuktiPatogen",
             reference,
-            f"Bukti patogen {entry['nama']}",
+            evidence_label("patogen", entry),
             cache,
             report,
         )
@@ -1667,7 +1788,6 @@ def build_gejala(
     for record in records:
         entry = entries_by_id[record["disease_id"]]
         canonicals = match_canonical_symptoms(record["text"])
-        parts = text_parts(record["text"])
         if canonicals:
             for canonical in canonicals:
                 key = (entry["local"], canonical)
@@ -1675,17 +1795,25 @@ def build_gejala(
                 if not entry.get("legacy_local"):
                     group["entry"] = entry
                 group["records"].append(record)
-                group["parts"].update(parts)
-                if CANONICAL_SYMPTOMS[canonical]["part"]:
-                    group["parts"].add(CANONICAL_SYMPTOMS[canonical]["part"])
+                hint = disease_part_hint(entry)
+                if hint:
+                    group["parts"].update(hint)
+                else:
+                    canonical_part = CANONICAL_SYMPTOMS[canonical]["part"]
+                    if canonical_part:
+                        group["parts"].add(canonical_part)
+                        if canonical in {"BusukAkar", "BusukBatang"}:
+                            group["parts"].update(text_parts(record["text"]))
+                    else:
+                        group["parts"].update(text_parts(record["text"]))
         else:
             unmapped.append(record)
-    for (disease_local, canonical), group in groups.items():
+    for (_disease_local, canonical), group in groups.items():
         entry = group["entry"]
-        local = "Pengamatan" + disease_local + canonical
+        local = unique_local("Gejala" + entry["local"] + canonical, "", builder)
         uri = builder.individual(local, *(_part_classes(group["parts"]) or ["Gejala"]))
-        builder.label(uri, f"{CANONICAL_SYMPTOMS[canonical]['label']} pada {entry['nama']}")
-        builder.comment(uri, "Pengamatan gejala yang dipetakan ke konsep kanonik.")
+        symptom_label = CANONICAL_SYMPTOMS[canonical]["label"]
+        builder.label(uri, f"{symptom_label} pada {disease_display(entry)} ({plant_display(entry)})")
         builder.link(uri, "memilikiGejalaKanonik", KBR[canonical])
         for part in sorted(group["parts"]):
             if part in PART_LABELS:
@@ -1693,8 +1821,10 @@ def build_gejala(
         description = ""
         for record in group["records"]:
             text = record["text"]
-            if not description and is_complete_sentence(text):
-                description = normalize_quote(text)
+            if not description:
+                description = safe_description(text)
+            elif is_complete_sentence(text) and not is_complete_sentence(description):
+                description = safe_description(text)
             reference = "BukuDOC005" if record["source"] == "DOC005" else "BukuDOC002"
             evidence = make_evidence(
                 builder,
@@ -1702,27 +1832,36 @@ def build_gejala(
                 record,
                 "BuktiGejala",
                 reference,
-                f"Bukti gejala {entry['nama']}",
+                evidence_label("gejala", entry),
                 evidence_cache,
                 report,
             )
             builder.link(uri, "didukungOleh", evidence)
         if description:
             builder.lang(uri, "deskripsiGejala", description)
+            builder.comment(
+                uri,
+                f"Gejala {symptom_label.lower()} pada tanaman {plant_display(entry)}: {short_label(description)}",
+            )
+        else:
+            builder.comment(uri, f"Gejala {symptom_label.lower()} pada tanaman {plant_display(entry)}.")
         builder.link(KBR[entry["local"]], "memilikiGejala", uri)
         report["canonical_symptoms"]["used"][canonical] = report["canonical_symptoms"]["used"].get(canonical, 0) + 1
 
     for record in unmapped:
         entry = entries_by_id[record["disease_id"]]
         parts = text_parts(record["text"])
-        local = unique_local("Pengamatan" + entry["local"], record["text"], builder)
+        local = unique_local("Gejala" + entry["local"], "", builder)
         uri = builder.individual(local, *(_part_classes(parts) or ["Gejala"]))
-        builder.label(uri, f"Pengamatan gejala {entry['nama']}")
-        builder.comment(uri, "Pengamatan gejala yang belum dipetakan ke konsep kanonik.")
+        builder.label(uri, f"Gejala pada {disease_display(entry)} ({plant_display(entry)}): {short_label(record['text'])}")
         for part in parts:
             builder.link(uri, "terdapatPada", KBR[part])
-        if is_complete_sentence(record["text"]):
-            builder.lang(uri, "deskripsiGejala", normalize_quote(record["text"]))
+        description = safe_description(record["text"])
+        if description:
+            builder.lang(uri, "deskripsiGejala", description)
+            builder.comment(uri, f"Gejala pada tanaman {plant_display(entry)}: {short_label(description)}")
+        else:
+            builder.comment(uri, f"Gejala pada tanaman {plant_display(entry)}.")
         reference = "BukuDOC005" if record["source"] == "DOC005" else "BukuDOC002"
         evidence = make_evidence(
             builder,
@@ -1730,7 +1869,7 @@ def build_gejala(
             record,
             "BuktiGejala",
             reference,
-            f"Bukti gejala {entry['nama']}",
+            evidence_label("gejala", entry),
             evidence_cache,
             report,
         )
@@ -1752,24 +1891,44 @@ def build_menyerang_bagian(
     symptom_rows: list[dict],
     report: dict,
 ) -> None:
+    entries_by_id = {e["disease_id"]: e for e in entries}
     symptom_parts_by_disease: dict[str, set[str]] = {}
+    canonical_parts_by_disease: dict[str, set[str]] = {}
     for record in symptom_rows:
-        symptom_parts_by_disease.setdefault(record["disease_id"], set()).update(
-            text_parts(record.get("text") or "")
-        )
+        entry = entries_by_id.get(record["disease_id"])
+        if entry is None:
+            continue
+        text = record.get("text") or ""
+        symptom_parts_by_disease.setdefault(entry["local"], set()).update(text_parts(text))
+        hint = disease_part_hint(entry)
+        if hint:
+            canonical_parts_by_disease.setdefault(entry["local"], set()).update(hint)
+            continue
+        for canonical in match_canonical_symptoms(text):
+            part = CANONICAL_SYMPTOMS[canonical]["part"]
+            if part:
+                canonical_parts_by_disease.setdefault(entry["local"], set()).add(part)
+                if canonical in {"BusukAkar", "BusukBatang"}:
+                    canonical_parts_by_disease.setdefault(entry["local"], set()).update(text_parts(text))
+            else:
+                canonical_parts_by_disease.setdefault(entry["local"], set()).update(text_parts(text))
 
     seen: set[str] = set()
     for entry in entries:
         if entry["local"] in seen:
             continue
         seen.add(entry["local"])
-        parts = subsection_parts(entry["subsection"])
+        parts = sorted(disease_part_hint(entry) or canonical_parts_by_disease.get(entry["local"], set()))
         if not parts:
-            parts = sorted(symptom_parts_by_disease.get(entry["disease_id"], set()))
+            parts = subsection_parts(entry["subsection"])
+        if not parts:
+            raw = sorted(symptom_parts_by_disease.get(entry["local"], set()))
+            if len(raw) == 1:
+                parts = raw
         if not parts:
             report["data_quality"]["diseases_without_explicit_part"] += 1
             continue
-        for part in parts:
+        for part in sorted(set(parts)):
             builder.link(KBR[entry["local"]], "menyerangBagian", KBR[part])
             report["part_links"].append({"disease": entry["local"], "part": part})
 
@@ -1794,7 +1953,7 @@ def build_pengendalian(
             record,
             "BuktiPengendalian",
             reference,
-            f"Bukti pengendalian {entry['nama']}",
+            evidence_label("pengendalian", entry),
             cache,
             report,
         )
@@ -1861,7 +2020,7 @@ def build_varietas(
             record,
             "BuktiSumber",
             reference,
-            f"Bukti varietas {entry['nama']}",
+            evidence_label("varietas", entry),
             cache,
             report,
         )
@@ -1869,17 +2028,14 @@ def build_varietas(
         vuln = bool(VULN_MARKERS.search(record["text"]))
         for name in names:
             if name not in name_local:
-                base = "Varietas" + pascal(name)
-                local = base
-                counter = 2
-                while local in builder.used_locals:
-                    local = f"{base}{counter}"
-                    counter += 1
-                name_local[name] = local
+                name_local[name] = unique_local("Varietas" + pascal(name), "", builder)
             local = name_local[name]
-            uri = builder.ensure_individual(local, "Varietas")
+            classes = ["Varietas"]
+            if "varietas unggul" in record["text"].lower():
+                classes.append("VarietasUnggul")
+            uri = builder.ensure_individual(local, *classes)
             builder.label(uri, name)
-            builder.comment(uri, "Varietas tanaman yang disebut pada sumber.")
+            builder.comment(uri, "Varietas tanaman yang disebut sumber.")
             builder.link(KBR[entry["plant_local"]], "memilikiVarietas", uri)
             builder.link(uri, "didukungOleh", evidence)
             if resist and not vuln:
@@ -1916,7 +2072,7 @@ def build_fase(
             record,
             "BuktiSumber",
             reference,
-            f"Bukti fase pertumbuhan {entry['nama']}",
+            evidence_label("fase", entry),
             cache,
             report,
         )
@@ -1980,10 +2136,23 @@ def build_metadata(builder: Builder, entries: list[dict[str, str]], report: dict
             record,
             "BuktiSumber",
             reference,
-            f"Bukti metadata {gap} {entry['nama']}",
+            evidence_label("metadata " + gap, entry),
             cache,
             report,
         )
+
+        if re.search(r"fase\s+(?:[a-z]+\s+){0,3}hingga\s+panen|\bfase\s+panen\b", quote, re.I):
+            phase_local = "FasePanenTanaman"
+            phase_uri = builder.ensure_individual(phase_local, PHASE_DEFS[phase_local]["class"])
+            builder.label(phase_uri, PHASE_DEFS[phase_local]["label"])
+            builder.comment(phase_uri, "Fase pertumbuhan yang disebut sumber.")
+            builder.link(KBR[disease], "menyerangFase", phase_uri)
+            builder.link(phase_uri, "didukungOleh", evidence)
+            if not any(
+                item["disease"] == disease and item["phase"] == phase_local
+                for item in report["phases"]["links"]
+            ):
+                report["phases"]["links"].append({"disease": disease, "phase": phase_local})
 
         if gap == "severity":
             builder.lang(KBR[disease], "tingkatKeparahan", value)
@@ -2062,7 +2231,7 @@ def build_lingkungan(
             record,
             "BuktiSumber",
             reference,
-            f"Bukti faktor lingkungan {entry['nama']}",
+            evidence_label("faktor lingkungan", entry),
             cache,
             report,
         )
@@ -2164,6 +2333,7 @@ def build() -> tuple[Graph, dict, list[str], Builder]:
     build_kondisi_katalog(builder)
     build_penyakit(builder, entries, report)
     build_patogen(builder, entries, pathogen_rows, report)
+    add_equivalences(builder)
     build_gejala(builder, entries, symptom_rows, report)
     build_menyerang_bagian(
         builder, entries, all_context_records(symptom_rows, control_rows), report
@@ -2375,11 +2545,11 @@ def validate(graph: Graph, builder: Builder, entries: list[dict[str, str]]) -> l
             errors.append(f"satuan tidak dikenal pada {subject}: {unit}")
 
     for prop in ("deskripsiGejala", "deskripsiPengendalian", "deskripsiPenyakit", "deskripsiTanaman"):
-        for obj in graph.objects(None, KBR[prop]):
+        for subject, obj in graph.subject_objects(KBR[prop]):
             value = normalize_quote(str(obj))
             if re.search(r"\b(et al\.|dkk\.)\s*$", value, re.I):
                 errors.append(f"{prop} berakhir et al.: {subject}")
-            if value and not is_complete_sentence(value):
+            if value and prop != "deskripsiGejala" and not is_complete_sentence(value):
                 errors.append(f"{prop} bukan kalimat lengkap: {subject}")
     return errors
 
