@@ -1,4 +1,4 @@
-"""Gate test SWRL + Pellet pada ontology_md.owl."""
+﻿"""Gate test SWRL + Pellet pada ontology_md.owl."""
 
 from __future__ import annotations
 
@@ -57,12 +57,24 @@ class TestSwrlReasoning(unittest.TestCase):
         cls.blas_diagnosis = cls.onto.Diagnosis("DiagnosisUjiBlas")
         cls.blas_diagnosis.memilikiTanaman = [cls.onto.Padi]
         cls.blas_diagnosis.memilikiObservasi = [
-            cls.onto.PengamatanPenyakitBlasPadiBercakDaun
+            cls.onto.GejalaPenyakitBlasPadiBercakDaun
         ]
 
         cls.fallback_diagnosis = cls.onto.Diagnosis("DiagnosisUjiUbiKayu")
         cls.fallback_diagnosis.menghasilkanPenyakit = [
             cls.onto.TanamanKerdilStuntUbiKayu
+        ]
+
+        cls.strong_diagnosis = cls.onto.Diagnosis("DiagnosisUjiKandidatKuat")
+        cls.strong_diagnosis.memilikiTanaman = [cls.onto.Padi]
+        cls.strong_diagnosis.memilikiObservasi = [
+            cls.onto.GejalaPenyakitBlasPadiBercakDaun,
+            cls.onto.GejalaPenyakitBlasPadiMalaiPatah,
+        ]
+
+        cls.variety_diagnosis = cls.onto.Diagnosis("DiagnosisUjiVarietas")
+        cls.variety_diagnosis.menghasilkanPenyakit = [
+            cls.onto.PenyakitTungroPadi
         ]
 
         cls.environment_diagnosis = cls.onto.Diagnosis("DiagnosisUjiLingkungan")
@@ -75,7 +87,7 @@ class TestSwrlReasoning(unittest.TestCase):
 
     def test_swrl_rules_are_loaded(self) -> None:
         rules = list(self.onto.rules())
-        self.assertEqual(len(rules), 4)
+        self.assertEqual(len(rules), 7)
         self.assertTrue(any("gejala" in str(rule).lower() for rule in rules))
 
     def test_symptom_rule_infers_candidate_disease(self) -> None:
@@ -88,6 +100,24 @@ class TestSwrlReasoning(unittest.TestCase):
     def test_environment_rule_infers_candidate_disease(self) -> None:
         inferred = inferred_names(
             self.world, self.environment_diagnosis, "menghasilkanPenyakit"
+        )
+        self.assertIn("HawarDaunBakteriUbiKayu", inferred)
+
+    def test_strong_candidate_rule_requires_two_distinct_symptoms(self) -> None:
+        inferred = inferred_names(
+            self.world, self.strong_diagnosis, "kandidatKuat"
+        )
+        self.assertIn("PenyakitBlasPadi", inferred)
+
+    def test_variety_rule_infers_resistant_variety(self) -> None:
+        inferred = inferred_names(
+            self.world, self.variety_diagnosis, "merekomendasikanVarietas"
+        )
+        self.assertIn("VarietasBondoyudo", inferred)
+
+    def test_environment_risk_rule_infers_risk_marker(self) -> None:
+        inferred = inferred_names(
+            self.world, self.environment_diagnosis, "menandaiRisikoLingkungan"
         )
         self.assertIn("HawarDaunBakteriUbiKayu", inferred)
 
@@ -112,7 +142,7 @@ class TestSwrlReasoning(unittest.TestCase):
         self.assertTrue(TTL_ARTIFACT.exists())
         md = Graph()
         md.parse(TTL_ARTIFACT, format="turtle")
-        self.assertEqual(len(list(md.subjects(RDF.type, SWRL_IMP))), 4)
+        self.assertEqual(len(list(md.subjects(RDF.type, SWRL_IMP))), 7)
 
         canonical = Graph()
         canonical.parse(CANONICAL_ARTIFACT, format="turtle")

@@ -41,7 +41,6 @@ TAXON_CATEGORY = {
     "jamur": "PenyakitJamur",
     "bakteri": "PenyakitBakteri",
     "virus": "PenyakitVirus",
-    "nematoda": "PenyakitNematoda",
     "oomycete": "PenyakitOomycete",
     "fitoplasma": "PenyakitFitoplasma",
 }
@@ -198,6 +197,19 @@ class OntologyArtifactTest(unittest.TestCase):
             if isinstance(obj, Literal) and obj.language:
                 self.assertEqual(obj.language, "id", f"literal @{obj.language}: {obj}")
 
+    def test_labels_do_not_expose_internal_pengamatan_wording(self) -> None:
+        for predicate in (RDFS.label, KBR["prefLabel"]):
+            for node, value in self.graph.subject_objects(predicate):
+                with self.subTest(node=local(node), predicate=local(predicate)):
+                    self.assertNotIn("pengamatan", str(value).lower())
+
+    def test_all_scope_plants_have_scientific_names(self) -> None:
+        for plant in self.plants:
+            with self.subTest(plant=local(plant)):
+                values = list(self.graph.objects(plant, KBR["namaIlmiah"]))
+                self.assertEqual(len(values), 1)
+                self.assertTrue(str(values[0]).strip())
+
     def test_tahun_terbit_is_integer(self) -> None:
         values = list(self.graph.objects(None, KBR["tahunTerbit"]))
         self.assertTrue(values)
@@ -220,7 +232,7 @@ class OntologyArtifactTest(unittest.TestCase):
         self.assertEqual(without, set(self.report["data_quality"]["diseases_without_pathogen"]))
 
     def test_disease_categories_are_inferred_not_asserted(self) -> None:
-        for cls_name in {cls for cls, _ in tbox.EQUIVALENT_CLASSES} | {"PenyakitPenyebabTidakDiketahui"}:
+        for cls_name in {cls for cls, _ in tbox.EQUIVALENT_CLASSES}:
             with self.subTest(cls=cls_name):
                 self.assertEqual(set(self.graph.subjects(RDF.type, KBR[cls_name])), set())
 

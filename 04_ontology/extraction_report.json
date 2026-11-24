@@ -7,11 +7,11 @@
     "control_records_disease": 257,
     "control_records_chapter": 45,
     "metadata_rows": 17,
-    "named_individuals": 1204,
-    "triples": 16732,
-    "classes": 87,
-    "object_properties": 29,
-    "data_properties": 33
+    "named_individuals": 1247,
+    "triples": 17002,
+    "classes": 71,
+    "object_properties": 32,
+    "data_properties": 29
   },
   "controls": {
     "disease": [
@@ -2255,6 +2255,7 @@
       "LayuDaun": 12,
       "PertumbuhanAbnormal": 6,
       "HawarDaun": 4,
+      "Kresek": 1,
       "KlorosisTanaman": 13,
       "NekrosisTanaman": 5,
       "BercakTanaman": 23,
@@ -2265,6 +2266,7 @@
       "KematianTanaman": 5,
       "BusukTanaman": 5,
       "BusukAkar": 5,
+      "LekukanPangkalAkar": 1,
       "DaunRontok": 6,
       "TepungDaun": 4,
       "NekrosisDaun": 5,
@@ -2272,12 +2274,13 @@
       "BelangTanaman": 3,
       "MosaikDaun": 5,
       "DaunKering": 2,
+      "MiseliumPadaTanaman": 3,
       "PucukMati": 3,
       "BusukBuah": 1
     },
-    "total": 229,
-    "canonical_groups": 171,
-    "unmapped": 58
+    "total": 227,
+    "canonical_groups": 176,
+    "unmapped": 51
   },
   "environment": {
     "numeric": [
@@ -2751,6 +2754,10 @@
         "phase": "FaseVegetatifUmum"
       },
       {
+        "disease": "PenyakitHawarBakteriBacterialBlightKedelai",
+        "phase": "FasePanenTanaman"
+      },
+      {
         "disease": "PenyakitHawarDaunJagung",
         "phase": "FaseGeneratifUmum"
       },
@@ -2793,103 +2800,103 @@
       "disease": "PenyakitBulaiJagung",
       "gap": "severity",
       "value": "Kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37% dan bergantung pada kondisi lingkungan tiap wilayah (Kurniawan et al., 2017).",
-      "evidence": "BuktiMetadataSeverityPenyakitBulaiJagungDisebabkanBervariasi1933Sampai"
+      "evidence": "BuktiMetadataSeverityPenyakitBulaiJagung"
     },
     {
       "disease": "PenyakitHawarDaunJagung",
       "gap": "severity",
       "value": "Keparahan penyakit hawar jagung terus meningkat pada setiap pengamatan dari 40.83% hingga 83.78%.",
-      "evidence": "BuktiMetadataSeverityPenyakitHawarDaunJagungTerusMeningkatPengamatan4083"
+      "evidence": "BuktiMetadataSeverityPenyakitHawarDaunJagung"
     },
     {
       "disease": "PenyakitKaratDaunJagung",
       "gap": "severity",
       "value": "Keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%.",
-      "evidence": "BuktiMetadataSeverityPenyakitKaratDaunJagungDisebabkanBerkisar2667Hingga"
+      "evidence": "BuktiMetadataSeverityPenyakitKaratDaunJagung"
     },
     {
       "disease": "PenyakitLayuStewartJagung",
       "gap": "severity",
       "value": "Pertama kali dilaporkan ada di Bogor, Indonesia oleh (Rahma et al., 2014) dengan kejadian penyakit antara 23.67% hingga 31.45%.",
-      "evidence": "BuktiMetadataSeverityPenyakitLayuStewartJagungPertamaKaliAdaBogorIndonesia"
+      "evidence": "BuktiMetadataSeverityPenyakitLayuStewartJagung"
     },
     {
       "disease": "PenyakitHawarBakteriBacterialBlightKedelai",
       "gap": "severity",
       "value": "Patogen dapat menginfeksi dari fase pembibitan hingga panen dan menyebabkan kehilangan hasil mencapai 50-70% (Majid, 2016).",
-      "evidence": "BuktiMetadataSeverityPenyakitHawarBakteriBacterialBlightKedelaiMenginfeksiFasePembibitanHinggaPanen"
+      "evidence": "BuktiMetadataSeverityPenyakitHawarBakteriBacterialBlightKede"
     },
     {
       "disease": "PenyakitHawarDaunJagung",
       "gap": "phase",
       "value": "FaseGeneratifUmum",
-      "evidence": "BuktiMetadataPhasePenyakitHawarDaunJagungBerkembangFaseGeneratifLatifahaniEt"
+      "evidence": "BuktiMetadataPhasePenyakitHawarDaunJagung"
     },
     {
       "disease": "PenyakitKaratDaunJagung",
       "gap": "phase",
       "value": "FaseGeneratifUmum",
-      "evidence": "BuktiMetadataPhasePenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang"
+      "evidence": "BuktiMetadataPhasePenyakitKaratDaunJagung"
     },
     {
       "disease": "PenyakitLayuStewartJagung",
       "gap": "phase",
       "value": "FaseGeneratifUmum",
-      "evidence": "BuktiMetadataPhasePenyakitLayuStewartJagungGambar66StewartLapangan"
+      "evidence": "BuktiMetadataPhasePenyakitLayuStewartJagung"
     },
     {
       "disease": "PenyakitBercakDaunKacangHijau",
       "gap": "phase",
       "value": "FaseGeneratifUmum",
-      "evidence": "BuktiMetadataPhasePenyakitBercakDaunKacangHijauMulaiTerjadiBawahFaseGeneratif"
+      "evidence": "BuktiMetadataPhasePenyakitBercakDaunKacangHijau"
     },
     {
       "disease": "PenyakitLayuKacangHijau",
       "gap": "phase",
       "value": "FaseGeneratifUmum",
-      "evidence": "BuktiMetadataPhasePenyakitLayuKacangHijauTerjadiStadiaAwalBenihBerkecambah"
+      "evidence": "BuktiMetadataPhasePenyakitLayuKacangHijau"
     },
     {
       "disease": "PenyakitBercakDaunKacangTanah",
       "gap": "phase",
       "value": "FaseGeneratifUmum",
-      "evidence": "BuktiMetadataPhasePenyakitBercakDaunKacangTanahUmumnyaTerjadiFaseGeneratifTerparah"
+      "evidence": "BuktiMetadataPhasePenyakitBercakDaunKacangTanah"
     },
     {
       "disease": "PenyakitAntraknosaKedelai",
       "gap": "phase",
       "value": "FaseVegetatifUmum",
-      "evidence": "BuktiMetadataPhasePenyakitAntraknosaKedelaiFaseVegetatifMengakibatkanPertumbuhanMenjadi"
+      "evidence": "BuktiMetadataPhasePenyakitAntraknosaKedelai"
     },
     {
       "disease": "PenyakitHawarBakteriBacterialBlightKedelai",
       "gap": "phase",
       "value": "FasePembibitanTanaman",
-      "evidence": "BuktiMetadataPhasePenyakitHawarBakteriBacterialBlightKedelaiMenginfeksiFasePembibitanHinggaPanen"
+      "evidence": "BuktiMetadataPhasePenyakitHawarBakteriBacterialBlightKedelai"
     },
     {
       "disease": "PenyakitRebahSemaiKedelai",
       "gap": "phase",
       "value": "FasePembibitanTanaman",
-      "evidence": "BuktiMetadataPhasePenyakitRebahSemaiKedelaiAdanyaTularMenginfeksiFasePembibitan"
+      "evidence": "BuktiMetadataPhasePenyakitRebahSemaiKedelai"
     },
     {
       "disease": "SapuSetanWitchesBroomUbiKayu",
       "gap": "english",
       "value": "Witches broom",
-      "evidence": "BuktiMetadataEnglishSapuSetanWitchesBroomUbiKayuWitchesBroom"
+      "evidence": "BuktiMetadataEnglishSapuSetanWitchesBroomUbiKayu"
     },
     {
       "disease": "PenyakitEmbunTepungPowderyMildewKedelai",
       "gap": "variety",
       "value": "Anjasmoro",
-      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungPowderyMildewKedelaiAnjasmoroMahameruMerupakan"
+      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungPowderyMildewKedelai"
     },
     {
       "disease": "PenyakitEmbunTepungPowderyMildewKedelai",
       "gap": "variety",
       "value": "Mahameru",
-      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungPowderyMildewKedelaiAnjasmoroMahameruMerupakan"
+      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungPowderyMildewKedelai"
     }
   ],
   "pathogen_links": [
@@ -3303,6 +3310,10 @@
     },
     {
       "disease": "PenyakitTungroPadi",
+      "part": "Batang"
+    },
+    {
+      "disease": "PenyakitTungroPadi",
       "part": "Daun"
     },
     {
@@ -3319,10 +3330,6 @@
     },
     {
       "disease": "PenyakitRebahSemaiKedelai",
-      "part": "Akar"
-    },
-    {
-      "disease": "PenyakitRebahSemaiKedelai",
       "part": "Batang"
     },
     {
@@ -3338,8 +3345,16 @@
       "part": "Batang"
     },
     {
+      "disease": "PenyakitRebahKecambahKedelai",
+      "part": "Daun"
+    },
+    {
       "disease": "PenyakitLayuFusariumKedelai",
       "part": "Akar"
+    },
+    {
+      "disease": "PenyakitLayuFusariumKedelai",
+      "part": "Daun"
     },
     {
       "disease": "PenyakitKaratDaunKedelai",
@@ -3351,6 +3366,10 @@
     },
     {
       "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
+      "part": "Buah"
+    },
+    {
+      "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
       "part": "Daun"
     },
     {
@@ -3359,10 +3378,6 @@
     },
     {
       "disease": "PenyakitAntraknosaKedelai",
-      "part": "Batang"
-    },
-    {
-      "disease": "PenyakitAntraknosaKedelai",
       "part": "Daun"
     },
     {
@@ -3371,15 +3386,7 @@
     },
     {
       "disease": "PenyakitBercakTargetKedelai",
-      "part": "Batang"
-    },
-    {
-      "disease": "PenyakitBercakTargetKedelai",
       "part": "Daun"
-    },
-    {
-      "disease": "PenyakitBercakTargetKedelai",
-      "part": "Polong"
     },
     {
       "disease": "PenyakitBercakBijiUnguKedelai",
@@ -3398,8 +3405,8 @@
       "part": "Daun"
     },
     {
-      "disease": "PenyakitBakteriPustulKedelai",
-      "part": "Polong"
+      "disease": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
+      "part": "Batang"
     },
     {
       "disease": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
@@ -3407,7 +3414,15 @@
     },
     {
       "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+      "part": "Batang"
+    },
+    {
+      "disease": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
       "part": "Daun"
+    },
+    {
+      "disease": "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
+      "part": "Batang"
     },
     {
       "disease": "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
@@ -3415,15 +3430,7 @@
     },
     {
       "disease": "PenyakitBercakDaunKacangTanah",
-      "part": "Biji"
-    },
-    {
-      "disease": "PenyakitBercakDaunKacangTanah",
       "part": "Daun"
-    },
-    {
-      "disease": "PenyakitBercakDaunKacangTanah",
-      "part": "Polong"
     },
     {
       "disease": "PenyakitBelangMottleKacangTanah",
@@ -3431,11 +3438,7 @@
     },
     {
       "disease": "PenyakitLayuBakteriKacangTanah",
-      "part": "Biji"
-    },
-    {
-      "disease": "PenyakitLayuBakteriKacangTanah",
-      "part": "Polong"
+      "part": "Daun"
     },
     {
       "disease": "LayuFusariumUbiJalar",
@@ -3446,20 +3449,8 @@
       "part": "Daun"
     },
     {
-      "disease": "LayuFusariumUbiJalar",
-      "part": "Umbi"
-    },
-    {
-      "disease": "PenyakitKudisUbiJalar",
-      "part": "Batang"
-    },
-    {
       "disease": "PenyakitKudisUbiJalar",
       "part": "Daun"
-    },
-    {
-      "disease": "PenyakitKudisUbiJalar",
-      "part": "Pucuk"
     },
     {
       "disease": "PenyakitBercakKuningUbiJalar",
@@ -3499,7 +3490,7 @@
     },
     {
       "disease": "SapuSetanWitchesBroomUbiKayu",
-      "part": "Daun"
+      "part": "Batang"
     },
     {
       "disease": "CassavaMosaicBegomovirusCMBsUbiKayu",
@@ -3514,8 +3505,16 @@
       "part": "Batang"
     },
     {
+      "disease": "HawarBakteriUbiKayu",
+      "part": "Pucuk"
+    },
+    {
       "disease": "SuperelongasiUbiKayu",
       "part": "Batang"
+    },
+    {
+      "disease": "SuperelongasiUbiKayu",
+      "part": "Daun"
     },
     {
       "disease": "TanamanKerdilStuntUbiKayu",
@@ -3523,7 +3522,7 @@
     },
     {
       "disease": "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
-      "part": "Batang"
+      "part": "Pucuk"
     },
     {
       "disease": "BusukPangkalBatangUbiKayu",
@@ -3539,19 +3538,11 @@
     },
     {
       "disease": "BusukUmbiUbiKayu",
-      "part": "Akar"
-    },
-    {
-      "disease": "BusukUmbiUbiKayu",
       "part": "Umbi"
     },
     {
       "disease": "BusukAkarUbiKayu",
       "part": "Akar"
-    },
-    {
-      "disease": "BusukAkarUbiKayu",
-      "part": "Umbi"
     },
     {
       "disease": "PenyakitHawarDaunJagung",
@@ -3563,7 +3554,15 @@
     },
     {
       "disease": "PenyakitBulaiJagung",
+      "part": "Batang"
+    },
+    {
+      "disease": "PenyakitBulaiJagung",
       "part": "Daun"
+    },
+    {
+      "disease": "PenyakitLayuStewartJagung",
+      "part": "Batang"
     },
     {
       "disease": "PenyakitLayuStewartJagung",
@@ -3591,19 +3590,11 @@
     },
     {
       "disease": "PenyakitEmbunTepungKacangHijau",
-      "part": "Biji"
-    },
-    {
-      "disease": "PenyakitBercakDaunKacangHijau",
-      "part": "Biji"
-    },
-    {
-      "disease": "PenyakitBercakDaunKacangHijau",
       "part": "Daun"
     },
     {
       "disease": "PenyakitBercakDaunKacangHijau",
-      "part": "Polong"
+      "part": "Daun"
     },
     {
       "disease": "PenyakitLayuKacangHijau",
@@ -3616,7 +3607,7 @@
   ],
   "data_quality": {
     "fragment_quotes": 210,
-    "unmapped_symptoms": 58,
+    "unmapped_symptoms": 51,
     "unmapped_controls": 37,
     "unknown_pathogens": 0,
     "diseases_without_explicit_part": 0,

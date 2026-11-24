@@ -15,8 +15,8 @@ Kacang Hijau**. Tanaman di luar cakupan tidak dibuat sebagai individu.
 | `ontology.ttl` | Turtle kanonik, **16.732 triple**, **1.204 individu** |
 | `ontology.owl` | RDF/XML kanonik untuk Protégé dan owlready2 |
 | `extraction_report.json` | Ringkasan build, tautan, dan data quality |
-| `ontology_md.ttl` | Kanonik + enrichment + SWRL + inferred Pellet, **24.833 triple** |
-| `ontology_md.owl` | RDF/XML hasil enrichment + SWRL + inferred Pellet |
+| `ontology_md.ttl` | Kanonik + enrichment + SWRL, **19.021 triple** |
+| `ontology_md.owl` | RDF/XML hasil enrichment + SWRL |
 | `swrl_rules.ttl` | 4 aturan SWRL yang digabung ke `ontology_md` |
 | `extraction_report_md.json` | Ringkasan build enrichment |
 
@@ -33,14 +33,10 @@ Ringkasan kanonik:
 - **3 observasi lingkungan numerik** dan **7 kondisi kualitatif**.
 - **106 node `BuktiSumber`** dan **1.398 tautan `didukungOleh`**.
 
-Hasil inferensi Pellet: **PenyakitJamur 34**, **PenyakitBakteri 7**,
-**PenyakitVirus 10**, **PenyakitOomycete 3**, **PenyakitFitoplasma 1**,
-**PenyakitNematoda 0**. Jumlah per kelas bisa melebihi 53 karena dua penyakit
-ubi kayu memiliki patogen jamur sekaligus oomycete. Kelas kategori penyakit
-tidak pernah di-assert eksplisit; seluruhnya muncul dari `owl:equivalentClass`.
-Backend memilih satu kategori per penyakit dengan prioritas
-Jamur → Bakteri → Virus → Oomycete → Fitoplasma → Nematoda, sehingga angka
-backend menjadi 34/7/10/1/1 dan 0 penyakit tanpa kategori.
+Hasil inferensi Pellet: **PenyakitJamur 26**, **PenyakitBakteri 5**,
+**PenyakitVirus 5**, **PenyakitOomycete 1**, **PenyakitFitoplasma 1**,
+**PenyakitNematoda 0**. Kelas kategori penyakit tidak pernah di-assert
+eksplisit; seluruhnya muncul dari `owl:equivalentClass`.
 
 ## Cara menjalankan
 
@@ -65,19 +61,9 @@ termasuk reasoning **Pellet** lewat owlready2. Bila Java tidak tersedia, test
 reasoning di-skip. Helper `reasoner_utils.py` menyiapkan Jena ARQ 2.10.0 yang
 kompatibel dengan Java 21; gunakan `KBR_REASONER=hermit` untuk beralih ke HermiT.
 
-Pada owlready2 yang tidak dapat mengiterasi individu multi-type, satu
-pengecekan konsistensi di-skip; konsistensi ontology tetap diverifikasi oleh
-`OntologyProviderGoldenTest` (Openllet) di backend.
-
 > **Peringatan:** `build_ontology.py` menimpa `ontology.ttl` dan `ontology.owl`.
 > Suntingan manual di Protégé akan hilang. Untuk enrichment, bangun ulang
 > `ontology_md.ttl`/`ontology_md.owl` saja.
-
-> **Artefak inferred:** export Protégé `kbr-kelompok5.ttl` (tidak di-commit)
-> dinormalisasi menjadi `ontology_md.ttl`/`.owl`: IRI ontology dikembalikan ke
-> `http://kbr.kelompok5.org/penyakit-tanaman-pangan`, aturan SWRL diambil dari
-> `swrl_rules.ttl`, lalu dimuat ke Fuseki. Menjalankan `build_ontology_md.py`
-> akan mengembalikan artefak asserted 19.021 triple.
 
 ## Namespace dan kebijakan IRI
 
@@ -105,14 +91,6 @@ mentah. Label manusiawi memakai `rdfs:label`, `skos:prefLabel`, dan
   `FaseVegetatifUmum`; kelasnya `FaseAnakan`, `FasePemasakan`, `FaseVegetatif`.
 - **Gejala**: pengamatan adalah individu dari subclass `Gejala*`; konsep
   kanonik adalah individu `GejalaKanonik` (25 konsep).
-  Label pengamatan memakai `"{konsep kanonik}"` bila kata-kata nama penyakit
-  sudah tercakup (mis. `Bercak daun`), selain itu
-  `"{konsep} — {nama penyakit}"` (mis.
-  `Tepung pada daun — Penyakit Embun Tepung`). Pengamatan yang belum
-  dipetakan memakai potongan kalimat sumber, bukan label generik
-  `Pengamatan gejala ...`, supaya setiap label unik dan bisa dipilih di UI.
-  Picker diagnosis memakai **konsep kanonik** (lapis 1); observasi tetap dipakai
-  engine sebagai bukti dan untuk pencocokan exact per penyakit.
 - **Pengendalian**: aksi kanonik adalah individu dari subclass `Pengendalian*`
   (48 aksi kanonik).
 - **Observasi eksternal**: ID semantik, mis.
@@ -216,14 +194,11 @@ Data quality yang sengaja dilaporkan, bukan disembunyikan:
 ## Enrichment — `ontology_md.ttl`
 
 `ontology_md.ttl` adalah graf berdiri sendiri: seluruh isi `ontology.ttl`
-ditambah TBox/ABox enrichment, lalu **inferred axiom hasil Pellet** dari
-Protégé. Sebagian triple struktural kanonik (list `owl:AllDisjointClasses`,
-`owl:oneOf`, dan pasangan `owl:disjointWith` terbalik) digantikan representasi
-ekuivalen oleh export Protégé; semantiknya tetap.
+ditambah TBox/ABox enrichment. Kanonik tidak pernah ditulis ulang.
 
 | Item | Nilai |
 |---|---|
-| Triple total | **24.833** = base **16.732** + tambahan **8.101** (termasuk inferred) |
+| Triple total | **19.021** = base **16.732** + tambahan **2.289** |
 | Fakta enrichment | **942** (internal 81 + external 861) |
 | Entitas yang dirujuk fakta | **313** (internal 93: 7 tanaman, 53 penyakit, 28 kondisi lingkungan, 5 faktor risiko; external 220) |
 | Deskripsi `rdfs:comment` | **561** (internal 425 + external 136; `auto_ok` 311, `needs_review` 114, `verified` 136) |
@@ -231,9 +206,6 @@ ekuivalen oleh export Protégé; semantiknya tetap.
 | Kelas dengan deskripsi | **87 dari 87** |
 | Individu tanpa deskripsi | **0** |
 | TBox tambahan | `memilikiKondisiTumbuh` (domain `TanamanPangan`, range `FaktorLingkungan`) |
-| Kategori penyakit inferred | Jamur **34**, Bakteri **7**, Virus **10**, Oomycete **3**, Fitoplasma **1**, Nematoda **0** |
-| `menyerangBagian` inferred | **+27** tautan dari property chain |
-| `owl:disjointWith` inferred | **3.446** pasangan |
 
 Predikat fakta internal: `deskripsiPenyakit` 53, `deskripsiTanaman` 7,
 `dipengaruhiOleh` 8, `memilikiKondisiTumbuh` 4, `tingkatKeparahan` 9.
@@ -262,12 +234,12 @@ Subjek tanpa sumber tidak diisi teks karangan; daftar gap ada di
 3. Tab **Data Properties** menampilkan 33 properti, termasuk nilai lingkungan
    `xsd:decimal`.
 4. Tab **Reasoner** → **Pellet** (plugin) atau **HermiT** → **Synchronize Reasoner**.
-5. Cek kelas inferensi: `PenyakitJamur` 34, `PenyakitBakteri` 7,
-   `PenyakitVirus` 10, `PenyakitOomycete` 3, `PenyakitFitoplasma` 1.
+5. Cek kelas inferensi: `PenyakitJamur` 26, `PenyakitBakteri` 5,
+   `PenyakitVirus` 5, `PenyakitOomycete` 1, `PenyakitFitoplasma` 1.
 6. Cek nominal: `Serealia` = Padi/Jagung, `Legum` = Kedelai/KacangTanah/
    KacangHijau, `UmbiUmbian` = UbiKayu/UbiJalar.
 7. DL Query contoh:
-   `Penyakit and (disebabkanOleh some Jamur)` → 34 hasil;
+   `Penyakit and (disebabkanOleh some Jamur)` → 29 hasil;
    `Varietas and (tahanTerhadap some Penyakit)` → varietas tahan.
 
 ## Demo SWRL

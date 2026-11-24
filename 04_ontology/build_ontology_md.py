@@ -5,7 +5,7 @@ from __future__ import annotations
 import csv
 import json
 import sys
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 from rdflib import Graph, Literal, Namespace
@@ -45,6 +45,32 @@ REPORT_JSON = ONTO_DIR / "extraction_report_md.json"
 SCOPE_PLANTS = ["Padi", "Kedelai", "Jagung", "UbiJalar", "UbiKayu", "KacangTanah", "KacangHijau"]
 
 
+def condition_class(local: str, default: str) -> str:
+    if local.startswith("KondisiCahaya"):
+        return "IntensitasCahaya"
+    if local.startswith("KondisiDataran"):
+        return "KetinggianTempat"
+    if local.startswith("KondisiDrainase"):
+        return "KondisiDrainase"
+    if local.startswith(("KondisiTanahGembur", "KondisiTanahBerpasir", "KondisiTanahLiat")):
+        return "TeksturTanah"
+    if local.startswith("KondisiTanah"):
+        return "KondisiTanah"
+    if local.startswith("KondisiKelembapanTanah"):
+        return "KelembapanTanah"
+    if local.startswith("KondisiSuhu"):
+        return "Suhu"
+    if local.startswith("KondisiCurahHujan"):
+        return "CurahHujan"
+    if local.startswith("KondisiKelembapanUdara"):
+        return "KelembapanUdara"
+    if local.startswith("KondisiMusim"):
+        return "Musim"
+    if local.startswith("KondisiIklim"):
+        return "Iklim"
+    return default
+
+
 def read_csv(path: Path) -> list[dict[str, str]]:
     with open(path, encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
@@ -60,6 +86,7 @@ def add_entities(graph: Graph, rows: list[dict[str, str]]) -> None:
         class_name = (row.get("entity_class") or "").strip()
         if not local or not class_name:
             continue
+        class_name = condition_class(local, class_name)
         uri = KBR[local]
         graph.add((uri, RDF.type, KBR[class_name]))
         graph.add((uri, RDF.type, OWL.NamedIndividual))
@@ -230,6 +257,67 @@ def validate(
     return errors
 
 
+def _local(node) -> str:
+    return str(node).split("#")[-1]
+
+
+def add_demo_diagnoses(graph: Graph, report: dict) -> int:
+    diseases = sorted(set(graph.subjects(RDF.type, KBR.Penyakit)), key=_local)
+    count = 0
+    for disease in diseases:
+        plants = sorted(set(graph.objects(disease, KBR.menyerangTanaman)), key=_local)
+        if not plants:
+            continue
+        plant = plants[0]
+        by_canonical: dict = defaultdict(list)
+        for observation in graph.objects(disease, KBR.memilikiGejala):
+            for canonical in graph.objects(observation, KBR.memilikiGejalaKanonik):
+                by_canonical[canonical].append(observation)
+
+        chosen = []
+        canonical_keys = sorted(by_canonical, key=_local)
+        if canonical_keys:
+            chosen.append(by_canonical[canonical_keys[0]][0])
+            if len(canonical_keys) > 1:
+                for observation in by_canonical[canonical_keys[1]]:
+                    if observation not in chosen:
+                        chosen.append(observation)
+                        break
+
+        environmental_values = []
+        for condition in graph.objects(disease, KBR.dipengaruhiOleh):
+            if (condition, RDF.type, KBR.ObservasiLingkungan) in graph:
+                environmental_values.extend(graph.objects(condition, KBR.klasifikasiTurunan))
+
+        if not chosen and not environmental_values:
+            continue
+
+        disease_label = graph.value(disease, RDFS.label) or _local(disease)
+        plant_label = graph.value(plant, RDFS.label) or _local(plant)
+        local = "Diagnosis" + _local(disease)
+        uri = KBR[local]
+        graph.add((uri, RDF.type, KBR.Diagnosis))
+        graph.add((uri, RDF.type, OWL.NamedIndividual))
+        graph.add((uri, RDFS.label, Literal(f"Kasus demo: {plant_label} - {disease_label}", lang="id")))
+        graph.add((uri, RDFS.comment, Literal("Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL.", lang="id")))
+        graph.add((uri, KBR.memilikiTanaman, plant))
+        for observation in chosen:
+            graph.add((uri, KBR.memilikiObservasi, observation))
+
+        if environmental_values:
+            env_local = "ObservasiLingkungan" + _local(disease)
+            env_uri = KBR[env_local]
+            graph.add((env_uri, RDF.type, KBR.ObservasiLingkungan))
+            graph.add((env_uri, RDF.type, OWL.NamedIndividual))
+            graph.add((env_uri, RDFS.label, Literal(f"Observasi lingkungan demo: {disease_label}", lang="id")))
+            graph.add((env_uri, RDFS.comment, Literal(f"Observasi lingkungan untuk kasus demo {disease_label}.", lang="id")))
+            graph.add((env_uri, KBR.klasifikasiTurunan, environmental_values[0]))
+            graph.add((uri, KBR.memilikiObservasi, env_uri))
+        count += 1
+    report["diagnoses"] = count
+    return count
+
+
 def build() -> tuple[Graph, dict, list[str]]:
     base = Graph()
     base.parse(BASE_TTL, format="turtle")
@@ -252,6 +340,7 @@ def build() -> tuple[Graph, dict, list[str]]:
     add_entities(graph, entities)
     add_facts(graph, facts)
     add_descriptions(graph, descriptions)
+    diagnosis_count = add_demo_diagnoses(graph, {})
     swrl_rule_count = add_swrl_rules(graph)
     errors = validate(graph, base_triples, entities, facts, descriptions)
 
@@ -285,6 +374,7 @@ def build() -> tuple[Graph, dict, list[str]]:
         "external_entities": len(ext_entities),
         "growth_condition_facts": len(growth_facts),
         "swrl_rules": swrl_rule_count,
+        "diagnoses": diagnosis_count,
         "entity_counts": dict(sorted(entity_counts.items())),
         "descriptions": len(descriptions),
         "internal_descriptions": len(descriptions) - len(ext_descriptions),
