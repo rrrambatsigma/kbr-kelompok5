@@ -37190,7 +37190,7 @@ askorbat mempengaruhi ketahanan kacang tanah."""@id ;
 <v> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Tujuan: menandai penyakit yang risikonya meningkat oleh kondisi lingkungan diagnosis." ;
+   rdfs:comment "Tujuan: menandai penyakit yang risikonya meningkat oleh kondisi lingkungan diagnosis."@id ;
    rdfs:label "RuleRisikoLingkungan" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -37259,7 +37259,7 @@ askorbat mempengaruhi ketahanan kacang tanah."""@id ;
  ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Tujuan: diagnosis menghasilkan kandidat penyakit berdasarkan faktor lingkungan yang sama." ;
+   rdfs:comment "Tujuan: diagnosis menghasilkan kandidat penyakit berdasarkan faktor lingkungan yang sama."@id ;
    rdfs:label "RuleKandidatLingkungan" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -37328,7 +37328,7 @@ askorbat mempengaruhi ketahanan kacang tanah."""@id ;
  ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Tujuan: diagnosis menghasilkan kandidat penyakit berdasarkan gejala kanonik yang sama." ;
+   rdfs:comment "Tujuan: diagnosis menghasilkan kandidat penyakit berdasarkan gejala kanonik yang sama."@id ;
    rdfs:label "RuleKandidatGejala" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -37397,7 +37397,7 @@ askorbat mempengaruhi ketahanan kacang tanah."""@id ;
  ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Tujuan: penyakit kandidat menghasilkan rekomendasi pengendalian spesifik." ;
+   rdfs:comment "Tujuan: penyakit kandidat menghasilkan rekomendasi pengendalian spesifik."@id ;
    rdfs:label "RuleRekomendasiSpesifik" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -37432,7 +37432,7 @@ askorbat mempengaruhi ketahanan kacang tanah."""@id ;
  ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Tujuan: kandidat kuat jika ada dua gejala kanonik berbeda yang dimiliki penyakit yang sama." ;
+   rdfs:comment "Tujuan: kandidat kuat jika ada dua gejala kanonik berbeda yang dimiliki penyakit yang sama."@id ;
    rdfs:label "RuleKandidatKuat" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -37545,7 +37545,7 @@ askorbat mempengaruhi ketahanan kacang tanah."""@id ;
  ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Tujuan: merekomendasikan varietas yang tahan terhadap penyakit kandidat." ;
+   rdfs:comment "Tujuan: merekomendasikan varietas yang tahan terhadap penyakit kandidat."@id ;
    rdfs:label "RuleRekomendasiVarietasTahan" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -37594,7 +37594,7 @@ askorbat mempengaruhi ketahanan kacang tanah."""@id ;
  ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Tujuan: fallback pengendalian umum pada tingkat tanaman." ;
+   rdfs:comment "Tujuan: fallback pengendalian umum pada tingkat tanaman."@id ;
    rdfs:label "RuleRekomendasiUmum" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;

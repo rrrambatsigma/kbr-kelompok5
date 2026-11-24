@@ -4,15 +4,15 @@ Backend sistem pakar penyakit tanaman pangan dengan arsitektur:
 
 ```text
 React
-  │
-  ├─ GET  /api/plants, /api/diseases, /api/symptoms, /api/phases
-  │        └─ Node/Express → Fuseki/TDB2 (SPARQL read-only)
-  │
-  └─ POST /api/diagnosis
-           ├─ Node: validasi + retrieval + scoring
-           ├─ Node → Java: POST /api/reasoning/disease-categories
-           │        └─ Java: OWL API + Openllet (inferensi kategori)
-           └─ Node: gabungkan kandidat + evidence
+  â”‚
+  â”œâ”€ GET  /api/plants, /api/diseases, /api/symptoms, /api/phases
+  â”‚        â””â”€ Node/Express â†’ Fuseki/TDB2 (SPARQL read-only)
+  â”‚
+  â””â”€ POST /api/diagnosis
+           â”œâ”€ Node: validasi + retrieval + scoring
+           â”œâ”€ Node â†’ Java: POST /api/reasoning/disease-categories
+           â”‚        â””â”€ Java: OWL API + Openllet (inferensi kategori)
+           â””â”€ Node: gabungkan kandidat + evidence
 ```
 
 Pembagian tanggung jawab:
@@ -33,7 +33,8 @@ menyediakan kategori penyakit hasil inferensi Openllet.
 - Java 21+ (dipakai Java 23 juga OK)
 - Node.js 20+
 - Apache Jena Fuseki 6.x (`fuseki-server.jar`)
-- File `04_ontology/ontology_md.ttl`
+- File `04_ontology/ontology_md_inferred.ttl` (untuk Fuseki) dan
+  `04_ontology/ontology_md.ttl` (untuk Java)
 
 Script `scripts/start-fuseki.ps1` dan `scripts/load-ontology.ps1` memakai
 default `E:\apache-jena-fuseki-6.2.0\apache-jena-fuseki-6.2.0\fuseki-server.jar`.
@@ -41,17 +42,21 @@ Jika lokasi berbeda, berikan parameter `-FusekiJar "<path>"`.
 
 ## Ontology yang dimuat
 
-File `04_ontology/ontology_md.ttl` berisi **24.833 triple**, **1.366 individu**,
-**87 kelas**, dan **4 aturan SWRL**. Angka itu sudah termasuk **inferred axiom
-Pellet** dari Protégé: kategori penyakit (Jamur 34, Bakteri 7, Virus 10,
-Oomycete 3, Fitoplasma 1), tipe individu, `owl:disjointWith`, dan 27 tautan
-`menyerangBagian`. Fuseki memuat file yang sama lewat
-`scripts/load-ontology.ps1`; Java memuatnya lewat `ONTOLOGY_FILE_PATH`.
+Ontology final dipisah menjadi dua artefak:
+
+| Artefak | Isi | Dipakai oleh |
+|---|---|---|
+| `04_ontology/ontology_md.ttl` | **30.280 triple**, **1.508 individu**, **71 kelas TBox PTP**, **7 aturan SWRL**, dan **53 diagnosis demo**. Memuat hasil SWRL yang sudah dimaterialisasi, tetapi belum memuat tipe kategori penyakit. | Java (`ONTOLOGY_FILE_PATH`) karena butuh definisi aturan |
+| `04_ontology/ontology_md_inferred.ttl` | **32.506 triple**: closure Pellet penuh, termasuk kategori penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1) dan `owl:disjointWith`. | Fuseki lewat `scripts/load-ontology.ps1` |
+
+Java menjalankan Openllet saat startup untuk konsistensi dan klasifikasi
+kategori; Fuseki hanya menyimpan data sehingga memakai closure yang sudah
+dihitung agar query kategori Node tetap cepat dan lengkap.
 
 SWRL tidak dieksekusi oleh Fuseki maupun Openllet. Aturan SWRL dijalankan
-offline dengan Pellet (lihat `04_ontology/tests/test_swrl_reasoning.py`);
-backend hanya memakai Openllet untuk konsistensi dan inferensi kategori
-penyakit.
+offline dengan Pellet (lihat `04_ontology/tests/test_swrl_reasoning.py`) dan
+hasilnya sudah tertulis di kedua artefak; backend memakai Openllet untuk
+konsistensi dan inferensi kategori penyakit saat runtime.
 
 ## Konfigurasi
 
@@ -84,7 +89,7 @@ Override lewat environment variable bila perlu:
 | `SERVER_PORT` | `8082` | Port Java |
 | `SERVER_ADDRESS` | `127.0.0.1` | Bind address |
 | `ONTOLOGY_FILE_PATH` | `E:/kbr-kelompok5/04_ontology/ontology_md.ttl` | Lokasi ontology |
-| `ONTOLOGY_REASONING_TIMEOUT_MS` | `120000` | Timeout precompute/klasifikasi |
+| `ONTOLOGY_REASONING_TIMEOUT_MS` | `600000` | Timeout precompute/klasifikasi; ontology final lebih berat daripada versi sebelumnya, beri ruang longgar untuk start pertama |
 | `ONTOLOGY_FAIL_FAST` | `false` | `true` = startup gagal jika ontology invalid |
 
 Ontology dimuat otomatis saat startup. `POST /api/ontology/reload` tersedia
@@ -221,11 +226,11 @@ Aturan validasi:
   valid tetapi belum punya tautan penyakit tetap diterima dengan
   `phaseMatch = "unknown"`/`"mismatch"`; ID fase yang tidak dikenal ditolak
   `400`.
-- `symptomIds` 1–100 ID, tidak boleh kosong.
+- `symptomIds` 1â€“100 ID, tidak boleh kosong.
 - ID gejala harus dikenali untuk tanaman tersebut; menerima ID konsep kanonik
   (`BercakDaun`) maupun ID observasi lama (`Pengamatan...`).
 - Duplikat dihapus dan menghasilkan warning `DUPLICATE_SYMPTOM_IDS_IGNORED`.
-- `topN` integer 1–10, default 5.
+- `topN` integer 1â€“10, default 5.
 
 Algoritma reasoning (`forward-chaining-cf-v1`):
 
@@ -293,14 +298,16 @@ PenyakitBakteri     = 7
 PenyakitVirus       = 10
 PenyakitOomycete    = 1
 PenyakitFitoplasma  = 1
-PenyakitNematoda    = 0
 PenyakitLainnya     = 0
 ```
 
+Closure Pellet menandai 3 individu sebagai Oomycete, tetapi 2 di antaranya juga
+Jamur sehingga kategori terpilih menyisakan 1 Oomycete.
+
 Semua 53 penyakit memiliki relasi `disebabkanOleh` ke patogen yang dikenal,
-sehingga `unclassifiedDiseaseCount = 0`. Dua penyakit ubi kayu memiliki
-patogen jamur sekaligus oomycete; backend memilih satu kategori dengan
-prioritas `Jamur → Bakteri → Virus → Oomycete → Fitoplasma → Nematoda`.
+sehingga `unclassifiedDiseaseCount = 0`. Sebagian penyakit memiliki lebih dari
+satu kelompok patogen; backend memilih satu kategori dengan prioritas
+`Jamur â†’ Bakteri â†’ Virus â†’ Oomycete â†’ Fitoplasma â†’ Lainnya`.
 Jika ada penyakit tanpa kategori, response tetap mengembalikan
 `category: null` dan warning `DISEASE_CATEGORY_UNCLASSIFIED`; tidak ada
 kategori yang dikarang.
@@ -340,7 +347,7 @@ Jika checksum Fuseki dan Java berbeda, jangan anggap sistem siap.
 # Smoke test end-to-end (semua service harus hidup)
 .\06_backend\scripts\smoke-test.ps1
 
-# Integration test Node ↔ Java (checksum, request id, reload)
+# Integration test Node â†” Java (checksum, request id, reload)
 .\06_backend\scripts\integration-test.ps1
 
 # Node: unit test scoring + validasi
@@ -369,7 +376,7 @@ node run.mjs --perf
 | `ONTOLOGY_NOT_LOADED` | File ontology tidak ditemukan | Set `ONTOLOGY_FILE_PATH`, cek log startup |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
 | `ONTOLOGY_MISMATCH` | Checksum file Node berbeda dengan Java | Samakan `ONTOLOGY_FILE_PATH`, reload Java |
-| `totalTriples` bukan 24833 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
+| `totalTriples` bukan 32506 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
 | Port sudah dipakai | Proses lama masih hidup | Hentikan proses pada port 3000/3030/8082 |
 
 ## Catatan keamanan

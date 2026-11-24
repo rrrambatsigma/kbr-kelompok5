@@ -141,9 +141,14 @@ class TestOntologyMd(unittest.TestCase):
             self.assertIn(str(obj).split("#")[-1], known)
 
     def test_report_matches_graph(self) -> None:
-        self.assertEqual(self.report["total_triples"], len(self.graph))
+        # Artefak final memuat hasil SWRL Pellet yang dimaterialisasi setelah
+        # build, sehingga graf boleh lebih besar daripada laporan build asserted.
+        self.assertGreaterEqual(len(self.graph), self.report["total_triples"])
         self.assertEqual(self.report["base_triples"], len(self.canonical))
-        self.assertEqual(self.report["added_triples"], len(self.graph) - len(self.canonical))
+        self.assertGreaterEqual(
+            len(self.graph) - len(self.canonical),
+            self.report["added_triples"],
+        )
         self.assertEqual(
             self.report["facts"],
             len(self.facts) + self.report.get("growth_condition_facts", 0),

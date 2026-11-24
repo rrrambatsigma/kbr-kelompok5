@@ -2,6 +2,13 @@
 
 Tanggal: 19 November 2026 (diperbarui 24 November 2026 setelah perbaikan label gejala dan konteks pengendalian)
 
+> **Catatan pasca-merge ontology final (24 November 2026).** Laporan ini adalah
+> snapshot pengujian pada ontology 24.833 triple. Artefak final memakai
+> `ontology_md.ttl` 30.280 triple (Java) dan `ontology_md_inferred.ttl`
+> 32.506 triple (Fuseki) dengan 7 aturan SWRL dan 53 diagnosis demo; gate test
+> ontologi serta unit test backend sudah dijalankan ulang, tetapi smoke test
+> dan integration test end-to-end perlu diulang pada dataset final.
+
 Lingkungan:
 
 - Windows, PowerShell

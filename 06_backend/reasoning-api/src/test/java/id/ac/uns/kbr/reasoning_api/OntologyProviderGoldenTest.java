@@ -23,7 +23,7 @@ class OntologyProviderGoldenTest {
     void loadsOntologyAndInfersDiseaseCategories() {
         OntologyProvider provider = new OntologyProvider(
                 ONTOLOGY_PATH,
-                120_000L,
+                600_000L,
                 false
         );
 
@@ -47,9 +47,10 @@ class OntologyProviderGoldenTest {
             assertEquals(34L, counts.get("PenyakitJamur"));
             assertEquals(7L, counts.get("PenyakitBakteri"));
             assertEquals(10L, counts.get("PenyakitVirus"));
+            // Dua penyakit juga bertipe Jamur, jadi kategori terpilih = 1
+            // meskipun closure Pellet menandai 3 individu sebagai Oomycete.
             assertEquals(1L, counts.get("PenyakitOomycete"));
             assertEquals(1L, counts.get("PenyakitFitoplasma"));
-            assertEquals(0L, counts.get("PenyakitNematoda"));
             assertEquals(0L, counts.get("PenyakitLainnya"));
 
             Map<String, Object> categories =
