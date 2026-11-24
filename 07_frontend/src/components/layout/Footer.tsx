@@ -6,14 +6,14 @@ export function Footer() {
   return (
     <footer className="no-print mt-auto border-t border-border bg-surface-low">
       <div className="container-page grid gap-8 py-12 md:grid-cols-12">
-        <div className="space-y-3 md:col-span-6">
+        <div className="space-y-3 md:col-span-8">
           <Logo />
           <p className="max-w-md text-sm leading-6 text-muted">
             Sistem pakar berbasis pengetahuan untuk membantu identifikasi
             kemungkinan penyakit tanaman pangan tropis secara terstruktur.
           </p>
         </div>
-        <div className="md:col-span-3">
+        <div className="md:col-span-4">
           <p className="font-heading text-sm font-bold text-foreground">
             Navigasi
           </p>
@@ -28,15 +28,6 @@ export function Footer() {
               Knowledge Base
             </Link>
           </nav>
-        </div>
-        <div className="md:col-span-3">
-          <p className="font-heading text-sm font-bold text-foreground">
-            Tentang Proyek
-          </p>
-          <p className="mt-3 text-sm leading-6 text-muted">
-            Proyek Knowledge-Based Reasoning — Kelompok 5. Hasil diagnosis
-            adalah informasi pendukung, bukan pengganti pemeriksaan ahli.
-          </p>
         </div>
       </div>
       <div className="border-t border-border">

@@ -4,7 +4,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Download,
-  FileText,
   Leaf,
   Microscope,
   RefreshCw,
@@ -532,13 +531,10 @@ export function DiagnosisResultPage() {
             </p>
           </section>
 
-          <section className="card space-y-4 p-5 sm:p-6">
-            <div className="flex items-center gap-2">
-              <FileText className="h-5 w-5 text-secondary" aria-hidden="true" />
-              <h2 className="font-heading text-lg font-bold text-foreground">
-                Pengendalian dari knowledge base
-              </h2>
-            </div>
+          <section
+            className="card space-y-4 p-5 sm:p-6"
+            aria-label="Pengendalian dari knowledge base"
+          >
             {controls.length === 0 ? (
               <p className="text-sm leading-6 text-muted">
                 Belum ada data pengendalian yang tercatat untuk penyakit ini di

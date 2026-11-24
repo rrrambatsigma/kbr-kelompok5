@@ -2,7 +2,6 @@ import {
   ArrowRight,
   BadgeCheck,
   BookOpen,
-  Database,
   Info,
   Leaf,
   SearchCheck,
@@ -143,11 +142,6 @@ export function HomePage() {
                 Jelajahi Knowledge Base
               </Link>
             </div>
-            <p className="flex items-center gap-2 text-xs text-muted">
-              <ShieldCheck className="h-4 w-4 text-secondary" aria-hidden="true" />
-              Informasi berbasis knowledge base — membantu keputusan awal, bukan
-              pengganti pemeriksaan ahli.
-            </p>
           </div>
 
           <div className="relative lg:col-span-5">
@@ -205,14 +199,6 @@ export function HomePage() {
                   <span>Metode penalaran</span>
                   <span className="font-semibold text-primary">
                     Knowledge-Based Reasoning
-                  </span>
-                </div>
-                <div className="h-px bg-border" />
-                <div className="flex items-center justify-between gap-3">
-                  <span>Status data</span>
-                  <span className="flex items-center gap-1.5 font-semibold text-secondary">
-                    <Database className="h-3.5 w-3.5" aria-hidden="true" />
-                    {loading ? "Memuat…" : "Dari backend"}
                   </span>
                 </div>
               </div>
