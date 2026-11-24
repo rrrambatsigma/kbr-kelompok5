@@ -66,6 +66,24 @@ export function prepareDataset(dataset: DiagnosisDataset): PreparedDataset {
         symptomByIri.set(symptom.iri, symptom);
       }
 
+      // Konsep kanonik juga bisa dipilih langsung oleh UI. Simpan sebagai
+      // pseudo-symptom agar ID kanonik bisa di-resolve seperti ID observasi.
+      if (symptom.canonical !== null) {
+        const canonical = symptom.canonical;
+        const canonicalSymptom = {
+          id: canonical.id,
+          iri: canonical.iri,
+          label: canonical.label,
+          canonical,
+        };
+        if (!symptomById.has(canonical.id)) {
+          symptomById.set(canonical.id, canonicalSymptom);
+        }
+        if (!symptomByIri.has(canonical.iri)) {
+          symptomByIri.set(canonical.iri, canonicalSymptom);
+        }
+      }
+
       observations.add(symptom.iri);
 
       const observationDiseaseSet =

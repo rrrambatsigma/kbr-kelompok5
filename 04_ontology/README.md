@@ -105,6 +105,8 @@ mentah. Label manusiawi memakai `rdfs:label`, `skos:prefLabel`, dan
   `Tepung pada daun — Penyakit Embun Tepung`). Pengamatan yang belum
   dipetakan memakai potongan kalimat sumber, bukan label generik
   `Pengamatan gejala ...`, supaya setiap label unik dan bisa dipilih di UI.
+  Picker diagnosis memakai **konsep kanonik** (lapis 1); observasi tetap dipakai
+  engine sebagai bukti dan untuk pencocokan exact per penyakit.
 - **Pengendalian**: aksi kanonik adalah individu dari subclass `Pengendalian*`
   (48 aksi kanonik).
 - **Observasi eksternal**: ID semantik, mis.

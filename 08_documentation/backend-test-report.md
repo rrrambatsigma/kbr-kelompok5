@@ -16,7 +16,7 @@ Lingkungan:
 
 Backend **lolos pengujian teknis** untuk lingkup M5–M6:
 
-- 39 test Node lulus.
+- 40 test Node lulus.
 - 4 test Java lulus.
 - 11 test frontend lulus; build frontend lulus.
 - 115 test `03_knowledge_tables` lulus (8 skip), 68 test `04_ontology` lulus.
@@ -34,10 +34,10 @@ di-seed dari ontology.
 | Pemeriksaan | Hasil | Bukti |
 |---|---|---|
 | `npm run typecheck` | PASS | tanpa error |
-| `npm test` | PASS | 39 test |
+| `npm test` | PASS | 40 test |
 | `npm run build` | PASS | `tsc` sukses |
 | `mvnw.cmd test` | PASS | 4 test, termasuk golden Openllet |
-| `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptoms=26, Padi phases=7 |
+| `smoke-test.ps1` | PASS | plants=7, diseases=53, Padi symptom concepts=12, Padi phases=7 |
 | `integration-test.ps1` | PASS | readiness, checksum, phases, diagnosis, reload, negative |
 | Frontend `npm test` | PASS | 11 test |
 | Frontend `npm run build` | PASS | `tsc` + Vite sukses |
@@ -85,7 +85,8 @@ Jumlah data API:
 ```text
 plants = 7
 diseases = 53
-Padi symptoms = 26
+Padi symptom concepts = 12
+Padi symptom observations = 26
 Padi phases = 7
 UbiKayu phases = 7
 ```

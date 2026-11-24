@@ -37,6 +37,8 @@ export interface Symptom extends NamedEntity {
   partLabel: string | null;
   canonicalId?: string | null;
   canonicalLabel?: string | null;
+  observationCount?: number;
+  diseaseCount?: number;
 }
 
 export interface Phase extends NamedEntity {

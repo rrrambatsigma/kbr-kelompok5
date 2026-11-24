@@ -149,7 +149,10 @@ export function reason(
         if (available !== undefined) {
           matchedObservation = available;
           type = "canonical";
-          baseWeight = opts.canonicalWeight;
+          baseWeight =
+            selectedSymptom.id === selectedSymptom.canonical.id
+              ? 1
+              : opts.canonicalWeight;
         }
       }
 

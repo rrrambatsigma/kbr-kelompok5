@@ -30,7 +30,7 @@ $diseases = Invoke-RestMethod "$BaseUrl/api/diseases"
 Assert-Equal $diseases.data.count 53 "disease count"
 
 $symptoms = Invoke-RestMethod "$BaseUrl/api/symptoms?plantId=Padi"
-Assert-Equal $symptoms.data.count 26 "Padi symptom count"
+Assert-Equal $symptoms.data.count 12 "Padi symptom concept count"
 
 $phases = Invoke-RestMethod "$BaseUrl/api/phases?plantId=Padi"
 Assert-Equal $phases.data.count 7 "Padi phase count"

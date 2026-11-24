@@ -164,7 +164,7 @@ Error:
 | GET | `/api/plants/:id` | Detail tanaman + daftar penyakit |
 | GET | `/api/diseases` | Daftar penyakit; filter `?plantId=Padi` |
 | GET | `/api/diseases/:id` | Detail penyakit, gejala, pengendalian, patogen |
-| GET | `/api/symptoms` | Daftar gejala; filter `?plantId=Padi` |
+| GET | `/api/symptoms` | Daftar konsep gejala kanonik; filter `?plantId=Padi` |
 | GET | `/api/phases` | Daftar fase pertumbuhan; filter `?plantId=Padi` |
 
 `:id` menerima local name (`Padi`, `PenyakitBlasPadi`) atau IRI penuh.
@@ -176,10 +176,13 @@ per tanaman. Kelas yang belum punya tautan penyakit tetap dikembalikan dengan
 `diseaseCount: 0`; ini bukan error. ID fase yang dipakai di request adalah ID
 kelas, bukan ID individu fase.
 
-`GET /api/symptoms` menyertakan `canonicalId` dan `canonicalLabel` (`null` bila
-pengamatan belum dipetakan ke konsep kanonik). Label pengamatan sudah
-dinormalisasi di ontology, sehingga UI bisa memakainya langsung sebagai pilihan
-gejala tanpa duplikasi.
+`GET /api/symptoms?plantId=Padi` mengembalikan **konsep gejala kanonik**
+(`GejalaKanonik`) yang dipakai penyakit tanaman itu, bukan observasi mentah.
+Setiap item memuat `observationCount` dan `diseaseCount`; ID yang dikirim UI ke
+`POST /api/diagnosis` adalah local name konsep (mis. `BercakDaun`). Untuk Padi
+endpoint ini mengembalikan 12 konsep dari 26 observasi. `POST /api/diagnosis`
+juga tetap menerima ID observasi (`Pengamatan...`) untuk kompatibilitas dan
+pengujian exact-match.
 
 `GET /api/diseases/:id` mengembalikan `controls[].description` dari kutipan
 `BuktiPengendalian` milik penyakit tersebut. Deskripsi global

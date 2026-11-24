@@ -19,7 +19,7 @@ Ontology yang dipakai adalah **ontology gabungan** dari branch
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
-| Smoke test | plants=7, diseases=53, Padi symptoms=26 | OK |
+| Smoke test | plants=7, diseases=53, Padi symptom concepts=12 | OK |
 
 Pemeriksaan yang lolos:
 
@@ -30,7 +30,7 @@ Pemeriksaan yang lolos:
 - [x] Kategori: Jamur 34, Bakteri 7, Virus 10, Oomycete 1, Fitoplasma 1,
       Nematoda 0, Lainnya 0; 0 penyakit belum berkategori
 - [x] `/api/health/ready` = UP
-- [x] `npm run typecheck`, `npm test` (39 test) hijau
+- [x] `npm run typecheck`, `npm test` (40 test) hijau
 - [x] `mvnw test` (4 test, termasuk golden Openllet) hijau
 - [x] `smoke-test.ps1` OK
 
@@ -214,7 +214,7 @@ Temuan:
 
 Baseline sesudah engine: `baseline/after.json`.
 
-Test: **39 test** lulus (termasuk test reasoning dan client Node–Java).
+Test: **40 test** lulus (termasuk test reasoning dan client Node-Java).
 
 ## Validasi (Langkah 4)
 
@@ -282,6 +282,10 @@ Catatan penting:
 - Kasus `ambiguous` sengaja mencampur gejala generik milik penyakit lain;
   inilah yang membedakan model lama (0% top-1) dari model baru (75% top-1).
 - Baseline dihitung ulang pada kasus yang sama, bukan dari `before.json`.
+- UI mengirim ID **konsep kanonik**; kasus `gold`/`ambiguous`/`sanity` tetap
+  memakai ID observasi untuk menguji exact-match. Evaluasi dengan pemetaan
+  observasi → kanonik (input seperti UI) menghasilkan top-1 fokus **0,909**,
+  top-3 **1,000**, dan MRR **0,955** pada ontology `f283c117...`.
 
 ## Dokumentasi M5
 

@@ -196,6 +196,15 @@ function symptomIndex(
           label: symptom.label,
         });
       }
+
+      // UI sekarang mengirim ID konsep kanonik; ID observasi lama tetap valid.
+      if (symptom.canonical !== null && !index.has(symptom.canonical.id)) {
+        index.set(symptom.canonical.id, {
+          id: symptom.canonical.id,
+          iri: symptom.canonical.iri,
+          label: symptom.canonical.label,
+        });
+      }
     }
   }
 

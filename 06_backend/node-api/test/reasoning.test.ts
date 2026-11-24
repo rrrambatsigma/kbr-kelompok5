@@ -164,6 +164,26 @@ test("engine: dua ID berbeda dengan kanonik sama bisa cocok", () => {
   assert.equal(evidence.canonicalSymptomLabel, "c1");
 });
 
+test("engine: memilih konsep kanonik mencocokkan semua penyakit dengan konsep itu", () => {
+  const d1 = disease("D1", [symptom("s1", "c1")]);
+  const d2 = disease("D2", [symptom("s2", "c1")]);
+  const d3 = disease("D3", [symptom("s3")]);
+  const result = reason(dataset([d1, d2, d3]), ["c1"]);
+
+  assert.equal(result.candidates.length, 2);
+
+  const candidate = result.candidates.find((item) => item.disease.id === "D1")!;
+  const evidence = candidate.evidence[0]!;
+
+  assert.equal(evidence.type, "canonical");
+  assert.equal(evidence.symptomId, "c1");
+  assert.equal(evidence.symptomLabel, "c1");
+  assert.equal(evidence.matchedObservationId, "s1");
+  assert.equal(evidence.canonicalSymptomId, "c1");
+  assert.equal(candidate.matchedSymptoms[0]!.id, "c1");
+  assert.equal(candidate.unexplainedSymptoms.length, 0);
+});
+
 test("engine: satu observasi penyakit tidak dihitung dua kali", () => {
   const d1 = disease("D1", [symptom("s1", "c1")]);
   const d2 = disease("D2", [symptom("s2", "c1")]);

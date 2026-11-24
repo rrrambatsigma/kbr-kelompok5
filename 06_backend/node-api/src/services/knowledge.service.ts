@@ -57,6 +57,8 @@ export interface SymptomSummary extends NamedEntity {
   partLabel: string | null;
   canonicalId: string | null;
   canonicalLabel: string | null;
+  observationCount?: number;
+  diseaseCount?: number;
 }
 
 export interface PhaseSummary extends NamedEntity {
@@ -497,19 +499,15 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
         SELECT ?symptom ?label
                (SAMPLE(?part) AS ?part)
                (SAMPLE(?partLabel) AS ?partLabel)
-               (SAMPLE(?canonical) AS ?canonical)
-               (SAMPLE(?canonicalLabel) AS ?canonicalLabel)
+               (COUNT(DISTINCT ?disease) AS ?diseaseCount)
+               (COUNT(DISTINCT ?observation) AS ?observationCount)
         WHERE {
-          ?symptom a/rdfs:subClassOf* ptp:Gejala .
-          FILTER EXISTS { ?disease ptp:memilikiGejala ?symptom }
+          ?disease ptp:memilikiGejala ?observation .
+          ?observation ptp:memilikiGejalaKanonik ?symptom .
           OPTIONAL { ?symptom rdfs:label ?label }
           OPTIONAL {
-            ?symptom ptp:terdapatPada ?part .
+            ?observation ptp:terdapatPada ?part .
             OPTIONAL { ?part rdfs:label ?partLabel }
-          }
-          OPTIONAL {
-            ?symptom ptp:memilikiGejalaKanonik ?canonical .
-            OPTIONAL { ?canonical rdfs:label ?canonicalLabel }
           }
         }
         GROUP BY ?symptom ?label
@@ -520,19 +518,16 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
         SELECT ?symptom ?label
                (SAMPLE(?part) AS ?part)
                (SAMPLE(?partLabel) AS ?partLabel)
-               (SAMPLE(?canonical) AS ?canonical)
-               (SAMPLE(?canonicalLabel) AS ?canonicalLabel)
+               (COUNT(DISTINCT ?disease) AS ?diseaseCount)
+               (COUNT(DISTINCT ?observation) AS ?observationCount)
         WHERE {
           ?disease ptp:menyerangTanaman <${plantIri}> ;
-                   ptp:memilikiGejala ?symptom .
+                   ptp:memilikiGejala ?observation .
+          ?observation ptp:memilikiGejalaKanonik ?symptom .
           OPTIONAL { ?symptom rdfs:label ?label }
           OPTIONAL {
-            ?symptom ptp:terdapatPada ?part .
+            ?observation ptp:terdapatPada ?part .
             OPTIONAL { ?part rdfs:label ?partLabel }
-          }
-          OPTIONAL {
-            ?symptom ptp:memilikiGejalaKanonik ?canonical .
-            OPTIONAL { ?canonical rdfs:label ?canonicalLabel }
           }
         }
         GROUP BY ?symptom ?label
@@ -543,14 +538,18 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
 
   return bindings.map((binding) => {
     const iri = requireTerm(binding, "symptom", "gejala");
+    const id = localName(iri);
+    const label = labelOrFallback(binding, iri);
     return {
-      id: localName(iri),
+      id,
       iri,
-      label: labelOrFallback(binding, iri),
+      label,
       partId: optionalLocalName(termValue(binding, "part")),
       partLabel: termValue(binding, "partLabel") ?? null,
-      canonicalId: optionalLocalName(termValue(binding, "canonical")),
-      canonicalLabel: termValue(binding, "canonicalLabel") ?? null,
+      canonicalId: id,
+      canonicalLabel: label,
+      observationCount: requireIntegerTerm(binding, "observationCount"),
+      diseaseCount: requireIntegerTerm(binding, "diseaseCount"),
     };
   });
 }

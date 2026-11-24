@@ -389,7 +389,7 @@ M5 selesai untuk ruang lingkup backend:
 
 - Engine reasoning aktif di `POST /api/diagnosis`.
 - Validasi dan dokumentasi tersedia.
-- 39 test Node, 4 test Java, 115 test `03_knowledge_tables` (8 skip), dan
+- 40 test Node, 4 test Java, 115 test `03_knowledge_tables` (8 skip), dan
   68 test `04_ontology` lulus.
 - Ontology final sudah masuk; `generate-sanity.mjs` dan `run.mjs` dijalankan
   ulang pada 22 Nov 2026.
