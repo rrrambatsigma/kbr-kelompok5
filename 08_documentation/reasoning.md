@@ -34,7 +34,7 @@ Yang tidak termasuk M5:
 
 | Item | Nilai |
 |---|---:|
-| Triple ontology | 19.021 |
+| Triple ontology | 24.833 |
 | Kelas | 87 |
 | Individu | 1.366 |
 | Tanaman | 7 |
@@ -271,7 +271,7 @@ Harness ada di `05_reasoning_tests/`.
 | Sanity | 53 | Satu kasus per penyakit; regression |
 | Negative | 5 | Validasi input/error |
 
-Hasil 22 November 2026 (dijalankan ulang pada ontology 19.021 triple):
+Hasil 24 November 2026 (dijalankan ulang pada ontology 24.833 triple):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|

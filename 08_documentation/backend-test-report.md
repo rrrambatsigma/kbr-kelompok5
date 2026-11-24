@@ -9,8 +9,8 @@ Lingkungan:
 - Java runtime 23.0.1; Maven toolchain Java 21.0.13
 - Apache Jena Fuseki 6.2.0
 - Ontology gabungan `ontology_md.ttl`
-- Checksum `f283c11765c4582d9a7eb7bf090783597ce3b6376dc90ce1bc1c864d7eb3e93f`
-- Dataset Fuseki `plant-kb`, 19.021 triple
+- Checksum `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4`
+- Dataset Fuseki `plant-kb`, 24.833 triple
 
 ## Ringkasan
 
@@ -20,7 +20,7 @@ Backend **lolos pengujian teknis** untuk lingkup M5–M6:
 - 4 test Java lulus.
 - 11 test frontend lulus; build frontend lulus.
 - 115 test `03_knowledge_tables` lulus (8 skip), 68 test `04_ontology` lulus.
-- Smoke test dan integration test lulus pada dataset baru (19.021 triple), termasuk fase pertumbuhan.
+- Smoke test dan integration test lulus pada dataset baru (24.833 triple), termasuk fase pertumbuhan.
 - 75 kasus evaluasi reasoning + 5 negative berjalan.
 - Health check dan checksum konsisten.
 - Fallback `DEGRADED` dan `503 FUSEKI_UNAVAILABLE` terbukti.
@@ -57,7 +57,7 @@ Test Node mencakup:
 | Pemeriksaan | Hasil |
 |---|---|
 | `/api/health/live` | `UP` |
-| `/api/health/fuseki` | `UP`, 19.021 triple |
+| `/api/health/fuseki` | `UP`, 24.833 triple |
 | `/api/health/ontology` | `OK` |
 | `checks.fileMatchesJava` | `true` |
 | `checks.fusekiHasV2Fingerprint` | `true` |
@@ -203,7 +203,7 @@ Setelah Java dinyalakan lagi, readiness kembali `UP`.
 | Reasoning dependency | `UP` |
 | `/api/health/ontology` | `DOWN`, warning Fuseki |
 
-Setelah Fuseki dinyalakan lagi, readiness kembali `UP`, triple tetap 19.021.
+Setelah Fuseki dinyalakan lagi, readiness kembali `UP`, triple tetap 24.833.
 
 ## 7. Observability
 

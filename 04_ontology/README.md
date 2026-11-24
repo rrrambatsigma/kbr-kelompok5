@@ -15,8 +15,8 @@ Kacang Hijau**. Tanaman di luar cakupan tidak dibuat sebagai individu.
 | `ontology.ttl` | Turtle kanonik, **16.732 triple**, **1.204 individu** |
 | `ontology.owl` | RDF/XML kanonik untuk Protégé dan owlready2 |
 | `extraction_report.json` | Ringkasan build, tautan, dan data quality |
-| `ontology_md.ttl` | Kanonik + enrichment + SWRL, **19.021 triple** |
-| `ontology_md.owl` | RDF/XML hasil enrichment + SWRL |
+| `ontology_md.ttl` | Kanonik + enrichment + SWRL + inferred Pellet, **24.833 triple** |
+| `ontology_md.owl` | RDF/XML hasil enrichment + SWRL + inferred Pellet |
 | `swrl_rules.ttl` | 4 aturan SWRL yang digabung ke `ontology_md` |
 | `extraction_report_md.json` | Ringkasan build enrichment |
 
@@ -72,6 +72,12 @@ pengecekan konsistensi di-skip; konsistensi ontology tetap diverifikasi oleh
 > **Peringatan:** `build_ontology.py` menimpa `ontology.ttl` dan `ontology.owl`.
 > Suntingan manual di Protégé akan hilang. Untuk enrichment, bangun ulang
 > `ontology_md.ttl`/`ontology_md.owl` saja.
+
+> **Artefak inferred:** export Protégé `kbr-kelompok5.ttl` (tidak di-commit)
+> dinormalisasi menjadi `ontology_md.ttl`/`.owl`: IRI ontology dikembalikan ke
+> `http://kbr.kelompok5.org/penyakit-tanaman-pangan`, aturan SWRL diambil dari
+> `swrl_rules.ttl`, lalu dimuat ke Fuseki. Menjalankan `build_ontology_md.py`
+> akan mengembalikan artefak asserted 19.021 triple.
 
 ## Namespace dan kebijakan IRI
 
@@ -210,11 +216,14 @@ Data quality yang sengaja dilaporkan, bukan disembunyikan:
 ## Enrichment — `ontology_md.ttl`
 
 `ontology_md.ttl` adalah graf berdiri sendiri: seluruh isi `ontology.ttl`
-ditambah TBox/ABox enrichment. Kanonik tidak pernah ditulis ulang.
+ditambah TBox/ABox enrichment, lalu **inferred axiom hasil Pellet** dari
+Protégé. Sebagian triple struktural kanonik (list `owl:AllDisjointClasses`,
+`owl:oneOf`, dan pasangan `owl:disjointWith` terbalik) digantikan representasi
+ekuivalen oleh export Protégé; semantiknya tetap.
 
 | Item | Nilai |
 |---|---|
-| Triple total | **19.021** = base **16.732** + tambahan **2.289** |
+| Triple total | **24.833** = base **16.732** + tambahan **8.101** (termasuk inferred) |
 | Fakta enrichment | **942** (internal 81 + external 861) |
 | Entitas yang dirujuk fakta | **313** (internal 93: 7 tanaman, 53 penyakit, 28 kondisi lingkungan, 5 faktor risiko; external 220) |
 | Deskripsi `rdfs:comment` | **561** (internal 425 + external 136; `auto_ok` 311, `needs_review` 114, `verified` 136) |
@@ -222,6 +231,9 @@ ditambah TBox/ABox enrichment. Kanonik tidak pernah ditulis ulang.
 | Kelas dengan deskripsi | **87 dari 87** |
 | Individu tanpa deskripsi | **0** |
 | TBox tambahan | `memilikiKondisiTumbuh` (domain `TanamanPangan`, range `FaktorLingkungan`) |
+| Kategori penyakit inferred | Jamur **34**, Bakteri **7**, Virus **10**, Oomycete **3**, Fitoplasma **1**, Nematoda **0** |
+| `menyerangBagian` inferred | **+27** tautan dari property chain |
+| `owl:disjointWith` inferred | **3.446** pasangan |
 
 Predikat fakta internal: `deskripsiPenyakit` 53, `deskripsiTanaman` 7,
 `dipengaruhiOleh` 8, `memilikiKondisiTumbuh` 4, `tingkatKeparahan` 9.

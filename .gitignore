@@ -103,3 +103,6 @@ Desktop.ini
 
 # Screenshot/browser artifacts dari sesi pengembangan
 .openchamber/
+
+# Export mentah Protégé (sumber materialisasi; artefak final = ontology_md.*)
+/04_ontology/kbr-kelompok5.ttl

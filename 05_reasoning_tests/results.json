@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-24T01:56:31.954Z",
+  "generatedAt": "2026-11-24T02:32:57.436Z",
   "baseUrl": "http://127.0.0.1:3000",
   "topN": 10,
   "reasoning": {
     "modelVersion": "forward-chaining-cf-v1",
     "ontology": {
-      "version": "f283c11765c4",
-      "checksum": "f283c11765c4582d9a7eb7bf090783597ce3b6376dc90ce1bc1c864d7eb3e93f"
+      "version": "2085d0a7f368",
+      "checksum": "2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4"
     }
   },
   "validation": {
@@ -3494,8 +3494,8 @@
   },
   "performance": {
     "samples": 20,
-    "p50Ms": 33.3352,
-    "p95Ms": 59.1699
+    "p50Ms": 43.4817,
+    "p95Ms": 66.4516
   },
   "thresholds": [
     {

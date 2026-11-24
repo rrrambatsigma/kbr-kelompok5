@@ -41,8 +41,11 @@ Jika lokasi berbeda, berikan parameter `-FusekiJar "<path>"`.
 
 ## Ontology yang dimuat
 
-File `04_ontology/ontology_md.ttl` berisi **19.021 triple**, **1.366 individu**,
-**87 kelas**, dan **4 aturan SWRL**. Fuseki memuat file yang sama lewat
+File `04_ontology/ontology_md.ttl` berisi **24.833 triple**, **1.366 individu**,
+**87 kelas**, dan **4 aturan SWRL**. Angka itu sudah termasuk **inferred axiom
+Pellet** dari Protégé: kategori penyakit (Jamur 34, Bakteri 7, Virus 10,
+Oomycete 3, Fitoplasma 1), tipe individu, `owl:disjointWith`, dan 27 tautan
+`menyerangBagian`. Fuseki memuat file yang sama lewat
 `scripts/load-ontology.ps1`; Java memuatnya lewat `ONTOLOGY_FILE_PATH`.
 
 SWRL tidak dieksekusi oleh Fuseki maupun Openllet. Aturan SWRL dijalankan
@@ -354,7 +357,7 @@ node run.mjs --perf
 | `ONTOLOGY_NOT_LOADED` | File ontology tidak ditemukan | Set `ONTOLOGY_FILE_PATH`, cek log startup |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
 | `ONTOLOGY_MISMATCH` | Checksum file Node berbeda dengan Java | Samakan `ONTOLOGY_FILE_PATH`, reload Java |
-| `totalTriples` bukan 19021 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
+| `totalTriples` bukan 24833 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
 | Port sudah dipakai | Proses lama masih hidup | Hentikan proses pada port 3000/3030/8082 |
 
 ## Catatan keamanan

@@ -2,20 +2,21 @@
 
 Folder ini berisi verifikasi integrasi dan kasus uji reasoning diagnosis.
 Ontology yang dipakai adalah **ontology gabungan** dari branch
-`feat/ontology-baru` (`04_ontology/ontology_md.ttl`, 19.021 triple).
+`feat/ontology-baru` (`04_ontology/ontology_md.ttl`, 24.833 triple).
 
-> **Diperbarui 22 November 2026** setelah merge `feat/ontology-baru` ke
-> `feat/rambat-baru`: ontology naik dari 18.981 ke **19.021 triple**. Bagian
-> status di bawah sudah diverifikasi ulang pada 22 November 2026 dengan dataset
-> Fuseki baru (`load-ontology.ps1 -Reset`), termasuk `smoke-test.ps1`,
+> **Diperbarui 24 November 2026:** artefak `ontology_md.ttl` sekarang memuat
+> **inferred axiom Pellet** dari Protégé (kategori penyakit, tipe individu,
+> `owl:disjointWith`, `menyerangBagian`). Triple naik dari 19.021 ke **24.833**.
+> Status di bawah diverifikasi ulang dengan dataset Fuseki baru
+> (`load-ontology.ps1 -Reset`), termasuk `smoke-test.ps1`,
 > `integration-test.ps1`, dan `node run.mjs`.
 
 ## Status verifikasi integrasi (24 Nov 2026)
 
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
-| Ontology | `ontology_md.ttl`, 19.021 triple | v3 gabungan |
-| SHA-256 ontology | `f283c11765c4582d9a7eb7bf090783597ce3b6376dc90ce1bc1c864d7eb3e93f` | cocok dengan Java |
+| Ontology | `ontology_md.ttl`, 24.833 triple (termasuk inferred) | v3 + Pellet |
+| SHA-256 ontology | `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4` | cocok dengan Java |
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
@@ -23,7 +24,7 @@ Ontology yang dipakai adalah **ontology gabungan** dari branch
 
 Pemeriksaan yang lolos:
 
-- [x] `totalTriples = 19.021`
+- [x] `totalTriples = 24.833`
 - [x] Fingerprint v2: `deskripsiPenyakit = 53`, `memilikiKondisiTumbuh = 9`
 - [x] Java memuat `ontology_md.ttl` dan checksum-nya sama dengan file
 - [x] Ontology konsisten (Openllet)
@@ -256,7 +257,7 @@ node run.mjs --base-url http://127.0.0.1:3000
 node run.mjs --out hasil-lain
 ```
 
-Hasil 24 Nov 2026 (ontology `f283c117...`):
+Hasil 24 Nov 2026 (ontology `2085d0a7...`):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
@@ -285,7 +286,7 @@ Catatan penting:
 - UI mengirim ID **konsep kanonik**; kasus `gold`/`ambiguous`/`sanity` tetap
   memakai ID observasi untuk menguji exact-match. Evaluasi dengan pemetaan
   observasi → kanonik (input seperti UI) menghasilkan top-1 fokus **0,909**,
-  top-3 **1,000**, dan MRR **0,955** pada ontology `f283c117...`.
+  top-3 **1,000**, dan MRR **0,955** pada ontology `2085d0a7...`.
 
 ## Dokumentasi M5
 

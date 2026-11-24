@@ -40,7 +40,9 @@ menyimpan RDF dan melayani SPARQL read-only.
 
 - Ontologi kanonik: **16.732 triple**, **1.204 individu**, **87 kelas**,
   **29 object property**, **53 penyakit**, **7 tanaman**, **78 tautan penyakit-patogen**.
-- `ontology_md.ttl`: **19.021 triple**, **1.366 individu**, **4 aturan SWRL**.
+- `ontology_md.ttl`: **24.833 triple**, **1.366 individu**, **4 aturan SWRL**,
+  termasuk inferred axiom Pellet (kategori penyakit, tipe, `disjointWith`,
+  `menyerangBagian`).
 - **240 baris gejala** menjadi **171 pengamatan kanonik**; **58** belum dipetakan.
 - **226 tautan `dikendalikanDengan`**; **37** baris pengendalian belum dipetakan.
 - **40 varietas**, **12 tautan fase**, **17 baris metadata terkurasi**.
