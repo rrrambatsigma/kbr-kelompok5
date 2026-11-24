@@ -13,10 +13,12 @@ import type {
   Phase,
   Plant,
   Symptom,
+  Variety,
 } from "../types/api";
 
 interface DiagnosisDraft {
   plant: Plant | null;
+  variety: Variety | null;
   phase: Phase | null;
   symptoms: Symptom[];
   topN: number;
@@ -26,6 +28,7 @@ interface DiagnosisContextValue {
   draft: DiagnosisDraft;
   result: DiagnosisResult | null;
   setPlant: (plant: Plant | null) => void;
+  setVariety: (variety: Variety | null) => void;
   setPhase: (phase: Phase | null) => void;
   setSymptoms: (symptoms: Symptom[]) => void;
   setTopN: (topN: number) => void;
@@ -37,6 +40,7 @@ const STORAGE_KEY = "tanicare.diagnosis.v1";
 
 const emptyDraft: DiagnosisDraft = {
   plant: null,
+  variety: null,
   phase: null,
   symptoms: [],
   topN: 5,
@@ -65,6 +69,7 @@ function readStoredState(): StoredState {
     return {
       draft: {
         plant: parsed.draft.plant ?? null,
+        variety: parsed.draft.variety ?? null,
         phase: parsed.draft.phase ?? null,
         symptoms: Array.isArray(parsed.draft.symptoms)
           ? parsed.draft.symptoms
@@ -97,10 +102,18 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
       draft: {
         ...current.draft,
         plant,
+        variety: null,
         phase: null,
         symptoms: [],
       },
       result: null,
+    }));
+  }, []);
+
+  const setVariety = useCallback((variety: Variety | null) => {
+    setState((current) => ({
+      ...current,
+      draft: { ...current.draft, variety, phase: null, symptoms: [] },
     }));
   }, []);
 
@@ -138,6 +151,7 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
       draft: state.draft,
       result: state.result,
       setPlant,
+      setVariety,
       setPhase,
       setSymptoms,
       setTopN,
@@ -148,6 +162,7 @@ export function DiagnosisProvider({ children }: { children: ReactNode }) {
       state.draft,
       state.result,
       setPlant,
+      setVariety,
       setPhase,
       setSymptoms,
       setTopN,

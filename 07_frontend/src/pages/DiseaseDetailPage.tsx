@@ -20,8 +20,12 @@ import { EmptyState } from "../components/common/EmptyState";
 import { ErrorState } from "../components/common/ErrorState";
 import { PageHeader } from "../components/common/PageHeader";
 import { Spinner } from "../components/common/Spinner";
-import { getDisease } from "../services/api/diseases";
-import type { DiseaseSymptom, DiseaseDetail } from "../types/api";
+import { getDisease, getDiseaseReasoning } from "../services/api/diseases";
+import type {
+  DiseaseReasoningFacts,
+  DiseaseSymptom,
+  DiseaseDetail,
+} from "../types/api";
 import { friendlyApiError } from "../utils/apiError";
 
 function groupSymptoms(
@@ -42,6 +46,7 @@ function groupSymptoms(
 export function DiseaseDetailPage() {
   const { id } = useParams<{ id: string }>();
   const [detail, setDetail] = useState<DiseaseDetail | null>(null);
+  const [facts, setFacts] = useState<DiseaseReasoningFacts | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -55,10 +60,16 @@ export function DiseaseDetailPage() {
     setLoading(true);
     setError(null);
     try {
-      setDetail(await getDisease(id));
+      const [disease, reasoning] = await Promise.all([
+        getDisease(id),
+        getDiseaseReasoning(id).catch(() => null),
+      ]);
+      setDetail(disease);
+      setFacts(reasoning);
     } catch (cause) {
       setError(friendlyApiError(cause));
       setDetail(null);
+      setFacts(null);
     } finally {
       setLoading(false);
     }
@@ -144,6 +155,60 @@ export function DiseaseDetailPage() {
               </Link>
             }
           />
+
+          {facts !== null && (
+            <section className="card p-5 sm:p-6">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Microscope className="h-5 w-5 text-secondary" aria-hidden="true" />
+                  <h2 className="font-heading text-lg font-bold text-foreground">
+                    Fakta hasil reasoner
+                  </h2>
+                </div>
+                <Badge tone="success">inferred · Fuseki</Badge>
+              </div>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-muted">
+                    Kategori penyakit
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {facts.categories.length === 0 ? (
+                      <span className="text-xs text-muted">Belum terklasifikasi</span>
+                    ) : (
+                      facts.categories.map((category) => (
+                        <span
+                          key={category.id}
+                          className="rounded-lg bg-surface-low px-2.5 py-1 text-[11px] text-foreground"
+                        >
+                          {category.label}
+                        </span>
+                      ))
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-muted">
+                    Bagian terdampak (inferred)
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {facts.parts.length === 0 ? (
+                      <span className="text-xs text-muted">Belum tercatat</span>
+                    ) : (
+                      facts.parts.map((part) => (
+                        <span
+                          key={part.id}
+                          className="rounded-lg bg-surface-low px-2.5 py-1 text-[11px] text-foreground"
+                        >
+                          {part.label}
+                        </span>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
 
           <div className="grid gap-5 lg:grid-cols-12">
             <div className="space-y-5 lg:col-span-8">

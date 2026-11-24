@@ -7,7 +7,7 @@ import {
   round4,
   scoreCandidate,
 } from "./certainty.js";
-import { REASONING_CONFIG } from "./config.js";
+import { REASONING_CONFIG, partWeight } from "./config.js";
 import {
   canonicalRuleId,
   exactRuleId,
@@ -168,7 +168,10 @@ export function reason(
           ? prepared.canonicalDf.get(selectedSymptom.canonical!.iri) ?? 1
           : dfForSymptom(selectedSymptom, prepared);
       const spec = specificity(df, prepared.diseaseCount);
-      const weight = evidenceWeight(baseWeight, spec);
+      const weight = evidenceWeight(
+        baseWeight * partWeight(matchedObservation.part),
+        spec
+      );
 
       cf = cf + weight * (1 - cf);
 

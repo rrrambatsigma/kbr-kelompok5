@@ -45,10 +45,18 @@ export interface Phase extends NamedEntity {
   diseaseCount: number;
 }
 
+export interface Variety extends NamedEntity {
+  plantId: string;
+  plantLabel: string | null;
+  resistantTo: NamedEntity[];
+  susceptibleTo: NamedEntity[];
+}
+
 export interface DiseaseSummary extends NamedEntity {
   plantId: string | null;
   plantLabel: string | null;
   symptomCount: number;
+  description: string | null;
 }
 
 export interface DiseaseSymptom extends NamedEntity {
@@ -124,6 +132,7 @@ export interface DiagnosisCandidate {
   matchedSymptoms: DiagnosisSymptom[];
   unmatchedSelectedSymptoms: DiagnosisSymptom[];
   category: string | null;
+  varietyMatch: "resistant" | "susceptible" | "unknown";
   controls: NamedEntity[];
   riskFactors: NamedEntity[];
   confidence: Confidence;
@@ -139,6 +148,14 @@ export interface DiagnosisReasoningInfo {
   ontologyVersion: string | null;
   checksum: string | null;
   categoryCounts: Record<string, number> | null;
+  categorySource: "FUSEKI" | "JAVA" | null;
+}
+
+export interface DiseaseReasoningFacts {
+  diseaseId: string;
+  source: "fuseki";
+  categories: NamedEntity[];
+  parts: NamedEntity[];
 }
 
 export interface DiagnosisResult {
@@ -146,6 +163,9 @@ export interface DiagnosisResult {
     plantId: string;
     plantIri: string;
     plantLabel: string | null;
+    varietyId: string | null;
+    varietyIri: string | null;
+    varietyLabel: string | null;
     phaseId: string | null;
     phaseIri: string | null;
     phaseLabel: string | null;
@@ -161,6 +181,7 @@ export interface DiagnosisResult {
 
 export interface DiagnosisRequest {
   plantId: string;
+  varietyId?: string;
   phaseId?: string;
   symptomIds: string[];
   topN?: number;

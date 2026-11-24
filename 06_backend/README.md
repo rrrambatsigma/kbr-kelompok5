@@ -169,6 +169,8 @@ Error:
 | GET | `/api/diseases/:id` | Detail penyakit, gejala, pengendalian, patogen |
 | GET | `/api/symptoms` | Daftar konsep gejala kanonik; filter `?plantId=Padi` |
 | GET | `/api/phases` | Daftar fase pertumbuhan; filter `?plantId=Padi` |
+| GET | `/api/varieties` | Daftar varietas + catatan tahan/rentan; filter `?plantId=Padi` |
+| GET | `/api/diseases/:id/reasoning` | Fakta inferred dari Fuseki: kategori + bagian terdampak |
 
 `:id` menerima local name (`Padi`, `PenyakitBlasPadi`) atau IRI penuh.
 
@@ -199,10 +201,11 @@ pengendalian tidak menampilkan kalimat dari penyakit atau tanaman lain.
 ```json
 {
   "plantId": "Padi",
+  "varietyId": "VarietasBondoyudo",
   "phaseId": "FaseAnakan",
   "symptomIds": [
-    "PengamatanPenyakitBlasPadiBercakDaun",
-    "PengamatanPenyakitBlasPadiKhasMalai"
+    "BercakDaun",
+    "KlorosisDaun"
   ],
   "topN": 5
 }
@@ -211,12 +214,16 @@ pengendalian tidak menampilkan kalimat dari penyakit atau tanaman lain.
 Aturan validasi:
 
 - `plantId` wajib dan harus ada.
+- `varietyId` opsional; jika diisi harus varietas milik tanaman yang dipilih.
+  Varietas dipakai untuk menandai `varietyMatch` kandidat
+  (`resistant`/`susceptible`/`unknown`), belum mengubah skor.
 - `phaseId` opsional; jika diisi harus salah satu dari 7 kelas fase. Fase yang
   valid tetapi belum punya tautan penyakit tetap diterima dengan
   `phaseMatch = "unknown"`/`"mismatch"`; ID fase yang tidak dikenal ditolak
   `400`.
 - `symptomIds` 1–100 ID, tidak boleh kosong.
-- ID gejala harus dikenali untuk tanaman tersebut.
+- ID gejala harus dikenali untuk tanaman tersebut; menerima ID konsep kanonik
+  (`BercakDaun`) maupun ID observasi lama (`Pengamatan...`).
 - Duplikat dihapus dan menghasilkan warning `DUPLICATE_SYMPTOM_IDS_IGNORED`.
 - `topN` integer 1–10, default 5.
 
@@ -259,6 +266,11 @@ match kanonik). `reasoning.modelVersion` menandai versi model. Node meneruskan
 Jika reasoning API mati/timeout, diagnosis tetap `200` dengan
 `reasoning.status = "DEGRADED"`, `category = null`, dan warning
 `REASONING_UNAVAILABLE`.
+
+Node membaca kategori dari **triple inferred di Fuseki** dan menandainya
+`reasoning.categorySource = "FUSEKI"`; jika query Fuseki gagal, Node memakai
+kategori dari Java (`"JAVA"`). Detail derivasi skor dan bobot per bagian:
+`../08_documentation/cf-derivation.md`.
 
 Detail metode, rumus, dan validasi M5: `../08_documentation/reasoning.md`.
 Skenario demo: `../08_documentation/demo-m5.md`.

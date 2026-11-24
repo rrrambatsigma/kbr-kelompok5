@@ -66,6 +66,17 @@ export const PHASE_ORDER = [
   "FasePanen",
 ] as const;
 
+/** Prioritas saat satu penyakit punya lebih dari satu kategori inferred. */
+export const DISEASE_CATEGORY_PRIORITY = [
+  "PenyakitJamur",
+  "PenyakitBakteri",
+  "PenyakitVirus",
+  "PenyakitOomycete",
+  "PenyakitFitoplasma",
+  "PenyakitNematoda",
+  "PenyakitLainnya",
+] as const;
+
 export function ptpIri(localName: string): string {
   return `${PTP_NAMESPACE}${localName}`;
 }

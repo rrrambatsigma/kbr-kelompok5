@@ -20,7 +20,7 @@ Ontology yang dipakai adalah **ontology gabungan** dari branch
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
-| Smoke test | plants=7, diseases=53, Padi symptom concepts=12 | OK |
+| Smoke test | plants=7, diseases=53, Padi symptom concepts=12, Padi varieties=4 | OK |
 
 Pemeriksaan yang lolos:
 

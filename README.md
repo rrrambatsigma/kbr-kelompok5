@@ -135,9 +135,10 @@ Detail konfigurasi, kontrak, dan troubleshooting ada di `06_backend/README.md`.
 
 ## Status backend (M5–M7)
 
-- **M5 — Reasoning diagnosis:** engine exact/kanonik + certainty factor,
-  `confidence`/`evidence`/`explanation`, input fase pertumbuhan opsional,
-  harness validasi. Lihat `08_documentation/reasoning.md`.
+- **M5 - Reasoning diagnosis:** engine exact/kanonik + certainty factor,
+  `confidence`/`evidence`/`explanation`, input varietas + fase pertumbuhan
+  opsional, harness validasi. Lihat `08_documentation/reasoning.md` dan
+  `08_documentation/cf-derivation.md`.
 - **M6 — Integrasi Node ↔ Java:** kontrak, client HTTP + retry/timeout, health
   checksum/fingerprint, request id, dan integration test.
   Lihat `08_documentation/node-java-contract.md` dan

@@ -1,4 +1,8 @@
-import type { DiseaseDetail, DiseaseSummary } from "../../types/api";
+import type {
+  DiseaseDetail,
+  DiseaseReasoningFacts,
+  DiseaseSummary,
+} from "../../types/api";
 import { apiRequest } from "./client";
 
 interface ListResponse {
@@ -20,5 +24,13 @@ export async function listDiseases(
 export async function getDisease(id: string): Promise<DiseaseDetail> {
   return apiRequest<DiseaseDetail>(
     `/api/diseases/${encodeURIComponent(id)}`
+  );
+}
+
+export async function getDiseaseReasoning(
+  id: string
+): Promise<DiseaseReasoningFacts> {
+  return apiRequest<DiseaseReasoningFacts>(
+    `/api/diseases/${encodeURIComponent(id)}/reasoning`
   );
 }

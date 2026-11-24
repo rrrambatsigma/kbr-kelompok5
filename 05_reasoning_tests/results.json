@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T02:32:57.436Z",
+  "generatedAt": "2026-11-24T04:27:02.075Z",
   "baseUrl": "http://127.0.0.1:3000",
   "topN": 10,
   "reasoning": {
@@ -3494,8 +3494,8 @@
   },
   "performance": {
     "samples": 20,
-    "p50Ms": 43.4817,
-    "p95Ms": 66.4516
+    "p50Ms": 48.4767,
+    "p95Ms": 82.7558
   },
   "thresholds": [
     {

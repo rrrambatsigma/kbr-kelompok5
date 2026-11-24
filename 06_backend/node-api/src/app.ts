@@ -10,6 +10,7 @@ import plantsRouter from "./routes/plants.routes.js";
 import diseasesRouter from "./routes/diseases.routes.js";
 import symptomsRouter from "./routes/symptoms.routes.js";
 import phasesRouter from "./routes/phases.routes.js";
+import varietiesRouter from "./routes/varieties.routes.js";
 import diagnosisRouter from "./routes/diagnosis.routes.js";
 
 const app = express();
@@ -42,6 +43,7 @@ app.get("/", (_req, res) => {
         "GET /api/diseases/:id",
         "GET /api/symptoms",
         "GET /api/phases",
+        "GET /api/varieties",
         "POST /api/diagnosis",
       ],
     })
@@ -53,6 +55,7 @@ app.use("/api/plants", plantsRouter);
 app.use("/api/diseases", diseasesRouter);
 app.use("/api/symptoms", symptomsRouter);
 app.use("/api/phases", phasesRouter);
+app.use("/api/varieties", varietiesRouter);
 app.use("/api/diagnosis", diagnosisRouter);
 
 app.use(notFoundHandler);

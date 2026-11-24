@@ -11,10 +11,13 @@ import {
 import {
   getControlsForDiseases,
   getDiagnosisDataset,
+  getFusekiDiseaseCategories,
+  listVarieties,
   type DiagnosisDataset,
   type DiagnosisDisease,
   type DiagnosisSymptom,
   type NamedEntity,
+  type VarietySummary,
 } from "./knowledge.service.js";
 import {
   getDiseaseCategories,
@@ -24,6 +27,7 @@ import {
 
 export interface DiagnosisInput {
   plantId: string;
+  varietyId: string | null;
   phaseId: string | null;
   symptomIds: string[];
   topN: number;
@@ -48,6 +52,7 @@ export interface DiagnosisCandidate {
   matchedSymptoms: DiagnosisSymptomView[];
   unmatchedSelectedSymptoms: DiagnosisSymptomView[];
   category: string | null;
+  varietyMatch: "resistant" | "susceptible" | "unknown";
   controls: NamedEntity[];
   riskFactors: NamedEntity[];
   confidence: Confidence;
@@ -63,6 +68,7 @@ export interface DiagnosisReasoningInfo {
   ontologyVersion: string | null;
   checksum: string | null;
   categoryCounts: Record<string, number> | null;
+  categorySource: "FUSEKI" | "JAVA" | null;
 }
 
 export interface DiagnosisResult {
@@ -70,6 +76,9 @@ export interface DiagnosisResult {
     plantId: string;
     plantIri: string;
     plantLabel: string | null;
+    varietyId: string | null;
+    varietyIri: string | null;
+    varietyLabel: string | null;
     phaseId: string | null;
     phaseIri: string | null;
     phaseLabel: string | null;
@@ -109,6 +118,19 @@ export function parseDiagnosisInput(body: unknown): DiagnosisInput {
       });
     } else {
       phaseId = rawPhaseId.trim();
+    }
+  }
+
+  const rawVarietyId = body["varietyId"];
+  let varietyId: string | null = null;
+  if (rawVarietyId !== undefined && rawVarietyId !== null) {
+    if (typeof rawVarietyId !== "string" || rawVarietyId.trim() === "") {
+      details.push({
+        field: "varietyId",
+        message: "varietyId harus string tidak kosong",
+      });
+    } else {
+      varietyId = rawVarietyId.trim();
     }
   }
 
@@ -158,6 +180,7 @@ export function parseDiagnosisInput(body: unknown): DiagnosisInput {
 
   return {
     plantId: (plantId as string).trim(),
+    varietyId,
     phaseId,
     symptomIds: (symptomIds as string[]).map((value) => value.trim()),
     topN,
@@ -222,6 +245,22 @@ function findPhase(
   return phase ?? null;
 }
 
+function varietyMatch(
+  variety: VarietySummary | null,
+  diseaseIri: string
+): "resistant" | "susceptible" | "unknown" {
+  if (variety === null) {
+    return "unknown";
+  }
+  if (variety.resistantTo.some((disease) => disease.iri === diseaseIri)) {
+    return "resistant";
+  }
+  if (variety.susceptibleTo.some((disease) => disease.iri === diseaseIri)) {
+    return "susceptible";
+  }
+  return "unknown";
+}
+
 function explainWithPhase(
   base: string,
   phaseMatch: PhaseMatch,
@@ -250,6 +289,31 @@ export async function diagnose(
   const plant = dataset.plant;
   const plantIri = plant.iri;
   const plantLabel = plant.label;
+
+  const varieties =
+    input.varietyId === null ? [] : await listVarieties(input.plantId);
+  const selectedVariety =
+    input.varietyId === null
+      ? null
+      : varieties.find(
+          (item) => item.id === input.varietyId || item.iri === input.varietyId
+        ) ?? null;
+
+  if (input.varietyId !== null && selectedVariety === null) {
+    throw new InvalidRequestError(
+      "Varietas tidak dikenali untuk tanaman ini",
+      [
+        {
+          field: "varietyId",
+          message: `Varietas tidak ditemukan pada tanaman ${input.plantId}: ${input.varietyId}`,
+        },
+      ]
+    );
+  }
+
+  const varietyId = selectedVariety?.id ?? null;
+  const varietyIri = selectedVariety?.iri ?? null;
+  const varietyLabel = selectedVariety?.label ?? null;
 
   const selectedPhase =
     input.phaseId === null ? null : findPhase(dataset, input.phaseId);
@@ -291,6 +355,9 @@ export async function diagnose(
         plantId: input.plantId,
         plantIri,
         plantLabel,
+        varietyId,
+        varietyIri,
+        varietyLabel,
         phaseId,
         phaseIri,
         phaseLabel,
@@ -305,6 +372,7 @@ export async function diagnose(
         ontologyVersion: null,
         checksum: null,
         categoryCounts: null,
+        categorySource: null,
       },
       warnings,
       message:
@@ -356,23 +424,38 @@ export async function diagnose(
     ontologyVersion: null,
     checksum: null,
     categoryCounts: null,
+    categorySource: null,
   };
   let categories: Record<string, string> = {};
 
   try {
-    const [categoryData, status] = await Promise.all([
-      getDiseaseCategories(topIris, requestId),
+    const [fusekiData, status] = await Promise.all([
+      getFusekiDiseaseCategories(topIris),
       getReasoningStatus(requestId),
     ]);
 
-    categories = categoryData.categories;
-    reasoning = toReasoningInfo(status, categoryData.counts);
-  } catch (error) {
-    warnings.push("REASONING_UNAVAILABLE");
-    console.warn(
-      `[${requestId ?? "-"}] Diagnosis berjalan tanpa reasoning API:`,
-      error instanceof Error ? error.message : String(error)
-    );
+    categories = fusekiData.categories;
+    reasoning = toReasoningInfo(status, fusekiData.counts, "FUSEKI");
+  } catch (fusekiError) {
+    try {
+      const [categoryData, status] = await Promise.all([
+        getDiseaseCategories(topIris, requestId),
+        getReasoningStatus(requestId),
+      ]);
+
+      categories = categoryData.categories;
+      reasoning = toReasoningInfo(status, categoryData.counts, "JAVA");
+    } catch (error) {
+      warnings.push("REASONING_UNAVAILABLE");
+      console.warn(
+        `[${requestId ?? "-"}] Diagnosis berjalan tanpa reasoning API:`,
+        error instanceof Error ? error.message : String(error)
+      );
+      console.warn(
+        `[${requestId ?? "-"}] Kategori Fuseki gagal:`,
+        fusekiError instanceof Error ? fusekiError.message : String(fusekiError)
+      );
+    }
   }
 
   const controlsByDisease = await getControlsForDiseases(topIris);
@@ -400,6 +483,7 @@ export async function diagnose(
         toSymptomView
       ),
       category,
+      varietyMatch: varietyMatch(selectedVariety, candidate.disease.iri),
       controls: controlsByDisease[candidate.disease.iri] ?? [],
       riskFactors: candidate.disease.riskFactors.map((factor) => ({
         id: factor.id,
@@ -433,6 +517,9 @@ export async function diagnose(
       plantId: input.plantId,
       plantIri,
       plantLabel,
+      varietyId,
+      varietyIri,
+      varietyLabel,
       phaseId,
       phaseIri,
       phaseLabel,
@@ -449,7 +536,8 @@ export async function diagnose(
 
 function toReasoningInfo(
   status: ReasoningStatus,
-  counts: Record<string, number>
+  counts: Record<string, number>,
+  categorySource: "FUSEKI" | "JAVA"
 ): DiagnosisReasoningInfo {
   return {
     status: status.ready ? "UP" : "DEGRADED",
@@ -457,6 +545,7 @@ function toReasoningInfo(
     ontologyVersion: status.version ?? null,
     checksum: status.checksum ?? null,
     categoryCounts: counts,
+    categorySource,
   };
 }
 

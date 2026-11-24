@@ -2,6 +2,7 @@ import { Router } from "express";
 import { ok } from "../lib/response.js";
 import {
   getDisease,
+  getDiseaseReasoning,
   listDiseases,
 } from "../services/knowledge.service.js";
 
@@ -15,6 +16,11 @@ router.get("/", async (req, res) => {
 
   const diseases = await listDiseases(filter);
   res.json(ok(res, { count: diseases.length, items: diseases }));
+});
+
+router.get("/:id/reasoning", async (req, res) => {
+  const facts = await getDiseaseReasoning(req.params["id"] ?? "");
+  res.json(ok(res, facts));
 });
 
 router.get("/:id", async (req, res) => {

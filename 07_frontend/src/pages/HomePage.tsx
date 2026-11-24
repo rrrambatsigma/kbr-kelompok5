@@ -25,7 +25,7 @@ const workflow = [
     step: "Langkah 01",
     title: "Informasi Tanaman",
     description:
-      "Pilih komoditas yang akan diperiksa. Sistem memuat gejala yang relevan dari knowledge base.",
+      "Pilih komoditas, varietas, dan fase tumbuh. Pilihan varietas dan fase mengikuti tanaman yang dipilih.",
   },
   {
     icon: SearchCheck,
@@ -129,9 +129,9 @@ export function HomePage() {
               Kenali Penyakit Tanaman, Temukan Langkah Pengendalian yang Tepat.
             </h1>
             <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
-              Bantu identifikasi kemungkinan penyakit tanaman pangan tropis
-              berdasarkan gejala yang terlihat, melalui sistem berbasis
-              pengetahuan yang dapat dijelaskan.
+              Sistem pakar untuk 7 komoditas pangan tropis, 53 penyakit, dan 229
+              observasi gejala. Pilih tanaman, varietas, dan gejala yang terlihat
+              untuk melihat kandidat penyakit beserta bukti dan pengendaliannya.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link to="/diagnosis" className="btn-primary">
@@ -145,7 +145,7 @@ export function HomePage() {
             </div>
             <p className="flex items-center gap-2 text-xs text-muted">
               <ShieldCheck className="h-4 w-4 text-secondary" aria-hidden="true" />
-              Informasi berbasis knowledge base • Membantu keputusan awal, bukan
+              Informasi berbasis knowledge base — membantu keputusan awal, bukan
               pengganti pemeriksaan ahli.
             </p>
           </div>
@@ -218,7 +218,7 @@ export function HomePage() {
               </div>
             </div>
             {error && (
-              <p className="mt-2 rounded-xl border border-warning/20 bg-[#fffaf5] px-3 py-2 text-xs text-warning">
+              <p className="mt-2 rounded-xl border border-warning/20 bg-warning/5 px-3 py-2 text-xs text-warning">
                 {error}
               </p>
             )}
@@ -226,7 +226,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section-space border-b border-border bg-surface-low">
+      <section className="section-space border-b border-border">
         <div className="container-page space-y-10">
           <SectionHeading
             eyebrow="Alur Kerja Sistem"
@@ -287,7 +287,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section-space bg-surface-low">
+      <section className="section-space">
         <div className="container-page">
           <div className="card grid gap-8 p-6 sm:p-10 lg:grid-cols-12">
             <div className="space-y-4 lg:col-span-5">
@@ -323,9 +323,11 @@ export function HomePage() {
                           <h3 className="mt-3 font-heading text-xl font-bold text-primary">
                             {plant.label}
                           </h3>
-                          <p className="mt-1 text-xs italic text-muted">
-                            {plant.scientificName ?? "Nama ilmiah belum tersedia"}
-                          </p>
+                          {plant.scientificName !== null && (
+                            <p className="mt-1 text-xs italic text-muted">
+                              {plant.scientificName}
+                            </p>
+                          )}
                         </div>
                         <Leaf className="h-5 w-5 text-secondary" aria-hidden="true" />
                       </div>

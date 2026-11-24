@@ -26,10 +26,11 @@ export function DiseaseCard({ disease }: { disease: DiseaseSummary }) {
         <h3 className="font-heading text-base font-bold leading-6 text-foreground group-hover:text-primary">
           {disease.label}
         </h3>
-        <p className="mt-2 text-xs leading-5 text-muted">
-          Entri penyakit pada knowledge base TaniCare. Buka detail untuk melihat
-          patogen, gejala, bagian terdampak, fase, dan pengendalian.
-        </p>
+        {disease.description !== null && disease.description !== "" && (
+          <p className="mt-2 line-clamp-3 text-xs leading-5 text-muted">
+            {disease.description}
+          </p>
+        )}
       </div>
       <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-secondary group-hover:text-primary">
         Detail patologi

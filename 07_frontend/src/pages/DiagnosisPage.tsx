@@ -23,12 +23,14 @@ import { useDiagnosis } from "../context/DiagnosisContext";
 import { listPlants } from "../services/api/plants";
 import { listPhases } from "../services/api/phases";
 import { listSymptoms } from "../services/api/symptoms";
+import { listVarieties } from "../services/api/varieties";
 import { submitDiagnosis } from "../services/api/diagnosis";
-import type { Phase, Plant, Symptom } from "../types/api";
+import type { Phase, Plant, Symptom, Variety } from "../types/api";
 import { friendlyApiError } from "../utils/apiError";
 
 const steps = [
   { label: "Cari Tanaman", shortLabel: "Tanaman" },
+  { label: "Pilih Varietas", shortLabel: "Varietas" },
   { label: "Fase Tumbuh", shortLabel: "Fase" },
   { label: "Pilih Gejala", shortLabel: "Gejala" },
   { label: "Konfirmasi", shortLabel: "Konfirmasi" },
@@ -52,6 +54,7 @@ export function DiagnosisPage() {
   const {
     draft,
     setPlant,
+    setVariety,
     setPhase,
     setSymptoms: setDraftSymptoms,
     setTopN,
@@ -61,12 +64,15 @@ export function DiagnosisPage() {
 
   const [step, setStep] = useState(1);
   const [plants, setPlants] = useState<Plant[]>([]);
+  const [varieties, setVarieties] = useState<Variety[]>([]);
   const [phases, setPhases] = useState<Phase[]>([]);
   const [symptoms, setSymptoms] = useState<Symptom[]>([]);
   const [loadingPlants, setLoadingPlants] = useState(true);
+  const [loadingVarieties, setLoadingVarieties] = useState(false);
   const [loadingPhases, setLoadingPhases] = useState(false);
   const [loadingSymptoms, setLoadingSymptoms] = useState(false);
   const [plantsError, setPlantsError] = useState<string | null>(null);
+  const [varietiesError, setVarietiesError] = useState<string | null>(null);
   const [phasesError, setPhasesError] = useState<string | null>(null);
   const [symptomsError, setSymptomsError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
@@ -90,6 +96,26 @@ export function DiagnosisPage() {
   }, [loadPlants]);
 
   const plantId = draft.plant?.id ?? null;
+
+  const loadVarieties = useCallback(async (selectedPlantId: string) => {
+    setLoadingVarieties(true);
+    setVarietiesError(null);
+    try {
+      setVarieties(await listVarieties(selectedPlantId));
+    } catch (error) {
+      setVarietiesError(friendlyApiError(error));
+    } finally {
+      setLoadingVarieties(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (plantId === null) {
+      setVarieties([]);
+      return;
+    }
+    void loadVarieties(plantId);
+  }, [plantId, loadVarieties]);
 
   const loadPhases = useCallback(async (selectedPlantId: string) => {
     setLoadingPhases(true);
@@ -164,7 +190,7 @@ export function DiagnosisPage() {
 
   const canContinueStep1 = draft.plant !== null;
   const canContinueStep2 = true;
-  const canContinueStep3 = draft.symptoms.length > 0;
+  const canContinueStep4 = draft.symptoms.length > 0;
 
   const handleReset = () => {
     reset();
@@ -184,6 +210,7 @@ export function DiagnosisPage() {
     try {
       const result = await submitDiagnosis({
         plantId: draft.plant.id,
+        ...(draft.variety === null ? {} : { varietyId: draft.variety.id }),
         ...(draft.phase === null ? {} : { phaseId: draft.phase.id }),
         symptomIds: draft.symptoms.map((symptom) => symptom.id),
         topN: draft.topN,
@@ -264,9 +291,11 @@ export function DiagnosisPage() {
                       <span className="block font-heading text-base font-bold text-foreground">
                         {plant.label}
                       </span>
-                      <span className="mt-1 block text-xs italic text-muted">
-                        {plant.scientificName ?? "Nama ilmiah belum tersedia"}
-                      </span>
+                      {plant.scientificName !== null && (
+                        <span className="mt-1 block text-xs italic text-muted">
+                          {plant.scientificName}
+                        </span>
+                      )}
                       <span className="mt-2 block text-[11px] text-muted">
                         {plant.diseaseCount} penyakit tercatat
                       </span>
@@ -294,6 +323,128 @@ export function DiagnosisPage() {
       )}
 
       {step === 2 && (
+        <section className="space-y-5">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="font-heading text-lg font-bold text-foreground">
+                Varietas {draft.plant?.label ?? "tanaman"}
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                Varietas bersifat opsional. Pilih varietas yang ditanam agar
+                catatan ketahanannya bisa ditampilkan.
+              </p>
+            </div>
+            <Badge tone={draft.variety === null ? "neutral" : "success"}>
+              {draft.variety?.label ?? "Belum dipilih"}
+            </Badge>
+          </div>
+
+          {loadingVarieties && <Spinner label="Memuat varietas" />}
+          {varietiesError && (
+            <ErrorState
+              message={varietiesError}
+              onRetry={() => {
+                if (plantId !== null) {
+                  void loadVarieties(plantId);
+                }
+              }}
+            />
+          )}
+
+          {!loadingVarieties && !varietiesError && (
+            <>
+              {varieties.length === 0 ? (
+                <div className="card flex flex-col items-center gap-2 p-10 text-center">
+                  <Leaf className="h-6 w-6 text-muted" aria-hidden="true" />
+                  <p className="font-heading text-sm font-bold text-foreground">
+                    Belum ada data varietas
+                  </p>
+                  <p className="max-w-md text-xs leading-5 text-muted">
+                    Knowledge base belum mencatat varietas untuk tanaman ini.
+                    Anda tetap bisa melanjutkan diagnosis.
+                  </p>
+                </div>
+              ) : (
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {varieties.map((variety) => {
+                    const selected = draft.variety?.id === variety.id;
+                    return (
+                      <button
+                        key={variety.id}
+                        type="button"
+                        onClick={() => setVariety(selected ? null : variety)}
+                        className={`card flex flex-col items-start gap-2 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-secondary/50 ${
+                          selected
+                            ? "border-primary-container ring-2 ring-primary-soft/60"
+                            : ""
+                        }`}
+                        aria-pressed={selected}
+                      >
+                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-low text-primary">
+                          <Leaf className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                        <span className="font-heading text-base font-bold text-foreground">
+                          {variety.label}
+                        </span>
+                        <span className="text-xs text-muted">
+                          {variety.resistantTo.length === 0
+                            ? "Belum ada catatan ketahanan"
+                            : `${variety.resistantTo.length} penyakit tercatat tahan`}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={() => setVariety(null)}
+                className={`card flex w-full items-start gap-3 p-4 text-left transition-all hover:border-secondary/50 ${
+                  draft.variety === null
+                    ? "border-primary-container ring-2 ring-primary-soft/60"
+                    : ""
+                }`}
+                aria-pressed={draft.variety === null}
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-surface-low text-primary">
+                  <Leaf className="h-4 w-4" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block font-heading text-sm font-bold text-foreground">
+                    Lewati tanpa varietas
+                  </span>
+                  <span className="mt-1 block text-xs text-muted">
+                    Diagnosis memakai tanaman, fase, dan gejala.
+                  </span>
+                </span>
+              </button>
+            </>
+          )}
+
+          <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
+            <Button variant="ghost" onClick={() => setStep(1)}>
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              Kembali
+            </Button>
+            <div className="flex gap-2">
+              <Button variant="secondary" onClick={handleReset}>
+                <RotateCcw className="h-4 w-4" aria-hidden="true" />
+                Reset
+              </Button>
+              <Button
+                onClick={() => setStep(3)}
+                disabled={!canContinueStep2}
+              >
+                Lanjutkan
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {step === 3 && (
         <section className="space-y-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -396,7 +547,7 @@ export function DiagnosisPage() {
           )}
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
-            <Button variant="ghost" onClick={() => setStep(1)}>
+            <Button variant="ghost" onClick={() => setStep(2)}>
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               Kembali
             </Button>
@@ -406,7 +557,7 @@ export function DiagnosisPage() {
                 Reset
               </Button>
               <Button
-                onClick={() => setStep(3)}
+                onClick={() => setStep(4)}
                 disabled={!canContinueStep2}
               >
                 Lanjutkan
@@ -417,7 +568,7 @@ export function DiagnosisPage() {
         </section>
       )}
 
-      {step === 3 && (
+      {step === 4 && (
         <section className="space-y-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -516,7 +667,7 @@ export function DiagnosisPage() {
           )}
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
-            <Button variant="ghost" onClick={() => setStep(2)}>
+            <Button variant="ghost" onClick={() => setStep(3)}>
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               Kembali
             </Button>
@@ -526,8 +677,8 @@ export function DiagnosisPage() {
                 Reset
               </Button>
               <Button
-                onClick={() => setStep(4)}
-                disabled={!canContinueStep3}
+                onClick={() => setStep(5)}
+                disabled={!canContinueStep4}
               >
                 Lanjutkan
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -537,7 +688,7 @@ export function DiagnosisPage() {
         </section>
       )}
 
-      {step === 4 && (
+      {step === 5 && (
         <section className="grid gap-5 lg:grid-cols-12">
           <div className="card space-y-5 p-6 lg:col-span-7">
             <div>
@@ -550,7 +701,7 @@ export function DiagnosisPage() {
               </p>
             </div>
 
-            <dl className="grid gap-4 sm:grid-cols-3">
+            <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl bg-surface-low p-4">
                 <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">
                   Tanaman
@@ -560,6 +711,19 @@ export function DiagnosisPage() {
                 </dd>
                 <dd className="text-xs italic text-muted">
                   {draft.plant?.scientificName ?? ""}
+                </dd>
+              </div>
+              <div className="rounded-xl bg-surface-low p-4">
+                <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">
+                  Varietas
+                </dt>
+                <dd className="mt-1 font-heading text-base font-bold text-primary">
+                  {draft.variety?.label ?? "Tidak diisi"}
+                </dd>
+                <dd className="text-xs text-muted">
+                  {draft.variety === null
+                    ? "Diagnosis tanpa varietas."
+                    : `${draft.variety.resistantTo.length} catatan ketahanan`}
                 </dd>
               </div>
               <div className="rounded-xl bg-surface-low p-4">
@@ -621,7 +785,7 @@ export function DiagnosisPage() {
             )}
 
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
-              <Button variant="ghost" onClick={() => setStep(3)}>
+              <Button variant="ghost" onClick={() => setStep(4)}>
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Ubah gejala
               </Button>

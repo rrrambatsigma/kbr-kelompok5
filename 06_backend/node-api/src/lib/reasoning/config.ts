@@ -44,3 +44,29 @@ export const REASONING_CONFIG = {
    */
   phaseMatchFactor: 1.05,
 } as const;
+
+/**
+ * Bobot per bagian tanaman. Nilai 1.0 = netral; isi dengan hasil validasi
+ * expert (mis. mahasiswa proteksi tanaman) sebelum mengubah ranking.
+ * Kunci memakai local name `BagianTanaman` di ontology.
+ */
+export const PART_WEIGHTS: Record<string, number> = {
+  Daun: 1,
+  Batang: 1,
+  Akar: 1,
+  Umbi: 1,
+  Buah: 1,
+  Biji: 1,
+  Malai: 1,
+  Polong: 1,
+  Pucuk: 1,
+  Bunga: 1,
+};
+
+export function partWeight(part: string | null | undefined): number {
+  if (part === null || part === undefined) {
+    return 1;
+  }
+  const weight = PART_WEIGHTS[part];
+  return weight === undefined ? 1 : Math.max(0, Math.min(1, weight));
+}

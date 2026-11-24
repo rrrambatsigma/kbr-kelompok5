@@ -110,6 +110,19 @@ function CandidateCard({
                 {phaseMatchLabel(candidate.phaseMatch)}
               </p>
             )}
+            {candidate.varietyMatch !== "unknown" && (
+              <p
+                className={`mt-1 text-[11px] font-semibold ${
+                  candidate.varietyMatch === "resistant"
+                    ? "text-secondary"
+                    : "text-warning"
+                }`}
+              >
+                {candidate.varietyMatch === "resistant"
+                  ? "Varietas tercatat tahan"
+                  : "Varietas tercatat rentan"}
+              </p>
+            )}
           </div>
         </div>
         <Badge tone={confidenceTone(candidate.confidence)}>
@@ -117,7 +130,7 @@ function CandidateCard({
         </Badge>
       </div>
       <div className="flex items-center gap-3">
-        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#dbe5dc]">
+        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-border">
           <div
             className="h-full rounded-full bg-secondary"
             style={{ width: `${scorePercent(candidate.score)}%` }}
@@ -259,7 +272,7 @@ export function DiagnosisResultPage() {
       />
 
       {degraded && (
-        <div className="flex items-start gap-3 rounded-xl border border-warning/25 bg-[#fffaf5] p-4 text-sm text-[#9a3412]">
+        <div className="flex items-start gap-3 rounded-xl border border-warning/25 bg-warning/5 p-4 text-sm text-warning">
           <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
           <p>
             Layanan penalaran sedang terbatas. Kandidat tetap ditampilkan, tetapi
@@ -277,6 +290,12 @@ export function DiagnosisResultPage() {
             <Leaf className="h-3 w-3" aria-hidden="true" />
             {draft.plant?.label ?? result.input.plantLabel ?? result.input.plantId}
           </Badge>
+          {result.input.varietyLabel !== null && (
+            <Badge tone="neutral">
+              <Leaf className="h-3 w-3" aria-hidden="true" />
+              Varietas: {result.input.varietyLabel}
+            </Badge>
+          )}
           {result.input.phaseLabel !== null && (
             <Badge tone="neutral">
               <Leaf className="h-3 w-3" aria-hidden="true" />
@@ -308,8 +327,9 @@ export function DiagnosisResultPage() {
           </Badge>
         </div>
         <p className="mt-2 text-sm text-muted">
-          Kategori penyakit dihitung oleh reasoner OWL (Openllet) dari ontology
-          yang dimuat backend.
+          {result.reasoning.categorySource === "FUSEKI"
+            ? "Kategori penyakit dibaca dari triple inferred di Fuseki."
+            : "Kategori penyakit dihitung oleh reasoner OWL (Openllet) di backend."}
           {result.reasoning.ontologyVersion !== null
             ? ` Versi ontology ${result.reasoning.ontologyVersion}.`
             : ""}
@@ -349,16 +369,12 @@ export function DiagnosisResultPage() {
               {topCandidate.label}
             </h2>
             {pathogen ? (
-              <p className="mt-1 text-sm italic text-[#c4e19c]">
+              <p className="mt-1 text-sm italic text-primary-soft">
                 {pathogen.scientificName ?? pathogen.label}
               </p>
             ) : detailLoading ? (
               <p className="mt-1 text-xs text-white/70">Memuat patogen…</p>
-            ) : (
-              <p className="mt-1 text-xs text-white/70">
-                Nama ilmiah patogen belum tersedia.
-              </p>
-            )}
+            ) : null}
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
                 {categoryLabel(topCandidate.category)}
@@ -369,6 +385,13 @@ export function DiagnosisResultPage() {
               {result.input.phaseLabel !== null && (
                 <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
                   {phaseMatchLabel(topCandidate.phaseMatch)}
+                </span>
+              )}
+              {topCandidate.varietyMatch !== "unknown" && (
+                <span className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold">
+                  {topCandidate.varietyMatch === "resistant"
+                    ? "Varietas tahan"
+                    : "Varietas rentan"}
                 </span>
               )}
             </div>
@@ -488,7 +511,7 @@ export function DiagnosisResultPage() {
                 {riskFactors.map((factor) => (
                   <li
                     key={factor.id}
-                    className="flex items-start gap-2.5 rounded-xl border border-warning/15 bg-[#fffaf5] p-3"
+                    className="flex items-start gap-2.5 rounded-xl border border-warning/15 bg-warning/5 p-3"
                   >
                     <span
                       className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-warning"

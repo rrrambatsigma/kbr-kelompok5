@@ -8,6 +8,9 @@ export async function submitDiagnosis(
     method: "POST",
     body: JSON.stringify({
       plantId: request.plantId,
+      ...(request.varietyId === undefined
+        ? {}
+        : { varietyId: request.varietyId }),
       ...(request.phaseId === undefined
         ? {}
         : { phaseId: request.phaseId }),

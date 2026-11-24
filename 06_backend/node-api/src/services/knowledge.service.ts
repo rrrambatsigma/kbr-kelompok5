@@ -1,5 +1,5 @@
 import { ptpNamespace } from "../config/fuseki.js";
-import { PHASE_ORDER } from "../config/ontology.js";
+import { PHASE_ORDER, DISEASE_CATEGORY_PRIORITY } from "../config/ontology.js";
 import { InvalidRequestError, NotFoundError } from "../lib/errors.js";
 import {
   ask,
@@ -50,6 +50,7 @@ export interface DiseaseSummary extends NamedEntity {
   plantId: string | null;
   plantLabel: string | null;
   symptomCount: number;
+  description: string | null;
 }
 
 export interface SymptomSummary extends NamedEntity {
@@ -63,6 +64,13 @@ export interface SymptomSummary extends NamedEntity {
 
 export interface PhaseSummary extends NamedEntity {
   diseaseCount: number;
+}
+
+export interface VarietySummary extends NamedEntity {
+  plantId: string;
+  plantLabel: string | null;
+  resistantTo: NamedEntity[];
+  susceptibleTo: NamedEntity[];
 }
 
 export interface ControlSummary extends NamedEntity {
@@ -92,6 +100,7 @@ export interface DiagnosisSymptom {
   id: string;
   iri: string;
   label: string;
+  part?: string | null;
   canonical: CanonicalSymptom | null;
 }
 
@@ -227,6 +236,91 @@ export async function listPhases(plantId?: string): Promise<PhaseSummary[]> {
   });
 }
 
+export async function listVarieties(
+  plantId?: string
+): Promise<VarietySummary[]> {
+  const plantIri = plantId === undefined ? null : toIri(plantId);
+
+  if (plantId !== undefined && !(await plantExists(plantId))) {
+    throw new NotFoundError(`Tanaman tidak ditemukan: ${plantId}`);
+  }
+
+  const plantFilter =
+    plantIri === null ? "" : `FILTER(?plant = <${plantIri}>)`;
+
+  const varietyRows = await rows(`
+    ${PREFIXES}
+    SELECT ?variety ?label ?plant ?plantLabel
+    WHERE {
+      ?plant a ptp:TanamanPangan ;
+             ptp:memilikiVarietas ?variety .
+      OPTIONAL { ?variety rdfs:label ?label }
+      OPTIONAL { ?plant rdfs:label ?plantLabel }
+      ${plantFilter}
+    }
+    ORDER BY ?label
+  `);
+
+  const resistanceRows = await rows(`
+    ${PREFIXES}
+    SELECT ?variety ?disease ?diseaseLabel ?relation
+    WHERE {
+      ?variety ?relation ?disease .
+      FILTER(?relation IN (ptp:tahanTerhadap, ptp:rentanTerhadap))
+      OPTIONAL { ?disease rdfs:label ?diseaseLabel }
+    }
+    ORDER BY ?diseaseLabel
+  `);
+
+  const resistant = new Map<string, NamedEntity[]>();
+  const susceptible = new Map<string, NamedEntity[]>();
+
+  for (const row of resistanceRows) {
+    const varietyIri = termValue(row, "variety");
+    const diseaseIri = termValue(row, "disease");
+    const relation = termValue(row, "relation");
+
+    if (varietyIri === undefined || diseaseIri === undefined || relation === undefined) {
+      continue;
+    }
+
+    const target = relation === `${ptpNamespace}tahanTerhadap`
+      ? resistant
+      : susceptible;
+    const list = target.get(varietyIri) ?? [];
+    list.push({
+      id: localName(diseaseIri),
+      iri: diseaseIri,
+      label: termValue(row, "diseaseLabel") ?? localName(diseaseIri),
+    });
+    target.set(varietyIri, list);
+  }
+
+  const seen = new Set<string>();
+
+  return varietyRows
+    .map((binding) => {
+      const iri = requireTerm(binding, "variety", "varietas");
+      const plantValue = requireTerm(binding, "plant", "tanaman");
+      return {
+        id: localName(iri),
+        iri,
+        label: labelOrFallback(binding, iri),
+        plantId: localName(plantValue),
+        plantLabel: termValue(binding, "plantLabel") ?? null,
+        resistantTo: resistant.get(iri) ?? [],
+        susceptibleTo: susceptible.get(iri) ?? [],
+      };
+    })
+    .filter((item) => {
+      if (seen.has(item.iri)) {
+        return false;
+      }
+      seen.add(item.iri);
+      return true;
+    });
+}
+
 export interface PlantDetail extends PlantSummary {
   diseases: DiseaseSummary[];
 }
@@ -244,6 +338,128 @@ export async function getPlant(id: string): Promise<PlantDetail> {
   return { ...plant, diseases };
 }
 
+export interface FusekiCategoryData {
+  categories: Record<string, string>;
+  counts: Record<string, number>;
+}
+
+export interface DiseaseReasoningFacts {
+  diseaseId: string;
+  categories: NamedEntity[];
+  parts: NamedEntity[];
+  source: "fuseki";
+}
+
+function categoryFilter(): string {
+  return DISEASE_CATEGORY_PRIORITY.map((item) => `ptp:${item}`).join(", ");
+}
+
+export async function getFusekiDiseaseCategories(
+  diseaseIris: string[]
+): Promise<FusekiCategoryData> {
+  const counts: Record<string, number> = {};
+  const countRows = await rows(`
+    ${PREFIXES}
+    SELECT ?category (COUNT(DISTINCT ?disease) AS ?count)
+    WHERE {
+      ?disease a ?category .
+      FILTER(?category IN (${categoryFilter()}))
+    }
+    GROUP BY ?category
+  `);
+
+  for (const row of countRows) {
+    const categoryIri = requireTerm(row, "category", "kategori");
+    counts[localName(categoryIri)] = requireIntegerTerm(row, "count");
+  }
+
+  const categories: Record<string, string> = {};
+
+  if (diseaseIris.length > 0) {
+    const values = diseaseIris.map((iri) => `<${iri}>`).join(" ");
+    const categoryRows = await rows(`
+      ${PREFIXES}
+      SELECT ?disease ?category
+      WHERE {
+        VALUES ?disease { ${values} }
+        ?disease a ?category .
+        FILTER(?category IN (${categoryFilter()}))
+      }
+    `);
+
+    const byDisease = new Map<string, string[]>();
+    for (const row of categoryRows) {
+      const diseaseIri = requireTerm(row, "disease", "penyakit");
+      const category = localName(requireTerm(row, "category", "kategori"));
+      const list = byDisease.get(diseaseIri) ?? [];
+      list.push(category);
+      byDisease.set(diseaseIri, list);
+    }
+
+    for (const [diseaseIri, list] of byDisease) {
+      const selected = DISEASE_CATEGORY_PRIORITY.find((item) =>
+        list.includes(item)
+      );
+      if (selected !== undefined) {
+        categories[diseaseIri] = selected;
+      }
+    }
+  }
+
+  return { categories, counts };
+}
+
+export async function getDiseaseReasoning(
+  id: string
+): Promise<DiseaseReasoningFacts> {
+  const iri = toIri(id);
+
+  const [categoryRows, partRows] = await Promise.all([
+    rows(`
+      ${PREFIXES}
+      SELECT DISTINCT ?category ?label
+      WHERE {
+        VALUES ?disease { <${iri}> }
+        ?disease a ?category .
+        FILTER(?category IN (${categoryFilter()}))
+        OPTIONAL { ?category rdfs:label ?label }
+      }
+      ORDER BY ?category
+    `),
+    rows(`
+      ${PREFIXES}
+      SELECT DISTINCT ?part ?label
+      WHERE {
+        VALUES ?disease { <${iri}> }
+        ?disease ptp:menyerangBagian ?part .
+        OPTIONAL { ?part rdfs:label ?label }
+      }
+      ORDER BY ?label
+    `),
+  ]);
+
+  return {
+    diseaseId: localName(iri),
+    source: "fuseki",
+    categories: categoryRows.map((row) => {
+      const categoryIri = requireTerm(row, "category", "kategori");
+      return {
+        id: localName(categoryIri),
+        iri: categoryIri,
+        label: labelOrFallback(row, categoryIri),
+      };
+    }),
+    parts: partRows.map((row) => {
+      const partIri = requireTerm(row, "part", "bagian");
+      return {
+        id: localName(partIri),
+        iri: partIri,
+        label: labelOrFallback(row, partIri),
+      };
+    }),
+  };
+}
+
 export async function listDiseases(plantId?: string): Promise<DiseaseSummary[]> {
   const plantIri = plantId === undefined ? null : toIri(plantId);
 
@@ -256,11 +472,12 @@ export async function listDiseases(plantId?: string): Promise<DiseaseSummary[]> 
 
   const result = await select(`
     ${PREFIXES}
-    SELECT ?disease ?label ?plant ?plantLabel
+    SELECT ?disease ?label ?plant ?plantLabel ?description
            (COUNT(DISTINCT ?symptom) AS ?symptomCount)
     WHERE {
       ?disease a ptp:Penyakit .
       OPTIONAL { ?disease rdfs:label ?label }
+      OPTIONAL { ?disease ptp:deskripsiPenyakit ?description }
       OPTIONAL {
         ?disease ptp:menyerangTanaman ?plant .
         OPTIONAL { ?plant rdfs:label ?plantLabel }
@@ -268,7 +485,7 @@ export async function listDiseases(plantId?: string): Promise<DiseaseSummary[]> 
       OPTIONAL { ?disease ptp:memilikiGejala ?symptom }
       ${plantFilter}
     }
-    GROUP BY ?disease ?label ?plant ?plantLabel
+    GROUP BY ?disease ?label ?plant ?plantLabel ?description
     ORDER BY ?label
   `);
 
@@ -286,6 +503,7 @@ export async function listDiseases(plantId?: string): Promise<DiseaseSummary[]> 
       plantId: plantValue === undefined ? null : localName(plantValue),
       plantLabel: termValue(binding, "plantLabel") ?? null,
       symptomCount: requireIntegerTerm(binding, "symptomCount"),
+      description: termValue(binding, "description") ?? null,
     };
   });
 }
@@ -300,11 +518,12 @@ export async function getDisease(id: string): Promise<DiseaseDetail> {
 
   const infoRows = await rows(`
     ${PREFIXES}
-    SELECT ?disease ?label ?plant ?plantLabel
+    SELECT ?disease ?label ?plant ?plantLabel ?description
     WHERE {
       VALUES ?disease { <${iri}> }
       ?disease a ptp:Penyakit .
       OPTIONAL { ?disease rdfs:label ?label }
+      OPTIONAL { ?disease ptp:deskripsiPenyakit ?description }
       OPTIONAL {
         ?disease ptp:menyerangTanaman ?plant .
         OPTIONAL { ?plant rdfs:label ?plantLabel }
@@ -414,6 +633,7 @@ export async function getDisease(id: string): Promise<DiseaseDetail> {
     label: labelOrFallback(info, iri),
     plantId: plantIri === undefined ? null : localName(plantIri),
     plantLabel: termValue(info, "plantLabel") ?? null,
+    description: termValue(info, "description") ?? null,
     symptomCount: symptomRows.length,
     symptoms: symptomRows.map((binding) => {
       const symptomIri = requireTerm(binding, "symptom", "gejala");
@@ -576,11 +796,12 @@ export async function getDiagnosisDataset(
       `),
       rows(`
         ${PREFIXES}
-        SELECT ?disease ?symptom ?symptomLabel ?canonical ?canonicalLabel
+        SELECT ?disease ?symptom ?symptomLabel ?canonical ?canonicalLabel ?part
         WHERE {
           ?disease ptp:menyerangTanaman <${plantIri}> ;
                    ptp:memilikiGejala ?symptom .
           OPTIONAL { ?symptom rdfs:label ?symptomLabel }
+          OPTIONAL { ?symptom ptp:terdapatPada ?part }
           OPTIONAL {
             ?symptom ptp:memilikiGejalaKanonik ?canonical .
             OPTIONAL { ?canonical rdfs:label ?canonicalLabel }
@@ -666,6 +887,7 @@ export async function getDiagnosisDataset(
       id: localName(symptomIri),
       iri: symptomIri,
       label: termValue(row, "symptomLabel") ?? localName(symptomIri),
+      part: optionalLocalName(termValue(row, "part")),
       canonical:
         canonicalIri === undefined
           ? null
