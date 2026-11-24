@@ -49,14 +49,10 @@ async function getJson(path) {
 }
 
 function pickSymptoms(symptoms, limit) {
-  // Label yang bukan "Pengamatan gejala ..." biasanya merupakan konsep
-  // kanonik yang lebih informatif. Utamakan itu, lalu lengkapi sisanya.
-  const preferred = symptoms.filter(
-    (symptom) => !symptom.label.startsWith("Pengamatan gejala")
-  );
-  const rest = symptoms.filter((symptom) =>
-    symptom.label.startsWith("Pengamatan gejala")
-  );
+  // Observasi yang terhubung ke konsep kanonik lebih informatif karena
+  // labelnya sudah dinormalisasi; lengkapi sisanya dengan observasi lain.
+  const preferred = symptoms.filter((symptom) => symptom.canonicalId);
+  const rest = symptoms.filter((symptom) => !symptom.canonicalId);
   const ordered = [...preferred, ...rest].sort(
     (left, right) =>
       left.label.localeCompare(right.label, "id") ||

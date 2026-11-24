@@ -10,12 +10,12 @@ Ontology yang dipakai adalah **ontology gabungan** dari branch
 > Fuseki baru (`load-ontology.ps1 -Reset`), termasuk `smoke-test.ps1`,
 > `integration-test.ps1`, dan `node run.mjs`.
 
-## Status verifikasi integrasi (22 Nov 2026)
+## Status verifikasi integrasi (24 Nov 2026)
 
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
 | Ontology | `ontology_md.ttl`, 19.021 triple | v3 gabungan |
-| SHA-256 ontology | `65f92b9452f9a63f71ebd24b52ae237cfb303c12230054bf785a441ebbe168a5` | cocok dengan Java |
+| SHA-256 ontology | `f283c11765c4582d9a7eb7bf090783597ce3b6376dc90ce1bc1c864d7eb3e93f` | cocok dengan Java |
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
@@ -244,6 +244,10 @@ Regenerate sanity setelah ontology berubah:
 node generate-sanity.mjs
 ```
 
+Generator memilih observasi yang punya `memilikiGejalaKanonik` lebih dulu,
+lalu melengkapi dengan observasi lain. Label dan jumlah gejala mengikuti
+ontology yang sedang dimuat Node API, jadi jalankan setelah reload Fuseki.
+
 Opsi lain:
 
 ```powershell
@@ -252,7 +256,7 @@ node run.mjs --base-url http://127.0.0.1:3000
 node run.mjs --out hasil-lain
 ```
 
-Hasil 22 Nov 2026 (ontology `65f92b94...`):
+Hasil 24 Nov 2026 (ontology `f283c117...`):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|

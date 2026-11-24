@@ -176,6 +176,16 @@ per tanaman. Kelas yang belum punya tautan penyakit tetap dikembalikan dengan
 `diseaseCount: 0`; ini bukan error. ID fase yang dipakai di request adalah ID
 kelas, bukan ID individu fase.
 
+`GET /api/symptoms` menyertakan `canonicalId` dan `canonicalLabel` (`null` bila
+pengamatan belum dipetakan ke konsep kanonik). Label pengamatan sudah
+dinormalisasi di ontology, sehingga UI bisa memakainya langsung sebagai pilihan
+gejala tanpa duplikasi.
+
+`GET /api/diseases/:id` mengembalikan `controls[].description` dari kutipan
+`BuktiPengendalian` milik penyakit tersebut. Deskripsi global
+`ptp:deskripsiPengendalian` hanya dipakai sebagai fallback, sehingga
+pengendalian tidak menampilkan kalimat dari penyakit atau tanaman lain.
+
 ### Diagnosis
 
 `POST /api/diagnosis`

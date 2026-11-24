@@ -35,6 +35,8 @@ export interface Plant extends NamedEntity {
 export interface Symptom extends NamedEntity {
   partId: string | null;
   partLabel: string | null;
+  canonicalId?: string | null;
+  canonicalLabel?: string | null;
 }
 
 export interface Phase extends NamedEntity {

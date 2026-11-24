@@ -298,6 +298,37 @@ export function DiagnosisResultPage() {
         </div>
       </section>
 
+      <section className="card p-4 sm:p-5">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <span className="text-[11px] font-semibold uppercase tracking-wide text-muted">
+            Hasil inferensi ontology
+          </span>
+          <Badge tone={degraded ? "warning" : "success"}>
+            {degraded ? "Terbatas" : "Aktif"}
+          </Badge>
+        </div>
+        <p className="mt-2 text-sm text-muted">
+          Kategori penyakit dihitung oleh reasoner OWL (Openllet) dari ontology
+          yang dimuat backend.
+          {result.reasoning.ontologyVersion !== null
+            ? ` Versi ontology ${result.reasoning.ontologyVersion}.`
+            : ""}
+        </p>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {Object.entries(result.reasoning.categoryCounts ?? {})
+            .filter(([, count]) => count > 0)
+            .sort((left, right) => right[1] - left[1])
+            .map(([category, count]) => (
+              <span
+                key={category}
+                className="rounded-lg bg-surface-low px-2.5 py-1 text-[11px] text-foreground"
+              >
+                {categoryLabel(category)}: <strong>{count}</strong>
+              </span>
+            ))}
+        </div>
+      </section>
+
       <div className="grid gap-5 lg:grid-cols-12">
         <section className="card space-y-5 p-5 sm:p-6 lg:col-span-5">
           <div className="flex items-center justify-between gap-2">

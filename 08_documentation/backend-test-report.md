@@ -1,6 +1,6 @@
 # Laporan Pengujian dan Evaluasi Backend (M7)
 
-Tanggal: 19 November 2026 (diperbarui 22 November 2026 setelah merge `feat/ontology-baru`)
+Tanggal: 19 November 2026 (diperbarui 24 November 2026 setelah perbaikan label gejala dan konteks pengendalian)
 
 Lingkungan:
 
@@ -9,7 +9,7 @@ Lingkungan:
 - Java runtime 23.0.1; Maven toolchain Java 21.0.13
 - Apache Jena Fuseki 6.2.0
 - Ontology gabungan `ontology_md.ttl`
-- Checksum `65f92b9452f9a63f71ebd24b52ae237cfb303c12230054bf785a441ebbe168a5`
+- Checksum `f283c11765c4582d9a7eb7bf090783597ce3b6376dc90ce1bc1c864d7eb3e93f`
 - Dataset Fuseki `plant-kb`, 19.021 triple
 
 ## Ringkasan
@@ -127,7 +127,7 @@ harness rank = 1; baseline legacyRank = 3
 
 ## 4. Evaluasi reasoning
 
-Sumber: `05_reasoning_tests/results.json`, dijalankan 19 Nov 2026.
+Sumber: `05_reasoning_tests/results.json`, dijalankan 24 Nov 2026.
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|

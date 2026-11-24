@@ -99,6 +99,12 @@ mentah. Label manusiawi memakai `rdfs:label`, `skos:prefLabel`, dan
   `FaseVegetatifUmum`; kelasnya `FaseAnakan`, `FasePemasakan`, `FaseVegetatif`.
 - **Gejala**: pengamatan adalah individu dari subclass `Gejala*`; konsep
   kanonik adalah individu `GejalaKanonik` (25 konsep).
+  Label pengamatan memakai `"{konsep kanonik}"` bila kata-kata nama penyakit
+  sudah tercakup (mis. `Bercak daun`), selain itu
+  `"{konsep} — {nama penyakit}"` (mis.
+  `Tepung pada daun — Penyakit Embun Tepung`). Pengamatan yang belum
+  dipetakan memakai potongan kalimat sumber, bukan label generik
+  `Pengamatan gejala ...`, supaya setiap label unik dan bisa dipilih di UI.
 - **Pengendalian**: aksi kanonik adalah individu dari subclass `Pengendalian*`
   (48 aksi kanonik).
 - **Observasi eksternal**: ID semantik, mis.

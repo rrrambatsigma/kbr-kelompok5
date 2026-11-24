@@ -856,6 +856,50 @@ def is_complete_sentence(text: str) -> bool:
     return True
 
 
+def disease_display_name(entry: dict[str, str]) -> str:
+    """Label penyakit yang layak tampil (bukan nama verbatim huruf kapital)."""
+    label = normalize_quote(entry.get("label") or entry.get("nama"))
+    if label and label.isupper():
+        label = label.title()
+    return label
+
+
+def _label_words(text: str) -> set[str]:
+    return {
+        word
+        for word in re.findall(r"[a-z0-9]+", text.lower())
+        if word not in {"penyakit", "pada", "tanaman"}
+    }
+
+
+def observation_label(canonical_label: str, disease_label: str) -> str:
+    """Label observasi gejala tanpa mengulang kata yang sudah ada.
+
+    Contoh: ``Bercak daun`` (bukan ``Bercak daun pada Penyakit Bercak Daun``)
+    dan ``Tepung pada daun — Penyakit Embun Tepung``.
+    """
+    if not disease_label:
+        return canonical_label
+    canonical_words = _label_words(canonical_label)
+    disease_words = _label_words(disease_label)
+    if disease_words and disease_words <= canonical_words:
+        return canonical_label
+    return f"{canonical_label} — {disease_label}"
+
+
+def symptom_snippet(text: str, limit: int = 90) -> str:
+    """Ringkasan satu klausa teks sumber untuk observasi yang belum dipetakan."""
+    value = normalize_quote(text)
+    value = re.sub(r"^(pada)\s+", "", value, flags=re.IGNORECASE)
+    if not value:
+        return ""
+    value = value[0].upper() + value[1:]
+    if len(value) <= limit:
+        return value
+    cut = value[:limit].rsplit(" ", 1)[0].rstrip(" ,;:")
+    return cut + "…"
+
+
 def decimal_value(text: str) -> Decimal | None:
     try:
         return Decimal(text.replace(",", "."))
@@ -1684,7 +1728,11 @@ def build_gejala(
         entry = group["entry"]
         local = "Pengamatan" + disease_local + canonical
         uri = builder.individual(local, *(_part_classes(group["parts"]) or ["Gejala"]))
-        builder.label(uri, f"{CANONICAL_SYMPTOMS[canonical]['label']} pada {entry['nama']}")
+        disease_label = disease_display_name(entry)
+        builder.label(
+            uri,
+            observation_label(CANONICAL_SYMPTOMS[canonical]["label"], disease_label),
+        )
         builder.comment(uri, "Pengamatan gejala yang dipetakan ke konsep kanonik.")
         builder.link(uri, "memilikiGejalaKanonik", KBR[canonical])
         for part in sorted(group["parts"]):
@@ -1702,7 +1750,7 @@ def build_gejala(
                 record,
                 "BuktiGejala",
                 reference,
-                f"Bukti gejala {entry['nama']}",
+                f"Bukti gejala {disease_label}",
                 evidence_cache,
                 report,
             )
@@ -1717,7 +1765,11 @@ def build_gejala(
         parts = text_parts(record["text"])
         local = unique_local("Pengamatan" + entry["local"], record["text"], builder)
         uri = builder.individual(local, *(_part_classes(parts) or ["Gejala"]))
-        builder.label(uri, f"Pengamatan gejala {entry['nama']}")
+        disease_label = disease_display_name(entry)
+        builder.label(
+            uri,
+            symptom_snippet(record["text"]) or f"Gejala {disease_label}",
+        )
         builder.comment(uri, "Pengamatan gejala yang belum dipetakan ke konsep kanonik.")
         for part in parts:
             builder.link(uri, "terdapatPada", KBR[part])
@@ -1730,7 +1782,7 @@ def build_gejala(
             record,
             "BuktiGejala",
             reference,
-            f"Bukti gejala {entry['nama']}",
+            f"Bukti gejala {disease_label}",
             evidence_cache,
             report,
         )
@@ -2082,7 +2134,7 @@ def build_lingkungan(
             else:
                 local = "Observasi" + entry["local"] + obs["factor"] + value_slug(obs)
                 uri = builder.individual(local, "ObservasiLingkungan", obs["class"])
-                builder.label(uri, f"{obs['factor']} {value_slug(obs)} pada {entry['nama']}")
+                builder.label(uri, f"{obs['factor']} {value_slug(obs)} pada {disease_display_name(entry)}")
                 builder.comment(uri, "Observasi faktor lingkungan yang diekstrak dari sumber.")
                 if obs.get("min") is not None:
                     builder.decimal(uri, "nilaiMin", obs["min"])

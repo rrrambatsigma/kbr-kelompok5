@@ -55,6 +55,8 @@ export interface DiseaseSummary extends NamedEntity {
 export interface SymptomSummary extends NamedEntity {
   partId: string | null;
   partLabel: string | null;
+  canonicalId: string | null;
+  canonicalLabel: string | null;
 }
 
 export interface PhaseSummary extends NamedEntity {
@@ -321,6 +323,8 @@ export async function getDisease(id: string): Promise<DiseaseDetail> {
         SELECT ?symptom ?label
                (SAMPLE(?part) AS ?part)
                (SAMPLE(?partLabel) AS ?partLabel)
+               (SAMPLE(?canonical) AS ?canonical)
+               (SAMPLE(?canonicalLabel) AS ?canonicalLabel)
         WHERE {
           VALUES ?disease { <${iri}> }
           ?disease ptp:memilikiGejala ?symptom .
@@ -329,19 +333,32 @@ export async function getDisease(id: string): Promise<DiseaseDetail> {
             ?symptom ptp:terdapatPada ?part .
             OPTIONAL { ?part rdfs:label ?partLabel }
           }
+          OPTIONAL {
+            ?symptom ptp:memilikiGejalaKanonik ?canonical .
+            OPTIONAL { ?canonical rdfs:label ?canonicalLabel }
+          }
         }
         GROUP BY ?symptom ?label
         ORDER BY ?label
       `),
       rows(`
         ${PREFIXES}
-        SELECT DISTINCT ?control ?label ?description
+        SELECT ?control ?label
+               (SAMPLE(?globalDescription) AS ?globalDescription)
+               (GROUP_CONCAT(DISTINCT ?quote; separator=" ") AS ?quotes)
         WHERE {
           VALUES ?disease { <${iri}> }
           ?disease ptp:dikendalikanDengan ?control .
           OPTIONAL { ?control rdfs:label ?label }
-          OPTIONAL { ?control ptp:deskripsiPengendalian ?description }
+          OPTIONAL { ?control ptp:deskripsiPengendalian ?globalDescription }
+          OPTIONAL {
+            ?disease ptp:didukungOleh ?evidence .
+            ?evidence a ptp:BuktiPengendalian ;
+                      ptp:kutipanSumber ?quote .
+            ?control ptp:didukungOleh ?evidence .
+          }
         }
+        GROUP BY ?control ?label
         ORDER BY ?label
       `),
       rows(`
@@ -404,15 +421,21 @@ export async function getDisease(id: string): Promise<DiseaseDetail> {
         label: labelOrFallback(binding, symptomIri),
         partId: optionalLocalName(termValue(binding, "part")),
         partLabel: termValue(binding, "partLabel") ?? null,
+        canonicalId: optionalLocalName(termValue(binding, "canonical")),
+        canonicalLabel: termValue(binding, "canonicalLabel") ?? null,
       };
     }),
     controls: controlRows.map((binding) => {
       const controlIri = requireTerm(binding, "control", "pengendalian");
+      const quotes = termValue(binding, "quotes");
       return {
         id: localName(controlIri),
         iri: controlIri,
         label: labelOrFallback(binding, controlIri),
-        description: termValue(binding, "description") ?? null,
+        description:
+          (quotes !== undefined && quotes.trim() !== "" ? quotes : null) ??
+          termValue(binding, "globalDescription") ??
+          null,
       };
     }),
     pathogens: pathogenRows.map((binding) => {
@@ -474,6 +497,8 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
         SELECT ?symptom ?label
                (SAMPLE(?part) AS ?part)
                (SAMPLE(?partLabel) AS ?partLabel)
+               (SAMPLE(?canonical) AS ?canonical)
+               (SAMPLE(?canonicalLabel) AS ?canonicalLabel)
         WHERE {
           ?symptom a/rdfs:subClassOf* ptp:Gejala .
           FILTER EXISTS { ?disease ptp:memilikiGejala ?symptom }
@@ -481,6 +506,10 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
           OPTIONAL {
             ?symptom ptp:terdapatPada ?part .
             OPTIONAL { ?part rdfs:label ?partLabel }
+          }
+          OPTIONAL {
+            ?symptom ptp:memilikiGejalaKanonik ?canonical .
+            OPTIONAL { ?canonical rdfs:label ?canonicalLabel }
           }
         }
         GROUP BY ?symptom ?label
@@ -491,6 +520,8 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
         SELECT ?symptom ?label
                (SAMPLE(?part) AS ?part)
                (SAMPLE(?partLabel) AS ?partLabel)
+               (SAMPLE(?canonical) AS ?canonical)
+               (SAMPLE(?canonicalLabel) AS ?canonicalLabel)
         WHERE {
           ?disease ptp:menyerangTanaman <${plantIri}> ;
                    ptp:memilikiGejala ?symptom .
@@ -498,6 +529,10 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
           OPTIONAL {
             ?symptom ptp:terdapatPada ?part .
             OPTIONAL { ?part rdfs:label ?partLabel }
+          }
+          OPTIONAL {
+            ?symptom ptp:memilikiGejalaKanonik ?canonical .
+            OPTIONAL { ?canonical rdfs:label ?canonicalLabel }
           }
         }
         GROUP BY ?symptom ?label
@@ -514,6 +549,8 @@ export async function listSymptoms(plantId?: string): Promise<SymptomSummary[]> 
       label: labelOrFallback(binding, iri),
       partId: optionalLocalName(termValue(binding, "part")),
       partLabel: termValue(binding, "partLabel") ?? null,
+      canonicalId: optionalLocalName(termValue(binding, "canonical")),
+      canonicalLabel: termValue(binding, "canonicalLabel") ?? null,
     };
   });
 }

@@ -1,9 +1,9 @@
 # Hasil Validasi Reasoning Diagnosis
 
-- Waktu: 2026-11-22T07:58:52.326Z
+- Waktu: 2026-11-24T01:13:56.031Z
 - Base URL: http://127.0.0.1:3000
 - Model: forward-chaining-cf-v1
-- Ontology: 65f92b9452f9 / 65f92b9452f9a63f71ebd24b52ae237cfb303c12230054bf785a441ebbe168a5
+- Ontology: f283c11765c4 / f283c11765c4582d9a7eb7bf090783597ce3b6376dc90ce1bc1c864d7eb3e93f
 
 ## Ringkasan (fokus: gold + ambiguous)
 
@@ -65,15 +65,65 @@ Sanity (53 kasus) tidak masuk fokus karena dibuat dari gejala penyakit itu sendi
 
 ## Peringatan validasi
 
-- KEDELAI-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakTanaman (case: "Bercak tanaman pada Penyakit Karat Daun", ontology: "Bercak pada tanaman pada Penyakit Karat Daun")
-- UBIJALAR-KUDIS-01: label berbeda untuk PengamatanPenyakitKudisUbiJalarKlorosisTanaman (case: "Klorosis tanaman pada Penyakit kudis", ontology: "Klorosis pada tanaman pada Penyakit kudis")
-- UBIJALAR-BUSUKHITAM-01: label berbeda untuk PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukTanaman (case: "Busuk tanaman pada Penyakit busuk hitam (black rot)", ontology: "Busuk pada tanaman pada Penyakit busuk hitam (black rot)")
-- KACANGTANAH-BERCAK-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada Penyakit Bercak Daun", ontology: "Bercak pada tanaman pada Penyakit Bercak Daun")
-- KACANGTANAH-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada KARAT", ontology: "Bercak pada tanaman pada KARAT")
-- KACANGHIJAU-LAYU-01: label berbeda untuk PengamatanPenyakitLayuKacangHijauBusukTanaman (case: "Busuk tanaman pada LAYU", ontology: "Busuk pada tanaman pada LAYU")
-- KACANGHIJAU-EMBUN-01: label berbeda untuk PengamatanPenyakitEmbunTepungKacangHijauTepungDaun (case: "Tepung daun pada EMBUN TEPUNG", ontology: "Tepung pada daun pada EMBUN TEPUNG")
-- KEDELAI-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakTanaman (case: "Bercak tanaman pada Penyakit Karat Daun", ontology: "Bercak pada tanaman pada Penyakit Karat Daun")
-- KACANGTANAH-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada KARAT", ontology: "Bercak pada tanaman pada KARAT")
+- PADI-BLAS-01: label berbeda untuk PengamatanPenyakitBlasPadiBercakDaun (case: "Bercak daun pada Penyakit Blas", ontology: "Bercak daun — Penyakit Blas")
+- PADI-BLAS-01: label berbeda untuk PengamatanPenyakitBlasPadiKhasMalai (case: "Pengamatan gejala Penyakit Blas", ontology: "Gejala khas dari penyakit ini, yaitu blas daun dan blas malai.")
+- PADI-BLAS-01: label berbeda untuk PengamatanPenyakitBlasPadiMalaiPatah (case: "Malai patah pada Penyakit Blas", ontology: "Malai patah — Penyakit Blas")
+- PADI-HDB-01: label berbeda untuk PengamatanPenyakitHawarDaunBakteriPadiHawarDaun (case: "Hawar daun pada Penyakit Hawar Daun Bakteri", ontology: "Hawar daun — Penyakit Hawar Daun Bakteri")
+- PADI-HDB-01: label berbeda untuk PengamatanPenyakitHawarDaunBakteriPadiKlorosisDaun (case: "Klorosis daun pada Penyakit Hawar Daun Bakteri", ontology: "Klorosis daun — Penyakit Hawar Daun Bakteri")
+- PADI-HDB-01: label berbeda untuk PengamatanPenyakitHawarDaunBakteriPadiLayuDaun (case: "Layu daun pada Penyakit Hawar Daun Bakteri", ontology: "Layu daun — Penyakit Hawar Daun Bakteri")
+- KEDELAI-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakDaun (case: "Bercak daun pada KARAT", ontology: "Bercak daun — Penyakit Karat Daun")
+- KEDELAI-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiKlorosisDaun (case: "Klorosis daun pada KARAT", ontology: "Klorosis daun — Penyakit Karat Daun")
+- KEDELAI-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakTanaman (case: "Bercak tanaman pada Penyakit Karat Daun", ontology: "Bercak pada tanaman — Penyakit Karat Daun")
+- KEDELAI-BIJIUNGU-01: label berbeda untuk PengamatanPenyakitBercakBijiUnguKedelaiBercakDaun (case: "Bercak daun pada Penyakit Bercak Biji Ungu", ontology: "Bercak daun — Penyakit Bercak Biji Ungu")
+- KEDELAI-BIJIUNGU-01: label berbeda untuk PengamatanPenyakitBercakBijiUnguKedelaiHawarDaun (case: "Hawar daun pada Penyakit Bercak Biji Ungu", ontology: "Hawar daun — Penyakit Bercak Biji Ungu")
+- KEDELAI-BIJIUNGU-01: label berbeda untuk PengamatanPenyakitBercakBijiUnguKedelaiNekrosisDaun (case: "Nekrosis daun pada Penyakit Bercak Biji Ungu", ontology: "Nekrosis daun — Penyakit Bercak Biji Ungu")
+- JAGUNG-BULAI-01: label berbeda untuk PengamatanPenyakitBulaiJagungKlorosisDaun (case: "Klorosis daun pada Penyakit Bulai", ontology: "Klorosis daun — Penyakit Bulai")
+- JAGUNG-BULAI-01: label berbeda untuk PengamatanPenyakitBulaiJagungKerdilTanaman (case: "Kerdil tanaman pada Penyakit Bulai", ontology: "Kerdil tanaman — Penyakit Bulai")
+- JAGUNG-BULAI-01: label berbeda untuk PengamatanPenyakitBulaiJagungPertumbuhanTerhambat (case: "Pertumbuhan terhambat pada Penyakit Bulai", ontology: "Pertumbuhan terhambat — Penyakit Bulai")
+- JAGUNG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunJagungKlorosisDaun (case: "Klorosis daun pada Penyakit Karat Daun", ontology: "Klorosis daun — Penyakit Karat Daun")
+- JAGUNG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunJagungBercakTanaman (case: "Bercak pada tanaman pada Penyakit Karat Daun", ontology: "Bercak pada tanaman — Penyakit Karat Daun")
+- JAGUNG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang (case: "Pengamatan gejala Penyakit Karat Daun", ontology: "Gejala karat biasanya diawali dari daun bagian bawah dan berkembang ke daun bagian atas…")
+- UBIJALAR-KUDIS-01: label berbeda untuk PengamatanPenyakitKudisUbiJalarBercakDaun (case: "Bercak daun pada Penyakit kudis", ontology: "Bercak daun — Penyakit kudis")
+- UBIJALAR-KUDIS-01: label berbeda untuk PengamatanPenyakitKudisUbiJalarKlorosisTanaman (case: "Klorosis tanaman pada Penyakit kudis", ontology: "Klorosis pada tanaman — Penyakit kudis")
+- UBIJALAR-KUDIS-01: label berbeda untuk PengamatanPenyakitKudisUbiJalarMenjadiTidakProduktifFotosintesisTingkat (case: "Pengamatan gejala Penyakit kudis", ontology: "Daun menjadi tidak produktif dalam fotosintesis jika pada tingkat serangan berat…")
+- UBIJALAR-BUSUKHITAM-01: label berbeda untuk PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukAkar (case: "Busuk akar pada Penyakit busuk hitam (black rot)", ontology: "Busuk akar — Penyakit busuk hitam (black rot)")
+- UBIJALAR-BUSUKHITAM-01: label berbeda untuk PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukTanaman (case: "Busuk tanaman pada Penyakit busuk hitam (black rot)", ontology: "Busuk pada tanaman — Penyakit busuk hitam (black rot)")
+- UBIJALAR-BUSUKHITAM-01: label berbeda untuk PengamatanPenyakitBusukHitamBlackRotUbiJalarFimbriataABPascapanenC (case: "Pengamatan gejala Penyakit busuk hitam (black rot)", ontology: "Fimbriata, (a&b) gejala pascapanen pada ubi jalar (c&d) Anterior dan posterior koloni…")
+- UBIKAYU-BUSUKAKAR-01: label berbeda untuk PengamatanBusukAkarUbiKayuBusukAkar (case: "Busuk akar pada Busuk akar", ontology: "Busuk akar")
+- UBIKAYU-BUSUKAKAR-01: label berbeda untuk PengamatanBusukAkarUbiKayuBusukBatang (case: "Busuk batang pada Busuk akar", ontology: "Busuk batang — Busuk akar")
+- UBIKAYU-HDB-01: label berbeda untuk PengamatanHawarDaunBakteriUbiKayuHawarDaun (case: "Hawar daun pada Hawar daun bakteri", ontology: "Hawar daun — Hawar daun bakteri")
+- UBIKAYU-HDB-01: label berbeda untuk PengamatanHawarDaunBakteriUbiKayuLayuDaun (case: "Layu daun pada Hawar daun bakteri", ontology: "Layu daun — Hawar daun bakteri")
+- KACANGTANAH-BERCAK-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahBercakDaun (case: "Bercak daun pada Penyakit Bercak Daun", ontology: "Bercak daun")
+- KACANGTANAH-BERCAK-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahKlorosisDaun (case: "Klorosis daun pada Penyakit Bercak Daun", ontology: "Klorosis daun — Penyakit Bercak Daun")
+- KACANGTANAH-BERCAK-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada Penyakit Bercak Daun", ontology: "Bercak pada tanaman — Penyakit Bercak Daun")
+- KACANGTANAH-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakDaun (case: "Bercak daun pada KARAT", ontology: "Bercak daun — Penyakit Karat Daun")
+- KACANGTANAH-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahKlorosisDaun (case: "Klorosis daun pada KARAT", ontology: "Klorosis daun — Penyakit Karat Daun")
+- KACANGTANAH-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada KARAT", ontology: "Bercak pada tanaman — Penyakit Karat Daun")
+- KACANGHIJAU-LAYU-01: label berbeda untuk PengamatanPenyakitLayuKacangHijauLayuDaun (case: "Layu daun pada LAYU", ontology: "Layu daun")
+- KACANGHIJAU-LAYU-01: label berbeda untuk PengamatanPenyakitLayuKacangHijauBusukTanaman (case: "Busuk tanaman pada LAYU", ontology: "Busuk pada tanaman — Penyakit Layu")
+- KACANGHIJAU-EMBUN-01: label berbeda untuk PengamatanPenyakitEmbunTepungKacangHijauTepungDaun (case: "Tepung daun pada EMBUN TEPUNG", ontology: "Tepung pada daun — Penyakit Embun Tepung")
+- PADI-AMBIG-HDB-01: label berbeda untuk PengamatanPenyakitHawarDaunBakteriPadiIstilahKresekSendiriDiambilBahasa (case: "Pengamatan gejala Penyakit Hawar Daun Bakteri", ontology: "Istilah kresek sendiri diambil dari bahasa Jawa yang berarti suara daun-daun yang mati…")
+- PADI-AMBIG-HDB-01: label berbeda untuk PengamatanPenyakitHawarPelepahDaunPadiBercakDaun (case: "Bercak daun pada Penyakit Hawar Pelepah Daun", ontology: "Bercak daun — Penyakit Hawar Pelepah Daun")
+- PADI-AMBIG-HDB-01: label berbeda untuk PengamatanPenyakitKerdilRumputDanKerdilHampaPadiKlorosisDaun (case: "Klorosis daun pada Penyakit Kerdil Rumput dan Kerdil Hampa", ontology: "Klorosis daun — Penyakit Kerdil Rumput dan Kerdil Hampa")
+- KEDELAI-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKedelaiBercakTanaman (case: "Bercak tanaman pada Penyakit Karat Daun", ontology: "Bercak pada tanaman — Penyakit Karat Daun")
+- KEDELAI-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitBercakBijiUnguKedelaiBercakDaun (case: "Bercak daun pada Penyakit Bercak Biji Ungu", ontology: "Bercak daun — Penyakit Bercak Biji Ungu")
+- KEDELAI-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiKlorosisDaun (case: "Klorosis daun pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus)", ontology: "Klorosis daun — Penyakit Mosaik Kedelai (Soybean Mosaic Virus)")
+- JAGUNG-AMBIG-BULAI-01: label berbeda untuk PengamatanPenyakitBulaiJagungMulaiMuncul15Hingga17 (case: "Pengamatan gejala Penyakit Bulai", ontology: "Penyakit jagung mulai muncul antara 15 hingga 17 hari setelah infeksi (Habibi et al.…")
+- JAGUNG-AMBIG-BULAI-01: label berbeda untuk PengamatanPenyakitKaratDaunJagungKlorosisDaun (case: "Klorosis daun pada Penyakit Karat Daun", ontology: "Klorosis daun — Penyakit Karat Daun")
+- JAGUNG-AMBIG-BULAI-01: label berbeda untuk PengamatanPenyakitLayuStewartJagungKerdilTanaman (case: "Kerdil tanaman pada Penyakit Layu Stewart", ontology: "Kerdil tanaman — Penyakit Layu Stewart")
+- UBIKAYU-AMBIG-HDB-01: label berbeda untuk PengamatanHawarDaunBakteriUbiKayuHawarDaun (case: "Hawar daun pada Hawar daun bakteri", ontology: "Hawar daun — Hawar daun bakteri")
+- UBIKAYU-AMBIG-HDB-01: label berbeda untuk PengamatanBercakDaunCoklatUbiKayuBercakDaun (case: "Bercak daun pada Bercak daun Coklat", ontology: "Bercak daun — Bercak daun Coklat")
+- UBIKAYU-AMBIG-HDB-01: label berbeda untuk PengamatanBusukPangkalBatangUbiKayuLayuDaun (case: "Layu daun pada Busuk pangkal batang", ontology: "Layu daun — Busuk pangkal batang")
+- KACANGTANAH-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitKaratDaunKacangTanahBercakTanaman (case: "Bercak tanaman pada KARAT", ontology: "Bercak pada tanaman — Penyakit Karat Daun")
+- KACANGTANAH-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahBercakDaun (case: "Bercak daun pada Penyakit Bercak Daun", ontology: "Bercak daun")
+- KACANGTANAH-AMBIG-KARAT-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahKlorosisDaun (case: "Klorosis daun pada Penyakit Bercak Daun", ontology: "Klorosis daun — Penyakit Bercak Daun")
+- UBIJALAR-AMBIG-BERCAKKUNING-01: label berbeda untuk PengamatanPenyakitBercakKuningUbiJalarPucukMati (case: "Pucuk mati pada Penyakit bercak kuning", ontology: "Pucuk mati — Penyakit bercak kuning")
+- UBIJALAR-AMBIG-BERCAKKUNING-01: label berbeda untuk PengamatanPenyakitKudisUbiJalarBercakDaun (case: "Bercak daun pada Penyakit kudis", ontology: "Bercak daun — Penyakit kudis")
+- UBIJALAR-AMBIG-BERCAKKUNING-01: label berbeda untuk PengamatanLayuFusariumUbiJalarKlorosisDaun (case: "Klorosis daun pada layu fusarium", ontology: "Klorosis daun — layu fusarium")
+- PADI-PURE-HDB-01: label berbeda untuk PengamatanPenyakitHawarPelepahDaunPadiBercakDaun (case: "Bercak daun pada Penyakit Hawar Pelepah Daun", ontology: "Bercak daun — Penyakit Hawar Pelepah Daun")
+- PADI-PURE-HDB-01: label berbeda untuk PengamatanPenyakitKerdilRumputDanKerdilHampaPadiKlorosisDaun (case: "Klorosis daun pada Penyakit Kerdil Rumput dan Kerdil Hampa", ontology: "Klorosis daun — Penyakit Kerdil Rumput dan Kerdil Hampa")
+- KACANGTANAH-PURE-KARAT-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahBercakDaun (case: "Bercak daun pada Penyakit Bercak Daun", ontology: "Bercak daun")
+- KACANGTANAH-PURE-KARAT-01: label berbeda untuk PengamatanPenyakitBercakDaunKacangTanahKlorosisDaun (case: "Klorosis daun pada Penyakit Bercak Daun", ontology: "Klorosis daun — Penyakit Bercak Daun")
 
 ## Kasus gagal
 
@@ -89,7 +139,7 @@ Tidak ada kasus yang gagal.
 ## Determinism & performa
 
 - Determinism: stabil (PADI-BLAS-01)
-- Performa: p50 36.5967 ms; p95 69.7361 ms (20 sampel)
+- Performa: p50 35.6817 ms; p95 73.5517 ms (20 sampel)
 
 ## Catatan
 
