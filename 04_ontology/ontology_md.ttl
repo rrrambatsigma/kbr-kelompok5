@@ -816,7 +816,8 @@ ns1:PenyakitBakteri a owl:Class ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( ns1:Penyakit [ a owl:Restriction ;
                         owl:onProperty ns1:disebabkanOleh ;
-                        owl:someValuesFrom ns1:Bakteri ] ) ] ;
+                        owl:someValuesFrom ns1:Bakteri ] ) ],
+        <https://gwsp.cs.ksu.edu/disease-management/disease/Bacterial_Disease> ;
     skos:prefLabel "Penyakit Bakteri"@id .
 
 ns1:PenyakitFitoplasma a owl:Class ;
@@ -838,7 +839,8 @@ ns1:PenyakitJamur a owl:Class ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( ns1:Penyakit [ a owl:Restriction ;
                         owl:onProperty ns1:disebabkanOleh ;
-                        owl:someValuesFrom ns1:Jamur ] ) ] ;
+                        owl:someValuesFrom ns1:Jamur ] ) ],
+        <https://gwsp.cs.ksu.edu/disease-management/disease/Fungal_Disease> ;
     skos:prefLabel "Penyakit Jamur"@id .
 
 ns1:PenyakitOomycete a owl:Class ;
@@ -859,7 +861,8 @@ ns1:PenyakitVirus a owl:Class ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( ns1:Penyakit [ a owl:Restriction ;
                         owl:onProperty ns1:disebabkanOleh ;
-                        owl:someValuesFrom ns1:Virus ] ) ] ;
+                        owl:someValuesFrom ns1:Virus ] ) ],
+        <https://gwsp.cs.ksu.edu/disease-management/disease/Viral_Disease> ;
     skos:prefLabel "Penyakit Virus"@id .
 
 ns1:PerlakuanRadiasi a ns1:PengendalianFisik,
@@ -17496,6 +17499,7 @@ ns1:HawarDaun a ns1:GejalaKanonik,
         ns1:GejalaPenyakitHawarDaunJagungHawarDaun ;
     rdfs:comment "Konsep kanonik untuk gejala hawar pada daun atau pelepah."@id ;
     skos:altLabel "hawar daun"@id ;
+    skos:closeMatch <http://www.ait.ac.th/riceman/RiceDO/v1.2#Lesion> ;
     skos:prefLabel "Hawar daun"@id .
 
 ns1:KondisiTanah a owl:Class ;
@@ -18380,6 +18384,7 @@ ns1:disebabkanOleh a owl:ObjectProperty ;
     rdfs:comment "Penyakit disebabkan oleh patogen."@id ;
     rdfs:domain ns1:Penyakit ;
     rdfs:range ns1:Patogen ;
+    rdfs:subPropertyOf <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> ;
     owl:inverseOf ns1:menyebabkanPenyakit ;
     skos:prefLabel "disebabkan oleh"@id .
 
@@ -18497,6 +18502,7 @@ ns1:PengaturanWaktuTanam a ns1:PengendalianKulturTeknis,
     ns1:namaPengendalian "Pengaturan waktu tanam"@id ;
     rdfs:comment "Kemudian penanaman lebih awal selama musim hujan."@id,
         "Tindakan kanonik pengaturan waktu atau keserempakan tanam."@id ;
+    owl:sameAs <https://gwsp.cs.ksu.edu/disease-management/management/Planting_Date_Adjustment> ;
     skos:prefLabel "Pengaturan waktu tanam"@id .
 
 ns1:PengumpulanDanPemusnahan a ns1:PengendalianMekanis,
@@ -18552,6 +18558,7 @@ ns1:Bakteri a owl:Class ;
     rdfs:comment "Pada tulisan ini akan disajikan penjelasan OPT, khususnya penyakit penting tanaman padi, seperti penyakit hawar daun bakteri, penyakit blas, penyakit hawar pelepah daun, penyakit tungro, serta penyakit kerdil rumput dan kerdil hampa."@id,
         "Patogen kelompok bakteri."@id ;
     rdfs:subClassOf ns1:Patogen ;
+    owl:equivalentClass <https://gwsp.cs.ksu.edu/disease-management/pathogen/Bacterial_Pathogen> ;
     skos:prefLabel "Bakteri"@id .
 
 ns1:BusukAkarDanUmbiUbiKayu a ns1:Penyakit,
@@ -18630,6 +18637,7 @@ ns1:PengendalianKimiawi a owl:Class ;
     rdfs:comment "Pengendalian dengan bahan kimia atau pestisida."@id,
         "Pengendalian kimiawi dengan fungisida berbahan aktif risiklikol, pyroquilon, iprobenfos, benomyl, isoprothiolane, diclocymet, edifenphos, felimzone, probenazole, karpropamid, fenoxanil dan metominostrobin, dan antibiotik seperti blasticidin, kasugamycin dan dipotassium hidrogen fosfat (DHP) telah dilaporkan dapat mengurangi keparahan penyakit blas."@id ;
     rdfs:subClassOf ns1:Pengendalian ;
+    owl:equivalentClass <https://gwsp.cs.ksu.edu/disease-management/management/Chemical_Control> ;
     skos:prefLabel "Pengendalian Kimiawi"@id .
 
 ns1:Pucuk a ns1:BagianTanaman,
@@ -19342,6 +19350,8 @@ ns1:PenyakitKerdilRumputDanKerdilHampaPadi a ns1:Penyakit,
     ns1:menyerangTanaman ns1:Padi ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id,
         "Penyakit kerdil rumput disebabkan oleh virus kerdil rumput tipe 1 dan virus kerdil rumput tipe 2, sedangkan penyakit kerdil hampa disebabkan oleh virus kerdil hampa. Kedua virus tersebut dapat ditularkan oleh wereng coklat (Nilaparvata lugens) (Senewe et al. 2020). Wereng yang menjadi carrier bagi"@id ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/RiceGrassyStuntViralDisease>,
+        <http://purl.obolibrary.org/obo/RiceRaggedStuntViralDisease> ;
     skos:prefLabel "Penyakit Kerdil Rumput dan Kerdil Hampa"@id .
 
 ns1:GejalaAkar a owl:Class ;
@@ -19669,6 +19679,7 @@ ns1:Virus a owl:Class ;
     rdfs:comment "Benih sehat bebas virus merupakan awal dari budidaya tanaman sehat bebas virus PStV."@id,
         "Patogen kelompok virus."@id ;
     rdfs:subClassOf ns1:Patogen ;
+    owl:equivalentClass <https://gwsp.cs.ksu.edu/disease-management/pathogen/Viral_Pathogen> ;
     skos:prefLabel "Virus"@id .
 
 ns1:KacangTanah a ns1:Legum,
@@ -19894,6 +19905,7 @@ ns1:PenyakitHawarPelepahDaunPadi a ns1:Penyakit,
     ns1:tingkatKeparahan "Meskipun tidak sebesar akibat infeksi penyakit HDB dan blas, kehilangan hasil akibat penyakit HDP berkisar antara 20-35% di beberapa negara penghasil beras dunia (Inagaki 2001)."@id ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id,
         "Penyakit hawar pelepah daun (HDP) dapat ditemukan pada tiap musim tanam padi. Meskipun tidak sebesar akibat infeksi penyakit HDB dan blas, kehilangan hasil akibat penyakit HDP berkisar antara 20-35% di beberapa negara penghasil beras dunia (Inagaki 2001). Sementara itu, di Indonesia kehilangan hasil yang dilaporkan mencapai 20% (Suparyono dan Sudir 1999)."@id ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/RiceSheathBlightFungalDisease> ;
     skos:prefLabel "Penyakit Hawar Pelepah Daun"@id .
 
 ns1:PenyakitLayuStewartJagung a ns1:Penyakit,
@@ -20327,6 +20339,7 @@ ns1:PenyakitTungroPadi a ns1:Penyakit,
     ns1:menyerangTanaman ns1:Padi ;
     rdfs:comment "Asal kata tungro pada nama penyakit ini berasal dari bahasa Tagalog, Filipina yang mempunyai arti pertumbuhan yang terhambat. Meskipun sudah menjadi nama penyakit yang resmi dan berlaku di Indonesia. Penyakit ini juga mempunyai nama lokal di negara lain maupun di wilayah lain di Indonesia, seperti di Malaysia disebut dengan penyakit merah, di Thailand disebut yellow orange leaf disease, di Kalimantan Selatan disebut penyakit habang, di Sulawesi Selatan disebut penyakit cella pance, dan di Bali disebut penyakit kebebeng (Muhsin dan Widiarta 2009). Oleh karena itu, penyebaran penyakit sangat luas dengan luas serangan mencapai 3.650 ha per tahun di Indonesia pada periode 2001-2006 (Kusprayogie et al. 2001)"@id,
         "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/RiceTungroViralDisease> ;
     skos:prefLabel "Penyakit Tungro"@id .
 
 ns1:p a ns2:Variable .
@@ -20363,6 +20376,7 @@ ns1:PengendalianKulturTeknis a owl:Class ;
     rdfs:comment "Menurut Inayati and Yusnawan, (2017) pengendalian penyakit yang disebabkan oleh R. solani dapat dilakukan dengan beberapa cara yaitu teknik pengendalian secara kultur teknis seperti rotasi tanam, melakukan perbaikan drainase, penanaman kedelai tidak pada musim hujan yang tinggi, melakukan eradikasi tanaman yang menjadi sumber inokulum, melakukan pengendalian"@id,
         "Pengendalian melalui praktik budidaya."@id ;
     rdfs:subClassOf ns1:Pengendalian ;
+    owl:equivalentClass <https://gwsp.cs.ksu.edu/disease-management/management/Cultural_Control> ;
     skos:prefLabel "Pengendalian Kultur Teknis"@id .
 
 ns1:PenyakitBelangMottleKacangTanah a ns1:Penyakit,
@@ -20512,7 +20526,8 @@ ns1:Patogen a owl:Class ;
     rdfs:label "Patogen"@id ;
     rdfs:comment "Organisme penyebab penyakit tanaman."@id,
         "Patogen merupakan parasit obligat."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
+    rdfs:subClassOf ns1:EntitasKBR,
+        <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -20678,6 +20693,7 @@ ns1:PenyakitBlasPadi a ns1:Penyakit,
     ns1:tingkatKeparahan "Serangan berat dapat menyebabkan kehilangan hasil padi mencapai 100%( Suganda et al. 2016)."@id ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id,
         "Penyakit blas menjadi salah satu penyakit utama tanaman padi karena dapat menyerang beberapa bagian tanaman seperti daun, buku batang, leher malai, bulir pada, bahkan kolar daun (BBPADI 2015). Serangan berat dapat menyebabkan kehilangan hasil padi mencapai 100%( Suganda et al. 2016)."@id ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/RiceBlastFungalDisease> ;
     skos:prefLabel "Penyakit Blas"@id .
 
 ns1:PenyakitBulaiJagung a ns1:Penyakit,
@@ -20851,6 +20867,7 @@ ns1:BercakDaun a ns1:GejalaKanonik,
         ns1:GejalaPenyakitKudisUbiJalarBercakDaun ;
     rdfs:comment "Konsep kanonik untuk gejala bercak atau noda pada daun."@id ;
     skos:altLabel "bercak daun"@id ;
+    skos:closeMatch <http://www.ait.ac.th/riceman/RiceDO/v1.2#LesionOnLeaf> ;
     skos:prefLabel "Bercak daun"@id .
 
 ns1:BercakTanaman a ns1:GejalaKanonik,
@@ -21025,6 +21042,7 @@ ns1:PenyakitHawarDaunBakteriPadi a ns1:Penyakit,
     ns1:tingkatKeparahan "Kehilangan hasil yang disebabkan oleh penyakit ini dapat beragam dari 15-80% tergantung kondisi tanaman maupun lingkungannya (BBPOPT 2007; Lalitha et al. 2010)."@id ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id,
         "Penyakit hawar daun bakteri (HDB) atau dikenal dengan nama penyakit kresek dalam bahasa lokal dan bacterial leaf blight dalam bahasa internasional menjadi salah satu penyakit penting pada padi. Kehilangan hasil yang disebabkan oleh penyakit ini dapat beragam dari 15-80% tergantung kondisi tanaman maupun lingkungannya (BBPOPT 2007; Lalitha et al. 2010)."@id ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/RiceBacterialBlightDisease> ;
     skos:prefLabel "Penyakit Hawar Daun Bakteri"@id .
 
 ns1:PenyakitKaratDaunKedelai a ns1:Penyakit,
@@ -21196,6 +21214,7 @@ ns1:RotasiTanaman a ns1:PengendalianKulturTeknis,
     ns1:namaPengendalian "Rotasi tanaman"@id ;
     rdfs:comment "Pengendalian penyakit dapat dilakukan dengan melakukan rotasi tanaman dengan mengganti tanaman dengan tanaman yang bukan inang patogen E."@id,
         "Tindakan kanonik pergiliran atau rotasi tanaman."@id ;
+    owl:sameAs <https://gwsp.cs.ksu.edu/disease-management/management/Crop_Rotation> ;
     skos:prefLabel "Rotasi tanaman"@id .
 
 ns1:PenyakitKudisUbiJalar a ns1:Penyakit,
@@ -21594,6 +21613,7 @@ ns1:Jamur a owl:Class ;
     rdfs:comment "Patogen kelompok jamur."@id,
         "Pengendalian menggunakan agens hayati seperti jamur dan bakteri antagonis dapat dilakukan untuk menekan perkembangan penyakit."@id ;
     rdfs:subClassOf ns1:Patogen ;
+    owl:equivalentClass <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
     skos:prefLabel "Jamur"@id .
 
 ns1:PenggunaanVarietasTahan a ns1:PengendalianKulturTeknis,
@@ -21661,6 +21681,7 @@ ns1:PenggunaanVarietasTahan a ns1:PengendalianKulturTeknis,
     ns1:namaPengendalian "Penggunaan varietas tahan"@id ;
     rdfs:comment "Berbagai strategi pengendalian penyakit tungro dijelaskan sebagai berikut meliputi pemusnahan tanaman terinfeksi, penggunaan varietas tahan seperti Tukad Unda, Tukad Balian, Kalimas, dan Bondoyudo, penanaman serempak minimal 20 ha luasan sawah, serta penanaman sebelum puncak kepadatan wereng hijau (Puslitbangtan 2005)."@id,
         "Tindakan kanonik penggunaan varietas yang dinyatakan tahan atau toleran."@id ;
+    skos:closeMatch <https://gwsp.cs.ksu.edu/disease-management/management/Host_Resistance> ;
     skos:prefLabel "Penggunaan varietas tahan"@id .
 
 ns1:SanitasiLahan a ns1:PengendalianKulturTeknis,
@@ -21911,19 +21932,20 @@ ns1:Penyakit a owl:Class ;
     rdfs:comment "Pada tulisan ini akan disajikan penjelasan OPT, khususnya penyakit penting tanaman padi, seperti penyakit hawar daun bakteri, penyakit blas, penyakit hawar pelepah daun, penyakit tungro, serta penyakit kerdil rumput dan kerdil hampa."@id,
         "Penyakit tanaman pangan yang dicatat dalam sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ns1:Patogen ;
-            owl:onProperty ns1:disebabkanOleh ],
-        [ a owl:Restriction ;
             owl:onProperty ns1:menyerangTanaman ;
             owl:someValuesFrom ns1:TanamanPangan ],
         [ a owl:Restriction ;
-            owl:onProperty ns1:memilikiGejala ;
-            owl:someValuesFrom ns1:Gejala ],
+            owl:allValuesFrom ns1:Patogen ;
+            owl:onProperty ns1:disebabkanOleh ],
         [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass ns1:Referensi ;
             owl:onProperty ns1:memilikiReferensi ],
-        ns1:EntitasKBR ;
+        [ a owl:Restriction ;
+            owl:onProperty ns1:memilikiGejala ;
+            owl:someValuesFrom ns1:Gejala ],
+        ns1:EntitasKBR,
+        <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -21957,6 +21979,7 @@ ns1:Varietas a owl:Class ;
         ns1:Penyakit,
         ns1:Referensi,
         ns1:TanamanPangan ;
+    skos:closeMatch <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar> ;
     skos:prefLabel "Varietas"@id .
 
 ns1:GejalaDaun a owl:Class ;
@@ -22074,9 +22097,95 @@ ns1:BukuDOC002 a ns1:Buku,
     skos:prefLabel "Penyakit Tanaman dan Pengendaliannya"@id .
 
 [] a ns2:Imp ;
-    rdfs:label "RuleKandidatLingkungan" ;
+    rdfs:label "RuleKandidatGejala" ;
     ns3:isRuleEnabled true ;
-    rdfs:comment "Kandidat penyakit dari faktor lingkungan" ;
+    rdfs:comment "Kandidat penyakit dari gejala kanonik"@id ;
+    ns2:body [ a ns2:AtomList ;
+            rdf:first [ a ns2:ClassAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:classPredicate ns1:Diagnosis ] ;
+            rdf:rest [ a ns2:AtomList ;
+                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                            ns2:argument1 ns1:d ;
+                            ns2:argument2 ns1:t ;
+                            ns2:propertyPredicate ns1:memilikiTanaman ] ;
+                    rdf:rest [ a ns2:AtomList ;
+                            rdf:first [ a ns2:ClassAtom ;
+                                    ns2:argument1 ns1:t ;
+                                    ns2:classPredicate ns1:TanamanPangan ] ;
+                            rdf:rest [ a ns2:AtomList ;
+                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                            ns2:argument1 ns1:d ;
+                                            ns2:argument2 ns1:o ;
+                                            ns2:propertyPredicate ns1:memilikiObservasi ] ;
+                                    rdf:rest [ a ns2:AtomList ;
+                                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                    ns2:argument1 ns1:o ;
+                                                    ns2:argument2 ns1:g ;
+                                                    ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
+                                            rdf:rest [ a ns2:AtomList ;
+                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                            ns2:argument1 ns1:p ;
+                                                            ns2:argument2 ns1:t ;
+                                                            ns2:propertyPredicate ns1:menyerangTanaman ] ;
+                                                    rdf:rest [ a ns2:AtomList ;
+                                                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                    ns2:argument1 ns1:p ;
+                                                                    ns2:argument2 ns1:gp ;
+                                                                    ns2:propertyPredicate ns1:memilikiGejala ] ;
+                                                            rdf:rest [ a ns2:AtomList ;
+                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                            ns2:argument1 ns1:gp ;
+                                                                            ns2:argument2 ns1:g ;
+                                                                            ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
+                                                                    rdf:rest () ] ] ] ] ] ] ] ] ;
+    ns2:head [ a ns2:AtomList ;
+            rdf:first [ a ns2:IndividualPropertyAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:argument2 ns1:p ;
+                    ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
+            rdf:rest () ] .
+
+[] a ns2:Imp ;
+    rdfs:label "RuleRekomendasiVarietasTahan" ;
+    ns3:isRuleEnabled true ;
+    rdfs:comment "Rekomendasi varietas tahan"@id ;
+    ns2:body [ a ns2:AtomList ;
+            rdf:first [ a ns2:ClassAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:classPredicate ns1:Diagnosis ] ;
+            rdf:rest [ a ns2:AtomList ;
+                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                            ns2:argument1 ns1:d ;
+                            ns2:argument2 ns1:p ;
+                            ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
+                    rdf:rest [ a ns2:AtomList ;
+                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                    ns2:argument1 ns1:p ;
+                                    ns2:argument2 ns1:t ;
+                                    ns2:propertyPredicate ns1:menyerangTanaman ] ;
+                            rdf:rest [ a ns2:AtomList ;
+                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                            ns2:argument1 ns1:t ;
+                                            ns2:argument2 ns1:v ;
+                                            ns2:propertyPredicate ns1:memilikiVarietas ] ;
+                                    rdf:rest [ a ns2:AtomList ;
+                                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                    ns2:argument1 ns1:v ;
+                                                    ns2:argument2 ns1:p ;
+                                                    ns2:propertyPredicate ns1:tahanTerhadap ] ;
+                                            rdf:rest () ] ] ] ] ] ;
+    ns2:head [ a ns2:AtomList ;
+            rdf:first [ a ns2:IndividualPropertyAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:argument2 ns1:v ;
+                    ns2:propertyPredicate ns1:merekomendasikanVarietas ] ;
+            rdf:rest () ] .
+
+[] a ns2:Imp ;
+    rdfs:label "RuleRisikoLingkungan" ;
+    ns3:isRuleEnabled true ;
+    rdfs:comment "Risiko lingkungan"@id ;
     ns2:body [ a ns2:AtomList ;
             rdf:first [ a ns2:ClassAtom ;
                     ns2:argument1 ns1:d ;
@@ -22120,13 +22229,44 @@ ns1:BukuDOC002 a ns1:Buku,
             rdf:first [ a ns2:IndividualPropertyAtom ;
                     ns2:argument1 ns1:d ;
                     ns2:argument2 ns1:p ;
-                    ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
+                    ns2:propertyPredicate ns1:menandaiRisikoLingkungan ] ;
+            rdf:rest () ] .
+
+[] a ns2:Imp ;
+    rdfs:label "RuleRekomendasiUmum" ;
+    ns3:isRuleEnabled true ;
+    rdfs:comment "Rekomendasi pengendalian umum tanaman"@id ;
+    ns2:body [ a ns2:AtomList ;
+            rdf:first [ a ns2:ClassAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:classPredicate ns1:Diagnosis ] ;
+            rdf:rest [ a ns2:AtomList ;
+                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                            ns2:argument1 ns1:d ;
+                            ns2:argument2 ns1:p ;
+                            ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
+                    rdf:rest [ a ns2:AtomList ;
+                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                    ns2:argument1 ns1:p ;
+                                    ns2:argument2 ns1:t ;
+                                    ns2:propertyPredicate ns1:menyerangTanaman ] ;
+                            rdf:rest [ a ns2:AtomList ;
+                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                            ns2:argument1 ns1:t ;
+                                            ns2:argument2 ns1:c ;
+                                            ns2:propertyPredicate ns1:pengendalianUmum ] ;
+                                    rdf:rest () ] ] ] ] ;
+    ns2:head [ a ns2:AtomList ;
+            rdf:first [ a ns2:IndividualPropertyAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:argument2 ns1:c ;
+                    ns2:propertyPredicate ns1:merekomendasikanPengendalian ] ;
             rdf:rest () ] .
 
 [] a ns2:Imp ;
     rdfs:label "RuleKandidatKuat" ;
     ns3:isRuleEnabled true ;
-    rdfs:comment "Kandidat kuat dari dua gejala kanonik berbeda" ;
+    rdfs:comment "Kandidat kuat dari dua gejala kanonik berbeda"@id ;
     ns2:body [ a ns2:AtomList ;
             rdf:first [ a ns2:ClassAtom ;
                     ns2:argument1 ns1:d ;
@@ -22204,9 +22344,9 @@ ns1:BukuDOC002 a ns1:Buku,
             rdf:rest () ] .
 
 [] a ns2:Imp ;
-    rdfs:label "RuleRekomendasiVarietasTahan" ;
+    rdfs:label "RuleRekomendasiSpesifik" ;
     ns3:isRuleEnabled true ;
-    rdfs:comment "Rekomendasi varietas tahan" ;
+    rdfs:comment "Rekomendasi pengendalian spesifik penyakit"@id ;
     ns2:body [ a ns2:AtomList ;
             rdf:first [ a ns2:ClassAtom ;
                     ns2:argument1 ns1:d ;
@@ -22219,50 +22359,9 @@ ns1:BukuDOC002 a ns1:Buku,
                     rdf:rest [ a ns2:AtomList ;
                             rdf:first [ a ns2:IndividualPropertyAtom ;
                                     ns2:argument1 ns1:p ;
-                                    ns2:argument2 ns1:t ;
-                                    ns2:propertyPredicate ns1:menyerangTanaman ] ;
-                            rdf:rest [ a ns2:AtomList ;
-                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                            ns2:argument1 ns1:t ;
-                                            ns2:argument2 ns1:v ;
-                                            ns2:propertyPredicate ns1:memilikiVarietas ] ;
-                                    rdf:rest [ a ns2:AtomList ;
-                                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                    ns2:argument1 ns1:v ;
-                                                    ns2:argument2 ns1:p ;
-                                                    ns2:propertyPredicate ns1:tahanTerhadap ] ;
-                                            rdf:rest () ] ] ] ] ] ;
-    ns2:head [ a ns2:AtomList ;
-            rdf:first [ a ns2:IndividualPropertyAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:argument2 ns1:v ;
-                    ns2:propertyPredicate ns1:merekomendasikanVarietas ] ;
-            rdf:rest () ] .
-
-[] a ns2:Imp ;
-    rdfs:label "RuleRekomendasiUmum" ;
-    ns3:isRuleEnabled true ;
-    rdfs:comment "Rekomendasi pengendalian umum tanaman" ;
-    ns2:body [ a ns2:AtomList ;
-            rdf:first [ a ns2:ClassAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:classPredicate ns1:Diagnosis ] ;
-            rdf:rest [ a ns2:AtomList ;
-                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                            ns2:argument1 ns1:d ;
-                            ns2:argument2 ns1:p ;
-                            ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
-                    rdf:rest [ a ns2:AtomList ;
-                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                    ns2:argument1 ns1:p ;
-                                    ns2:argument2 ns1:t ;
-                                    ns2:propertyPredicate ns1:menyerangTanaman ] ;
-                            rdf:rest [ a ns2:AtomList ;
-                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                            ns2:argument1 ns1:t ;
-                                            ns2:argument2 ns1:c ;
-                                            ns2:propertyPredicate ns1:pengendalianUmum ] ;
-                                    rdf:rest () ] ] ] ] ;
+                                    ns2:argument2 ns1:c ;
+                                    ns2:propertyPredicate ns1:dikendalikanDengan ] ;
+                            rdf:rest () ] ] ] ;
     ns2:head [ a ns2:AtomList ;
             rdf:first [ a ns2:IndividualPropertyAtom ;
                     ns2:argument1 ns1:d ;
@@ -22271,9 +22370,9 @@ ns1:BukuDOC002 a ns1:Buku,
             rdf:rest () ] .
 
 [] a ns2:Imp ;
-    rdfs:label "RuleRisikoLingkungan" ;
+    rdfs:label "RuleKandidatLingkungan" ;
     ns3:isRuleEnabled true ;
-    rdfs:comment "Risiko lingkungan" ;
+    rdfs:comment "Kandidat penyakit dari faktor lingkungan"@id ;
     ns2:body [ a ns2:AtomList ;
             rdf:first [ a ns2:ClassAtom ;
                     ns2:argument1 ns1:d ;
@@ -22317,100 +22416,24 @@ ns1:BukuDOC002 a ns1:Buku,
             rdf:first [ a ns2:IndividualPropertyAtom ;
                     ns2:argument1 ns1:d ;
                     ns2:argument2 ns1:p ;
-                    ns2:propertyPredicate ns1:menandaiRisikoLingkungan ] ;
-            rdf:rest () ] .
-
-[] a ns2:Imp ;
-    rdfs:label "RuleRekomendasiSpesifik" ;
-    ns3:isRuleEnabled true ;
-    rdfs:comment "Rekomendasi pengendalian spesifik penyakit" ;
-    ns2:body [ a ns2:AtomList ;
-            rdf:first [ a ns2:ClassAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:classPredicate ns1:Diagnosis ] ;
-            rdf:rest [ a ns2:AtomList ;
-                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                            ns2:argument1 ns1:d ;
-                            ns2:argument2 ns1:p ;
-                            ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
-                    rdf:rest [ a ns2:AtomList ;
-                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                    ns2:argument1 ns1:p ;
-                                    ns2:argument2 ns1:c ;
-                                    ns2:propertyPredicate ns1:dikendalikanDengan ] ;
-                            rdf:rest () ] ] ] ;
-    ns2:head [ a ns2:AtomList ;
-            rdf:first [ a ns2:IndividualPropertyAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:argument2 ns1:c ;
-                    ns2:propertyPredicate ns1:merekomendasikanPengendalian ] ;
-            rdf:rest () ] .
-
-[] a ns2:Imp ;
-    rdfs:label "RuleKandidatGejala" ;
-    ns3:isRuleEnabled true ;
-    rdfs:comment "Kandidat penyakit dari gejala kanonik" ;
-    ns2:body [ a ns2:AtomList ;
-            rdf:first [ a ns2:ClassAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:classPredicate ns1:Diagnosis ] ;
-            rdf:rest [ a ns2:AtomList ;
-                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                            ns2:argument1 ns1:d ;
-                            ns2:argument2 ns1:t ;
-                            ns2:propertyPredicate ns1:memilikiTanaman ] ;
-                    rdf:rest [ a ns2:AtomList ;
-                            rdf:first [ a ns2:ClassAtom ;
-                                    ns2:argument1 ns1:t ;
-                                    ns2:classPredicate ns1:TanamanPangan ] ;
-                            rdf:rest [ a ns2:AtomList ;
-                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                            ns2:argument1 ns1:d ;
-                                            ns2:argument2 ns1:o ;
-                                            ns2:propertyPredicate ns1:memilikiObservasi ] ;
-                                    rdf:rest [ a ns2:AtomList ;
-                                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                    ns2:argument1 ns1:o ;
-                                                    ns2:argument2 ns1:g ;
-                                                    ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
-                                            rdf:rest [ a ns2:AtomList ;
-                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                            ns2:argument1 ns1:p ;
-                                                            ns2:argument2 ns1:t ;
-                                                            ns2:propertyPredicate ns1:menyerangTanaman ] ;
-                                                    rdf:rest [ a ns2:AtomList ;
-                                                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                    ns2:argument1 ns1:p ;
-                                                                    ns2:argument2 ns1:gp ;
-                                                                    ns2:propertyPredicate ns1:memilikiGejala ] ;
-                                                            rdf:rest [ a ns2:AtomList ;
-                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                            ns2:argument1 ns1:gp ;
-                                                                            ns2:argument2 ns1:g ;
-                                                                            ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
-                                                                    rdf:rest () ] ] ] ] ] ] ] ] ;
-    ns2:head [ a ns2:AtomList ;
-            rdf:first [ a ns2:IndividualPropertyAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:argument2 ns1:p ;
                     ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
             rdf:rest () ] .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ns1:Jamur ns1:Bakteri ns1:Virus ns1:Oomycete ns1:Fitoplasma ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ns1:PengendalianKulturTeknis ns1:PengendalianMekanis ns1:PengendalianBiologis ns1:PengendalianKimiawi ns1:PengendalianFisik ns1:PengendalianTerpadu ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ns1:FaseVegetatif ns1:FaseGeneratif ns1:FasePembibitan ns1:FaseAnakan ns1:FasePemasakan ns1:FasePanen ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ns1:Serealia ns1:Legum ns1:UmbiUmbian ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ns1:Buku ns1:JurnalIlmiah ns1:PublikasiInstansi ) .
 
 [] a owl:AllDisjointClasses ;
+    owl:members ( ns1:Serealia ns1:Legum ns1:UmbiUmbian ) .
+
+[] a owl:AllDisjointClasses ;
     owl:members ( ns1:FaktorLingkungan ns1:FaktorLahan ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ns1:FaseVegetatif ns1:FaseGeneratif ns1:FasePembibitan ns1:FaseAnakan ns1:FasePemasakan ns1:FasePanen ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ns1:PengendalianKulturTeknis ns1:PengendalianMekanis ns1:PengendalianBiologis ns1:PengendalianKimiawi ns1:PengendalianFisik ns1:PengendalianTerpadu ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ns1:Jamur ns1:Bakteri ns1:Virus ns1:Oomycete ns1:Fitoplasma ) .
 

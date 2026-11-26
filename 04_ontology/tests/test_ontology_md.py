@@ -18,10 +18,12 @@ sys.path.insert(0, str(ONTO_DIR))
 PTP = "http://kbr.kelompok5.org/penyakit-tanaman-pangan#"
 SWRL = Namespace("http://www.w3.org/2003/11/swrl#")
 SWRLA = Namespace("http://swrl.stanford.edu/ontologies/3.3/swrla.owl#")
+SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 KBR = lambda name: URIRef(PTP + name)  # noqa: E731
 
 ARTIFACT = ONTO_DIR / "ontology_md.ttl"
 OWL_ARTIFACT = ONTO_DIR / "ontology_md.owl"
+INFERRED_ARTIFACT = ONTO_DIR / "ontology_md_inferred.ttl"
 CANONICAL = ONTO_DIR / "ontology.ttl"
 REPORT = ONTO_DIR / "extraction_report_md.json"
 TABLE_DIR = PROJECT_ROOT / "03_knowledge_tables"
@@ -88,6 +90,51 @@ class TestOntologyMd(unittest.TestCase):
             enabled = self.graph.value(imp, SWRLA.isRuleEnabled)
             self.assertIsNotNone(enabled)
             self.assertTrue(str(enabled).lower() in ("true", "1"))
+
+    def external_pairs(self, predicate) -> set:
+        prefixes = (
+            "http://purl.obolibrary.org/obo/Rice",
+            "http://www.ait.ac.th/riceman/RiceDO",
+            "https://gwsp.cs.ksu.edu",
+        )
+        return {
+            (subject, obj)
+            for subject, obj in self.graph.subject_objects(predicate)
+            if str(obj).startswith(prefixes)
+        }
+
+    def test_external_alignments_are_kind_aware(self) -> None:
+        eq = self.external_pairs(OWL.equivalentClass)
+        same = self.external_pairs(OWL.sameAs)
+        subc = self.external_pairs(RDFS.subClassOf)
+        subp = self.external_pairs(RDFS.subPropertyOf)
+        close = self.external_pairs(SKOS.closeMatch)
+        self.assertEqual(len(eq), 8)
+        self.assertEqual(len(same), 2)
+        self.assertEqual(len(subc), 2)
+        self.assertEqual(len(subp), 1)
+        self.assertEqual(len(close), 10)
+        self.assertEqual(self.report["external_alignments_equivalent_class"], 8)
+        self.assertEqual(self.report["external_alignments_same_as"], 2)
+        self.assertEqual(self.report["external_alignments_subclass"], 2)
+        self.assertEqual(self.report["external_alignments_subproperty"], 1)
+        self.assertEqual(self.report["external_alignments_close"], 10)
+        for subject, _ in eq:
+            self.assertIn((subject, RDF.type, OWL.Class), self.graph)
+            self.assertTrue(str(subject).startswith(PTP))
+        for subject, _ in same:
+            self.assertIn((subject, RDF.type, OWL.NamedIndividual), self.graph)
+            self.assertTrue(str(subject).startswith(PTP))
+        for subject, _ in subc | subp | close:
+            self.assertTrue(str(subject).startswith(PTP))
+
+    def test_inferred_artifact_available(self) -> None:
+        self.assertTrue(INFERRED_ARTIFACT.exists())
+        graph = Graph()
+        graph.parse(INFERRED_ARTIFACT, format="turtle")
+        self.assertEqual(len(set(graph.subjects(RDF.type, SWRL.Imp))), 7)
+        self.assertTrue(list(graph.triples((None, KBR("menghasilkanPenyakit"), None))))
+        self.assertEqual(list(graph.objects(None, OWL.imports)), [])
 
     def test_property_definition(self) -> None:
         prop = KBR("memilikiKondisiTumbuh")

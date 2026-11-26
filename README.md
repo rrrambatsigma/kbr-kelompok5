@@ -65,6 +65,7 @@ python 04_ontology/build_ontology.py
 python 03_knowledge_tables/src/build_enrichment_facts.py
 python 03_knowledge_tables/src/build_descriptions.py
 python 04_ontology/build_ontology_md.py
+python 04_ontology/materialize_inferred.py
 
 # audit akhir
 python 03_knowledge_tables/src/build_kb_completeness_report.py

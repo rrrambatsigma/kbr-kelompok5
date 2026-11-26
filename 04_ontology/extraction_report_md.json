@@ -2,8 +2,8 @@
   "base": "04_ontology/ontology.ttl",
   "output": "04_ontology/ontology_md.ttl",
   "base_triples": 17444,
-  "added_triples": 3418,
-  "total_triples": 20862,
+  "added_triples": 3441,
+  "total_triples": 20885,
   "facts": 997,
   "internal_facts": 81,
   "external_facts": 861,
@@ -77,6 +77,13 @@
   "external_variety_entities": 14,
   "external_variety_facts": 28,
   "swrl_rules": 7,
+  "external_alignments": 23,
+  "external_alignments_equivalent_class": 8,
+  "external_alignments_same_as": 2,
+  "external_alignments_subclass": 2,
+  "external_alignments_subproperty": 1,
+  "external_alignments_exact": 0,
+  "external_alignments_close": 10,
   "diagnoses": 53,
   "entity_counts": {
     "BuktiSumber": 68,
@@ -148,7 +155,7 @@
   "canonical_untouched": true,
   "external": {
     "source_registry": "01_knowledge_sources/external/source_registry.csv",
-    "source_count": 55,
+    "source_count": 58,
     "sources": [
       "SRC_EXT_001",
       "SRC_EXT_002",
@@ -204,7 +211,10 @@
       "SRC_EXT_052",
       "SRC_EXT_053",
       "SRC_EXT_054",
-      "SRC_EXT_055"
+      "SRC_EXT_055",
+      "SRC_ONTO_RICEDO",
+      "SRC_ONTO_PSO",
+      "SRC_ONTO_GRIP"
     ],
     "facts": 861,
     "entities": 220,

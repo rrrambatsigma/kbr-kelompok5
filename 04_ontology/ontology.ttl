@@ -18647,18 +18647,18 @@ ptp:Penyakit a owl:Class ;
     rdfs:label "Penyakit"@id ;
     rdfs:comment "Penyakit tanaman pangan yang dicatat dalam sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ptp:Patogen ;
-            owl:onProperty ptp:disebabkanOleh ],
-        [ a owl:Restriction ;
             owl:onProperty ptp:menyerangTanaman ;
             owl:someValuesFrom ptp:TanamanPangan ],
         [ a owl:Restriction ;
-            owl:onProperty ptp:memilikiGejala ;
-            owl:someValuesFrom ptp:Gejala ],
+            owl:allValuesFrom ptp:Patogen ;
+            owl:onProperty ptp:disebabkanOleh ],
         [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass ptp:Referensi ;
             owl:onProperty ptp:memilikiReferensi ],
+        [ a owl:Restriction ;
+            owl:onProperty ptp:memilikiGejala ;
+            owl:someValuesFrom ptp:Gejala ],
         ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
@@ -18760,20 +18760,20 @@ ptp:BukuDOC002 a ptp:Buku,
     skos:prefLabel "Penyakit Tanaman dan Pengendaliannya"@id .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Jamur ptp:Bakteri ptp:Virus ptp:Oomycete ptp:Fitoplasma ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ptp:PengendalianKulturTeknis ptp:PengendalianMekanis ptp:PengendalianBiologis ptp:PengendalianKimiawi ptp:PengendalianFisik ptp:PengendalianTerpadu ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePemasakan ptp:FasePanen ) .
+    owl:members ( ptp:Buku ptp:JurnalIlmiah ptp:PublikasiInstansi ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Buku ptp:JurnalIlmiah ptp:PublikasiInstansi ) .
+    owl:members ( ptp:FaktorLingkungan ptp:FaktorLahan ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:FaktorLingkungan ptp:FaktorLahan ) .
+    owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePemasakan ptp:FasePanen ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ptp:PengendalianKulturTeknis ptp:PengendalianMekanis ptp:PengendalianBiologis ptp:PengendalianKimiawi ptp:PengendalianFisik ptp:PengendalianTerpadu ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ptp:Jamur ptp:Bakteri ptp:Virus ptp:Oomycete ptp:Fitoplasma ) .
 
