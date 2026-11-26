@@ -8,10 +8,11 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from rdflib import Graph, Literal, Namespace
+from rdflib import BNode, Graph, Literal, Namespace
 from rdflib.namespace import OWL, RDF, RDFS, XSD
 
 SWRL = Namespace("http://www.w3.org/2003/11/swrl#")
+SWRLA = Namespace("http://swrl.stanford.edu/ontologies/3.3/swrla.owl#")
 
 ONTO_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = ONTO_DIR.parent
@@ -34,6 +35,8 @@ EXT_FACTS_CSV = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_facts.csv"
 EXT_ENTITIES_CSV = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_entities.csv"
 EXT_DESCRIPTIONS_CSV = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_descriptions.csv"
 GROWTH_CSV = TABLE_DIR / "curated" / "EXTERNAL_ENV" / "plant_growth_conditions.csv"
+PHASE_CSV = TABLE_DIR / "curated" / "EXTERNAL_ENV" / "plant_growth_phases.csv"
+EXT_VARIETY_CSV = TABLE_DIR / "curated" / "EXTERNAL_ENV" / "external_varieties.csv"
 SWRL_RULES_TTL = ONTO_DIR / "swrl_rules.ttl"
 EXT_REPORT_JSON = TABLE_DIR / "reports" / "EXTERNAL_ENV" / "external_env_report.json"
 SOURCE_REGISTRY_CSV = PROJECT_ROOT / "01_knowledge_sources" / "external" / "source_registry.csv"
@@ -93,6 +96,9 @@ def add_entities(graph: Graph, rows: list[dict[str, str]]) -> None:
         label = (row.get("label") or "").strip()
         if label:
             graph.add((uri, RDFS.label, Literal(label, lang="id")))
+        comment = (row.get("comment") or "").strip()
+        if comment:
+            graph.add((uri, RDFS.comment, Literal(comment, lang="id")))
 
 
 def _nl(text: str) -> str:
@@ -108,18 +114,37 @@ def _mark_swrl_atom_list(graph: Graph, node) -> None:
         node = next(graph.objects(node, RDF.rest), None)
 
 
+def _local_name(iri) -> str:
+    text = str(iri)
+    for sep in ("#", "/"):
+        if sep in text:
+            text = text.rsplit(sep, 1)[-1]
+    return text
+
+
 def add_swrl_rules(graph: Graph) -> int:
     if not SWRL_RULES_TTL.exists():
         return 0
     rules = Graph()
     rules.parse(SWRL_RULES_TTL, format="turtle")
-    for triple in rules:
-        graph.add(triple)
-    for imp in rules.subjects(RDF.type, SWRL.Imp):
+    imps = list(rules.subjects(RDF.type, SWRL.Imp))
+    named = set(imps)
+    for subject, predicate, obj in rules:
+        if subject in named:
+            continue
+        graph.add((subject, predicate, obj))
+    for imp in imps:
+        node = BNode()
+        graph.add((node, RDF.type, SWRL.Imp))
         for predicate in (SWRL.body, SWRL.head):
             for atom_list in rules.objects(imp, predicate):
+                graph.add((node, predicate, atom_list))
                 _mark_swrl_atom_list(graph, atom_list)
-    return len(list(rules.subjects(RDF.type, SWRL.Imp)))
+        graph.add((node, RDFS.label, Literal(_local_name(imp))))
+        for label in rules.objects(imp, RDFS.label):
+            graph.add((node, RDFS.comment, Literal(str(label))))
+        graph.add((node, SWRLA.isRuleEnabled, Literal(True)))
+    return len(imps)
 
 
 def growth_condition_facts() -> list[dict[str, str]]:
@@ -154,6 +179,124 @@ def growth_condition_facts() -> list[dict[str, str]]:
             }
         )
     return facts
+
+
+def plant_phase_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    entities: list[dict[str, str]] = []
+    facts: list[dict[str, str]] = []
+    for row in read_csv_optional(PHASE_CSV):
+        plant = (row.get("plant") or "").strip()
+        local = (row.get("phase_local") or "").strip()
+        label = (row.get("phase_label") or "").strip()
+        phase_class = (row.get("phase_class") or "").strip()
+        source_id = (row.get("source_id") or "").strip()
+        quote = (row.get("quote") or "").strip()
+        if not (plant and local and label and phase_class and source_id and quote):
+            continue
+        locator = (row.get("locator") or "").strip()
+        entities.append(
+            {
+                "entity_local": local,
+                "entity_class": phase_class,
+                "label": label,
+                "source_document": source_id,
+                "source_id": source_id,
+                "notes": locator,
+                "comment": "Fase pertumbuhan tanaman yang disebut pada sumber.",
+            }
+        )
+        facts.append(
+            {
+                "fact_id": (row.get("phase_id") or "").strip(),
+                "subject_local": plant,
+                "subject_class": "TanamanPangan",
+                "predicate": "memilikiFasePertumbuhan",
+                "object_local": local,
+                "object_class": "FasePertumbuhan",
+                "literal_value": "",
+                "literal_lang": "",
+                "source_document": source_id,
+                "source_type": "external_growth_phase",
+                "source_id": source_id,
+                "evidence_quote": quote,
+                "page": "",
+                "line_start": "",
+                "line_end": "",
+                "confidence": (row.get("confidence") or "medium").strip(),
+                "review_status": (row.get("review_status") or "verified").strip(),
+                "notes": locator,
+            }
+        )
+    return entities, facts
+
+
+def external_variety_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    entities: list[dict[str, str]] = []
+    facts: list[dict[str, str]] = []
+    for row in read_csv_optional(EXT_VARIETY_CSV):
+        plant = (row.get("plant") or "").strip()
+        local = (row.get("variety_local") or "").strip()
+        label = (row.get("variety_label") or "").strip()
+        disease = (row.get("disease_local") or "").strip()
+        relation = (row.get("relation") or "").strip().lower()
+        source_id = (row.get("source_id") or "").strip()
+        quote = (row.get("quote") or "").strip()
+        if not (plant and local and label and disease and source_id and quote):
+            continue
+        if relation not in {"tahan", "rentan"}:
+            continue
+        locator = (row.get("locator") or "").strip()
+        base = {
+            "source_document": source_id,
+            "source_id": source_id,
+            "evidence_quote": quote,
+            "page": "",
+            "line_start": "",
+            "line_end": "",
+            "confidence": (row.get("confidence") or "medium").strip(),
+            "review_status": (row.get("review_status") or "verified").strip(),
+            "notes": locator,
+        }
+        entities.append(
+            {
+                "entity_local": local,
+                "entity_class": "Varietas",
+                "label": label,
+                "source_document": source_id,
+                "source_id": source_id,
+                "notes": locator,
+                "comment": "Varietas tanaman yang disebut pada sumber.",
+            }
+        )
+        facts.append(
+            {
+                "fact_id": (row.get("variety_id") or "").strip() + "_plant",
+                "subject_local": plant,
+                "subject_class": "TanamanPangan",
+                "predicate": "memilikiVarietas",
+                "object_local": local,
+                "object_class": "Varietas",
+                "literal_value": "",
+                "literal_lang": "",
+                "source_type": "external_variety",
+                **base,
+            }
+        )
+        facts.append(
+            {
+                "fact_id": (row.get("variety_id") or "").strip() + "_resistance",
+                "subject_local": local,
+                "subject_class": "Varietas",
+                "predicate": f"{relation}Terhadap",
+                "object_local": disease,
+                "object_class": "Penyakit",
+                "literal_value": "",
+                "literal_lang": "",
+                "source_type": "external_variety",
+                **base,
+            }
+        )
+    return entities, facts
 
 
 def add_facts(graph: Graph, rows: list[dict[str, str]]) -> None:
@@ -332,10 +475,12 @@ def build() -> tuple[Graph, dict, list[str]]:
     internal_facts = read_csv(FACTS_CSV)
     ext_entities = read_csv_optional(EXT_ENTITIES_CSV)
     growth_facts = growth_condition_facts()
+    phase_entities, phase_facts = plant_phase_rows()
+    variety_entities, variety_facts = external_variety_rows()
     ext_facts = read_csv_optional(EXT_FACTS_CSV) + growth_facts
     ext_descriptions = read_csv_optional(EXT_DESCRIPTIONS_CSV)
-    entities = internal_entities + ext_entities
-    facts = internal_facts + ext_facts
+    entities = internal_entities + ext_entities + phase_entities + variety_entities
+    facts = internal_facts + ext_facts + phase_facts + variety_facts
     descriptions = read_csv(DESCRIPTIONS_CSV) + ext_descriptions
     add_entities(graph, entities)
     add_facts(graph, facts)
@@ -373,6 +518,10 @@ def build() -> tuple[Graph, dict, list[str]]:
         "internal_entities": len(internal_entities),
         "external_entities": len(ext_entities),
         "growth_condition_facts": len(growth_facts),
+        "plant_phase_entities": len(phase_entities),
+        "plant_phase_facts": len(phase_facts),
+        "external_variety_entities": len(variety_entities),
+        "external_variety_facts": len(variety_facts),
         "swrl_rules": swrl_rule_count,
         "diagnoses": diagnosis_count,
         "entity_counts": dict(sorted(entity_counts.items())),
@@ -396,7 +545,6 @@ def build() -> tuple[Graph, dict, list[str]]:
             "source_count": len(external_sources),
             "sources": [row.get("source_id", "") for row in external_sources],
             "facts": len(ext_facts),
-            "growth_condition_facts": len(growth_facts),
             "entities": len(ext_entities),
             "descriptions": len(ext_descriptions),
             "observations_generated": external_report.get("observations_generated", 0),

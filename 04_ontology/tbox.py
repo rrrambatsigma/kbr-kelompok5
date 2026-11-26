@@ -790,6 +790,12 @@ MD_OBJECT_PROPERTIES: dict[str, dict] = {
         "domain": "ObservasiLingkungan",
         "range": "FaktorRisiko",
     },
+    "memilikiFasePertumbuhan": {
+        "label": "memiliki fase pertumbuhan",
+        "comment": "Tanaman pangan memiliki tahapan fase pertumbuhan.",
+        "domain": "TanamanPangan",
+        "range": "FasePertumbuhan",
+    },
 }
 
 

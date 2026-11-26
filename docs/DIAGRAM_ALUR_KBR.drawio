@@ -1,0 +1,204 @@
+<mxfile host="app.diagrams.net" modified="2026-11-23T00:00:00.000Z" agent="opencode" version="24.7.17">
+  <diagram id="alur-kbr" name="Alur KBR">
+    <mxGraphModel dx="2400" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1170" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Alur Knowledge Base Reasoning (KBR) — dari Sumber Data sampai Expert System" style="text;html=1;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1F2933;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="2320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Kotak solid = alur utama · Kotak putus-putus = bukti / audit / umpan balik · Abu-abu = belum selesai · Semua path relatif terhadap root repo" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#5B6770;" vertex="1" parent="1">
+          <mxGeometry x="40" y="42" width="2320" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== G. AUDIT & ITERASI ===================== -->
+        <mxCell id="G" value="G. Audit &amp; Iterasi — umpan balik ke C dan D" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;align=center;fontSize=14;fontStyle=1;spacingTop=8;fillColor=#F2F2F2;strokeColor=#777777;strokeWidth=1.5;dashed=1;fontColor=#374151;" vertex="1" parent="1">
+          <mxGeometry x="840" y="70" width="1300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="G1" value="KB_COMPLETENESS.md&lt;br&gt;gap inti 0; severity/fase/varietas best-effort" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="G">
+          <mxGeometry x="10" y="35" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G2" value="SOURCE_GAP_AUDIT.md&lt;br&gt;audit ketersediaan sumber per gap" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="G">
+          <mxGeometry x="320" y="35" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G3" value="MAPPING_TRIAGE.md&lt;br&gt;58 gejala · 37 kendali belum dipetakan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="G">
+          <mxGeometry x="630" y="35" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G4" value="coverage.md · validation.json&lt;br&gt;G1–G7 · 53/53 covered" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="G">
+          <mxGeometry x="940" y="35" width="350" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== A. SUMBER DATA ===================== -->
+        <mxCell id="A" value="A. Sumber Data &amp; Akuisisi" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;align=center;fontSize=14;fontStyle=1;spacingTop=8;fillColor=#EAF2F8;strokeColor=#5B7C99;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="360" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="A1" value="Buku internal&lt;br&gt;DOC002 · DOC003 · DOC004 · DOC005&lt;br&gt;&lt;i&gt;PDF asli lokal (gitignored)&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="A">
+          <mxGeometry x="10" y="40" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="A2" value="Sumber eksternal&lt;br&gt;45 sumber (SRC_EXT_001–045)&lt;br&gt;jurnal · extension · datasheet" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="A">
+          <mxGeometry x="10" y="120" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="A3" value="Metadata &amp; registry&lt;br&gt;source_metadata/manifest.json&lt;br&gt;source_registry.csv" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="A">
+          <mxGeometry x="10" y="200" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="A4" value="Preview teks&lt;br&gt;00_sumber_data/*.md" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="A">
+          <mxGeometry x="10" y="280" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A5" value="Catatan bukti:&lt;br&gt;PDF asli tidak masuk Git. Bukti teks yang tersedia ada di 00_sumber_data dan 02_extraction." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6B656;dashed=1;fontSize=10;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#5B4A1A;" vertex="1" parent="A">
+          <mxGeometry x="10" y="350" width="340" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== B. EKSTRAKSI ===================== -->
+        <mxCell id="B" value="B. Ekstraksi &amp; Parsing" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;align=center;fontSize=14;fontStyle=1;spacingTop=8;fillColor=#EAF2F8;strokeColor=#5B7C99;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="440" y="220" width="360" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="B1" value="LlamaParse&lt;br&gt;cost_effective (DOC002–004)&lt;br&gt;agentic (DOC005)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="B">
+          <mxGeometry x="10" y="40" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="B2" value="Output teks&lt;br&gt;pages / blocks / chunks / markdown&lt;br&gt;02_extraction/extracted_text/" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="B">
+          <mxGeometry x="10" y="120" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="B3" value="Baseline DOC002&lt;br&gt;llamaparse/baseline/*.jsonl" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="B">
+          <mxGeometry x="10" y="210" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="B4" value="Quality gate&lt;br&gt;validation · quality · reconciliation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="B">
+          <mxGeometry x="10" y="280" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="B5" value="Catatan ekstraksi&lt;br&gt;extraction_notes/*.json&lt;br&gt;extraction_report.md" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D3DD;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="B">
+          <mxGeometry x="10" y="350" width="340" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== C. KNOWLEDGE TABLES ===================== -->
+        <mxCell id="C" value="C. Knowledge Tables / Rekayasa Pengetahuan" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;align=center;fontSize=14;fontStyle=1;spacingTop=8;fillColor=#EAF4EA;strokeColor=#5F8A5F;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="840" y="220" width="420" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="C1" value="Ekstraksi entitas&lt;br&gt;plants · diseases · pathogens · disease_pathogen · symptoms · controls" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="C">
+          <mxGeometry x="10" y="40" width="400" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="C2" value="Kurasi&lt;br&gt;auto → review → curated" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="C">
+          <mxGeometry x="10" y="130" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C3" value="Enrichment &amp; external env&lt;br&gt;metadata · 68 observasi · kondisi tumbuh" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="C">
+          <mxGeometry x="10" y="200" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="C4" value="Audit KB&lt;br&gt;coverage · G1–G7 · gap · triage" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="C">
+          <mxGeometry x="10" y="280" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C5" value="Output otoritas akhir&lt;br&gt;03_knowledge_tables/curated/" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="C">
+          <mxGeometry x="10" y="350" width="400" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== D. ONTOLOGI ===================== -->
+        <mxCell id="D" value="D. Ontologi &amp; Reasoning" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;align=center;fontSize=14;fontStyle=1;spacingTop=8;fillColor=#EAF4EA;strokeColor=#3F6B3F;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="220" width="420" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="D1" value="TBox — tbox.py&lt;br&gt;87 kelas · 29 object property · 33 data property&lt;br&gt;SROIQ(D)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="D">
+          <mxGeometry x="10" y="40" width="400" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="D2" value="ABox — build_ontology.py&lt;br&gt;ontology.ttl / ontology.owl&lt;br&gt;16.732 triple · 1.204 individu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="D">
+          <mxGeometry x="10" y="130" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="D3" value="Enrichment + SWRL&lt;br&gt;build_ontology_md.py + swrl_rules.ttl&lt;br&gt;19.021 triple · 1.366 individu · 4 aturan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="D">
+          <mxGeometry x="10" y="210" width="400" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="D4" value="Reasoner Pellet / HermiT&lt;br&gt;inferensi kelas penyakit, kandidat, rekomendasi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9D8C9;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="D">
+          <mxGeometry x="10" y="300" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="D5" value="Pellet utama · HermiT fallback&lt;br&gt;reasoner_utils.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7FBF7;strokeColor=#C9D8C9;fontSize=10;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#3F6B3F;" vertex="1" parent="D">
+          <mxGeometry x="10" y="380" width="400" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== E. APLIKASI ===================== -->
+        <mxCell id="E" value="E. Aplikasi / Expert System" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;align=center;fontSize=14;fontStyle=1;spacingTop=8;fillColor=#F5EFE6;strokeColor=#9C7A54;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="220" width="420" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="E1" value="Backend Spring Boot + Jena&lt;br&gt;muat ontology_md.ttl" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8C9B8;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="E">
+          <mxGeometry x="10" y="40" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E2" value="API saat ini&lt;br&gt;/api/health · /api/ontology/status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8C9B8;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="E">
+          <mxGeometry x="10" y="110" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E3" value="Endpoint diagnosis&lt;br&gt;BELUM: SPARQL + ranking" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EDEDED;strokeColor=#9CA3AF;dashed=1;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#6B7280;" vertex="1" parent="E">
+          <mxGeometry x="10" y="180" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E4" value="Frontend — BELUM" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EDEDED;strokeColor=#9CA3AF;dashed=1;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#6B7280;" vertex="1" parent="E">
+          <mxGeometry x="10" y="250" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E5" value="Luaran expert system&lt;br&gt;kandidat penyakit + skor + rekomendasi + bukti" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D8C9B8;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="E">
+          <mxGeometry x="10" y="310" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="E6" value="Catatan: SWRL tidak dieksekusi Jena; inferensi dijalankan offline dengan Pellet/owlready2." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#D6B656;dashed=1;fontSize=10;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#5B4A1A;" vertex="1" parent="E">
+          <mxGeometry x="10" y="390" width="400" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== F. BUKTI ===================== -->
+        <mxCell id="F" value="F. Bukti / Provenance — di mana bukti disimpan" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;align=center;fontSize=14;fontStyle=1;spacingTop=8;fillColor=#F2F2F2;strokeColor=#777777;strokeWidth=1.5;dashed=1;fontColor=#374151;" vertex="1" parent="1">
+          <mxGeometry x="40" y="730" width="2140" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="F1" value="Sumber &amp; registry&lt;br&gt;PDF lokal (gitignored) · 00_sumber_data/*.md&lt;br&gt;source_metadata/manifest.json&lt;br&gt;source_registry.csv" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="F">
+          <mxGeometry x="10" y="35" width="340" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="F2" value="Ekstraksi&lt;br&gt;chunk_id / block_id / halaman&lt;br&gt;02_extraction/extracted_text/&lt;br&gt;llamaparse/baseline/" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="F">
+          <mxGeometry x="370" y="35" width="340" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="F3" value="Tabel &amp; kurasi&lt;br&gt;char_start / char_end + evidence_quote&lt;br&gt;03_knowledge_tables/curated/*.csv&lt;br&gt;review/*_decisions.json" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="F">
+          <mxGeometry x="730" y="35" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="F4" value="Ontologi&lt;br&gt;BuktiSumber: kutipanSumber, halamanSumber, idChunkSumber&lt;br&gt;didukungOleh + prov:wasDerivedFrom&lt;br&gt;04_ontology/ontology_md.ttl" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="F">
+          <mxGeometry x="1170" y="35" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="F5" value="Konsumsi API&lt;br&gt;06_backend membaca ontology_md.ttl&lt;br&gt;belum mengembalikan BuktiSumber" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D0D0D0;fontSize=11;align=left;verticalAlign=middle;spacingLeft=8;fontColor=#1F2933;" vertex="1" parent="F">
+          <mxGeometry x="1610" y="35" width="520" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== LEGEND & ANGKA ===================== -->
+        <mxCell id="legend" value="Keterangan&lt;br&gt;Garis solid = alur utama&lt;br&gt;Garis putus-putus = bukti / audit / umpan balik&lt;br&gt;Abu-abu = belum selesai (endpoint diagnosis &amp; frontend)&lt;br&gt;Panah dua arah = audit dan perbaikan data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D1D5DB;align=left;verticalAlign=top;spacing=10;fontSize=11;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="40" y="970" width="800" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="keynumbers" value="Angka kunci&lt;br&gt;4 dokumen internal · 45 sumber eksternal&lt;br&gt;110 penyakit / 105 patogen / 132 relasi (DOC002)&lt;br&gt;Ontologi: 7 tanaman · 53 penyakit · 87 kelas · 29 OP · 33 DP&lt;br&gt;16.732 triple kanonik → 19.021 triple enrichment · 1.204 → 1.366 individu · 4 aturan SWRL&lt;br&gt;68 observasi lingkungan eksternal · 0 gap inti (patogen, bagian, kendali, kondisi tumbuh)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D1D5DB;align=left;verticalAlign=top;spacing=10;fontSize=11;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="860" y="970" width="1320" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== EDGES: ALUR UTAMA ===================== -->
+        <mxCell id="e_ab" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4B5563;strokeWidth=1.5;endArrow=block;endFill=1;" edge="1" parent="1" source="A" target="B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4B5563;strokeWidth=1.5;endArrow=block;endFill=1;" edge="1" parent="1" source="B" target="C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cd" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4B5563;strokeWidth=1.5;endArrow=block;endFill=1;" edge="1" parent="1" source="C" target="D">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_de" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4B5563;strokeWidth=1.5;endArrow=block;endFill=1;" edge="1" parent="1" source="D" target="E">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== EDGES: BUKTI ===================== -->
+        <mxCell id="e_af1" value="sumber" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;dashPattern=8 4;strokeColor=#6B7280;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="A" target="F1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_bf2" value="artefak teks" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;dashPattern=8 4;strokeColor=#6B7280;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="B" target="F2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cf3" value="offset &amp; kutipan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;dashPattern=8 4;strokeColor=#6B7280;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="C" target="F3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_df4" value="BuktiSumber" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;dashPattern=8 4;strokeColor=#6B7280;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="D" target="F4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ef5" value="konsumsi" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;dashPattern=8 4;strokeColor=#6B7280;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="E" target="F5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== EDGES: AUDIT / UMPAN BALIK ===================== -->
+        <mxCell id="e_cg" value="audit ↔ perbaikan data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;dashed=1;dashPattern=8 4;strokeColor=#6B7280;strokeWidth=1.5;startArrow=block;startFill=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="C" target="G">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_dg" value="audit ↔ rebuild ontologi" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;dashed=1;dashPattern=8 4;strokeColor=#6B7280;strokeWidth=1.5;startArrow=block;startFill=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="D" target="G">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

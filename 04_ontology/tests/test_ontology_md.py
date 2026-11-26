@@ -17,6 +17,7 @@ PROJECT_ROOT = ONTO_DIR.parent
 sys.path.insert(0, str(ONTO_DIR))
 PTP = "http://kbr.kelompok5.org/penyakit-tanaman-pangan#"
 SWRL = Namespace("http://www.w3.org/2003/11/swrl#")
+SWRLA = Namespace("http://swrl.stanford.edu/ontologies/3.3/swrla.owl#")
 KBR = lambda name: URIRef(PTP + name)  # noqa: E731
 
 ARTIFACT = ONTO_DIR / "ontology_md.ttl"
@@ -78,12 +79,30 @@ class TestOntologyMd(unittest.TestCase):
                     self.assertIn((node, RDF.type, SWRL.AtomList), self.graph)
                     node = next(self.graph.objects(node, RDF.rest), None)
 
+    def test_swrl_rules_are_anonymous_with_metadata(self) -> None:
+        rules = set(self.graph.subjects(RDF.type, SWRL.Imp))
+        self.assertEqual(len(rules), 7)
+        for imp in rules:
+            self.assertIsInstance(imp, BNode)
+            self.assertIsNotNone(self.graph.value(imp, RDFS.label))
+            enabled = self.graph.value(imp, SWRLA.isRuleEnabled)
+            self.assertIsNotNone(enabled)
+            self.assertTrue(str(enabled).lower() in ("true", "1"))
+
     def test_property_definition(self) -> None:
         prop = KBR("memilikiKondisiTumbuh")
         self.assertIn((prop, RDF.type, OWL.ObjectProperty), self.graph)
         self.assertIn((prop, RDFS.domain, KBR("TanamanPangan")), self.graph)
         self.assertIn((prop, RDFS.range, KBR("FaktorRisiko")), self.graph)
         self.assertTrue(self.graph.value(prop, RDFS.label))
+
+    def test_plant_phase_property_and_links(self) -> None:
+        prop = KBR("memilikiFasePertumbuhan")
+        self.assertIn((prop, RDF.type, OWL.ObjectProperty), self.graph)
+        self.assertIn((prop, RDFS.domain, KBR("TanamanPangan")), self.graph)
+        self.assertIn((prop, RDFS.range, KBR("FasePertumbuhan")), self.graph)
+        for plant in SCOPE_PLANTS:
+            self.assertTrue(self.objects(plant, "memilikiFasePertumbuhan"), plant)
 
     def test_scope_plants_only(self) -> None:
         plants = set(self.graph.subjects(RDF.type, KBR("TanamanPangan")))
@@ -146,9 +165,17 @@ class TestOntologyMd(unittest.TestCase):
         self.assertEqual(self.report["added_triples"], len(self.graph) - len(self.canonical))
         self.assertEqual(
             self.report["facts"],
-            len(self.facts) + self.report.get("growth_condition_facts", 0),
+            len(self.facts)
+            + self.report.get("growth_condition_facts", 0)
+            + self.report.get("plant_phase_facts", 0)
+            + self.report.get("external_variety_facts", 0),
         )
-        self.assertEqual(self.report["entities"], len(self.entities))
+        self.assertEqual(
+            self.report["entities"],
+            len(self.entities)
+            + self.report.get("plant_phase_entities", 0)
+            + self.report.get("external_variety_entities", 0),
+        )
         self.assertEqual(self.report["descriptions"], len(self.descriptions))
         self.assertEqual(
             self.report["named_individuals"],

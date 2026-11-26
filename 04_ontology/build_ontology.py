@@ -630,6 +630,9 @@ PHASE_DEFS: dict[str, dict[str, str]] = {
     "FaseAnakanTanaman": {"label": "Fase anakan", "class": "FaseAnakan"},
     "FaseMatang": {"label": "Fase matang", "class": "FasePemasakan"},
     "FasePanenTanaman": {"label": "Fase panen", "class": "FasePanen"},
+    "FasePembungaan": {"label": "Fase pembungaan", "class": "FaseGeneratif"},
+    "FasePembentukanPolong": {"label": "Fase pembentukan polong", "class": "FaseGeneratif"},
+    "FasePengisianPolong": {"label": "Fase pengisian polong", "class": "FaseGeneratif"},
 }
 PHASE_RE = re.compile(
     r"\bfase\s+(matang\s+susu|vegetatif|generatif|pembibitan|anakan|matang)\b",
