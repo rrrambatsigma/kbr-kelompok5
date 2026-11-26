@@ -1254,7 +1254,6 @@ ns1:deskripsiTanaman a owl:DatatypeProperty ;
 ns1:didukungOleh a owl:ObjectProperty ;
     rdfs:label "didukung oleh"@id ;
     rdfs:comment "Entitas didukung oleh node bukti sumber."@id ;
-    rdfs:domain ns1:EntitasKBR ;
     rdfs:range ns1:BuktiSumber ;
     skos:prefLabel "didukung oleh"@id .
 
@@ -1289,7 +1288,6 @@ ns1:idChunkSumber a owl:DatatypeProperty ;
 ns1:identifierSumber a owl:DatatypeProperty ;
     rdfs:label "identifier sumber"@id ;
     rdfs:comment "Identifier baris atau entitas pada sumber."@id ;
-    rdfs:domain ns1:EntitasKBR ;
     rdfs:range xsd:string ;
     skos:prefLabel "identifier sumber"@id .
 
@@ -9165,8 +9163,6 @@ ns1:terdapatPada a owl:ObjectProperty ;
 prov:wasDerivedFrom a owl:ObjectProperty ;
     rdfs:label "was derived from"@id ;
     rdfs:comment "Entitas diturunkan dari sumber atau entitas lain."@id ;
-    rdfs:domain ns1:EntitasKBR ;
-    rdfs:range ns1:EntitasKBR ;
     skos:prefLabel "was derived from"@id .
 
 ns1:Begomovirus a ns1:Virus,
@@ -17127,7 +17123,6 @@ ns1:UmbiUmbian a owl:Class ;
 ns1:berkaitanPengendalian a owl:ObjectProperty ;
     rdfs:label "berkaitan pengendalian"@id ;
     rdfs:comment "Superproperti yang menghubungkan entitas dengan tindakan pengendalian."@id ;
-    rdfs:domain ns1:EntitasKBR ;
     rdfs:range ns1:Pengendalian ;
     skos:prefLabel "berkaitan pengendalian"@id .
 
@@ -18012,7 +18007,6 @@ ns1:memilikiObservasi a owl:ObjectProperty ;
     rdfs:label "memiliki observasi"@id ;
     rdfs:comment "Diagnosis memiliki observasi gejala atau faktor lingkungan."@id ;
     rdfs:domain ns1:Diagnosis ;
-    rdfs:range ns1:EntitasKBR ;
     skos:prefLabel "memiliki observasi"@id .
 
 ns1:menghasilkanPenyakit a owl:ObjectProperty ;
@@ -18832,7 +18826,6 @@ ns1:KlorosisTanaman a ns1:GejalaKanonik,
 ns1:Observasi a owl:Class ;
     rdfs:label "Observasi"@id ;
     rdfs:comment "Observasi yang menjadi masukan proses diagnosis."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -20257,11 +20250,6 @@ ns1:PenyakitRebahKecambahKedelai a ns1:Penyakit,
         "Penyakit rebah kecambah pada tanaman kedelai disebabkan oleh jamur Rhizoctonia solani. Patogen ini mampu menginfeksi tanaman kedelai sejak benih ditanam di lahan. Pada benih yang terinfeksi patogen R. solani maka benih tidak akan berkecambah atau mati. Akibatnya tanaman mati sebelum muncul pada permukaan tanah atau yang disebut dengan pre emergence damping off. Gejala yang muncul adalah benih membusuk akibat infeksi R. solani. Gejala yang muncul setelah benih tumbuh pada permukaan tanah kemudian tanaman mati akibat pangkal batang pada permukaan tanah terdapat bercak coklat akibat terinfeksi patogen (post emergence damping off)."@id ;
     skos:prefLabel "Penyakit Rebah Kecambah"@id .
 
-ns1:EntitasKBR a owl:Class ;
-    rdfs:label "Entitas KBR"@id ;
-    rdfs:comment "Kelas akar seluruh entitas knowledge base penyakit tanaman pangan."@id ;
-    skos:prefLabel "Entitas KBR"@id .
-
 ns1:JurnalIlmiah a owl:Class ;
     rdfs:label "Jurnal Ilmiah"@id ;
     rdfs:comment "Referensi berbentuk artikel jurnal."@id ;
@@ -20355,7 +20343,6 @@ ns1:FasePertumbuhan a owl:Class ;
     rdfs:label "Fase Pertumbuhan"@id ;
     rdfs:comment "Biasanya cendawan C. arachidicola menginfeksi kacang tanah pada fase pertumbuhan yang lebih awal daripada C. personata."@id,
         "Fase pertumbuhan tanaman."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -20499,7 +20486,6 @@ ns1:PenyakitBercakKuningUbiJalar a ns1:Penyakit,
 ns1:FaktorRisiko a owl:Class ;
     rdfs:label "Faktor Risiko"@id ;
     rdfs:comment "Faktor lingkungan, budidaya, atau lahan yang memengaruhi penyakit."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -20526,8 +20512,7 @@ ns1:Patogen a owl:Class ;
     rdfs:label "Patogen"@id ;
     rdfs:comment "Organisme penyebab penyakit tanaman."@id,
         "Patogen merupakan parasit obligat."@id ;
-    rdfs:subClassOf ns1:EntitasKBR,
-        <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+    rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -20905,7 +20890,6 @@ ns1:Referensi a owl:Class ;
     rdfs:label "Referensi"@id ;
     rdfs:comment "Harapannya buku ini dapat menjadi buku referensi tidak hanya dilingkungan akademis, tetapi juga bagi praktisi pertanian."@id,
         "Sumber bibliografis yang mendukung data."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -20938,7 +20922,6 @@ ns1:BagianTanaman a owl:Class ;
     rdfs:label "Bagian Tanaman"@id ;
     rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala atau serangan."@id,
         "Penurunan hasil panen umbi ubi kayu ini selain disebabkan oleh faktor penyakit yang menyerang bagian tanaman lainnya dari ubi kayu (daun dan batang), penyakit yang menyerang akar juga akan mempengaruhi pasokan nutrisi tanaman dari tanah untuk pertumbuhan tanaman serta pembentukan umbi akar pada tanaman ubi kayu."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BuktiSumber,
         ns1:Diagnosis,
         ns1:FaktorRisiko,
@@ -20958,7 +20941,6 @@ ns1:Pengendalian a owl:Class ;
     rdfs:label "Pengendalian"@id ;
     rdfs:comment "Pengendalian patogen *S. rolfsii* dengan rotasi atau pergiliran tanaman di lahan kurang efektif."@id,
         "Tindakan pengendalian penyakit tanaman."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -21276,7 +21258,6 @@ ns1:TanamanPangan a owl:Class ;
     rdfs:label "Tanaman Pangan"@id ;
     rdfs:comment "Tanaman pangan dalam ruang lingkup knowledge base."@id,
         "Tidak hanya di Indonesia, di sebagian besar negara Asia pun padi menjadi tanaman pangan utama."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -21787,7 +21768,6 @@ ns1:Kedelai a ns1:Legum,
 ns1:GejalaKanonik a owl:Class ;
     rdfs:label "Gejala Kanonik"@id ;
     rdfs:comment "Konsep gejala kanonik yang dipakai untuk normalisasi pengamatan."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -21873,7 +21853,6 @@ ns1:Diagnosis a owl:Class ;
     rdfs:label "Diagnosis"@id ;
     rdfs:comment "Catatan proses diagnosis tanaman."@id,
         "Diagnosis and integrated management of fruit rot in Cucurbita argyrosperma, caused by Sclerotium rolfsii."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:FaktorRisiko,
@@ -21911,7 +21890,6 @@ ns1:Gejala a owl:Class ;
     rdfs:label "Gejala"@id ;
     rdfs:comment "Gejala khas dari penyakit ini adalah tepi bergelombang atau penggulungan yang terlihat jelas pada helaian daun."@id,
         "Pengamatan gejala pada tanaman atau bagian tanaman."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -21932,6 +21910,9 @@ ns1:Penyakit a owl:Class ;
     rdfs:comment "Pada tulisan ini akan disajikan penjelasan OPT, khususnya penyakit penting tanaman padi, seperti penyakit hawar daun bakteri, penyakit blas, penyakit hawar pelepah daun, penyakit tungro, serta penyakit kerdil rumput dan kerdil hampa."@id,
         "Penyakit tanaman pangan yang dicatat dalam sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ns1:memilikiGejala ;
+            owl:someValuesFrom ns1:Gejala ],
+        [ a owl:Restriction ;
             owl:onProperty ns1:menyerangTanaman ;
             owl:someValuesFrom ns1:TanamanPangan ],
         [ a owl:Restriction ;
@@ -21941,10 +21922,6 @@ ns1:Penyakit a owl:Class ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass ns1:Referensi ;
             owl:onProperty ns1:memilikiReferensi ],
-        [ a owl:Restriction ;
-            owl:onProperty ns1:memilikiGejala ;
-            owl:someValuesFrom ns1:Gejala ],
-        ns1:EntitasKBR,
         <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
@@ -21965,7 +21942,6 @@ ns1:Varietas a owl:Class ;
     rdfs:label "Varietas"@id ;
     rdfs:comment "Pengendalian dengan varietas tahan menjadi salah satu pengendalian yang efektif."@id,
         "Varietas tanaman pangan yang disebut sumber."@id ;
-    rdfs:subClassOf ns1:EntitasKBR ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:BuktiSumber,
         ns1:Diagnosis,
@@ -22000,8 +21976,7 @@ ns1:BuktiSumber a owl:Class ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty prov:wasDerivedFrom ;
-            owl:someValuesFrom ns1:Referensi ],
-        ns1:EntitasKBR ;
+            owl:someValuesFrom ns1:Referensi ] ;
     owl:disjointWith ns1:BagianTanaman,
         ns1:Diagnosis,
         ns1:FaktorRisiko,
@@ -22097,6 +22072,212 @@ ns1:BukuDOC002 a ns1:Buku,
     skos:prefLabel "Penyakit Tanaman dan Pengendaliannya"@id .
 
 [] a ns2:Imp ;
+    rdfs:label "RuleKandidatKuat" ;
+    ns3:isRuleEnabled true ;
+    rdfs:comment "Kandidat kuat dari dua gejala kanonik berbeda"@id ;
+    ns2:body [ a ns2:AtomList ;
+            rdf:first [ a ns2:ClassAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:classPredicate ns1:Diagnosis ] ;
+            rdf:rest [ a ns2:AtomList ;
+                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                            ns2:argument1 ns1:d ;
+                            ns2:argument2 ns1:t ;
+                            ns2:propertyPredicate ns1:memilikiTanaman ] ;
+                    rdf:rest [ a ns2:AtomList ;
+                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                    ns2:argument1 ns1:p ;
+                                    ns2:argument2 ns1:t ;
+                                    ns2:propertyPredicate ns1:menyerangTanaman ] ;
+                            rdf:rest [ a ns2:AtomList ;
+                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                            ns2:argument1 ns1:d ;
+                                            ns2:argument2 ns1:o ;
+                                            ns2:propertyPredicate ns1:memilikiObservasi ] ;
+                                    rdf:rest [ a ns2:AtomList ;
+                                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                    ns2:argument1 ns1:o ;
+                                                    ns2:argument2 ns1:g ;
+                                                    ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
+                                            rdf:rest [ a ns2:AtomList ;
+                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                            ns2:argument1 ns1:d ;
+                                                            ns2:argument2 ns1:o2 ;
+                                                            ns2:propertyPredicate ns1:memilikiObservasi ] ;
+                                                    rdf:rest [ a ns2:AtomList ;
+                                                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                    ns2:argument1 ns1:o2 ;
+                                                                    ns2:argument2 ns1:g2 ;
+                                                                    ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
+                                                            rdf:rest [ a ns2:AtomList ;
+                                                                    rdf:first [ a ns2:DatavaluedPropertyAtom ;
+                                                                            ns2:argument1 ns1:g ;
+                                                                            ns2:argument2 ns1:gn ;
+                                                                            ns2:propertyPredicate ns1:kodeGejala ] ;
+                                                                    rdf:rest [ a ns2:AtomList ;
+                                                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
+                                                                                    ns2:argument1 ns1:g2 ;
+                                                                                    ns2:argument2 ns1:gn2 ;
+                                                                                    ns2:propertyPredicate ns1:kodeGejala ] ;
+                                                                            rdf:rest [ a ns2:AtomList ;
+                                                                                    rdf:first [ a ns2:BuiltinAtom ;
+                                                                                            ns2:arguments ( ns1:gn ns1:gn2 ) ;
+                                                                                            ns2:builtin <http://www.w3.org/2003/11/swrlb#notEqual> ] ;
+                                                                                    rdf:rest [ a ns2:AtomList ;
+                                                                                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                                                    ns2:argument1 ns1:p ;
+                                                                                                    ns2:argument2 ns1:gp ;
+                                                                                                    ns2:propertyPredicate ns1:memilikiGejala ] ;
+                                                                                            rdf:rest [ a ns2:AtomList ;
+                                                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                                                            ns2:argument1 ns1:gp ;
+                                                                                                            ns2:argument2 ns1:g ;
+                                                                                                            ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
+                                                                                                    rdf:rest [ a ns2:AtomList ;
+                                                                                                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                                                                    ns2:argument1 ns1:p ;
+                                                                                                                    ns2:argument2 ns1:gp2 ;
+                                                                                                                    ns2:propertyPredicate ns1:memilikiGejala ] ;
+                                                                                                            rdf:rest [ a ns2:AtomList ;
+                                                                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                                                                            ns2:argument1 ns1:gp2 ;
+                                                                                                                            ns2:argument2 ns1:g2 ;
+                                                                                                                            ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
+                                                                                                                    rdf:rest () ] ] ] ] ] ] ] ] ] ] ] ] ] ] ;
+    ns2:head [ a ns2:AtomList ;
+            rdf:first [ a ns2:IndividualPropertyAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:argument2 ns1:p ;
+                    ns2:propertyPredicate ns1:kandidatKuat ] ;
+            rdf:rest () ] .
+
+[] a ns2:Imp ;
+    rdfs:label "RuleRisikoLingkungan" ;
+    ns3:isRuleEnabled true ;
+    rdfs:comment "Risiko lingkungan"@id ;
+    ns2:body [ a ns2:AtomList ;
+            rdf:first [ a ns2:ClassAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:classPredicate ns1:Diagnosis ] ;
+            rdf:rest [ a ns2:AtomList ;
+                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                            ns2:argument1 ns1:d ;
+                            ns2:argument2 ns1:t ;
+                            ns2:propertyPredicate ns1:memilikiTanaman ] ;
+                    rdf:rest [ a ns2:AtomList ;
+                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                    ns2:argument1 ns1:d ;
+                                    ns2:argument2 ns1:o ;
+                                    ns2:propertyPredicate ns1:memilikiObservasi ] ;
+                            rdf:rest [ a ns2:AtomList ;
+                                    rdf:first [ a ns2:ClassAtom ;
+                                            ns2:argument1 ns1:o ;
+                                            ns2:classPredicate ns1:ObservasiLingkungan ] ;
+                                    rdf:rest [ a ns2:AtomList ;
+                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
+                                                    ns2:argument1 ns1:o ;
+                                                    ns2:argument2 ns1:f ;
+                                                    ns2:propertyPredicate ns1:klasifikasiTurunan ] ;
+                                            rdf:rest [ a ns2:AtomList ;
+                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                            ns2:argument1 ns1:p ;
+                                                            ns2:argument2 ns1:eo ;
+                                                            ns2:propertyPredicate ns1:dipengaruhiOleh ] ;
+                                                    rdf:rest [ a ns2:AtomList ;
+                                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
+                                                                    ns2:argument1 ns1:eo ;
+                                                                    ns2:argument2 ns1:f ;
+                                                                    ns2:propertyPredicate ns1:klasifikasiTurunan ] ;
+                                                            rdf:rest [ a ns2:AtomList ;
+                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                            ns2:argument1 ns1:p ;
+                                                                            ns2:argument2 ns1:t ;
+                                                                            ns2:propertyPredicate ns1:menyerangTanaman ] ;
+                                                                    rdf:rest () ] ] ] ] ] ] ] ] ;
+    ns2:head [ a ns2:AtomList ;
+            rdf:first [ a ns2:IndividualPropertyAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:argument2 ns1:p ;
+                    ns2:propertyPredicate ns1:menandaiRisikoLingkungan ] ;
+            rdf:rest () ] .
+
+[] a ns2:Imp ;
+    rdfs:label "RuleRekomendasiSpesifik" ;
+    ns3:isRuleEnabled true ;
+    rdfs:comment "Rekomendasi pengendalian spesifik penyakit"@id ;
+    ns2:body [ a ns2:AtomList ;
+            rdf:first [ a ns2:ClassAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:classPredicate ns1:Diagnosis ] ;
+            rdf:rest [ a ns2:AtomList ;
+                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                            ns2:argument1 ns1:d ;
+                            ns2:argument2 ns1:p ;
+                            ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
+                    rdf:rest [ a ns2:AtomList ;
+                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                    ns2:argument1 ns1:p ;
+                                    ns2:argument2 ns1:c ;
+                                    ns2:propertyPredicate ns1:dikendalikanDengan ] ;
+                            rdf:rest () ] ] ] ;
+    ns2:head [ a ns2:AtomList ;
+            rdf:first [ a ns2:IndividualPropertyAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:argument2 ns1:c ;
+                    ns2:propertyPredicate ns1:merekomendasikanPengendalian ] ;
+            rdf:rest () ] .
+
+[] a ns2:Imp ;
+    rdfs:label "RuleKandidatLingkungan" ;
+    ns3:isRuleEnabled true ;
+    rdfs:comment "Kandidat penyakit dari faktor lingkungan"@id ;
+    ns2:body [ a ns2:AtomList ;
+            rdf:first [ a ns2:ClassAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:classPredicate ns1:Diagnosis ] ;
+            rdf:rest [ a ns2:AtomList ;
+                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                            ns2:argument1 ns1:d ;
+                            ns2:argument2 ns1:t ;
+                            ns2:propertyPredicate ns1:memilikiTanaman ] ;
+                    rdf:rest [ a ns2:AtomList ;
+                            rdf:first [ a ns2:IndividualPropertyAtom ;
+                                    ns2:argument1 ns1:d ;
+                                    ns2:argument2 ns1:o ;
+                                    ns2:propertyPredicate ns1:memilikiObservasi ] ;
+                            rdf:rest [ a ns2:AtomList ;
+                                    rdf:first [ a ns2:ClassAtom ;
+                                            ns2:argument1 ns1:o ;
+                                            ns2:classPredicate ns1:ObservasiLingkungan ] ;
+                                    rdf:rest [ a ns2:AtomList ;
+                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
+                                                    ns2:argument1 ns1:o ;
+                                                    ns2:argument2 ns1:f ;
+                                                    ns2:propertyPredicate ns1:klasifikasiTurunan ] ;
+                                            rdf:rest [ a ns2:AtomList ;
+                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                            ns2:argument1 ns1:p ;
+                                                            ns2:argument2 ns1:eo ;
+                                                            ns2:propertyPredicate ns1:dipengaruhiOleh ] ;
+                                                    rdf:rest [ a ns2:AtomList ;
+                                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
+                                                                    ns2:argument1 ns1:eo ;
+                                                                    ns2:argument2 ns1:f ;
+                                                                    ns2:propertyPredicate ns1:klasifikasiTurunan ] ;
+                                                            rdf:rest [ a ns2:AtomList ;
+                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
+                                                                            ns2:argument1 ns1:p ;
+                                                                            ns2:argument2 ns1:t ;
+                                                                            ns2:propertyPredicate ns1:menyerangTanaman ] ;
+                                                                    rdf:rest () ] ] ] ] ] ] ] ] ;
+    ns2:head [ a ns2:AtomList ;
+            rdf:first [ a ns2:IndividualPropertyAtom ;
+                    ns2:argument1 ns1:d ;
+                    ns2:argument2 ns1:p ;
+                    ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
+            rdf:rest () ] .
+
+[] a ns2:Imp ;
     rdfs:label "RuleKandidatGejala" ;
     ns3:isRuleEnabled true ;
     rdfs:comment "Kandidat penyakit dari gejala kanonik"@id ;
@@ -22183,56 +22364,6 @@ ns1:BukuDOC002 a ns1:Buku,
             rdf:rest () ] .
 
 [] a ns2:Imp ;
-    rdfs:label "RuleRisikoLingkungan" ;
-    ns3:isRuleEnabled true ;
-    rdfs:comment "Risiko lingkungan"@id ;
-    ns2:body [ a ns2:AtomList ;
-            rdf:first [ a ns2:ClassAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:classPredicate ns1:Diagnosis ] ;
-            rdf:rest [ a ns2:AtomList ;
-                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                            ns2:argument1 ns1:d ;
-                            ns2:argument2 ns1:t ;
-                            ns2:propertyPredicate ns1:memilikiTanaman ] ;
-                    rdf:rest [ a ns2:AtomList ;
-                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                    ns2:argument1 ns1:d ;
-                                    ns2:argument2 ns1:o ;
-                                    ns2:propertyPredicate ns1:memilikiObservasi ] ;
-                            rdf:rest [ a ns2:AtomList ;
-                                    rdf:first [ a ns2:ClassAtom ;
-                                            ns2:argument1 ns1:o ;
-                                            ns2:classPredicate ns1:ObservasiLingkungan ] ;
-                                    rdf:rest [ a ns2:AtomList ;
-                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
-                                                    ns2:argument1 ns1:o ;
-                                                    ns2:argument2 ns1:f ;
-                                                    ns2:propertyPredicate ns1:klasifikasiTurunan ] ;
-                                            rdf:rest [ a ns2:AtomList ;
-                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                            ns2:argument1 ns1:p ;
-                                                            ns2:argument2 ns1:eo ;
-                                                            ns2:propertyPredicate ns1:dipengaruhiOleh ] ;
-                                                    rdf:rest [ a ns2:AtomList ;
-                                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
-                                                                    ns2:argument1 ns1:eo ;
-                                                                    ns2:argument2 ns1:f ;
-                                                                    ns2:propertyPredicate ns1:klasifikasiTurunan ] ;
-                                                            rdf:rest [ a ns2:AtomList ;
-                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                            ns2:argument1 ns1:p ;
-                                                                            ns2:argument2 ns1:t ;
-                                                                            ns2:propertyPredicate ns1:menyerangTanaman ] ;
-                                                                    rdf:rest () ] ] ] ] ] ] ] ] ;
-    ns2:head [ a ns2:AtomList ;
-            rdf:first [ a ns2:IndividualPropertyAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:argument2 ns1:p ;
-                    ns2:propertyPredicate ns1:menandaiRisikoLingkungan ] ;
-            rdf:rest () ] .
-
-[] a ns2:Imp ;
     rdfs:label "RuleRekomendasiUmum" ;
     ns3:isRuleEnabled true ;
     rdfs:comment "Rekomendasi pengendalian umum tanaman"@id ;
@@ -22263,170 +22394,14 @@ ns1:BukuDOC002 a ns1:Buku,
                     ns2:propertyPredicate ns1:merekomendasikanPengendalian ] ;
             rdf:rest () ] .
 
-[] a ns2:Imp ;
-    rdfs:label "RuleKandidatKuat" ;
-    ns3:isRuleEnabled true ;
-    rdfs:comment "Kandidat kuat dari dua gejala kanonik berbeda"@id ;
-    ns2:body [ a ns2:AtomList ;
-            rdf:first [ a ns2:ClassAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:classPredicate ns1:Diagnosis ] ;
-            rdf:rest [ a ns2:AtomList ;
-                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                            ns2:argument1 ns1:d ;
-                            ns2:argument2 ns1:t ;
-                            ns2:propertyPredicate ns1:memilikiTanaman ] ;
-                    rdf:rest [ a ns2:AtomList ;
-                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                    ns2:argument1 ns1:p ;
-                                    ns2:argument2 ns1:t ;
-                                    ns2:propertyPredicate ns1:menyerangTanaman ] ;
-                            rdf:rest [ a ns2:AtomList ;
-                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                            ns2:argument1 ns1:d ;
-                                            ns2:argument2 ns1:o ;
-                                            ns2:propertyPredicate ns1:memilikiObservasi ] ;
-                                    rdf:rest [ a ns2:AtomList ;
-                                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                    ns2:argument1 ns1:o ;
-                                                    ns2:argument2 ns1:g ;
-                                                    ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
-                                            rdf:rest [ a ns2:AtomList ;
-                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                            ns2:argument1 ns1:d ;
-                                                            ns2:argument2 ns1:o2 ;
-                                                            ns2:propertyPredicate ns1:memilikiObservasi ] ;
-                                                    rdf:rest [ a ns2:AtomList ;
-                                                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                    ns2:argument1 ns1:o2 ;
-                                                                    ns2:argument2 ns1:g2 ;
-                                                                    ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
-                                                            rdf:rest [ a ns2:AtomList ;
-                                                                    rdf:first [ a ns2:DatavaluedPropertyAtom ;
-                                                                            ns2:argument1 ns1:g ;
-                                                                            ns2:argument2 ns1:gn ;
-                                                                            ns2:propertyPredicate ns1:kodeGejala ] ;
-                                                                    rdf:rest [ a ns2:AtomList ;
-                                                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
-                                                                                    ns2:argument1 ns1:g2 ;
-                                                                                    ns2:argument2 ns1:gn2 ;
-                                                                                    ns2:propertyPredicate ns1:kodeGejala ] ;
-                                                                            rdf:rest [ a ns2:AtomList ;
-                                                                                    rdf:first [ a ns2:BuiltinAtom ;
-                                                                                            ns2:arguments ( ns1:gn ns1:gn2 ) ;
-                                                                                            ns2:builtin <http://www.w3.org/2003/11/swrlb#notEqual> ] ;
-                                                                                    rdf:rest [ a ns2:AtomList ;
-                                                                                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                                                    ns2:argument1 ns1:p ;
-                                                                                                    ns2:argument2 ns1:gp ;
-                                                                                                    ns2:propertyPredicate ns1:memilikiGejala ] ;
-                                                                                            rdf:rest [ a ns2:AtomList ;
-                                                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                                                            ns2:argument1 ns1:gp ;
-                                                                                                            ns2:argument2 ns1:g ;
-                                                                                                            ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
-                                                                                                    rdf:rest [ a ns2:AtomList ;
-                                                                                                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                                                                    ns2:argument1 ns1:p ;
-                                                                                                                    ns2:argument2 ns1:gp2 ;
-                                                                                                                    ns2:propertyPredicate ns1:memilikiGejala ] ;
-                                                                                                            rdf:rest [ a ns2:AtomList ;
-                                                                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                                                                            ns2:argument1 ns1:gp2 ;
-                                                                                                                            ns2:argument2 ns1:g2 ;
-                                                                                                                            ns2:propertyPredicate ns1:memilikiGejalaKanonik ] ;
-                                                                                                                    rdf:rest () ] ] ] ] ] ] ] ] ] ] ] ] ] ] ;
-    ns2:head [ a ns2:AtomList ;
-            rdf:first [ a ns2:IndividualPropertyAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:argument2 ns1:p ;
-                    ns2:propertyPredicate ns1:kandidatKuat ] ;
-            rdf:rest () ] .
-
-[] a ns2:Imp ;
-    rdfs:label "RuleRekomendasiSpesifik" ;
-    ns3:isRuleEnabled true ;
-    rdfs:comment "Rekomendasi pengendalian spesifik penyakit"@id ;
-    ns2:body [ a ns2:AtomList ;
-            rdf:first [ a ns2:ClassAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:classPredicate ns1:Diagnosis ] ;
-            rdf:rest [ a ns2:AtomList ;
-                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                            ns2:argument1 ns1:d ;
-                            ns2:argument2 ns1:p ;
-                            ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
-                    rdf:rest [ a ns2:AtomList ;
-                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                    ns2:argument1 ns1:p ;
-                                    ns2:argument2 ns1:c ;
-                                    ns2:propertyPredicate ns1:dikendalikanDengan ] ;
-                            rdf:rest () ] ] ] ;
-    ns2:head [ a ns2:AtomList ;
-            rdf:first [ a ns2:IndividualPropertyAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:argument2 ns1:c ;
-                    ns2:propertyPredicate ns1:merekomendasikanPengendalian ] ;
-            rdf:rest () ] .
-
-[] a ns2:Imp ;
-    rdfs:label "RuleKandidatLingkungan" ;
-    ns3:isRuleEnabled true ;
-    rdfs:comment "Kandidat penyakit dari faktor lingkungan"@id ;
-    ns2:body [ a ns2:AtomList ;
-            rdf:first [ a ns2:ClassAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:classPredicate ns1:Diagnosis ] ;
-            rdf:rest [ a ns2:AtomList ;
-                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                            ns2:argument1 ns1:d ;
-                            ns2:argument2 ns1:t ;
-                            ns2:propertyPredicate ns1:memilikiTanaman ] ;
-                    rdf:rest [ a ns2:AtomList ;
-                            rdf:first [ a ns2:IndividualPropertyAtom ;
-                                    ns2:argument1 ns1:d ;
-                                    ns2:argument2 ns1:o ;
-                                    ns2:propertyPredicate ns1:memilikiObservasi ] ;
-                            rdf:rest [ a ns2:AtomList ;
-                                    rdf:first [ a ns2:ClassAtom ;
-                                            ns2:argument1 ns1:o ;
-                                            ns2:classPredicate ns1:ObservasiLingkungan ] ;
-                                    rdf:rest [ a ns2:AtomList ;
-                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
-                                                    ns2:argument1 ns1:o ;
-                                                    ns2:argument2 ns1:f ;
-                                                    ns2:propertyPredicate ns1:klasifikasiTurunan ] ;
-                                            rdf:rest [ a ns2:AtomList ;
-                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                            ns2:argument1 ns1:p ;
-                                                            ns2:argument2 ns1:eo ;
-                                                            ns2:propertyPredicate ns1:dipengaruhiOleh ] ;
-                                                    rdf:rest [ a ns2:AtomList ;
-                                                            rdf:first [ a ns2:DatavaluedPropertyAtom ;
-                                                                    ns2:argument1 ns1:eo ;
-                                                                    ns2:argument2 ns1:f ;
-                                                                    ns2:propertyPredicate ns1:klasifikasiTurunan ] ;
-                                                            rdf:rest [ a ns2:AtomList ;
-                                                                    rdf:first [ a ns2:IndividualPropertyAtom ;
-                                                                            ns2:argument1 ns1:p ;
-                                                                            ns2:argument2 ns1:t ;
-                                                                            ns2:propertyPredicate ns1:menyerangTanaman ] ;
-                                                                    rdf:rest () ] ] ] ] ] ] ] ] ;
-    ns2:head [ a ns2:AtomList ;
-            rdf:first [ a ns2:IndividualPropertyAtom ;
-                    ns2:argument1 ns1:d ;
-                    ns2:argument2 ns1:p ;
-                    ns2:propertyPredicate ns1:menghasilkanPenyakit ] ;
-            rdf:rest () ] .
-
 [] a owl:AllDisjointClasses ;
-    owl:members ( ns1:Buku ns1:JurnalIlmiah ns1:PublikasiInstansi ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ns1:Serealia ns1:Legum ns1:UmbiUmbian ) .
+    owl:members ( ns1:Jamur ns1:Bakteri ns1:Virus ns1:Oomycete ns1:Fitoplasma ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ns1:FaktorLingkungan ns1:FaktorLahan ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ns1:Buku ns1:JurnalIlmiah ns1:PublikasiInstansi ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ns1:FaseVegetatif ns1:FaseGeneratif ns1:FasePembibitan ns1:FaseAnakan ns1:FasePemasakan ns1:FasePanen ) .
@@ -22435,5 +22410,5 @@ ns1:BukuDOC002 a ns1:Buku,
     owl:members ( ns1:PengendalianKulturTeknis ns1:PengendalianMekanis ns1:PengendalianBiologis ns1:PengendalianKimiawi ns1:PengendalianFisik ns1:PengendalianTerpadu ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ns1:Jamur ns1:Bakteri ns1:Virus ns1:Oomycete ns1:Fitoplasma ) .
+    owl:members ( ns1:Serealia ns1:Legum ns1:UmbiUmbian ) .
 

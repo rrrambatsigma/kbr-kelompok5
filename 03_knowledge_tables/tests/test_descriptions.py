@@ -44,7 +44,6 @@ EXPECTED_MISSING_CLASSES = [
     "BuktiPatogen",
     "BuktiPengendalian",
     "BuktiSumber",
-    "EntitasKBR",
     "FaktorRisiko",
     "GejalaKanonik",
     "JurnalIlmiah",

@@ -787,7 +787,6 @@ ptp:deskripsiTanaman a owl:DatatypeProperty ;
 ptp:didukungOleh a owl:ObjectProperty ;
     rdfs:label "didukung oleh"@id ;
     rdfs:comment "Entitas didukung oleh node bukti sumber."@id ;
-    rdfs:domain ptp:EntitasKBR ;
     rdfs:range ptp:BuktiSumber ;
     skos:prefLabel "didukung oleh"@id .
 
@@ -822,7 +821,6 @@ ptp:idChunkSumber a owl:DatatypeProperty ;
 ptp:identifierSumber a owl:DatatypeProperty ;
     rdfs:label "identifier sumber"@id ;
     rdfs:comment "Identifier baris atau entitas pada sumber."@id ;
-    rdfs:domain ptp:EntitasKBR ;
     rdfs:range xsd:string ;
     skos:prefLabel "identifier sumber"@id .
 
@@ -879,7 +877,6 @@ ptp:memilikiObservasi a owl:ObjectProperty ;
     rdfs:label "memiliki observasi"@id ;
     rdfs:comment "Diagnosis memiliki observasi gejala atau faktor lingkungan."@id ;
     rdfs:domain ptp:Diagnosis ;
-    rdfs:range ptp:EntitasKBR ;
     skos:prefLabel "memiliki observasi"@id .
 
 ptp:memilikiTanaman a owl:ObjectProperty ;
@@ -6585,8 +6582,6 @@ ptp:terdapatPada a owl:ObjectProperty ;
 prov:wasDerivedFrom a owl:ObjectProperty ;
     rdfs:label "was derived from"@id ;
     rdfs:comment "Entitas diturunkan dari sumber atau entitas lain."@id ;
-    rdfs:domain ptp:EntitasKBR ;
-    rdfs:range ptp:EntitasKBR ;
     skos:prefLabel "was derived from"@id .
 
 ptp:Begomovirus a ptp:Virus,
@@ -14325,7 +14320,6 @@ ptp:UmbiUmbian a owl:Class ;
 ptp:berkaitanPengendalian a owl:ObjectProperty ;
     rdfs:label "berkaitan pengendalian"@id ;
     rdfs:comment "Superproperti yang menghubungkan entitas dengan tindakan pengendalian."@id ;
-    rdfs:domain ptp:EntitasKBR ;
     rdfs:range ptp:Pengendalian ;
     skos:prefLabel "berkaitan pengendalian"@id .
 
@@ -16179,7 +16173,6 @@ ptp:KlorosisTanaman a ptp:GejalaKanonik,
 ptp:Observasi a owl:Class ;
     rdfs:label "Observasi"@id ;
     rdfs:comment "Observasi yang menjadi masukan proses diagnosis."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -16884,7 +16877,6 @@ ptp:Virus a owl:Class ;
 ptp:FaktorRisiko a owl:Class ;
     rdfs:label "Faktor Risiko"@id ;
     rdfs:comment "Faktor lingkungan, budidaya, atau lahan yang memengaruhi penyakit."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17171,7 +17163,6 @@ ptp:PenyakitTungroPadi a ptp:Penyakit,
 ptp:Diagnosis a owl:Class ;
     rdfs:label "Diagnosis"@id ;
     rdfs:comment "Catatan proses diagnosis tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:FaktorRisiko,
@@ -17187,15 +17178,9 @@ ptp:Diagnosis a owl:Class ;
         ptp:Varietas ;
     skos:prefLabel "Diagnosis"@id .
 
-ptp:EntitasKBR a owl:Class ;
-    rdfs:label "Entitas KBR"@id ;
-    rdfs:comment "Kelas akar seluruh entitas knowledge base penyakit tanaman pangan."@id ;
-    skos:prefLabel "Entitas KBR"@id .
-
 ptp:FasePertumbuhan a owl:Class ;
     rdfs:label "Fase Pertumbuhan"@id ;
     rdfs:comment "Fase pertumbuhan tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17478,7 +17463,6 @@ ptp:PenyakitRebahSemaiKedelai a ptp:Penyakit,
 ptp:Patogen a owl:Class ;
     rdfs:label "Patogen"@id ;
     rdfs:comment "Organisme penyebab penyakit tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17791,7 +17775,6 @@ ptp:PenyakitHawarDaunBakteriPadi a ptp:Penyakit,
 ptp:Referensi a owl:Class ;
     rdfs:label "Referensi"@id ;
     rdfs:comment "Sumber bibliografis yang mendukung data."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17823,7 +17806,6 @@ ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung a ptp:BuktiSumber,
 ptp:TanamanPangan a owl:Class ;
     rdfs:label "Tanaman Pangan"@id ;
     rdfs:comment "Tanaman pangan dalam ruang lingkup knowledge base."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17842,7 +17824,6 @@ ptp:TanamanPangan a owl:Class ;
 ptp:BagianTanaman a owl:Class ;
     rdfs:label "Bagian Tanaman"@id ;
     rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala atau serangan."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BuktiSumber,
         ptp:Diagnosis,
         ptp:FaktorRisiko,
@@ -17861,7 +17842,6 @@ ptp:BagianTanaman a owl:Class ;
 ptp:Pengendalian a owl:Class ;
     rdfs:label "Pengendalian"@id ;
     rdfs:comment "Tindakan pengendalian penyakit tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -18487,7 +18467,6 @@ ptp:SanitasiLahan a ptp:PengendalianKulturTeknis,
 ptp:GejalaKanonik a owl:Class ;
     rdfs:label "Gejala Kanonik"@id ;
     rdfs:comment "Konsep gejala kanonik yang dipakai untuk normalisasi pengamatan."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -18564,8 +18543,7 @@ ptp:BuktiSumber a owl:Class ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty prov:wasDerivedFrom ;
-            owl:someValuesFrom ptp:Referensi ],
-        ptp:EntitasKBR ;
+            owl:someValuesFrom ptp:Referensi ] ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:Diagnosis,
         ptp:FaktorRisiko,
@@ -18608,7 +18586,6 @@ ptp:BukuDOC005 a ptp:Buku,
 ptp:Varietas a owl:Class ;
     rdfs:label "Varietas"@id ;
     rdfs:comment "Varietas tanaman pangan yang disebut sumber."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -18627,7 +18604,6 @@ ptp:Varietas a owl:Class ;
 ptp:Gejala a owl:Class ;
     rdfs:label "Gejala"@id ;
     rdfs:comment "Pengamatan gejala pada tanaman atau bagian tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -18647,6 +18623,9 @@ ptp:Penyakit a owl:Class ;
     rdfs:label "Penyakit"@id ;
     rdfs:comment "Penyakit tanaman pangan yang dicatat dalam sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty ptp:memilikiGejala ;
+            owl:someValuesFrom ptp:Gejala ],
+        [ a owl:Restriction ;
             owl:onProperty ptp:menyerangTanaman ;
             owl:someValuesFrom ptp:TanamanPangan ],
         [ a owl:Restriction ;
@@ -18655,11 +18634,7 @@ ptp:Penyakit a owl:Class ;
         [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass ptp:Referensi ;
-            owl:onProperty ptp:memilikiReferensi ],
-        [ a owl:Restriction ;
-            owl:onProperty ptp:memilikiGejala ;
-            owl:someValuesFrom ptp:Gejala ],
-        ptp:EntitasKBR ;
+            owl:onProperty ptp:memilikiReferensi ] ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -18760,13 +18735,13 @@ ptp:BukuDOC002 a ptp:Buku,
     skos:prefLabel "Penyakit Tanaman dan Pengendaliannya"@id .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Buku ptp:JurnalIlmiah ptp:PublikasiInstansi ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
+    owl:members ( ptp:Jamur ptp:Bakteri ptp:Virus ptp:Oomycete ptp:Fitoplasma ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:FaktorLingkungan ptp:FaktorLahan ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ptp:Buku ptp:JurnalIlmiah ptp:PublikasiInstansi ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePemasakan ptp:FasePanen ) .
@@ -18775,5 +18750,5 @@ ptp:BukuDOC002 a ptp:Buku,
     owl:members ( ptp:PengendalianKulturTeknis ptp:PengendalianMekanis ptp:PengendalianBiologis ptp:PengendalianKimiawi ptp:PengendalianFisik ptp:PengendalianTerpadu ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Jamur ptp:Bakteri ptp:Virus ptp:Oomycete ptp:Fitoplasma ) .
+    owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
 

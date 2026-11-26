@@ -48,7 +48,7 @@ Sumber baris: `DOC002_descriptions.csv`; seluruh literal verbatim dari sumber.
 | bukti tautan kondisi | 1 |
 
 Individu sasaran: 217, terisi: 199, kosong: 18.
-Kelas: 71, terisi: 54, kosong: 17.
+Kelas: 70, terisi: 54, kosong: 16.
 
 ## Individu tanpa deskripsi
 
@@ -81,7 +81,6 @@ Kelas: 71, terisi: 54, kosong: 17.
 | BuktiPatogen | Bukti Patogen |
 | BuktiPengendalian | Bukti Pengendalian |
 | BuktiSumber | Bukti Sumber |
-| EntitasKBR | Entitas KBR |
 | FaktorRisiko | Faktor Risiko |
 | GejalaKanonik | Gejala Kanonik |
 | JurnalIlmiah | Jurnal Ilmiah |

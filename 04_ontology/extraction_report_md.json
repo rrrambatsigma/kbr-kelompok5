@@ -1,9 +1,9 @@
 {
   "base": "04_ontology/ontology.ttl",
   "output": "04_ontology/ontology_md.ttl",
-  "base_triples": 17444,
+  "base_triples": 17420,
   "added_triples": 3441,
-  "total_triples": 20885,
+  "total_triples": 20861,
   "facts": 997,
   "internal_facts": 81,
   "external_facts": 861,
@@ -142,7 +142,7 @@
     "verified": 136
   },
   "named_individuals": 1596,
-  "classes_with_comment": 71,
+  "classes_with_comment": 70,
   "scope_plants": [
     "Padi",
     "Kedelai",

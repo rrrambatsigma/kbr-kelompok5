@@ -108,24 +108,24 @@ class TestOntologyMd(unittest.TestCase):
         same = self.external_pairs(OWL.sameAs)
         subc = self.external_pairs(RDFS.subClassOf)
         subp = self.external_pairs(RDFS.subPropertyOf)
+        exact = self.external_pairs(SKOS.exactMatch)
         close = self.external_pairs(SKOS.closeMatch)
         self.assertEqual(len(eq), 8)
         self.assertEqual(len(same), 2)
         self.assertEqual(len(subc), 2)
         self.assertEqual(len(subp), 1)
+        self.assertEqual(len(exact), 0)
         self.assertEqual(len(close), 10)
         self.assertEqual(self.report["external_alignments_equivalent_class"], 8)
         self.assertEqual(self.report["external_alignments_same_as"], 2)
         self.assertEqual(self.report["external_alignments_subclass"], 2)
         self.assertEqual(self.report["external_alignments_subproperty"], 1)
+        self.assertEqual(self.report["external_alignments_exact"], 0)
         self.assertEqual(self.report["external_alignments_close"], 10)
-        for subject, _ in eq:
-            self.assertIn((subject, RDF.type, OWL.Class), self.graph)
-            self.assertTrue(str(subject).startswith(PTP))
         for subject, _ in same:
             self.assertIn((subject, RDF.type, OWL.NamedIndividual), self.graph)
             self.assertTrue(str(subject).startswith(PTP))
-        for subject, _ in subc | subp | close:
+        for subject, _ in subc | subp | exact | close:
             self.assertTrue(str(subject).startswith(PTP))
 
     def test_inferred_artifact_available(self) -> None:

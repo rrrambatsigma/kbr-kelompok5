@@ -507,10 +507,19 @@ class OntologyAxiomTest(unittest.TestCase):
                     self.assertIn((KBR[name], RDFS.domain, KBR[spec["domain"]]), self.graph)
                 else:
                     self.assertEqual(list(self.graph.objects(KBR[name], RDFS.domain)), [])
-                self.assertIn((KBR[name], RDFS.range, KBR[spec["range"]]), self.graph)
+                if spec.get("range"):
+                    self.assertIn((KBR[name], RDFS.range, KBR[spec["range"]]), self.graph)
+                else:
+                    self.assertEqual(list(self.graph.objects(KBR[name], RDFS.range)), [])
         for uri, spec in tbox.EXTERNAL_OBJECT_PROPERTIES.items():
-            self.assertIn((URIRef(uri), RDFS.domain, KBR[spec["domain"]]), self.graph)
-            self.assertIn((URIRef(uri), RDFS.range, KBR[spec["range"]]), self.graph)
+            if spec.get("domain"):
+                self.assertIn((URIRef(uri), RDFS.domain, KBR[spec["domain"]]), self.graph)
+            else:
+                self.assertEqual(list(self.graph.objects(URIRef(uri), RDFS.domain)), [])
+            if spec.get("range"):
+                self.assertIn((URIRef(uri), RDFS.range, KBR[spec["range"]]), self.graph)
+            else:
+                self.assertEqual(list(self.graph.objects(URIRef(uri), RDFS.range)), [])
 
     def test_sroiq_d_features_present(self) -> None:
         self.assertTrue(list(self.graph.objects(None, OWL.propertyChainAxiom)), "R: property chain")

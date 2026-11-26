@@ -34,14 +34,9 @@ def _cls(name: str) -> URIRef:
 
 # name -> (label, parent, comment)
 CLASSES: dict[str, tuple[str, str | None, str]] = {
-    "EntitasKBR": (
-        "Entitas KBR",
-        None,
-        "Kelas akar seluruh entitas knowledge base penyakit tanaman pangan.",
-    ),
     "TanamanPangan": (
         "Tanaman Pangan",
-        "EntitasKBR",
+        None,
         "Tanaman pangan dalam ruang lingkup knowledge base.",
     ),
     "Serealia": (
@@ -61,7 +56,7 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     ),
     "Penyakit": (
         "Penyakit",
-        "EntitasKBR",
+        None,
         "Penyakit tanaman pangan yang dicatat dalam sumber.",
     ),
     "PenyakitJamur": (
@@ -91,7 +86,7 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     ),
     "Gejala": (
         "Gejala",
-        "EntitasKBR",
+        None,
         "Pengamatan gejala pada tanaman atau bagian tanaman.",
     ),
     "GejalaDaun": ("Gejala Daun", "Gejala", "Gejala yang diamati pada daun."),
@@ -105,12 +100,12 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     "GejalaPucuk": ("Gejala Pucuk", "Gejala", "Gejala yang diamati pada pucuk atau tunas."),
     "GejalaKanonik": (
         "Gejala Kanonik",
-        "EntitasKBR",
+        None,
         "Konsep gejala kanonik yang dipakai untuk normalisasi pengamatan.",
     ),
     "Patogen": (
         "Patogen",
-        "EntitasKBR",
+        None,
         "Organisme penyebab penyakit tanaman.",
     ),
     "Jamur": ("Jamur", "Patogen", "Patogen kelompok jamur."),
@@ -120,12 +115,12 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     "Fitoplasma": ("Fitoplasma", "Patogen", "Patogen kelompok fitoplasma."),
     "BagianTanaman": (
         "Bagian Tanaman",
-        "EntitasKBR",
+        None,
         "Bagian tanaman yang dapat menjadi lokasi gejala atau serangan.",
     ),
     "Pengendalian": (
         "Pengendalian",
-        "EntitasKBR",
+        None,
         "Tindakan pengendalian penyakit tanaman.",
     ),
     "PengendalianKulturTeknis": (
@@ -160,7 +155,7 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     ),
     "FaktorRisiko": (
         "Faktor Risiko",
-        "EntitasKBR",
+        None,
         "Faktor lingkungan, budidaya, atau lahan yang memengaruhi penyakit.",
     ),
     "FaktorLingkungan": (
@@ -211,7 +206,7 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     "TeksturTanah": ("Tekstur Tanah", "FaktorLahan", "Faktor tekstur tanah."),
     "Referensi": (
         "Referensi",
-        "EntitasKBR",
+        None,
         "Sumber bibliografis yang mendukung data.",
     ),
     "Buku": ("Buku", "Referensi", "Referensi berbentuk buku."),
@@ -227,7 +222,7 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     ),
     "Varietas": (
         "Varietas",
-        "EntitasKBR",
+        None,
         "Varietas tanaman pangan yang disebut sumber.",
     ),
     "VarietasUnggul": (
@@ -237,7 +232,7 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     ),
     "FasePertumbuhan": (
         "Fase Pertumbuhan",
-        "EntitasKBR",
+        None,
         "Fase pertumbuhan tanaman.",
     ),
     "FaseVegetatif": (
@@ -272,17 +267,17 @@ CLASSES: dict[str, tuple[str, str | None, str]] = {
     ),
     "Observasi": (
         "Observasi",
-        "EntitasKBR",
+        None,
         "Observasi yang menjadi masukan proses diagnosis.",
     ),
     "Diagnosis": (
         "Diagnosis",
-        "EntitasKBR",
+        None,
         "Catatan proses diagnosis tanaman.",
     ),
     "BuktiSumber": (
         "Bukti Sumber",
-        "EntitasKBR",
+        None,
         "Node bukti yang menyimpan kutipan dan lokasi sumber.",
     ),
     "BuktiPenyakit": (
@@ -453,7 +448,6 @@ OBJECT_PROPERTIES: dict[str, dict] = {
     "berkaitanPengendalian": {
         "label": "berkaitan pengendalian",
         "comment": "Superproperti yang menghubungkan entitas dengan tindakan pengendalian.",
-        "domain": "EntitasKBR",
         "range": "Pengendalian",
     },
     "dipengaruhiOleh": {
@@ -513,7 +507,6 @@ OBJECT_PROPERTIES: dict[str, dict] = {
     "didukungOleh": {
         "label": "didukung oleh",
         "comment": "Entitas didukung oleh node bukti sumber.",
-        "domain": "EntitasKBR",
         "range": "BuktiSumber",
     },
     "memilikiTanaman": {
@@ -526,7 +519,6 @@ OBJECT_PROPERTIES: dict[str, dict] = {
         "label": "memiliki observasi",
         "comment": "Diagnosis memiliki observasi gejala atau faktor lingkungan.",
         "domain": "Diagnosis",
-        "range": "EntitasKBR",
     },
     "menghasilkanPenyakit": {
         "label": "menghasilkan penyakit",
@@ -574,8 +566,6 @@ EXTERNAL_OBJECT_PROPERTIES: dict[str, dict] = {
     str(PROV.wasDerivedFrom): {
         "label": "was derived from",
         "comment": "Entitas diturunkan dari sumber atau entitas lain.",
-        "domain": "EntitasKBR",
-        "range": "EntitasKBR",
     },
 }
 
@@ -747,7 +737,6 @@ DATA_PROPERTIES: dict[str, dict] = {
     "identifierSumber": {
         "label": "identifier sumber",
         "comment": "Identifier baris atau entitas pada sumber.",
-        "domain": "EntitasKBR",
         "range": XSD.string,
     },
     "idChunkSumber": {
