@@ -198,6 +198,39 @@ ptp:JurnalSRCEXT039 a ptp:JurnalIlmiah,
     rdfs:comment "Referensi eksternal jurnalilmiah dari registry sumber."@id ;
     skos:prefLabel "Exploring Bemisia tabaci Middle East-Asia Minor I and Mediterranean Cryptic Species Relationship with Cowpea Mild Mottle Virus and Their Dynamics in Soybean Fields"@id .
 
+ptp:JurnalSRCEXT052 a ptp:JurnalIlmiah,
+        owl:NamedIndividual ;
+    rdfs:label "Dukungan Teknologi Pengembangan Ubi Kayu di Sumatera Barat"@id ;
+    ptp:identifierSumber "SRC_EXT_052" ;
+    ptp:judulReferensi "Dukungan Teknologi Pengembangan Ubi Kayu di Sumatera Barat"@id ;
+    ptp:namaPenulis "Atman" ;
+    ptp:tahunTerbit 2011 ;
+    ptp:urlReferensi "https://jurnal.polinela.ac.id/jppt/article/download/224/189/432"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal jurnalilmiah dari registry sumber."@id ;
+    skos:prefLabel "Dukungan Teknologi Pengembangan Ubi Kayu di Sumatera Barat"@id .
+
+ptp:JurnalSRCEXT053 a ptp:JurnalIlmiah,
+        owl:NamedIndividual ;
+    rdfs:label "Ketersediaan Teknologi dan Potensi Pengembangan Ubi Jalar di Papua"@id ;
+    ptp:identifierSumber "SRC_EXT_053" ;
+    ptp:judulReferensi "Ketersediaan Teknologi dan Potensi Pengembangan Ubi Jalar di Papua"@id ;
+    ptp:namaPenulis "Jermia Limbongan; Alberth Soplanit" ;
+    ptp:tahunTerbit 2007 ;
+    ptp:urlReferensi "https://repository.pertanian.go.id/bitstreams/df1126df-d63b-4ef0-8913-315af6f825c0/download"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal jurnalilmiah dari registry sumber."@id ;
+    skos:prefLabel "Ketersediaan Teknologi dan Potensi Pengembangan Ubi Jalar di Papua"@id .
+
+ptp:JurnalSRCEXT055 a ptp:JurnalIlmiah,
+        owl:NamedIndividual ;
+    rdfs:label "Seleksi ubi kayu berdasarkan perbedaan waktu panen dan inisiasi kultur in vitro"@id ;
+    ptp:identifierSumber "SRC_EXT_055" ;
+    ptp:judulReferensi "Seleksi ubi kayu berdasarkan perbedaan waktu panen dan inisiasi kultur in vitro"@id ;
+    ptp:namaPenulis "Nurhamidar Rahman; Hani Fitriani; Hartati; N. Sri Hartati" ;
+    ptp:tahunTerbit 2015 ;
+    ptp:urlReferensi "https://www.smujo.id/psnmbi/article/download/1365/1321/1293"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal jurnalilmiah dari registry sumber."@id ;
+    skos:prefLabel "Seleksi ubi kayu berdasarkan perbedaan waktu panen dan inisiasi kultur in vitro"@id .
+
 ptp:KelembapanTanah a owl:Class ;
     rdfs:label "Kelembapan Tanah"@id ;
     rdfs:comment "Faktor kelembapan tanah."@id ;
@@ -633,6 +666,75 @@ ptp:PublikasiSRCEXT044 a ptp:PublikasiInstansi,
     rdfs:comment "Referensi eksternal publikasiinstansi dari registry sumber."@id ;
     skos:prefLabel "Mungbean seed production training manual"@id .
 
+ptp:PublikasiSRCEXT045 a ptp:PublikasiInstansi,
+        owl:NamedIndividual ;
+    rdfs:label "Pertumbuhan Tanaman Padi"@id ;
+    ptp:identifierSumber "SRC_EXT_045" ;
+    ptp:judulReferensi "Pertumbuhan Tanaman Padi"@id ;
+    ptp:namaPenulis "Dinas Pertanian Kabupaten Buleleng" ;
+    ptp:tahunTerbit 2019 ;
+    ptp:urlReferensi "https://distan.bulelengkab.go.id/informasi/detail/artikel/pertumbuhan-tanaman-padi-78"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal publikasiinstansi dari registry sumber."@id ;
+    skos:prefLabel "Pertumbuhan Tanaman Padi"@id .
+
+ptp:PublikasiSRCEXT047 a ptp:PublikasiInstansi,
+        owl:NamedIndividual ;
+    rdfs:label "Perakitan Varietas Unggul Jagung Fungsional"@id ;
+    ptp:identifierSumber "SRC_EXT_047" ;
+    ptp:judulReferensi "Perakitan Varietas Unggul Jagung Fungsional"@id ;
+    ptp:urlReferensi "https://repository.pertanian.go.id/bitstreams/c34ce5be-0269-4039-9ecf-991f3cae2134/download"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal publikasiinstansi dari registry sumber."@id ;
+    skos:prefLabel "Perakitan Varietas Unggul Jagung Fungsional"@id .
+
+ptp:PublikasiSRCEXT048 a ptp:PublikasiInstansi,
+        owl:NamedIndividual ;
+    rdfs:label "Budidaya dan Aneka Olahan Singkong"@id ;
+    ptp:identifierSumber "SRC_EXT_048" ;
+    ptp:judulReferensi "Budidaya dan Aneka Olahan Singkong"@id ;
+    ptp:namaPenulis "Endah Wahyurini; Dyah Sugandini" ;
+    ptp:urlReferensi "http://eprints.upnyk.ac.id/34905/1/BUKU%20Budidaya%20dan%20Aneka%20Olahan%20Singkong.pdf"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal publikasiinstansi dari registry sumber."@id ;
+    skos:prefLabel "Budidaya dan Aneka Olahan Singkong"@id .
+
+ptp:PublikasiSRCEXT049 a ptp:PublikasiInstansi,
+        owl:NamedIndividual ;
+    rdfs:label "Budidaya Ubi Jalar Lokal Unggulan di Dataran Tinggi Rejang Lebong"@id ;
+    ptp:identifierSumber "SRC_EXT_049" ;
+    ptp:judulReferensi "Budidaya Ubi Jalar Lokal Unggulan di Dataran Tinggi Rejang Lebong"@id ;
+    ptp:namaPenulis "Haryuni; Dodi Aprianto; Hefri Oktoyoki; Fitri Lestari" ;
+    ptp:tahunTerbit 2021 ;
+    ptp:urlReferensi "https://agriculture.unib.ac.id/wp-content/uploads/2024/03/Buku-Budidaya-Ubi-Jalar-Lokal-Unggulan-Haryuni-dkk.pdf"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal publikasiinstansi dari registry sumber."@id ;
+    skos:prefLabel "Budidaya Ubi Jalar Lokal Unggulan di Dataran Tinggi Rejang Lebong"@id .
+
+ptp:PublikasiSRCEXT050 a ptp:PublikasiInstansi,
+        owl:NamedIndividual ;
+    rdfs:label "Teknologi Budidaya Kacang Tanah"@id ;
+    ptp:identifierSumber "SRC_EXT_050" ;
+    ptp:judulReferensi "Teknologi Budidaya Kacang Tanah"@id ;
+    ptp:urlReferensi "https://banten.brmp.pertanian.go.id/storage/assets/uploads/file/m9AONBGRCC0Tb8erW2BakeVg1NbfF7TDsT6KIkX1.pdf"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal publikasiinstansi dari registry sumber."@id ;
+    skos:prefLabel "Teknologi Budidaya Kacang Tanah"@id .
+
+ptp:PublikasiSRCEXT051 a ptp:PublikasiInstansi,
+        owl:NamedIndividual ;
+    rdfs:label "Teknologi Budidaya Tanaman Kacang Hijau"@id ;
+    ptp:identifierSumber "SRC_EXT_051" ;
+    ptp:judulReferensi "Teknologi Budidaya Tanaman Kacang Hijau"@id ;
+    ptp:namaPenulis "Yulia Pradana" ;
+    ptp:urlReferensi "https://banten.brmp.pertanian.go.id/storage/assets/uploads/file/sLkrvxddp5lydn26EqiVW8XVyLkF23GPpjDCgr7T.pdf"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal publikasiinstansi dari registry sumber."@id ;
+    skos:prefLabel "Teknologi Budidaya Tanaman Kacang Hijau"@id .
+
+ptp:PublikasiSRCEXT054 a ptp:PublikasiInstansi,
+        owl:NamedIndividual ;
+    rdfs:label "38 Varietas Unggul: Ubi Jalar"@id ;
+    ptp:identifierSumber "SRC_EXT_054" ;
+    ptp:judulReferensi "38 Varietas Unggul: Ubi Jalar"@id ;
+    ptp:urlReferensi "https://www.ayosebar.com/38-varietas-unggul/308-ubi-jalar"^^xsd:anyURI ;
+    rdfs:comment "Referensi eksternal publikasiinstansi dari registry sumber."@id ;
+    skos:prefLabel "38 Varietas Unggul: Ubi Jalar"@id .
+
 ptp:TeksturTanah a owl:Class ;
     rdfs:label "Tekstur Tanah"@id ;
     rdfs:comment "Faktor tekstur tanah."@id ;
@@ -685,7 +787,6 @@ ptp:deskripsiTanaman a owl:DatatypeProperty ;
 ptp:didukungOleh a owl:ObjectProperty ;
     rdfs:label "didukung oleh"@id ;
     rdfs:comment "Entitas didukung oleh node bukti sumber."@id ;
-    rdfs:domain ptp:EntitasKBR ;
     rdfs:range ptp:BuktiSumber ;
     skos:prefLabel "didukung oleh"@id .
 
@@ -720,7 +821,6 @@ ptp:idChunkSumber a owl:DatatypeProperty ;
 ptp:identifierSumber a owl:DatatypeProperty ;
     rdfs:label "identifier sumber"@id ;
     rdfs:comment "Identifier baris atau entitas pada sumber."@id ;
-    rdfs:domain ptp:EntitasKBR ;
     rdfs:range xsd:string ;
     skos:prefLabel "identifier sumber"@id .
 
@@ -777,7 +877,6 @@ ptp:memilikiObservasi a owl:ObjectProperty ;
     rdfs:label "memiliki observasi"@id ;
     rdfs:comment "Diagnosis memiliki observasi gejala atau faktor lingkungan."@id ;
     rdfs:domain ptp:Diagnosis ;
-    rdfs:range ptp:EntitasKBR ;
     skos:prefLabel "memiliki observasi"@id .
 
 ptp:memilikiTanaman a owl:ObjectProperty ;
@@ -3323,6 +3422,42 @@ ptp:BuktiMetadataSeverityPenyakitLayuStewartJagung a ptp:BuktiSumber,
     skos:prefLabel "Bukti metadata severity Penyakit Layu Stewart (Jagung)"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
+ptp:BuktiMetadataVarietyPenyakitBulaiJagung a ptp:BuktiSumber,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti metadata variety Penyakit Bulai (Jagung)"@id ;
+    ptp:dokumenSumber "DOC002" ;
+    ptp:halamanSumber "106" ;
+    ptp:identifierSumber "DOC002_P106_B006" ;
+    ptp:kutipanNormalisasi "Namun, Ulhaq and Masnilah, (2019) mengatakan bahwa varietas Pioneer 21 termasuk agak rentan dan varietas yang tahan terhadap penyakit bulai adalah Pioneer 27."@id ;
+    ptp:kutipanSumber "Namun, Ulhaq and Masnilah, (2019) mengatakan bahwa varietas Pioneer 21 termasuk agak rentan dan varietas yang tahan terhadap penyakit bulai adalah Pioneer 27."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti metadata variety Penyakit Bulai (Jagung)"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC002 .
+
+ptp:BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau2 a ptp:BuktiSumber,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti metadata variety Penyakit Embun Tepung (Kacang hijau)"@id ;
+    ptp:dokumenSumber "DOC005" ;
+    ptp:halamanSumber "59" ;
+    ptp:identifierSumber "DOC005_C052_01" ;
+    ptp:kutipanNormalisasi "Kacang hijau Vima 1 tahan terhadap penyakit embun tepung."@id ;
+    ptp:kutipanSumber "Kacang hijau Vima 1 tahan terhadap penyakit embun tepung."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti metadata variety Penyakit Embun Tepung (Kacang hijau)"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC005 .
+
+ptp:BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau3 a ptp:BuktiSumber,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti metadata variety Penyakit Embun Tepung (Kacang hijau)"@id ;
+    ptp:dokumenSumber "DOC005" ;
+    ptp:halamanSumber "59" ;
+    ptp:identifierSumber "DOC005_C052_01" ;
+    ptp:kutipanNormalisasi "Vima 2 yang mempunyai hasil tinggi, umur genjah, masak serempak, juga dinyatakan tahan terhadap penyakit embun tepung."@id ;
+    ptp:kutipanSumber "Vima 2 yang mempunyai hasil tinggi, umur genjah, masak serempak, juga dinyatakan tahan terhadap penyakit embun tepung."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti metadata variety Penyakit Embun Tepung (Kacang hijau)"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC005 .
+
 ptp:BuktiPengendalianLayuFusariumUbiJalar3 a ptp:BuktiPengendalian,
         owl:NamedIndividual ;
     rdfs:label "Bukti pengendalian layu fusarium (Ubi jalar)"@id ;
@@ -5758,6 +5893,132 @@ ptp:VarietasBadak a ptp:Varietas,
     rdfs:comment "Varietas tanaman yang disebut sumber."@id ;
     skos:prefLabel "Badak"@id .
 
+ptp:VarietasBima1 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-1"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-1"@id .
+
+ptp:VarietasBima10 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-10"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-10"@id .
+
+ptp:VarietasBima11 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-11"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-11"@id .
+
+ptp:VarietasBima16 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-16"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-16"@id .
+
+ptp:VarietasBima17 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-17"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-17"@id .
+
+ptp:VarietasBima18 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-18"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-18"@id .
+
+ptp:VarietasBima19URI a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima 19-URI"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima 19-URI"@id .
+
+ptp:VarietasBima20URI a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima 20 URI"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima 20 URI"@id .
+
+ptp:VarietasBima4 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-4"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-4"@id .
+
+ptp:VarietasBima5 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-5"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-5"@id .
+
+ptp:VarietasBima7 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-7"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-7"@id .
+
+ptp:VarietasBima8 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-8"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-8"@id .
+
+ptp:VarietasBima9 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bima-9"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bima-9"@id .
+
+ptp:VarietasBisma a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Bisma"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Bisma"@id .
+
 ptp:VarietasBison a ptp:Varietas,
         owl:NamedIndividual ;
     rdfs:label "Bison"@id ;
@@ -5784,6 +6045,15 @@ ptp:VarietasBonsasarai a ptp:Varietas,
     ptp:tahanTerhadap ptp:PenyakitKudisUbiJalar ;
     rdfs:comment "Varietas tanaman yang disebut sumber."@id ;
     skos:prefLabel "Bonsasarai"@id .
+
+ptp:VarietasCamar a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Camar"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau ;
+    ptp:merupakanVarietasDari ptp:KacangHijau ;
+    ptp:tahanTerhadap ptp:PenyakitEmbunTepungKacangHijau ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Camar"@id .
 
 ptp:VarietasDega1 a ptp:Varietas,
         owl:NamedIndividual ;
@@ -5893,6 +6163,15 @@ ptp:VarietasKelinci a ptp:Varietas,
     rdfs:comment "Varietas tanaman yang disebut sumber."@id ;
     skos:prefLabel "Kelinci"@id .
 
+ptp:VarietasKutilang a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Kutilang"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau ;
+    ptp:merupakanVarietasDari ptp:KacangHijau ;
+    ptp:tahanTerhadap ptp:PenyakitEmbunTepungKacangHijau ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Kutilang"@id .
+
 ptp:VarietasKuyage2 a ptp:Varietas,
         owl:NamedIndividual ;
     rdfs:label "Kuyage-2"@id ;
@@ -5901,6 +6180,15 @@ ptp:VarietasKuyage2 a ptp:Varietas,
     ptp:tahanTerhadap ptp:PenyakitKudisUbiJalar ;
     rdfs:comment "Varietas tanaman yang disebut sumber."@id ;
     skos:prefLabel "Kuyage-2"@id .
+
+ptp:VarietasLamuru a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Lamuru"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Lamuru"@id .
 
 ptp:VarietasMahameru a ptp:Varietas,
         owl:NamedIndividual ;
@@ -5911,6 +6199,15 @@ ptp:VarietasMahameru a ptp:Varietas,
     rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
     skos:prefLabel "Mahameru"@id .
 
+ptp:VarietasMerpati a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Merpati"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau ;
+    ptp:merupakanVarietasDari ptp:KacangHijau ;
+    ptp:tahanTerhadap ptp:PenyakitEmbunTepungKacangHijau ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Merpati"@id .
+
 ptp:VarietasMouwebsi a ptp:Varietas,
         owl:NamedIndividual ;
     rdfs:label "Mouwebsi"@id ;
@@ -5919,6 +6216,15 @@ ptp:VarietasMouwebsi a ptp:Varietas,
     ptp:tahanTerhadap ptp:PenyakitKudisUbiJalar ;
     rdfs:comment "Varietas tanaman yang disebut sumber."@id ;
     skos:prefLabel "Mouwebsi"@id .
+
+ptp:VarietasPalakka a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Palakka"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Palakka"@id .
 
 ptp:VarietasPanther a ptp:Varietas,
         owl:NamedIndividual ;
@@ -5942,11 +6248,68 @@ ptp:VarietasPioneer21 a ptp:Varietas,
 ptp:VarietasPioneer27 a ptp:Varietas,
         owl:NamedIndividual ;
     rdfs:label "Pioneer 27"@id ;
-    ptp:didukungOleh ptp:BuktiVarietasJagung3,
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitBulaiJagung,
+        ptp:BuktiVarietasJagung3,
         ptp:BuktiVarietasJagung4 ;
     ptp:merupakanVarietasDari ptp:Jagung ;
-    rdfs:comment "Varietas tanaman yang disebut sumber."@id ;
+    ptp:tahanTerhadap ptp:PenyakitBulaiJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id,
+        "Varietas tanaman yang disebut sumber."@id ;
     skos:prefLabel "Pioneer 27"@id .
+
+ptp:VarietasSemar10 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Semar-10"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Semar-10"@id .
+
+ptp:VarietasSemar5 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Semar-5"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Semar-5"@id .
+
+ptp:VarietasSemar6 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Semar-6"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Semar-6"@id .
+
+ptp:VarietasSemar7 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Semar-7"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Semar-7"@id .
+
+ptp:VarietasSemar8 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Semar-8"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Semar-8"@id .
+
+ptp:VarietasSemar9 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Semar-9"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Semar-9"@id .
 
 ptp:VarietasSinabung a ptp:Varietas,
         owl:NamedIndividual ;
@@ -5956,6 +6319,33 @@ ptp:VarietasSinabung a ptp:Varietas,
     ptp:tahanTerhadap ptp:PenyakitKaratDaunKedelai ;
     rdfs:comment "Varietas tanaman yang disebut sumber."@id ;
     skos:prefLabel "Sinabung"@id .
+
+ptp:VarietasSrikandiKuning1 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Srikandi Kuning-1"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Srikandi Kuning-1"@id .
+
+ptp:VarietasSrikandiPutih1 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Srikandi Putih-1"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Srikandi Putih-1"@id .
+
+ptp:VarietasSukmaraga a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Sukmaraga"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung ;
+    ptp:merupakanVarietasDari ptp:Jagung ;
+    ptp:tahanTerhadap ptp:PenyakitKaratDaunJagung ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Sukmaraga"@id .
 
 ptp:VarietasTakar1 a ptp:Varietas,
         ptp:VarietasUnggul,
@@ -6003,6 +6393,24 @@ ptp:VarietasTukadUnda a ptp:Varietas,
     ptp:tahanTerhadap ptp:PenyakitTungroPadi ;
     rdfs:comment "Varietas tanaman yang disebut sumber."@id ;
     skos:prefLabel "Tukad Unda"@id .
+
+ptp:VarietasVima1 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Vima 1"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau2 ;
+    ptp:merupakanVarietasDari ptp:KacangHijau ;
+    ptp:tahanTerhadap ptp:PenyakitEmbunTepungKacangHijau ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Vima 1"@id .
+
+ptp:VarietasVima2 a ptp:Varietas,
+        owl:NamedIndividual ;
+    rdfs:label "Vima 2"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau3 ;
+    ptp:merupakanVarietasDari ptp:KacangHijau ;
+    ptp:tahanTerhadap ptp:PenyakitEmbunTepungKacangHijau ;
+    rdfs:comment "Varietas tanaman yang disebut pada sumber."@id ;
+    skos:prefLabel "Vima 2"@id .
 
 ptp:VarietasVima4 a ptp:Varietas,
         owl:NamedIndividual ;
@@ -6174,8 +6582,6 @@ ptp:terdapatPada a owl:ObjectProperty ;
 prov:wasDerivedFrom a owl:ObjectProperty ;
     rdfs:label "was derived from"@id ;
     rdfs:comment "Entitas diturunkan dari sumber atau entitas lain."@id ;
-    rdfs:domain ptp:EntitasKBR ;
-    rdfs:range ptp:EntitasKBR ;
     skos:prefLabel "was derived from"@id .
 
 ptp:Begomovirus a ptp:Virus,
@@ -6967,16 +7373,16 @@ ptp:BuktiMetadataPhasePenyakitBercakDaunKacangHijau a ptp:BuktiSumber,
     skos:prefLabel "Bukti metadata phase Penyakit Bercak Daun (Kacang hijau)"@id ;
     prov:wasDerivedFrom ptp:BukuDOC005 .
 
-ptp:BuktiMetadataPhasePenyakitBercakDaunKacangTanah a ptp:BuktiSumber,
+ptp:BuktiMetadataPhasePenyakitBercakDaunKacangHijau2 a ptp:BuktiSumber,
         owl:NamedIndividual ;
-    rdfs:label "Bukti metadata phase Penyakit Bercak Daun (Kacang tanah)"@id ;
+    rdfs:label "Bukti metadata phase Penyakit Bercak Daun (Kacang hijau)"@id ;
     ptp:dokumenSumber "DOC005" ;
-    ptp:halamanSumber "44" ;
-    ptp:identifierSumber "DOC005_C044_01" ;
-    ptp:kutipanNormalisasi "Penyakit ini umumnya terjadi pada fase generatif, dan serangan terparah pada fase pengisian polong."@id ;
-    ptp:kutipanSumber "Penyakit ini umumnya terjadi pada fase generatif, dan serangan terparah pada fase pengisian polong."@id ;
+    ptp:halamanSumber "59" ;
+    ptp:identifierSumber "DOC005_C059_01" ;
+    ptp:kutipanNormalisasi "Bercak daun akan bertambah selama fase pembungaan sampai pengisian polong (Ilag 1978 dalam Sumartini dan Rahayu 2017)."@id ;
+    ptp:kutipanSumber "Bercak daun akan bertambah selama fase pembungaan sampai pengisian polong (Ilag 1978 dalam Sumartini dan Rahayu 2017)."@id ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
-    skos:prefLabel "Bukti metadata phase Penyakit Bercak Daun (Kacang tanah)"@id ;
+    skos:prefLabel "Bukti metadata phase Penyakit Bercak Daun (Kacang hijau)"@id ;
     prov:wasDerivedFrom ptp:BukuDOC005 .
 
 ptp:BuktiMetadataPhasePenyakitHawarDaunJagung a ptp:BuktiSumber,
@@ -10428,12 +10834,6 @@ ptp:FaseAnakan a owl:Class ;
     rdfs:subClassOf ptp:FasePertumbuhan ;
     skos:prefLabel "Fase Anakan"@id .
 
-ptp:FaseGeneratif a owl:Class ;
-    rdfs:label "Fase Generatif"@id ;
-    rdfs:comment "Fase pertumbuhan generatif."@id ;
-    rdfs:subClassOf ptp:FasePertumbuhan ;
-    skos:prefLabel "Fase Generatif"@id .
-
 ptp:FasePanen a owl:Class ;
     rdfs:label "Fase Panen"@id ;
     rdfs:comment "Fase menjelang atau saat panen."@id ;
@@ -10459,6 +10859,14 @@ ptp:FasePembibitanTanaman a ptp:FasePembibitan,
         ptp:BuktiMetadataPhasePenyakitRebahSemaiKedelai ;
     rdfs:comment "Fase pertumbuhan yang disebut pada sumber."@id ;
     skos:prefLabel "Fase pembibitan"@id .
+
+ptp:FasePengisianPolong a ptp:FaseGeneratif,
+        owl:NamedIndividual ;
+    rdfs:label "Fase pengisian polong"@id ;
+    ptp:didukungOleh ptp:BuktiMetadataPhasePenyakitBercakDaunKacangHijau2,
+        ptp:BuktiMetadataPhasePenyakitBercakDaunKacangTanah ;
+    rdfs:comment "Fase pertumbuhan yang disebut pada sumber."@id ;
+    skos:prefLabel "Fase pengisian polong"@id .
 
 ptp:FaseVegetatif a owl:Class ;
     rdfs:label "Fase Vegetatif"@id ;
@@ -12853,6 +13261,18 @@ ptp:BuktiLingkunganPenyakitBulaiJagung a ptp:BuktiSumber,
     skos:prefLabel "Bukti faktor lingkungan Penyakit Bulai (Jagung)"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
 
+ptp:BuktiMetadataPhasePenyakitBercakDaunKacangTanah a ptp:BuktiSumber,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti metadata phase Penyakit Bercak Daun (Kacang tanah)"@id ;
+    ptp:dokumenSumber "DOC005" ;
+    ptp:halamanSumber "44" ;
+    ptp:identifierSumber "DOC005_C044_01" ;
+    ptp:kutipanNormalisasi "Penyakit ini umumnya terjadi pada fase generatif, dan serangan terparah pada fase pengisian polong."@id ;
+    ptp:kutipanSumber "Penyakit ini umumnya terjadi pada fase generatif, dan serangan terparah pada fase pengisian polong."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti metadata phase Penyakit Bercak Daun (Kacang tanah)"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC005 .
+
 ptp:BuktiMetadataPhasePenyakitHawarBakteriBacterialBlightKedelai a ptp:BuktiSumber,
         owl:NamedIndividual ;
     rdfs:label "Bukti metadata phase Penyakit Hawar Bakteri (Bacterial Blight) (Kedelai)"@id ;
@@ -12864,6 +13284,18 @@ ptp:BuktiMetadataPhasePenyakitHawarBakteriBacterialBlightKedelai a ptp:BuktiSumb
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     skos:prefLabel "Bukti metadata phase Penyakit Hawar Bakteri (Bacterial Blight) (Kedelai)"@id ;
     prov:wasDerivedFrom ptp:BukuDOC002 .
+
+ptp:BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau a ptp:BuktiSumber,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti metadata variety Penyakit Embun Tepung (Kacang hijau)"@id ;
+    ptp:dokumenSumber "DOC005" ;
+    ptp:halamanSumber "59" ;
+    ptp:identifierSumber "DOC005_C052_01" ;
+    ptp:kutipanNormalisasi "Tabel 4. Ketahanan beberapa varietas kacang hijau terhadap embun tepung: Camar, Merpati, Kutilang, dan Vima 1 tahan embun tepung."@id ;
+    ptp:kutipanSumber "Tabel 4. Ketahanan beberapa varietas kacang hijau terhadap embun tepung: Camar, Merpati, Kutilang, dan Vima 1 tahan embun tepung."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti metadata variety Penyakit Embun Tepung (Kacang hijau)"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC005 .
 
 ptp:BuktiPengendalianLayuFusariumUbiJalar a ptp:BuktiPengendalian,
         owl:NamedIndividual ;
@@ -13789,6 +14221,12 @@ ptp:Buku a owl:Class ;
         ptp:Referensi ;
     skos:prefLabel "Buku"@id .
 
+ptp:FaseGeneratif a owl:Class ;
+    rdfs:label "Fase Generatif"@id ;
+    rdfs:comment "Fase pertumbuhan generatif."@id ;
+    rdfs:subClassOf ptp:FasePertumbuhan ;
+    skos:prefLabel "Fase Generatif"@id .
+
 ptp:Fitoplasma a owl:Class ;
     rdfs:label "Fitoplasma"@id ;
     rdfs:comment "Patogen kelompok fitoplasma."@id ;
@@ -13882,7 +14320,6 @@ ptp:UmbiUmbian a owl:Class ;
 ptp:berkaitanPengendalian a owl:ObjectProperty ;
     rdfs:label "berkaitan pengendalian"@id ;
     rdfs:comment "Superproperti yang menghubungkan entitas dengan tindakan pengendalian."@id ;
-    rdfs:domain ptp:EntitasKBR ;
     rdfs:range ptp:Pengendalian ;
     skos:prefLabel "berkaitan pengendalian"@id .
 
@@ -14945,21 +15382,6 @@ ptp:GejalaUmbi a owl:Class ;
     rdfs:subClassOf ptp:Gejala ;
     skos:prefLabel "Gejala Umbi"@id .
 
-ptp:KacangHijau a ptp:Legum,
-        owl:NamedIndividual ;
-    rdfs:label "Kacang hijau"@id ;
-    ptp:diserangPenyakit ptp:PenyakitBercakDaunKacangHijau,
-        ptp:PenyakitEmbunTepungKacangHijau,
-        ptp:PenyakitLayuKacangHijau ;
-    ptp:identifierSumber "PLANT_020" ;
-    ptp:memilikiVarietas ptp:VarietasVima4,
-        ptp:VarietasVima5 ;
-    ptp:namaIlmiah "Vigna radiata (L.) R. Wilczek" ;
-    rdfs:comment "Nama ilmiah dilengkapi dari Plants of the World Online (Kew) karena tidak tercantum pada sumber utama."@id,
-        "Tanaman pangan dalam ruang lingkup knowledge base."@id ;
-    rdfs:seeAlso <https://powo.science.kew.org/results?q=Vigna%20radiata> ;
-    skos:prefLabel "Kacang hijau"@id .
-
 ptp:PengelolaanTerpadu a ptp:PengendalianTerpadu,
         owl:NamedIndividual ;
     rdfs:label "Pengelolaan terpadu"@id ;
@@ -15216,24 +15638,6 @@ ptp:BusukPangkalBatangUbiKayu a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Busuk pangkal batang"@id .
 
-ptp:Jagung a ptp:Serealia,
-        owl:NamedIndividual ;
-    rdfs:label "Jagung"@id ;
-    ptp:diserangPenyakit ptp:PenyakitBulaiJagung,
-        ptp:PenyakitBusukPelepahJagung,
-        ptp:PenyakitHawarDaunJagung,
-        ptp:PenyakitKaratDaunJagung,
-        ptp:PenyakitLayuStewartJagung ;
-    ptp:identifierSumber "PLANT_006" ;
-    ptp:memilikiVarietas ptp:VarietasAsianHoney,
-        ptp:VarietasPioneer21,
-        ptp:VarietasPioneer27 ;
-    ptp:namaIlmiah "Zea mays L." ;
-    rdfs:comment "Nama ilmiah dilengkapi dari Plants of the World Online (Kew) karena tidak tercantum pada sumber utama."@id,
-        "Tanaman pangan dalam ruang lingkup knowledge base."@id ;
-    rdfs:seeAlso <https://powo.science.kew.org/results?q=Zea%20mays> ;
-    skos:prefLabel "Jagung"@id .
-
 ptp:KerdilTanaman a ptp:GejalaKanonik,
         owl:NamedIndividual ;
     rdfs:label "Kerdil tanaman"@id ;
@@ -15286,34 +15690,6 @@ ptp:PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai a ptp:Penyakit,
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:altLabel "Frogeye Leaf Spot"@id ;
     skos:prefLabel "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"@id .
-
-ptp:PenyakitEmbunTepungKacangHijau a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit Embun Tepung"@id ;
-    ptp:berkaitanPengendalian ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanEkstrakTanaman,
-        ptp:PenggunaanFungisida,
-        ptp:PenggunaanPestisidaNabati,
-        ptp:PenggunaanVarietasTahan ;
-    ptp:didukungOleh ptp:BuktiPatogenPenyakitEmbunTepungKacangHijau,
-        ptp:BuktiPengendalianPenyakitEmbunTepungKacangHijau,
-        ptp:BuktiPengendalianPenyakitEmbunTepungKacangHijau2,
-        ptp:BuktiPengendalianPenyakitEmbunTepungKacangHijau3,
-        ptp:BuktiPenyakitPenyakitEmbunTepungKacangHijau ;
-    ptp:dikendalikanDengan ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanEkstrakTanaman,
-        ptp:PenggunaanFungisida,
-        ptp:PenggunaanPestisidaNabati,
-        ptp:PenggunaanVarietasTahan ;
-    ptp:disebabkanOleh ptp:ErysiphePolygoni ;
-    ptp:identifierSumber "DIS_123" ;
-    ptp:memilikiGejala ptp:GejalaPenyakitEmbunTepungKacangHijauTepungDaun ;
-    ptp:memilikiReferensi ptp:BukuDOC005 ;
-    ptp:menyerangBagian ptp:Daun ;
-    ptp:menyerangTanaman ptp:KacangHijau ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:altLabel "EMBUN TEPUNG"@id ;
-    skos:prefLabel "Penyakit Embun Tepung"@id .
 
 ptp:Pucuk a ptp:BagianTanaman,
         owl:NamedIndividual ;
@@ -15403,6 +15779,26 @@ ptp:PengendalianVektor a ptp:PengendalianKimiawi,
     rdfs:comment "Tindakan kanonik pengendalian serangga atau organisme vektor penyakit."@id ;
     skos:prefLabel "Pengendalian vektor"@id .
 
+ptp:KacangHijau a ptp:Legum,
+        owl:NamedIndividual ;
+    rdfs:label "Kacang hijau"@id ;
+    ptp:diserangPenyakit ptp:PenyakitBercakDaunKacangHijau,
+        ptp:PenyakitEmbunTepungKacangHijau,
+        ptp:PenyakitLayuKacangHijau ;
+    ptp:identifierSumber "PLANT_020" ;
+    ptp:memilikiVarietas ptp:VarietasCamar,
+        ptp:VarietasKutilang,
+        ptp:VarietasMerpati,
+        ptp:VarietasVima1,
+        ptp:VarietasVima2,
+        ptp:VarietasVima4,
+        ptp:VarietasVima5 ;
+    ptp:namaIlmiah "Vigna radiata (L.) R. Wilczek" ;
+    rdfs:comment "Nama ilmiah dilengkapi dari Plants of the World Online (Kew) karena tidak tercantum pada sumber utama."@id,
+        "Tanaman pangan dalam ruang lingkup knowledge base."@id ;
+    rdfs:seeAlso <https://powo.science.kew.org/results?q=Vigna%20radiata> ;
+    skos:prefLabel "Kacang hijau"@id .
+
 ptp:PenyakitBercakDaunKacangHijau a ptp:Penyakit,
         owl:NamedIndividual ;
     rdfs:label "Penyakit Bercak Daun"@id ;
@@ -15412,6 +15808,7 @@ ptp:PenyakitBercakDaunKacangHijau a ptp:Penyakit,
         ptp:PenggunaanEkstrakTanaman,
         ptp:PenggunaanPestisidaNabati ;
     ptp:didukungOleh ptp:BuktiMetadataPhasePenyakitBercakDaunKacangHijau,
+        ptp:BuktiMetadataPhasePenyakitBercakDaunKacangHijau2,
         ptp:BuktiPatogenPenyakitBercakDaunKacangHijau,
         ptp:BuktiPatogenPenyakitBercakDaunKacangHijau2,
         ptp:BuktiPengendalianPenyakitBercakDaunKacangHijau,
@@ -15430,7 +15827,8 @@ ptp:PenyakitBercakDaunKacangHijau a ptp:Penyakit,
         ptp:GejalaPenyakitBercakDaunKacangHijauBercakDaun ;
     ptp:memilikiReferensi ptp:BukuDOC005 ;
     ptp:menyerangBagian ptp:Daun ;
-    ptp:menyerangFase ptp:FaseGeneratifUmum ;
+    ptp:menyerangFase ptp:FaseGeneratifUmum,
+        ptp:FasePengisianPolong ;
     ptp:menyerangTanaman ptp:KacangHijau ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:altLabel "BERCAK DAUN"@id ;
@@ -15775,7 +16173,6 @@ ptp:KlorosisTanaman a ptp:GejalaKanonik,
 ptp:Observasi a owl:Class ;
     rdfs:label "Observasi"@id ;
     rdfs:comment "Observasi yang menjadi masukan proses diagnosis."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -16038,6 +16435,34 @@ ptp:PenggunaanTanamanBukanInang a ptp:PengendalianKulturTeknis,
     ptp:namaPengendalian "Penggunaan tanaman bukan inang"@id ;
     rdfs:comment "Tindakan kanonik penggunaan tanaman yang bukan inang patogen."@id ;
     skos:prefLabel "Penggunaan tanaman bukan inang"@id .
+
+ptp:PenyakitEmbunTepungKacangHijau a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Embun Tepung"@id ;
+    ptp:berkaitanPengendalian ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanEkstrakTanaman,
+        ptp:PenggunaanFungisida,
+        ptp:PenggunaanPestisidaNabati,
+        ptp:PenggunaanVarietasTahan ;
+    ptp:didukungOleh ptp:BuktiPatogenPenyakitEmbunTepungKacangHijau,
+        ptp:BuktiPengendalianPenyakitEmbunTepungKacangHijau,
+        ptp:BuktiPengendalianPenyakitEmbunTepungKacangHijau2,
+        ptp:BuktiPengendalianPenyakitEmbunTepungKacangHijau3,
+        ptp:BuktiPenyakitPenyakitEmbunTepungKacangHijau ;
+    ptp:dikendalikanDengan ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanEkstrakTanaman,
+        ptp:PenggunaanFungisida,
+        ptp:PenggunaanPestisidaNabati,
+        ptp:PenggunaanVarietasTahan ;
+    ptp:disebabkanOleh ptp:ErysiphePolygoni ;
+    ptp:identifierSumber "DIS_123" ;
+    ptp:memilikiGejala ptp:GejalaPenyakitEmbunTepungKacangHijauTepungDaun ;
+    ptp:memilikiReferensi ptp:BukuDOC005 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangTanaman ptp:KacangHijau ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:altLabel "EMBUN TEPUNG"@id ;
+    skos:prefLabel "Penyakit Embun Tepung"@id .
 
 ptp:PenyakitKaratDaunKacangTanah a ptp:Penyakit,
         owl:NamedIndividual ;
@@ -16452,7 +16877,6 @@ ptp:Virus a owl:Class ;
 ptp:FaktorRisiko a owl:Class ;
     rdfs:label "Faktor Risiko"@id ;
     rdfs:comment "Faktor lingkungan, budidaya, atau lahan yang memengaruhi penyakit."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -16467,12 +16891,6 @@ ptp:FaktorRisiko a owl:Class ;
         ptp:TanamanPangan,
         ptp:Varietas ;
     skos:prefLabel "Faktor Risiko"@id .
-
-ptp:JurnalIlmiah a owl:Class ;
-    rdfs:label "Jurnal Ilmiah"@id ;
-    rdfs:comment "Referensi berbentuk artikel jurnal."@id ;
-    rdfs:subClassOf ptp:Referensi ;
-    skos:prefLabel "Jurnal Ilmiah"@id .
 
 ptp:KlorosisDaun a ptp:GejalaKanonik,
         owl:NamedIndividual ;
@@ -16745,7 +17163,6 @@ ptp:PenyakitTungroPadi a ptp:Penyakit,
 ptp:Diagnosis a owl:Class ;
     rdfs:label "Diagnosis"@id ;
     rdfs:comment "Catatan proses diagnosis tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:FaktorRisiko,
@@ -16761,15 +17178,9 @@ ptp:Diagnosis a owl:Class ;
         ptp:Varietas ;
     skos:prefLabel "Diagnosis"@id .
 
-ptp:EntitasKBR a owl:Class ;
-    rdfs:label "Entitas KBR"@id ;
-    rdfs:comment "Kelas akar seluruh entitas knowledge base penyakit tanaman pangan."@id ;
-    skos:prefLabel "Entitas KBR"@id .
-
 ptp:FasePertumbuhan a owl:Class ;
     rdfs:label "Fase Pertumbuhan"@id ;
     rdfs:comment "Fase pertumbuhan tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -16784,6 +17195,12 @@ ptp:FasePertumbuhan a owl:Class ;
         ptp:TanamanPangan,
         ptp:Varietas ;
     skos:prefLabel "Fase Pertumbuhan"@id .
+
+ptp:JurnalIlmiah a owl:Class ;
+    rdfs:label "Jurnal Ilmiah"@id ;
+    rdfs:comment "Referensi berbentuk artikel jurnal."@id ;
+    rdfs:subClassOf ptp:Referensi ;
+    skos:prefLabel "Jurnal Ilmiah"@id .
 
 ptp:PenggunaanBenihSehat a ptp:PengendalianKulturTeknis,
         owl:NamedIndividual ;
@@ -16855,50 +17272,6 @@ ptp:PenyakitBercakKuningUbiJalar a ptp:Penyakit,
     ptp:menyerangTanaman ptp:UbiJalar ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit bercak kuning"@id .
-
-ptp:PenyakitKaratDaunJagung a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit Karat Daun"@id ;
-    ptp:berkaitanPengendalian ptp:PengaturanJarakTanam,
-        ptp:PengaturanKelembapan,
-        ptp:PengelolaanGulma,
-        ptp:PenggunaanVarietasTahan,
-        ptp:SanitasiLahan ;
-    ptp:didukungOleh ptp:BuktiLingkunganPenyakitKaratDaunJagung,
-        ptp:BuktiLingkunganPenyakitKaratDaunJagung2,
-        ptp:BuktiMetadataPhasePenyakitKaratDaunJagung,
-        ptp:BuktiMetadataSeverityPenyakitKaratDaunJagung,
-        ptp:BuktiPatogenPenyakitKaratDaunJagung,
-        ptp:BuktiPengendalianPenyakitKaratDaunJagung,
-        ptp:BuktiPengendalianPenyakitKaratDaunJagung2,
-        ptp:BuktiPengendalianPenyakitKaratDaunJagung3,
-        ptp:BuktiPenyakitPenyakitKaratDaunJagung ;
-    ptp:dikendalikanDengan ptp:PengaturanJarakTanam,
-        ptp:PengaturanKelembapan,
-        ptp:PengelolaanGulma,
-        ptp:PenggunaanVarietasTahan,
-        ptp:SanitasiLahan ;
-    ptp:dipengaruhiOleh ptp:KondisiSuhuRendah,
-        ptp:ObservasiPenyakitKaratDaunJagungSuhu25Koma2Sampai28Koma8Celsius ;
-    ptp:disebabkanOleh ptp:PucciniaPolysora ;
-    ptp:identifierSumber "DIS_045" ;
-    ptp:memilikiGejala ptp:GejalaPenyakitKaratDaunJagung,
-        ptp:GejalaPenyakitKaratDaunJagung2,
-        ptp:GejalaPenyakitKaratDaunJagung3,
-        ptp:GejalaPenyakitKaratDaunJagung4,
-        ptp:GejalaPenyakitKaratDaunJagung5,
-        ptp:GejalaPenyakitKaratDaunJagung6,
-        ptp:GejalaPenyakitKaratDaunJagung7,
-        ptp:GejalaPenyakitKaratDaunJagung8,
-        ptp:GejalaPenyakitKaratDaunJagungBercakTanaman,
-        ptp:GejalaPenyakitKaratDaunJagungKlorosisDaun ;
-    ptp:memilikiReferensi ptp:BukuDOC002 ;
-    ptp:menyerangBagian ptp:Daun ;
-    ptp:menyerangFase ptp:FaseGeneratifUmum ;
-    ptp:menyerangTanaman ptp:Jagung ;
-    ptp:tingkatKeparahan "Keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%."@id ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:prefLabel "Penyakit Karat Daun"@id .
 
 ptp:Akar a ptp:BagianTanaman,
         owl:NamedIndividual ;
@@ -17038,60 +17411,6 @@ ptp:PenyakitBelangMottleKacangTanah a ptp:Penyakit,
     skos:altLabel "Mottle"@id ;
     skos:prefLabel "Penyakit Belang (Mottle)"@id .
 
-ptp:PenyakitBulaiJagung a ptp:Penyakit,
-        owl:NamedIndividual ;
-    rdfs:label "Penyakit Bulai"@id ;
-    ptp:berkaitanPengendalian ptp:PemupukanBerimbang,
-        ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanFungisida,
-        ptp:PenggunaanPseudomonas,
-        ptp:PenggunaanVarietasTahan ;
-    ptp:didukungOleh ptp:BuktiLingkunganPenyakitBulaiJagung,
-        ptp:BuktiMetadataSeverityPenyakitBulaiJagung,
-        ptp:BuktiPatogenPenyakitBulaiJagung,
-        ptp:BuktiPatogenPenyakitBulaiJagung2,
-        ptp:BuktiPengendalianPenyakitBulaiJagung,
-        ptp:BuktiPengendalianPenyakitBulaiJagung10,
-        ptp:BuktiPengendalianPenyakitBulaiJagung11,
-        ptp:BuktiPengendalianPenyakitBulaiJagung12,
-        ptp:BuktiPengendalianPenyakitBulaiJagung13,
-        ptp:BuktiPengendalianPenyakitBulaiJagung14,
-        ptp:BuktiPengendalianPenyakitBulaiJagung2,
-        ptp:BuktiPengendalianPenyakitBulaiJagung3,
-        ptp:BuktiPengendalianPenyakitBulaiJagung4,
-        ptp:BuktiPengendalianPenyakitBulaiJagung5,
-        ptp:BuktiPengendalianPenyakitBulaiJagung6,
-        ptp:BuktiPengendalianPenyakitBulaiJagung7,
-        ptp:BuktiPengendalianPenyakitBulaiJagung8,
-        ptp:BuktiPengendalianPenyakitBulaiJagung9,
-        ptp:BuktiPenyakitPenyakitBulaiJagung ;
-    ptp:dikendalikanDengan ptp:PemupukanBerimbang,
-        ptp:PenggunaanAgensHayati,
-        ptp:PenggunaanFungisida,
-        ptp:PenggunaanPseudomonas,
-        ptp:PenggunaanVarietasTahan ;
-    ptp:dipengaruhiOleh ptp:ObservasiPenyakitBulaiJagungKelembapan90Persen,
-        ptp:ObservasiPenyakitBulaiJagungSuhu24Celsius ;
-    ptp:disebabkanOleh ptp:PeronosclerosporaMaydis,
-        ptp:PeronosclerosporaSp ;
-    ptp:identifierSumber "DIS_046" ;
-    ptp:memilikiGejala ptp:GejalaPenyakitBulaiJagung,
-        ptp:GejalaPenyakitBulaiJagung2,
-        ptp:GejalaPenyakitBulaiJagung3,
-        ptp:GejalaPenyakitBulaiJagung4,
-        ptp:GejalaPenyakitBulaiJagungKerdilTanaman,
-        ptp:GejalaPenyakitBulaiJagungKlorosisDaun,
-        ptp:GejalaPenyakitBulaiJagungPertumbuhanTerhambat,
-        ptp:GejalaPenyakitBulaiJagungTepungDaun ;
-    ptp:memilikiReferensi ptp:BukuDOC002 ;
-    ptp:menyerangBagian ptp:Batang,
-        ptp:Daun ;
-    ptp:menyerangFase ptp:FaseVegetatifUmum ;
-    ptp:menyerangTanaman ptp:Jagung ;
-    ptp:tingkatKeparahan "Kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37% dan bergantung pada kondisi lingkungan tiap wilayah (Kurniawan et al., 2017)."@id ;
-    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
-    skos:prefLabel "Penyakit Bulai"@id .
-
 ptp:PenyakitRebahSemaiKedelai a ptp:Penyakit,
         owl:NamedIndividual ;
     rdfs:label "Penyakit Rebah Semai"@id ;
@@ -17144,7 +17463,6 @@ ptp:PenyakitRebahSemaiKedelai a ptp:Penyakit,
 ptp:Patogen a owl:Class ;
     rdfs:label "Patogen"@id ;
     rdfs:comment "Organisme penyebab penyakit tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17249,6 +17567,60 @@ ptp:PenyakitBlasPadi a ptp:Penyakit,
     ptp:menyerangTanaman ptp:Padi ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit Blas"@id .
+
+ptp:PenyakitBulaiJagung a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Bulai"@id ;
+    ptp:berkaitanPengendalian ptp:PemupukanBerimbang,
+        ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanFungisida,
+        ptp:PenggunaanPseudomonas,
+        ptp:PenggunaanVarietasTahan ;
+    ptp:didukungOleh ptp:BuktiLingkunganPenyakitBulaiJagung,
+        ptp:BuktiMetadataSeverityPenyakitBulaiJagung,
+        ptp:BuktiPatogenPenyakitBulaiJagung,
+        ptp:BuktiPatogenPenyakitBulaiJagung2,
+        ptp:BuktiPengendalianPenyakitBulaiJagung,
+        ptp:BuktiPengendalianPenyakitBulaiJagung10,
+        ptp:BuktiPengendalianPenyakitBulaiJagung11,
+        ptp:BuktiPengendalianPenyakitBulaiJagung12,
+        ptp:BuktiPengendalianPenyakitBulaiJagung13,
+        ptp:BuktiPengendalianPenyakitBulaiJagung14,
+        ptp:BuktiPengendalianPenyakitBulaiJagung2,
+        ptp:BuktiPengendalianPenyakitBulaiJagung3,
+        ptp:BuktiPengendalianPenyakitBulaiJagung4,
+        ptp:BuktiPengendalianPenyakitBulaiJagung5,
+        ptp:BuktiPengendalianPenyakitBulaiJagung6,
+        ptp:BuktiPengendalianPenyakitBulaiJagung7,
+        ptp:BuktiPengendalianPenyakitBulaiJagung8,
+        ptp:BuktiPengendalianPenyakitBulaiJagung9,
+        ptp:BuktiPenyakitPenyakitBulaiJagung ;
+    ptp:dikendalikanDengan ptp:PemupukanBerimbang,
+        ptp:PenggunaanAgensHayati,
+        ptp:PenggunaanFungisida,
+        ptp:PenggunaanPseudomonas,
+        ptp:PenggunaanVarietasTahan ;
+    ptp:dipengaruhiOleh ptp:ObservasiPenyakitBulaiJagungKelembapan90Persen,
+        ptp:ObservasiPenyakitBulaiJagungSuhu24Celsius ;
+    ptp:disebabkanOleh ptp:PeronosclerosporaMaydis,
+        ptp:PeronosclerosporaSp ;
+    ptp:identifierSumber "DIS_046" ;
+    ptp:memilikiGejala ptp:GejalaPenyakitBulaiJagung,
+        ptp:GejalaPenyakitBulaiJagung2,
+        ptp:GejalaPenyakitBulaiJagung3,
+        ptp:GejalaPenyakitBulaiJagung4,
+        ptp:GejalaPenyakitBulaiJagungKerdilTanaman,
+        ptp:GejalaPenyakitBulaiJagungKlorosisDaun,
+        ptp:GejalaPenyakitBulaiJagungPertumbuhanTerhambat,
+        ptp:GejalaPenyakitBulaiJagungTepungDaun ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Batang,
+        ptp:Daun ;
+    ptp:menyerangFase ptp:FaseVegetatifUmum ;
+    ptp:menyerangTanaman ptp:Jagung ;
+    ptp:tingkatKeparahan "Kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37% dan bergantung pada kondisi lingkungan tiap wilayah (Kurniawan et al., 2017)."@id ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:prefLabel "Penyakit Bulai"@id .
 
 ptp:PerlakuanBenih a ptp:PengendalianKulturTeknis,
         owl:NamedIndividual ;
@@ -17403,7 +17775,6 @@ ptp:PenyakitHawarDaunBakteriPadi a ptp:Penyakit,
 ptp:Referensi a owl:Class ;
     rdfs:label "Referensi"@id ;
     rdfs:comment "Sumber bibliografis yang mendukung data."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17419,10 +17790,22 @@ ptp:Referensi a owl:Class ;
         ptp:Varietas ;
     skos:prefLabel "Referensi"@id .
 
+ptp:BuktiMetadataVarietyPenyakitKaratDaunJagung a ptp:BuktiSumber,
+        owl:NamedIndividual ;
+    rdfs:label "Bukti metadata variety Penyakit Karat Daun (Jagung)"@id ;
+    ptp:catatanKualitas "Kutipan sumber berupa fragmen atau kalimat terpotong."@id ;
+    ptp:dokumenSumber "DOC002" ;
+    ptp:halamanSumber "104" ;
+    ptp:identifierSumber "DOC002_P104_B005" ;
+    ptp:kutipanNormalisasi "Varietas jagung yang diketahui tahan terhadap karat yaitu enam varietas bersari bebas (Bisma, Lamuru, Palakka, Sukmaraga, Srikandi Putih-1, dan Srikandi Kuning-1) dan 19 jagung hibrida (Semar-5, 6, 7, 8, 9,10, Bima-1, 4, 5, 7, 8, 9, 10, 11, 16,17, 18, Bima 19-URI dan Bima 20 URI (Burhanuddin, 2015)."@id ;
+    ptp:kutipanSumber "Varietas jagung yang diketahui tahan terhadap karat yaitu enam varietas bersari bebas (Bisma, Lamuru, Palakka, Sukmaraga, Srikandi Putih-1, dan Srikandi Kuning-1) dan 19 jagung hibrida (Semar-5, 6, 7, 8, 9,10, Bima-1, 4, 5, 7, 8, 9, 10, 11, 16,17, 18, Bima 19-URI dan Bima 20 URI (Burhanuddin, 2015)."@id ;
+    rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
+    skos:prefLabel "Bukti metadata variety Penyakit Karat Daun (Jagung)"@id ;
+    prov:wasDerivedFrom ptp:BukuDOC002 .
+
 ptp:TanamanPangan a owl:Class ;
     rdfs:label "Tanaman Pangan"@id ;
     rdfs:comment "Tanaman pangan dalam ruang lingkup knowledge base."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17441,7 +17824,6 @@ ptp:TanamanPangan a owl:Class ;
 ptp:BagianTanaman a owl:Class ;
     rdfs:label "Bagian Tanaman"@id ;
     rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala atau serangan."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BuktiSumber,
         ptp:Diagnosis,
         ptp:FaktorRisiko,
@@ -17460,7 +17842,6 @@ ptp:BagianTanaman a owl:Class ;
 ptp:Pengendalian a owl:Class ;
     rdfs:label "Pengendalian"@id ;
     rdfs:comment "Tindakan pengendalian penyakit tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -17578,12 +17959,6 @@ ptp:PenyakitKudisUbiJalar a ptp:Penyakit,
     ptp:menyerangTanaman ptp:UbiJalar ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:prefLabel "Penyakit kudis"@id .
-
-ptp:PublikasiInstansi a owl:Class ;
-    rdfs:label "Publikasi Instansi"@id ;
-    rdfs:comment "Referensi terbitan instansi."@id ;
-    rdfs:subClassOf ptp:Referensi ;
-    skos:prefLabel "Publikasi Instansi"@id .
 
 ptp:Kedelai a ptp:Legum,
         owl:NamedIndividual ;
@@ -17722,6 +18097,49 @@ ptp:RotasiTanaman a ptp:PengendalianKulturTeknis,
     rdfs:comment "Tindakan kanonik pergiliran atau rotasi tanaman."@id ;
     skos:prefLabel "Rotasi tanaman"@id .
 
+ptp:Jagung a ptp:Serealia,
+        owl:NamedIndividual ;
+    rdfs:label "Jagung"@id ;
+    ptp:diserangPenyakit ptp:PenyakitBulaiJagung,
+        ptp:PenyakitBusukPelepahJagung,
+        ptp:PenyakitHawarDaunJagung,
+        ptp:PenyakitKaratDaunJagung,
+        ptp:PenyakitLayuStewartJagung ;
+    ptp:identifierSumber "PLANT_006" ;
+    ptp:memilikiVarietas ptp:VarietasAsianHoney,
+        ptp:VarietasBima1,
+        ptp:VarietasBima10,
+        ptp:VarietasBima11,
+        ptp:VarietasBima16,
+        ptp:VarietasBima17,
+        ptp:VarietasBima18,
+        ptp:VarietasBima19URI,
+        ptp:VarietasBima20URI,
+        ptp:VarietasBima4,
+        ptp:VarietasBima5,
+        ptp:VarietasBima7,
+        ptp:VarietasBima8,
+        ptp:VarietasBima9,
+        ptp:VarietasBisma,
+        ptp:VarietasLamuru,
+        ptp:VarietasPalakka,
+        ptp:VarietasPioneer21,
+        ptp:VarietasPioneer27,
+        ptp:VarietasSemar10,
+        ptp:VarietasSemar5,
+        ptp:VarietasSemar6,
+        ptp:VarietasSemar7,
+        ptp:VarietasSemar8,
+        ptp:VarietasSemar9,
+        ptp:VarietasSrikandiKuning1,
+        ptp:VarietasSrikandiPutih1,
+        ptp:VarietasSukmaraga ;
+    ptp:namaIlmiah "Zea mays L." ;
+    rdfs:comment "Nama ilmiah dilengkapi dari Plants of the World Online (Kew) karena tidak tercantum pada sumber utama."@id,
+        "Tanaman pangan dalam ruang lingkup knowledge base."@id ;
+    rdfs:seeAlso <https://powo.science.kew.org/results?q=Zea%20mays> ;
+    skos:prefLabel "Jagung"@id .
+
 ptp:PenyakitBercakDaunKacangTanah a ptp:Penyakit,
         owl:NamedIndividual ;
     rdfs:label "Penyakit Bercak Daun"@id ;
@@ -17816,11 +18234,18 @@ ptp:PenyakitBercakDaunKacangTanah a ptp:Penyakit,
     ptp:memilikiReferensi ptp:BukuDOC002,
         ptp:BukuDOC005 ;
     ptp:menyerangBagian ptp:Daun ;
-    ptp:menyerangFase ptp:FaseGeneratifUmum ;
+    ptp:menyerangFase ptp:FaseGeneratifUmum,
+        ptp:FasePengisianPolong ;
     ptp:menyerangTanaman ptp:KacangTanah ;
     rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
     skos:altLabel "BERCAK DAUN"@id ;
     skos:prefLabel "Penyakit Bercak Daun"@id .
+
+ptp:PublikasiInstansi a owl:Class ;
+    rdfs:label "Publikasi Instansi"@id ;
+    rdfs:comment "Referensi terbitan instansi."@id ;
+    rdfs:subClassOf ptp:Referensi ;
+    skos:prefLabel "Publikasi Instansi"@id .
 
 ptp:PenggunaanAgensHayati a ptp:PengendalianBiologis,
         owl:NamedIndividual ;
@@ -18042,7 +18467,6 @@ ptp:SanitasiLahan a ptp:PengendalianKulturTeknis,
 ptp:GejalaKanonik a owl:Class ;
     rdfs:label "Gejala Kanonik"@id ;
     rdfs:comment "Konsep gejala kanonik yang dipakai untuk normalisasi pengamatan."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -18058,30 +18482,55 @@ ptp:GejalaKanonik a owl:Class ;
         ptp:Varietas ;
     skos:prefLabel "Gejala Kanonik"@id .
 
+ptp:PenyakitKaratDaunJagung a ptp:Penyakit,
+        owl:NamedIndividual ;
+    rdfs:label "Penyakit Karat Daun"@id ;
+    ptp:berkaitanPengendalian ptp:PengaturanJarakTanam,
+        ptp:PengaturanKelembapan,
+        ptp:PengelolaanGulma,
+        ptp:PenggunaanVarietasTahan,
+        ptp:SanitasiLahan ;
+    ptp:didukungOleh ptp:BuktiLingkunganPenyakitKaratDaunJagung,
+        ptp:BuktiLingkunganPenyakitKaratDaunJagung2,
+        ptp:BuktiMetadataPhasePenyakitKaratDaunJagung,
+        ptp:BuktiMetadataSeverityPenyakitKaratDaunJagung,
+        ptp:BuktiPatogenPenyakitKaratDaunJagung,
+        ptp:BuktiPengendalianPenyakitKaratDaunJagung,
+        ptp:BuktiPengendalianPenyakitKaratDaunJagung2,
+        ptp:BuktiPengendalianPenyakitKaratDaunJagung3,
+        ptp:BuktiPenyakitPenyakitKaratDaunJagung ;
+    ptp:dikendalikanDengan ptp:PengaturanJarakTanam,
+        ptp:PengaturanKelembapan,
+        ptp:PengelolaanGulma,
+        ptp:PenggunaanVarietasTahan,
+        ptp:SanitasiLahan ;
+    ptp:dipengaruhiOleh ptp:KondisiSuhuRendah,
+        ptp:ObservasiPenyakitKaratDaunJagungSuhu25Koma2Sampai28Koma8Celsius ;
+    ptp:disebabkanOleh ptp:PucciniaPolysora ;
+    ptp:identifierSumber "DIS_045" ;
+    ptp:memilikiGejala ptp:GejalaPenyakitKaratDaunJagung,
+        ptp:GejalaPenyakitKaratDaunJagung2,
+        ptp:GejalaPenyakitKaratDaunJagung3,
+        ptp:GejalaPenyakitKaratDaunJagung4,
+        ptp:GejalaPenyakitKaratDaunJagung5,
+        ptp:GejalaPenyakitKaratDaunJagung6,
+        ptp:GejalaPenyakitKaratDaunJagung7,
+        ptp:GejalaPenyakitKaratDaunJagung8,
+        ptp:GejalaPenyakitKaratDaunJagungBercakTanaman,
+        ptp:GejalaPenyakitKaratDaunJagungKlorosisDaun ;
+    ptp:memilikiReferensi ptp:BukuDOC002 ;
+    ptp:menyerangBagian ptp:Daun ;
+    ptp:menyerangFase ptp:FaseGeneratifUmum ;
+    ptp:menyerangTanaman ptp:Jagung ;
+    ptp:tingkatKeparahan "Keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%."@id ;
+    rdfs:comment "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber."@id ;
+    skos:prefLabel "Penyakit Karat Daun"@id .
+
 ptp:Batang a ptp:BagianTanaman,
         owl:NamedIndividual ;
     rdfs:label "Batang"@id ;
     rdfs:comment "Bagian tanaman yang dapat menjadi lokasi gejala."@id ;
     skos:prefLabel "Batang"@id .
-
-ptp:Varietas a owl:Class ;
-    rdfs:label "Varietas"@id ;
-    rdfs:comment "Varietas tanaman pangan yang disebut sumber."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
-    owl:disjointWith ptp:BagianTanaman,
-        ptp:BuktiSumber,
-        ptp:Diagnosis,
-        ptp:FaktorRisiko,
-        ptp:FasePertumbuhan,
-        ptp:Gejala,
-        ptp:GejalaKanonik,
-        ptp:Observasi,
-        ptp:Patogen,
-        ptp:Pengendalian,
-        ptp:Penyakit,
-        ptp:Referensi,
-        ptp:TanamanPangan ;
-    skos:prefLabel "Varietas"@id .
 
 ptp:BuktiPenyakit a owl:Class ;
     rdfs:label "Bukti Penyakit"@id ;
@@ -18094,8 +18543,7 @@ ptp:BuktiSumber a owl:Class ;
     rdfs:comment "Node bukti yang menyimpan kutipan dan lokasi sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty prov:wasDerivedFrom ;
-            owl:someValuesFrom ptp:Referensi ],
-        ptp:EntitasKBR ;
+            owl:someValuesFrom ptp:Referensi ] ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:Diagnosis,
         ptp:FaktorRisiko,
@@ -18110,6 +18558,12 @@ ptp:BuktiSumber a owl:Class ;
         ptp:TanamanPangan,
         ptp:Varietas ;
     skos:prefLabel "Bukti Sumber"@id .
+
+ptp:BuktiPatogen a owl:Class ;
+    rdfs:label "Bukti Patogen"@id ;
+    rdfs:comment "Bukti untuk hubungan penyakit-patogen."@id ;
+    rdfs:subClassOf ptp:BuktiSumber ;
+    skos:prefLabel "Bukti Patogen"@id .
 
 ptp:BukuDOC005 a ptp:Buku,
         owl:NamedIndividual ;
@@ -18129,16 +18583,27 @@ ptp:BukuDOC005 a ptp:Buku,
     rdfs:comment "Referensi buku yang menjadi sumber data."@id ;
     skos:prefLabel "Penyakit Utama Pada Tanaman: Kedelai, Kacang Tanah Dan Kacang Hijau"@id .
 
-ptp:BuktiPatogen a owl:Class ;
-    rdfs:label "Bukti Patogen"@id ;
-    rdfs:comment "Bukti untuk hubungan penyakit-patogen."@id ;
-    rdfs:subClassOf ptp:BuktiSumber ;
-    skos:prefLabel "Bukti Patogen"@id .
+ptp:Varietas a owl:Class ;
+    rdfs:label "Varietas"@id ;
+    rdfs:comment "Varietas tanaman pangan yang disebut sumber."@id ;
+    owl:disjointWith ptp:BagianTanaman,
+        ptp:BuktiSumber,
+        ptp:Diagnosis,
+        ptp:FaktorRisiko,
+        ptp:FasePertumbuhan,
+        ptp:Gejala,
+        ptp:GejalaKanonik,
+        ptp:Observasi,
+        ptp:Patogen,
+        ptp:Pengendalian,
+        ptp:Penyakit,
+        ptp:Referensi,
+        ptp:TanamanPangan ;
+    skos:prefLabel "Varietas"@id .
 
 ptp:Gejala a owl:Class ;
     rdfs:label "Gejala"@id ;
     rdfs:comment "Pengamatan gejala pada tanaman atau bagian tanaman."@id ;
-    rdfs:subClassOf ptp:EntitasKBR ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -18158,19 +18623,18 @@ ptp:Penyakit a owl:Class ;
     rdfs:label "Penyakit"@id ;
     rdfs:comment "Penyakit tanaman pangan yang dicatat dalam sumber."@id ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty ptp:menyerangTanaman ;
-            owl:someValuesFrom ptp:TanamanPangan ],
-        [ a owl:Restriction ;
             owl:onProperty ptp:memilikiGejala ;
             owl:someValuesFrom ptp:Gejala ],
         [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass ptp:Referensi ;
-            owl:onProperty ptp:memilikiReferensi ],
+            owl:onProperty ptp:menyerangTanaman ;
+            owl:someValuesFrom ptp:TanamanPangan ],
         [ a owl:Restriction ;
             owl:allValuesFrom ptp:Patogen ;
             owl:onProperty ptp:disebabkanOleh ],
-        ptp:EntitasKBR ;
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass ptp:Referensi ;
+            owl:onProperty ptp:memilikiReferensi ] ;
     owl:disjointWith ptp:BagianTanaman,
         ptp:BuktiSumber,
         ptp:Diagnosis,
@@ -18271,20 +18735,20 @@ ptp:BukuDOC002 a ptp:Buku,
     skos:prefLabel "Penyakit Tanaman dan Pengendaliannya"@id .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Buku ptp:JurnalIlmiah ptp:PublikasiInstansi ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePemasakan ptp:FasePanen ) .
-
-[] a owl:AllDisjointClasses ;
     owl:members ( ptp:Jamur ptp:Bakteri ptp:Virus ptp:Oomycete ptp:Fitoplasma ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:FaktorLingkungan ptp:FaktorLahan ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
+    owl:members ( ptp:Buku ptp:JurnalIlmiah ptp:PublikasiInstansi ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ptp:FaseVegetatif ptp:FaseGeneratif ptp:FasePembibitan ptp:FaseAnakan ptp:FasePemasakan ptp:FasePanen ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( ptp:PengendalianKulturTeknis ptp:PengendalianMekanis ptp:PengendalianBiologis ptp:PengendalianKimiawi ptp:PengendalianFisik ptp:PengendalianTerpadu ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( ptp:Serealia ptp:Legum ptp:UmbiUmbian ) .
 

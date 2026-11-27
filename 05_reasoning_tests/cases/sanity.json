@@ -20,7 +20,7 @@
     "expectedDiseaseId": "PenyakitBulaiJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -41,7 +41,7 @@
     "expectedDiseaseId": "PenyakitBusukPelepahJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -66,7 +66,7 @@
     "expectedDiseaseId": "PenyakitHawarDaunJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -91,7 +91,7 @@
     "expectedDiseaseId": "PenyakitKaratDaunJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -116,7 +116,7 @@
     "expectedDiseaseId": "PenyakitLayuStewartJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -137,7 +137,7 @@
     "expectedDiseaseId": "PenyakitBercakDaunKacangHijau",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -154,7 +154,7 @@
     "expectedDiseaseId": "PenyakitEmbunTepungKacangHijau",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -179,7 +179,7 @@
     "expectedDiseaseId": "PenyakitLayuKacangHijau",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -204,7 +204,7 @@
     "expectedDiseaseId": "PenyakitBelangMottleKacangTanah",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -229,7 +229,7 @@
     "expectedDiseaseId": "PenyakitBercakDaunKacangTanah",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -254,7 +254,7 @@
     "expectedDiseaseId": "PenyakitKaratDaunKacangTanah",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -275,7 +275,7 @@
     "expectedDiseaseId": "PenyakitLayuBakteriKacangTanah",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -300,7 +300,7 @@
     "expectedDiseaseId": "PenyakitAntraknosaKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -325,7 +325,7 @@
     "expectedDiseaseId": "PenyakitBakteriPustulKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -350,7 +350,7 @@
     "expectedDiseaseId": "PenyakitBercakBijiUnguKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -375,7 +375,7 @@
     "expectedDiseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -400,7 +400,7 @@
     "expectedDiseaseId": "PenyakitBercakTargetKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -425,7 +425,7 @@
     "expectedDiseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -446,7 +446,7 @@
     "expectedDiseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -471,7 +471,7 @@
     "expectedDiseaseId": "PenyakitHawarBakteriBacterialBlightKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -496,7 +496,7 @@
     "expectedDiseaseId": "PenyakitKaratDaunKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -521,7 +521,7 @@
     "expectedDiseaseId": "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -546,7 +546,7 @@
     "expectedDiseaseId": "PenyakitLayuFusariumKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -571,7 +571,7 @@
     "expectedDiseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -596,7 +596,7 @@
     "expectedDiseaseId": "PenyakitRebahKecambahKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -621,7 +621,7 @@
     "expectedDiseaseId": "PenyakitRebahSemaiKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -646,7 +646,7 @@
     "expectedDiseaseId": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -671,7 +671,7 @@
     "expectedDiseaseId": "PenyakitBlasPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -696,7 +696,7 @@
     "expectedDiseaseId": "PenyakitHawarDaunBakteriPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -721,7 +721,7 @@
     "expectedDiseaseId": "PenyakitHawarPelepahDaunPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -746,7 +746,7 @@
     "expectedDiseaseId": "PenyakitKerdilRumputDanKerdilHampaPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -771,7 +771,7 @@
     "expectedDiseaseId": "PenyakitTungroPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -796,7 +796,7 @@
     "expectedDiseaseId": "PenyakitBercakKuningUbiJalar",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -821,7 +821,7 @@
     "expectedDiseaseId": "PenyakitBusukHitamBlackRotUbiJalar",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -846,7 +846,7 @@
     "expectedDiseaseId": "PenyakitKudisUbiJalar",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -871,7 +871,7 @@
     "expectedDiseaseId": "LayuFusariumUbiJalar",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -888,7 +888,7 @@
     "expectedDiseaseId": "AntraknosaUbiKayuBatang",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -905,7 +905,7 @@
     "expectedDiseaseId": "AntraknosaUbiKayuDaun",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -922,7 +922,7 @@
     "expectedDiseaseId": "BercakDaunCoklatUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -939,7 +939,7 @@
     "expectedDiseaseId": "BercakDaunBaurUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -956,7 +956,7 @@
     "expectedDiseaseId": "BercakDaunPutihUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -977,7 +977,7 @@
     "expectedDiseaseId": "BusukUmbiUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1002,7 +1002,7 @@
     "expectedDiseaseId": "BusukAkarUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1023,7 +1023,7 @@
     "expectedDiseaseId": "BusukAkarDanUmbiUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1044,7 +1044,7 @@
     "expectedDiseaseId": "BusukPangkalBatangUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1065,7 +1065,7 @@
     "expectedDiseaseId": "CassavaBrownStreakDiseaseCBSDUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1086,7 +1086,7 @@
     "expectedDiseaseId": "CassavaMosaicBegomovirusCMBsUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1107,7 +1107,7 @@
     "expectedDiseaseId": "HawarBakteriUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1132,7 +1132,7 @@
     "expectedDiseaseId": "HawarDaunBakteriUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1153,7 +1153,7 @@
     "expectedDiseaseId": "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1170,7 +1170,7 @@
     "expectedDiseaseId": "SapuSetanWitchesBroomUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1187,7 +1187,7 @@
     "expectedDiseaseId": "SuperelongasiUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1204,7 +1204,7 @@
     "expectedDiseaseId": "TanamanKerdilStuntUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "final-32506",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   }

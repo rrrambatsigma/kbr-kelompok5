@@ -1,12 +1,11 @@
 {
   "summary": {
-    "total": 95,
-    "symptoms": 58,
+    "total": 88,
+    "symptoms": 51,
     "controls": 37,
     "counts": {
       "gejala:ambigu": 15,
-      "gejala:bukan_gejala": 38,
-      "gejala:butuh_konsep_baru": 5,
+      "gejala:bukan_gejala": 36,
       "pengendalian:ambigu": 10,
       "pengendalian:bukan_tindakan": 9,
       "pengendalian:duplikat_parafrase": 6,
@@ -15,42 +14,6 @@
     "errors": []
   },
   "rows": [
-    {
-      "kind": "gejala",
-      "plant": "Padi",
-      "disease": "PenyakitHawarDaunBakteriPadi",
-      "label": "Penyakit Hawar Daun Bakteri",
-      "source": "DOC002",
-      "source_id": "SYM_010",
-      "chunk_id": "DOC002_C027_03",
-      "text": "Sementara itu, fase kresek ditandai terutama oleh infeksi sistemis karena pada fase ini gejala penyakit biasanya muncul 1-2 minggu setelah transplantasi persemaian ke lapangan.",
-      "category": "butuh_konsep_baru",
-      "reason": "Gejala nyata belum masuk kosakata kanonik."
-    },
-    {
-      "kind": "gejala",
-      "plant": "Padi",
-      "disease": "PenyakitHawarDaunBakteriPadi",
-      "label": "Penyakit Hawar Daun Bakteri",
-      "source": "DOC002",
-      "source_id": "SYM_012",
-      "chunk_id": "DOC002_C027_03",
-      "text": "Istilah kresek sendiri diambil dari bahasa Jawa yang berarti suara daun-daun yang mati yang bergesekan satu sama lain menyerupai suara kresek (Goto, 1992).",
-      "category": "butuh_konsep_baru",
-      "reason": "Gejala nyata belum masuk kosakata kanonik."
-    },
-    {
-      "kind": "gejala",
-      "plant": "Padi",
-      "disease": "PenyakitBlasPadi",
-      "label": "Penyakit Blas",
-      "source": "DOC002",
-      "source_id": "SYM_016",
-      "chunk_id": "DOC002_C029_04",
-      "text": "Gejala khas dari penyakit ini, yaitu blas daun dan blas malai.",
-      "category": "butuh_konsep_baru",
-      "reason": "Malai patah/empty perlu konsep terpisah dari malai kosong."
-    },
     {
       "kind": "gejala",
       "plant": "Padi",
@@ -98,18 +61,6 @@
       "text": "Gejala yang muncul pada tanaman yang terserang S.",
       "category": "ambigu",
       "reason": "Tidak ada pola gejala yang cukup jelas."
-    },
-    {
-      "kind": "gejala",
-      "plant": "Kedelai",
-      "disease": "PenyakitRebahKecambahKedelai",
-      "label": "Penyakit Rebah Kecambah",
-      "source": "DOC002",
-      "source_id": "SYM_044",
-      "chunk_id": "DOC002_C040_02",
-      "text": "solani akan menunjukkan gejala adanya lekukan coklat dan berkembang menjadi warna hitam pada pangkal akar muda yang terinfeksi (Muslim et al., 2019).",
-      "category": "butuh_konsep_baru",
-      "reason": "Gejala nyata belum masuk kosakata kanonik."
     },
     {
       "kind": "gejala",
@@ -381,18 +332,6 @@
       "disease": "LayuFusariumUbiJalar",
       "label": "layu fusarium",
       "source": "DOC002",
-      "source_id": "SYM_158",
-      "chunk_id": "DOC002_C080_01",
-      "text": "Tanaman merambat berwarna kecokelatan (1B dan E), tanaman yang mati sering terdapat miselium berwarna merah muda dengan makrokonidia dan mikrokonidia patogen (1C dan F).",
-      "category": "butuh_konsep_baru",
-      "reason": "Gejala nyata belum masuk kosakata kanonik."
-    },
-    {
-      "kind": "gejala",
-      "plant": "UbiJalar",
-      "disease": "LayuFusariumUbiJalar",
-      "label": "layu fusarium",
-      "source": "DOC002",
       "source_id": "SYM_159",
       "chunk_id": "DOC002_C080_01",
       "text": "Gejala serangan Fusarium pada umbi ubi jalar berupa kanker melingkar permukaan yang minimal memengaruhi jaringan di bawahnya, berwarna coklat pucat sampai kehitaman kering, rerata diameter awalnya 2-4 mm, luka dapat tumbuh dan berkembang menghasilkan area gelap yang lebih luas (Gambar 2A).",
@@ -654,18 +593,6 @@
     {
       "kind": "gejala",
       "plant": "Kedelai",
-      "disease": "PenyakitEmbunPalsuDownyMildewKedelai",
-      "label": "Penyakit Embun Palsu (Downy mildew)",
-      "source": "DOC005",
-      "source_id": "SYM_613",
-      "chunk_id": "DOC005_C026_02",
-      "text": "Pada permukaan bawah daun warna coklat tersebut terdapat tubuh buah miselium dan sporangium berupa benang-benang halus yang berwarna putih kecoklatan menyerupai bulu, oleh karena itu disebut embun bulu.",
-      "category": "bukan_gejala",
-      "reason": "Konteks patogen/lingkungan/pengendalian/metadata, bukan deskripsi gejala."
-    },
-    {
-      "kind": "gejala",
-      "plant": "Kedelai",
       "disease": "PenyakitAntraknosaKedelai",
       "label": "Penyakit Antraknosa",
       "source": "DOC005",
@@ -684,18 +611,6 @@
       "source_id": "SYM_623",
       "chunk_id": "DOC005_C059_02",
       "text": "Pada varietas rentan menyebabkan gejala defoliasi prematur pengurangan ukuran polong dan biji (Grewal et al. 1980).",
-      "category": "bukan_gejala",
-      "reason": "Konteks patogen/lingkungan/pengendalian/metadata, bukan deskripsi gejala."
-    },
-    {
-      "kind": "gejala",
-      "plant": "KacangHijau",
-      "disease": "PenyakitLayuKacangHijau",
-      "label": "Penyakit Layu",
-      "source": "DOC005",
-      "source_id": "SYM_626",
-      "chunk_id": "DOC005_C064_03",
-      "text": "Miselia berwarna putih akan ditemukan di sekitar gejala, dan pada gejala tingkat lanjut akan ditemukan sejumlah sclerosia pada akar (Jin Hyeuk 2017) dan daun dekat permukaan tanah (Gambar 25).",
       "category": "bukan_gejala",
       "reason": "Konteks patogen/lingkungan/pengendalian/metadata, bukan deskripsi gejala."
     },

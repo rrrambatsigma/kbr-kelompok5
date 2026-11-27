@@ -1,10 +1,10 @@
 # Reasoning Tests — Milestone 5
 
 Folder ini berisi verifikasi integrasi dan kasus uji reasoning diagnosis.
-Ontology final yang dipakai adalah artefak dari branch `feat/ontology-baru`:
-`04_ontology/ontology_md_inferred.ttl` (32.506 triple, closure Pellet) untuk
-Fuseki dan `04_ontology/ontology_md.ttl` (30.280 triple, 7 aturan SWRL,
-53 diagnosis demo) untuk Java.
+Ontology final yang dipakai adalah artefak gabungan `feat/rambat-baru` +
+`feat/ontology-baru`: `04_ontology/ontology_md_inferred.ttl` (26.818 triple,
+closure Pellet) untuk Fuseki dan `04_ontology/ontology_md.ttl` (25.775 triple,
+7 aturan SWRL, 53 diagnosis demo) untuk Java.
 
 > **Status 24 November 2026:** tabel pengujian end-to-end di bawah adalah
 > **snapshot** pada ontology 24.833 triple sebelum merge ontology final.
@@ -18,9 +18,9 @@ Fuseki dan `04_ontology/ontology_md.ttl` (30.280 triple, 7 aturan SWRL,
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
 | Ontology snapshot | `ontology_md.ttl`, 24.833 triple (termasuk inferred) | v3 + Pellet |
-| Ontology final | `ontology_md.ttl` 30.280 triple; `ontology_md_inferred.ttl` 32.506 triple | v4 + 7 SWRL |
+| Ontology final | `ontology_md.ttl` 25.775 triple; `ontology_md_inferred.ttl` 26.818 triple | v4 + 7 SWRL |
 | SHA-256 ontology snapshot | `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4` | snapshot |
-| SHA-256 ontology final | `63caa37dd6a3d67026d1c64b96a1d5e99e698afb6976e5167532ad7751ca2b6b` | cocok dengan Java |
+| SHA-256 ontology final | `3ee7ad70a448234083952989f45ba9e14d053424538f350aea9fc6f144ba32fd` | cocok dengan Java |
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
@@ -29,7 +29,7 @@ Fuseki dan `04_ontology/ontology_md.ttl` (30.280 triple, 7 aturan SWRL,
 
 Pemeriksaan final yang lolos:
 
-- [x] `totalTriples = 32.506`
+- [x] `totalTriples = 26.818`
 - [x] Fingerprint v2: `deskripsiPenyakit = 53`, `memilikiKondisiTumbuh = 9`
 - [x] Java memuat `ontology_md.ttl` dan checksum-nya sama dengan file
 - [x] Ontology konsisten (Openllet)

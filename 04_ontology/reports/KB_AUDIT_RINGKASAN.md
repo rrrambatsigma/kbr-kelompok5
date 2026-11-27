@@ -6,9 +6,9 @@ bukan salinan ringkasan README. Seluruh angka dihitung ulang dari graph dengan
 
 > **Arsip (snapshot audit 21 November 2026).** Angka di dokumen ini adalah
 > kondisi artefak **saat audit**, bukan artefak final. Ontology final
-> (24 November 2026) berisi **30.280 triple** di `ontology_md.ttl`,
-> **32.506 triple** di `ontology_md_inferred.ttl`, **1.508 individu**,
-> **71 kelas TBox PTP**, dan **7 aturan SWRL**. Untuk angka terkini lihat
+> (27 November 2026) berisi **25.775 triple** di `ontology_md.ttl`,
+> **26.818 triple** di `ontology_md_inferred.ttl`, **1.596 individu**,
+> **70 kelas TBox PTP**, dan **7 aturan SWRL**. Untuk angka terkini lihat
 > `../README.md`; rincian per kelas/per properti di badan dokumen ini belum
 > dihitung ulang.
 

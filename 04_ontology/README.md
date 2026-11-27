@@ -12,31 +12,32 @@ Kacang Hijau**. Tanaman di luar cakupan tidak dibuat sebagai individu.
 
 | Artefak | Isi |
 |---|---|
-| `ontology.ttl` | Turtle kanonik, **17.002 triple**, **1.247 individu**, **71 kelas TBox PTP** |
+| `ontology.ttl` | Turtle kanonik, **17.420 triple**, **1.294 individu**, **70 kelas TBox PTP** |
 | `ontology.owl` | RDF/XML kanonik untuk Protégé dan owlready2 |
 | `extraction_report.json` | Ringkasan build, tautan, dan data quality |
-| `ontology_md.ttl` | Kanonik + enrichment + 7 aturan SWRL + 53 diagnosis demo, **30.280 triple** setelah hasil SWRL dimaterialisasi |
+| `ontology_md.ttl` | Kanonik + enrichment + 7 aturan SWRL + 53 diagnosis demo, **25.775 triple** setelah hasil SWRL dan closure tipe dimaterialisasi untuk Openllet |
 | `ontology_md.owl` | RDF/XML hasil enrichment + SWRL |
-| `ontology_md_inferred.ttl` | Closure Pellet penuh, **32.506 triple**; satu-satunya artefak yang memuat tipe kategori penyakit dan `owl:disjointWith` hasil inferensi |
+| `ontology_md_inferred.ttl` | Closure Pellet penuh, **26.818 triple**, termasuk tipe kategori penyakit dan `owl:disjointWith` hasil inferensi; dipakai Fuseki/node-api |
 | `swrl_rules.ttl` | **7 aturan SWRL** yang digabung ke `ontology_md` |
-| `extraction_report_md.json` | Ringkasan build enrichment; `total_triples` mencatat graf asserted saat build (**20.169**) sebelum hasil SWRL diserialisasi |
+| `extraction_report_md.json` | Ringkasan build enrichment; `total_triples` mencatat graf asserted saat build (**20.861**) sebelum hasil SWRL diserialisasi |
 
 Ringkasan kanonik:
 
-- **71 kelas TBox PTP**, **32 object property** PTP (+ `prov:wasDerivedFrom`
+- **70 kelas TBox PTP**, **32 object property** PTP (+ `prov:wasDerivedFrom`
   eksternal), **29 data property**.
-- **7 tanaman**, **53 penyakit**, **78 tautan penyakit-patogen**.
-- **227 pengamatan gejala**: **176 grup kanonik**, **27 konsep kanonik terpakai**,
-  dan **51 pengamatan belum dipetakan**.
+- **7 tanaman**, **53 penyakit**, **76 tautan penyakit-patogen**.
+- **227 pengamatan gejala**: **176 grup kanonik**, **27 konsep kanonik terpakai**
+  (dari 28), dan **51 pengamatan belum dipetakan**.
 - **226 tautan `dikendalikanDengan`** dan **37 baris belum dipetakan**.
-- **35 tautan varietas**, **13 tautan fase pertumbuhan**.
+- **79 tautan varietas**, **27 tautan fase pertumbuhan**.
 - **68 observasi lingkungan eksternal** dan **115 tautan `klasifikasiTurunan`**.
-- **584 deskripsi** dan **942 fakta enrichment**.
+- **596 deskripsi** dan **997 fakta enrichment**.
 
 Hasil inferensi Pellet: **PenyakitJamur 34**, **PenyakitBakteri 7**,
 **PenyakitVirus 10**, **PenyakitOomycete 3**, **PenyakitFitoplasma 1**.
-Kelas kategori penyakit tidak pernah di-assert eksplisit; seluruhnya muncul
-dari `owl:equivalentClass` dan hanya tertulis di `ontology_md_inferred.ttl`.
+Kelas kategori penyakit tidak di-assert di kanonik; seluruhnya muncul dari
+`owl:equivalentClass`, lalu dimaterialisasi ke `ontology_md.ttl` (untuk
+Openllet) dan `ontology_md_inferred.ttl` (closure penuh untuk Fuseki).
 
 ## Cara menjalankan
 
@@ -50,6 +51,7 @@ python 04_ontology/build_ontology.py
 python 03_knowledge_tables/src/build_enrichment_facts.py
 python 03_knowledge_tables/src/build_descriptions.py
 python 04_ontology/build_ontology_md.py
+python 04_ontology/materialize_inferred.py
 python 03_knowledge_tables/src/build_kb_completeness_report.py
 python 03_knowledge_tables/src/build_mapping_triage.py
 cd 04_ontology
@@ -96,7 +98,7 @@ mentah. Label manusiawi memakai `rdfs:label`, `skos:prefLabel`, dan
   bentrok). Konsep kanonik adalah individu `GejalaKanonik` (28 konsep) dan
   membawa `kodeGejala` stabil untuk pembeda pada SWRL.
 - **Pengendalian**: aksi kanonik adalah individu dari subclass `Pengendalian*`
-  (48 aksi kanonik).
+  (50 aksi kanonik).
 - **Observasi eksternal**: ID semantik, mis.
   `SuhuPadaHawarDaunBakteriUbiKayu` dan
   `BuktiSuhuPadaHawarDaunBakteriUbiKayu`; `obs_id` di CSV tetap dipakai sebagai
@@ -205,12 +207,12 @@ ditambah TBox/ABox enrichment. Kanonik tidak pernah ditulis ulang.
 
 | Item | Nilai |
 |---|---|
-| Triple `ontology_md.ttl` | **30.280** (laporan build mencatat **20.169 asserted** = base **17.002** + tambahan **3.167**; sisanya hasil SWRL yang dimaterialisasi setelah build) |
-| Triple `ontology_md_inferred.ttl` | **32.506** (closure Pellet penuh, termasuk kategori penyakit dan `owl:disjointWith`) |
-| Fakta enrichment | **942** (internal 81 + external 861) |
-| Entitas yang dirujuk fakta | **313** (internal 93: 7 tanaman, 53 penyakit, 28 kondisi lingkungan, 5 faktor risiko; external 220) |
-| Deskripsi `rdfs:comment` | **584** (internal 448 + external 136; `auto_ok` 323, `needs_review` 125, `verified` 136) |
-| Individu `owl:NamedIndividual` | **1.508** |
+| Triple `ontology_md.ttl` | **25.775** (laporan build mencatat **20.861 asserted** = base **17.420** + tambahan **3.441**; sisanya hasil SWRL + closure tipe yang dimaterialisasi untuk Openllet) |
+| Triple `ontology_md_inferred.ttl` | **26.818** (closure Pellet penuh, termasuk kategori penyakit dan `owl:disjointWith`) |
+| Fakta enrichment | **997** (internal 81 + external 861 + kondisi tumbuh/fase/varietas) |
+| Entitas yang dirujuk fakta | **354** (internal 93: 7 tanaman, 53 penyakit, 28 kondisi lingkungan, 5 faktor risiko; external 220 + fase/varietas) |
+| Deskripsi `rdfs:comment` | **596** (internal 460 + external 136; `auto_ok` 334, `needs_review` 126, `verified` 136) |
+| Individu `owl:NamedIndividual` | **1.596** |
 | Diagnosis demo | **53** (satu per penyakit) |
 | Kelas dengan deskripsi | **71 dari 71** |
 | Individu tanpa deskripsi | **0** |
@@ -240,7 +242,7 @@ Subjek tanpa sumber tidak diisi teks karangan; daftar gap ada di
 
 1. Buka Protégé 5.6+, **File → Open…**, pilih `ontology.owl` atau
    `ontology_md.owl`.
-2. Tab **Entities** menampilkan 71 kelas PTP; tab **Object Properties**
+2. Tab **Entities** menampilkan 70 kelas PTP; tab **Object Properties**
    menampilkan properti PTP + `prov:wasDerivedFrom`.
 3. Tab **Data Properties** menampilkan 29 properti, termasuk nilai lingkungan
    `xsd:decimal`.
@@ -321,8 +323,9 @@ Kerdil Rumput/Hampa sudah diisi; takson patogen yang belum diketahui juga
 - `build_ontology_md.py` — baca `ontology.ttl` (hanya baca), tambahkan TBox
   enrichment, entitas, fakta, deskripsi, kondisi tumbuh eksternal, diagnosis
   demo, dan SWRL → tulis `ontology_md.ttl`, `ontology_md.owl`,
-  `extraction_report_md.json`. Hasil SWRL dimaterialisasi setelah build;
-  closure penuhnya disimpan sebagai `ontology_md_inferred.ttl`.
+  `extraction_report_md.json`. `materialize_inferred.py` lalu menjalankan
+  Pellet: `ontology_md.ttl` menerima hasil SWRL + closure tipe untuk Openllet,
+  sedangkan closure penuhnya disimpan sebagai `ontology_md_inferred.ttl`.
 - `tests/test_ontology.py` — 45 test: snapshot dinamis, IRI hygiene, bukti,
   disjointness, SROIQ(D) termasuk transitive `bagianDari`, nama ilmiah, build
   gate, dan Pellet.

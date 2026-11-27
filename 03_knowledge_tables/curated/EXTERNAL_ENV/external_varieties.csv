@@ -1,0 +1,15 @@
+variety_id,plant,variety_local,variety_label,disease_local,relation,source_id,locator,quote,confidence,review_status,notes
+VEX_001,UbiKayu,VarietasAdira1,Adira-1,HawarDaunBakteriUbiKayu,tahan,SRC_EXT_052,Tabel 2,"Adira-1 ... tahan bakteri hawar daun (Cassava Bacterial Blight, CBB), layu Pseudomonas solanacearum, Xanthomonas manihotis.",high,verified,CBB dipetakan ke HawarDaunBakteriUbiKayu.
+VEX_002,UbiKayu,VarietasAdira4,Adira-4,HawarDaunBakteriUbiKayu,tahan,SRC_EXT_052,Tabel 2,"Adira-4 ... tahan bakteri hawar daun, layu Pseudomonas solanacearum, Xanthomonas manihotis.",high,verified,CBB dipetakan ke HawarDaunBakteriUbiKayu.
+VEX_003,UbiKayu,VarietasUJ3,UJ-3,HawarDaunBakteriUbiKayu,tahan,SRC_EXT_052,Tabel 2,"UJ-3 ... Tahan terhadap bakteri hawar daun.",high,verified,
+VEX_004,UbiKayu,VarietasUJ5,UJ-5,HawarDaunBakteriUbiKayu,tahan,SRC_EXT_052,Tabel 2,"UJ-5 ... Tahan terhadap bakteri hawar daun.",high,verified,
+VEX_005,UbiKayu,VarietasMalang1,Malang-1,BercakDaunCoklatUbiKayu,tahan,SRC_EXT_052,Tabel 2,"Malang-1 ... Toleran tungau merah; toleran bercak daun (Cercospora sp.).",high,verified,Toleran dipetakan ke tahan sesuai definisi properti.
+VEX_006,UbiKayu,VarietasMalang2,Malang-2,BercakDaunCoklatUbiKayu,tahan,SRC_EXT_052,Tabel 2,"Malang-2 ... Agak peka tungau merah; toleran bercak daun dan hawar daun.",high,verified,Toleran dipetakan ke tahan sesuai definisi properti.
+VEX_007,UbiKayu,VarietasDarulHidayah,Darul Hidayah,BusukUmbiUbiKayu,rentan,SRC_EXT_052,Tabel 2,"Darul Hidayah ... Agak peka tungau merah dan penyakit busuk jamur.",high,verified,Agak peka dipetakan ke rentan.
+VEX_008,UbiJalar,VarietasPapuaSalossa,Papua Salossa,PenyakitKudisUbiJalar,tahan,SRC_EXT_053,Tabel 3,"Papua Salossa 24 32,80 533,80 4,30 dan 4,30 Tahan",high,verified,Tabel 3 kolom Ketahanan penyakit kudis.
+VEX_009,UbiJalar,VarietasPapuaPattipi,Papua Pattipi,PenyakitKudisUbiJalar,tahan,SRC_EXT_053,Tabel 3,"Papua Pattipi 25,30 32,40 245,30 4 dan 3,50 Agak tahan",high,verified,Agak tahan dipetakan ke tahan.
+VEX_010,UbiJalar,VarietasSawentar,Sawentar,PenyakitKudisUbiJalar,tahan,SRC_EXT_053,Tabel 3,"Sawentar 24,90 33,50 350,10 4,30 dan 4,30 Agak tahan",high,verified,Agak tahan dipetakan ke tahan.
+VEX_011,UbiJalar,VarietasSari,Sari,PenyakitKudisUbiJalar,tahan,SRC_EXT_054,Deskripsi varietas,"Penelitian di Genteng menunjukkan varietas Sari tahan terhadap penyakit ini.",high,verified,
+VEX_012,UbiJalar,VarietasSukuh,Sukuh,PenyakitKudisUbiJalar,tahan,SRC_EXT_054,Deskripsi varietas,"Sukuh ... Agak tahan boleng dan penyakit kudis",high,verified,Agak tahan dipetakan ke tahan.
+VEX_013,UbiJalar,VarietasAntin1,Antin 1,PenyakitKudisUbiJalar,tahan,SRC_EXT_054,Deskripsi varietas,"Antin 1 ... Agak tahan boleng dan penyakit kudis",high,verified,Agak tahan dipetakan ke tahan.
+VEX_014,UbiJalar,VarietasCangkuang,Cangkuang,PenyakitKudisUbiJalar,rentan,SRC_EXT_053,Tabel 3,"Cangkuang 26,80 30,70 146 4,50 dan 3,90 Agak peka",high,verified,Agak peka dipetakan ke rentan.

@@ -17,11 +17,12 @@ Sumber: `04_ontology/ontology_md.ttl`
 | Tanpa bagian tanaman | 0 |
 | Tanpa severity | 39 |
 | Tanpa fase | 42 |
-| Tanpa varietas tahan | 45 |
+| Tanaman tanpa fase pertumbuhan | 0 |
+| Tanpa varietas tahan | 41 |
 | Tanpa deskripsi penyakit | 0 |
 | Tanpa nama Inggris | 43 |
 | Tanaman tanpa kondisi tumbuh | 0 |
-| Gejala belum dipetakan | 58 |
+| Gejala belum dipetakan | 51 |
 | Pengendalian belum dipetakan | 37 |
 
 ## Klasifikasi gap
@@ -34,24 +35,25 @@ Sumber: `04_ontology/ontology_md.ttl`
 | Tanpa pengendalian sama sekali | 0 | Inti | DOC002/DOC005 | Isi aksi pengendalian |
 | Tanpa bagian tanaman | 0 | Inti | DOC002/DOC005 | Isi bagian tanaman |
 | Tanaman tanpa kondisi tumbuh | 0 | Inti | DOC002/DOC005/EXTERNAL_ENV | Isi kondisi tumbuh |
-| Gejala belum dipetakan | 58 | Mapping | DOC002/DOC005 | Triage lalu petakan/exception |
+| Gejala belum dipetakan | 51 | Mapping | DOC002/DOC005 | Triage lalu petakan/exception |
 | Pengendalian belum dipetakan | 37 | Mapping | DOC002/DOC005 | Triage lalu petakan/exception |
 | Tanpa severity | 39 | Best-effort | DOC002/DOC005 | Isi bila sumber eksplisit |
 | Tanpa fase | 42 | Best-effort | DOC002/DOC005 | Isi bila sumber eksplisit |
-| Tanpa varietas tahan | 45 | Best-effort | DOC002/DOC005 | Isi bila sumber eksplisit |
+| Tanaman tanpa fase pertumbuhan | 0 | Best-effort | DOC002/DOC005/EXTERNAL_ENV | Isi fase pertumbuhan tanaman |
+| Tanpa varietas tahan | 41 | Best-effort | DOC002/DOC005 | Isi bila sumber eksplisit |
 | Tanpa nama Inggris | 43 | Best-effort | DOC002/DOC005/eksternal | Isi bila sumber eksplisit |
 
 ## Status per tanaman
 
-| Tanaman | Penyakit | Kondisi tumbuh | Pengendalian umum |
-|---|---:|---:|---:|
-| Padi | 5 | 1 | 0 |
-| Kedelai | 15 | 3 | 0 |
-| Jagung | 5 | 1 | 0 |
-| UbiJalar | 4 | 1 | 0 |
-| UbiKayu | 17 | 1 | 10 |
-| KacangTanah | 4 | 1 | 12 |
-| KacangHijau | 3 | 1 | 0 |
+| Tanaman | Penyakit | Kondisi tumbuh | Pengendalian umum | Fase |
+|---|---:|---:|---:|---:|
+| Padi | 5 | 1 | 0 | 3 |
+| Kedelai | 15 | 3 | 0 | 6 |
+| Jagung | 5 | 1 | 0 | 4 |
+| UbiJalar | 4 | 1 | 0 | 2 |
+| UbiKayu | 17 | 1 | 10 | 4 |
+| KacangTanah | 4 | 1 | 12 | 4 |
+| KacangHijau | 3 | 1 | 0 | 4 |
 
 ## Matriks per penyakit
 
@@ -60,55 +62,55 @@ Sumber: `04_ontology/ontology_md.ttl`
 | UbiKayu | Antraknosa | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |
 | UbiKayu | Antraknosa | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |
 | UbiKayu | Bercak daun baur | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |
-| UbiKayu | Bercak daun Coklat | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |
+| UbiKayu | Bercak daun Coklat | 1 | ok | fallback | 1 | - | - | 1 | 2 | ya |
 | UbiKayu | Bercak daun putih | 2 | ok | fallback | 1 | - | - | 1 | 0 | ya |
 | UbiKayu | Busuk akar dan umbi | 1 | ok | fallback | 2 | - | - | 2 | 0 | ya |
-| UbiKayu | Busuk akar | 1 | ok | fallback | 2 | - | - | 4 | 0 | ya |
+| UbiKayu | Busuk akar | 1 | ok | fallback | 1 | - | - | 4 | 0 | ya |
 | UbiKayu | Busuk pangkal batang | 2 | ok | fallback | 1 | - | - | 2 | 0 | ya |
-| UbiKayu | Busuk Umbi | 1 | ok | fallback | 2 | - | - | 2 | 0 | ya |
+| UbiKayu | Busuk Umbi | 1 | ok | fallback | 1 | - | - | 2 | 0 | ya |
 | UbiKayu | Cassava Brown Streak Disease (CBSD) | 2 | ok | fallback | 1 | - | - | 2 | 0 | ya |
 | UbiKayu | Cassava Mosaic Begomovirus (CMBs) | 1 | ok | fallback | 1 | - | - | 2 | 0 | ya |
-| UbiKayu | Hawar bakteri | 3 | ok | fallback | 1 | - | - | 2 | 0 | ya |
-| UbiKayu | Hawar daun bakteri | 3 | ok | fallback | 1 | - | - | 4 | 0 | ya |
-| UbiJalar | layu fusarium | 2 | ok | specific | 3 | - | - | 8 | 0 | ya |
+| UbiKayu | Hawar bakteri | 3 | ok | fallback | 2 | - | - | 2 | 0 | ya |
+| UbiKayu | Hawar daun bakteri | 3 | ok | fallback | 1 | - | - | 4 | 4 | ya |
+| UbiJalar | layu fusarium | 2 | ok | specific | 2 | - | - | 8 | 0 | ya |
 | UbiKayu | Nekrosis pada titik tunas (Cassava bud necrosis) | 2 | ok | fallback | 1 | - | - | 2 | 0 | ya |
-| Kedelai | Penyakit Antraknosa | 1 | ok | specific | 3 | - | ya | 8 | 0 | ya |
-| Kedelai | Penyakit Bakteri Pustul | 2 | ok | specific | 2 | - | - | 5 | 0 | ya |
+| Kedelai | Penyakit Antraknosa | 1 | ok | specific | 2 | - | ya | 8 | 0 | ya |
+| Kedelai | Penyakit Bakteri Pustul | 2 | ok | specific | 1 | - | - | 5 | 0 | ya |
 | KacangTanah | Penyakit Belang (Mottle) | 2 | ok | specific | 1 | - | - | 6 | 0 | ya |
 | Kedelai | Penyakit Bercak Biji Ungu | 1 | ok | specific | 1 | - | - | 8 | 0 | ya |
-| KacangHijau | Penyakit Bercak Daun | 2 | ok | specific | 3 | ya | ya | 2 | 0 | ya |
-| KacangTanah | Penyakit Bercak Daun | 2 | ok | specific | 3 | ya | ya | 9 | 6 | ya |
+| KacangHijau | Penyakit Bercak Daun | 2 | ok | specific | 1 | ya | ya | 2 | 0 | ya |
+| KacangTanah | Penyakit Bercak Daun | 2 | ok | specific | 1 | ya | ya | 9 | 6 | ya |
 | Kedelai | Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) | 2 | ok | specific | 1 | - | - | 3 | 0 | ya |
 | UbiJalar | Penyakit bercak kuning | 1 | ok | specific | 2 | - | - | 9 | 0 | ya |
-| Kedelai | Penyakit Bercak Target | 1 | ok | specific | 3 | - | - | 4 | 0 | ya |
-| Padi | Penyakit Blas | 1 | ok | specific | 2 | ya | - | 4 | 0 | ya |
-| Jagung | Penyakit Bulai | 2 | ok | specific | 1 | ya | ya | 8 | 2 | ya |
+| Kedelai | Penyakit Bercak Target | 1 | ok | specific | 1 | - | - | 4 | 0 | ya |
+| Padi | Penyakit Blas | 1 | ok | specific | 2 | ya | - | 3 | 0 | ya |
+| Jagung | Penyakit Bulai | 2 | ok | specific | 2 | ya | ya | 8 | 3 | ya |
 | UbiJalar | Penyakit busuk hitam (black rot) | 1 | ok | specific | 2 | - | - | 6 | 0 | ya |
 | Jagung | Penyakit Busuk Pelepah | 2 | ok | specific | 3 | - | - | 2 | 0 | ya |
-| Kedelai | Penyakit Embun Palsu (Downy mildew) | 2 | ok | specific | 1 | ya | - | 9 | 0 | ya |
-| KacangHijau | Penyakit Embun Tepung | 2 | ok | specific | 1 | ya | - | 1 | 0 | ya |
+| Kedelai | Penyakit Embun Palsu (Downy mildew) | 2 | ok | specific | 2 | ya | - | 9 | 0 | ya |
+| KacangHijau | Penyakit Embun Tepung | 2 | ok | specific | 1 | ya | - | 1 | 5 | ya |
 | Kedelai | Penyakit Embun Tepung (Powdery Mildew) | 2 | ok | specific | 1 | - | - | 2 | 0 | ya |
 | Kedelai | Penyakit Hawar Bakteri (Bacterial Blight) | 1 | ok | specific | 2 | ya | ya | 7 | 0 | ya |
-| Padi | Penyakit Hawar Daun Bakteri | 3 | ok | specific | 1 | ya | - | 9 | 0 | ya |
+| Padi | Penyakit Hawar Daun Bakteri | 3 | ok | specific | 1 | ya | - | 8 | 0 | ya |
 | Jagung | Penyakit Hawar Daun | 2 | ok | specific | 1 | ya | ya | 4 | 0 | ya |
 | Padi | Penyakit Hawar Pelepah Daun | 2 | ok | specific | 1 | ya | ya | 5 | 0 | ya |
-| Jagung | Penyakit Karat Daun | 2 | ok | specific | 1 | ya | ya | 10 | 0 | ya |
+| Jagung | Penyakit Karat Daun | 2 | ok | specific | 1 | ya | ya | 10 | 25 | ya |
 | KacangTanah | Penyakit Karat Daun | 2 | ok | specific | 1 | ya | - | 5 | 2 | ya |
 | Kedelai | Penyakit Karat Daun | 2 | ok | specific | 1 | ya | - | 8 | 6 | ya |
-| Kedelai | Penyakit Kerdil Kedelai (Soybean Stunt Virus) | 1 | ok | specific | 1 | - | - | 4 | 0 | ya |
+| Kedelai | Penyakit Kerdil Kedelai (Soybean Stunt Virus) | 1 | ok | specific | 2 | - | - | 4 | 0 | ya |
 | Padi | Penyakit Kerdil Rumput dan Kerdil Hampa | 1 | ok | specific | 2 | - | - | 4 | 0 | ya |
-| UbiJalar | Penyakit kudis | 2 | ok | specific | 3 | - | - | 7 | 6 | ya |
-| KacangTanah | Penyakit Layu Bakteri | 2 | ok | specific | 2 | - | - | 2 | 0 | ya |
-| Kedelai | Penyakit Layu Fusarium | 1 | ok | specific | 1 | - | - | 5 | 0 | ya |
+| UbiJalar | Penyakit kudis | 2 | ok | specific | 1 | - | - | 7 | 12 | ya |
+| KacangTanah | Penyakit Layu Bakteri | 2 | ok | specific | 1 | - | - | 2 | 0 | ya |
+| Kedelai | Penyakit Layu Fusarium | 1 | ok | specific | 2 | - | - | 5 | 0 | ya |
 | KacangHijau | Penyakit Layu | 2 | ok | specific | 2 | - | ya | 3 | 2 | ya |
-| Jagung | Penyakit Layu Stewart | 1 | ok | specific | 1 | ya | ya | 4 | 0 | ya |
-| Kedelai | Penyakit Mosaik Kedelai (Soybean Mosaic Virus) | 1 | ok | specific | 1 | - | - | 7 | 0 | ya |
-| Kedelai | Penyakit Rebah Kecambah | 1 | ok | specific | 2 | - | - | 7 | 0 | ya |
-| Kedelai | Penyakit Rebah Semai | 1 | ok | specific | 3 | - | ya | 5 | 6 | ya |
-| Kedelai | Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) | 1 | ok | specific | 1 | - | - | 5 | 0 | ya |
-| Padi | Penyakit Tungro | 1 | ok | specific | 2 | - | - | 4 | 4 | ya |
+| Jagung | Penyakit Layu Stewart | 1 | ok | specific | 2 | ya | ya | 4 | 0 | ya |
+| Kedelai | Penyakit Mosaik Kedelai (Soybean Mosaic Virus) | 1 | ok | specific | 2 | - | - | 7 | 0 | ya |
+| Kedelai | Penyakit Rebah Kecambah | 1 | ok | specific | 3 | - | - | 7 | 0 | ya |
+| Kedelai | Penyakit Rebah Semai | 1 | ok | specific | 2 | - | ya | 5 | 6 | ya |
+| Kedelai | Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) | 1 | ok | specific | 2 | - | - | 5 | 0 | ya |
+| Padi | Penyakit Tungro | 1 | ok | specific | 3 | - | - | 4 | 4 | ya |
 | UbiKayu | Sapu setan (Witches broom) | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |
-| UbiKayu | Superelongasi | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |
+| UbiKayu | Superelongasi | 1 | ok | fallback | 2 | - | - | 1 | 0 | ya |
 | UbiKayu | Tanaman kerdil (stunt) | 1 | ok | fallback | 1 | - | - | 1 | 0 | ya |
 
 ## Patogen tanpa takson

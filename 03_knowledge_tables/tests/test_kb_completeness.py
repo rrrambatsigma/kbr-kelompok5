@@ -22,6 +22,7 @@ class TestKbCompleteness(unittest.TestCase):
         self.assertEqual(summary["control_missing"], 0)
         self.assertEqual(summary["part_missing"], 0)
         self.assertEqual(summary["growth_conditions_missing_plants"], 0)
+        self.assertEqual(summary["plant_phase_missing"], 0)
 
     def test_control_fallback_is_available(self) -> None:
         report = completeness.build()
