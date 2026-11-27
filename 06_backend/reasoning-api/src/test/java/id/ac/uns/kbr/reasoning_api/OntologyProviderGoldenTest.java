@@ -17,7 +17,8 @@ import id.ac.uns.kbr.reasoning_api.service.ReasoningService;
  */
 class OntologyProviderGoldenTest {
 
-    private static final String ONTOLOGY_PATH = "../../04_ontology/ontology_md.ttl";
+    private static final String ONTOLOGY_PATH =
+            "../../04_ontology/ontology_md_inferred.ttl";
 
     @Test
     void loadsOntologyAndInfersDiseaseCategories() {

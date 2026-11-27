@@ -495,7 +495,7 @@ TBox adalah skema/definisi: kelas, properti, aksioma. ABox adalah fakta/individu
 
 ## Q4: Apakah SWRL sudah jalan di backend?
 
-SWRL tidak dieksekusi Jena. `ontology_md.ttl` memuat 7 aturan SWRL; Pellet dijalankan offline lewat `materialize_inferred.py` dan hasilnya disimpan di `ontology_md_inferred.ttl`. Backend hanya membaca file inferred itu lewat SPARQL, sehingga tidak ada aturan diagnosis yang di-hardcode di Java.
+SWRL tidak dieksekusi Jena. `ontology_md.ttl` memuat 7 aturan SWRL; Pellet dijalankan offline lewat `materialize_inferred.py` dan hasilnya disimpan di `ontology_md_inferred.ttl`. Backend memakai file inferred tersebut: Fuseki melayani SPARQL, Java memuatnya untuk konsistensi/klasifikasi, sehingga tidak ada aturan diagnosis yang di-hardcode di Java.
 
 ## Q5: Bagaimana mencegah halusinasi data?
 

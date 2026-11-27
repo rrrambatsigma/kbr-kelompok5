@@ -33,8 +33,8 @@ menyediakan kategori penyakit hasil inferensi Openllet.
 - Java 21+ (dipakai Java 23 juga OK)
 - Node.js 20+
 - Apache Jena Fuseki 6.x (`fuseki-server.jar`)
-- File `04_ontology/ontology_md_inferred.ttl` (untuk Fuseki) dan
-  `04_ontology/ontology_md.ttl` (untuk Java)
+- File `04_ontology/ontology_md_inferred.ttl` (satu sumber untuk Fuseki, Java,
+  dan Node)
 
 Script `scripts/start-fuseki.ps1` dan `scripts/load-ontology.ps1` memakai
 default `E:\apache-jena-fuseki-6.2.0\apache-jena-fuseki-6.2.0\fuseki-server.jar`.
@@ -46,17 +46,17 @@ Ontology final dipisah menjadi dua artefak:
 
 | Artefak | Isi | Dipakai oleh |
 |---|---|---|
-| `04_ontology/ontology_md.ttl` | **25.775 triple**, **1.596 individu**, **70 kelas TBox PTP**, **7 aturan SWRL**, dan **53 diagnosis demo**. Memuat hasil SWRL + closure tipe (termasuk kategori penyakit) yang dimaterialisasi agar Openllet tidak menggelembungkan Rete. | Java (`ONTOLOGY_FILE_PATH`) karena butuh definisi aturan |
-| `04_ontology/ontology_md_inferred.ttl` | **26.818 triple**: closure Pellet penuh, termasuk kategori penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1) dan `owl:disjointWith`. | Fuseki lewat `scripts/load-ontology.ps1` |
+| `04_ontology/ontology_md_inferred.ttl` | **26.818 triple**, **1.596 individu**, **70 kelas TBox PTP**, **7 aturan SWRL**, dan **53 diagnosis demo**. Closure Pellet penuh: hasil SWRL, kategori penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1), tipe superclass, dan `owl:disjointWith`. | **Runtime**: Fuseki (`load-ontology.ps1`) **dan** Java/Node (`ONTOLOGY_FILE_PATH`) |
+| `04_ontology/ontology_md.ttl` | **25.775 triple**: asserted + hasil SWRL + closure tipe. Artefak materialisasi untuk Protégé/inspeksi dan fallback offline; tidak dipakai runtime. | Protégé, verifikasi manual, fallback |
 
-Java menjalankan Openllet saat startup untuk konsistensi dan klasifikasi
-kategori; Fuseki hanya menyimpan data sehingga memakai closure yang sudah
-dihitung agar query kategori Node tetap cepat dan lengkap.
+Runtime memakai satu sumber, yaitu `ontology_md_inferred.ttl`. Java memuat
+file yang sama dengan Fuseki sehingga checksum Node, Java, dan dataset
+konsisten. Openllet tetap memeriksa konsistensi dan klasifikasi saat startup,
+tetapi kategori sudah tersedia sebagai triple inferred.
 
-SWRL tidak dieksekusi oleh Fuseki maupun Openllet. Aturan SWRL dijalankan
-offline dengan Pellet (lihat `04_ontology/tests/test_swrl_reasoning.py`) dan
-hasilnya sudah tertulis di kedua artefak; backend memakai Openllet untuk
-konsistensi dan inferensi kategori penyakit saat runtime.
+SWRL tidak dieksekusi oleh Fuseki maupun Openllet saat runtime. Aturan SWRL
+dijalankan offline dengan Pellet (lihat `04_ontology/tests/test_swrl_reasoning.py`)
+dan hasilnya sudah tertulis di `ontology_md_inferred.ttl`.
 
 ## Konfigurasi
 
@@ -72,7 +72,7 @@ FUSEKI_DATASET=plant-kb
 FUSEKI_TIMEOUT_MS=5000
 REASONING_API_URL=http://localhost:8082
 REASONING_TIMEOUT_MS=15000
-ONTOLOGY_FILE_PATH=E:/kbr-kelompok5/04_ontology/ontology_md.ttl
+ONTOLOGY_FILE_PATH=E:/kbr-kelompok5/04_ontology/ontology_md_inferred.ttl
 FRONTEND_URL=http://localhost:5173
 ```
 
@@ -88,7 +88,7 @@ Override lewat environment variable bila perlu:
 |---|---|---|
 | `SERVER_PORT` | `8082` | Port Java |
 | `SERVER_ADDRESS` | `127.0.0.1` | Bind address |
-| `ONTOLOGY_FILE_PATH` | `E:/kbr-kelompok5/04_ontology/ontology_md.ttl` | Lokasi ontology |
+| `ONTOLOGY_FILE_PATH` | `E:/kbr-kelompok5/04_ontology/ontology_md_inferred.ttl` | Lokasi ontology runtime (sama dengan Fuseki) |
 | `ONTOLOGY_REASONING_TIMEOUT_MS` | `600000` | Timeout precompute/klasifikasi; ontology final lebih berat daripada versi sebelumnya, beri ruang longgar untuk start pertama |
 | `ONTOLOGY_FAIL_FAST` | `false` | `true` = startup gagal jika ontology invalid |
 
@@ -332,13 +332,14 @@ kategori yang dikarang.
 Java menghitung SHA-256 file ontology saat load. Nilainya tersedia di
 `/api/reasoning/status` dan `/api/health/ready`. Prosedur update:
 
-1. Validasi `04_ontology/ontology_md.ttl`.
+1. Validasi `04_ontology/ontology_md_inferred.ttl`.
 2. Hentikan Fuseki, jalankan `load-ontology.ps1 -Reset`.
 3. Jalankan Fuseki read-only.
 4. Reload Java (`POST /api/ontology/reload`) atau restart.
 5. Bandingkan checksum/versi di `/api/health/ready`.
 
-Jika checksum Fuseki dan Java berbeda, jangan anggap sistem siap.
+Fuseki dan Java harus memakai `ontology_md_inferred.ttl` yang sama. Jika
+checksum file dan Java berbeda, jangan anggap sistem siap.
 
 ## Tes
 

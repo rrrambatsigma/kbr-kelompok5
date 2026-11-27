@@ -1,9 +1,9 @@
 # Hasil Validasi Reasoning Diagnosis
 
-- Waktu: 2026-11-24T06:14:27.148Z
+- Waktu: 2026-11-27T12:59:56.361Z
 - Base URL: http://127.0.0.1:3000
 - Model: forward-chaining-cf-v1
-- Ontology: 63caa37dd6a3 / 63caa37dd6a3d67026d1c64b96a1d5e99e698afb6976e5167532ad7751ca2b6b
+- Ontology: e42991cedc4f / e42991cedc4f9f714f59004de1b47b604b355152f6beffb14bc4c389d90509cc
 
 ## Ringkasan (fokus: gold + ambiguous)
 
@@ -77,7 +77,7 @@ Tidak ada kasus yang gagal.
 ## Determinism & performa
 
 - Determinism: stabil (PADI-BLAS-01)
-- Performa: p50 32.7797 ms; p95 51.6967 ms (20 sampel)
+- Performa: tidak dijalankan (pakai `--perf`)
 
 ## Catatan
 

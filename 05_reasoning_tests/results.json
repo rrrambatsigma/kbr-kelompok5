@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-24T06:14:27.148Z",
+  "generatedAt": "2026-11-27T12:59:56.361Z",
   "baseUrl": "http://127.0.0.1:3000",
   "topN": 10,
   "reasoning": {
     "modelVersion": "forward-chaining-cf-v1",
     "ontology": {
-      "version": "63caa37dd6a3",
-      "checksum": "63caa37dd6a3d67026d1c64b96a1d5e99e698afb6976e5167532ad7751ca2b6b"
+      "version": "e42991cedc4f",
+      "checksum": "e42991cedc4f9f714f59004de1b47b604b355152f6beffb14bc4c389d90509cc"
     }
   },
   "validation": {
@@ -3402,11 +3402,7 @@
     "caseId": "PADI-BLAS-01",
     "stable": true
   },
-  "performance": {
-    "samples": 20,
-    "p50Ms": 32.7797,
-    "p95Ms": 51.6967
-  },
+  "performance": null,
   "thresholds": [
     {
       "name": "Top-1 fokus (gold+ambiguous)",

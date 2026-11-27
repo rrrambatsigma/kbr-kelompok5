@@ -106,8 +106,8 @@ cd ..\..\
 
 ## 6. Prosedur update ontology
 
-1. Pastikan artefak final sudah ada: `04_ontology/ontology_md.ttl` (Java) dan
-   `04_ontology/ontology_md_inferred.ttl` (Fuseki).
+1. Pastikan artefak runtime sudah ada: `04_ontology/ontology_md_inferred.ttl`
+   (Fuseki, Java, dan Node). `ontology_md.ttl` hanya untuk Protégé/fallback.
 2. Hentikan Fuseki.
 3. `.\06_backend\scripts\load-ontology.ps1 -Reset`
 4. Nyalakan Fuseki.

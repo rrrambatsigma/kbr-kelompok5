@@ -138,8 +138,16 @@ export interface DiagnosisDataset {
   stats: DiagnosisDatasetStats;
 }
 
+function humanizeLocalName(iri: string): string {
+  return localName(iri)
+    .replace(/_/g, " ")
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function labelOrFallback(binding: SparqlBinding, iri: string): string {
-  return termValue(binding, "label") ?? localName(iri);
+  return termValue(binding, "label") ?? humanizeLocalName(iri);
 }
 
 export async function plantExists(id: string): Promise<boolean> {

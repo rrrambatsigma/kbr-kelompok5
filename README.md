@@ -40,11 +40,12 @@ menyimpan RDF dan melayani SPARQL read-only.
 
 - Ontologi kanonik: **17.420 triple**, **1.294 individu**, **70 kelas**,
   **32 object property**, **53 penyakit**, **7 tanaman**, **76 tautan penyakit-patogen**.
-- `ontology_md.ttl`: **25.775 triple**, **1.596 individu**, **7 aturan SWRL**,
-  dan **53 diagnosis demo**; memuat hasil SWRL + closure tipe yang
-  dimaterialisasi untuk Openllet.
-- `ontology_md_inferred.ttl`: **26.818 triple**, closure Pellet penuh termasuk
-  kategori penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1).
+- `ontology_md_inferred.ttl`: **26.818 triple**, **1.596 individu**, **7 aturan
+  SWRL**, dan **53 diagnosis demo**; closure Pellet penuh termasuk kategori
+  penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1). Dipakai
+  Fuseki, reasoning-api, dan Node sebagai satu sumber runtime.
+- `ontology_md.ttl`: **25.775 triple**; hasil SWRL + closure tipe untuk
+  Protégé/verifikasi dan fallback offline.
 - **227 pengamatan gejala** menjadi **176 pengamatan kanonik**; **51** belum dipetakan.
 - **226 tautan `dikendalikanDengan`**; **37** baris pengendalian belum dipetakan.
 - **79 tautan varietas**, **27 tautan fase**, **17 baris metadata terkurasi**.

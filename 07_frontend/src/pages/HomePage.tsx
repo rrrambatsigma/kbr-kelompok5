@@ -128,7 +128,7 @@ export function HomePage() {
               Kenali Penyakit Tanaman, Temukan Langkah Pengendalian yang Tepat.
             </h1>
             <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
-              Sistem pakar untuk 7 komoditas pangan tropis, 53 penyakit, dan 229
+              Sistem pakar untuk 7 komoditas pangan tropis, 53 penyakit, dan 227
               observasi gejala. Pilih tanaman, varietas, dan gejala yang terlihat
               untuk melihat kandidat penyakit beserta bukti dan pengendaliannya.
             </p>

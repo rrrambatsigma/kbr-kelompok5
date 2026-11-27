@@ -3,24 +3,23 @@
 Folder ini berisi verifikasi integrasi dan kasus uji reasoning diagnosis.
 Ontology final yang dipakai adalah artefak gabungan `feat/rambat-baru` +
 `feat/ontology-baru`: `04_ontology/ontology_md_inferred.ttl` (26.818 triple,
-closure Pellet) untuk Fuseki dan `04_ontology/ontology_md.ttl` (25.775 triple,
-7 aturan SWRL, 53 diagnosis demo) untuk Java.
+closure Pellet penuh) untuk **Fuseki, Java, dan Node**. Artefak
+`04_ontology/ontology_md.ttl` (25.775 triple) tetap tersedia untuk
+Protégé/verifikasi dan fallback.
 
-> **Status 24 November 2026:** tabel pengujian end-to-end di bawah adalah
-> **snapshot** pada ontology 24.833 triple sebelum merge ontology final.
-> Artefak final sudah lolos gate test ontologi dan unit test backend, tetapi
-> harness ini perlu dijalankan ulang dengan dataset baru
-> (`load-ontology.ps1 -Reset`, lalu `generate-sanity.mjs` dan `run.mjs`) agar
-> angka dan ID observasi di `results.json`/`results.md` diperbarui.
+> **Status 27 November 2026:** harness sudah dijalankan ulang pada ontology
+> 26.818 triple (checksum `e42991ce...`) setelah KB baru dimuat ke Fuseki.
+> Hasil terbaru ada di `results.json`/`results.md`; tabel di bawah adalah
+> ringkasan run tersebut.
 
-## Status verifikasi integrasi (snapshot 24 Nov 2026)
+## Status verifikasi integrasi (27 Nov 2026)
 
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
 | Ontology snapshot | `ontology_md.ttl`, 24.833 triple (termasuk inferred) | v3 + Pellet |
-| Ontology final | `ontology_md.ttl` 25.775 triple; `ontology_md_inferred.ttl` 26.818 triple | v4 + 7 SWRL |
+| Ontology final | `ontology_md_inferred.ttl` 26.818 triple (Java + Fuseki + Node); `ontology_md.ttl` 25.775 triple (Protégé/fallback) | v4 + 7 SWRL |
 | SHA-256 ontology snapshot | `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4` | snapshot |
-| SHA-256 ontology final | `3ee7ad70a448234083952989f45ba9e14d053424538f350aea9fc6f144ba32fd` | cocok dengan Java |
+| SHA-256 ontology final | `e42991cedc4f9f714f59004de1b47b604b355152f6beffb14bc4c389d90509cc` | cocok dengan Java |
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
@@ -31,7 +30,7 @@ Pemeriksaan final yang lolos:
 
 - [x] `totalTriples = 26.818`
 - [x] Fingerprint v2: `deskripsiPenyakit = 53`, `memilikiKondisiTumbuh = 9`
-- [x] Java memuat `ontology_md.ttl` dan checksum-nya sama dengan file
+- [x] Java memuat `ontology_md_inferred.ttl` dan checksum-nya sama dengan file
 - [x] Ontology konsisten (Openllet)
 - [x] Kategori final: Jamur 34, Bakteri 7, Virus 10, Oomycete 3,
       Fitoplasma 1 (Fuseki); Java memilih satu kategori per penyakit
@@ -263,7 +262,7 @@ node run.mjs --base-url http://127.0.0.1:3000
 node run.mjs --out hasil-lain
 ```
 
-Hasil 24 Nov 2026 (ontology `63caa37d...`):
+Hasil 27 Nov 2026 (ontology `e42991ce...`):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
@@ -292,7 +291,7 @@ Catatan penting:
 - UI mengirim ID **konsep kanonik**; kasus `gold`/`ambiguous`/`sanity` tetap
   memakai ID observasi untuk menguji exact-match. Evaluasi dengan pemetaan
   observasi → kanonik (input seperti UI) menghasilkan top-1 fokus **0,909**,
-  top-3 **1,000**, dan MRR **0,955** pada ontology `63caa37d...`.
+  top-3 **1,000**, dan MRR **0,955** pada ontology `e42991ce...`.
 
 ## Dokumentasi M5
 
