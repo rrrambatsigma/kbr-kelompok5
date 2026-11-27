@@ -11,8 +11,8 @@ $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 $backendDir = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 
 if ($OntologyFile -eq "") {
-    # Fuseki memakai closure Pellet lengkap (kategori penyakit, disjointness,
-    # hasil SWRL). Java tetap memuat ontology_md.ttl karena butuh definisi aturan.
+    # Runtime memakai closure Pellet lengkap (kategori penyakit, disjointness,
+    # hasil SWRL) untuk Fuseki, Java, dan Node.
     $OntologyFile = Join-Path $repoRoot "04_ontology\ontology_md_inferred.ttl"
 }
 

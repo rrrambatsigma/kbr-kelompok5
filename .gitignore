@@ -58,6 +58,7 @@ env/
 
 # Backup runtime Fuseki
 /06_backend/backups/
+/06_backend/fuseki-data-backup-*/
 
 # File sementara Fuseki
 *.lock

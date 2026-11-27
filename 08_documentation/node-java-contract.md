@@ -212,7 +212,7 @@ sequenceDiagram
 | `ONTOLOGY_FILE_PATH` | Node | kosong (status `UNKNOWN`) |
 | `SERVER_PORT` | Java | `8082` |
 | `SERVER_ADDRESS` | Java | `127.0.0.1` |
-| `ONTOLOGY_FILE_PATH` | Java | `E:/kbr-kelompok5/04_ontology/ontology_md.ttl` |
+| `ONTOLOGY_FILE_PATH` | Java | `E:/kbr-kelompok5/04_ontology/ontology_md_inferred.ttl` |
 | `ONTOLOGY_REASONING_TIMEOUT_MS` | Java | `600000` |
 | `ONTOLOGY_FAIL_FAST` | Java | `false` |
 

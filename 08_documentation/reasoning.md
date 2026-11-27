@@ -5,10 +5,11 @@ pakar penyakit tanaman pangan. Fokusnya backend: bagaimana gejala yang dipilih
 diubah menjadi kandidat penyakit, bagaimana keyakinan dihitung, dan bagaimana
 hasilnya divalidasi.
 
-Ontology yang dipakai adalah `04_ontology/ontology_md.ttl`
-(checksum `3ee7ad70...`; 25.775 triple, 7 aturan SWRL, 53 diagnosis demo) untuk
-Java, dan closure Pellet `04_ontology/ontology_md_inferred.ttl`
-(26.818 triple) untuk Fuseki. Backend tetap dibuat tahan ganti ontology:
+Ontology yang dipakai runtime adalah `04_ontology/ontology_md_inferred.ttl`
+(checksum `e42991ce...`; 26.818 triple, 7 aturan SWRL, 53 diagnosis demo)
+untuk Java, Fuseki, dan Node. Artefak `04_ontology/ontology_md.ttl`
+(25.775 triple) tetap tersedia untuk Protégé/verifikasi dan fallback. Backend
+tetap dibuat tahan ganti ontology:
 kosakata dipusatkan di `src/config/ontology.ts`, dan properti opsional boleh
 hilang tanpa mematikan diagnosis.
 
@@ -34,8 +35,8 @@ Yang tidak termasuk M5:
 
 | Item | Nilai |
 |---|---:|
-| Triple `ontology_md.ttl` | 25.775 |
-| Triple `ontology_md_inferred.ttl` | 26.818 |
+| Triple `ontology_md_inferred.ttl` (runtime) | 26.818 |
+| Triple `ontology_md.ttl` (Protégé/fallback) | 25.775 |
 | Kelas TBox PTP | 70 |
 | Individu | 1.596 |
 | Tanaman | 7 |
@@ -273,8 +274,8 @@ Harness ada di `05_reasoning_tests/`.
 | Sanity | 53 | Satu kasus per penyakit; regression |
 | Negative | 5 | Validasi input/error |
 
-Hasil 24 November 2026 (snapshot pada ontology 24.833 triple, sebelum merge
-ontology final 25.775/26.818; harness perlu dijalankan ulang untuk angka final):
+Hasil 27 November 2026 (runtime `ontology_md_inferred.ttl`, 26.818 triple,
+checksum `e42991ce...`; harness sudah dijalankan ulang):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
@@ -361,7 +362,7 @@ Konfigurasi utama:
 | `FUSEKI_BASE_URL` | `http://localhost:3030` |
 | `FUSEKI_DATASET` | `plant-kb` |
 | `REASONING_API_URL` | `http://localhost:8082` |
-| `ONTOLOGY_FILE_PATH` (Java) | `E:/kbr-kelompok5/04_ontology/ontology_md.ttl` |
+| `ONTOLOGY_FILE_PATH` (Java) | `E:/kbr-kelompok5/04_ontology/ontology_md_inferred.ttl` |
 
 Cek ontology yang benar-benar dimuat:
 

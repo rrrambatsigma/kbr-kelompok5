@@ -2,12 +2,12 @@
 
 Tanggal: 19 November 2026 (diperbarui 24 November 2026 setelah perbaikan label gejala dan konteks pengendalian)
 
-> **Catatan pasca-merge ontology final (27 November 2026).** Artefak final
-> memakai `ontology_md.ttl` 25.775 triple (Java) dan
-> `ontology_md_inferred.ttl` 26.818 triple (Fuseki) dengan 7 aturan SWRL dan 53
-> diagnosis demo. Dataset final sudah dimuat ulang; smoke test lulus dengan
-> 26.818 triple, 13 konsep gejala Padi, 6 fase, dan 4 varietas. Checksum Java
-> final: `3ee7ad70a448234083952989f45ba9e14d053424538f350aea9fc6f144ba32fd`.
+> **Catatan pasca-merge ontology final (27 November 2026).** Runtime memakai
+> `ontology_md_inferred.ttl` 26.818 triple untuk Java, Fuseki, dan Node, dengan
+> 7 aturan SWRL dan 53 diagnosis demo. Dataset final sudah dimuat ulang; smoke
+> test lulus dengan 26.818 triple, 13 konsep gejala Padi, 6 fase, dan 4
+> varietas. Checksum Java final:
+> `e42991cedc4f9f714f59004de1b47b604b355152f6beffb14bc4c389d90509cc`.
 
 Lingkungan:
 
@@ -16,8 +16,8 @@ Lingkungan:
 - Java runtime 23.0.1; Maven toolchain Java 21.0.13
 - Apache Jena Fuseki 6.2.0
 - Ontology gabungan `ontology_md.ttl`
-- Checksum `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4`
-- Dataset Fuseki `plant-kb`, 24.833 triple
+- Checksum `e42991cedc4f9f714f59004de1b47b604b355152f6beffb14bc4c389d90509cc`
+- Dataset Fuseki `plant-kb`, 26.818 triple
 
 ## Ringkasan
 
@@ -27,7 +27,7 @@ Backend **lolos pengujian teknis** untuk lingkup M5–M6:
 - 4 test Java lulus.
 - 11 test frontend lulus; build frontend lulus.
 - 115 test `03_knowledge_tables` lulus (8 skip), 68 test `04_ontology` lulus.
-- Smoke test dan integration test lulus pada dataset baru (24.833 triple), termasuk fase pertumbuhan.
+- Smoke test dan integration test lulus pada dataset baru (26.818 triple), termasuk fase pertumbuhan.
 - 75 kasus evaluasi reasoning + 5 negative berjalan.
 - Health check dan checksum konsisten.
 - Fallback `DEGRADED` dan `503 FUSEKI_UNAVAILABLE` terbukti.
@@ -64,7 +64,7 @@ Test Node mencakup:
 | Pemeriksaan | Hasil |
 |---|---|
 | `/api/health/live` | `UP` |
-| `/api/health/fuseki` | `UP`, 24.833 triple |
+| `/api/health/fuseki` | `UP`, 26.818 triple |
 | `/api/health/ontology` | `OK` |
 | `checks.fileMatchesJava` | `true` |
 | `checks.fusekiHasV2Fingerprint` | `true` |
@@ -211,7 +211,7 @@ Setelah Java dinyalakan lagi, readiness kembali `UP`.
 | Reasoning dependency | `UP` |
 | `/api/health/ontology` | `DOWN`, warning Fuseki |
 
-Setelah Fuseki dinyalakan lagi, readiness kembali `UP`, triple tetap 24.833.
+Setelah Fuseki dinyalakan lagi, readiness kembali `UP`, triple tetap 26.818.
 
 ## 7. Observability
 

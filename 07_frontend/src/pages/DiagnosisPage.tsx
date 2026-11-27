@@ -76,6 +76,7 @@ export function DiagnosisPage() {
   const [phasesError, setPhasesError] = useState<string | null>(null);
   const [symptomsError, setSymptomsError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  const [varietySearch, setVarietySearch] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -174,6 +175,16 @@ export function DiagnosisPage() {
     [filteredSymptoms]
   );
 
+  const filteredVarieties = useMemo(() => {
+    const query = varietySearch.trim().toLowerCase();
+    if (query === "") {
+      return varieties;
+    }
+    return varieties.filter((variety) =>
+      variety.label.toLowerCase().includes(query)
+    );
+  }, [varieties, varietySearch]);
+
   const selectedIds = useMemo(
     () => new Set(draft.symptoms.map((symptom) => symptom.id)),
     [draft.symptoms]
@@ -196,6 +207,7 @@ export function DiagnosisPage() {
     reset();
     setStep(1);
     setSearch("");
+    setVarietySearch("");
     setSubmitError(null);
   };
 
@@ -275,6 +287,7 @@ export function DiagnosisPage() {
                     onClick={() => {
                       setPlant(plant);
                       setSearch("");
+                      setVarietySearch("");
                       setStep(2);
                     }}
                     className={`card flex flex-col items-start gap-3 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-secondary/50 ${
@@ -365,36 +378,75 @@ export function DiagnosisPage() {
                   </p>
                 </div>
               ) : (
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {varieties.map((variety) => {
-                    const selected = draft.variety?.id === variety.id;
-                    return (
+                <>
+                  {varieties.length > 8 && (
+                    <div className="space-y-2">
+                      <SearchInput
+                        value={varietySearch}
+                        onChange={setVarietySearch}
+                        placeholder={`Cari varietas ${draft.plant?.label ?? ""}...`}
+                        label="Cari varietas"
+                      />
+                      <p className="text-xs text-muted">
+                        Menampilkan {filteredVarieties.length} dari{" "}
+                        {varieties.length} varietas.
+                      </p>
+                    </div>
+                  )}
+
+                  {filteredVarieties.length === 0 ? (
+                    <div className="card flex flex-col items-center gap-2 p-8 text-center">
+                      <Leaf className="h-6 w-6 text-muted" aria-hidden="true" />
+                      <p className="font-heading text-sm font-bold text-foreground">
+                        Varietas tidak ditemukan
+                      </p>
+                      <p className="max-w-md text-xs leading-5 text-muted">
+                        Coba kata kunci lain, atau lewati langkah ini bila
+                        varietas belum diketahui.
+                      </p>
                       <button
-                        key={variety.id}
                         type="button"
-                        onClick={() => setVariety(selected ? null : variety)}
-                        className={`card flex flex-col items-start gap-2 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-secondary/50 ${
-                          selected
-                            ? "border-primary-container ring-2 ring-primary-soft/60"
-                            : ""
-                        }`}
-                        aria-pressed={selected}
+                        onClick={() => setVarietySearch("")}
+                        className="text-sm font-semibold text-primary hover:underline"
                       >
-                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-low text-primary">
-                          <Leaf className="h-5 w-5" aria-hidden="true" />
-                        </span>
-                        <span className="font-heading text-base font-bold text-foreground">
-                          {variety.label}
-                        </span>
-                        <span className="text-xs text-muted">
-                          {variety.resistantTo.length === 0
-                            ? "Belum ada catatan ketahanan"
-                            : `${variety.resistantTo.length} penyakit tercatat tahan`}
-                        </span>
+                        Hapus pencarian
                       </button>
-                    );
-                  })}
-                </div>
+                    </div>
+                  ) : (
+                    <div className="max-h-[32rem] overflow-y-auto rounded-2xl border border-border bg-surface-low/20 p-2">
+                      <div className="grid gap-3 sm:grid-cols-2">
+                      {filteredVarieties.map((variety) => {
+                        const selected = draft.variety?.id === variety.id;
+                        return (
+                          <button
+                            key={variety.id}
+                            type="button"
+                            onClick={() => setVariety(selected ? null : variety)}
+                            className={`card flex flex-col items-start gap-2 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-secondary/50 ${
+                              selected
+                                ? "border-primary-container ring-2 ring-primary-soft/60"
+                                : ""
+                            }`}
+                            aria-pressed={selected}
+                          >
+                            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-low text-primary">
+                              <Leaf className="h-5 w-5" aria-hidden="true" />
+                            </span>
+                            <span className="font-heading text-base font-bold text-foreground">
+                              {variety.label}
+                            </span>
+                            <span className="text-xs text-muted">
+                              {variety.resistantTo.length === 0
+                                ? "Belum ada catatan ketahanan"
+                                : `${variety.resistantTo.length} penyakit tercatat tahan`}
+                            </span>
+                          </button>
+                        );
+                      })}
+                      </div>
+                    </div>
+                  )}
+                </>
               )}
 
               <button
