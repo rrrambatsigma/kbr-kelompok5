@@ -143,7 +143,7 @@ dan Java.
 | Diagnosis `DEGRADED` | Java mati/timeout | Cek Java, `REASONING_TIMEOUT_MS` |
 | `FUSEKI_UNAVAILABLE` | Fuseki mati/timeout | Nyalakan Fuseki |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
-| `totalTriples` bukan 32.506 | Dataset lama | `load-ontology.ps1 -Reset` |
+| `totalTriples` bukan 26.818 | Dataset lama | `load-ontology.ps1 -Reset` |
 | Port sudah dipakai | Proses lama | Hentikan PID di port 3000/8082/3030 |
 
 ## 8. Uji degraded (manual)

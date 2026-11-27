@@ -46,8 +46,8 @@ Ontology final dipisah menjadi dua artefak:
 
 | Artefak | Isi | Dipakai oleh |
 |---|---|---|
-| `04_ontology/ontology_md.ttl` | **30.280 triple**, **1.508 individu**, **71 kelas TBox PTP**, **7 aturan SWRL**, dan **53 diagnosis demo**. Memuat hasil SWRL yang sudah dimaterialisasi, tetapi belum memuat tipe kategori penyakit. | Java (`ONTOLOGY_FILE_PATH`) karena butuh definisi aturan |
-| `04_ontology/ontology_md_inferred.ttl` | **32.506 triple**: closure Pellet penuh, termasuk kategori penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1) dan `owl:disjointWith`. | Fuseki lewat `scripts/load-ontology.ps1` |
+| `04_ontology/ontology_md.ttl` | **25.775 triple**, **1.596 individu**, **70 kelas TBox PTP**, **7 aturan SWRL**, dan **53 diagnosis demo**. Memuat hasil SWRL + closure tipe (termasuk kategori penyakit) yang dimaterialisasi agar Openllet tidak menggelembungkan Rete. | Java (`ONTOLOGY_FILE_PATH`) karena butuh definisi aturan |
+| `04_ontology/ontology_md_inferred.ttl` | **26.818 triple**: closure Pellet penuh, termasuk kategori penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1) dan `owl:disjointWith`. | Fuseki lewat `scripts/load-ontology.ps1` |
 
 Java menjalankan Openllet saat startup untuk konsistensi dan klasifikasi
 kategori; Fuseki hanya menyimpan data sehingga memakai closure yang sudah
@@ -179,20 +179,19 @@ Error:
 
 `:id` menerima local name (`Padi`, `PenyakitBlasPadi`) atau IRI penuh.
 
-`GET /api/phases?plantId=Padi` mengembalikan **7 kelas fase** dari ontology
-(`FasePembibitan`, `FaseVegetatif`, `FaseAnakan`, `FasePembungaan`,
-`FaseGeneratif`, `FasePemasakan`, `FasePanen`) lengkap dengan `diseaseCount`
-per tanaman. Kelas yang belum punya tautan penyakit tetap dikembalikan dengan
-`diseaseCount: 0`; ini bukan error. ID fase yang dipakai di request adalah ID
-kelas, bukan ID individu fase.
+`GET /api/phases?plantId=Padi` mengembalikan **6 kelas fase** dari ontology
+(`FasePembibitan`, `FaseVegetatif`, `FaseAnakan`, `FaseGeneratif`,
+`FasePemasakan`, `FasePanen`) lengkap dengan `diseaseCount` per tanaman. Kelas
+yang belum punya tautan penyakit tetap dikembalikan dengan `diseaseCount: 0`;
+ini bukan error. ID fase yang dipakai di request adalah ID kelas, bukan ID
+individu fase.
 
 `GET /api/symptoms?plantId=Padi` mengembalikan **konsep gejala kanonik**
 (`GejalaKanonik`) yang dipakai penyakit tanaman itu, bukan observasi mentah.
 Setiap item memuat `observationCount` dan `diseaseCount`; ID yang dikirim UI ke
 `POST /api/diagnosis` adalah local name konsep (mis. `BercakDaun`). Untuk Padi
-endpoint ini mengembalikan 12 konsep dari 26 observasi. `POST /api/diagnosis`
-juga tetap menerima ID observasi (`Pengamatan...`) untuk kompatibilitas dan
-pengujian exact-match.
+endpoint ini mengembalikan 13 konsep dari 24 observasi. `POST /api/diagnosis`
+juga tetap menerima ID observasi (`Gejala...`) untuk pengujian exact-match.
 
 `GET /api/diseases/:id` mengembalikan `controls[].description` dari kutipan
 `BuktiPengendalian` milik penyakit tersebut. Deskripsi global
@@ -376,7 +375,7 @@ node run.mjs --perf
 | `ONTOLOGY_NOT_LOADED` | File ontology tidak ditemukan | Set `ONTOLOGY_FILE_PATH`, cek log startup |
 | `ONTOLOGY_INCONSISTENT` | Ontology kontradiktif | Perbaiki ontology, reload |
 | `ONTOLOGY_MISMATCH` | Checksum file Node berbeda dengan Java | Samakan `ONTOLOGY_FILE_PATH`, reload Java |
-| `totalTriples` bukan 32506 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
+| `totalTriples` bukan 26818 | Dataset lama/belum dimuat | `load-ontology.ps1 -Reset` |
 | Port sudah dipakai | Proses lama masih hidup | Hentikan proses pada port 3000/3030/8082 |
 
 ## Catatan keamanan

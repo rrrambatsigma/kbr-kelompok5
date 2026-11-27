@@ -1,10 +1,10 @@
 # Reasoning Tests — Milestone 5
 
 Folder ini berisi verifikasi integrasi dan kasus uji reasoning diagnosis.
-Ontology final yang dipakai adalah artefak dari branch `feat/ontology-baru`:
-`04_ontology/ontology_md_inferred.ttl` (32.506 triple, closure Pellet) untuk
-Fuseki dan `04_ontology/ontology_md.ttl` (30.280 triple, 7 aturan SWRL,
-53 diagnosis demo) untuk Java.
+Ontology final yang dipakai adalah artefak gabungan `feat/rambat-baru` +
+`feat/ontology-baru`: `04_ontology/ontology_md_inferred.ttl` (26.818 triple,
+closure Pellet) untuk Fuseki dan `04_ontology/ontology_md.ttl` (25.775 triple,
+7 aturan SWRL, 53 diagnosis demo) untuk Java.
 
 > **Status 24 November 2026:** tabel pengujian end-to-end di bawah adalah
 > **snapshot** pada ontology 24.833 triple sebelum merge ontology final.
@@ -18,21 +18,23 @@ Fuseki dan `04_ontology/ontology_md.ttl` (30.280 triple, 7 aturan SWRL,
 | Komponen | Versi / Nilai | Status |
 |---|---|---|
 | Ontology snapshot | `ontology_md.ttl`, 24.833 triple (termasuk inferred) | v3 + Pellet |
-| Ontology final | `ontology_md.ttl` 30.280 triple; `ontology_md_inferred.ttl` 32.506 triple | v4 + 7 SWRL |
-| SHA-256 ontology snapshot | `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4` | cocok dengan Java |
+| Ontology final | `ontology_md.ttl` 25.775 triple; `ontology_md_inferred.ttl` 26.818 triple | v4 + 7 SWRL |
+| SHA-256 ontology snapshot | `2085d0a7f36841e6d2b5ce04a2d79b48028f02e1d8a504037be8b8866bf5cbc4` | snapshot |
+| SHA-256 ontology final | `3ee7ad70a448234083952989f45ba9e14d053424538f350aea9fc6f144ba32fd` | cocok dengan Java |
 | Fuseki | `plant-kb`, read-only, port 3030 | UP |
 | Java reasoning API | Openllet, port 8082 | UP, konsisten |
 | Node API | port 3000 | UP |
 | Smoke test snapshot | plants=7, diseases=53, Padi symptom concepts=12, Padi varieties=4 | OK |
+| Smoke test final | plants=7, diseases=53, Padi concepts=13, phases=6, varieties=4 | OK |
 
-Pemeriksaan snapshot yang lolos:
+Pemeriksaan final yang lolos:
 
-- [x] `totalTriples = 24.833` (dataset final: **32.506**)
+- [x] `totalTriples = 26.818`
 - [x] Fingerprint v2: `deskripsiPenyakit = 53`, `memilikiKondisiTumbuh = 9`
 - [x] Java memuat `ontology_md.ttl` dan checksum-nya sama dengan file
 - [x] Ontology konsisten (Openllet)
-- [x] Kategori snapshot: Jamur 34, Bakteri 7, Virus 10, Oomycete 1,
-      Fitoplasma 1; dataset final menambah Oomycete menjadi 3
+- [x] Kategori final: Jamur 34, Bakteri 7, Virus 10, Oomycete 3,
+      Fitoplasma 1 (Fuseki); Java memilih satu kategori per penyakit
 - [x] `/api/health/ready` = UP
 - [x] `npm run typecheck`, `npm test` (40 test) hijau
 - [x] `mvnw test` (4 test, termasuk golden Openllet) hijau
@@ -85,17 +87,17 @@ Setiap penyakit membawa:
 - `description` dari `deskripsiPenyakit`
 - `severity` dari `tingkatKeparahan`
 
-Statistik dataset per tanaman (22 Nov 2026):
+Statistik dataset per tanaman (ontology final, 24 Nov 2026):
 
 | Tanaman | Penyakit | Pengamatan | Punya kanonik | Konsep kanonik |
 |---|---:|---:|---:|---:|
-| Padi | 5 | 26 | 20 | 12 |
-| Kedelai | 15 | 87 | 65 | 21 |
+| Padi | 5 | 24 | 21 | 13 |
+| Kedelai | 15 | 87 | 67 | 23 |
 | Jagung | 5 | 28 | 16 | 11 |
-| Ubi jalar | 4 | 30 | 19 | 13 |
+| Ubi jalar | 4 | 30 | 20 | 14 |
 | Ubi kayu | 17 | 30 | 29 | 17 |
 | Kacang tanah | 4 | 22 | 18 | 12 |
-| Kacang hijau | 3 | 6 | 4 | 4 |
+| Kacang hijau | 3 | 6 | 5 | 5 |
 
 Periksa dataset tanpa mengubah kode:
 
@@ -261,7 +263,7 @@ node run.mjs --base-url http://127.0.0.1:3000
 node run.mjs --out hasil-lain
 ```
 
-Hasil 24 Nov 2026 (ontology `2085d0a7...`):
+Hasil 24 Nov 2026 (ontology `63caa37d...`):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
@@ -290,7 +292,7 @@ Catatan penting:
 - UI mengirim ID **konsep kanonik**; kasus `gold`/`ambiguous`/`sanity` tetap
   memakai ID observasi untuk menguji exact-match. Evaluasi dengan pemetaan
   observasi → kanonik (input seperti UI) menghasilkan top-1 fokus **0,909**,
-  top-3 **1,000**, dan MRR **0,955** pada ontology `2085d0a7...`.
+  top-3 **1,000**, dan MRR **0,955** pada ontology `63caa37d...`.
 
 ## Dokumentasi M5
 

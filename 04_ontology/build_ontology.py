@@ -630,6 +630,9 @@ PHASE_DEFS: dict[str, dict[str, str]] = {
     "FaseAnakanTanaman": {"label": "Fase anakan", "class": "FaseAnakan"},
     "FaseMatang": {"label": "Fase matang", "class": "FasePemasakan"},
     "FasePanenTanaman": {"label": "Fase panen", "class": "FasePanen"},
+    "FasePembungaan": {"label": "Fase pembungaan", "class": "FaseGeneratif"},
+    "FasePembentukanPolong": {"label": "Fase pembentukan polong", "class": "FaseGeneratif"},
+    "FasePengisianPolong": {"label": "Fase pengisian polong", "class": "FaseGeneratif"},
 }
 PHASE_RE = re.compile(
     r"\bfase\s+(matang\s+susu|vegetatif|generatif|pembibitan|anakan|matang)\b",
@@ -2440,7 +2443,7 @@ def validate(graph: Graph, builder: Builder, entries: list[dict[str, str]]) -> l
             errors.append(f"kelas tanpa prefLabel: {local}")
         if not any(graph.objects(cls, RDFS.comment)):
             errors.append(f"kelas tanpa komentar: {local}")
-        if local != "EntitasKBR" and not any(graph.objects(cls, RDFS.subClassOf)):
+        if local not in tbox.TOP_DOMAINS and not any(graph.objects(cls, RDFS.subClassOf)):
             errors.append(f"kelas tanpa parent: {local}")
 
     for name, spec in tbox.OBJECT_PROPERTIES.items():
@@ -2452,7 +2455,8 @@ def validate(graph: Graph, builder: Builder, entries: list[dict[str, str]]) -> l
         domain = spec.get("domain")
         if domain and not any(graph.objects(prop, RDFS.domain)):
             errors.append(f"properti objek tanpa domain: {name}")
-        if not any(graph.objects(prop, RDFS.range)):
+        range_name = spec.get("range")
+        if range_name and not any(graph.objects(prop, RDFS.range)):
             errors.append(f"properti objek tanpa range: {name}")
         inverse = spec.get("inverse")
         if inverse and (prop, OWL.inverseOf, KBR[inverse]) not in graph:
@@ -2460,8 +2464,8 @@ def validate(graph: Graph, builder: Builder, entries: list[dict[str, str]]) -> l
         for subject, obj in graph.subject_objects(prop):
             if domain and not type_closure(graph, subject, KBR[domain]):
                 errors.append(f"subjek {subject} tidak bertipe {domain} untuk {name}")
-            if not type_closure(graph, obj, KBR[spec["range"]]):
-                errors.append(f"objek {obj} tidak bertipe {spec['range']} untuk {name}")
+            if range_name and not type_closure(graph, obj, KBR[range_name]):
+                errors.append(f"objek {obj} tidak bertipe {range_name} untuk {name}")
 
     for name, spec in tbox.DATA_PROPERTIES.items():
         prop = KBR[name]
@@ -2469,9 +2473,10 @@ def validate(graph: Graph, builder: Builder, entries: list[dict[str, str]]) -> l
             errors.append(f"properti data tanpa label: {name}")
         if not any(graph.objects(prop, RDFS.comment)):
             errors.append(f"properti data tanpa komentar: {name}")
+        domain = spec.get("domain")
         for subject, obj in graph.subject_objects(prop):
-            if not type_closure(graph, subject, KBR[spec["domain"]]):
-                errors.append(f"subjek data {subject} tidak bertipe {spec['domain']} untuk {name}")
+            if domain and not type_closure(graph, subject, KBR[domain]):
+                errors.append(f"subjek data {subject} tidak bertipe {domain} untuk {name}")
             if not isinstance(obj, Literal):
                 errors.append(f"nilai data bukan literal untuk {name}: {obj}")
             elif spec["range"] == RDF.PlainLiteral and obj.language != "id":

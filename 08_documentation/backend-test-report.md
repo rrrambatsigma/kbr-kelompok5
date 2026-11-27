@@ -2,12 +2,12 @@
 
 Tanggal: 19 November 2026 (diperbarui 24 November 2026 setelah perbaikan label gejala dan konteks pengendalian)
 
-> **Catatan pasca-merge ontology final (24 November 2026).** Laporan ini adalah
-> snapshot pengujian pada ontology 24.833 triple. Artefak final memakai
-> `ontology_md.ttl` 30.280 triple (Java) dan `ontology_md_inferred.ttl`
-> 32.506 triple (Fuseki) dengan 7 aturan SWRL dan 53 diagnosis demo; gate test
-> ontologi serta unit test backend sudah dijalankan ulang, tetapi smoke test
-> dan integration test end-to-end perlu diulang pada dataset final.
+> **Catatan pasca-merge ontology final (27 November 2026).** Artefak final
+> memakai `ontology_md.ttl` 25.775 triple (Java) dan
+> `ontology_md_inferred.ttl` 26.818 triple (Fuseki) dengan 7 aturan SWRL dan 53
+> diagnosis demo. Dataset final sudah dimuat ulang; smoke test lulus dengan
+> 26.818 triple, 13 konsep gejala Padi, 6 fase, dan 4 varietas. Checksum Java
+> final: `3ee7ad70a448234083952989f45ba9e14d053424538f350aea9fc6f144ba32fd`.
 
 Lingkungan:
 

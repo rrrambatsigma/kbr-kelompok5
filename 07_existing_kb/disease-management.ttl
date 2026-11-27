@@ -1,0 +1,1172 @@
+@prefix : <https://gwsp.cs.ksu.edu/disease-management/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://gwsp.cs.ksu.edu/disease-management/> .
+
+<https://gwsp.cs.ksu.edu/disease-management/> rdf:type owl:Ontology ;
+                                               <http://purl.org/dc/terms/creator> "GRIP, Kansas State University" ;
+                                               <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                               <http://purl.org/dc/terms/title> "GRIP Disease Management Ontology"@en ;
+                                               rdfs:comment "The master ontology for the GRIP Disease Management suite developed at Kansas State University. This umbrella ontology imports three domain modules â€” pathogen, disease, and management â€” and defines the shared root concept (Disease Management) that connects them. It also bridges to the GRIP Nutrient Management ontology for shared concepts (Environment, Cultivar, Crop Species, Management Practices)." ;
+                                               rdfs:label "GRIP Disease Management Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://gwsp.cs.ksu.edu/disease-management/addresses_disease
+:addresses_disease rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Disease_Management ;
+                   rdfs:range <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                   rdfs:comment "Links Disease Management to the Disease(s) it targets." ;
+                   rdfs:label "addresses disease" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/implemented_through_strategy
+:implemented_through_strategy rdf:type owl:ObjectProperty ;
+                              rdfs:domain :Disease_Management ;
+                              rdfs:range <https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy> ;
+                              rdfs:comment "Links Disease Management to the strategies (chemical, cultural, genetic) deployed to control disease." ;
+                              rdfs:label "implemented through strategy" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/involves_host
+:involves_host rdf:type owl:ObjectProperty ;
+               rdfs:domain :Disease_Management ;
+               rdfs:range <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar> ;
+               rdfs:comment "Links Disease Management to the Cultivar being protected. Bridges to the nutrient module for shared cultivar concepts." ;
+               rdfs:label "involves host" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/involves_pathogen
+:involves_pathogen rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Disease_Management ;
+                   rdfs:range <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                   rdfs:comment "Links Disease Management to the Pathogen(s) causing the diseases being managed." ;
+                   rdfs:label "involves pathogen" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/occurs_in_environment
+:occurs_in_environment rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Disease_Management ;
+                       rdfs:range <https://gwsp.cs.ksu.edu/nutrient-management/environment/Environment> ;
+                       rdfs:comment "Links Disease Management to the Environment that constrains disease development and management decisions. Bridges to the nutrient management environment module." ;
+                       rdfs:label "occurs in environment" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/affects_host
+<https://gwsp.cs.ksu.edu/disease-management/disease/affects_host> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                  rdfs:range <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar> ;
+                                                                  rdfs:comment "Links a Disease to the Cultivar (host) it infects. Represents the host vertex of the disease triangle." ;
+                                                                  rdfs:label "affects host" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/caused_by
+<https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> rdf:type owl:ObjectProperty ;
+                                                               rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                               rdfs:range <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                                                               rdfs:comment "Links a Disease to the Pathogen (causal organism) that produces it. Every disease has exactly one primary causal agent, though disease complexes may involve multiple species." ;
+                                                               rdfs:label "caused by" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/causes_yield_loss
+<https://gwsp.cs.ksu.edu/disease-management/disease/causes_yield_loss> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                       rdfs:range <https://gwsp.cs.ksu.edu/disease-management/disease/Yield_Loss> ;
+                                                                       rdfs:comment "Links a Disease to the Yield Loss it produces when left unmanaged in a susceptible cultivar." ;
+                                                                       rdfs:label "causes yield loss" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/conditioned_by
+<https://gwsp.cs.ksu.edu/disease-management/disease/conditioned_by> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                    rdfs:range <https://gwsp.cs.ksu.edu/nutrient-management/environment/Environment> ;
+                                                                    rdfs:comment "Links a Disease to the Environment that determines whether conditions are favourable for infection. Represents the environment vertex of the disease triangle." ;
+                                                                    rdfs:label "conditioned by" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/for_cultivar
+<https://gwsp.cs.ksu.edu/disease-management/disease/for_cultivar> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Resistance_Rating> ;
+                                                                  rdfs:range <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar> ;
+                                                                  rdfs:comment "Links a Disease Resistance Rating to the specific cultivar being evaluated." ;
+                                                                  rdfs:label "for cultivar" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/for_disease
+<https://gwsp.cs.ksu.edu/disease-management/disease/for_disease> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Resistance_Rating> ;
+                                                                 rdfs:range <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                 rdfs:comment "Links a Disease Resistance Rating to the specific disease against which resistance is being rated." ;
+                                                                 rdfs:label "for disease" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_assessment
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_assessment> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                    rdfs:range <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Assessment> ;
+                                                                    rdfs:comment "Links a Disease to its quantitative assessment (incidence, severity, or rating score) observed in a specific trial." ;
+                                                                    rdfs:label "has assessment" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_environment_component
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_environment_component> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Triangle> ;
+                                                                               rdfs:range <https://gwsp.cs.ksu.edu/nutrient-management/environment/Environment> ;
+                                                                               rdfs:comment "Links the Disease Triangle to its environment vertex â€” the weather and soil conditions that determine infection favourability." ;
+                                                                               rdfs:label "has environment component" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_host_component
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_host_component> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Triangle> ;
+                                                                        rdfs:range <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar> ;
+                                                                        rdfs:comment "Links the Disease Triangle to its host vertex â€” the cultivar whose susceptibility is being evaluated." ;
+                                                                        rdfs:label "has host component" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_pathogen_component
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_pathogen_component> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Triangle> ;
+                                                                            rdfs:range <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                                                                            rdfs:comment "Links the Disease Triangle to its pathogen vertex â€” the organism whose virulence and inoculum pressure are assessed." ;
+                                                                            rdfs:label "has pathogen component" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_resistance_level
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_resistance_level> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Resistance_Rating> ;
+                                                                          rdfs:range <https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level> ;
+                                                                          rdfs:comment "Links a Disease Resistance Rating to its ordinal category on the standard resistance scale." ;
+                                                                          rdfs:label "has resistance level" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/applies_fungicide
+<https://gwsp.cs.ksu.edu/disease-management/management/applies_fungicide> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Chemical_Control> ;
+                                                                          rdfs:range <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                          rdfs:comment "Links Chemical Control to the Fungicide product applied." ;
+                                                                          rdfs:label "applies fungicide" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/disrupts
+<https://gwsp.cs.ksu.edu/disease-management/management/disrupts> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy> ;
+                                                                 rdfs:range <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Triangle> ;
+                                                                 rdfs:comment "Links a Disease Management Strategy to the vertex or vertices of the Disease Triangle it acts upon. Chemical control disrupts the pathogen vertex; cultural control disrupts the environment and/or pathogen vertices; host resistance disrupts the host vertex." ;
+                                                                 rdfs:label "disrupts" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/evaluated_in
+<https://gwsp.cs.ksu.edu/disease-management/management/evaluated_in> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Host_Resistance> ;
+                                                                     rdfs:range <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar> ;
+                                                                     rdfs:comment "Links Host Resistance to the Cultivar in which it has been evaluated and characterised." ;
+                                                                     rdfs:label "evaluated in" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_active_ingredient
+<https://gwsp.cs.ksu.edu/disease-management/management/has_active_ingredient> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                              rdfs:range <https://gwsp.cs.ksu.edu/disease-management/management/Active_Ingredient> ;
+                                                                              rdfs:comment "Links a Fungicide product to its Active Ingredient(s)." ;
+                                                                              rdfs:label "has active ingredient" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_application_timing
+<https://gwsp.cs.ksu.edu/disease-management/management/has_application_timing> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                               rdfs:range <https://gwsp.cs.ksu.edu/disease-management/management/Application_Timing> ;
+                                                                               rdfs:comment "Links a Fungicide application to the growth stage at which it is applied." ;
+                                                                               rdfs:label "has application timing" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_frac_group
+<https://gwsp.cs.ksu.edu/disease-management/management/has_frac_group> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                       rdfs:range <https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group> ;
+                                                                       rdfs:comment "Links a Fungicide or Active Ingredient to its FRAC mode-of-action classification." ;
+                                                                       rdfs:label "has FRAC group" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_harvest_restriction
+<https://gwsp.cs.ksu.edu/disease-management/management/has_harvest_restriction> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                                rdfs:range <https://gwsp.cs.ksu.edu/disease-management/management/Harvest_Restriction> ;
+                                                                                rdfs:comment "Links a Fungicide to its Harvest Restriction (pre-harvest interval)." ;
+                                                                                rdfs:label "has harvest restriction" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_resistance_type
+<https://gwsp.cs.ksu.edu/disease-management/management/has_resistance_type> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Host_Resistance> ;
+                                                                            rdfs:range <https://gwsp.cs.ksu.edu/disease-management/management/Resistance_Type> ;
+                                                                            rdfs:comment "Links Host Resistance to its genetic category (vertical or horizontal)." ;
+                                                                            rdfs:label "has resistance type" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/targets
+<https://gwsp.cs.ksu.edu/disease-management/management/targets> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy> ;
+                                                                rdfs:range <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                rdfs:comment "Links a Disease Management Strategy to the Disease it aims to control." ;
+                                                                rdfs:label "targets" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/dispersed_by
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/dispersed_by> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                                                                   rdfs:range <https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism> ;
+                                                                   rdfs:comment "Links a Pathogen to the Dispersal Mechanism that transports its inoculum from the reservoir to a new host. Determines the spatial scale and timing of epidemic development." ;
+                                                                   rdfs:label "dispersed by" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/favoured_by
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/favoured_by> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                                                                  rdfs:range <https://gwsp.cs.ksu.edu/disease-management/pathogen/Infection_Condition> ;
+                                                                  rdfs:comment "Links a Pathogen to the environmental conditions (temperature, humidity, rainfall) that promote its development and infection success. Represents the pathogen-environment edge of the disease triangle." ;
+                                                                  rdfs:label "favoured by" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/survives_in
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/survives_in> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                                                                  rdfs:range <https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir> ;
+                                                                  rdfs:comment "Links a Pathogen to the Inoculum Reservoir in which it persists between crop seasons. Understanding survival sites is the basis for cultural control strategies." ;
+                                                                  rdfs:label "survives in" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_incidence_percent
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_incidence_percent> rdf:type owl:DatatypeProperty ;
+                                                                           rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Incidence> ;
+                                                                           rdfs:range xsd:float ;
+                                                                           rdfs:comment "The measured disease incidence as a percentage (0â€“100)." ;
+                                                                           rdfs:label "has incidence percent" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_rating_score
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_rating_score> rdf:type owl:DatatypeProperty ;
+                                                                      rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Rating> ;
+                                                                      rdfs:range xsd:integer ;
+                                                                      rdfs:comment "The disease rating on a standardised ordinal scale (e.g., 0â€“9)." ;
+                                                                      rdfs:label "has rating score" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_severity_percent
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_severity_percent> rdf:type owl:DatatypeProperty ;
+                                                                          rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Severity> ;
+                                                                          rdfs:range xsd:float ;
+                                                                          rdfs:comment "The measured disease severity as a percentage of tissue area affected (0â€“100)." ;
+                                                                          rdfs:label "has severity percent" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/has_yield_loss_percent
+<https://gwsp.cs.ksu.edu/disease-management/disease/has_yield_loss_percent> rdf:type owl:DatatypeProperty ;
+                                                                            rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/disease/Yield_Loss> ;
+                                                                            rdfs:range xsd:float ;
+                                                                            rdfs:comment "The estimated yield reduction caused by disease, expressed as a percentage of disease-free yield potential." ;
+                                                                            rdfs:label "has yield loss percent" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_efficacy_rating
+<https://gwsp.cs.ksu.edu/disease-management/management/has_efficacy_rating> rdf:type owl:DatatypeProperty ;
+                                                                            rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                            rdfs:range xsd:string ;
+                                                                            rdfs:comment "A qualitative or semi-quantitative rating of the fungicide's effectiveness against a specific disease, typically expressed as Excellent, Good, Fair, Poor, or Not Effective." ;
+                                                                            rdfs:label "has efficacy rating" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_phi_days
+<https://gwsp.cs.ksu.edu/disease-management/management/has_phi_days> rdf:type owl:DatatypeProperty ;
+                                                                     rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                     rdfs:range xsd:integer ;
+                                                                     rdfs:comment "The pre-harvest interval in days for a specific fungicide product." ;
+                                                                     rdfs:label "has PHI days" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_product_name
+<https://gwsp.cs.ksu.edu/disease-management/management/has_product_name> rdf:type owl:DatatypeProperty ;
+                                                                         rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                         rdfs:range xsd:string ;
+                                                                         rdfs:comment "The commercial trade name of a fungicide product as registered with the EPA." ;
+                                                                         rdfs:label "has product name" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_rate_max_fl_oz_per_acre
+<https://gwsp.cs.ksu.edu/disease-management/management/has_rate_max_fl_oz_per_acre> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                                    rdfs:range xsd:float ;
+                                                                                    rdfs:comment "The maximum labelled application rate in fluid ounces per acre." ;
+                                                                                    rdfs:label "has rate max (fl oz/acre)" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_rate_min_fl_oz_per_acre
+<https://gwsp.cs.ksu.edu/disease-management/management/has_rate_min_fl_oz_per_acre> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                                    rdfs:range xsd:float ;
+                                                                                    rdfs:comment "The minimum labelled application rate in fluid ounces per acre." ;
+                                                                                    rdfs:label "has rate min (fl oz/acre)" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/has_threshold_severity
+<https://gwsp.cs.ksu.edu/disease-management/management/has_threshold_severity> rdf:type owl:DatatypeProperty ;
+                                                                               rdfs:domain <https://gwsp.cs.ksu.edu/disease-management/management/Economic_Threshold> ;
+                                                                               rdfs:range xsd:float ;
+                                                                               rdfs:comment "The disease severity percentage at which treatment becomes economically justified." ;
+                                                                               rdfs:label "has threshold severity" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://gwsp.cs.ksu.edu/disease-management/Disease_Management
+:Disease_Management rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :addresses_disease ;
+                                      owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/disease/Disease>
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :implemented_through_strategy ;
+                                      owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy>
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :involves_host ;
+                                      owl:someValuesFrom <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar>
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :involves_pathogen ;
+                                      owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen>
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :occurs_in_environment ;
+                                      owl:someValuesFrom <https://gwsp.cs.ksu.edu/nutrient-management/environment/Environment>
+                                    ] ;
+                    rdfs:comment "The overarching discipline of preventing, diagnosing, and controlling plant diseases to protect crop yield and quality. Disease management integrates knowledge of the pathogen (biology, survival, dispersal), the disease (symptoms, assessment, yield impact), and the available management strategies (chemical, cultural, genetic) within the constraints of the environment and the host genotype. This root concept connects all three modules of the disease management ontology and bridges to the nutrient management ontology for shared environmental and crop concepts." ;
+                    rdfs:label "Disease Management" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Bacterial_Disease
+<https://gwsp.cs.ksu.edu/disease-management/disease/Bacterial_Disease> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                       rdfs:comment "A plant disease caused by a bacterial pathogen. Generally less common than fungal diseases in wheat but important in broader crop systems. No curative chemical treatments comparable to fungicides; managed primarily through copper applications, resistant cultivars, and cultural practices." ;
+                                                                       rdfs:label "Bacterial Disease" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Disease
+<https://gwsp.cs.ksu.edu/disease-management/disease/Disease> rdf:type owl:Class ;
+                                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/affects_host> ;
+                                                                               owl:someValuesFrom <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar>
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> ;
+                                                                               owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen>
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/causes_yield_loss> ;
+                                                                               owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/disease/Yield_Loss>
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/conditioned_by> ;
+                                                                               owl:someValuesFrom <https://gwsp.cs.ksu.edu/nutrient-management/environment/Environment>
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/has_assessment> ;
+                                                                               owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Assessment>
+                                                                             ] ;
+                                                             rdfs:comment "A pathological condition of a plant characterised by a set of symptoms that result from the interaction between a susceptible host, a virulent pathogen, and a favourable environment (the disease triangle). A disease is distinct from the pathogen that causes it: Leaf Rust is a disease; Puccinia triticina is the pathogen. This distinction allows the same pathogen to cause different diseases under different conditions, and the same disease symptoms to sometimes result from different pathogens." ;
+                                                             rdfs:label "Disease" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Assessment
+<https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Assessment> rdf:type owl:Class ;
+                                                                        rdfs:comment "The quantitative or qualitative evaluation of disease presence and severity on a crop. Disease assessment provides the data needed to make treatment decisions, evaluate cultivar resistance, and estimate yield loss. The two standard metrics are incidence and severity." ;
+                                                                        rdfs:label "Disease Assessment" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Incidence
+<https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Incidence> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Assessment> ;
+                                                                       rdfs:comment "The proportion of plant units (plants, tillers, leaves, or heads) that show any disease symptoms, expressed as a percentage (0â€“100%). Incidence measures the spatial spread of disease within a field or plot but does not indicate how severely individual plants are affected." ;
+                                                                       rdfs:label "Disease Incidence" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Rating
+<https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Rating> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Assessment> ;
+                                                                    rdfs:comment "An ordinal classification of overall disease reaction, typically on a 0â€“9 or 1â€“9 scale, used in disease nurseries and variety trials to summarise combined incidence and severity into a single score for cultivar comparison." ;
+                                                                    rdfs:label "Disease Rating" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Resistance_Rating
+<https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Resistance_Rating> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/for_cultivar> ;
+                                                                                                 owl:someValuesFrom <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar>
+                                                                                               ] ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/for_disease> ;
+                                                                                                 owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/disease/Disease>
+                                                                                               ] ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/has_resistance_level> ;
+                                                                                                 owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level>
+                                                                                               ] ;
+                                                                               rdfs:comment "An evaluation of a specific cultivar's genetic resistance to a specific disease, expressed on a standardised ordinal scale. This entity connects three things: the cultivar (who), the disease (which disease), and the resistance level (how resistant). A single cultivar may have different ratings for different diseases." ;
+                                                                               rdfs:label "Disease Resistance Rating" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Severity
+<https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Severity> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Assessment> ;
+                                                                      rdfs:comment "The proportion of plant tissue area that is visibly affected by disease symptoms, expressed as a percentage (0â€“100%). Severity is typically estimated using standard area diagrams or visual rating scales. It is the more informative metric for predicting yield loss because it reflects the actual amount of photosynthetic tissue destroyed." ;
+                                                                      rdfs:label "Disease Severity" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Triangle
+<https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Triangle> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/has_environment_component> ;
+                                                                                        owl:someValuesFrom <https://gwsp.cs.ksu.edu/nutrient-management/environment/Environment>
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/has_host_component> ;
+                                                                                        owl:someValuesFrom <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar>
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/disease/has_pathogen_component> ;
+                                                                                        owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen>
+                                                                                      ] ;
+                                                                      rdfs:comment "The foundational conceptual model of plant pathology: disease occurs when and only when three conditions are simultaneously met â€” (1) a susceptible Host is present, (2) a virulent Pathogen is present with sufficient inoculum, and (3) the Environment is favourable for infection and disease development. If any one vertex is absent or unfavourable, disease does not occur. Each management strategy (host resistance, chemical control, cultural practice) works by disrupting one or more vertices of the triangle." ;
+                                                                      rdfs:label "Disease Triangle" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Fungal_Disease
+<https://gwsp.cs.ksu.edu/disease-management/disease/Fungal_Disease> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                    rdfs:comment "A plant disease caused by a fungal pathogen. The largest category of crop diseases; includes rusts, smuts, blights, rots, and leaf spots. Fungal diseases are the primary targets of chemical control (fungicides) and host resistance breeding." ;
+                                                                    rdfs:label "Fungal Disease" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level
+<https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level> rdf:type owl:Class ;
+                                                                      rdfs:comment "An ordinal category on the standard 5-point resistance scale used in wheat disease nurseries and variety performance trials. Ranges from Resistant (minimal symptom development) to Susceptible (severe symptom development and yield loss)." ;
+                                                                      rdfs:label "Resistance Level" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Viral_Disease
+<https://gwsp.cs.ksu.edu/disease-management/disease/Viral_Disease> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/disease/Disease> ;
+                                                                   rdfs:comment "A plant disease caused by a viral pathogen. Characterised by mosaic patterns, stunting, and chlorosis. No curative treatments exist; management relies entirely on prevention: resistant cultivars, vector control (insecticide seed treatments), elimination of the green bridge, and certified virus-free seed." ;
+                                                                   rdfs:label "Viral Disease" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease
+<https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/disease/Fungal_Disease> ;
+                                                                          rdfs:comment "A fungal disease that affects wheat (Triticum aestivum). This subclass groups the ten major fungal diseases of wheat modeled in this ontology. While the ontology is wheat-primary, the parent class (Fungal_Disease) is crop-agnostic and extensible." ;
+                                                                          rdfs:label "Wheat Fungal Disease" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Yield_Loss
+<https://gwsp.cs.ksu.edu/disease-management/disease/Yield_Loss> rdf:type owl:Class ;
+                                                                rdfs:comment "The reduction in crop yield attributable to disease, expressed as a percentage of the disease-free yield potential or as an absolute quantity (kg/ha). Yield loss is the economic consequence of disease that drives management decisions: treatment is justified when the cost of yield loss exceeds the cost of control." ;
+                                                                rdfs:label "Yield Loss" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Active_Ingredient
+<https://gwsp.cs.ksu.edu/disease-management/management/Active_Ingredient> rdf:type owl:Class ;
+                                                                          rdfs:comment "The specific chemical compound within a fungicide product that is responsible for its biological activity against the target pathogen. A single commercial product may contain one or more active ingredients, often from different FRAC groups to broaden the spectrum and delay resistance development." ;
+                                                                          rdfs:label "Active Ingredient" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Application_Timing
+<https://gwsp.cs.ksu.edu/disease-management/management/Application_Timing> rdf:type owl:Class ;
+                                                                           rdfs:comment "The crop growth stage at which a fungicide is applied. Timing relative to infection is critical for efficacy: preventive applications must occur before spore germination; curative applications must occur within 24â€“72 hours after infection. Growth stages reuse concepts from the nutrient management ontology where applicable." ;
+                                                                           rdfs:label "Application Timing" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Chemical_Control
+<https://gwsp.cs.ksu.edu/disease-management/management/Chemical_Control> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy> ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/management/applies_fungicide> ;
+                                                                                           owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide>
+                                                                                         ] ;
+                                                                         rdfs:comment "Disease management through the application of synthetic or biological chemical compounds (fungicides) that kill or inhibit pathogen growth. Chemical control disrupts the pathogen vertex of the disease triangle by directly reducing pathogen viability or preventing infection. Effective but must be integrated with other strategies to manage fungicide resistance." ;
+                                                                         rdfs:label "Chemical Control" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Cultural_Control
+<https://gwsp.cs.ksu.edu/disease-management/management/Cultural_Control> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy> ;
+                                                                         rdfs:comment "Disease management through agronomic practices that reduce pathogen inoculum, break disease cycles, or create conditions unfavourable for infection â€” without applying chemical products. Cultural control disrupts the environment and/or pathogen vertices of the disease triangle. Often the most sustainable and cost-effective approach, especially for soilborne diseases where chemical options are limited." ;
+                                                                         rdfs:label "Cultural Control" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy
+<https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/management/disrupts> ;
+                                                                                                      owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/disease/Disease_Triangle>
+                                                                                                    ] ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/management/targets> ;
+                                                                                                      owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/disease/Disease>
+                                                                                                    ] ;
+                                                                                    rdfs:comment "An intervention that prevents, reduces, or eliminates plant disease by disrupting one or more vertices of the disease triangle. Integrated disease management (IDM) combines multiple strategies â€” chemical, cultural, and genetic â€” to achieve durable control while minimising fungicide resistance risk and environmental impact." ;
+                                                                                    rdfs:label "Disease Management Strategy" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Economic_Threshold
+<https://gwsp.cs.ksu.edu/disease-management/management/Economic_Threshold> rdf:type owl:Class ;
+                                                                           rdfs:comment "The disease severity or incidence level at which the cost of yield loss from the disease exceeds the cost of applying a fungicide treatment. Below the threshold, the disease is present but treatment is not economically justified. The threshold depends on fungicide cost, application cost, expected yield, grain price, and the efficacy of the fungicide against the specific disease." ;
+                                                                           rdfs:label "Economic Threshold" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group
+<https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group> rdf:type owl:Class ;
+                                                                   rdfs:comment "A classification category defined by the Fungicide Resistance Action Committee (FRAC) that groups fungicide active ingredients by their biochemical mode of action. Products within the same FRAC group share the same resistance risk: repeated use of a single group selects for resistant pathogen populations. Alternating or mixing FRAC groups is a core resistance management strategy." ;
+                                                                   rdfs:label "FRAC Group" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Foliar_Fungicide
+<https://gwsp.cs.ksu.edu/disease-management/management/Foliar_Fungicide> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                         rdfs:comment "A fungicide applied to the crop canopy as a spray to control foliar and head diseases (rusts, leaf spots, head blight). Applied at specific growth stages (flag leaf, flowering) using ground or aerial equipment. Subject to pre-harvest intervals that restrict the minimum time between application and harvest." ;
+                                                                         rdfs:label "Foliar Fungicide" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Fungicide
+<https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/management/has_active_ingredient> ;
+                                                                                    owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/management/Active_Ingredient>
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/management/has_application_timing> ;
+                                                                                    owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/management/Application_Timing>
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/management/has_frac_group> ;
+                                                                                    owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group>
+                                                                                  ] ;
+                                                                  rdfs:comment "A chemical product applied to control fungal diseases. Each fungicide contains one or more active ingredients, belongs to a FRAC mode-of-action group, and is applied at a specified rate and growth stage. Fungicides may be preventive (protectant), curative, or eradicant depending on their mode of action and timing relative to infection." ;
+                                                                  rdfs:label "Fungicide" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Harvest_Restriction
+<https://gwsp.cs.ksu.edu/disease-management/management/Harvest_Restriction> rdf:type owl:Class ;
+                                                                            rdfs:comment "The minimum number of days (pre-harvest interval, PHI) that must elapse between the last fungicide application and crop harvest. Required by regulatory agencies to ensure pesticide residues decline to safe levels before grain enters the food or feed supply. PHI values are product-specific and stated on the fungicide label." ;
+                                                                            rdfs:label "Harvest Restriction" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Host_Resistance
+<https://gwsp.cs.ksu.edu/disease-management/management/Host_Resistance> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/management/Disease_Management_Strategy> ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/management/evaluated_in> ;
+                                                                                          owl:someValuesFrom <https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar>
+                                                                                        ] ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/management/has_resistance_type> ;
+                                                                                          owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/management/Resistance_Type>
+                                                                                        ] ;
+                                                                        rdfs:comment "Disease management through the deployment of genetically resistant crop cultivars. Host resistance disrupts the host vertex of the disease triangle by reducing the plant's susceptibility to pathogen infection or colonisation. The most cost-effective and environmentally sound management strategy; requires no additional inputs once the resistant cultivar is selected." ;
+                                                                        rdfs:label "Host Resistance" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Resistance_Type
+<https://gwsp.cs.ksu.edu/disease-management/management/Resistance_Type> rdf:type owl:Class ;
+                                                                        rdfs:comment "The genetic and mechanistic category of host resistance. The two fundamental types â€” vertical and horizontal â€” differ in their genetic basis, specificity, durability, and breeding implications." ;
+                                                                        rdfs:label "Resistance Type" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Seed_Treatment
+<https://gwsp.cs.ksu.edu/disease-management/management/Seed_Treatment> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/management/Fungicide> ;
+                                                                       rdfs:comment "A fungicide applied directly to seed before planting to protect against seedborne and soilborne pathogens during germination and early seedling growth. Includes contact treatments (surface protection) and systemic treatments (absorbed and translocated within the seedling). Essential for bunt, smut, and seedling blight control." ;
+                                                                       rdfs:label "Seed Treatment" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Bacterial_Pathogen
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Bacterial_Pathogen> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                                                                         rdfs:comment "A prokaryotic microorganism that causes disease in plants. Bacterial pathogens typically enter through natural openings (stomata, lenticels) or wounds, and often require free water on plant surfaces for infection. Managed primarily through copper-based bactericides, resistant cultivars, and cultural practices. Less common than fungal diseases in wheat but important in other crop systems." ;
+                                                                         rdfs:label "Bacterial Pathogen" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism> rdf:type owl:Class ;
+                                                                          rdfs:comment "A physical or biological process by which pathogen inoculum (spores, cells, viral particles) is transported from its reservoir to a new host. Dispersal determines the spatial scale of disease spread: wind can move rust spores hundreds of kilometres, while rain-splash moves Septoria spores only a few metres vertically within the canopy." ;
+                                                                          rdfs:label "Dispersal Mechanism" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                                                                      rdfs:comment "A eukaryotic, heterotrophic organism belonging to the kingdom Fungi that causes disease in plants. Fungal pathogens are the most important group of crop pathogens worldwide, responsible for roughly 70â€“80% of plant diseases with known causal agents. They reproduce via spores and may be obligate biotrophs (rusts, smuts) or necrotrophs (Fusarium, Rhizoctonia)." ;
+                                                                      rdfs:label "Fungal Pathogen" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Infection_Condition
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Infection_Condition> rdf:type owl:Class ;
+                                                                          rdfs:comment "An environmental factor that promotes or suppresses pathogen development and host infection. Infection conditions represent the environment vertex of the disease triangle as it affects the pathogen: temperature optima for spore germination, humidity thresholds for infection, and rainfall duration for leaf wetness. These are the same physical variables defined in the environment module of the nutrient management ontology but viewed through the lens of disease epidemiology." ;
+                                                                          rdfs:label "Infection Condition" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir> rdf:type owl:Class ;
+                                                                         rdfs:comment "A substrate or environment in which a pathogen survives between crop seasons (the 'off-season'). The reservoir is the source of primary inoculum that initiates disease in the next crop. Understanding the reservoir is essential for cultural control strategies: if the pathogen survives in residue, residue management breaks the cycle; if it survives in seed, seed treatment is the intervention point." ;
+                                                                         rdfs:label "Inoculum Reservoir" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> rdf:type owl:Class ;
+                                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/pathogen/dispersed_by> ;
+                                                                                 owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism>
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/pathogen/favoured_by> ;
+                                                                                 owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/pathogen/Infection_Condition>
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <https://gwsp.cs.ksu.edu/disease-management/pathogen/survives_in> ;
+                                                                                 owl:someValuesFrom <https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir>
+                                                                               ] ;
+                                                               rdfs:comment "A biological agent capable of causing disease in a living host organism. In the context of this ontology, pathogens are microorganisms (fungi, bacteria, viruses) that infect crop plants and cause economically significant yield or quality losses. Pathogen is one vertex of the disease triangle." ;
+                                                               rdfs:label "Pathogen" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Viral_Pathogen
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Viral_Pathogen> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <https://gwsp.cs.ksu.edu/disease-management/pathogen/Pathogen> ;
+                                                                     rdfs:comment "An obligate intracellular parasite consisting of nucleic acid enclosed in a protein coat that causes disease in plants. Viral pathogens require a living host cell to replicate and are typically transmitted by insect vectors (aphids, leafhoppers), infected seed, or mechanical contact. No curative chemical treatments exist; management relies on resistant cultivars, vector control, and certified seed." ;
+                                                                     rdfs:label "Viral Pathogen" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/environment/Environment
+<https://gwsp.cs.ksu.edu/nutrient-management/environment/Environment> rdf:type owl:Class ;
+                                                                      rdfs:comment "Stub â€” defined in environment module (nutrient management). The environmental context including weather, soil, and location." ;
+                                                                      rdfs:label "Environment" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/environment/Precipitation
+<https://gwsp.cs.ksu.edu/nutrient-management/environment/Precipitation> rdf:type owl:Class ;
+                                                                        rdfs:comment "Stub â€” defined in environment module. Rainfall; provides leaf wetness for infection and rain-splash dispersal of spores." ;
+                                                                        rdfs:label "Precipitation" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/environment/Relative_Humidity
+<https://gwsp.cs.ksu.edu/nutrient-management/environment/Relative_Humidity> rdf:type owl:Class ;
+                                                                            rdfs:comment "Stub â€” defined in environment module. Relative humidity; high values promote spore germination and foliar infection." ;
+                                                                            rdfs:label "Relative Humidity" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/environment/Soil_Moisture
+<https://gwsp.cs.ksu.edu/nutrient-management/environment/Soil_Moisture> rdf:type owl:Class ;
+                                                                        rdfs:comment "Stub â€” defined in environment module. Soil moisture; influences soilborne pathogen mobility and root disease severity." ;
+                                                                        rdfs:label "Soil Moisture" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/environment/Soil_Temperature
+<https://gwsp.cs.ksu.edu/nutrient-management/environment/Soil_Temperature> rdf:type owl:Class ;
+                                                                           rdfs:comment "Stub â€” defined in environment module. Soil temperature; governs soilborne pathogen activity and seed rot/seedling blight risk." ;
+                                                                           rdfs:label "Soil Temperature" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/environment/Temperature
+<https://gwsp.cs.ksu.edu/nutrient-management/environment/Temperature> rdf:type owl:Class ;
+                                                                      rdfs:comment "Stub â€” defined in environment module. Air temperature; a key driver of pathogen development rate and infection success." ;
+                                                                      rdfs:label "Temperature" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/environment/Wind_Speed
+<https://gwsp.cs.ksu.edu/nutrient-management/environment/Wind_Speed> rdf:type owl:Class ;
+                                                                     rdfs:comment "Stub â€” defined in environment module. Wind speed; primary mechanism for long-distance dispersal of airborne spores." ;
+                                                                     rdfs:label "Wind Speed" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/fertilization/Management_Practice
+<https://gwsp.cs.ksu.edu/nutrient-management/fertilization/Management_Practice> rdf:type owl:Class ;
+                                                                                rdfs:comment "Stub â€” defined in fertilization module. An agronomic action that modifies crop production conditions. Cultural disease control practices overlap with nutrient management practices." ;
+                                                                                rdfs:label "Management Practice" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Crop_Species
+<https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Crop_Species> rdf:type owl:Class ;
+                                                                    rdfs:comment "Stub â€” defined in nutrient module. The botanical species of the crop being grown." ;
+                                                                    rdfs:label "Crop Species" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar
+<https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Cultivar> rdf:type owl:Class ;
+                                                                rdfs:comment "Stub â€” defined in nutrient module. A named crop variety; the host component of the disease triangle." ,
+                                                                             "Stub â€” defined in nutrient module. A named crop variety; the subject of host resistance evaluation." ;
+                                                                rdfs:label "Cultivar" .
+
+
+###  https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Yield_Response
+<https://gwsp.cs.ksu.edu/nutrient-management/nutrient/Yield_Response> rdf:type owl:Class ;
+                                                                      rdfs:comment "Stub â€” defined in nutrient module. Crop yield measurements that may be reduced by disease." ;
+                                                                      rdfs:label "Yield Response" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Bacterial_Leaf_Streak
+<https://gwsp.cs.ksu.edu/disease-management/disease/Bacterial_Leaf_Streak> rdf:type owl:NamedIndividual ,
+                                                                                    <https://gwsp.cs.ksu.edu/disease-management/disease/Bacterial_Disease> ;
+                                                                           <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Xanthomonas_translucens> ;
+                                                                           rdfs:comment "Caused by Xanthomonas translucens. Produces water-soaked, translucent streaks on leaves that become necrotic. Favoured by warm, humid conditions with wind-driven rain. No effective chemical control; managed by resistant cultivars and clean seed." ;
+                                                                           rdfs:label "Bacterial Leaf Streak" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Barley_Yellow_Dwarf
+<https://gwsp.cs.ksu.edu/disease-management/disease/Barley_Yellow_Dwarf> rdf:type owl:NamedIndividual ,
+                                                                                  <https://gwsp.cs.ksu.edu/disease-management/disease/Viral_Disease> ;
+                                                                         <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Barley_Yellow_Dwarf_Virus> ;
+                                                                         rdfs:comment "Caused by Barley Yellow Dwarf Virus, transmitted by cereal aphids. Causes yellowing or purpling of flag leaves and reduced grain fill. Managed by insecticidal seed treatment to control aphid vectors and by tolerant cultivars." ;
+                                                                         rdfs:label "Barley Yellow Dwarf" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Common_Bunt
+<https://gwsp.cs.ksu.edu/disease-management/disease/Common_Bunt> rdf:type owl:NamedIndividual ,
+                                                                          <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                                 <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Tilletia_spp> ;
+                                                                 rdfs:comment "Also called stinking smut. Caused by Tilletia spp. Infected kernels are replaced by masses of dark, foul-smelling teliospores (bunt balls). Seedborne and soilborne; infection occurs at germination when cool, moist soil conditions prevail. Almost completely controlled by modern fungicidal seed treatments." ;
+                                                                 rdfs:label "Common Bunt" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Fusarium_Foot_Rot
+<https://gwsp.cs.ksu.edu/disease-management/disease/Fusarium_Foot_Rot> rdf:type owl:NamedIndividual ,
+                                                                                <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                                       <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fusarium_spp> ;
+                                                                       rdfs:comment "A soilborne disease caused by Fusarium spp. that attacks the crown and lower stem of wheat. Causes browning of the stem base, stunting, and premature death of tillers. Favoured by wet, cool soil conditions. Managed by seed treatment, crop rotation, and avoiding compacted soils." ;
+                                                                       rdfs:label "Fusarium Foot Rot" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Fusarium_Head_Blight
+<https://gwsp.cs.ksu.edu/disease-management/disease/Fusarium_Head_Blight> rdf:type owl:NamedIndividual ,
+                                                                                   <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                                          <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fusarium_graminearum> ;
+                                                                          rdfs:comment "Also called scab. Caused by Fusarium graminearum. Infects spikelets at flowering, causing premature bleaching of the head. Produces the mycotoxin deoxynivalenol (DON/vomitoxin) that causes grain quality rejection. Favoured by warm, humid conditions during anthesis. Managed by moderately resistant cultivars, fungicide at flowering, and crop rotation." ;
+                                                                          rdfs:label "Fusarium Head Blight" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Intermediate
+<https://gwsp.cs.ksu.edu/disease-management/disease/Intermediate> rdf:type owl:NamedIndividual ,
+                                                                           <https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level> ;
+                                                                  rdfs:comment "Moderate disease development; the cultivar is neither clearly resistant nor clearly susceptible. May show variable response across environments. Typical severity 20â€“40%." ;
+                                                                  rdfs:label "Intermediate" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Leaf_Rust
+<https://gwsp.cs.ksu.edu/disease-management/disease/Leaf_Rust> rdf:type owl:NamedIndividual ,
+                                                                        <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                               <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_triticina> ;
+                                                               rdfs:comment "The most common rust disease of wheat worldwide. Caused by Puccinia triticina. Produces small, circular, orange-brown pustules (uredinia) primarily on the upper leaf surface. Favoured by moderate temperatures (15â€“22 degrees C) and high humidity. Yield losses of 10â€“30% are typical in susceptible cultivars during epidemic years. Managed by resistant cultivars and foliar fungicides applied at flag leaf." ;
+                                                               rdfs:label "Leaf Rust" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Leaf_Spot_Complex
+<https://gwsp.cs.ksu.edu/disease-management/disease/Leaf_Spot_Complex> rdf:type owl:NamedIndividual ,
+                                                                                <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                                       <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Septoria_Stagonospora_complex> ;
+                                                                       rdfs:comment "A complex of diseases caused by Zymoseptoria tritici (Septoria tritici blotch) and Parastagonospora nodorum (Stagonospora nodorum blotch). Produces tan to brown necrotic lesions with dark fruiting bodies (pycnidia). Residue-borne; rain-splash moves spores upward through the canopy. Favoured by cool, wet conditions." ;
+                                                                       rdfs:label "Leaf Spot Complex" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Loose_Smut
+<https://gwsp.cs.ksu.edu/disease-management/disease/Loose_Smut> rdf:type owl:NamedIndividual ,
+                                                                         <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                                <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Ustilago_tritici> ;
+                                                                rdfs:comment "Caused by Ustilago tritici. The entire head is replaced by a mass of dark spores that are dispersed by wind. Unique infection cycle: the pathogen infects the developing embryo at flowering and remains dormant inside the seed until the next season. Only controlled by systemic seed treatments that penetrate the embryo." ;
+                                                                rdfs:label "Loose Smut" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Moderately_Resistant
+<https://gwsp.cs.ksu.edu/disease-management/disease/Moderately_Resistant> rdf:type owl:NamedIndividual ,
+                                                                                   <https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level> ;
+                                                                          rdfs:comment "Low disease development; symptoms present but limited in extent. Partial resistance slows epidemic progress. Typical severity 5â€“20%." ;
+                                                                          rdfs:label "Moderately Resistant" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Moderately_Susceptible
+<https://gwsp.cs.ksu.edu/disease-management/disease/Moderately_Susceptible> rdf:type owl:NamedIndividual ,
+                                                                                     <https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level> ;
+                                                                            rdfs:comment "Substantial disease development; symptoms widespread but yield loss is partially limited by residual resistance. Typical severity 40â€“60%. Fungicide application is often economically justified." ;
+                                                                            rdfs:label "Moderately Susceptible" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Resistant
+<https://gwsp.cs.ksu.edu/disease-management/disease/Resistant> rdf:type owl:NamedIndividual ,
+                                                                        <https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level> ;
+                                                               rdfs:comment "Little or no disease development under favourable conditions for infection. The cultivar carries effective major genes or strong quantitative resistance. Typical severity <5%." ;
+                                                               rdfs:label "Resistant" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Sharp_Eyespot
+<https://gwsp.cs.ksu.edu/disease-management/disease/Sharp_Eyespot> rdf:type owl:NamedIndividual ,
+                                                                            <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                                   <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Rhizoctonia_cerealis> ;
+                                                                   rdfs:comment "Caused by Rhizoctonia cerealis. Produces sharp-bordered, eye-shaped lesions on the stem base. Soilborne; favoured by cool, wet conditions and conservation tillage that retains surface residue. Managed by seed treatment and crop rotation." ;
+                                                                   rdfs:label "Sharp Eyespot" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Stem_Rust
+<https://gwsp.cs.ksu.edu/disease-management/disease/Stem_Rust> rdf:type owl:NamedIndividual ,
+                                                                        <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                               <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_graminis_tritici> ;
+                                                               rdfs:comment "Caused by Puccinia graminis f. sp. tritici. Produces large, elongated, dark reddish-brown pustules on stems, leaves, and heads. Favoured by warm temperatures (25â€“30 degrees C). Historically the most destructive wheat disease; the Ug99 race group threatens global wheat production. Yield losses can exceed 50% in susceptible cultivars." ;
+                                                               rdfs:label "Stem Rust" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Stripe_Rust
+<https://gwsp.cs.ksu.edu/disease-management/disease/Stripe_Rust> rdf:type owl:NamedIndividual ,
+                                                                          <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                                 <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_striiformis_tritici> ;
+                                                                 rdfs:comment "Caused by Puccinia striiformis f. sp. tritici. Produces yellow to orange pustules arranged in stripes along the leaf veins. Favoured by cool temperatures (10â€“15 degrees C) and high humidity. Increasingly important in the southern Great Plains due to adaptation of new races to warmer climates." ;
+                                                                 rdfs:label "Stripe Rust" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Susceptible
+<https://gwsp.cs.ksu.edu/disease-management/disease/Susceptible> rdf:type owl:NamedIndividual ,
+                                                                          <https://gwsp.cs.ksu.edu/disease-management/disease/Resistance_Level> ;
+                                                                 rdfs:comment "Severe disease development with extensive symptom coverage and significant yield loss. No effective genetic resistance; chemical or cultural control is essential. Typical severity >60%." ;
+                                                                 rdfs:label "Susceptible" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Take_All
+<https://gwsp.cs.ksu.edu/disease-management/disease/Take_All> rdf:type owl:NamedIndividual ,
+                                                                       <https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Fungal_Disease> ;
+                                                              <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Gaeumannomyces_graminis> ;
+                                                              rdfs:comment "Caused by Gaeumannomyces graminis var. tritici. A soilborne root and crown rot that blackens the root system and causes whiteheads (premature ripening of individual heads). No effective fungicides; managed by crop rotation (2+ years away from wheat/barley) and maintaining soil pH below 6.5." ;
+                                                              rdfs:label "Take-All" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Streak_Mosaic
+<https://gwsp.cs.ksu.edu/disease-management/disease/Wheat_Streak_Mosaic> rdf:type owl:NamedIndividual ,
+                                                                                  <https://gwsp.cs.ksu.edu/disease-management/disease/Viral_Disease> ;
+                                                                         <https://gwsp.cs.ksu.edu/disease-management/disease/caused_by> <https://gwsp.cs.ksu.edu/disease-management/pathogen/Wheat_Streak_Mosaic_Virus> ;
+                                                                         rdfs:comment "Caused by Wheat Streak Mosaic Virus, transmitted by the wheat curl mite. Produces yellow-green mosaic patterns and leaf streaking. Managed by eliminating volunteer wheat (the green bridge), delayed planting, and resistant cultivars." ;
+                                                                         rdfs:label "Wheat Streak Mosaic" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/At_Planting_Seed_Treatment
+<https://gwsp.cs.ksu.edu/disease-management/management/At_Planting_Seed_Treatment> rdf:type owl:NamedIndividual ,
+                                                                                            <https://gwsp.cs.ksu.edu/disease-management/management/Application_Timing> ;
+                                                                                   rdfs:comment "Fungicidal seed treatment applied before or during planting. Targets seedborne pathogens (bunt, smut) and soilborne seedling diseases (Fusarium, Pythium, Rhizoctonia) during germination and emergence." ;
+                                                                                   rdfs:label "At Planting (Seed Treatment)" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Crop_Rotation
+<https://gwsp.cs.ksu.edu/disease-management/management/Crop_Rotation> rdf:type owl:NamedIndividual ,
+                                                                               <https://gwsp.cs.ksu.edu/disease-management/management/Cultural_Control> ;
+                                                                      rdfs:comment "Growing non-host crops in alternating seasons to break the disease cycle by depriving soilborne and residue-borne pathogens of their host. Particularly effective for take-all (requires 2+ years of non-cereal crops) and Fusarium foot rot. Less effective for wind-dispersed pathogens (rusts) whose inoculum arrives from distant sources." ;
+                                                                      rdfs:label "Crop Rotation" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/FRAC_11_QoI
+<https://gwsp.cs.ksu.edu/disease-management/management/FRAC_11_QoI> rdf:type owl:NamedIndividual ,
+                                                                             <https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group> ;
+                                                                    rdfs:comment "Quinone outside Inhibitors, commonly called strobilurins. Block mitochondrial respiration at Complex III. Broad-spectrum with strong preventive activity. Examples: azoxystrobin, pyraclostrobin, trifloxystrobin. High resistance risk; widespread resistance in Septoria and powdery mildew populations in some regions." ;
+                                                                    rdfs:label "FRAC 11 â€“ QoI (Strobilurins)" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/FRAC_3_11_Premix
+<https://gwsp.cs.ksu.edu/disease-management/management/FRAC_3_11_Premix> rdf:type owl:NamedIndividual ,
+                                                                                  <https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group> ;
+                                                                         rdfs:comment "A pre-mixed fungicide product combining FRAC 3 (DMI) and FRAC 11 (QoI) active ingredients. Provides broad-spectrum control with both systemic curative and preventive modes. Resistance monitoring is important for the QoI component." ;
+                                                                         rdfs:label "FRAC 3 + 11 Premix" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/FRAC_3_7_Premix
+<https://gwsp.cs.ksu.edu/disease-management/management/FRAC_3_7_Premix> rdf:type owl:NamedIndividual ,
+                                                                                 <https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group> ;
+                                                                        rdfs:comment "A pre-mixed fungicide product containing active ingredients from both FRAC 3 (DMI) and FRAC 7 (SDHI) groups. Combines the curative activity of triazoles with the preventive activity of SDHIs. The current standard for cereal disease management in many regions." ;
+                                                                        rdfs:label "FRAC 3 + 7 Premix" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/FRAC_3_DMI
+<https://gwsp.cs.ksu.edu/disease-management/management/FRAC_3_DMI> rdf:type owl:NamedIndividual ,
+                                                                            <https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group> ;
+                                                                   rdfs:comment "Demethylation Inhibitors (DMIs), also called triazoles or sterol biosynthesis inhibitors (SBIs). Inhibit ergosterol biosynthesis in fungal cell membranes. The most widely used fungicide class in cereals. Examples: propiconazole, tebuconazole, prothioconazole. Moderate resistance risk." ;
+                                                                   rdfs:label "FRAC 3 â€“ DMI (Triazoles)" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/FRAC_7_SDHI
+<https://gwsp.cs.ksu.edu/disease-management/management/FRAC_7_SDHI> rdf:type owl:NamedIndividual ,
+                                                                             <https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group> ;
+                                                                    rdfs:comment "Succinate Dehydrogenase Inhibitors. Block mitochondrial respiration at Complex II. Relatively new class with expanding use in wheat. Examples: fluxapyroxad, bixafen, pydiflumetofen. Medium to high resistance risk; should be mixed with other modes of action." ;
+                                                                    rdfs:label "FRAC 7 â€“ SDHI" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/FRAC_M_Multi_Site
+<https://gwsp.cs.ksu.edu/disease-management/management/FRAC_M_Multi_Site> rdf:type owl:NamedIndividual ,
+                                                                                   <https://gwsp.cs.ksu.edu/disease-management/management/FRAC_Group> ;
+                                                                          rdfs:comment "Fungicides that act on multiple biochemical sites simultaneously, making resistance development extremely unlikely. Examples: chlorothalonil (M5), mancozeb (M3). Protectant-only (no curative activity); must be applied before infection. Low resistance risk." ;
+                                                                          rdfs:label "FRAC M â€“ Multi-site" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Flag_Leaf_Emergence
+<https://gwsp.cs.ksu.edu/disease-management/management/Flag_Leaf_Emergence> rdf:type owl:NamedIndividual ,
+                                                                                     <https://gwsp.cs.ksu.edu/disease-management/management/Application_Timing> ;
+                                                                            rdfs:comment "Fungicide application at or just after flag leaf emergence (Feekes 8â€“9). The most common timing for foliar fungicides in wheat: protects the flag leaf, which contributes 60â€“80% of grain fill photosynthesis." ;
+                                                                            rdfs:label "Flag Leaf Emergence" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Flowering
+<https://gwsp.cs.ksu.edu/disease-management/management/Flowering> rdf:type owl:NamedIndividual ,
+                                                                           <https://gwsp.cs.ksu.edu/disease-management/management/Application_Timing> ;
+                                                                  rdfs:comment "Fungicide application at anthesis (Feekes 10.5.1). The critical timing for Fusarium head blight (scab) control: the infection window coincides with open florets during pollen shed." ;
+                                                                  rdfs:label "Flowering" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Horizontal_Resistance
+<https://gwsp.cs.ksu.edu/disease-management/management/Horizontal_Resistance> rdf:type owl:NamedIndividual ,
+                                                                                       <https://gwsp.cs.ksu.edu/disease-management/management/Resistance_Type> ;
+                                                                              rdfs:comment "Also called quantitative, race-nonspecific, or partial resistance. Conferred by multiple minor-effect genes that reduce disease severity without complete immunity. Effective against all races of a pathogen; provides durable, long-lasting protection. Slower epidemic development rather than outright prevention." ;
+                                                                              rdfs:label "Horizontal Resistance" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Planting_Date_Adjustment
+<https://gwsp.cs.ksu.edu/disease-management/management/Planting_Date_Adjustment> rdf:type owl:NamedIndividual ,
+                                                                                          <https://gwsp.cs.ksu.edu/disease-management/management/Cultural_Control> ;
+                                                                                 rdfs:comment "Shifting the planting date to avoid environmental conditions that favour infection. Delayed planting in winter wheat reduces fall infection by the wheat curl mite (Wheat Streak Mosaic Virus) and by early-season Septoria. Early planting increases fall tillering and biomass but can elevate disease risk." ;
+                                                                                 rdfs:label "Planting Date Adjustment" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Pre_Flag_Leaf
+<https://gwsp.cs.ksu.edu/disease-management/management/Pre_Flag_Leaf> rdf:type owl:NamedIndividual ,
+                                                                               <https://gwsp.cs.ksu.edu/disease-management/management/Application_Timing> ;
+                                                                      rdfs:comment "Fungicide application before flag leaf emergence (Feekes 7â€“8). Targets early-season foliar diseases (Septoria, early rust) to protect the upper canopy as it develops." ;
+                                                                      rdfs:label "Pre-Flag Leaf" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Residue_Management
+<https://gwsp.cs.ksu.edu/disease-management/management/Residue_Management> rdf:type owl:NamedIndividual ,
+                                                                                    <https://gwsp.cs.ksu.edu/disease-management/management/Cultural_Control> ;
+                                                                           rdfs:comment "Tillage or other practices that bury, remove, or accelerate decomposition of infected crop residue. Reduces surface inoculum for residue-borne pathogens (Septoria/Stagonospora, Fusarium head blight). Conservation tillage increases residue-borne disease pressure but benefits soil health â€” a trade-off that must be managed." ;
+                                                                           rdfs:label "Residue Management" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Seeding_Rate_Adjustment
+<https://gwsp.cs.ksu.edu/disease-management/management/Seeding_Rate_Adjustment> rdf:type owl:NamedIndividual ,
+                                                                                         <https://gwsp.cs.ksu.edu/disease-management/management/Cultural_Control> ;
+                                                                                rdfs:comment "Modifying the plant population density to affect canopy microclimate. Higher seeding rates produce denser canopies with greater humidity and leaf wetness duration, promoting foliar diseases. Lower seeding rates improve air circulation but may reduce yield potential." ;
+                                                                                rdfs:label "Seeding Rate Adjustment" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Vertical_Resistance
+<https://gwsp.cs.ksu.edu/disease-management/management/Vertical_Resistance> rdf:type owl:NamedIndividual ,
+                                                                                     <https://gwsp.cs.ksu.edu/disease-management/management/Resistance_Type> ;
+                                                                            rdfs:comment "Also called qualitative, race-specific, or major-gene resistance. Conferred by single major R-genes that interact in a gene-for-gene manner with pathogen avirulence genes. Provides complete or near-complete protection against specific pathogen races but can be overcome when new virulent races evolve. Often not durable over many years." ;
+                                                                            rdfs:label "Vertical Resistance" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/management/Volunteer_Destruction
+<https://gwsp.cs.ksu.edu/disease-management/management/Volunteer_Destruction> rdf:type owl:NamedIndividual ,
+                                                                                       <https://gwsp.cs.ksu.edu/disease-management/management/Cultural_Control> ;
+                                                                              rdfs:comment "Destroying volunteer wheat plants that emerge between crop seasons. Volunteer wheat serves as the 'green bridge' that maintains obligate biotrophs (rusts) and virus-vectoring mites between crops. A critical cultural practice for Wheat Streak Mosaic Virus management." ;
+                                                                              rdfs:label "Volunteer Destruction" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Barley_Yellow_Dwarf_Virus
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Barley_Yellow_Dwarf_Virus> rdf:type owl:NamedIndividual ,
+                                                                                         <https://gwsp.cs.ksu.edu/disease-management/pathogen/Viral_Pathogen> ;
+                                                                                rdfs:comment "A Luteovirus transmitted by cereal aphids (Rhopalosiphum padi, Sitobion avenae). Causes yellowing or reddening of flag leaves and reduced grain fill. Managed by insecticidal seed treatments to control aphid vectors and by resistant cultivars." ;
+                                                                                rdfs:label "Barley Yellow Dwarf Virus" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Crop_Residue_Reservoir
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Crop_Residue_Reservoir> rdf:type owl:NamedIndividual ,
+                                                                                      <https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir> ;
+                                                                             rdfs:comment "Above- and below-ground plant debris from previous crops. The primary inoculum reservoir for residue-borne pathogens (Septoria/Stagonospora, Fusarium graminearum). Tillage buries residue and accelerates decomposition, reducing surface inoculum." ;
+                                                                             rdfs:label "Crop Residue" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Fusarium_graminearum
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Fusarium_graminearum> rdf:type owl:NamedIndividual ,
+                                                                                    <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                           rdfs:comment "The principal causal agent of Fusarium head blight (scab) in wheat. A necrotrophic fungus that survives on crop residue and produces the mycotoxin deoxynivalenol (DON/vomitoxin). Infection occurs at flowering when warm, humid conditions coincide with anthesis." ;
+                                                                           rdfs:label "Fusarium graminearum" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Fusarium_spp
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Fusarium_spp> rdf:type owl:NamedIndividual ,
+                                                                            <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                   rdfs:comment "A complex of Fusarium species that cause foot rot, crown rot, and seedling blight in wheat. Soilborne; survives in soil and on crop debris. Favoured by wet, cool soil conditions at planting and by compacted or poorly drained soils." ;
+                                                                   rdfs:label "Fusarium spp." .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Gaeumannomyces_graminis
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Gaeumannomyces_graminis> rdf:type owl:NamedIndividual ,
+                                                                                       <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                              rdfs:comment "The causal agent of take-all disease in wheat. A soilborne necrotrophic fungus that attacks roots and the stem base, causing blackening of the root system and 'whiteheads.' No effective fungicides; managed primarily by crop rotation and soil pH management." ;
+                                                                              rdfs:label "Gaeumannomyces graminis var. tritici" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Insect_Vector_Reservoir
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Insect_Vector_Reservoir> rdf:type owl:NamedIndividual ,
+                                                                                       <https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir> ;
+                                                                              rdfs:comment "An arthropod that acquires a pathogen from an infected plant and transmits it to a healthy plant. Primarily relevant for viral pathogens: the wheat curl mite vectors Wheat Streak Mosaic Virus; cereal aphids vector Barley Yellow Dwarf Virus. The vector itself serves as a mobile reservoir." ;
+                                                                              rdfs:label "Insect Vector" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Living_Host_Reservoir
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Living_Host_Reservoir> rdf:type owl:NamedIndividual ,
+                                                                                     <https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir> ;
+                                                                            rdfs:comment "Living plant tissue that maintains the pathogen between crop seasons. Obligate biotrophs (rust fungi) cannot survive without a living host; volunteer wheat, alternative hosts, and the 'green bridge' serve as reservoirs. Destroying volunteer wheat before planting is a key cultural control." ;
+                                                                            rdfs:label "Living Host" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Machinery_Dispersal
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Machinery_Dispersal> rdf:type owl:NamedIndividual ,
+                                                                                   <https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism> ;
+                                                                          rdfs:comment "The mechanical movement of pathogen-infested soil or residue by tillage implements, harvesters, or transport equipment. Relevant for soilborne pathogens (Fusarium, Rhizoctonia, Gaeumannomyces) that can be dragged between fields." ;
+                                                                          rdfs:label "Machinery Dispersal" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_graminis_tritici
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_graminis_tritici> rdf:type owl:NamedIndividual ,
+                                                                                         <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                                rdfs:comment "The causal agent of wheat stem rust (black rust). An obligate biotroph with an alternate host (Berberis spp.). Historically the most destructive wheat disease; the Ug99 lineage remains a global threat to susceptible cultivars." ;
+                                                                                rdfs:label "Puccinia graminis f. sp. tritici" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_striiformis_tritici
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_striiformis_tritici> rdf:type owl:NamedIndividual ,
+                                                                                            <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                                   rdfs:comment "The causal agent of wheat stripe rust (yellow rust). An obligate biotroph favoured by cool temperatures (10â€“15 degrees C) and high humidity. Aggressively adapted to a wide range of wheat cultivars through rapid evolution of new races." ;
+                                                                                   rdfs:label "Puccinia striiformis f. sp. tritici" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_triticina
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Puccinia_triticina> rdf:type owl:NamedIndividual ,
+                                                                                  <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                         rdfs:comment "The causal agent of wheat leaf rust (brown rust). An obligate biotroph that requires a living host to survive. Produces urediniospores for secondary spread by wind over long distances. The most common rust disease of wheat worldwide." ;
+                                                                         rdfs:label "Puccinia triticina" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Rain_Splash_Dispersal
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Rain_Splash_Dispersal> rdf:type owl:NamedIndividual ,
+                                                                                     <https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism> ;
+                                                                            rdfs:comment "The short-distance dispersal of spores by raindrop impact. The dominant mechanism for Septoria/Stagonospora leaf spot complex: rain splashes pycnidiospores from infected lower leaves upward through the canopy." ;
+                                                                            rdfs:label "Rain-Splash Dispersal" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Rhizoctonia_cerealis
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Rhizoctonia_cerealis> rdf:type owl:NamedIndividual ,
+                                                                                    <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                           rdfs:comment "The causal agent of sharp eyespot in wheat. A soilborne necrotrophic fungus that infects the stem base, producing characteristic sharp-bordered, eye-shaped lesions. Favoured by high soil moisture and cool temperatures." ;
+                                                                           rdfs:label "Rhizoctonia cerealis" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Seed_Reservoir
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Seed_Reservoir> rdf:type owl:NamedIndividual ,
+                                                                              <https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir> ;
+                                                                     rdfs:comment "Infected seed as a carrier of seedborne pathogens. Tilletia spp. (bunt) contaminate the seed surface with teliospores; Ustilago tritici (loose smut) harbours dormant mycelium inside the embryo. Fungicidal seed treatment is the primary intervention." ;
+                                                                     rdfs:label "Seed" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Seed_Transmission
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Seed_Transmission> rdf:type owl:NamedIndividual ,
+                                                                                 <https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism> ;
+                                                                        rdfs:comment "The spread of pathogens via contaminated or infected seed. Relevant for bunt (surface-contaminated teliospores), loose smut (internal embryo infection), and some bacterial diseases. Clean, certified seed and seed treatment break this pathway." ;
+                                                                        rdfs:label "Seed Transmission" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Septoria_Stagonospora_complex
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Septoria_Stagonospora_complex> rdf:type owl:NamedIndividual ,
+                                                                                             <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                                    rdfs:comment "A complex of fungal species including Zymoseptoria tritici (Septoria tritici blotch) and Parastagonospora nodorum (Stagonospora nodorum blotch) that cause the leaf spot complex in wheat. Survive on crop residue; rain-splash is the primary dispersal mechanism." ;
+                                                                                    rdfs:label "Septoria/Stagonospora complex" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Soil_Reservoir
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Soil_Reservoir> rdf:type owl:NamedIndividual ,
+                                                                              <https://gwsp.cs.ksu.edu/disease-management/pathogen/Inoculum_Reservoir> ;
+                                                                     rdfs:comment "The soil matrix as a survival site for soilborne pathogens. Organisms like Gaeumannomyces, Rhizoctonia, and Fusarium spp. persist as mycelium or resting structures (chlamydospores, sclerotia) in the soil for months to years." ;
+                                                                     rdfs:label "Soil" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Tilletia_spp
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Tilletia_spp> rdf:type owl:NamedIndividual ,
+                                                                            <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                   rdfs:comment "The causal agents of common bunt (stinking smut) of wheat, primarily T. tritici and T. laevis. Soilborne and seedborne; teliospores contaminate seed and infect at germination. Effectively managed by fungicidal seed treatment." ;
+                                                                   rdfs:label "Tilletia spp." .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Ustilago_tritici
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Ustilago_tritici> rdf:type owl:NamedIndividual ,
+                                                                                <https://gwsp.cs.ksu.edu/disease-management/pathogen/Fungal_Pathogen> ;
+                                                                       rdfs:comment "The causal agent of loose smut of wheat. Infects the developing embryo within the grain during flowering; the mycelium remains dormant in the seed until the next season. Managed exclusively by systemic seed treatments that penetrate the embryo." ;
+                                                                       rdfs:label "Ustilago tritici" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Vector_Transmission
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Vector_Transmission> rdf:type owl:NamedIndividual ,
+                                                                                   <https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism> ;
+                                                                          rdfs:comment "The biological transmission of a pathogen by an arthropod vector. The vector acquires the pathogen during feeding on an infected plant and transmits it to a healthy plant during subsequent feeding. Primary pathway for viral diseases." ;
+                                                                          rdfs:label "Vector Transmission" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Wheat_Streak_Mosaic_Virus
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Wheat_Streak_Mosaic_Virus> rdf:type owl:NamedIndividual ,
+                                                                                         <https://gwsp.cs.ksu.edu/disease-management/pathogen/Viral_Pathogen> ;
+                                                                                rdfs:comment "A Tritimovirus transmitted by the wheat curl mite (Aceria tosichella). Causes mosaic patterns, leaf streaking, and stunting. Managed by controlling volunteer wheat (the 'green bridge'), resistant cultivars, and delayed planting to avoid mite populations." ;
+                                                                                rdfs:label "Wheat Streak Mosaic Virus" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Wind_Dispersal
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Wind_Dispersal> rdf:type owl:NamedIndividual ,
+                                                                              <https://gwsp.cs.ksu.edu/disease-management/pathogen/Dispersal_Mechanism> ;
+                                                                     rdfs:comment "The transport of airborne spores by wind currents. The primary dispersal mechanism for rust fungi (Puccinia spp.) and loose smut (Ustilago tritici). Wind enables long-distance, inter-regional spread of inoculum." ;
+                                                                     rdfs:label "Wind Dispersal" .
+
+
+###  https://gwsp.cs.ksu.edu/disease-management/pathogen/Xanthomonas_translucens
+<https://gwsp.cs.ksu.edu/disease-management/pathogen/Xanthomonas_translucens> rdf:type owl:NamedIndividual ,
+                                                                                       <https://gwsp.cs.ksu.edu/disease-management/pathogen/Bacterial_Pathogen> ;
+                                                                              rdfs:comment "The causal agent of bacterial leaf streak and black chaff in wheat. Enters through stomata; favoured by warm, humid conditions with wind-driven rain. No effective chemical control; managed by resistant cultivars and certified seed." ;
+                                                                              rdfs:label "Xanthomonas translucens" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<https://creativecommons.org/licenses/by/4.0/> <http://purl.org/dc/terms/title> "Creative Commons Attribution 4.0 International"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

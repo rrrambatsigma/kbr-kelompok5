@@ -17,10 +17,13 @@ PROJECT_ROOT = ONTO_DIR.parent
 sys.path.insert(0, str(ONTO_DIR))
 PTP = "http://kbr.kelompok5.org/penyakit-tanaman-pangan#"
 SWRL = Namespace("http://www.w3.org/2003/11/swrl#")
+SWRLA = Namespace("http://swrl.stanford.edu/ontologies/3.3/swrla.owl#")
+SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 KBR = lambda name: URIRef(PTP + name)  # noqa: E731
 
 ARTIFACT = ONTO_DIR / "ontology_md.ttl"
 OWL_ARTIFACT = ONTO_DIR / "ontology_md.owl"
+INFERRED_ARTIFACT = ONTO_DIR / "ontology_md_inferred.ttl"
 CANONICAL = ONTO_DIR / "ontology.ttl"
 REPORT = ONTO_DIR / "extraction_report_md.json"
 TABLE_DIR = PROJECT_ROOT / "03_knowledge_tables"
@@ -78,12 +81,75 @@ class TestOntologyMd(unittest.TestCase):
                     self.assertIn((node, RDF.type, SWRL.AtomList), self.graph)
                     node = next(self.graph.objects(node, RDF.rest), None)
 
+    def test_swrl_rules_are_anonymous_with_metadata(self) -> None:
+        rules = set(self.graph.subjects(RDF.type, SWRL.Imp))
+        self.assertEqual(len(rules), 7)
+        for imp in rules:
+            self.assertIsInstance(imp, BNode)
+            self.assertIsNotNone(self.graph.value(imp, RDFS.label))
+            enabled = self.graph.value(imp, SWRLA.isRuleEnabled)
+            self.assertIsNotNone(enabled)
+            self.assertTrue(str(enabled).lower() in ("true", "1"))
+
+    def external_pairs(self, predicate) -> set:
+        prefixes = (
+            "http://purl.obolibrary.org/obo/Rice",
+            "http://www.ait.ac.th/riceman/RiceDO",
+            "https://gwsp.cs.ksu.edu",
+        )
+        return {
+            (subject, obj)
+            for subject, obj in self.graph.subject_objects(predicate)
+            if str(obj).startswith(prefixes)
+        }
+
+    def test_external_alignments_are_kind_aware(self) -> None:
+        eq = self.external_pairs(OWL.equivalentClass)
+        same = self.external_pairs(OWL.sameAs)
+        subc = self.external_pairs(RDFS.subClassOf)
+        subp = self.external_pairs(RDFS.subPropertyOf)
+        exact = self.external_pairs(SKOS.exactMatch)
+        close = self.external_pairs(SKOS.closeMatch)
+        self.assertEqual(len(eq), 8)
+        self.assertEqual(len(same), 2)
+        self.assertEqual(len(subc), 2)
+        self.assertEqual(len(subp), 1)
+        self.assertEqual(len(exact), 0)
+        self.assertEqual(len(close), 10)
+        self.assertEqual(self.report["external_alignments_equivalent_class"], 8)
+        self.assertEqual(self.report["external_alignments_same_as"], 2)
+        self.assertEqual(self.report["external_alignments_subclass"], 2)
+        self.assertEqual(self.report["external_alignments_subproperty"], 1)
+        self.assertEqual(self.report["external_alignments_exact"], 0)
+        self.assertEqual(self.report["external_alignments_close"], 10)
+        for subject, _ in same:
+            self.assertIn((subject, RDF.type, OWL.NamedIndividual), self.graph)
+            self.assertTrue(str(subject).startswith(PTP))
+        for subject, _ in subc | subp | exact | close:
+            self.assertTrue(str(subject).startswith(PTP))
+
+    def test_inferred_artifact_available(self) -> None:
+        self.assertTrue(INFERRED_ARTIFACT.exists())
+        graph = Graph()
+        graph.parse(INFERRED_ARTIFACT, format="turtle")
+        self.assertEqual(len(set(graph.subjects(RDF.type, SWRL.Imp))), 7)
+        self.assertTrue(list(graph.triples((None, KBR("menghasilkanPenyakit"), None))))
+        self.assertEqual(list(graph.objects(None, OWL.imports)), [])
+
     def test_property_definition(self) -> None:
         prop = KBR("memilikiKondisiTumbuh")
         self.assertIn((prop, RDF.type, OWL.ObjectProperty), self.graph)
         self.assertIn((prop, RDFS.domain, KBR("TanamanPangan")), self.graph)
         self.assertIn((prop, RDFS.range, KBR("FaktorRisiko")), self.graph)
         self.assertTrue(self.graph.value(prop, RDFS.label))
+
+    def test_plant_phase_property_and_links(self) -> None:
+        prop = KBR("memilikiFasePertumbuhan")
+        self.assertIn((prop, RDF.type, OWL.ObjectProperty), self.graph)
+        self.assertIn((prop, RDFS.domain, KBR("TanamanPangan")), self.graph)
+        self.assertIn((prop, RDFS.range, KBR("FasePertumbuhan")), self.graph)
+        for plant in SCOPE_PLANTS:
+            self.assertTrue(self.objects(plant, "memilikiFasePertumbuhan"), plant)
 
     def test_scope_plants_only(self) -> None:
         plants = set(self.graph.subjects(RDF.type, KBR("TanamanPangan")))
@@ -151,9 +217,17 @@ class TestOntologyMd(unittest.TestCase):
         )
         self.assertEqual(
             self.report["facts"],
-            len(self.facts) + self.report.get("growth_condition_facts", 0),
+            len(self.facts)
+            + self.report.get("growth_condition_facts", 0)
+            + self.report.get("plant_phase_facts", 0)
+            + self.report.get("external_variety_facts", 0),
         )
-        self.assertEqual(self.report["entities"], len(self.entities))
+        self.assertEqual(
+            self.report["entities"],
+            len(self.entities)
+            + self.report.get("plant_phase_entities", 0)
+            + self.report.get("external_variety_entities", 0),
+        )
         self.assertEqual(self.report["descriptions"], len(self.descriptions))
         self.assertEqual(
             self.report["named_individuals"],

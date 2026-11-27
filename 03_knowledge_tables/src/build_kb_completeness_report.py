@@ -73,6 +73,7 @@ GAP_ROWS = [
     ("unmapped_controls", "Pengendalian belum dipetakan", "Mapping", "DOC002/DOC005", "Triage lalu petakan/exception"),
     ("severity_missing", "Tanpa severity", "Best-effort", "DOC002/DOC005", "Isi bila sumber eksplisit"),
     ("phase_missing", "Tanpa fase", "Best-effort", "DOC002/DOC005", "Isi bila sumber eksplisit"),
+    ("plant_phase_missing", "Tanaman tanpa fase pertumbuhan", "Best-effort", "DOC002/DOC005/EXTERNAL_ENV", "Isi fase pertumbuhan tanaman"),
     ("resistant_variety_missing", "Tanpa varietas tahan", "Best-effort", "DOC002/DOC005", "Isi bila sumber eksplisit"),
     ("english_name_missing", "Tanpa nama Inggris", "Best-effort", "DOC002/DOC005/eksternal", "Isi bila sumber eksplisit"),
 ]
@@ -171,12 +172,14 @@ def build() -> dict:
         plant = local_name(plant_uri)
         conditions = values(graph, plant_uri, KBR.memilikiKondisiTumbuh)
         general_controls = values(graph, plant_uri, KBR.pengendalianUmum)
+        phases = values(graph, plant_uri, KBR.memilikiFasePertumbuhan)
         plants_data.append(
             {
                 "plant": plant,
                 "diseases": sum(1 for row in rows if row["plant"] == plant),
                 "growth_conditions": len(conditions),
                 "general_controls": len(general_controls),
+                "phases": len(phases),
             }
         )
 
@@ -268,6 +271,7 @@ def build() -> dict:
         "growth_conditions_missing_plants": sum(
             1 for plant in plants_data if plant["growth_conditions"] == 0
         ),
+        "plant_phase_missing": sum(1 for plant in plants_data if plant["phases"] == 0),
         "unmapped_symptoms": quality.get("data_quality", {}).get(
             "unmapped_symptoms"
         ),
@@ -312,6 +316,7 @@ def markdown(report: dict) -> str:
         f"| Tanpa bagian tanaman | {summary['part_missing']} |",
         f"| Tanpa severity | {summary['severity_missing']} |",
         f"| Tanpa fase | {summary['phase_missing']} |",
+        f"| Tanaman tanpa fase pertumbuhan | {summary['plant_phase_missing']} |",
         f"| Tanpa varietas tahan | {summary['resistant_variety_missing']} |",
         f"| Tanpa deskripsi penyakit | {summary['description_missing']} |",
         f"| Tanpa nama Inggris | {summary['english_name_missing']} |",
@@ -332,14 +337,15 @@ def markdown(report: dict) -> str:
             "",
             "## Status per tanaman",
             "",
-            "| Tanaman | Penyakit | Kondisi tumbuh | Pengendalian umum |",
-            "|---|---:|---:|---:|",
+            "| Tanaman | Penyakit | Kondisi tumbuh | Pengendalian umum | Fase |",
+            "|---|---:|---:|---:|---:|",
         ]
     )
     for plant in report["plants"]:
         lines.append(
             f"| {plant['plant']} | {plant['diseases']} | "
-            f"{plant['growth_conditions']} | {plant['general_controls']} |"
+            f"{plant['growth_conditions']} | {plant['general_controls']} | "
+            f"{plant['phases']} |"
         )
 
     lines.extend(

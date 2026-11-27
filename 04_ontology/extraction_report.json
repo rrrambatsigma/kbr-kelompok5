@@ -6,10 +6,10 @@
     "pathogen_links": 78,
     "control_records_disease": 257,
     "control_records_chapter": 45,
-    "metadata_rows": 17,
-    "named_individuals": 1247,
-    "triples": 17002,
-    "classes": 71,
+    "metadata_rows": 50,
+    "named_individuals": 1294,
+    "triples": 17420,
+    "classes": 70,
     "object_properties": 32,
     "data_properties": 29
   },
@@ -2584,6 +2584,186 @@
         "name": "Mahameru",
         "plant": "Kedelai",
         "disease": "PenyakitEmbunTepungPowderyMildewKedelai"
+      },
+      {
+        "local": "VarietasBisma",
+        "name": "Bisma",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasLamuru",
+        "name": "Lamuru",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasPalakka",
+        "name": "Palakka",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSukmaraga",
+        "name": "Sukmaraga",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSrikandiPutih1",
+        "name": "Srikandi Putih-1",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSrikandiKuning1",
+        "name": "Srikandi Kuning-1",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSemar5",
+        "name": "Semar-5",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSemar6",
+        "name": "Semar-6",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSemar7",
+        "name": "Semar-7",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSemar8",
+        "name": "Semar-8",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSemar9",
+        "name": "Semar-9",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasSemar10",
+        "name": "Semar-10",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima1",
+        "name": "Bima-1",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima4",
+        "name": "Bima-4",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima5",
+        "name": "Bima-5",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima7",
+        "name": "Bima-7",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima8",
+        "name": "Bima-8",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima9",
+        "name": "Bima-9",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima10",
+        "name": "Bima-10",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima11",
+        "name": "Bima-11",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima16",
+        "name": "Bima-16",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima17",
+        "name": "Bima-17",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima18",
+        "name": "Bima-18",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima19URI",
+        "name": "Bima 19-URI",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasBima20URI",
+        "name": "Bima 20 URI",
+        "plant": "Jagung",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "local": "VarietasCamar",
+        "name": "Camar",
+        "plant": "KacangHijau",
+        "disease": "PenyakitEmbunTepungKacangHijau"
+      },
+      {
+        "local": "VarietasMerpati",
+        "name": "Merpati",
+        "plant": "KacangHijau",
+        "disease": "PenyakitEmbunTepungKacangHijau"
+      },
+      {
+        "local": "VarietasKutilang",
+        "name": "Kutilang",
+        "plant": "KacangHijau",
+        "disease": "PenyakitEmbunTepungKacangHijau"
+      },
+      {
+        "local": "VarietasVima1",
+        "name": "Vima 1",
+        "plant": "KacangHijau",
+        "disease": "PenyakitEmbunTepungKacangHijau"
+      },
+      {
+        "local": "VarietasVima2",
+        "name": "Vima 2",
+        "plant": "KacangHijau",
+        "disease": "PenyakitEmbunTepungKacangHijau"
       }
     ],
     "resistant_links": [
@@ -2726,6 +2906,130 @@
       {
         "variety": "VarietasVima5",
         "disease": "PenyakitLayuKacangHijau"
+      },
+      {
+        "variety": "VarietasBisma",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasLamuru",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasPalakka",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSukmaraga",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSrikandiPutih1",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSrikandiKuning1",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSemar5",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSemar6",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSemar7",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSemar8",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSemar9",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasSemar10",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima1",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima4",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima5",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima7",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima8",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima9",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima10",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima11",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima16",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima17",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima18",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima19URI",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasBima20URI",
+        "disease": "PenyakitKaratDaunJagung"
+      },
+      {
+        "variety": "VarietasPioneer27",
+        "disease": "PenyakitBulaiJagung"
+      },
+      {
+        "variety": "VarietasCamar",
+        "disease": "PenyakitEmbunTepungKacangHijau"
+      },
+      {
+        "variety": "VarietasMerpati",
+        "disease": "PenyakitEmbunTepungKacangHijau"
+      },
+      {
+        "variety": "VarietasKutilang",
+        "disease": "PenyakitEmbunTepungKacangHijau"
+      },
+      {
+        "variety": "VarietasVima1",
+        "disease": "PenyakitEmbunTepungKacangHijau"
+      },
+      {
+        "variety": "VarietasVima2",
+        "disease": "PenyakitEmbunTepungKacangHijau"
       }
     ],
     "susceptible_links": [
@@ -2792,6 +3096,14 @@
       {
         "disease": "PenyakitRebahSemaiKedelai",
         "phase": "FasePembibitanTanaman"
+      },
+      {
+        "disease": "PenyakitBercakDaunKacangTanah",
+        "phase": "FasePengisianPolong"
+      },
+      {
+        "disease": "PenyakitBercakDaunKacangHijau",
+        "phase": "FasePengisianPolong"
       }
     ]
   },
@@ -2897,6 +3209,204 @@
       "gap": "variety",
       "value": "Mahameru",
       "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungPowderyMildewKedelai"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bisma",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Lamuru",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Palakka",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Sukmaraga",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Srikandi Putih-1",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Srikandi Kuning-1",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Semar-5",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Semar-6",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Semar-7",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Semar-8",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Semar-9",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Semar-10",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-1",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-4",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-5",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-7",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-8",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-9",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-10",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-11",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-16",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-17",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima-18",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima 19-URI",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitKaratDaunJagung",
+      "gap": "variety",
+      "value": "Bima 20 URI",
+      "evidence": "BuktiMetadataVarietyPenyakitKaratDaunJagung"
+    },
+    {
+      "disease": "PenyakitBulaiJagung",
+      "gap": "variety",
+      "value": "Pioneer 27",
+      "evidence": "BuktiMetadataVarietyPenyakitBulaiJagung"
+    },
+    {
+      "disease": "PenyakitEmbunTepungKacangHijau",
+      "gap": "variety",
+      "value": "Camar",
+      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau"
+    },
+    {
+      "disease": "PenyakitEmbunTepungKacangHijau",
+      "gap": "variety",
+      "value": "Merpati",
+      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau"
+    },
+    {
+      "disease": "PenyakitEmbunTepungKacangHijau",
+      "gap": "variety",
+      "value": "Kutilang",
+      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau"
+    },
+    {
+      "disease": "PenyakitEmbunTepungKacangHijau",
+      "gap": "variety",
+      "value": "Vima 1",
+      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau2"
+    },
+    {
+      "disease": "PenyakitEmbunTepungKacangHijau",
+      "gap": "variety",
+      "value": "Vima 2",
+      "evidence": "BuktiMetadataVarietyPenyakitEmbunTepungKacangHijau3"
+    },
+    {
+      "disease": "PenyakitBercakDaunKacangTanah",
+      "gap": "phase",
+      "value": "FasePengisianPolong",
+      "evidence": "BuktiMetadataPhasePenyakitBercakDaunKacangTanah"
+    },
+    {
+      "disease": "PenyakitBercakDaunKacangHijau",
+      "gap": "phase",
+      "value": "FasePengisianPolong",
+      "evidence": "BuktiMetadataPhasePenyakitBercakDaunKacangHijau2"
     }
   ],
   "pathogen_links": [
@@ -3606,7 +4116,7 @@
     }
   ],
   "data_quality": {
-    "fragment_quotes": 210,
+    "fragment_quotes": 211,
     "unmapped_symptoms": 51,
     "unmapped_controls": 37,
     "unknown_pathogens": 0,

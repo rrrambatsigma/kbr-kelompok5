@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" modified="2026-11-23T00:00:00.000Z" agent="opencode" version="24.7.17">
+  <diagram id="alur-kbr-block" name="Alur KBR Block">
+    <mxGraphModel dx="1300" dy="1800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="1754" background="#F7F2E7" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===================== TITLE ===================== -->
+        <mxCell id="title" value="Alur Knowledge Base Reasoning" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Arial;fontSize=28;fontStyle=1;fontColor=#1F3D2B;" vertex="1" parent="1">
+          <mxGeometry x="120" y="58" width="1000" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Dari sumber data ke expert system · KBR Kelompok 5 · 7 tanaman pangan · 53 penyakit" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Arial;fontSize=11;fontColor=#6F8F6A;" vertex="1" parent="1">
+          <mxGeometry x="120" y="104" width="1000" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== TOP BRANCHES ===================== -->
+        <mxCell id="a1" value="&lt;b&gt;Sumber Internal&lt;/b&gt;&lt;br&gt;DOC002–DOC005&lt;br&gt;4 buku" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3D2B;strokeColor=none;fontFamily=Arial;fontSize=14;fontColor=#F7F2E7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="120" y="170" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="&lt;b&gt;Sumber Eksternal&lt;/b&gt;&lt;br&gt;45 sumber&lt;br&gt;jurnal · extension · datasheet" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6F8F6A;strokeColor=none;fontFamily=Arial;fontSize=14;fontColor=#FFFDF7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="720" y="170" width="400" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_a1_b1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#1F3D2B;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="a1" target="b1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a2_b2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#1F3D2B;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="a2" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== SECOND ROW ===================== -->
+        <mxCell id="b1" value="&lt;b&gt;Ekstraksi Internal&lt;/b&gt;&lt;br&gt;LlamaParse&lt;br&gt;cost_effective · agentic&lt;br&gt;quality gate" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3D2B;strokeColor=none;fontFamily=Arial;fontSize=14;fontColor=#F7F2E7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="120" y="360" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="&lt;b&gt;Registry &amp; Bukti&lt;/b&gt;&lt;br&gt;source_registry&lt;br&gt;evidence_cards&lt;br&gt;kutipan + locator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6F8F6A;strokeColor=none;fontFamily=Arial;fontSize=14;fontColor=#FFFDF7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="720" y="360" width="400" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_b1_c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.333;entryY=0;strokeColor=#1F3D2B;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="b1" target="c">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="520" />
+              <mxPoint x="520" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_b2_c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.667;entryY=0;strokeColor=#1F3D2B;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="b2" target="c">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="520" />
+              <mxPoint x="720" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===================== KNOWLEDGE TABLES ===================== -->
+        <mxCell id="c" value="&lt;b&gt;Knowledge Tables&lt;/b&gt;&lt;br&gt;auto → review → curated&lt;br&gt;7 tanaman · 53 penyakit&lt;br&gt;68 observasi lingkungan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFDF7;strokeColor=#1F3D2B;strokeWidth=2;fontFamily=Arial;fontSize=15;fontColor=#1F3D2B;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="320" y="560" width="600" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_d" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#1F3D2B;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="c" target="d">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== ONTOLOGI ===================== -->
+        <mxCell id="d" value="&lt;b&gt;Ontologi&lt;/b&gt;&lt;br&gt;TBox 87 kelas · 29 OP · 33 DP&lt;br&gt;ABox 16.732 triple · 1.204 individu&lt;br&gt;SWRL 4 aturan · 19.021 triple" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1F3D2B;strokeColor=none;fontFamily=Arial;fontSize=14;fontColor=#F7F2E7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="320" y="760" width="600" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d_e" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#1F3D2B;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="d" target="e">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== REASONING ===================== -->
+        <mxCell id="e" value="&lt;b&gt;Reasoning&lt;/b&gt;&lt;br&gt;SWRL R1–R4&lt;br&gt;Pellet / HermiT&lt;br&gt;kandidat + rekomendasi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6F8F6A;strokeColor=none;fontFamily=Arial;fontSize=14;fontColor=#FFFDF7;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="320" y="960" width="600" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e_e_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#1F3D2B;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="e" target="f">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== EXPERT SYSTEM ===================== -->
+        <mxCell id="f" value="&lt;b&gt;Expert System&lt;/b&gt;&lt;br&gt;Spring Boot + Jena&lt;br&gt;/api/health · /api/ontology/status&lt;br&gt;&lt;b&gt;BELUM&lt;/b&gt;: diagnosis &amp; frontend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFDF7;strokeColor=#1F3D2B;strokeWidth=2;fontFamily=Arial;fontSize=14;fontColor=#1F3D2B;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1160" width="600" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_g" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#1F3D2B;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="f" target="g">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== OUTPUT ===================== -->
+        <mxCell id="g" value="&lt;b&gt;Luaran&lt;/b&gt;&lt;br&gt;kandidat penyakit + skor&lt;br&gt;rekomendasi + bukti" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCE8D5;strokeColor=#1F3D2B;strokeWidth=2;fontFamily=Arial;fontSize=15;fontColor=#1F3D2B;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1360" width="600" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== FOOTER ===================== -->
+        <mxCell id="f_rule" style="endArrow=none;html=1;strokeColor=#1F3D2B;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1520" as="sourcePoint" />
+            <mxPoint x="1120" y="1520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_evidence" value="Jejak bukti: 00_sumber_data · 02_extraction · 03_knowledge_tables/curated · 04_ontology/ontology_md.ttl" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Courier New;fontSize=9;fontColor=#1F3D2B;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1536" width="1000" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="f_source" value="Sumber: README.md · 03_knowledge_tables/reports/ · 04_ontology/extraction_report*.json" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Arial;fontSize=8;fontColor=#6F8F6A;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1558" width="1000" height="16" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -38,16 +38,16 @@ menyimpan RDF dan melayani SPARQL read-only.
 
 ## Angka kunci
 
-- Ontologi kanonik: **17.002 triple**, **1.247 individu**, **71 kelas**,
+- Ontologi kanonik: **17.420 triple**, **1.294 individu**, **70 kelas**,
   **32 object property**, **53 penyakit**, **7 tanaman**, **76 tautan penyakit-patogen**.
-- `ontology_md.ttl`: **30.280 triple**, **1.508 individu**, **7 aturan SWRL**,
-  dan **53 diagnosis demo**; memuat hasil SWRL dan enrichment, tetapi belum
-  memuat tipe kategori penyakit.
-- `ontology_md_inferred.ttl`: **32.506 triple**, closure Pellet penuh termasuk
+- `ontology_md.ttl`: **25.775 triple**, **1.596 individu**, **7 aturan SWRL**,
+  dan **53 diagnosis demo**; memuat hasil SWRL + closure tipe yang
+  dimaterialisasi untuk Openllet.
+- `ontology_md_inferred.ttl`: **26.818 triple**, closure Pellet penuh termasuk
   kategori penyakit (Jamur 34, Bakteri 7, Virus 10, Oomycete 3, Fitoplasma 1).
 - **227 pengamatan gejala** menjadi **176 pengamatan kanonik**; **51** belum dipetakan.
 - **226 tautan `dikendalikanDengan`**; **37** baris pengendalian belum dipetakan.
-- **35 tautan varietas**, **13 tautan fase**, **17 baris metadata terkurasi**.
+- **79 tautan varietas**, **27 tautan fase**, **17 baris metadata terkurasi**.
 - **68 observasi lingkungan eksternal** dan **115 tautan klasifikasi kondisi**.
 - **942 fakta enrichment** dan **584 deskripsi `rdfs:comment`**.
 - Audit terbaru: **severity 39**, **fase 42**, **varietas tahan 45**, dan
@@ -74,6 +74,7 @@ python 04_ontology/build_ontology.py
 python 03_knowledge_tables/src/build_enrichment_facts.py
 python 03_knowledge_tables/src/build_descriptions.py
 python 04_ontology/build_ontology_md.py
+python 04_ontology/materialize_inferred.py
 
 # audit akhir
 python 03_knowledge_tables/src/build_kb_completeness_report.py

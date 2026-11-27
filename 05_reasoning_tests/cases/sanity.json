@@ -5,22 +5,22 @@
     "plantId": "Jagung",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBulaiJagungKecepatanAnginKelembaban90Suhu",
-        "label": "Kecepatan angin, kelembaban yang tinggi lebih dari 90% dan suhu di bawah 24°C dapat…"
+        "id": "GejalaPenyakitBulaiJagung2",
+        "label": "Gejala pada Penyakit Bulai (Jagung): Kecepatan angin, kelembaban yang tinggi lebih dari 90% dan suhu di..."
       },
       {
-        "id": "PengamatanPenyakitBulaiJagungDisebabkanBervariasi1933Sampai",
-        "label": "Kejadian penyakit yang disebabkan penyakit bulai bervariasi antara 19.33% sampai 28.37%…"
+        "id": "GejalaPenyakitBulaiJagung4",
+        "label": "Gejala pada Penyakit Bulai (Jagung): Kejadian penyakit yang disebabkan penyakit bulai bervariasi antara..."
       },
       {
-        "id": "PengamatanPenyakitBulaiJagungKerdilTanaman",
-        "label": "Kerdil tanaman — Penyakit Bulai"
+        "id": "GejalaPenyakitBulaiJagung3",
+        "label": "Gejala pada Penyakit Bulai (Jagung): Penyakit bulai menyerang tanaman pada fase vegetatif dan infeksi akan..."
       }
     ],
     "expectedDiseaseId": "PenyakitBulaiJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -30,18 +30,18 @@
     "plantId": "Jagung",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBusukPelepahJagungBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Busuk Pelepah"
+        "id": "GejalaPenyakitBusukPelepahJagungBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Busuk Pelepah (Jagung)"
       },
       {
-        "id": "PengamatanPenyakitBusukPelepahJagungBusukBatang",
-        "label": "Busuk batang — Penyakit Busuk Pelepah"
+        "id": "GejalaPenyakitBusukPelepahJagungBusukBatang",
+        "label": "Busuk batang pada Penyakit Busuk Pelepah (Jagung)"
       }
     ],
     "expectedDiseaseId": "PenyakitBusukPelepahJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -51,22 +51,22 @@
     "plantId": "Jagung",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitHawarDaunJagungBercakDaun",
-        "label": "Bercak daun — Penyakit Hawar Daun"
+        "id": "GejalaPenyakitHawarDaunJagungBercakDaun",
+        "label": "Bercak daun pada Penyakit Hawar Daun (Jagung)"
       },
       {
-        "id": "PengamatanPenyakitHawarDaunJagungBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Hawar Daun"
+        "id": "GejalaPenyakitHawarDaunJagungBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Hawar Daun (Jagung)"
       },
       {
-        "id": "PengamatanPenyakitHawarDaunJagungHawarDaun",
-        "label": "Hawar daun"
+        "id": "GejalaPenyakitHawarDaunJagungHawarDaun",
+        "label": "Hawar daun pada Penyakit Hawar Daun (Jagung)"
       }
     ],
     "expectedDiseaseId": "PenyakitHawarDaunJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -76,22 +76,22 @@
     "plantId": "Jagung",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitKaratDaunJagungBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Karat Daun"
+        "id": "GejalaPenyakitKaratDaunJagungBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Karat Daun (Jagung)"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunJagungBiasanyaDiawaliBagianBawahBerkembang",
-        "label": "Gejala karat biasanya diawali dari daun bagian bawah dan berkembang ke daun bagian atas…"
+        "id": "GejalaPenyakitKaratDaunJagung",
+        "label": "Gejala pada Penyakit Karat Daun (Jagung): Gejala karat biasanya diawali dari daun bagian bawah dan berkembang ke..."
       },
       {
-        "id": "PengamatanPenyakitKaratDaunJagungDisebabkanBerkisar2667Hingga",
-        "label": "Keparahan penyakit yang disebabkan karat daun dapat berkisar antara 26.67% hingga 90.91%."
+        "id": "GejalaPenyakitKaratDaunJagung2",
+        "label": "Gejala pada Penyakit Karat Daun (Jagung): Keparahan penyakit yang disebabkan karat daun dapat berkisar antara..."
       }
     ],
     "expectedDiseaseId": "PenyakitKaratDaunJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -101,22 +101,22 @@
     "plantId": "Jagung",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitLayuStewartJagungKerdilTanaman",
-        "label": "Kerdil tanaman — Penyakit Layu Stewart"
+        "id": "GejalaPenyakitLayuStewartJagungKerdilTanaman",
+        "label": "Kerdil tanaman pada Penyakit Layu Stewart (Jagung)"
       },
       {
-        "id": "PengamatanPenyakitLayuStewartJagungKlorosisDaun",
-        "label": "Klorosis daun — Penyakit Layu Stewart"
+        "id": "GejalaPenyakitLayuStewartJagungKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Layu Stewart (Jagung)"
       },
       {
-        "id": "PengamatanPenyakitLayuStewartJagungLayuDaun",
-        "label": "Layu daun — Penyakit Layu Stewart"
+        "id": "GejalaPenyakitLayuStewartJagungLayuDaun",
+        "label": "Layu daun pada Penyakit Layu Stewart (Jagung)"
       }
     ],
     "expectedDiseaseId": "PenyakitLayuStewartJagung",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -126,18 +126,18 @@
     "plantId": "KacangHijau",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBercakDaunKacangHijauBercakDaun",
-        "label": "Bercak daun"
+        "id": "GejalaPenyakitBercakDaunKacangHijauBercakDaun",
+        "label": "Bercak daun pada Penyakit Bercak Daun (Kacang hijau)"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunKacangHijauMenyebabkanDefoliasiPrematurPenguranganUkuran",
-        "label": "Varietas rentan menyebabkan gejala defoliasi prematur pengurangan ukuran polong dan biji…"
+        "id": "GejalaPenyakitBercakDaunKacangHijau",
+        "label": "Gejala pada Penyakit Bercak Daun (Kacang hijau): Pada varietas rentan menyebabkan gejala defoliasi prematur pengurangan..."
       }
     ],
     "expectedDiseaseId": "PenyakitBercakDaunKacangHijau",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -147,14 +147,14 @@
     "plantId": "KacangHijau",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitEmbunTepungKacangHijauTepungDaun",
-        "label": "Tepung pada daun — Penyakit Embun Tepung"
+        "id": "GejalaPenyakitEmbunTepungKacangHijauTepungDaun",
+        "label": "Tepung pada daun pada Penyakit Embun Tepung (Kacang hijau)"
       }
     ],
     "expectedDiseaseId": "PenyakitEmbunTepungKacangHijau",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -164,22 +164,22 @@
     "plantId": "KacangHijau",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitLayuKacangHijauBusukTanaman",
-        "label": "Busuk pada tanaman — Penyakit Layu"
+        "id": "GejalaPenyakitLayuKacangHijauBusukTanaman",
+        "label": "Busuk pada tanaman pada Penyakit Layu (Kacang hijau)"
       },
       {
-        "id": "PengamatanPenyakitLayuKacangHijauLayuDaun",
-        "label": "Layu daun"
+        "id": "GejalaPenyakitLayuKacangHijauLayuDaun",
+        "label": "Layu daun pada Penyakit Layu (Kacang hijau)"
       },
       {
-        "id": "PengamatanPenyakitLayuKacangHijauMiseliaBerwarnaPutihTingkatLanjut",
-        "label": "Miselia berwarna putih akan ditemukan di sekitar gejala, dan pada gejala tingkat lanjut…"
+        "id": "GejalaPenyakitLayuKacangHijauMiseliumPadaTanaman",
+        "label": "Miselium pada tanaman pada Penyakit Layu (Kacang hijau)"
       }
     ],
     "expectedDiseaseId": "PenyakitLayuKacangHijau",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -189,22 +189,22 @@
     "plantId": "KacangTanah",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBelangMottleKacangTanahBelangTanaman",
-        "label": "Belang pada tanaman — Penyakit Belang (Mottle)"
+        "id": "GejalaPenyakitBelangMottleKacangTanahBelangTanaman",
+        "label": "Belang pada tanaman pada Penyakit Belang (Mottle) (Kacang tanah)"
       },
       {
-        "id": "PengamatanPenyakitBelangMottleKacangTanahMakroskopisDitunjukkanGambar4",
-        "label": "Gejala serangan dan makroskopis ditunjukkan Gambar 4."
+        "id": "GejalaPenyakitBelangMottleKacangTanah2",
+        "label": "Gejala pada Penyakit Belang (Mottle) (Kacang tanah): Gejala serangan dan makroskopis ditunjukkan Gambar 4"
       },
       {
-        "id": "PengamatanPenyakitBelangMottleKacangTanahKlorosisDaun",
-        "label": "Klorosis daun — Penyakit Belang (Mottle)"
+        "id": "GejalaPenyakitBelangMottleKacangTanah",
+        "label": "Gejala pada Penyakit Belang (Mottle) (Kacang tanah): Tetapi umumnya gejala kedua virus ini sukar dibedakan"
       }
     ],
     "expectedDiseaseId": "PenyakitBelangMottleKacangTanah",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -214,22 +214,22 @@
     "plantId": "KacangTanah",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBercakDaunKacangTanahBercakDaun",
-        "label": "Bercak daun"
+        "id": "GejalaPenyakitBercakDaunKacangTanahBercakDaun",
+        "label": "Bercak daun pada Penyakit Bercak Daun (Kacang tanah)"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunKacangTanahBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Bercak Daun"
+        "id": "GejalaPenyakitBercakDaunKacangTanahBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bercak Daun (Kacang tanah)"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunKacangTanahDaunBerlubang",
-        "label": "Daun berlubang — Penyakit Bercak Daun"
+        "id": "GejalaPenyakitBercakDaunKacangTanahDaunBerlubang",
+        "label": "Daun berlubang pada Penyakit Bercak Daun (Kacang tanah)"
       }
     ],
     "expectedDiseaseId": "PenyakitBercakDaunKacangTanah",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -239,22 +239,22 @@
     "plantId": "KacangTanah",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitKaratDaunKacangTanahBercakDaun",
-        "label": "Bercak daun — Penyakit Karat Daun"
+        "id": "GejalaPenyakitKaratDaunKacangTanahBercakDaun",
+        "label": "Bercak daun pada Penyakit Karat Daun (Kacang tanah)"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunKacangTanahBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Karat Daun"
+        "id": "GejalaPenyakitKaratDaunKacangTanahBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Karat Daun (Kacang tanah)"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunKacangTanahKlorosisDaun",
-        "label": "Klorosis daun — Penyakit Karat Daun"
+        "id": "GejalaPenyakitKaratDaunKacangTanahKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Karat Daun (Kacang tanah)"
       }
     ],
     "expectedDiseaseId": "PenyakitKaratDaunKacangTanah",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -264,18 +264,18 @@
     "plantId": "KacangTanah",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitLayuBakteriKacangTanahKematianTanaman",
-        "label": "Kematian tanaman — Penyakit Layu Bakteri"
+        "id": "GejalaPenyakitLayuBakteriKacangTanahKematianTanaman",
+        "label": "Kematian tanaman pada Penyakit Layu Bakteri (Kacang tanah)"
       },
       {
-        "id": "PengamatanPenyakitLayuBakteriKacangTanahLayuDaun",
-        "label": "Layu daun — Penyakit Layu Bakteri"
+        "id": "GejalaPenyakitLayuBakteriKacangTanahLayuDaun",
+        "label": "Layu daun pada Penyakit Layu Bakteri (Kacang tanah)"
       }
     ],
     "expectedDiseaseId": "PenyakitLayuBakteriKacangTanah",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -285,22 +285,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitAntraknosaKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Antraknosa"
+        "id": "GejalaPenyakitAntraknosaKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Antraknosa (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitAntraknosaKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Antraknosa"
+        "id": "GejalaPenyakitAntraknosaKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Antraknosa (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitAntraknosaKedelaiDaunRontok",
-        "label": "Daun rontok — Penyakit Antraknosa"
+        "id": "GejalaPenyakitAntraknosaKedelaiDaunRontok",
+        "label": "Daun rontok pada Penyakit Antraknosa (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitAntraknosaKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -310,22 +310,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBakteriPustulKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Bakteri Pustul"
+        "id": "GejalaPenyakitBakteriPustulKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Bakteri Pustul (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitBakteriPustulKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Bakteri Pustul"
+        "id": "GejalaPenyakitBakteriPustulKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bakteri Pustul (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitBakteriPustulKedelaiDaunRontok",
-        "label": "Daun rontok — Penyakit Bakteri Pustul"
+        "id": "GejalaPenyakitBakteriPustulKedelaiDaunRontok",
+        "label": "Daun rontok pada Penyakit Bakteri Pustul (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitBakteriPustulKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -335,22 +335,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBercakBijiUnguKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Bercak Biji Ungu"
+        "id": "GejalaPenyakitBercakBijiUnguKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Bercak Biji Ungu (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitBercakBijiUnguKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Bercak Biji Ungu"
+        "id": "GejalaPenyakitBercakBijiUnguKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bercak Biji Ungu (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitBercakBijiUnguKedelaiBudidayaDihadapkanAdanyaPenyebab",
-        "label": "Budidaya tanaman kedelai juga dihadapkan dengan adanya serangan dari bakteri penyebab…"
+        "id": "GejalaPenyakitBercakBijiUnguKedelai4",
+        "label": "Gejala pada Penyakit Bercak Biji Ungu (Kedelai): Budidaya tanaman kedelai juga dihadapkan dengan adanya serangan dari..."
       }
     ],
     "expectedDiseaseId": "PenyakitBercakBijiUnguKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -360,22 +360,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"
+        "id": "GejalaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBerca",
+        "label": "Bercak daun pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"
+        "id": "GejalaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBerc2",
+        "label": "Bercak pada tanaman pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiPengaturanJarakTanamTidakMemengaruhi",
-        "label": "Pengaturan jarak tanam pada beberapa varietas kedelai tidak memengaruhi terhadap…"
+        "id": "GejalaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
+        "label": "Gejala pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) (Kedelai): Pengaturan jarak tanam pada beberapa varietas kedelai tidak memengaruhi..."
       }
     ],
     "expectedDiseaseId": "PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -385,22 +385,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBercakTargetKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Bercak Target"
+        "id": "GejalaPenyakitBercakTargetKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Bercak Target (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitBercakTargetKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Bercak Target"
+        "id": "GejalaPenyakitBercakTargetKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Bercak Target (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitBercakTargetKedelaiMunculBagianBatangPolongTerinfeksi",
-        "label": "Gejala juga dapat muncul pada bagian tanaman seperti batang dan polong yang terinfeksi…"
+        "id": "GejalaPenyakitBercakTargetKedelai",
+        "label": "Gejala pada Penyakit Bercak Target (Kedelai): Gejala juga dapat muncul pada bagian tanaman seperti batang dan polong..."
       }
     ],
     "expectedDiseaseId": "PenyakitBercakTargetKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -410,22 +410,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitEmbunPalsuDownyMildewKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Embun Palsu (Downy mildew)"
+        "id": "GejalaPenyakitEmbunPalsuDownyMildewKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Embun Palsu (Downy mildew) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitEmbunPalsuDownyMildewKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Embun Palsu (Downy mildew)"
+        "id": "GejalaPenyakitEmbunPalsuDownyMildewKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Embun Palsu (Downy mildew) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitEmbunPalsuDownyMildewKedelaiMenjadiKakuTerinfeksi",
-        "label": "Daun menjadi kaku seperti gejala tanaman yang terinfeksi virus."
+        "id": "GejalaPenyakitEmbunPalsuDownyMildewKedelai2",
+        "label": "Gejala pada Penyakit Embun Palsu (Downy mildew) (Kedelai): Daun menjadi kaku seperti gejala tanaman yang terinfeksi virus"
       }
     ],
     "expectedDiseaseId": "PenyakitEmbunPalsuDownyMildewKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -435,18 +435,18 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitEmbunTepungPowderyMildewKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Embun Tepung (Powdery Mildew)"
+        "id": "GejalaPenyakitEmbunTepungPowderyMildewKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Embun Tepung (Powdery Mildew) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitEmbunTepungPowderyMildewKedelaiTepungDaun",
-        "label": "Tepung pada daun — Penyakit Embun Tepung (Powdery Mildew)"
+        "id": "GejalaPenyakitEmbunTepungPowderyMildewKedelaiTepungDaun",
+        "label": "Tepung pada daun pada Penyakit Embun Tepung (Powdery Mildew) (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitEmbunTepungPowderyMildewKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -456,22 +456,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiAkibatMakaBenihDihasilkanMenjadi",
-        "label": "Akibat serangan patogen ini maka benih yang dihasilkan menjadi berukuran kecil dan…"
+        "id": "GejalaPenyakitHawarBakteriBacterialBlightKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Hawar Bakteri (Bacterial Blight) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Hawar Bakteri (Bacterial Blight)"
+        "id": "GejalaPenyakitHawarBakteriBacterialBlightKedelaiBercakTanama",
+        "label": "Bercak pada tanaman pada Penyakit Hawar Bakteri (Bacterial Blight) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitHawarBakteriBacterialBlightKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Hawar Bakteri (Bacterial Blight)"
+        "id": "GejalaPenyakitHawarBakteriBacterialBlightKedelaiDaunBerluban",
+        "label": "Daun berlubang pada Penyakit Hawar Bakteri (Bacterial Blight) (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitHawarBakteriBacterialBlightKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -481,22 +481,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitKaratDaunKedelaiAkibatMenyebabkanPenurunanProduksiPolong",
-        "label": "Akibat serangan oleh patogen ini menyebabkan penurunan produksi polong kedelai mencapai…"
+        "id": "GejalaPenyakitKaratDaunKedelaiBercakDaun",
+        "label": "Bercak daun pada Penyakit Karat Daun (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunKedelaiBercakDaun",
-        "label": "Bercak daun — Penyakit Karat Daun"
+        "id": "GejalaPenyakitKaratDaunKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Karat Daun (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitKaratDaunKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Karat Daun"
+        "id": "GejalaPenyakitKaratDaunKedelaiDaunKering",
+        "label": "Daun kering pada Penyakit Karat Daun (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitKaratDaunKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -506,22 +506,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiKerdilTanaman",
-        "label": "Kerdil tanaman — Penyakit Kerdil Kedelai (Soybean Stunt Virus)"
+        "id": "GejalaPenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
+        "label": "Gejala pada Penyakit Kerdil Kedelai (Soybean Stunt Virus) (Kedelai): yang menusukkan alat mulut stylet pada tanaman sehat sehingga virus..."
       },
       {
-        "id": "PengamatanPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiMosaikDaun",
-        "label": "Mosaik daun — Penyakit Kerdil Kedelai (Soybean Stunt Virus)"
+        "id": "GejalaPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiKerdilTan",
+        "label": "Kerdil tanaman pada Penyakit Kerdil Kedelai (Soybean Stunt Virus) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiPertumbuhanTerhambat",
-        "label": "Pertumbuhan terhambat — Penyakit Kerdil Kedelai (Soybean Stunt Virus)"
+        "id": "GejalaPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiMosaikDau",
+        "label": "Mosaik daun pada Penyakit Kerdil Kedelai (Soybean Stunt Virus) (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitKerdilKedelaiSoybeanStuntVirusKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -531,22 +531,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitLayuFusariumKedelaiBusukAkar",
-        "label": "Busuk akar — Penyakit Layu Fusarium"
+        "id": "GejalaPenyakitLayuFusariumKedelaiBusukAkar",
+        "label": "Busuk akar pada Penyakit Layu Fusarium (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitLayuFusariumKedelaiDisebabkanFusariumSpp",
-        "label": "Gejala penyakit yang disebabkan oleh patogen Fusarium spp."
+        "id": "GejalaPenyakitLayuFusariumKedelai",
+        "label": "Gejala pada Penyakit Layu Fusarium (Kedelai): Gejala penyakit yang disebabkan oleh patogen Fusarium spp"
       },
       {
-        "id": "PengamatanPenyakitLayuFusariumKedelaiKematianTanaman",
-        "label": "Kematian tanaman — Penyakit Layu Fusarium"
+        "id": "GejalaPenyakitLayuFusariumKedelaiKematianTanaman",
+        "label": "Kematian tanaman pada Penyakit Layu Fusarium (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitLayuFusariumKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -556,22 +556,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiBelangTanaman",
-        "label": "Belang pada tanaman — Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"
+        "id": "GejalaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiBelangTa",
+        "label": "Belang pada tanaman pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiHalDipengaruhiFaktorUmurTerinfeksi",
-        "label": "Hal ini dipengaruhi oleh beberapa faktor seperti umur tanaman saat terinfeksi patogen…"
+        "id": "GejalaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai2",
+        "label": "Gejala pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus) (Kedelai): Hal ini dipengaruhi oleh beberapa faktor seperti umur tanaman saat..."
       },
       {
-        "id": "PengamatanPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiKerdilTanaman",
-        "label": "Kerdil tanaman — Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"
+        "id": "GejalaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
+        "label": "Gejala pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus) (Kedelai): Tanaman dapat menunjukkan gejala yang sama atau berbeda akibat patogen..."
       }
     ],
     "expectedDiseaseId": "PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -581,22 +581,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitRebahKecambahKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Rebah Kecambah"
+        "id": "GejalaPenyakitRebahKecambahKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Rebah Kecambah (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitRebahKecambahKedelaiBusukAkar",
-        "label": "Busuk akar — Penyakit Rebah Kecambah"
+        "id": "GejalaPenyakitRebahKecambahKedelaiBusukAkar",
+        "label": "Busuk akar pada Penyakit Rebah Kecambah (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitRebahKecambahKedelaiBusukBatang",
-        "label": "Busuk batang — Penyakit Rebah Kecambah"
+        "id": "GejalaPenyakitRebahKecambahKedelaiBusukBatang",
+        "label": "Busuk batang pada Penyakit Rebah Kecambah (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitRebahKecambahKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -606,22 +606,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitRebahSemaiKedelaiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Rebah Semai"
+        "id": "GejalaPenyakitRebahSemaiKedelaiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Rebah Semai (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitRebahSemaiKedelaiBusukBatang",
-        "label": "Busuk batang — Penyakit Rebah Semai"
+        "id": "GejalaPenyakitRebahSemaiKedelaiBusukBatang",
+        "label": "Busuk batang pada Penyakit Rebah Semai (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitRebahSemaiKedelaiMunculTerserangS",
-        "label": "Gejala yang muncul pada tanaman yang terserang S."
+        "id": "GejalaPenyakitRebahSemaiKedelai",
+        "label": "Gejala pada Penyakit Rebah Semai (Kedelai): Gejala yang muncul pada tanaman yang terserang S"
       }
     ],
     "expectedDiseaseId": "PenyakitRebahSemaiKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -631,22 +631,22 @@
     "plantId": "Kedelai",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiSemakinBerkembangSeiringMeningkatnyaUmur",
-        "label": "Gejala akan semakin berkembang seiring dengan meningkatnya umur tanaman."
+        "id": "GejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedela5",
+        "label": "Gejala pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) (Kedelai): Gejala akan semakin berkembang seiring dengan meningkatnya umur tanaman"
       },
       {
-        "id": "PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiKerdilTanaman",
-        "label": "Kerdil tanaman — Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)"
+        "id": "GejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedela4",
+        "label": "Kerdil tanaman pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) (Kedelai)"
       },
       {
-        "id": "PengamatanPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelaiKlorosisDaun",
-        "label": "Klorosis daun — Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)"
+        "id": "GejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
+        "label": "Klorosis daun pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) (Kedelai)"
       }
     ],
     "expectedDiseaseId": "PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -656,22 +656,22 @@
     "plantId": "Padi",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBlasPadiBercakDaun",
-        "label": "Bercak daun — Penyakit Blas"
+        "id": "GejalaPenyakitBlasPadiBercakDaun",
+        "label": "Bercak daun pada Penyakit Blas (Padi)"
       },
       {
-        "id": "PengamatanPenyakitBlasPadiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Blas"
+        "id": "GejalaPenyakitBlasPadiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Blas (Padi)"
       },
       {
-        "id": "PengamatanPenyakitBlasPadiKhasMalai",
-        "label": "Gejala khas dari penyakit ini, yaitu blas daun dan blas malai."
+        "id": "GejalaPenyakitBlasPadiMalaiPatah",
+        "label": "Malai patah pada Penyakit Blas (Padi)"
       }
     ],
     "expectedDiseaseId": "PenyakitBlasPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -681,22 +681,22 @@
     "plantId": "Padi",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitHawarDaunBakteriPadiBercakDaun",
-        "label": "Bercak daun — Penyakit Hawar Daun Bakteri"
+        "id": "GejalaPenyakitHawarDaunBakteriPadiBercakDaun",
+        "label": "Bercak daun pada Penyakit Hawar Daun Bakteri (Padi)"
       },
       {
-        "id": "PengamatanPenyakitHawarDaunBakteriPadiHawarDaun",
-        "label": "Hawar daun — Penyakit Hawar Daun Bakteri"
+        "id": "GejalaPenyakitHawarDaunBakteriPadiHawarDaun",
+        "label": "Hawar daun pada Penyakit Hawar Daun Bakteri (Padi)"
       },
       {
-        "id": "PengamatanPenyakitHawarDaunBakteriPadiIstilahKresekSendiriDiambilBahasa",
-        "label": "Istilah kresek sendiri diambil dari bahasa Jawa yang berarti suara daun-daun yang mati…"
+        "id": "GejalaPenyakitHawarDaunBakteriPadiKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Hawar Daun Bakteri (Padi)"
       }
     ],
     "expectedDiseaseId": "PenyakitHawarDaunBakteriPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -706,22 +706,22 @@
     "plantId": "Padi",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitHawarPelepahDaunPadiBercakDaun",
-        "label": "Bercak daun — Penyakit Hawar Pelepah Daun"
+        "id": "GejalaPenyakitHawarPelepahDaunPadiBercakDaun",
+        "label": "Bercak daun pada Penyakit Hawar Pelepah Daun (Padi)"
       },
       {
-        "id": "PengamatanPenyakitHawarPelepahDaunPadiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Hawar Pelepah Daun"
+        "id": "GejalaPenyakitHawarPelepahDaunPadiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Hawar Pelepah Daun (Padi)"
       },
       {
-        "id": "PengamatanPenyakitHawarPelepahDaunPadiBusukBatang",
-        "label": "Busuk batang — Penyakit Hawar Pelepah Daun"
+        "id": "GejalaPenyakitHawarPelepahDaunPadiBusukBatang",
+        "label": "Busuk batang pada Penyakit Hawar Pelepah Daun (Padi)"
       }
     ],
     "expectedDiseaseId": "PenyakitHawarPelepahDaunPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -731,22 +731,22 @@
     "plantId": "Padi",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitKerdilRumputDanKerdilHampaPadiBercakDaun",
-        "label": "Bercak daun — Penyakit Kerdil Rumput dan Kerdil Hampa"
+        "id": "GejalaPenyakitKerdilRumputDanKerdilHampaPadiBercakDaun",
+        "label": "Bercak daun pada Penyakit Kerdil Rumput dan Kerdil Hampa (Padi)"
       },
       {
-        "id": "PengamatanPenyakitKerdilRumputDanKerdilHampaPadiBenderaMenyebabkanMenjadiAbnormalMana",
-        "label": "Infeksi pada daun bendera dapat menyebabkan daun menjadi abnormal di mana daun akan…"
+        "id": "GejalaPenyakitKerdilRumputDanKerdilHampaPadi",
+        "label": "Gejala pada Penyakit Kerdil Rumput dan Kerdil Hampa (Padi): Infeksi pada daun bendera dapat menyebabkan daun menjadi abnormal di..."
       },
       {
-        "id": "PengamatanPenyakitKerdilRumputDanKerdilHampaPadiKerdilTanaman",
-        "label": "Kerdil tanaman — Penyakit Kerdil Rumput dan Kerdil Hampa"
+        "id": "GejalaPenyakitKerdilRumputDanKerdilHampaPadiKerdilTanaman",
+        "label": "Kerdil tanaman pada Penyakit Kerdil Rumput dan Kerdil Hampa (Padi)"
       }
     ],
     "expectedDiseaseId": "PenyakitKerdilRumputDanKerdilHampaPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -756,22 +756,22 @@
     "plantId": "Padi",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitTungroPadiBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit Tungro"
+        "id": "GejalaPenyakitTungroPadiBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit Tungro (Padi)"
       },
       {
-        "id": "PengamatanPenyakitTungroPadiKerdilTanaman",
-        "label": "Kerdil tanaman — Penyakit Tungro"
+        "id": "GejalaPenyakitTungroPadiKerdilTanaman",
+        "label": "Kerdil tanaman pada Penyakit Tungro (Padi)"
       },
       {
-        "id": "PengamatanPenyakitTungroPadiKlorosisDaun",
-        "label": "Klorosis daun — Penyakit Tungro"
+        "id": "GejalaPenyakitTungroPadiKlorosisDaun",
+        "label": "Klorosis daun pada Penyakit Tungro (Padi)"
       }
     ],
     "expectedDiseaseId": "PenyakitTungroPadi",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -781,22 +781,22 @@
     "plantId": "UbiJalar",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBercakKuningUbiJalarBelangTanaman",
-        "label": "Belang pada tanaman — Penyakit bercak kuning"
+        "id": "GejalaPenyakitBercakKuningUbiJalarBelangTanaman",
+        "label": "Belang pada tanaman pada Penyakit bercak kuning (Ubi jalar)"
       },
       {
-        "id": "PengamatanPenyakitBercakKuningUbiJalarBercakDaun",
-        "label": "Bercak daun — Penyakit bercak kuning"
+        "id": "GejalaPenyakitBercakKuningUbiJalarBercakDaun",
+        "label": "Bercak daun pada Penyakit bercak kuning (Ubi jalar)"
       },
       {
-        "id": "PengamatanPenyakitBercakKuningUbiJalarBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit bercak kuning"
+        "id": "GejalaPenyakitBercakKuningUbiJalarBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit bercak kuning (Ubi jalar)"
       }
     ],
     "expectedDiseaseId": "PenyakitBercakKuningUbiJalar",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -806,22 +806,22 @@
     "plantId": "UbiJalar",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitBusukHitamBlackRotUbiJalar2018MenjelaskanBahwaC",
-        "label": "(2018) menjelaskan bahwa gejala serangan C."
+        "id": "GejalaPenyakitBusukHitamBlackRotUbiJalarBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit busuk hitam (black rot) (Ubi jalar)"
       },
       {
-        "id": "PengamatanPenyakitBusukHitamBlackRotUbiJalarBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit busuk hitam (black rot)"
+        "id": "GejalaPenyakitBusukHitamBlackRotUbiJalarBusukAkar",
+        "label": "Busuk akar pada Penyakit busuk hitam (black rot) (Ubi jalar)"
       },
       {
-        "id": "PengamatanPenyakitBusukHitamBlackRotUbiJalarBusukAkar",
-        "label": "Busuk akar — Penyakit busuk hitam (black rot)"
+        "id": "GejalaPenyakitBusukHitamBlackRotUbiJalarBusukTanaman",
+        "label": "Busuk pada tanaman pada Penyakit busuk hitam (black rot) (Ubi jalar)"
       }
     ],
     "expectedDiseaseId": "PenyakitBusukHitamBlackRotUbiJalar",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -831,22 +831,22 @@
     "plantId": "UbiJalar",
     "symptoms": [
       {
-        "id": "PengamatanPenyakitKudisUbiJalarBercakDaun",
-        "label": "Bercak daun — Penyakit kudis"
+        "id": "GejalaPenyakitKudisUbiJalarBercakDaun",
+        "label": "Bercak daun pada Penyakit kudis (Ubi jalar)"
       },
       {
-        "id": "PengamatanPenyakitKudisUbiJalarBercakTanaman",
-        "label": "Bercak pada tanaman — Penyakit kudis"
+        "id": "GejalaPenyakitKudisUbiJalarBercakTanaman",
+        "label": "Bercak pada tanaman pada Penyakit kudis (Ubi jalar)"
       },
       {
-        "id": "PengamatanPenyakitKudisUbiJalarMenjadiTidakProduktifFotosintesisTingkat",
-        "label": "Daun menjadi tidak produktif dalam fotosintesis jika pada tingkat serangan berat…"
+        "id": "GejalaPenyakitKudisUbiJalar",
+        "label": "Gejala pada Penyakit kudis (Ubi jalar): Daun menjadi tidak produktif dalam fotosintesis jika pada tingkat..."
       }
     ],
     "expectedDiseaseId": "PenyakitKudisUbiJalar",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -856,22 +856,22 @@
     "plantId": "UbiJalar",
     "symptoms": [
       {
-        "id": "PengamatanLayuFusariumUbiJalarBusukTanaman",
-        "label": "Busuk pada tanaman — layu fusarium"
+        "id": "GejalaLayuFusariumUbiJalarBusukTanaman",
+        "label": "Busuk pada tanaman pada layu fusarium (Ubi jalar)"
       },
       {
-        "id": "PengamatanLayuFusariumUbiJalarFusariumUmbiBerupaKankerMelingkar",
-        "label": "Gejala serangan Fusarium pada umbi ubi jalar berupa kanker melingkar permukaan yang…"
+        "id": "GejalaLayuFusariumUbiJalar",
+        "label": "Gejala pada layu fusarium (Ubi jalar): Gejala serangan Fusarium pada umbi ubi jalar berupa kanker melingkar..."
       },
       {
-        "id": "PengamatanLayuFusariumUbiJalarKematianTanaman",
-        "label": "Kematian tanaman — layu fusarium"
+        "id": "GejalaLayuFusariumUbiJalarKematianTanaman",
+        "label": "Kematian tanaman pada layu fusarium (Ubi jalar)"
       }
     ],
     "expectedDiseaseId": "LayuFusariumUbiJalar",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -881,14 +881,14 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanAntraknosaUbiKayuBatangPucukMati",
-        "label": "Pucuk mati — Antraknosa"
+        "id": "GejalaAntraknosaUbiKayuBatangPucukMati",
+        "label": "Pucuk mati pada Antraknosa (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "AntraknosaUbiKayuBatang",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -898,14 +898,14 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanAntraknosaUbiKayuDaunLayuDaun",
-        "label": "Layu daun — Antraknosa"
+        "id": "GejalaAntraknosaUbiKayuDaunLayuDaun",
+        "label": "Layu daun pada Antraknosa (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "AntraknosaUbiKayuDaun",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -915,14 +915,14 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanBercakDaunCoklatUbiKayuBercakDaun",
-        "label": "Bercak daun — Bercak daun Coklat"
+        "id": "GejalaBercakDaunCoklatUbiKayuBercakDaun",
+        "label": "Bercak daun pada Bercak daun Coklat (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "BercakDaunCoklatUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -932,14 +932,14 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanBercakDaunBaurUbiKayuBercakDaun",
-        "label": "Bercak daun — Bercak daun baur"
+        "id": "GejalaBercakDaunBaurUbiKayuBercakDaun",
+        "label": "Bercak daun pada Bercak daun baur (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "BercakDaunBaurUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -949,14 +949,14 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanBercakDaunPutihUbiKayuBercakTanaman",
-        "label": "Bercak pada tanaman — Bercak daun putih"
+        "id": "GejalaBercakDaunPutihUbiKayuBercakTanaman",
+        "label": "Bercak pada tanaman pada Bercak daun putih (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "BercakDaunPutihUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -966,18 +966,18 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanBusukUmbiUbiKayuBusukTanaman",
-        "label": "Busuk pada tanaman — Busuk Umbi"
+        "id": "GejalaBusukUmbiUbiKayuBusukTanaman",
+        "label": "Busuk pada tanaman pada Busuk Umbi (Ubi kayu)"
       },
       {
-        "id": "PengamatanBusukUmbiUbiKayuLayuDaun",
-        "label": "Layu daun — Busuk Umbi"
+        "id": "GejalaBusukUmbiUbiKayuLayuDaun",
+        "label": "Layu daun pada Busuk Umbi (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "BusukUmbiUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -987,22 +987,22 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanBusukAkarUbiKayuBusukAkar",
-        "label": "Busuk akar"
+        "id": "GejalaBusukAkarUbiKayuBusukAkar",
+        "label": "Busuk akar pada Busuk akar (Ubi kayu)"
       },
       {
-        "id": "PengamatanBusukAkarUbiKayuBusukBatang",
-        "label": "Busuk batang — Busuk akar"
+        "id": "GejalaBusukAkarUbiKayuBusukBatang",
+        "label": "Busuk batang pada Busuk akar (Ubi kayu)"
       },
       {
-        "id": "PengamatanBusukAkarUbiKayuBusukBuah",
-        "label": "Busuk buah — Busuk akar"
+        "id": "GejalaBusukAkarUbiKayuBusukBuah",
+        "label": "Busuk buah pada Busuk akar (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "BusukAkarUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1012,18 +1012,18 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanBusukAkarDanUmbiUbiKayuBusukAkar",
-        "label": "Busuk akar — Busuk akar dan umbi"
+        "id": "GejalaBusukAkarDanUmbiUbiKayuBusukAkar",
+        "label": "Busuk akar pada Busuk akar dan umbi (Ubi kayu)"
       },
       {
-        "id": "PengamatanBusukAkarDanUmbiUbiKayuPertumbuhanTerhambat",
-        "label": "Pertumbuhan terhambat — Busuk akar dan umbi"
+        "id": "GejalaBusukAkarDanUmbiUbiKayuPertumbuhanTerhambat",
+        "label": "Pertumbuhan terhambat pada Busuk akar dan umbi (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "BusukAkarDanUmbiUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1033,18 +1033,18 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanBusukPangkalBatangUbiKayuBusukBatang",
-        "label": "Busuk batang — Busuk pangkal batang"
+        "id": "GejalaBusukPangkalBatangUbiKayuBusukBatang",
+        "label": "Busuk batang pada Busuk pangkal batang (Ubi kayu)"
       },
       {
-        "id": "PengamatanBusukPangkalBatangUbiKayuLayuDaun",
-        "label": "Layu daun — Busuk pangkal batang"
+        "id": "GejalaBusukPangkalBatangUbiKayuLayuDaun",
+        "label": "Layu daun pada Busuk pangkal batang (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "BusukPangkalBatangUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1054,18 +1054,18 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanCassavaBrownStreakDiseaseCBSDUbiKayuBercakDaun",
-        "label": "Bercak daun — Cassava Brown Streak Disease (CBSD)"
+        "id": "GejalaCassavaBrownStreakDiseaseCBSDUbiKayuBercakDaun",
+        "label": "Bercak daun pada Cassava Brown Streak Disease (CBSD) (Ubi kayu)"
       },
       {
-        "id": "PengamatanCassavaBrownStreakDiseaseCBSDUbiKayuKlorosisDaun",
-        "label": "Klorosis daun — Cassava Brown Streak Disease (CBSD)"
+        "id": "GejalaCassavaBrownStreakDiseaseCBSDUbiKayuKlorosisDaun",
+        "label": "Klorosis daun pada Cassava Brown Streak Disease (CBSD) (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "CassavaBrownStreakDiseaseCBSDUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1075,18 +1075,18 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanCassavaMosaicBegomovirusCMBsUbiKayuKlorosisDaun",
-        "label": "Klorosis daun — Cassava Mosaic Begomovirus (CMBs)"
+        "id": "GejalaCassavaMosaicBegomovirusCMBsUbiKayuKlorosisDaun",
+        "label": "Klorosis daun pada Cassava Mosaic Begomovirus (CMBs) (Ubi kayu)"
       },
       {
-        "id": "PengamatanCassavaMosaicBegomovirusCMBsUbiKayuMosaikDaun",
-        "label": "Mosaik daun — Cassava Mosaic Begomovirus (CMBs)"
+        "id": "GejalaCassavaMosaicBegomovirusCMBsUbiKayuMosaikDaun",
+        "label": "Mosaik daun pada Cassava Mosaic Begomovirus (CMBs) (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "CassavaMosaicBegomovirusCMBsUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1096,18 +1096,18 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanHawarBakteriUbiKayuKlorosisTanaman",
-        "label": "Klorosis pada tanaman — Hawar bakteri"
+        "id": "GejalaHawarBakteriUbiKayuKlorosisTanaman",
+        "label": "Klorosis pada tanaman pada Hawar bakteri (Ubi kayu)"
       },
       {
-        "id": "PengamatanHawarBakteriUbiKayuPucukMati",
-        "label": "Pucuk mati — Hawar bakteri"
+        "id": "GejalaHawarBakteriUbiKayuPucukMati",
+        "label": "Pucuk mati pada Hawar bakteri (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "HawarBakteriUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1117,22 +1117,22 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanHawarDaunBakteriUbiKayuBercakDaun",
-        "label": "Bercak daun — Hawar daun bakteri"
+        "id": "GejalaHawarDaunBakteriUbiKayuBercakDaun",
+        "label": "Bercak daun pada Hawar daun bakteri (Ubi kayu)"
       },
       {
-        "id": "PengamatanHawarDaunBakteriUbiKayuDaunRontok",
-        "label": "Daun rontok — Hawar daun bakteri"
+        "id": "GejalaHawarDaunBakteriUbiKayuDaunRontok",
+        "label": "Daun rontok pada Hawar daun bakteri (Ubi kayu)"
       },
       {
-        "id": "PengamatanHawarDaunBakteriUbiKayuHawarDaun",
-        "label": "Hawar daun — Hawar daun bakteri"
+        "id": "GejalaHawarDaunBakteriUbiKayuHawarDaun",
+        "label": "Hawar daun pada Hawar daun bakteri (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "HawarDaunBakteriUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1142,18 +1142,18 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuBercakTanaman",
-        "label": "Bercak pada tanaman — Nekrosis pada titik tunas (Cassava bud necrosis)"
+        "id": "GejalaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuBercakT",
+        "label": "Bercak pada tanaman pada Nekrosis pada titik tunas (Cassava bud necrosis) (Ubi kayu)"
       },
       {
-        "id": "PengamatanNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuNekrosisTanaman",
-        "label": "Nekrosis pada tanaman — Nekrosis pada titik tunas (Cassava bud necrosis)"
+        "id": "GejalaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuNekrosi",
+        "label": "Nekrosis pada tanaman pada Nekrosis pada titik tunas (Cassava bud necrosis) (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1163,14 +1163,14 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanSapuSetanWitchesBroomUbiKayuKerdilTanaman",
-        "label": "Kerdil tanaman — Sapu setan (Witches broom)"
+        "id": "GejalaSapuSetanWitchesBroomUbiKayuKerdilTanaman",
+        "label": "Kerdil tanaman pada Sapu setan (Witches broom) (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "SapuSetanWitchesBroomUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1180,14 +1180,14 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanSuperelongasiUbiKayuPertumbuhanAbnormal",
-        "label": "Pertumbuhan abnormal — Superelongasi"
+        "id": "GejalaSuperelongasiUbiKayuPertumbuhanAbnormal",
+        "label": "Pertumbuhan abnormal pada Superelongasi (Ubi kayu)"
       }
     ],
     "expectedDiseaseId": "SuperelongasiUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   },
@@ -1197,14 +1197,14 @@
     "plantId": "UbiKayu",
     "symptoms": [
       {
-        "id": "PengamatanTanamanKerdilStuntUbiKayuTidakTumbuhUmumnyaTerjadiMengalami",
-        "label": "Tanaman tidak tumbuh secara normal, gejala ini umumnya terjadi pada tanaman yang…"
+        "id": "GejalaTanamanKerdilStuntUbiKayu",
+        "label": "Gejala pada Tanaman kerdil (stunt) (Ubi kayu): Tanaman tidak tumbuh secara normal, gejala ini umumnya terjadi pada..."
       }
     ],
     "expectedDiseaseId": "TanamanKerdilStuntUbiKayu",
     "expectedTopK": 3,
     "source": "generated-from-ontology",
-    "ontology": "19.021-labels",
+    "ontology": "final-26818",
     "verified": false,
     "notes": "generated; regression only"
   }

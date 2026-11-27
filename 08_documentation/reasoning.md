@@ -6,9 +6,9 @@ diubah menjadi kandidat penyakit, bagaimana keyakinan dihitung, dan bagaimana
 hasilnya divalidasi.
 
 Ontology yang dipakai adalah `04_ontology/ontology_md.ttl`
-(checksum `9214ef4e...`; 30.280 triple, 7 aturan SWRL, 53 diagnosis demo) untuk
+(checksum `3ee7ad70...`; 25.775 triple, 7 aturan SWRL, 53 diagnosis demo) untuk
 Java, dan closure Pellet `04_ontology/ontology_md_inferred.ttl`
-(32.506 triple) untuk Fuseki. Backend tetap dibuat tahan ganti ontology:
+(26.818 triple) untuk Fuseki. Backend tetap dibuat tahan ganti ontology:
 kosakata dipusatkan di `src/config/ontology.ts`, dan properti opsional boleh
 hilang tanpa mematikan diagnosis.
 
@@ -34,10 +34,10 @@ Yang tidak termasuk M5:
 
 | Item | Nilai |
 |---|---:|
-| Triple `ontology_md.ttl` | 30.280 |
-| Triple `ontology_md_inferred.ttl` | 32.506 |
-| Kelas TBox PTP | 71 |
-| Individu | 1.508 |
+| Triple `ontology_md.ttl` | 25.775 |
+| Triple `ontology_md_inferred.ttl` | 26.818 |
+| Kelas TBox PTP | 70 |
+| Individu | 1.596 |
 | Tanaman | 7 |
 | Penyakit | 53 |
 | Diagnosis demo | 53 |
@@ -274,7 +274,7 @@ Harness ada di `05_reasoning_tests/`.
 | Negative | 5 | Validasi input/error |
 
 Hasil 24 November 2026 (snapshot pada ontology 24.833 triple, sebelum merge
-ontology final 30.280/32.506; harness perlu dijalankan ulang untuk angka final):
+ontology final 25.775/26.818; harness perlu dijalankan ulang untuk angka final):
 
 | Metrik | Baseline 0,7/0,3 | Model baru |
 |---|---:|---:|
