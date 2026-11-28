@@ -1,0 +1,1202 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix kbr: <http://kbr.kelompok5.org/penyakit-tanaman-pangan#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kbr:AntraknosaUbiKayuBatang kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Antraknosa pada tanaman Ubi kayu, disebabkan oleh Collectothricum gloeosporioides, dengan gejala antara lain Pucuk mati."@id ;
+    skos:prefLabel "Anthracnose"@en .
+
+kbr:AntraknosaUbiKayuDaun kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Antraknosa pada tanaman Ubi kayu, disebabkan oleh Colletotricum spp, dengan gejala antara lain Layu daun."@id ;
+    skos:prefLabel "Anthracnose"@en .
+
+kbr:BagianTanaman kbr:knowledgeType "class" ;
+    skos:definition "Bagian tanaman yang dapat menjadi lokasi gejala atau serangan penyakit."@id .
+
+kbr:BelangTanaman kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "belang"@id,
+        "mottle"@id ;
+    skos:broader kbr:KategoriPerubahanWarna ;
+    skos:definition "Pola belang atau mottle pada jaringan tanaman tanpa bagian tanaman yang spesifik."@id ;
+    skos:prefLabel "mottling"@en .
+
+kbr:BercakDaun kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "bercak"@id,
+        "lesi daun"@id,
+        "noda daun"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Bercak atau noda berwarna berbeda dari jaringan sehat pada daun; dapat berupa lesi kecil, bulat, atau tidak beraturan."@id ;
+    skos:prefLabel "leaf spot"@en .
+
+kbr:BercakDaunBaurUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak daun baur pada tanaman Ubi kayu, disebabkan oleh Cercospora. viscosae, dengan gejala antara lain Bercak daun."@id ;
+    skos:prefLabel "Cassava brown leaf spot"@en .
+
+kbr:BercakDaunCoklatUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak daun Coklat pada tanaman Ubi kayu, disebabkan oleh Cercospora henningsii, Cercosporidium henningsii, dengan gejala antara lain Bercak daun."@id ;
+    skos:prefLabel "Cassava brown leaf spot"@en .
+
+kbr:BercakDaunPutihUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak daun putih pada tanaman Ubi kayu, disebabkan oleh Phaeoramularia manihotis, dengan gejala antara lain Bercak pada tanaman."@id ;
+    skos:prefLabel "Cassava white leaf spot"@en .
+
+kbr:Biji kbr:knowledgeType "part" ;
+    kbr:partParent kbr:Buah,
+        kbr:Malai,
+        kbr:Polong ;
+    skos:altLabel "benih"@id,
+        "biji"@id ;
+    skos:definition "Unit perbanyakan tanaman yang terbentuk di dalam buah, polong, atau malai; dapat menunjukkan gejala bercak atau perubahan warna."@id ;
+    skos:prefLabel "seed"@en .
+
+kbr:BusukAkar kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "busuk perakaran"@id ;
+    skos:broader kbr:KategoriPembusukan ;
+    skos:definition "Jaringan akar membusuk, berwarna coklat sampai hitam, sehingga penyerapan air dan hara terganggu."@id ;
+    skos:prefLabel "root rot"@en .
+
+kbr:BusukAkarDanUmbiUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk akar dan umbi pada tanaman Ubi kayu, disebabkan oleh Botryodiplodia spp, Diplodia spp, Phytophthora spp, Sclerotium rolfsii, dengan gejala antara lain Busuk akar, Pertumbuhan terhambat."@id ;
+    skos:prefLabel "Cassava root and tuber rot"@en .
+
+kbr:BusukAkarUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk akar pada tanaman Ubi kayu, disebabkan oleh Polyporus sulphureus, dengan gejala antara lain Busuk akar, Busuk batang, Busuk buah, Klorosis pada tanaman."@id ;
+    skos:prefLabel "Cassava root rot"@en .
+
+kbr:BusukBatang kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "busuk pangkal batang"@id,
+        "busuk pelepah"@id ;
+    skos:broader kbr:KategoriPembusukan ;
+    skos:definition "Jaringan batang atau pelepah membusuk, berwarna coklat sampai hitam, dan dapat menyebabkan tanaman rebah atau mati."@id ;
+    skos:prefLabel "stem rot"@en .
+
+kbr:BusukBuah kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "busuk buah"@id ;
+    skos:broader kbr:KategoriPembusukan ;
+    skos:definition "Jaringan buah membusuk, biasanya berair, berwarna coklat, dan dapat disertai miselium atau bau."@id ;
+    skos:prefLabel "fruit rot"@en .
+
+kbr:BusukPangkalBatangUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk pangkal batang pada tanaman Ubi kayu, disebabkan oleh Botryodiplodia spp, Diplodia spp, Fusarium spp, Phytophthora spp, Sclerotium rolfsii, dengan gejala antara lain Busuk batang, Layu daun."@id ;
+    skos:prefLabel "Cassava stem base rot"@en .
+
+kbr:BusukTanaman kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "busuk"@id,
+        "pembusukan"@id ;
+    skos:broader kbr:KategoriPembusukan ;
+    skos:definition "Pembusukan jaringan tanaman tanpa bagian tanaman yang spesifik."@id ;
+    skos:prefLabel "rot"@en .
+
+kbr:BusukUmbiUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk Umbi pada tanaman Ubi kayu, disebabkan oleh Fusarium spp, dengan gejala antara lain Busuk pada tanaman, Layu daun."@id ;
+    skos:prefLabel "Cassava tuber rot"@en .
+
+kbr:CassavaBrownStreakDiseaseCBSDUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Cassava Brown Streak Disease (CBSD) pada tanaman Ubi kayu, disebabkan oleh Ipomovirus, dengan gejala antara lain Bercak daun, Klorosis daun."@id ;
+    skos:prefLabel "Cassava brown streak disease"@en .
+
+kbr:CassavaMosaicBegomovirusCMBsUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Cassava Mosaic Begomovirus (CMBs) pada tanaman Ubi kayu, disebabkan oleh Begomovirus, dengan gejala antara lain Klorosis daun, Mosaik daun."@id ;
+    skos:prefLabel "Cassava mosaic disease"@en .
+
+kbr:Daun kbr:knowledgeType "part" ;
+    kbr:partParent kbr:Pucuk ;
+    skos:altLabel "daun"@id ;
+    skos:definition "Organ fotosintesis tanaman; tempat munculnya gejala seperti klorosis, bercak, hawar, atau lapisan tepung."@id ;
+    skos:prefLabel "leaf"@en .
+
+kbr:DaunBerlubang kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "lubang daun"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Daun berlubang akibat kerusakan jaringan, sering karena serangan hama atau patogen."@id ;
+    skos:prefLabel "leaf perforation"@en .
+
+kbr:DaunKering kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "daun mengering"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Daun mengering, rapuh, dan berwarna coklat akibat kehilangan air atau kerusakan jaringan."@id ;
+    skos:prefLabel "leaf drying"@en .
+
+kbr:FaseAnakan kbr:knowledgeType "phase" ;
+    kbr:urutanFase 3 ;
+    skos:altLabel "anakan"@id,
+        "pembentukan anakan"@id ;
+    skos:definition "Tahap pembentukan tunas atau anakan, terutama pada tanaman seperti padi."@id ;
+    skos:prefLabel "tillering stage"@en .
+
+kbr:FaseGeneratif kbr:knowledgeType "phase" ;
+    kbr:urutanFase 4 ;
+    skos:altLabel "fase reproduktif"@id,
+        "generatif"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id ;
+    skos:prefLabel "generative stage"@en .
+
+kbr:FaseMatang kbr:knowledgeType "phase" ;
+    skos:altLabel "matang"@id ;
+    skos:definition "Tahap buah atau biji mencapai kematangan."@id ;
+    skos:prefLabel "mature stage"@en .
+
+kbr:FasePanen kbr:knowledgeType "phase" ;
+    kbr:urutanFase 6 ;
+    skos:altLabel "panen"@id ;
+    skos:definition "Tahap tanaman siap dipanen."@id ;
+    skos:prefLabel "harvest stage"@en .
+
+kbr:FasePemasakan kbr:knowledgeType "phase" ;
+    kbr:urutanFase 5 ;
+    skos:altLabel "pemasakan"@id,
+        "pematangan"@id ;
+    skos:definition "Tahap pengisian dan pematangan biji, buah, atau umbi."@id ;
+    skos:prefLabel "ripening stage"@en .
+
+kbr:FasePembentukanPolong kbr:knowledgeType "phase" ;
+    skos:altLabel "pembentukan polong"@id ;
+    skos:definition "Tahap pembentukan polong setelah pembungaan."@id ;
+    skos:prefLabel "pod formation stage"@en .
+
+kbr:FasePembibitan kbr:knowledgeType "phase" ;
+    kbr:urutanFase 1 ;
+    skos:altLabel "pembibitan"@id,
+        "pesemaian"@id ;
+    skos:definition "Tahap awal pertumbuhan sejak benih disemai atau ditanam hingga bibit siap dipindah ke lahan; fokus pada perkecambahan dan pembentukan akar, batang, serta daun muda."@id ;
+    skos:prefLabel "nursery stage"@en .
+
+kbr:FasePembibitanTanaman kbr:phaseNext kbr:FaseVegetatifUmum .
+
+kbr:FasePembungaan kbr:knowledgeType "phase" ;
+    skos:altLabel "berbunga"@id,
+        "pembungaan"@id ;
+    skos:definition "Tahap munculnya bunga dan berlangsungnya penyerbukan."@id ;
+    skos:prefLabel "flowering stage"@en .
+
+kbr:FasePengisianPolong kbr:knowledgeType "phase" ;
+    skos:altLabel "pengisian polong"@id ;
+    skos:definition "Tahap pengisian biji di dalam polong."@id ;
+    skos:prefLabel "pod filling stage"@en .
+
+kbr:FasePertumbuhan kbr:knowledgeType "class" ;
+    skos:definition "Tahap perkembangan tanaman yang dapat menjadi periode rentan penyakit."@id .
+
+kbr:FaseVegetatif kbr:knowledgeType "phase" ;
+    kbr:urutanFase 2 ;
+    skos:altLabel "pertumbuhan vegetatif"@id,
+        "vegetatif"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id ;
+    skos:prefLabel "vegetative stage"@en .
+
+kbr:GejalaKanonik kbr:knowledgeType "class" ;
+    skos:definition "Konsep gejala yang dipakai untuk normalisasi pengamatan gejala dari sumber."@id .
+
+kbr:HawarBakteriUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar bakteri pada tanaman Ubi kayu, disebabkan oleh Xanthomonas campestris pv. Manihotis, dengan gejala antara lain Klorosis pada tanaman, Pucuk mati."@id ;
+    skos:prefLabel "Bacterial blight"@en .
+
+kbr:HawarDaun kbr:knowledgeType "symptom" ;
+    dcterms:source "Glosarium DOC006: Hawar"@id ;
+    skos:altLabel "blight daun"@id,
+        "hawar"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Kematian jaringan daun yang meluas cepat, biasanya dimulai dari tepi atau ujung daun sehingga daun tampak coklat dan kering."@id ;
+    skos:prefLabel "leaf blight"@en .
+
+kbr:HawarDaunBakteriUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar daun bakteri pada tanaman Ubi kayu, disebabkan oleh Xanthomonas Campestrispv. Manihotis, dengan gejala antara lain Bercak daun, Daun rontok, Hawar daun, Layu daun."@id ;
+    skos:prefLabel "Bacterial leaf blight"@en .
+
+kbr:Jagung kbr:knowledgeType "plant" ;
+    skos:altLabel "Zea mays"@id,
+        "jagung"@id ;
+    skos:definition "Tanaman pangan serealia penghasil tongkol jagung yang digunakan sebagai bahan pangan dan pakan."@id .
+
+kbr:KacangHijau kbr:knowledgeType "plant" ;
+    skos:altLabel "Vigna radiata"@id,
+        "kacang hijau"@id ;
+    skos:definition "Tanaman pangan legum berumur pendek penghasil biji kacang hijau yang kaya protein."@id .
+
+kbr:KacangTanah kbr:knowledgeType "plant" ;
+    skos:altLabel "Arachis hypogaea"@id,
+        "kacang tanah"@id ;
+    skos:definition "Tanaman pangan legum penghasil biji kacang tanah yang dibudidayakan untuk pangan dan industri."@id .
+
+kbr:KarantinaTanaman kbr:knowledgeType "control" ;
+    skos:definition "Mengisolasi tanaman atau bahan tanam yang terinfeksi untuk mencegah penyebaran penyakit."@id .
+
+kbr:Kedelai kbr:knowledgeType "plant" ;
+    skos:altLabel "Glycine max"@id,
+        "kedelai"@id ;
+    skos:definition "Tanaman pangan legum penghasil biji kedelai yang kaya protein, dibudidayakan sebagai tanaman pangan dan bahan baku olahan."@id .
+
+kbr:KematianTanaman kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "benih mati"@id,
+        "tanaman mati"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Tanaman atau benih mati, tidak tumbuh, atau tidak berkecambah."@id ;
+    skos:prefLabel "plant death"@en .
+
+kbr:KlorosisDaun kbr:knowledgeType "symptom" ;
+    dcterms:source "Glosarium DOC006: Klorosis"@id ;
+    skos:altLabel "daun menguning"@id,
+        "klorotik"@id ;
+    skos:broader kbr:KategoriPerubahanWarna ;
+    skos:definition "Kurang berkembangnya klorofil pada daun; bagian yang semula hijau tua berubah menjadi hijau muda, kuning, atau putih."@id ;
+    skos:prefLabel "chlorosis"@en .
+
+kbr:KlorosisTanaman kbr:knowledgeType "symptom" ;
+    dcterms:source "Glosarium DOC006: Klorosis"@id ;
+    skos:altLabel "klorotik"@id,
+        "menguning"@id ;
+    skos:broader kbr:KategoriPerubahanWarna ;
+    skos:definition "Klorosis pada jaringan tanaman tanpa bagian tanaman yang spesifik."@id ;
+    skos:prefLabel "chlorosis"@en .
+
+kbr:KondisiCurahHujanRendah kbr:knowledgeType "environment" ;
+    skos:definition "Curah hujan rendah yang mengurangi percikan air dan penyebaran patogen."@id .
+
+kbr:KondisiCurahHujanTinggi kbr:knowledgeType "environment" ;
+    skos:definition "Curah hujan tinggi yang meningkatkan percikan air dan penyebaran patogen."@id .
+
+kbr:KondisiKelembapanRendah kbr:knowledgeType "environment" ;
+    skos:definition "Kelembapan udara rendah yang dapat menekan perkecambahan spora dan infeksi patogen."@id .
+
+kbr:KondisiKelembapanTinggi kbr:knowledgeType "environment" ;
+    skos:definition "Kelembapan udara tinggi yang mendukung perkecambahan spora dan infeksi patogen."@id .
+
+kbr:KondisiMusimHujan kbr:knowledgeType "environment" ;
+    skos:definition "Musim hujan dengan curah hujan dan kelembapan tinggi yang mendukung perkembangan penyakit."@id .
+
+kbr:KondisiMusimKemarau kbr:knowledgeType "environment" ;
+    skos:definition "Musim kemarau dengan curah hujan rendah yang dapat menekan atau mengubah pola penyakit."@id .
+
+kbr:KondisiSuhuRendah kbr:knowledgeType "environment" ;
+    skos:definition "Suhu udara rendah yang dapat mendukung perkembangan patogen tertentu."@id .
+
+kbr:KondisiSuhuTinggi kbr:knowledgeType "environment" ;
+    skos:definition "Suhu udara tinggi yang dapat mendukung atau menekan perkembangan patogen tertentu."@id .
+
+kbr:Kresek kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "hawar daun bakteri"@id,
+        "kresek"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Gejala kresek pada daun padi berupa daun menguning, menggulung, dan mengering akibat hawar daun bakteri."@id ;
+    skos:prefLabel "kresek"@en .
+
+kbr:KulturMeristem kbr:knowledgeType "control" ;
+    skos:definition "Memperbanyak jaringan meristem untuk memperoleh bahan tanam bebas virus."@id .
+
+kbr:LayuDaun kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "kelayuan"@id,
+        "layu"@id ;
+    skos:broader kbr:KategoriPertumbuhan ;
+    skos:definition "Daun atau tanaman kehilangan turgor sehingga menggantung atau lemas, sering akibat gangguan pada akar atau pembuluh."@id ;
+    skos:prefLabel "wilting"@en .
+
+kbr:LayuFusariumUbiJalar kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit layu fusarium pada tanaman Ubi jalar, disebabkan oleh Fusarium oxysporum, dengan gejala antara lain Bercak pada tanaman, Busuk pada tanaman, Kematian tanaman, Kerdil tanaman."@id ;
+    skos:prefLabel "Fusarium wilt"@en .
+
+kbr:LekukanPangkalAkar kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "lekukan pangkal akar"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Lekukan berwarna coklat atau hitam pada pangkal akar."@id ;
+    skos:prefLabel "root collar depression"@en .
+
+kbr:MalaiKosong kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "bulir hampa"@id,
+        "malai hampa"@id ;
+    skos:broader kbr:KategoriPertumbuhan ;
+    skos:definition "Malai tidak terisi bulir atau bulir hampa sehingga malai tampak kosong."@id ;
+    skos:prefLabel "empty panicle"@en .
+
+kbr:MalaiPatah kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "patah malai"@id ;
+    skos:broader kbr:KategoriKelainanBentuk ;
+    skos:definition "Malai patah karena tidak mampu menopang bulir."@id ;
+    skos:prefLabel "panicle breakage"@en .
+
+kbr:MiseliumPadaTanaman kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "miselia"@id,
+        "miselium"@id ;
+    skos:broader kbr:KategoriLainnya ;
+    skos:definition "Tanda miselium jamur berupa lapisan atau benang putih pada jaringan tanaman."@id ;
+    skos:prefLabel "mycelium"@en .
+
+kbr:MosaikDaun kbr:knowledgeType "symptom" ;
+    dcterms:source "Glosarium DOC006: Mosaik"@id ;
+    skos:altLabel "belang daun"@id,
+        "mosaik"@id,
+        "mottle"@id ;
+    skos:broader kbr:KategoriPerubahanWarna ;
+    skos:definition "Pola belang hijau tua dan hijau muda pada daun akibat terganggunya pembentukan klorofil; bentuk daun dapat sedikit berubah."@id ;
+    skos:prefLabel "mosaic"@en .
+
+kbr:NekrosisDaun kbr:knowledgeType "symptom" ;
+    dcterms:source "Glosarium DOC006: Nekrosis"@id ;
+    skos:altLabel "jaringan daun mati"@id,
+        "nekrotik daun"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Kematian jaringan daun setempat, tampak coklat, kering, atau menghitam."@id ;
+    skos:prefLabel "leaf necrosis"@en .
+
+kbr:NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Nekrosis pada titik tunas (Cassava bud necrosis) pada tanaman Ubi kayu, disebabkan oleh Fungi/Jamur, dengan gejala antara lain Bercak pada tanaman, Nekrosis pada tanaman."@id ;
+    skos:prefLabel "Cassava bud necrosis"@en .
+
+kbr:NekrosisTanaman kbr:knowledgeType "symptom" ;
+    dcterms:source "Glosarium DOC006: Nekrosis"@id ;
+    skos:altLabel "nekrosis"@id,
+        "nekrotik"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Kematian jaringan tanaman setempat tanpa bagian tanaman yang spesifik."@id ;
+    skos:prefLabel "necrosis"@en .
+
+kbr:OverrideSYM_020 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_020" .
+
+kbr:OverrideSYM_032 kbr:canonicalGejala kbr:PertumbuhanAbnormal ;
+    kbr:knowledgeType "override" ;
+    kbr:sourceId "SYM_032" .
+
+kbr:OverrideSYM_034 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_034" .
+
+kbr:OverrideSYM_046 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_046" .
+
+kbr:OverrideSYM_051 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_051" .
+
+kbr:OverrideSYM_055 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_055" .
+
+kbr:OverrideSYM_059 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_059" .
+
+kbr:OverrideSYM_066 kbr:canonicalGejala kbr:PertumbuhanAbnormal ;
+    kbr:knowledgeType "override" ;
+    kbr:sourceId "SYM_066" .
+
+kbr:OverrideSYM_073 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_073" .
+
+kbr:OverrideSYM_084 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_084" .
+
+kbr:OverrideSYM_087 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_087" .
+
+kbr:OverrideSYM_088 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_088" .
+
+kbr:OverrideSYM_092 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_092" .
+
+kbr:OverrideSYM_093 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_093" .
+
+kbr:OverrideSYM_094 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_094" .
+
+kbr:OverrideSYM_100 kbr:canonicalGejala kbr:PertumbuhanTerhambat ;
+    kbr:knowledgeType "override" ;
+    kbr:sourceId "SYM_100" .
+
+kbr:OverrideSYM_101 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_101" .
+
+kbr:OverrideSYM_109 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_109" .
+
+kbr:OverrideSYM_110 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_110" .
+
+kbr:OverrideSYM_115 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_115" .
+
+kbr:OverrideSYM_120 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_120" .
+
+kbr:OverrideSYM_121 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_121" .
+
+kbr:OverrideSYM_124 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_124" .
+
+kbr:OverrideSYM_128 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_128" .
+
+kbr:OverrideSYM_138 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_138" .
+
+kbr:OverrideSYM_142 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_142" .
+
+kbr:OverrideSYM_159 kbr:canonicalGejala kbr:BercakTanaman ;
+    kbr:knowledgeType "override" ;
+    kbr:sourceId "SYM_159" .
+
+kbr:OverrideSYM_162 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_162" .
+
+kbr:OverrideSYM_163 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_163" .
+
+kbr:OverrideSYM_164 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_164" .
+
+kbr:OverrideSYM_165 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_165" .
+
+kbr:OverrideSYM_166 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_166" .
+
+kbr:OverrideSYM_170 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_170" .
+
+kbr:OverrideSYM_172 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_172" .
+
+kbr:OverrideSYM_175 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_175" .
+
+kbr:OverrideSYM_176 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_176" .
+
+kbr:OverrideSYM_183 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_183" .
+
+kbr:OverrideSYM_184 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_184" .
+
+kbr:OverrideSYM_185 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_185" .
+
+kbr:OverrideSYM_186 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_186" .
+
+kbr:OverrideSYM_187 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_187" .
+
+kbr:OverrideSYM_188 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_188" .
+
+kbr:OverrideSYM_189 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_189" .
+
+kbr:OverrideSYM_190 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_190" .
+
+kbr:OverrideSYM_191 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_191" .
+
+kbr:OverrideSYM_193 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_193" .
+
+kbr:OverrideSYM_194 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_194" .
+
+kbr:OverrideSYM_195 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_195" .
+
+kbr:OverrideSYM_196 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_196" .
+
+kbr:OverrideSYM_226 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_226" .
+
+kbr:OverrideSYM_436 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_436" .
+
+kbr:OverrideSYM_569 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_569" .
+
+kbr:OverrideSYM_575 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_575" .
+
+kbr:OverrideSYM_600 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_600" .
+
+kbr:OverrideSYM_614 kbr:knowledgeType "override" ;
+    kbr:nonGejala true ;
+    kbr:sourceId "SYM_614" .
+
+kbr:OverrideSYM_623 kbr:canonicalGejala kbr:DaunRontok,
+        kbr:PertumbuhanTerhambat ;
+    kbr:knowledgeType "override" ;
+    kbr:sourceId "SYM_623" .
+
+kbr:OverrideT5.2_BATANG_4 kbr:canonicalGejala kbr:KerdilTanaman,
+        kbr:PertumbuhanTerhambat ;
+    kbr:knowledgeType "override" ;
+    kbr:sourceId "T5.2_BATANG#4" .
+
+kbr:Padi kbr:knowledgeType "plant" ;
+    skos:altLabel "Oryza sativa"@id,
+        "padi"@id ;
+    skos:definition "Tanaman pangan serealia penghasil beras yang dibudidayakan di lahan sawah atau lahan kering."@id .
+
+kbr:PanenTepatWaktu kbr:knowledgeType "control" ;
+    skos:definition "Melakukan panen pada waktu yang dianjurkan untuk mengurangi kehilangan hasil dan infeksi pascapanen."@id .
+
+kbr:Patogen kbr:knowledgeType "class" ;
+    skos:definition "Organisme penyebab penyakit tanaman, seperti jamur, bakteri, virus, atau oomycete."@id .
+
+kbr:PemangkasanTanaman kbr:knowledgeType "control" ;
+    skos:definition "Memangkas bagian tanaman yang tidak produktif atau terserang untuk mengurangi sumber infeksi."@id .
+
+kbr:PembersihanAlat kbr:knowledgeType "control" ;
+    skos:definition "Membersihkan dan mensterilkan alat pertanian agar tidak menyebarkan patogen."@id .
+
+kbr:PemupukanBerimbang kbr:knowledgeType "control" ;
+    skos:definition "Memberikan pupuk secara berimbang sesuai kebutuhan hara tanaman agar tanaman lebih tahan terhadap penyakit."@id .
+
+kbr:PencabutanTanaman kbr:knowledgeType "control" ;
+    skos:definition "Mencabut dan membuang tanaman yang terserang agar tidak menjadi sumber infeksi."@id .
+
+kbr:PenerapanKulturTeknis kbr:knowledgeType "control" ;
+    skos:definition "Menerapkan praktik budidaya yang mendukung kesehatan tanaman, seperti pengolahan tanah, pemupukan, dan pengaturan tanam."@id .
+
+kbr:PenerapanPengendalianBiologis kbr:knowledgeType "control" ;
+    skos:definition "Menerapkan pengendalian biologis dengan memanfaatkan musuh alami atau agens antagonis secara terjadwal."@id .
+
+kbr:PenerapanPengendalianFisik kbr:knowledgeType "control" ;
+    skos:definition "Menerapkan pengendalian fisik seperti perlakuan panas, radiasi, atau pengaturan suhu."@id .
+
+kbr:PenerapanPengendalianKimiawi kbr:knowledgeType "control" ;
+    skos:definition "Menerapkan pengendalian kimiawi dengan pestisida sesuai sasaran dan dosis anjuran."@id .
+
+kbr:PenerapanPengendalianMekanis kbr:knowledgeType "control" ;
+    skos:definition "Menerapkan pengendalian mekanis dengan tindakan fisik seperti pencabutan, pemangkasan, atau pengumpulan bagian terserang."@id .
+
+kbr:PengairanDanDrainase kbr:knowledgeType "control" ;
+    skos:definition "Mengatur irigasi dan drainase untuk menjaga kelembapan lahan pada tingkat yang tidak mendukung patogen."@id .
+
+kbr:PengaturanJarakTanam kbr:knowledgeType "control" ;
+    skos:definition "Mengatur jarak atau kerapatan tanam agar sirkulasi udara dan cahaya lebih baik."@id .
+
+kbr:PengaturanKelembapan kbr:knowledgeType "control" ;
+    skos:definition "Mengatur kelembapan dan sirkulasi udara di sekitar tanaman atau ruang penyimpanan."@id .
+
+kbr:PengaturanSuhuPenyimpanan kbr:knowledgeType "control" ;
+    skos:definition "Mengatur suhu ruang penyimpanan agar perkembangan patogen pascapanen terhambat."@id .
+
+kbr:PengaturanWaktuTanam kbr:knowledgeType "control" ;
+    skos:definition "Mengatur waktu tanam agar tanaman terhindar dari periode tekanan penyakit atau vektor."@id .
+
+kbr:PengelolaanGulma kbr:knowledgeType "control" ;
+    skos:definition "Mengendalikan gulma yang dapat menjadi inang alternatif atau pesaing tanaman."@id .
+
+kbr:PengelolaanTerpadu kbr:knowledgeType "control" ;
+    skos:definition "Menerapkan pengelolaan penyakit secara terpadu dengan beberapa komponen teknologi."@id .
+
+kbr:Pengendalian kbr:knowledgeType "class" ;
+    skos:definition "Tindakan yang direkomendasikan untuk menekan penyakit tanaman."@id .
+
+kbr:PengendalianHamaTerpadu kbr:knowledgeType "control" ;
+    skos:definition "Menggabungkan beberapa teknik pengendalian hama dan penyakit secara terpadu."@id .
+
+kbr:PengendalianVektor kbr:knowledgeType "control" ;
+    skos:definition "Mengendalikan serangga atau organisme vektor yang menularkan patogen."@id .
+
+kbr:PenggunaanAgensHayati kbr:knowledgeType "control" ;
+    skos:definition "Memanfaatkan organisme antagonis atau agens hayati untuk menekan patogen."@id .
+
+kbr:PenggunaanBacillus kbr:knowledgeType "control" ;
+    skos:definition "Memanfaatkan bakteri Bacillus sebagai agens hayati pengendali patogen."@id .
+
+kbr:PenggunaanBakterisida kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan bakterisida yang sesuai sasaran untuk menekan bakteri patogen."@id .
+
+kbr:PenggunaanBeauveria kbr:knowledgeType "control" ;
+    skos:definition "Memanfaatkan jamur Beauveria sebagai agens hayati pengendali serangga hama."@id .
+
+kbr:PenggunaanBenihSehat kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan benih sehat, bersertifikat, atau bebas patogen untuk mencegah infeksi awal."@id .
+
+kbr:PenggunaanBiopestisida kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan biopestisida berbahan aktif organisme atau metabolit alami."@id .
+
+kbr:PenggunaanEkstrakTanaman kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan ekstrak tanaman yang memiliki senyawa antimikroba atau antijamur."@id .
+
+kbr:PenggunaanFungisida kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan fungisida yang sesuai sasaran untuk menekan pertumbuhan jamur patogen."@id .
+
+kbr:PenggunaanHerbisida kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan herbisida untuk mengendalikan gulma di sekitar pertanaman."@id .
+
+kbr:PenggunaanInsektisida kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan insektisida untuk mengendalikan serangga vektor atau hama."@id .
+
+kbr:PenggunaanMetarhizium kbr:knowledgeType "control" ;
+    skos:definition "Memanfaatkan jamur Metarhizium sebagai agens hayati pengendali serangga hama."@id .
+
+kbr:PenggunaanMulsa kbr:knowledgeType "control" ;
+    skos:definition "Menutup permukaan tanah dengan mulsa untuk mengurangi percikan tanah dan menjaga kelembapan."@id .
+
+kbr:PenggunaanPerangkap kbr:knowledgeType "control" ;
+    skos:definition "Memasang perangkap untuk memantau atau menangkap serangga vektor atau hama."@id .
+
+kbr:PenggunaanPestisidaNabati kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan pestisida nabati berbahan tanaman untuk menekan patogen atau hama."@id .
+
+kbr:PenggunaanPseudomonas kbr:knowledgeType "control" ;
+    skos:definition "Memanfaatkan bakteri Pseudomonas sebagai agens hayati pengendali patogen."@id .
+
+kbr:PenggunaanTanamanBukanInang kbr:knowledgeType "control" ;
+    skos:definition "Menanam tanaman yang bukan inang patogen untuk memutus siklus penyakit."@id .
+
+kbr:PenggunaanTrichoderma kbr:knowledgeType "control" ;
+    skos:definition "Memanfaatkan jamur Trichoderma sebagai agens hayati pengendali patogen."@id .
+
+kbr:PenggunaanVarietasTahan kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan varietas yang dinyatakan tahan atau toleran terhadap penyakit sasaran."@id .
+
+kbr:PengumpulanDanPemusnahan kbr:knowledgeType "control" ;
+    skos:definition "Mengumpulkan dan memusnahkan bagian tanaman terserang untuk mengurangi sumber inokulum."@id .
+
+kbr:Penyakit kbr:knowledgeType "class" ;
+    skos:definition "Penyakit tanaman pangan yang tercatat pada sumber."@id .
+
+kbr:PenyakitAntraknosaKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Antraknosa pada tanaman Kedelai, disebabkan oleh Colletotrichum, Colletotrichum truncatum, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun rontok, Kematian tanaman."@id ;
+    skos:prefLabel "Anthracnose"@en .
+
+kbr:PenyakitBakteriPustulKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bakteri Pustul pada tanaman Kedelai, disebabkan oleh Xanthomonas axonopodis, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun rontok, Klorosis pada tanaman."@id ;
+    skos:prefLabel "Bacterial pustule"@en .
+
+kbr:PenyakitBelangMottleKacangTanah kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Belang (Mottle) pada tanaman Kacang tanah, disebabkan oleh Peanut mottle virus, Peanut stripe virus, dengan gejala antara lain Belang pada tanaman, Klorosis daun, Klorosis pada tanaman, Mosaik daun."@id ;
+    skos:prefLabel "Mottle"@en .
+
+kbr:PenyakitBercakBijiUnguKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Biji Ungu pada tanaman Kedelai, disebabkan oleh Cercospora kikuchii, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Hawar daun, Nekrosis daun."@id ;
+    skos:prefLabel "Purple seed stain"@en .
+
+kbr:PenyakitBercakDaunKacangHijau kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Daun pada tanaman Kacang hijau, disebabkan oleh Cercospora canescens, Cercospora cruenta, dengan gejala antara lain Bercak daun, Daun rontok, Pertumbuhan terhambat."@id ;
+    skos:prefLabel "Leaf spot"@en .
+
+kbr:PenyakitBercakDaunKacangTanah kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Daun pada tanaman Kacang tanah, disebabkan oleh Cercospora arachidicola, Cercospora personata, Puccinia arachidis, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun berlubang, Daun kering."@id ;
+    skos:prefLabel "Leaf spot"@en .
+
+kbr:PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) pada tanaman Kedelai, disebabkan oleh Cercospora sojina, dengan gejala antara lain Bercak daun, Bercak pada tanaman."@id ;
+    skos:prefLabel "Frogeye leaf spot"@en .
+
+kbr:PenyakitBercakKuningUbiJalar kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit bercak kuning pada tanaman Ubi jalar, disebabkan oleh Sweet Potato Chlorotic Fleck Virus, Sweet Potato Feathery Mottle Virus, Sweet Potato Mild Mottle Virus, dengan gejala antara lain Belang pada tanaman, Bercak daun, Bercak pada tanaman, Klorosis daun."@id ;
+    skos:prefLabel "Yellow spot"@en .
+
+kbr:PenyakitBercakTargetKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Target pada tanaman Kedelai, disebabkan oleh Corynespora cassiicola, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Klorosis pada tanaman."@id ;
+    skos:prefLabel "Target spot"@en .
+
+kbr:PenyakitBlasPadi kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Blas pada tanaman Padi, disebabkan oleh Magnaporthe grisea, Pyricularia grisea, Pyricularia oryzae, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Malai patah."@id ;
+    skos:prefLabel "Rice blast"@en .
+
+kbr:PenyakitBulaiJagung kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bulai pada tanaman Jagung, disebabkan oleh Peronosclerospora maydis, Peronosclerospora sp, dengan gejala antara lain Kerdil tanaman, Klorosis daun, Pertumbuhan terhambat, Tepung pada daun."@id ;
+    skos:prefLabel "Downy mildew"@en .
+
+kbr:PenyakitBusukHitamBlackRotUbiJalar kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit busuk hitam (black rot) pada tanaman Ubi jalar, disebabkan oleh Ceratocystis fimbriata, dengan gejala antara lain Bercak pada tanaman, Busuk akar, Busuk pada tanaman."@id ;
+    skos:prefLabel "Black rot"@en .
+
+kbr:PenyakitBusukPelepahJagung kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk Pelepah pada tanaman Jagung, disebabkan oleh Rhizoctonia solani, dengan gejala antara lain Bercak pada tanaman, Busuk batang."@id ;
+    skos:prefLabel "Sheath rot"@en .
+
+kbr:PenyakitEmbunPalsuDownyMildewKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Embun Palsu (Downy mildew) pada tanaman Kedelai, disebabkan oleh Peronospora manshurica, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Klorosis daun, Klorosis pada tanaman."@id ;
+    skos:prefLabel "Downy mildew"@en .
+
+kbr:PenyakitEmbunTepungKacangHijau kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Embun Tepung pada tanaman Kacang hijau, disebabkan oleh Erysiphe polygoni, dengan gejala antara lain Tepung pada daun."@id ;
+    skos:prefLabel "Powdery mildew"@en .
+
+kbr:PenyakitEmbunTepungPowderyMildewKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Embun Tepung (Powdery Mildew) pada tanaman Kedelai, disebabkan oleh Erysiphae diffusa, dengan gejala antara lain Bercak daun, Tepung pada daun."@id ;
+    skos:prefLabel "Powdery mildew"@en .
+
+kbr:PenyakitHawarBakteriBacterialBlightKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar Bakteri (Bacterial Blight) pada tanaman Kedelai, disebabkan oleh Pseudomonas syringae, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun berlubang, Daun rontok."@id ;
+    skos:prefLabel "Bacterial blight"@en .
+
+kbr:PenyakitHawarDaunBakteriPadi kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar Daun Bakteri pada tanaman Padi, disebabkan oleh Xanthomonas oryzae, dengan gejala antara lain Bercak daun, Hawar daun, Klorosis daun, Klorosis pada tanaman."@id ;
+    skos:prefLabel "Bacterial leaf blight"@en .
+
+kbr:PenyakitHawarDaunJagung kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar Daun pada tanaman Jagung, disebabkan oleh Helminthosporium maydis, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Hawar daun, Nekrosis daun."@id ;
+    skos:prefLabel "Leaf blight"@en .
+
+kbr:PenyakitHawarPelepahDaunPadi kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar Pelepah Daun pada tanaman Padi, disebabkan oleh Rhizoctonia solani, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Busuk batang."@id ;
+    skos:prefLabel "Sheath blight"@en .
+
+kbr:PenyakitKaratDaunJagung kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Karat Daun pada tanaman Jagung, disebabkan oleh Puccinia polysora, dengan gejala antara lain Bercak pada tanaman, Klorosis daun."@id ;
+    skos:prefLabel "Rust"@en .
+
+kbr:PenyakitKaratDaunKacangTanah kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Karat Daun pada tanaman Kacang tanah, disebabkan oleh Puccinia arachidis, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Klorosis daun, Klorosis pada tanaman."@id ;
+    skos:prefLabel "Rust"@en .
+
+kbr:PenyakitKaratDaunKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Karat Daun pada tanaman Kedelai, disebabkan oleh Phakopsora meibomiae, Phakopsora pachyrhizi, Phakopspora pachyrhizi, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun kering, Daun rontok."@id ;
+    skos:prefLabel "Rust"@en .
+
+kbr:PenyakitKerdilKedelaiSoybeanStuntVirusKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Kerdil Kedelai (Soybean Stunt Virus) pada tanaman Kedelai, disebabkan oleh Soybean Stunt Virus, dengan gejala antara lain Kerdil tanaman, Mosaik daun, Pertumbuhan terhambat."@id ;
+    skos:prefLabel "Soybean stunt virus"@en .
+
+kbr:PenyakitKerdilRumputDanKerdilHampaPadi kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Kerdil Rumput dan Kerdil Hampa pada tanaman Padi, disebabkan oleh Rice grassy stunt virus, Rice ragged stunt virus, dengan gejala antara lain Bercak daun, Kerdil tanaman, Klorosis daun, Pertumbuhan abnormal."@id ;
+    skos:prefLabel "Grassy stunt and ragged stunt"@en .
+
+kbr:PenyakitKudisUbiJalar kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit kudis pada tanaman Ubi jalar, disebabkan oleh Elsinoe batatas, Spaceloma batatas, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Klorosis pada tanaman."@id ;
+    skos:prefLabel "Scab"@en .
+
+kbr:PenyakitLayuBakteriKacangTanah kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Layu Bakteri pada tanaman Kacang tanah, disebabkan oleh Ralstonia solanacearum, dengan gejala antara lain Kematian tanaman, Layu daun."@id ;
+    skos:prefLabel "Bacterial wilt"@en .
+
+kbr:PenyakitLayuFusariumKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Layu Fusarium pada tanaman Kedelai, disebabkan oleh Fusarium spp, dengan gejala antara lain Busuk akar, Kematian tanaman, Layu daun, Nekrosis pada tanaman."@id ;
+    skos:prefLabel "Fusarium wilt"@en .
+
+kbr:PenyakitLayuKacangHijau kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Layu pada tanaman Kacang hijau, disebabkan oleh Sclerotium rolfsii, dengan gejala antara lain Busuk pada tanaman, Layu daun, Miselium pada tanaman."@id ;
+    skos:prefLabel "Wilt"@en .
+
+kbr:PenyakitLayuStewartJagung kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Layu Stewart pada tanaman Jagung, disebabkan oleh Pantoea stewartii, dengan gejala antara lain Kerdil tanaman, Klorosis daun, Layu daun, Pertumbuhan abnormal."@id ;
+    skos:prefLabel "Stewart's wilt"@en .
+
+kbr:PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Mosaik Kedelai (Soybean Mosaic Virus) pada tanaman Kedelai, disebabkan oleh Soybean Mosaic Virus, dengan gejala antara lain Belang pada tanaman, Kerdil tanaman, Klorosis daun, Mosaik daun."@id ;
+    skos:prefLabel "Soybean mosaic virus"@en .
+
+kbr:PenyakitRebahKecambahKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Rebah Kecambah pada tanaman Kedelai, disebabkan oleh Rhizoctonia solani, dengan gejala antara lain Bercak pada tanaman, Busuk akar, Busuk batang, Busuk pada tanaman."@id ;
+    skos:prefLabel "Damping-off"@en .
+
+kbr:PenyakitRebahSemaiKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Rebah Semai pada tanaman Kedelai, disebabkan oleh Sclerotium rolfsii, dengan gejala antara lain Bercak pada tanaman, Busuk batang, Klorosis daun, Layu daun."@id ;
+    skos:prefLabel "Damping-off"@en .
+
+kbr:PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) pada tanaman Kedelai, disebabkan oleh Cowpea Mild Mottle Virus, dengan gejala antara lain Kerdil tanaman, Klorosis daun, Mosaik daun, Pertumbuhan abnormal."@id ;
+    skos:prefLabel "Cowpea mild mottle virus"@en .
+
+kbr:PenyakitTungroPadi kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Tungro pada tanaman Padi, disebabkan oleh Rice tungro bacillifor virus, Rice tungro spherical virus, dengan gejala antara lain Bercak pada tanaman, Kerdil tanaman, Klorosis daun, Pertumbuhan terhambat."@id ;
+    skos:prefLabel "Tungro"@en .
+
+kbr:PerlakuanAirPanas kbr:knowledgeType "control" ;
+    skos:definition "Merendam benih atau bahan tanam dalam air panas pada suhu dan waktu tertentu untuk membunuh patogen."@id .
+
+kbr:PerlakuanBenih kbr:knowledgeType "control" ;
+    skos:definition "Memperlakukan benih sebelum tanam, misalnya dengan fungisida atau air panas, untuk mencegah infeksi awal."@id .
+
+kbr:PerlakuanKimiaTanah kbr:knowledgeType "control" ;
+    skos:definition "Memperlakukan tanah dengan bahan kimia untuk menekan patogen tular tanah."@id .
+
+kbr:PerlakuanRadiasi kbr:knowledgeType "control" ;
+    skos:definition "Menggunakan radiasi tertentu untuk menekan patogen pada bahan tanam atau hasil panen."@id .
+
+kbr:PucukMati kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "dieback"@id,
+        "mati pucuk"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Pucuk atau tunas mati, mengering, dan berwarna coklat sampai hitam."@id ;
+    skos:prefLabel "dieback"@en .
+
+kbr:RotasiTanaman kbr:knowledgeType "control" ;
+    skos:definition "Menggilir jenis tanaman antar musim untuk memutus siklus hidup patogen di lahan."@id .
+
+kbr:SanitasiLahan kbr:knowledgeType "control" ;
+    skos:definition "Membersihkan sisa tanaman, gulma, dan sumber inokulum lain dari lahan."@id .
+
+kbr:SapuSetanWitchesBroomUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Sapu setan (Witches broom) pada tanaman Ubi kayu, disebabkan oleh Fitoplasma, dengan gejala antara lain Kerdil tanaman."@id ;
+    skos:prefLabel "Witches' broom"@en .
+
+kbr:SeleksiBahanTanam kbr:knowledgeType "control" ;
+    skos:definition "Menyeleksi bahan tanam atau bahan perbanyakan yang sehat dan bebas patogen."@id .
+
+kbr:SolarisasiTanah kbr:knowledgeType "control" ;
+    skos:definition "Memanaskan tanah dengan sinar matahari yang ditutup plastik untuk menekan patogen tular tanah."@id .
+
+kbr:SuperelongasiUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Superelongasi pada tanaman Ubi kayu, disebabkan oleh Elsinoe brasiliensis, dengan gejala antara lain Pertumbuhan abnormal."@id ;
+    skos:prefLabel "Superelongation"@en .
+
+kbr:TanamanKerdilStuntUbiKayu kbr:knowledgeType "disease",
+        "disease_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Tanaman kerdil (stunt) pada tanaman Ubi kayu, disebabkan oleh Begomovirus, dengan gejala antara lain Kerdil tanaman, Pertumbuhan terhambat."@id ;
+    skos:prefLabel "Stunt"@en .
+
+kbr:TanamanPangan kbr:knowledgeType "class" ;
+    skos:definition "Tanaman pangan dalam ruang lingkup knowledge base."@id .
+
+kbr:TepungDaun kbr:knowledgeType "symptom" ;
+    dcterms:source "Glosarium DOC006: Tepung"@id ;
+    skos:altLabel "embun tepung"@id,
+        "lapisan tepung"@id ;
+    skos:broader kbr:KategoriLainnya ;
+    skos:definition "Lapisan tepung berwarna putih pada permukaan daun atau bagian hijau, terdiri dari miselium dan konidia jamur."@id ;
+    skos:prefLabel "powdery mildew"@en .
+
+kbr:TidakSpesifik kbr:knowledgeType "part" ;
+    skos:altLabel "tidak spesifik"@id ;
+    skos:definition "Bagian tanaman yang tidak dapat ditentukan secara spesifik dari sumber."@id ;
+    skos:prefLabel "unspecified plant part"@en .
+
+kbr:UbiJalar kbr:knowledgeType "plant" ;
+    skos:altLabel "Ipomoea batatas"@id,
+        "ubi jalar"@id ;
+    skos:definition "Tanaman pangan umbi-umbian penghasil umbi akar yang kaya karbohidrat."@id .
+
+kbr:UbiKayu kbr:knowledgeType "plant" ;
+    skos:altLabel "Manihot esculenta"@id,
+        "singkong"@id,
+        "ubi kayu"@id ;
+    skos:definition "Tanaman pangan umbi-umbian penghasil umbi akar yang digunakan sebagai bahan pangan dan industri."@id .
+
+kbr:Umbi kbr:knowledgeType "part" ;
+    kbr:partParent kbr:Akar ;
+    skos:altLabel "umbi"@id ;
+    skos:definition "Organ penyimpanan cadangan makanan pada tanaman tertentu, seperti ubi jalar dan ubi kayu."@id ;
+    skos:prefLabel "tuber"@en .
+
+kbr:Varietas kbr:knowledgeType "class" ;
+    skos:definition "Varietas tanaman yang disebut sumber, termasuk status tahan atau rentan."@id .
+
+kbr:bagianDari kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan bagian tanaman dengan bagian tanaman induknya (partonomy)."@id .
+
+kbr:didahuluiOleh kbr:knowledgeType "property" ;
+    skos:definition "Kebalikan dari diikutiOleh."@id .
+
+kbr:diikutiOleh kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan fase pertumbuhan dengan fase berikutnya."@id .
+
+kbr:dikendalikanDengan kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan penyakit dengan tindakan pengendalian yang direkomendasikan."@id .
+
+kbr:dipengaruhiOleh kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan penyakit dengan faktor risiko atau kondisi lingkungan yang memengaruhinya."@id .
+
+kbr:disebabkanOleh kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan penyakit dengan patogen penyebabnya."@id .
+
+kbr:memilikiFasePertumbuhan kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan tanaman pangan dengan fase pertumbuhan yang dimilikinya."@id .
+
+kbr:memilikiGejala kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan penyakit dengan pengamatan gejala yang didukung sumber."@id .
+
+kbr:memilikiGejalaKanonik kbr:knowledgeType "property" ;
+    skos:definition "Memetakan pengamatan gejala ke konsep gejala kanonik."@id .
+
+kbr:memilikiVarietas kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan tanaman pangan dengan varietas yang disebut sumber."@id .
+
+kbr:rentanTerhadap kbr:knowledgeType "property" ;
+    skos:definition "Menyatakan varietas rentan atau peka terhadap penyakit tertentu."@id .
+
+kbr:tahanTerhadap kbr:knowledgeType "property" ;
+    skos:definition "Menyatakan varietas tahan atau toleran terhadap penyakit tertentu."@id .
+
+kbr:terdapatPada kbr:knowledgeType "property" ;
+    skos:definition "Menghubungkan pengamatan gejala dengan bagian tanaman tempat gejala diamati."@id .
+
+kbr:Akar kbr:knowledgeType "part" ;
+    skos:altLabel "akar"@id ;
+    skos:definition "Organ penyerap air dan hara serta penopang tanaman di dalam tanah; tempat munculnya gejala busuk akar."@id ;
+    skos:prefLabel "root"@en .
+
+kbr:BercakTanaman kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "bercak"@id,
+        "lesi"@id,
+        "noda"@id ;
+    skos:broader kbr:KategoriNekrosis ;
+    skos:definition "Bercak, noda, lesi, atau bintik pada jaringan tanaman tanpa bagian tanaman yang spesifik."@id ;
+    skos:prefLabel "spotting"@en .
+
+kbr:Buah kbr:knowledgeType "part" ;
+    kbr:partParent kbr:Batang ;
+    skos:altLabel "buah"@id ;
+    skos:definition "Organ hasil perkembangan bunga yang mengandung biji; tempat munculnya gejala busuk atau bercak buah."@id ;
+    skos:prefLabel "fruit"@en .
+
+kbr:DaunRontok kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "daun gugur"@id,
+        "defoliasi"@id ;
+    skos:broader kbr:KategoriPertumbuhan ;
+    skos:definition "Daun gugur atau rontok sebelum waktunya."@id ;
+    skos:prefLabel "leaf drop"@en .
+
+kbr:FaseGeneratifUmum kbr:phaseNext kbr:FaseMatangSusu .
+
+kbr:FaseMatangSusu kbr:knowledgeType "phase" ;
+    kbr:phaseNext kbr:FasePanenTanaman ;
+    skos:altLabel "matang susu"@id ;
+    skos:definition "Tahap biji mengeras dan berisi cairan seperti susu, menandakan menjelang pemasakan."@id ;
+    skos:prefLabel "milk stage"@en .
+
+kbr:FaseVegetatifUmum kbr:phaseNext kbr:FaseGeneratifUmum .
+
+kbr:KategoriKelainanBentuk rdfs:label "Kelainan bentuk"@id ;
+    kbr:knowledgeType "category" ;
+    skos:definition "Kategori gejala yang ditandai perubahan bentuk atau struktur tanaman, seperti malformasi atau patah."@id .
+
+kbr:KerdilTanaman kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "pertumbuhan kerdil"@id,
+        "tanaman kerdil"@id ;
+    skos:broader kbr:KategoriPertumbuhan ;
+    skos:definition "Pertumbuhan tanaman terhambat sehingga ukurannya lebih kecil atau lebih pendek daripada tanaman normal pada umur yang sama."@id ;
+    skos:prefLabel "stunting"@en .
+
+kbr:Malai kbr:knowledgeType "part" ;
+    kbr:partParent kbr:Batang ;
+    skos:altLabel "malai"@id ;
+    skos:definition "Bunga majemuk pada tanaman seperti padi; tempat munculnya gejala malai kosong, patah, atau bercak."@id ;
+    skos:prefLabel "panicle"@en .
+
+kbr:Polong kbr:knowledgeType "part" ;
+    kbr:partParent kbr:Batang ;
+    skos:altLabel "polong"@id ;
+    skos:definition "Buah khas tanaman legum yang membungkus biji; tempat munculnya gejala bercak atau busuk polong."@id ;
+    skos:prefLabel "pod"@en .
+
+kbr:Pucuk kbr:knowledgeType "part" ;
+    kbr:partParent kbr:Batang ;
+    skos:altLabel "pucuk"@id,
+        "tunas"@id ;
+    skos:definition "Tunas atau bagian ujung tanaman yang sedang tumbuh; tempat munculnya gejala mati pucuk atau klorosis."@id ;
+    skos:prefLabel "shoot"@en .
+
+kbr:KategoriLainnya rdfs:label "Gejala lainnya"@id ;
+    kbr:knowledgeType "category" ;
+    skos:definition "Kategori gejala yang tidak termasuk kelompok perubahan warna, pertumbuhan, nekrosis, pembusukan, atau kelainan bentuk."@id .
+
+kbr:PertumbuhanAbnormal kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "deformasi"@id,
+        "malformasi"@id,
+        "pertumbuhan tidak normal"@id ;
+    skos:broader kbr:KategoriPertumbuhan ;
+    skos:definition "Bentuk atau pola pertumbuhan tanaman tidak normal, misalnya malformasi, deformasi, atau penggulungan."@id ;
+    skos:prefLabel "abnormal growth"@en .
+
+kbr:PertumbuhanTerhambat kbr:knowledgeType "symptom" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:altLabel "pertumbuhan lambat"@id,
+        "terhambat"@id ;
+    skos:broader kbr:KategoriPertumbuhan ;
+    skos:definition "Laju pertumbuhan tanaman lebih lambat dan ukuran tanaman lebih kecil dibanding tanaman normal."@id ;
+    skos:prefLabel "growth retardation"@en .
+
+kbr:Batang kbr:knowledgeType "part" ;
+    skos:altLabel "batang"@id ;
+    skos:definition "Organ penopang tanaman dan pengangkut air serta hara; tempat munculnya gejala busuk, kerdil, atau bercak batang."@id ;
+    skos:prefLabel "stem"@en .
+
+kbr:KategoriPembusukan rdfs:label "Pembusukan"@id ;
+    kbr:knowledgeType "category" ;
+    skos:definition "Kategori gejala yang ditandai pembusukan jaringan tanaman pada batang, akar, buah, atau bagian lain."@id .
+
+kbr:KategoriPerubahanWarna rdfs:label "Perubahan warna"@id ;
+    kbr:knowledgeType "category" ;
+    skos:definition "Kategori gejala yang ditandai perubahan warna jaringan tanaman, seperti menguning, memudar, atau belang."@id .
+
+kbr:KategoriPertumbuhan rdfs:label "Gangguan pertumbuhan"@id ;
+    kbr:knowledgeType "category" ;
+    skos:definition "Kategori gejala yang ditandai gangguan pertumbuhan atau perkembangan tanaman, seperti kerdil, terhambat, atau layu."@id .
+
+kbr:KategoriNekrosis rdfs:label "Nekrosis dan kematian jaringan"@id ;
+    kbr:knowledgeType "category" ;
+    skos:definition "Kategori gejala yang ditandai kematian jaringan atau bagian tanaman, seperti bercak, hawar, kering, atau lubang."@id .
+

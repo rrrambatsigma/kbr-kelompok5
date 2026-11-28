@@ -1,0 +1,742 @@
+@prefix kbr: <http://kbr.kelompok5.org/penyakit-tanaman-pangan#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+kbr:DiagnosisAntraknosaUbiKayuBatang a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Antraknosa"@id ;
+    kbr:memilikiObservasi kbr:GejalaAntraknosaUbiKayuBatangPucukMati,
+        kbr:ObservasiLingkunganAntraknosaUbiKayuBatang ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisAntraknosaUbiKayuDaun a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Antraknosa"@id ;
+    kbr:memilikiObservasi kbr:GejalaAntraknosaUbiKayuDaunLayuDaun,
+        kbr:ObservasiLingkunganAntraknosaUbiKayuDaun ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisBercakDaunBaurUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Bercak daun baur"@id ;
+    kbr:memilikiObservasi kbr:GejalaBercakDaunBaurUbiKayuBercakDaun,
+        kbr:ObservasiLingkunganBercakDaunBaurUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisBercakDaunCoklatUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Bercak daun Coklat"@id ;
+    kbr:memilikiObservasi kbr:GejalaBercakDaunCoklatUbiKayuBercakDaun,
+        kbr:ObservasiLingkunganBercakDaunCoklatUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisBercakDaunPutihUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Bercak daun putih"@id ;
+    kbr:memilikiObservasi kbr:GejalaBercakDaunPutihUbiKayuBercakTanaman,
+        kbr:ObservasiLingkunganBercakDaunPutihUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisBusukAkarDanUmbiUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Busuk akar dan umbi"@id ;
+    kbr:memilikiObservasi kbr:GejalaBusukAkarDanUmbiUbiKayuBusukAkar,
+        kbr:GejalaBusukAkarDanUmbiUbiKayuPertumbuhanTerhambat,
+        kbr:ObservasiLingkunganBusukAkarDanUmbiUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisBusukAkarUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Busuk akar"@id ;
+    kbr:memilikiObservasi kbr:GejalaBusukAkarUbiKayuBusukAkar,
+        kbr:GejalaBusukAkarUbiKayuBusukBatang,
+        kbr:ObservasiLingkunganBusukAkarUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisBusukPangkalBatangUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Busuk pangkal batang"@id ;
+    kbr:memilikiObservasi kbr:GejalaBusukPangkalBatangUbiKayuBusukBatang,
+        kbr:GejalaBusukPangkalBatangUbiKayuLayuDaun,
+        kbr:ObservasiLingkunganBusukPangkalBatangUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisBusukUmbiUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Busuk Umbi"@id ;
+    kbr:memilikiObservasi kbr:GejalaBusukUmbiUbiKayuBusukTanaman,
+        kbr:GejalaBusukUmbiUbiKayuLayuDaun,
+        kbr:ObservasiLingkunganBusukUmbiUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisCassavaBrownStreakDiseaseCBSDUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Cassava Brown Streak Disease (CBSD)"@id ;
+    kbr:memilikiObservasi kbr:GejalaCassavaBrownStreakDiseaseCBSDUbiKayuBercakDaun,
+        kbr:GejalaCassavaBrownStreakDiseaseCBSDUbiKayuKlorosisDaun,
+        kbr:ObservasiLingkunganCassavaBrownStreakDiseaseCBSDUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisCassavaMosaicBegomovirusCMBsUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Cassava Mosaic Begomovirus (CMBs)"@id ;
+    kbr:memilikiObservasi kbr:GejalaCassavaMosaicBegomovirusCMBsUbiKayuKlorosisDaun,
+        kbr:GejalaCassavaMosaicBegomovirusCMBsUbiKayuMosaikDaun,
+        kbr:ObservasiLingkunganCassavaMosaicBegomovirusCMBsUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisHawarBakteriUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Hawar bakteri"@id ;
+    kbr:memilikiObservasi kbr:GejalaHawarBakteriUbiKayuKlorosisTanaman,
+        kbr:GejalaHawarBakteriUbiKayuPucukMati,
+        kbr:ObservasiLingkunganHawarBakteriUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisHawarDaunBakteriUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Hawar daun bakteri"@id ;
+    kbr:memilikiObservasi kbr:GejalaHawarDaunBakteriUbiKayuBercakDaun,
+        kbr:GejalaHawarDaunBakteriUbiKayuDaunRontok,
+        kbr:ObservasiLingkunganHawarDaunBakteriUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisLayuFusariumUbiJalar a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi jalar - layu fusarium"@id ;
+    kbr:memilikiObservasi kbr:GejalaLayuFusariumUbiJalarBercakTanaman,
+        kbr:GejalaLayuFusariumUbiJalarBusukTanaman,
+        kbr:ObservasiLingkunganLayuFusariumUbiJalar ;
+    kbr:memilikiTanaman kbr:UbiJalar ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Nekrosis pada titik tunas (Cassava bud necrosis)"@id ;
+    kbr:memilikiObservasi kbr:GejalaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuBercakT,
+        kbr:GejalaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayuNekrosi,
+        kbr:ObservasiLingkunganNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitAntraknosaKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Antraknosa"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitAntraknosaKedelaiBercakDaun,
+        kbr:GejalaPenyakitAntraknosaKedelaiBercakTanaman,
+        kbr:ObservasiLingkunganPenyakitAntraknosaKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBakteriPustulKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Bakteri Pustul"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBakteriPustulKedelaiBercakDaun,
+        kbr:GejalaPenyakitBakteriPustulKedelaiBercakTanaman,
+        kbr:ObservasiLingkunganPenyakitBakteriPustulKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBelangMottleKacangTanah a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kacang tanah - Penyakit Belang (Mottle)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBelangMottleKacangTanahBelangTanaman,
+        kbr:GejalaPenyakitBelangMottleKacangTanahKlorosisDaun ;
+    kbr:memilikiTanaman kbr:KacangTanah ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBercakBijiUnguKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Bercak Biji Ungu"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBercakBijiUnguKedelaiBercakDaun,
+        kbr:GejalaPenyakitBercakBijiUnguKedelaiBercakTanaman,
+        kbr:ObservasiLingkunganPenyakitBercakBijiUnguKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBercakDaunKacangHijau a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kacang hijau - Penyakit Bercak Daun"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBercakDaunKacangHijauBercakDaun,
+        kbr:GejalaPenyakitBercakDaunKacangHijauDaunRontok,
+        kbr:ObservasiLingkunganPenyakitBercakDaunKacangHijau ;
+    kbr:memilikiTanaman kbr:KacangHijau ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBercakDaunKacangTanah a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kacang tanah - Penyakit Bercak Daun"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBercakDaunKacangTanahBercakDaun,
+        kbr:GejalaPenyakitBercakDaunKacangTanahBercakTanaman,
+        kbr:ObservasiLingkunganPenyakitBercakDaunKacangTanah ;
+    kbr:memilikiTanaman kbr:KacangTanah ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBerc2,
+        kbr:GejalaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelaiBerca,
+        kbr:ObservasiLingkunganPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBercakKuningUbiJalar a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi jalar - Penyakit bercak kuning"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBercakKuningUbiJalarBelangTanaman,
+        kbr:GejalaPenyakitBercakKuningUbiJalarBercakDaun,
+        kbr:ObservasiLingkunganPenyakitBercakKuningUbiJalar ;
+    kbr:memilikiTanaman kbr:UbiJalar ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBercakTargetKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Bercak Target"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBercakTargetKedelaiBercakDaun,
+        kbr:GejalaPenyakitBercakTargetKedelaiBercakTanaman,
+        kbr:ObservasiLingkunganPenyakitBercakTargetKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBlasPadi a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Padi - Penyakit Blas"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBlasPadiBercakDaun,
+        kbr:GejalaPenyakitBlasPadiBercakTanaman ;
+    kbr:memilikiTanaman kbr:Padi ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBulaiJagung a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Jagung - Penyakit Bulai"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBulaiJagungKerdilTanaman,
+        kbr:GejalaPenyakitBulaiJagungKlorosisDaun ;
+    kbr:memilikiTanaman kbr:Jagung ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBusukHitamBlackRotUbiJalar a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi jalar - Penyakit busuk hitam (black rot)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBusukHitamBlackRotUbiJalarBercakTanaman,
+        kbr:GejalaPenyakitBusukHitamBlackRotUbiJalarBusukAkar,
+        kbr:ObservasiLingkunganPenyakitBusukHitamBlackRotUbiJalar ;
+    kbr:memilikiTanaman kbr:UbiJalar ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitBusukPelepahJagung a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Jagung - Penyakit Busuk Pelepah"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitBusukPelepahJagungBercakTanaman,
+        kbr:GejalaPenyakitBusukPelepahJagungBusukBatang,
+        kbr:ObservasiLingkunganPenyakitBusukPelepahJagung ;
+    kbr:memilikiTanaman kbr:Jagung ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitEmbunPalsuDownyMildewKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Embun Palsu (Downy mildew)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitEmbunPalsuDownyMildewKedelaiBercakDaun,
+        kbr:GejalaPenyakitEmbunPalsuDownyMildewKedelaiBercakTanaman ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitEmbunTepungKacangHijau a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kacang hijau - Penyakit Embun Tepung"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitEmbunTepungKacangHijauTepungDaun,
+        kbr:ObservasiLingkunganPenyakitEmbunTepungKacangHijau ;
+    kbr:memilikiTanaman kbr:KacangHijau ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitEmbunTepungPowderyMildewKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Embun Tepung (Powdery Mildew)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitEmbunTepungPowderyMildewKedelaiBercakDaun,
+        kbr:GejalaPenyakitEmbunTepungPowderyMildewKedelaiTepungDaun,
+        kbr:ObservasiLingkunganPenyakitEmbunTepungPowderyMildewKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitHawarBakteriBacterialBlightKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Hawar Bakteri (Bacterial Blight)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitHawarBakteriBacterialBlightKedelaiBercakDaun,
+        kbr:GejalaPenyakitHawarBakteriBacterialBlightKedelaiBercakTanama,
+        kbr:ObservasiLingkunganPenyakitHawarBakteriBacterialBlightKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitHawarDaunBakteriPadi a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Padi - Penyakit Hawar Daun Bakteri"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitHawarDaunBakteriPadiBercakDaun,
+        kbr:GejalaPenyakitHawarDaunBakteriPadiHawarDaun,
+        kbr:ObservasiLingkunganPenyakitHawarDaunBakteriPadi ;
+    kbr:memilikiTanaman kbr:Padi ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitHawarDaunJagung a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Jagung - Penyakit Hawar Daun"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitHawarDaunJagungBercakDaun,
+        kbr:GejalaPenyakitHawarDaunJagungBercakTanaman,
+        kbr:ObservasiLingkunganPenyakitHawarDaunJagung ;
+    kbr:memilikiTanaman kbr:Jagung ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitHawarPelepahDaunPadi a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Padi - Penyakit Hawar Pelepah Daun"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitHawarPelepahDaunPadiBercakDaun,
+        kbr:GejalaPenyakitHawarPelepahDaunPadiBercakTanaman,
+        kbr:ObservasiLingkunganPenyakitHawarPelepahDaunPadi ;
+    kbr:memilikiTanaman kbr:Padi ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitKaratDaunJagung a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Jagung - Penyakit Karat Daun"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitKaratDaunJagungBercakTanaman,
+        kbr:GejalaPenyakitKaratDaunJagungKlorosisDaun,
+        kbr:ObservasiLingkunganPenyakitKaratDaunJagung ;
+    kbr:memilikiTanaman kbr:Jagung ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitKaratDaunKacangTanah a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kacang tanah - Penyakit Karat Daun"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitKaratDaunKacangTanahBercakDaun,
+        kbr:GejalaPenyakitKaratDaunKacangTanahBercakTanaman,
+        kbr:ObservasiLingkunganPenyakitKaratDaunKacangTanah ;
+    kbr:memilikiTanaman kbr:KacangTanah ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitKaratDaunKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Karat Daun"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitKaratDaunKedelaiBercakDaun,
+        kbr:GejalaPenyakitKaratDaunKedelaiBercakTanaman ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitKerdilKedelaiSoybeanStuntVirusKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Kerdil Kedelai (Soybean Stunt Virus)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiKerdilTan,
+        kbr:GejalaPenyakitKerdilKedelaiSoybeanStuntVirusKedelaiMosaikDau,
+        kbr:ObservasiLingkunganPenyakitKerdilKedelaiSoybeanStuntVirusKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitKerdilRumputDanKerdilHampaPadi a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Padi - Penyakit Kerdil Rumput dan Kerdil Hampa"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitKerdilRumputDanKerdilHampaPadiBercakDaun,
+        kbr:GejalaPenyakitKerdilRumputDanKerdilHampaPadiKerdilTanaman,
+        kbr:ObservasiLingkunganPenyakitKerdilRumputDanKerdilHampaPadi ;
+    kbr:memilikiTanaman kbr:Padi ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitKudisUbiJalar a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi jalar - Penyakit kudis"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitKudisUbiJalarBercakDaun,
+        kbr:GejalaPenyakitKudisUbiJalarBercakTanaman ;
+    kbr:memilikiTanaman kbr:UbiJalar ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitLayuBakteriKacangTanah a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kacang tanah - Penyakit Layu Bakteri"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitLayuBakteriKacangTanahKematianTanaman,
+        kbr:GejalaPenyakitLayuBakteriKacangTanahLayuDaun,
+        kbr:ObservasiLingkunganPenyakitLayuBakteriKacangTanah ;
+    kbr:memilikiTanaman kbr:KacangTanah ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitLayuFusariumKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Layu Fusarium"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitLayuFusariumKedelaiBusukAkar,
+        kbr:GejalaPenyakitLayuFusariumKedelaiKematianTanaman,
+        kbr:ObservasiLingkunganPenyakitLayuFusariumKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitLayuKacangHijau a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kacang hijau - Penyakit Layu"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitLayuKacangHijauBusukTanaman,
+        kbr:GejalaPenyakitLayuKacangHijauLayuDaun,
+        kbr:ObservasiLingkunganPenyakitLayuKacangHijau ;
+    kbr:memilikiTanaman kbr:KacangHijau ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitLayuStewartJagung a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Jagung - Penyakit Layu Stewart"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitLayuStewartJagungKerdilTanaman,
+        kbr:GejalaPenyakitLayuStewartJagungKlorosisDaun,
+        kbr:ObservasiLingkunganPenyakitLayuStewartJagung ;
+    kbr:memilikiTanaman kbr:Jagung ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiBelangTa,
+        kbr:GejalaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelaiKerdilTa,
+        kbr:ObservasiLingkunganPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitRebahKecambahKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Rebah Kecambah"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitRebahKecambahKedelaiBercakTanaman,
+        kbr:GejalaPenyakitRebahKecambahKedelaiBusukAkar ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitRebahSemaiKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Rebah Semai"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitRebahSemaiKedelaiBercakTanaman,
+        kbr:GejalaPenyakitRebahSemaiKedelaiBusukBatang,
+        kbr:ObservasiLingkunganPenyakitRebahSemaiKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Kedelai - Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedela4,
+        kbr:GejalaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai,
+        kbr:ObservasiLingkunganPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai ;
+    kbr:memilikiTanaman kbr:Kedelai ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisPenyakitTungroPadi a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Padi - Penyakit Tungro"@id ;
+    kbr:memilikiObservasi kbr:GejalaPenyakitTungroPadiBercakTanaman,
+        kbr:GejalaPenyakitTungroPadiKerdilTanaman,
+        kbr:ObservasiLingkunganPenyakitTungroPadi ;
+    kbr:memilikiTanaman kbr:Padi ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisSapuSetanWitchesBroomUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Sapu setan (Witches broom)"@id ;
+    kbr:memilikiObservasi kbr:GejalaSapuSetanWitchesBroomUbiKayuKerdilTanaman,
+        kbr:ObservasiLingkunganSapuSetanWitchesBroomUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisSuperelongasiUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Superelongasi"@id ;
+    kbr:memilikiObservasi kbr:GejalaSuperelongasiUbiKayuPertumbuhanAbnormal,
+        kbr:ObservasiLingkunganSuperelongasiUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:DiagnosisTanamanKerdilStuntUbiKayu a kbr:Diagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Kasus demo: Ubi kayu - Tanaman kerdil (stunt)"@id ;
+    kbr:memilikiObservasi kbr:GejalaTanamanKerdilStuntUbiKayuKerdilTanaman,
+        kbr:GejalaTanamanKerdilStuntUbiKayuPertumbuhanTerhambat,
+        kbr:ObservasiLingkunganTanamanKerdilStuntUbiKayu ;
+    kbr:memilikiTanaman kbr:UbiKayu ;
+    rdfs:comment "Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL."@id .
+
+kbr:ObservasiLingkunganAntraknosaUbiKayuBatang a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Antraknosa"@id ;
+    kbr:klasifikasiTurunan "Curah hujan dan kelembapan relatif"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Antraknosa."@id .
+
+kbr:ObservasiLingkunganAntraknosaUbiKayuDaun a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Antraknosa"@id ;
+    kbr:klasifikasiTurunan "Curah hujan dan kelembapan relatif"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Antraknosa."@id .
+
+kbr:ObservasiLingkunganBercakDaunBaurUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Bercak daun baur"@id ;
+    kbr:klasifikasiTurunan "Iklim lembap dan hangat"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Bercak daun baur."@id .
+
+kbr:ObservasiLingkunganBercakDaunCoklatUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Bercak daun Coklat"@id ;
+    kbr:klasifikasiTurunan "Cuaca hangat dan lembap"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Bercak daun Coklat."@id .
+
+kbr:ObservasiLingkunganBercakDaunPutihUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Bercak daun putih"@id ;
+    kbr:klasifikasiTurunan "Iklim lembap dan sejuk"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Bercak daun putih."@id .
+
+kbr:ObservasiLingkunganBusukAkarDanUmbiUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Busuk akar dan umbi"@id ;
+    kbr:klasifikasiTurunan "Tanah tergenang"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Busuk akar dan umbi."@id .
+
+kbr:ObservasiLingkunganBusukAkarUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Busuk akar"@id ;
+    kbr:klasifikasiTurunan "Tanah tergenang"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Busuk akar."@id .
+
+kbr:ObservasiLingkunganBusukPangkalBatangUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Busuk pangkal batang"@id ;
+    kbr:klasifikasiTurunan "Kelembapan tinggi"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Busuk pangkal batang."@id .
+
+kbr:ObservasiLingkunganBusukUmbiUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Busuk Umbi"@id ;
+    kbr:klasifikasiTurunan "Tanah tergenang"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Busuk Umbi."@id .
+
+kbr:ObservasiLingkunganCassavaBrownStreakDiseaseCBSDUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Cassava Brown Streak Disease (CBSD)"@id ;
+    kbr:klasifikasiTurunan "Curah hujan"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Cassava Brown Streak Disease (CBSD)."@id .
+
+kbr:ObservasiLingkunganCassavaMosaicBegomovirusCMBsUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Cassava Mosaic Begomovirus (CMBs)"@id ;
+    kbr:klasifikasiTurunan "Suhu, curah hujan, dan angin"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Cassava Mosaic Begomovirus (CMBs)."@id .
+
+kbr:ObservasiLingkunganHawarBakteriUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Hawar bakteri"@id ;
+    kbr:klasifikasiTurunan "Suhu optimal"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Hawar bakteri."@id .
+
+kbr:ObservasiLingkunganHawarDaunBakteriUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Hawar daun bakteri"@id ;
+    kbr:klasifikasiTurunan "Suhu"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Hawar daun bakteri."@id .
+
+kbr:ObservasiLingkunganLayuFusariumUbiJalar a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: layu fusarium"@id ;
+    kbr:klasifikasiTurunan "Suhu infeksi optimal"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo layu fusarium."@id .
+
+kbr:ObservasiLingkunganNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Nekrosis pada titik tunas (Cassava bud necrosis)"@id ;
+    kbr:klasifikasiTurunan "Iklim lembap"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Nekrosis pada titik tunas (Cassava bud necrosis)."@id .
+
+kbr:ObservasiLingkunganPenyakitAntraknosaKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Antraknosa"@id ;
+    kbr:klasifikasiTurunan "Cuaca hangat dan lembap"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Antraknosa."@id .
+
+kbr:ObservasiLingkunganPenyakitBakteriPustulKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Bakteri Pustul"@id ;
+    kbr:klasifikasiTurunan "Suhu"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Bakteri Pustul."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakBijiUnguKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Bercak Biji Ungu"@id ;
+    kbr:klasifikasiTurunan "Kelembapan tinggi dan suhu hangat"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Bercak Biji Ungu."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakDaunKacangHijau a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Bercak Daun"@id ;
+    kbr:klasifikasiTurunan "Suhu 25–30°C"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Bercak Daun."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakDaunKacangTanah a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Bercak Daun"@id ;
+    kbr:klasifikasiTurunan "Suhu"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Bercak Daun."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)"@id ;
+    kbr:klasifikasiTurunan "Suhu optimal"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakKuningUbiJalar a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit bercak kuning"@id ;
+    kbr:klasifikasiTurunan "Suhu 20–29°C"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit bercak kuning."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakTargetKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Bercak Target"@id ;
+    kbr:klasifikasiTurunan "Kelembapan tinggi dan daun basah"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Bercak Target."@id .
+
+kbr:ObservasiLingkunganPenyakitBusukHitamBlackRotUbiJalar a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit busuk hitam (black rot)"@id ;
+    kbr:klasifikasiTurunan "Suhu lapang 23–27°C"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit busuk hitam (black rot)."@id .
+
+kbr:ObservasiLingkunganPenyakitBusukPelepahJagung a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Busuk Pelepah"@id ;
+    kbr:klasifikasiTurunan "Suhu ≥30°C"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Busuk Pelepah."@id .
+
+kbr:ObservasiLingkunganPenyakitEmbunTepungKacangHijau a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Embun Tepung"@id ;
+    kbr:klasifikasiTurunan "Suhu"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Embun Tepung."@id .
+
+kbr:ObservasiLingkunganPenyakitEmbunTepungPowderyMildewKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Embun Tepung (Powdery Mildew)"@id ;
+    kbr:klasifikasiTurunan "Suhu"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Embun Tepung (Powdery Mildew)."@id .
+
+kbr:ObservasiLingkunganPenyakitHawarBakteriBacterialBlightKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Hawar Bakteri (Bacterial Blight)"@id ;
+    kbr:klasifikasiTurunan "Suhu sejuk dan hujan sering"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Hawar Bakteri (Bacterial Blight)."@id .
+
+kbr:ObservasiLingkunganPenyakitHawarDaunBakteriPadi a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Hawar Daun Bakteri"@id ;
+    kbr:klasifikasiTurunan "Suhu 25–34°C"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Hawar Daun Bakteri."@id .
+
+kbr:ObservasiLingkunganPenyakitHawarDaunJagung a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Hawar Daun"@id ;
+    kbr:klasifikasiTurunan "Suhu"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Hawar Daun."@id .
+
+kbr:ObservasiLingkunganPenyakitHawarPelepahDaunPadi a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Hawar Pelepah Daun"@id ;
+    kbr:klasifikasiTurunan "Kelembapan relatif"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Hawar Pelepah Daun."@id .
+
+kbr:ObservasiLingkunganPenyakitKaratDaunJagung a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Karat Daun"@id ;
+    kbr:klasifikasiTurunan "Optimum"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Karat Daun."@id .
+
+kbr:ObservasiLingkunganPenyakitKaratDaunKacangTanah a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Karat Daun"@id ;
+    kbr:klasifikasiTurunan "Suhu"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Karat Daun."@id .
+
+kbr:ObservasiLingkunganPenyakitKerdilKedelaiSoybeanStuntVirusKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Kerdil Kedelai (Soybean Stunt Virus)"@id ;
+    kbr:klasifikasiTurunan "Lahan tegalan di bawah tegakan pohon jati"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Kerdil Kedelai (Soybean Stunt Virus)."@id .
+
+kbr:ObservasiLingkunganPenyakitKerdilRumputDanKerdilHampaPadi a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Kerdil Rumput dan Kerdil Hampa"@id ;
+    kbr:klasifikasiTurunan "Kondisi tropis dengan padi sepanjang tahun"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Kerdil Rumput dan Kerdil Hampa."@id .
+
+kbr:ObservasiLingkunganPenyakitLayuBakteriKacangTanah a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Layu Bakteri"@id ;
+    kbr:klasifikasiTurunan "Suhu 25–37°C"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Layu Bakteri."@id .
+
+kbr:ObservasiLingkunganPenyakitLayuFusariumKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Layu Fusarium"@id ;
+    kbr:klasifikasiTurunan "Cuaca sejuk dan basah"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Layu Fusarium."@id .
+
+kbr:ObservasiLingkunganPenyakitLayuKacangHijau a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Layu"@id ;
+    kbr:klasifikasiTurunan "Suhu 27–35°C"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Layu."@id .
+
+kbr:ObservasiLingkunganPenyakitLayuStewartJagung a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Layu Stewart"@id ;
+    kbr:klasifikasiTurunan "Musim dingin ringan"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Layu Stewart."@id .
+
+kbr:ObservasiLingkunganPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Mosaik Kedelai (Soybean Mosaic Virus)"@id ;
+    kbr:klasifikasiTurunan "Lahan tegalan di bawah tegakan pohon jati"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Mosaik Kedelai (Soybean Mosaic Virus)."@id .
+
+kbr:ObservasiLingkunganPenyakitRebahSemaiKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Rebah Semai"@id ;
+    kbr:klasifikasiTurunan "Tanah jenuh air dan kelembapan tinggi"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Rebah Semai."@id .
+
+kbr:ObservasiLingkunganPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)"@id ;
+    kbr:klasifikasiTurunan "Cuaca memengaruhi populasi Bemisia tabaci"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)."@id .
+
+kbr:ObservasiLingkunganPenyakitTungroPadi a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Penyakit Tungro"@id ;
+    kbr:klasifikasiTurunan "Musim hujan"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Penyakit Tungro."@id .
+
+kbr:ObservasiLingkunganSapuSetanWitchesBroomUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Sapu setan (Witches broom)"@id ;
+    kbr:klasifikasiTurunan "Musim kemarau"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Sapu setan (Witches broom)."@id .
+
+kbr:ObservasiLingkunganSuperelongasiUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Superelongasi"@id ;
+    kbr:klasifikasiTurunan "Musim hujan"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Superelongasi."@id .
+
+kbr:ObservasiLingkunganTanamanKerdilStuntUbiKayu a kbr:ObservasiLingkungan,
+        owl:NamedIndividual ;
+    rdfs:label "Observasi lingkungan demo: Tanaman kerdil (stunt)"@id ;
+    kbr:klasifikasiTurunan "Suhu, curah hujan, dan angin"@id ;
+    rdfs:comment "Observasi lingkungan untuk kasus demo Tanaman kerdil (stunt)."@id .
+

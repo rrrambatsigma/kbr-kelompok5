@@ -1,0 +1,915 @@
+@prefix kbr: <http://kbr.kelompok5.org/penyakit-tanaman-pangan#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kbr:BelangTanaman rdfs:label "Belang pada tanaman"@id ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep generik untuk pola belang atau mottle tanpa bagian tanaman eksplisit."@id .
+
+kbr:BercakDaun rdfs:label "Bercak daun"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk gejala bercak atau noda pada daun."@id .
+
+kbr:BercakTanaman rdfs:label "Bercak pada tanaman"@id ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep generik untuk bercak, noda, lesi, atau bintik tanpa bagian tanaman eksplisit."@id .
+
+kbr:BusukAkar rdfs:label "Busuk akar"@id ;
+    kbr:canonicalPart kbr:Akar ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk pembusukan pada akar."@id .
+
+kbr:BusukBatang rdfs:label "Busuk batang"@id ;
+    kbr:canonicalPart kbr:Batang ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk pembusukan pada batang atau pelepah."@id .
+
+kbr:BusukBuah rdfs:label "Busuk buah"@id ;
+    kbr:canonicalPart kbr:Buah ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk pembusukan pada buah."@id .
+
+kbr:BusukTanaman rdfs:label "Busuk pada tanaman"@id ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep generik untuk pembusukan tanpa bagian tanaman eksplisit."@id .
+
+kbr:ConditionClassRule1 kbr:conditionClass kbr:IntensitasCahaya ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiCahaya" .
+
+kbr:ConditionClassRule10 kbr:conditionClass kbr:CurahHujan ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiCurahHujan" .
+
+kbr:ConditionClassRule11 kbr:conditionClass kbr:KelembapanUdara ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiKelembapanUdara" .
+
+kbr:ConditionClassRule12 kbr:conditionClass kbr:Musim ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiMusim" .
+
+kbr:ConditionClassRule13 kbr:conditionClass kbr:Iklim ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiIklim" .
+
+kbr:ConditionClassRule2 kbr:conditionClass kbr:KetinggianTempat ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiDataran" .
+
+kbr:ConditionClassRule3 kbr:conditionClass kbr:KondisiDrainase ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiDrainase" .
+
+kbr:ConditionClassRule4 kbr:conditionClass kbr:TeksturTanah ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiTanahGembur" .
+
+kbr:ConditionClassRule5 kbr:conditionClass kbr:TeksturTanah ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiTanahBerpasir" .
+
+kbr:ConditionClassRule6 kbr:conditionClass kbr:TeksturTanah ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiTanahLiat" .
+
+kbr:ConditionClassRule7 kbr:conditionClass kbr:KondisiTanah ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiTanah" .
+
+kbr:ConditionClassRule8 kbr:conditionClass kbr:KelembapanTanah ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiKelembapanTanah" .
+
+kbr:ConditionClassRule9 kbr:conditionClass kbr:Suhu ;
+    kbr:knowledgeType "condition_class" ;
+    kbr:prefix "KondisiSuhu" .
+
+kbr:DaunBerlubang rdfs:label "Daun berlubang"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk daun berlubang akibat kerusakan jaringan."@id .
+
+kbr:DaunKering rdfs:label "Daun kering"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk daun yang mengering."@id .
+
+kbr:DaunRontok rdfs:label "Daun rontok"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk daun yang rontok atau gugur sebelum waktunya."@id .
+
+kbr:EnvFactorCurahHujan kbr:factorClass kbr:CurahHujan ;
+    kbr:factorName "CurahHujan" ;
+    kbr:factorTerm "curah hujan" ;
+    kbr:factorUnit "mm" ;
+    kbr:knowledgeType "env_factor" .
+
+kbr:EnvFactorKelembapan kbr:factorClass kbr:KelembapanUdara ;
+    kbr:factorName "Kelembapan" ;
+    kbr:factorTerm "kelembaban",
+        "kelembapan" ;
+    kbr:factorUnit "%" ;
+    kbr:knowledgeType "env_factor" .
+
+kbr:EnvFactorSuhu kbr:factorClass kbr:Suhu ;
+    kbr:factorName "Suhu" ;
+    kbr:factorTerm "suhu" ;
+    kbr:factorUnit "°C" ;
+    kbr:knowledgeType "env_factor" .
+
+kbr:FaseAnakanTanaman rdfs:label "Fase anakan"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FaseAnakan .
+
+kbr:FaseGeneratifUmum rdfs:label "Fase generatif"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FaseGeneratif .
+
+kbr:FaseMatang rdfs:label "Fase matang"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FasePemasakan .
+
+kbr:FaseMatangSusu rdfs:label "Fase matang susu"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FasePemasakan .
+
+kbr:FasePanenTanaman rdfs:label "Fase panen"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FasePanen .
+
+kbr:FasePembentukanPolong rdfs:label "Fase pembentukan polong"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FaseGeneratif .
+
+kbr:FasePembibitanTanaman rdfs:label "Fase pembibitan"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FasePembibitan .
+
+kbr:FasePembungaan rdfs:label "Fase pembungaan"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FaseGeneratif .
+
+kbr:FasePengisianPolong rdfs:label "Fase pengisian polong"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FaseGeneratif .
+
+kbr:FaseVegetatifUmum rdfs:label "Fase vegetatif"@id ;
+    kbr:knowledgeType "phase_def" ;
+    kbr:phaseClass kbr:FaseVegetatif .
+
+kbr:HawarDaun rdfs:label "Hawar daun"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk gejala hawar pada daun atau pelepah."@id .
+
+kbr:KarantinaTanaman rdfs:label "Karantina tanaman"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik karantina atau isolasi tanaman."@id .
+
+kbr:KematianTanaman rdfs:label "Kematian tanaman"@id ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk kematian tanaman atau benih."@id .
+
+kbr:KerdilTanaman rdfs:label "Kerdil tanaman"@id ;
+    kbr:canonicalPart kbr:Batang ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk pertumbuhan tanaman yang kerdil."@id .
+
+kbr:KlorosisDaun rdfs:label "Klorosis daun"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk daun menguning atau klorotik."@id .
+
+kbr:KlorosisTanaman rdfs:label "Klorosis pada tanaman"@id ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep generik untuk klorosis tanpa bagian tanaman eksplisit."@id .
+
+kbr:KondisiCurahHujanRendah rdfs:label "Curah hujan rendah"@id ;
+    kbr:knowledgeType "qualitative_rule" ;
+    kbr:pattern "curah\\s+hujan\\s+(?:yang\\s+)?rendah" ;
+    kbr:qualitativeClass kbr:CurahHujan .
+
+kbr:KondisiCurahHujanTinggi rdfs:label "Curah hujan tinggi"@id ;
+    kbr:knowledgeType "qualitative_rule" ;
+    kbr:pattern "curah\\s+hujan\\s+(?:yang\\s+)?tinggi" ;
+    kbr:qualitativeClass kbr:CurahHujan .
+
+kbr:KondisiKelembapanRendah rdfs:label "Kelembapan rendah"@id ;
+    kbr:knowledgeType "qualitative_rule" ;
+    kbr:pattern "kelembap(?:a|e)n\\s+(?:yang\\s+)?rendah" ;
+    kbr:qualitativeClass kbr:KelembapanUdara .
+
+kbr:KondisiKelembapanTinggi rdfs:label "Kelembapan tinggi"@id ;
+    kbr:knowledgeType "qualitative_rule" ;
+    kbr:pattern "kelembap(?:a|e)n\\s+(?:yang\\s+)?tinggi" ;
+    kbr:qualitativeClass kbr:KelembapanUdara .
+
+kbr:KondisiMusimHujan rdfs:label "Musim hujan"@id ;
+    kbr:knowledgeType "qualitative_rule" ;
+    kbr:pattern "musim\\s+hujan" ;
+    kbr:qualitativeClass kbr:Musim .
+
+kbr:KondisiMusimKemarau rdfs:label "Musim kemarau"@id ;
+    kbr:knowledgeType "qualitative_rule" ;
+    kbr:pattern "musim\\s+kemarau" ;
+    kbr:qualitativeClass kbr:Musim .
+
+kbr:KondisiSuhuRendah rdfs:label "Suhu rendah"@id ;
+    kbr:knowledgeType "qualitative_rule" ;
+    kbr:pattern "suhu\\s+(?:yang\\s+)?rendah" ;
+    kbr:qualitativeClass kbr:Suhu .
+
+kbr:KondisiSuhuTinggi rdfs:label "Suhu tinggi"@id ;
+    kbr:knowledgeType "qualitative_rule" ;
+    kbr:pattern "suhu\\s+(?:yang\\s+)?tinggi" ;
+    kbr:qualitativeClass kbr:Suhu .
+
+kbr:Kresek rdfs:label "Kresek"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk gejala kresek pada hawar daun bakteri padi."@id .
+
+kbr:KulturMeristem rdfs:label "Kultur meristem"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik perbanyakan jaringan meristem untuk memperoleh bahan tanam bebas virus."@id .
+
+kbr:LayuDaun rdfs:label "Layu daun"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk gejala layu pada daun atau tanaman."@id .
+
+kbr:LekukanPangkalAkar rdfs:label "Lekukan pada pangkal akar"@id ;
+    kbr:canonicalPart kbr:Akar ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk lekukan coklat atau hitam pada pangkal akar."@id .
+
+kbr:MalaiKosong rdfs:label "Malai kosong"@id ;
+    kbr:canonicalPart kbr:Malai ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk malai kosong atau hampa."@id .
+
+kbr:MalaiPatah rdfs:label "Malai patah"@id ;
+    kbr:canonicalPart kbr:Malai ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk malai yang patah karena tidak mampu menopang bulir."@id .
+
+kbr:MiseliumPadaTanaman rdfs:label "Miselium pada tanaman"@id ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk tanda miselium pada jaringan tanaman."@id .
+
+kbr:MosaikDaun rdfs:label "Mosaik daun"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk pola mosaik atau belang pada daun."@id .
+
+kbr:NekrosisDaun rdfs:label "Nekrosis daun"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk jaringan daun yang nekrotik atau mati."@id .
+
+kbr:NekrosisTanaman rdfs:label "Nekrosis pada tanaman"@id ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep generik untuk nekrosis tanpa bagian tanaman eksplisit."@id .
+
+kbr:PanenTepatWaktu rdfs:label "Panen tepat waktu"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik panen pada waktu yang dianjurkan."@id .
+
+kbr:PartDefaults kbr:defaultPart kbr:TidakSpesifik ;
+    kbr:knowledgeType "part_default" .
+
+kbr:PartWordAkar kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Akar ;
+    kbr:partWord "akar" .
+
+kbr:PartWordBatang kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Batang ;
+    kbr:partWord "batang" .
+
+kbr:PartWordBiji kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Biji ;
+    kbr:partWord "biji" .
+
+kbr:PartWordBuah kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Buah ;
+    kbr:partWord "buah" .
+
+kbr:PartWordDaun kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Daun ;
+    kbr:partWord "daun" .
+
+kbr:PartWordMalai kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Malai ;
+    kbr:partWord "malai" .
+
+kbr:PartWordPolong kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Polong ;
+    kbr:partWord "polong" .
+
+kbr:PartWordPucuk kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Pucuk ;
+    kbr:partWord "pucuk" .
+
+kbr:PartWordTunas kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Pucuk ;
+    kbr:partWord "tunas" .
+
+kbr:PartWordUmbi kbr:knowledgeType "part_word" ;
+    kbr:partTarget kbr:Umbi ;
+    kbr:partWord "umbi" .
+
+kbr:PemangkasanTanaman rdfs:label "Pemangkasan tanaman"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pemangkasan bagian tanaman."@id .
+
+kbr:PembersihanAlat rdfs:label "Pembersihan alat"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pembersihan dan sterilisasi alat."@id .
+
+kbr:PemupukanBerimbang rdfs:label "Pemupukan berimbang"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pemupukan dan pengelolaan unsur hara."@id .
+
+kbr:PencabutanTanaman rdfs:label "Pencabutan tanaman"@id ;
+    kbr:controlCategory kbr:PengendalianMekanis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pencabutan tanaman terserang."@id .
+
+kbr:PenerapanKulturTeknis rdfs:label "Penerapan kultur teknis"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penerapan kultur teknis secara umum."@id .
+
+kbr:PenerapanPengendalianBiologis rdfs:label "Penerapan pengendalian biologis"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penerapan pengendalian biologis secara umum."@id .
+
+kbr:PenerapanPengendalianFisik rdfs:label "Penerapan pengendalian fisik"@id ;
+    kbr:controlCategory kbr:PengendalianFisik ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penerapan pengendalian fisik secara umum."@id .
+
+kbr:PenerapanPengendalianKimiawi rdfs:label "Penerapan pengendalian kimiawi"@id ;
+    kbr:controlCategory kbr:PengendalianKimiawi ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penerapan pengendalian kimiawi secara umum."@id .
+
+kbr:PenerapanPengendalianMekanis rdfs:label "Penerapan pengendalian mekanis"@id ;
+    kbr:controlCategory kbr:PengendalianMekanis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penerapan pengendalian mekanis secara umum."@id .
+
+kbr:PengairanDanDrainase rdfs:label "Pengairan dan drainase"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengaturan air, irigasi, dan drainase."@id .
+
+kbr:PengaturanJarakTanam rdfs:label "Pengaturan jarak tanam"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengaturan jarak atau kerapatan tanam."@id .
+
+kbr:PengaturanKelembapan rdfs:label "Pengaturan kelembapan"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengaturan kelembapan dan sirkulasi udara."@id .
+
+kbr:PengaturanSuhuPenyimpanan rdfs:label "Pengaturan suhu penyimpanan"@id ;
+    kbr:controlCategory kbr:PengendalianFisik ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengaturan suhu penyimpanan."@id .
+
+kbr:PengaturanWaktuTanam rdfs:label "Pengaturan waktu tanam"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengaturan waktu atau keserempakan tanam."@id .
+
+kbr:PengelolaanGulma rdfs:label "Pengelolaan gulma"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengelolaan gulma."@id .
+
+kbr:PengelolaanTerpadu rdfs:label "Pengelolaan terpadu"@id ;
+    kbr:controlCategory kbr:PengendalianTerpadu ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengelolaan terpadu."@id .
+
+kbr:PengendalianHamaTerpadu rdfs:label "Pengendalian hama terpadu"@id ;
+    kbr:controlCategory kbr:PengendalianTerpadu ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengendalian hama terpadu."@id .
+
+kbr:PengendalianVektor rdfs:label "Pengendalian vektor"@id ;
+    kbr:controlCategory kbr:PengendalianKimiawi ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengendalian serangga atau organisme vektor penyakit."@id .
+
+kbr:PenggunaanAgensHayati rdfs:label "Penggunaan agens hayati"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan agens hayati."@id .
+
+kbr:PenggunaanBacillus rdfs:label "Penggunaan Bacillus"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan Bacillus."@id .
+
+kbr:PenggunaanBakterisida rdfs:label "Penggunaan bakterisida"@id ;
+    kbr:controlCategory kbr:PengendalianKimiawi ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan bakterisida."@id .
+
+kbr:PenggunaanBeauveria rdfs:label "Penggunaan Beauveria"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan Beauveria."@id .
+
+kbr:PenggunaanBenihSehat rdfs:label "Penggunaan benih sehat"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan benih sehat atau bersertifikat."@id .
+
+kbr:PenggunaanBiopestisida rdfs:label "Penggunaan biopestisida"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan biopestisida."@id .
+
+kbr:PenggunaanEkstrakTanaman rdfs:label "Penggunaan ekstrak tanaman"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan ekstrak tanaman."@id .
+
+kbr:PenggunaanFungisida rdfs:label "Penggunaan fungisida"@id ;
+    kbr:controlCategory kbr:PengendalianKimiawi ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan fungisida."@id .
+
+kbr:PenggunaanHerbisida rdfs:label "Penggunaan herbisida"@id ;
+    kbr:controlCategory kbr:PengendalianKimiawi ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan herbisida."@id .
+
+kbr:PenggunaanInsektisida rdfs:label "Penggunaan insektisida"@id ;
+    kbr:controlCategory kbr:PengendalianKimiawi ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan insektisida."@id .
+
+kbr:PenggunaanMetarhizium rdfs:label "Penggunaan Metarhizium"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan Metarhizium."@id .
+
+kbr:PenggunaanMulsa rdfs:label "Penggunaan mulsa"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan mulsa atau penutup tanah."@id .
+
+kbr:PenggunaanPerangkap rdfs:label "Penggunaan perangkap"@id ;
+    kbr:controlCategory kbr:PengendalianMekanis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan perangkap."@id .
+
+kbr:PenggunaanPestisidaNabati rdfs:label "Penggunaan pestisida nabati"@id ;
+    kbr:controlCategory kbr:PengendalianKimiawi ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan pestisida nabati."@id .
+
+kbr:PenggunaanPseudomonas rdfs:label "Penggunaan Pseudomonas"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan Pseudomonas."@id .
+
+kbr:PenggunaanTanamanBukanInang rdfs:label "Penggunaan tanaman bukan inang"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan tanaman yang bukan inang patogen."@id .
+
+kbr:PenggunaanTrichoderma rdfs:label "Penggunaan Trichoderma"@id ;
+    kbr:controlCategory kbr:PengendalianBiologis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan Trichoderma."@id .
+
+kbr:PenggunaanVarietasTahan rdfs:label "Penggunaan varietas tahan"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik penggunaan varietas yang dinyatakan tahan atau toleran."@id .
+
+kbr:PengumpulanDanPemusnahan rdfs:label "Pengumpulan dan pemusnahan"@id ;
+    kbr:controlCategory kbr:PengendalianMekanis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pengumpulan dan pemusnahan bagian tanaman terserang."@id .
+
+kbr:PerlakuanAirPanas rdfs:label "Perlakuan air panas"@id ;
+    kbr:controlCategory kbr:PengendalianFisik ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik perlakuan air panas."@id .
+
+kbr:PerlakuanBenih rdfs:label "Perlakuan benih"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik perlakuan benih sebelum tanam."@id .
+
+kbr:PerlakuanKimiaTanah rdfs:label "Perlakuan kimia tanah"@id ;
+    kbr:controlCategory kbr:PengendalianKimiawi ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik perlakuan kimia tanah."@id .
+
+kbr:PerlakuanRadiasi rdfs:label "Perlakuan radiasi"@id ;
+    kbr:controlCategory kbr:PengendalianFisik ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik perlakuan radiasi."@id .
+
+kbr:PertumbuhanAbnormal rdfs:label "Pertumbuhan abnormal"@id ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk malformasi atau bentuk pertumbuhan yang tidak normal."@id .
+
+kbr:PertumbuhanTerhambat rdfs:label "Pertumbuhan terhambat"@id ;
+    kbr:canonicalPart kbr:Batang ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk pertumbuhan tanaman yang terhambat."@id .
+
+kbr:PlantOrderItem0 kbr:knowledgeType "plant_order" ;
+    kbr:order 0 ;
+    kbr:plantTarget kbr:Padi .
+
+kbr:PlantOrderItem1 kbr:knowledgeType "plant_order" ;
+    kbr:order 1 ;
+    kbr:plantTarget kbr:Kedelai .
+
+kbr:PlantOrderItem2 kbr:knowledgeType "plant_order" ;
+    kbr:order 2 ;
+    kbr:plantTarget kbr:Jagung .
+
+kbr:PlantOrderItem3 kbr:knowledgeType "plant_order" ;
+    kbr:order 3 ;
+    kbr:plantTarget kbr:UbiJalar .
+
+kbr:PlantOrderItem4 kbr:knowledgeType "plant_order" ;
+    kbr:order 4 ;
+    kbr:plantTarget kbr:UbiKayu .
+
+kbr:PlantOrderItem5 kbr:knowledgeType "plant_order" ;
+    kbr:order 5 ;
+    kbr:plantTarget kbr:KacangTanah .
+
+kbr:PlantOrderItem6 kbr:knowledgeType "plant_order" ;
+    kbr:order 6 ;
+    kbr:plantTarget kbr:KacangHijau .
+
+kbr:PucukMati rdfs:label "Pucuk mati"@id ;
+    kbr:canonicalPart kbr:Pucuk ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk pucuk atau tunas yang mati."@id .
+
+kbr:RotasiTanaman rdfs:label "Rotasi tanaman"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik pergiliran atau rotasi tanaman."@id .
+
+kbr:SanitasiLahan rdfs:label "Sanitasi lahan"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik sanitasi lahan dan sisa tanaman."@id .
+
+kbr:SeleksiBahanTanam rdfs:label "Seleksi bahan tanam"@id ;
+    kbr:controlCategory kbr:PengendalianKulturTeknis ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik seleksi bahan tanam atau bahan perbanyakan."@id .
+
+kbr:SolarisasiTanah rdfs:label "Solarisasi tanah"@id ;
+    kbr:controlCategory kbr:PengendalianFisik ;
+    kbr:knowledgeType "control_action" ;
+    rdfs:comment "Tindakan kanonik solarisasi tanah."@id .
+
+kbr:TablePartT51DAUN kbr:knowledgeType "table_part" ;
+    kbr:partTarget kbr:daun ;
+    kbr:tableId "T5.1_DAUN" .
+
+kbr:TablePartT52BATANG kbr:knowledgeType "table_part" ;
+    kbr:partTarget kbr:batang ;
+    kbr:tableId "T5.2_BATANG" .
+
+kbr:TablePartT53AKAR kbr:knowledgeType "table_part" ;
+    kbr:partTarget kbr:akar ;
+    kbr:tableId "T5.3_AKAR" .
+
+kbr:TaxonBakteri kbr:knowledgeType "taxon_mapping" ;
+    kbr:taxonClass kbr:Bakteri ;
+    kbr:taxonGroup "bakteri" ;
+    kbr:taxonPriority 3 .
+
+kbr:TaxonFitoplasma kbr:knowledgeType "taxon_mapping" ;
+    kbr:taxonClass kbr:Fitoplasma ;
+    kbr:taxonGroup "fitoplasma" ;
+    kbr:taxonPriority 5 .
+
+kbr:TaxonJamur kbr:knowledgeType "taxon_mapping" ;
+    kbr:taxonClass kbr:Jamur ;
+    kbr:taxonGroup "jamur" ;
+    kbr:taxonPriority 1 .
+
+kbr:TaxonNematoda kbr:knowledgeType "taxon_mapping" ;
+    kbr:taxonClass kbr:Nematoda ;
+    kbr:taxonGroup "nematoda" ;
+    kbr:taxonPriority 2 .
+
+kbr:TaxonOomycete kbr:knowledgeType "taxon_mapping" ;
+    kbr:taxonClass kbr:Oomycete ;
+    kbr:taxonGroup "oomycete" ;
+    kbr:taxonPriority 6 .
+
+kbr:TaxonVirus kbr:knowledgeType "taxon_mapping" ;
+    kbr:taxonClass kbr:Virus ;
+    kbr:taxonGroup "virus" ;
+    kbr:taxonPriority 4 .
+
+kbr:TepungDaun rdfs:label "Tepung pada daun"@id ;
+    kbr:canonicalPart kbr:Daun ;
+    kbr:knowledgeType "canonical_symptom" ;
+    rdfs:comment "Konsep kanonik untuk gejala berupa lapisan tepung pada permukaan daun."@id .
+
+kbr:TextFilterEnvControl kbr:filterName "env_control_context" ;
+    kbr:knowledgeType "text_filter" ;
+    kbr:pattern "perlakuan\\s+(?:panas|air\\s+panas|benih)|panas\\s+kering|mengeliminasi|membunuh|ruang\\s+penyimpanan|selama\\s+penyimpanan|penyimpanan\\s+diatur|agar\\s+perkembangan\\s+penyakit\\s+lambat|penyembuhan\\s+periderm|pengeringan\\s+dilakukan|solarisasi|seed\\s+treatment|perendaman\\s+benih|air\\s+panas|direndam|disemprot" .
+
+kbr:TextFilterEnvNegative kbr:filterName "env_negative_context" ;
+    kbr:knowledgeType "text_filter" ;
+    kbr:pattern "\\bmenurun\\b|\\bbertahan\\b|tidak\\s+(?:berkembang|tumbuh)|kurang\\s+(?:baik|sesuai)" .
+
+kbr:VarietyConfig kbr:fallbackRegex "\\badalah\\s+([A-Z][A-Za-z0-9\\-']*(?:\\s+[A-Z0-9][A-Za-z0-9\\-']*){0,5})" ;
+    kbr:knowledgeType "variety_config" ;
+    kbr:plantWord "hijau",
+        "jagung",
+        "jalar",
+        "kacang",
+        "kayu",
+        "kedelai",
+        "padi",
+        "tanah",
+        "ubi" ;
+    kbr:primaryRegex "\\bvarietas\\b" ;
+    kbr:resistMarker "\\b(tahan|resistan|resisten|toleran)\\b" ;
+    kbr:stopword "adalah",
+        "agak",
+        "akan",
+        "aman",
+        "antara",
+        "antraknosa",
+        "apabila",
+        "atau",
+        "bagi",
+        "baik",
+        "bakteri",
+        "balitkabi",
+        "banyak",
+        "baru",
+        "beberapa",
+        "belum",
+        "bercak",
+        "bernama",
+        "bila",
+        "bisa",
+        "blas",
+        "boleh",
+        "buat",
+        "bulai",
+        "busuk",
+        "cara",
+        "cepat",
+        "contoh",
+        "cukup",
+        "dalam",
+        "dan",
+        "dapat",
+        "dari",
+        "daun",
+        "dengan",
+        "di",
+        "dianjurkan",
+        "diberi",
+        "diberikan",
+        "dikenal",
+        "diketahui",
+        "dilaporkan",
+        "dipakai",
+        "diperoleh",
+        "disebut",
+        "ditemukan",
+        "dua",
+        "embun",
+        "galur",
+        "gejala",
+        "genjah",
+        "hama",
+        "hanya",
+        "harus",
+        "hasil",
+        "hawar",
+        "hijau",
+        "ideal",
+        "inang",
+        "infeksi",
+        "ini",
+        "isolat",
+        "itu",
+        "jagung",
+        "jalar",
+        "jamur",
+        "jenis",
+        "jika",
+        "juga",
+        "kacang",
+        "karat",
+        "karena",
+        "kayu",
+        "ke",
+        "kedelai",
+        "kejadian",
+        "kepada",
+        "keparahan",
+        "kerdil",
+        "ketahanan",
+        "ketika",
+        "kudis",
+        "lain",
+        "lainnya",
+        "layu",
+        "lebih",
+        "lokal",
+        "mampu",
+        "masih",
+        "memiliki",
+        "menanam",
+        "menggunakan",
+        "menurut",
+        "misalnya",
+        "mosaik",
+        "mudah",
+        "murah",
+        "namun",
+        "normal",
+        "oleh",
+        "optimum",
+        "pada",
+        "padi",
+        "paling",
+        "pangkal",
+        "patogen",
+        "peka",
+        "pelepah",
+        "penanaman",
+        "penelitian",
+        "penyakit",
+        "perlu",
+        "puslitbangtan",
+        "ras",
+        "rendah",
+        "rentan",
+        "resistan",
+        "resisten",
+        "saat",
+        "salah",
+        "sangat",
+        "sapu",
+        "satu",
+        "sebagai",
+        "sebelum",
+        "secara",
+        "sedang",
+        "sedangkan",
+        "sehingga",
+        "sekitar",
+        "seperti",
+        "serangan",
+        "serta",
+        "sesudah",
+        "setan",
+        "setiap",
+        "sudah",
+        "sumber",
+        "superelongasi",
+        "tahan",
+        "tanah",
+        "tanaman",
+        "tanpa",
+        "telah",
+        "terhadap",
+        "terkait",
+        "termasuk",
+        "tersebut",
+        "tetapi",
+        "tiga",
+        "tinggi",
+        "titik",
+        "toleran",
+        "tunas",
+        "tungro",
+        "ubi",
+        "umum",
+        "unggul",
+        "untuk",
+        "varietas",
+        "variety",
+        "vektor",
+        "virus",
+        "yaitu",
+        "yakni",
+        "yang" ;
+    kbr:vulnMarker "\\b(rentan|peka)\\b" .
+
+kbr:Biji rdfs:label "Biji"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partSubclass kbr:GejalaBiji .
+
+kbr:Jagung rdfs:label "Jagung"@id ;
+    kbr:fallbackScientificName "Zea mays L." ;
+    kbr:fallbackSourceUrl "https://powo.science.kew.org/results?q=Zea%20mays"^^xsd:anyURI ;
+    kbr:knowledgeType "plant_config" ;
+    kbr:plantClass kbr:Serealia ;
+    kbr:plantId "PLANT_006" .
+
+kbr:KacangHijau rdfs:label "Kacang hijau"@id ;
+    kbr:fallbackScientificName "Vigna radiata (L.) R. Wilczek" ;
+    kbr:fallbackSourceUrl "https://powo.science.kew.org/results?q=Vigna%20radiata"^^xsd:anyURI ;
+    kbr:knowledgeType "plant_config" ;
+    kbr:plantClass kbr:Legum ;
+    kbr:plantId "PLANT_020" .
+
+kbr:KacangTanah rdfs:label "Kacang tanah"@id ;
+    kbr:fallbackScientificName "Arachis hypogaea L." ;
+    kbr:fallbackSourceUrl "https://powo.science.kew.org/results?q=Arachis%20hypogaea"^^xsd:anyURI ;
+    kbr:knowledgeType "plant_config" ;
+    kbr:plantClass kbr:Legum ;
+    kbr:plantId "PLANT_003",
+        "PLANT_019" .
+
+kbr:Kedelai rdfs:label "Kedelai"@id ;
+    kbr:knowledgeType "plant_config" ;
+    kbr:plantClass kbr:Legum ;
+    kbr:plantId "PLANT_002",
+        "PLANT_018" .
+
+kbr:Padi rdfs:label "Padi"@id ;
+    kbr:fallbackScientificName "Oryza sativa L." ;
+    kbr:fallbackSourceUrl "https://powo.science.kew.org/results?q=Oryza%20sativa"^^xsd:anyURI ;
+    kbr:knowledgeType "plant_config" ;
+    kbr:plantClass kbr:Serealia ;
+    kbr:plantId "PLANT_001" .
+
+kbr:Polong rdfs:label "Polong"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partSubclass kbr:GejalaPolong .
+
+kbr:TidakSpesifik rdfs:label "Tidak spesifik"@id ;
+    kbr:knowledgeType "part_config" .
+
+kbr:UbiJalar rdfs:label "Ubi jalar"@id ;
+    kbr:knowledgeType "plant_config" ;
+    kbr:plantClass kbr:UmbiUmbian ;
+    kbr:plantId "PLANT_004" .
+
+kbr:UbiKayu rdfs:label "Ubi kayu"@id ;
+    kbr:knowledgeType "plant_config" ;
+    kbr:plantClass kbr:UmbiUmbian ;
+    kbr:plantId "PLANT_005" .
+
+kbr:Umbi rdfs:label "Umbi"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partSubclass kbr:GejalaUmbi .
+
+kbr:Buah rdfs:label "Buah"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partSubclass kbr:GejalaBuah .
+
+kbr:Akar rdfs:label "Akar"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partSubclass kbr:GejalaAkar .
+
+kbr:Malai rdfs:label "Malai"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partSubclass kbr:GejalaMalai .
+
+kbr:Pucuk rdfs:label "Pucuk"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partParent kbr:Batang ;
+    kbr:partSubclass kbr:GejalaPucuk .
+
+kbr:Batang rdfs:label "Batang"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partSubclass kbr:GejalaBatang .
+
+kbr:Daun rdfs:label "Daun"@id ;
+    kbr:knowledgeType "part_config" ;
+    kbr:partParent kbr:Pucuk ;
+    kbr:partSubclass kbr:GejalaDaun .
+

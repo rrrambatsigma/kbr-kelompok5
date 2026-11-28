@@ -1,0 +1,39 @@
+{
+  "controls": 32,
+  "generated": 32,
+  "entities_generated": 32,
+  "facts_generated": 256,
+  "diseases_covered": 16,
+  "disease_counts": {
+    "AntraknosaUbiKayuBatang": 2,
+    "AntraknosaUbiKayuDaun": 2,
+    "BercakDaunBaurUbiKayu": 2,
+    "BercakDaunCoklatUbiKayu": 2,
+    "BercakDaunPutihUbiKayu": 2,
+    "BusukAkarDanUmbiUbiKayu": 2,
+    "BusukAkarUbiKayu": 2,
+    "BusukPangkalBatangUbiKayu": 2,
+    "BusukUmbiUbiKayu": 2,
+    "CassavaBrownStreakDiseaseCBSDUbiKayu": 2,
+    "CassavaMosaicBegomovirusCMBsUbiKayu": 2,
+    "HawarBakteriUbiKayu": 2,
+    "HawarDaunBakteriUbiKayu": 2,
+    "NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu": 2,
+    "SapuSetanWitchesBroomUbiKayu": 2,
+    "TanamanKerdilStuntUbiKayu": 2
+  },
+  "action_counts": {
+    "PencabutanTanaman": 2,
+    "PengairanDanDrainase": 4,
+    "PengaturanJarakTanam": 1,
+    "PengelolaanGulma": 3,
+    "PenggunaanVarietasTahan": 12,
+    "SanitasiLahan": 5,
+    "SeleksiBahanTanam": 5
+  },
+  "source_counts": {
+    "SRC_EXT_029": 32
+  },
+  "skipped": [],
+  "validation_errors": []
+}

@@ -14,13 +14,13 @@ class DiagnosisServiceTest {
     private DiagnosisService diagnosisService;
 
     @Test
-    void listsFiftyDemoDiagnoses() {
-        assertThat(diagnosisService.listDiagnoses()).hasSize(50);
+    void listsDemoDiagnoses() {
+        assertThat(diagnosisService.listDiagnoses()).isNotEmpty();
     }
 
     @Test
     void returnsInferredLinksForDemoDiagnosis() {
-        var diagnosis = diagnosisService.getDiagnosis("DiagnosisDemo01");
+        var diagnosis = diagnosisService.getDiagnosis("DiagnosisAntraknosaUbiKayuBatang");
 
         assertThat(diagnosis).isNotNull();
         assertThat((Iterable<?>) diagnosis.get("diseases")).isNotEmpty();

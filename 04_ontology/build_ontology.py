@@ -44,672 +44,41 @@ REPORT_PATH = ONTO_DIR / "extraction_report.json"
 
 sys.path.insert(0, str(ONTO_DIR))
 
+import definitions as defs  # noqa: E402
+import knowledge  # noqa: E402
 import tbox  # noqa: E402
-from tbox import KBR, PROV, SKOS  # noqa: E402
+from tbox import DCTERMS, KBR, PROV, SKOS  # noqa: E402
 
-PLANT_LOCAL: dict[str, str] = {
-    "PLANT_001": "Padi",
-    "PLANT_002": "Kedelai",
-    "PLANT_018": "Kedelai",
-    "PLANT_006": "Jagung",
-    "PLANT_004": "UbiJalar",
-    "PLANT_005": "UbiKayu",
-    "PLANT_003": "KacangTanah",
-    "PLANT_019": "KacangTanah",
-    "PLANT_020": "KacangHijau",
-}
-PLANT_CLASS = {
-    "Padi": "Serealia",
-    "Jagung": "Serealia",
-    "Kedelai": "Legum",
-    "KacangTanah": "Legum",
-    "KacangHijau": "Legum",
-    "UbiKayu": "UmbiUmbian",
-    "UbiJalar": "UmbiUmbian",
-}
-PLANT_LABELS = {
-    "Padi": "Padi",
-    "Kedelai": "Kedelai",
-    "Jagung": "Jagung",
-    "UbiJalar": "Ubi jalar",
-    "UbiKayu": "Ubi kayu",
-    "KacangTanah": "Kacang tanah",
-    "KacangHijau": "Kacang hijau",
-}
-PLANT_ORDER = ["Padi", "Kedelai", "Jagung", "UbiJalar", "UbiKayu", "KacangTanah", "KacangHijau"]
+PLANT_LOCAL = knowledge.PLANT_LOCAL
+PLANT_CLASS = knowledge.PLANT_CLASS
+PLANT_LABELS = knowledge.PLANT_LABELS
+PLANT_ORDER = knowledge.PLANT_ORDER
+PLANT_SCIENTIFIC_FALLBACK = knowledge.PLANT_SCIENTIFIC_FALLBACK
+TAXON_CLASS = knowledge.TAXON_CLASS
+TAXON_PRIORITY = knowledge.TAXON_PRIORITY
+PART_WORDS = knowledge.PART_WORDS
+PART_LABELS = knowledge.PART_LABELS
+PART_OF = knowledge.PART_OF
+PART_SUBCLASS = knowledge.PART_SUBCLASS
+TABLE_PART = knowledge.TABLE_PART
 
-PLANT_SCIENTIFIC_FALLBACK: dict[str, tuple[str, str]] = {
-    "Padi": ("Oryza sativa L.", "https://powo.science.kew.org/results?q=Oryza%20sativa"),
-    "Jagung": ("Zea mays L.", "https://powo.science.kew.org/results?q=Zea%20mays"),
-    "KacangTanah": ("Arachis hypogaea L.", "https://powo.science.kew.org/results?q=Arachis%20hypogaea"),
-    "KacangHijau": ("Vigna radiata (L.) R. Wilczek", "https://powo.science.kew.org/results?q=Vigna%20radiata"),
-}
+CANONICAL_SYMPTOMS = knowledge.CANONICAL_SYMPTOMS
 
-TAXON_CLASS = {
-    "jamur": "Jamur",
-    "bakteri": "Bakteri",
-    "virus": "Virus",
-    "nematoda": "Nematoda",
-    "oomycete": "Oomycete",
-    "fitoplasma": "Fitoplasma",
-}
-TAXON_PRIORITY = {
-    "oomycete": 6,
-    "fitoplasma": 5,
-    "virus": 4,
-    "bakteri": 3,
-    "nematoda": 2,
-    "jamur": 1,
-    "": 0,
-}
+CONTROL_ACTIONS = knowledge.CONTROL_ACTIONS
 
-PART_WORDS = {
-    "daun": "Daun",
-    "batang": "Batang",
-    "akar": "Akar",
-    "umbi": "Umbi",
-    "buah": "Buah",
-    "biji": "Biji",
-    "malai": "Malai",
-    "polong": "Polong",
-    "pucuk": "Pucuk",
-    "tunas": "Pucuk",
-}
-PART_LABELS = {
-    "Daun": "Daun",
-    "Batang": "Batang",
-    "Akar": "Akar",
-    "Umbi": "Umbi",
-    "Buah": "Buah",
-    "Biji": "Biji",
-    "Malai": "Malai",
-    "Polong": "Polong",
-    "Pucuk": "Pucuk",
-}
-PART_OF = {
-    "Daun": "Pucuk",
-    "Pucuk": "Batang",
-}
-PART_SUBCLASS = {
-    "Daun": "GejalaDaun",
-    "Batang": "GejalaBatang",
-    "Akar": "GejalaAkar",
-    "Umbi": "GejalaUmbi",
-    "Buah": "GejalaBuah",
-    "Biji": "GejalaBiji",
-    "Malai": "GejalaMalai",
-    "Polong": "GejalaPolong",
-    "Pucuk": "GejalaPucuk",
-}
-TABLE_PART = {"T5.1_DAUN": "daun", "T5.2_BATANG": "batang", "T5.3_AKAR": "akar"}
+PHASE_DEFS = knowledge.PHASE_DEFS
 
-CANONICAL_SYMPTOMS: dict[str, dict[str, str]] = {
-    "BercakDaun": {
-        "label": "Bercak daun",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk gejala bercak atau noda pada daun.",
-    },
-    "HawarDaun": {
-        "label": "Hawar daun",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk gejala hawar pada daun atau pelepah.",
-    },
-    "KlorosisDaun": {
-        "label": "Klorosis daun",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk daun menguning atau klorotik.",
-    },
-    "MosaikDaun": {
-        "label": "Mosaik daun",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk pola mosaik atau belang pada daun.",
-    },
-    "KerdilTanaman": {
-        "label": "Kerdil tanaman",
-        "part": "Batang",
-        "comment": "Konsep kanonik untuk pertumbuhan tanaman yang kerdil.",
-    },
-    "LayuDaun": {
-        "label": "Layu daun",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk gejala layu pada daun atau tanaman.",
-    },
-    "BusukBatang": {
-        "label": "Busuk batang",
-        "part": "Batang",
-        "comment": "Konsep kanonik untuk pembusukan pada batang atau pelepah.",
-    },
-    "BusukAkar": {
-        "label": "Busuk akar",
-        "part": "Akar",
-        "comment": "Konsep kanonik untuk pembusukan pada akar.",
-    },
-    "BusukBuah": {
-        "label": "Busuk buah",
-        "part": "Buah",
-        "comment": "Konsep kanonik untuk pembusukan pada buah.",
-    },
-    "MalaiKosong": {
-        "label": "Malai kosong",
-        "part": "Malai",
-        "comment": "Konsep kanonik untuk malai kosong atau hampa.",
-    },
-    "PucukMati": {
-        "label": "Pucuk mati",
-        "part": "Pucuk",
-        "comment": "Konsep kanonik untuk pucuk atau tunas yang mati.",
-    },
-    "PertumbuhanTerhambat": {
-        "label": "Pertumbuhan terhambat",
-        "part": "Batang",
-        "comment": "Konsep kanonik untuk pertumbuhan tanaman yang terhambat.",
-    },
-    "BercakTanaman": {
-        "label": "Bercak pada tanaman",
-        "part": "",
-        "comment": "Konsep generik untuk bercak, noda, lesi, atau bintik tanpa bagian tanaman eksplisit.",
-    },
-    "TepungDaun": {
-        "label": "Tepung pada daun",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk gejala berupa lapisan tepung pada permukaan daun.",
-    },
-    "NekrosisDaun": {
-        "label": "Nekrosis daun",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk jaringan daun yang nekrotik atau mati.",
-    },
-    "NekrosisTanaman": {
-        "label": "Nekrosis pada tanaman",
-        "part": "",
-        "comment": "Konsep generik untuk nekrosis tanpa bagian tanaman eksplisit.",
-    },
-    "DaunKering": {
-        "label": "Daun kering",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk daun yang mengering.",
-    },
-    "DaunRontok": {
-        "label": "Daun rontok",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk daun yang rontok atau gugur sebelum waktunya.",
-    },
-    "DaunBerlubang": {
-        "label": "Daun berlubang",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk daun berlubang akibat kerusakan jaringan.",
-    },
-    "MalaiPatah": {
-        "label": "Malai patah",
-        "part": "Malai",
-        "comment": "Konsep kanonik untuk malai yang patah karena tidak mampu menopang bulir.",
-    },
-    "BusukTanaman": {
-        "label": "Busuk pada tanaman",
-        "part": "",
-        "comment": "Konsep generik untuk pembusukan tanpa bagian tanaman eksplisit.",
-    },
-    "KematianTanaman": {
-        "label": "Kematian tanaman",
-        "part": "",
-        "comment": "Konsep kanonik untuk kematian tanaman atau benih.",
-    },
-    "BelangTanaman": {
-        "label": "Belang pada tanaman",
-        "part": "",
-        "comment": "Konsep generik untuk pola belang atau mottle tanpa bagian tanaman eksplisit.",
-    },
-    "KlorosisTanaman": {
-        "label": "Klorosis pada tanaman",
-        "part": "",
-        "comment": "Konsep generik untuk klorosis tanpa bagian tanaman eksplisit.",
-    },
-    "PertumbuhanAbnormal": {
-        "label": "Pertumbuhan abnormal",
-        "part": "",
-        "comment": "Konsep kanonik untuk malformasi atau bentuk pertumbuhan yang tidak normal.",
-    },
-    "Kresek": {
-        "label": "Kresek",
-        "part": "Daun",
-        "comment": "Konsep kanonik untuk gejala kresek pada hawar daun bakteri padi.",
-    },
-    "LekukanPangkalAkar": {
-        "label": "Lekukan pada pangkal akar",
-        "part": "Akar",
-        "comment": "Konsep kanonik untuk lekukan coklat atau hitam pada pangkal akar.",
-    },
-    "MiseliumPadaTanaman": {
-        "label": "Miselium pada tanaman",
-        "part": "",
-        "comment": "Konsep kanonik untuk tanda miselium pada jaringan tanaman.",
-    },
-}
-
-CANONICAL_SYMPTOM_RULES: list[tuple[str, tuple[tuple[str, ...], ...]]] = [
-    ("BercakDaun", (("bercak", "noda", "lesi", "lesio", "bintik", "pustul"), ("daun",))),
-    ("BercakTanaman", (("bercak", "noda", "lesi", "lesio", "bintik", "bintil", "pustul"),)),
-    ("HawarDaun", (("hawar",), ("daun", "pelepah"))),
-    ("KlorosisDaun", (("klorosis", "klorotik", "menguning", "kekuningan", "kuning"), ("daun",))),
-    ("KlorosisTanaman", (("klorosis", "klorotik", "menguning", "kekuningan", "kuning"),)),
-    ("MosaikDaun", (("mosaik", "belang", "mottle"), ("daun",))),
-    ("BelangTanaman", (("mosaik", "belang", "mottle", "garis putus-putus"),)),
-    ("NekrosisDaun", (("nekrotik", "nekrosis"), ("daun",))),
-    ("NekrosisTanaman", (("nekrotik", "nekrosis"),)),
-    ("DaunKering", (("kering",), ("daun",))),
-    ("DaunRontok", (("rontok", "gugur"), ("daun",))),
-    ("DaunBerlubang", (("berlubang",), ("daun",))),
-    ("TepungDaun", (("tepung",),)),
-    ("MalaiPatah", (("malai",), ("patah", "blas malai"))),
-    ("Kresek", (("kresek",),)),
-    ("LekukanPangkalAkar", (("lekukan",), ("pangkal akar", "pangkal", "akar"))),
-    ("MiseliumPadaTanaman", (("miselium", "miselia"),)),
-    ("KerdilTanaman", (("kerdil", "dwarf"),)),
-    ("LayuDaun", (("layu",),)),
-    ("BusukBatang", (("busuk",), ("batang", "pelepah"))),
-    ("BusukAkar", (("busuk",), ("akar",))),
-    ("BusukBuah", (("busuk",), ("buah",))),
-    ("BusukTanaman", (("busuk", "membusuk"),)),
-    ("KematianTanaman", (("kematian", "tanaman mati", "tidak berkecambah", "tidak akan berkecambah"),)),
-    ("MalaiKosong", (("malai",), ("kosong", "hampa"))),
-    ("PucukMati", (("pucuk", "tunas"), ("mati", "nekrosis", "membusuk"))),
-    ("PertumbuhanTerhambat", (("terhambat", "pertumbuhan tidak normal", "tidak tumbuh normal"),)),
-    ("PertumbuhanAbnormal", (("malformasi", "mal formasi", "deformasi", "bentuk tidak normal", "menggulung", "penggulungan", "bergelombang", "tidak normal"),)),
-]
-
-CONTROL_ACTIONS: dict[str, dict] = {
-    "PenggunaanVarietasTahan": {
-        "label": "Penggunaan varietas tahan",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("varietas tahan", "varietas resisten", "varietas toleran", "ketahanan varietas", "menanam varietas", "tanaman tahan", "tanaman toleran", "varietas yang tahan", "varietas yang toleran", "kultivar tahan"),
-        "comment": "Tindakan kanonik penggunaan varietas yang dinyatakan tahan atau toleran.",
-    },
-    "PenggunaanBenihSehat": {
-        "label": "Penggunaan benih sehat",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("benih sehat", "benih bebas", "benih bersertifikat", "benih unggul", "benih bebas virus", "benih bebas patogen", "benih tidak membawa", "bahan tanam bebas virus", "benih berukuran normal"),
-        "comment": "Tindakan kanonik penggunaan benih sehat atau bersertifikat.",
-    },
-    "PerlakuanBenih": {
-        "label": "Perlakuan benih",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("perlakuan benih", "seed treatment", "perendaman benih", "perlakuan air panas"),
-        "comment": "Tindakan kanonik perlakuan benih sebelum tanam.",
-    },
-    "SanitasiLahan": {
-        "label": "Sanitasi lahan",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("sanitasi", "membersihkan sisa", "pembersihan sisa", "eradikasi", "pemusnahan sisa", "membakar sisa", "pembakaran", "pengomposan", "sisa tanaman", "memusnahkan"),
-        "comment": "Tindakan kanonik sanitasi lahan dan sisa tanaman.",
-    },
-    "RotasiTanaman": {
-        "label": "Rotasi tanaman",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("rotasi tanaman", "pergiliran tanaman", "rotasi", "pergiliran"),
-        "comment": "Tindakan kanonik pergiliran atau rotasi tanaman.",
-    },
-    "PengaturanJarakTanam": {
-        "label": "Pengaturan jarak tanam",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("jarak tanam", "populasi tanaman", "kerapatan tanam"),
-        "comment": "Tindakan kanonik pengaturan jarak atau kerapatan tanam.",
-    },
-    "PemupukanBerimbang": {
-        "label": "Pemupukan berimbang",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("pemupukan", "pupuk", "unsur hara", "nutrisi tanaman"),
-        "comment": "Tindakan kanonik pemupukan dan pengelolaan unsur hara.",
-    },
-    "PengaturanWaktuTanam": {
-        "label": "Pengaturan waktu tanam",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("waktu tanam", "penanaman serempak", "menanam serempak", "serempak", "penanaman lebih awal", "tanam lebih awal"),
-        "comment": "Tindakan kanonik pengaturan waktu atau keserempakan tanam.",
-    },
-    "PengairanDanDrainase": {
-        "label": "Pengairan dan drainase",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("pengairan", "irigasi", "drainase", "pengaturan air", "penyiraman"),
-        "comment": "Tindakan kanonik pengaturan air, irigasi, dan drainase.",
-    },
-    "PengelolaanGulma": {
-        "label": "Pengelolaan gulma",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("gulma", "penyiangan", "pengendalian gulma"),
-        "comment": "Tindakan kanonik pengelolaan gulma.",
-    },
-    "PenggunaanMulsa": {
-        "label": "Penggunaan mulsa",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("mulsa", "penutup tanah", "pemantulan sinar", "mulsa mengkilap", "plastik perak"),
-        "comment": "Tindakan kanonik penggunaan mulsa atau penutup tanah.",
-    },
-    "PemangkasanTanaman": {
-        "label": "Pemangkasan tanaman",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("pemangkasan", "pruning", "memangkas"),
-        "comment": "Tindakan kanonik pemangkasan bagian tanaman.",
-    },
-    "PanenTepatWaktu": {
-        "label": "Panen tepat waktu",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("panen tepat waktu", "waktu panen", "segera dipanen"),
-        "comment": "Tindakan kanonik panen pada waktu yang dianjurkan.",
-    },
-    "PembersihanAlat": {
-        "label": "Pembersihan alat",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("sterilisasi alat", "desinfeksi alat", "pembersihan alat"),
-        "comment": "Tindakan kanonik pembersihan dan sterilisasi alat.",
-    },
-    "KarantinaTanaman": {
-        "label": "Karantina tanaman",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("karantina", "isolasi tanaman"),
-        "comment": "Tindakan kanonik karantina atau isolasi tanaman.",
-    },
-    "PengaturanKelembapan": {
-        "label": "Pengaturan kelembapan",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("ventilasi", "sirkulasi udara", "kelembapan ruang", "pengaturan kelembapan"),
-        "comment": "Tindakan kanonik pengaturan kelembapan dan sirkulasi udara.",
-    },
-    "PenerapanKulturTeknis": {
-        "label": "Penerapan kultur teknis",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("kultur teknis", "teknik budidaya", "cara budidaya", "praktik budidaya"),
-        "comment": "Tindakan kanonik penerapan kultur teknis secara umum.",
-    },
-    "PencabutanTanaman": {
-        "label": "Pencabutan tanaman",
-        "category": "PengendalianMekanis",
-        "keywords": ("pencabutan", "mencabut", "dicabut"),
-        "comment": "Tindakan kanonik pencabutan tanaman terserang.",
-    },
-    "PengumpulanDanPemusnahan": {
-        "label": "Pengumpulan dan pemusnahan",
-        "category": "PengendalianMekanis",
-        "keywords": ("pengumpulan", "pemusnahan", "dikumpulkan", "dibakar", "dibenamkan"),
-        "comment": "Tindakan kanonik pengumpulan dan pemusnahan bagian tanaman terserang.",
-    },
-    "PenggunaanPerangkap": {
-        "label": "Penggunaan perangkap",
-        "category": "PengendalianMekanis",
-        "keywords": ("perangkap", "trap", "feromon"),
-        "comment": "Tindakan kanonik penggunaan perangkap.",
-    },
-    "PenerapanPengendalianMekanis": {
-        "label": "Penerapan pengendalian mekanis",
-        "category": "PengendalianMekanis",
-        "keywords": ("pengendalian mekanis", "mekanis"),
-        "comment": "Tindakan kanonik penerapan pengendalian mekanis secara umum.",
-    },
-    "PenggunaanAgensHayati": {
-        "label": "Penggunaan agens hayati",
-        "category": "PengendalianBiologis",
-        "keywords": ("agens hayati", "musuh alami", "predator", "parasitoid", "mikroorganisme antagonis", "mikroba antagonis", "bakteri antagonis", "agen pengendali hayati", "agens biokontrol", "biokontrol", "pengendalian hayati", "pengendalian biologis", "pgpr", "rizobakteri", "bakteri endofit", "antibiosis", "hiperparasit", "harzianum", "fluorescens", "berfluorescens", "tribac", "corynebacterium"),
-        "comment": "Tindakan kanonik penggunaan agens hayati.",
-    },
-    "PenggunaanTrichoderma": {
-        "label": "Penggunaan Trichoderma",
-        "category": "PengendalianBiologis",
-        "keywords": ("trichoderma", "harzianum"),
-        "comment": "Tindakan kanonik penggunaan Trichoderma.",
-    },
-    "PenggunaanBacillus": {
-        "label": "Penggunaan Bacillus",
-        "category": "PengendalianBiologis",
-        "keywords": ("bacillus", "b.subtilis", "bacillus subtilis", "subtilis"),
-        "comment": "Tindakan kanonik penggunaan Bacillus.",
-    },
-    "PenggunaanPseudomonas": {
-        "label": "Penggunaan Pseudomonas",
-        "category": "PengendalianBiologis",
-        "keywords": ("pseudomonas", "psedomonas", "fluorescens"),
-        "comment": "Tindakan kanonik penggunaan Pseudomonas.",
-    },
-    "PenggunaanBeauveria": {
-        "label": "Penggunaan Beauveria",
-        "category": "PengendalianBiologis",
-        "keywords": ("beauveria",),
-        "comment": "Tindakan kanonik penggunaan Beauveria.",
-    },
-    "PenggunaanMetarhizium": {
-        "label": "Penggunaan Metarhizium",
-        "category": "PengendalianBiologis",
-        "keywords": ("metarhizium",),
-        "comment": "Tindakan kanonik penggunaan Metarhizium.",
-    },
-    "PenggunaanBiopestisida": {
-        "label": "Penggunaan biopestisida",
-        "category": "PengendalianBiologis",
-        "keywords": ("biopestisida", "pestisida hayati", "biofungisida", "pestisida organik"),
-        "comment": "Tindakan kanonik penggunaan biopestisida.",
-    },
-    "PenggunaanEkstrakTanaman": {
-        "label": "Penggunaan ekstrak tanaman",
-        "category": "PengendalianBiologis",
-        "keywords": ("ekstrak",),
-        "comment": "Tindakan kanonik penggunaan ekstrak tanaman.",
-    },
-    "PenerapanPengendalianBiologis": {
-        "label": "Penerapan pengendalian biologis",
-        "category": "PengendalianBiologis",
-        "keywords": ("pengendalian biologis", "pengendalian hayati"),
-        "comment": "Tindakan kanonik penerapan pengendalian biologis secara umum.",
-    },
-    "PenggunaanFungisida": {
-        "label": "Penggunaan fungisida",
-        "category": "PengendalianKimiawi",
-        "keywords": ("fungisida", "mankozeb", "benomyl", "heksakonazol", "klorotalonil", "difenokonazol", "propikonazol", "tebuconazol", "fosfit", "kalium fosfit"),
-        "comment": "Tindakan kanonik penggunaan fungisida.",
-    },
-    "PenggunaanBakterisida": {
-        "label": "Penggunaan bakterisida",
-        "category": "PengendalianKimiawi",
-        "keywords": ("bakterisida", "streptomisin", "antibiotik", "tembaga", "kupri"),
-        "comment": "Tindakan kanonik penggunaan bakterisida.",
-    },
-    "PenggunaanInsektisida": {
-        "label": "Penggunaan insektisida",
-        "category": "PengendalianKimiawi",
-        "keywords": ("insektisida", "deltametrin", "imidakloprid", "abamektin"),
-        "comment": "Tindakan kanonik penggunaan insektisida.",
-    },
-    "PenggunaanHerbisida": {
-        "label": "Penggunaan herbisida",
-        "category": "PengendalianKimiawi",
-        "keywords": ("herbisida", "glifosat", "paraquat"),
-        "comment": "Tindakan kanonik penggunaan herbisida.",
-    },
-    "PenggunaanPestisidaNabati": {
-        "label": "Penggunaan pestisida nabati",
-        "category": "PengendalianKimiawi",
-        "keywords": ("pestisida nabati", "fungisida nabati", "insektisida nabati", "pestisida botanis", "pengendalian nabati", "pestisida alami", "bahan alami", "bahan-bahan alami"),
-        "comment": "Tindakan kanonik penggunaan pestisida nabati.",
-    },
-    "PerlakuanKimiaTanah": {
-        "label": "Perlakuan kimia tanah",
-        "category": "PengendalianKimiawi",
-        "keywords": ("fumigasi", "metam sodium", "kloropikrin"),
-        "comment": "Tindakan kanonik perlakuan kimia tanah.",
-    },
-    "PenerapanPengendalianKimiawi": {
-        "label": "Penerapan pengendalian kimiawi",
-        "category": "PengendalianKimiawi",
-        "keywords": ("pengendalian kimiawi", "aplikasi kimia", "bahan aktif", "pestisida sintetis", "pestisida sintetik", "pestisida kimia", "pestisida", "bahan kimia"),
-        "comment": "Tindakan kanonik penerapan pengendalian kimiawi secara umum.",
-    },
-    "PerlakuanAirPanas": {
-        "label": "Perlakuan air panas",
-        "category": "PengendalianFisik",
-        "keywords": ("air panas", "hot water", "perlakuan panas"),
-        "comment": "Tindakan kanonik perlakuan air panas.",
-    },
-    "SolarisasiTanah": {
-        "label": "Solarisasi tanah",
-        "category": "PengendalianFisik",
-        "keywords": ("solarisasi", "solarization", "mulsa plastik transparan"),
-        "comment": "Tindakan kanonik solarisasi tanah.",
-    },
-    "PengaturanSuhuPenyimpanan": {
-        "label": "Pengaturan suhu penyimpanan",
-        "category": "PengendalianFisik",
-        "keywords": ("penyimpanan dingin", "suhu rendah", "pendinginan", "cold storage", "ruang penyimpanan", "penyimpanan diatur", "suhu 13-16", "kelembaban 85", "penyembuhan periderm"),
-        "comment": "Tindakan kanonik pengaturan suhu penyimpanan.",
-    },
-    "PerlakuanRadiasi": {
-        "label": "Perlakuan radiasi",
-        "category": "PengendalianFisik",
-        "keywords": ("radiasi", "ultraviolet", "sinar gamma", "iradiasi"),
-        "comment": "Tindakan kanonik perlakuan radiasi.",
-    },
-    "PenerapanPengendalianFisik": {
-        "label": "Penerapan pengendalian fisik",
-        "category": "PengendalianFisik",
-        "keywords": ("pengendalian fisik", "perlakuan fisik"),
-        "comment": "Tindakan kanonik penerapan pengendalian fisik secara umum.",
-    },
-    "PengendalianHamaTerpadu": {
-        "label": "Pengendalian hama terpadu",
-        "category": "PengendalianTerpadu",
-        "keywords": ("pengendalian hama terpadu", "pht", "integrated pest management", "ipm"),
-        "comment": "Tindakan kanonik pengendalian hama terpadu.",
-    },
-    "PengelolaanTerpadu": {
-        "label": "Pengelolaan terpadu",
-        "category": "PengendalianTerpadu",
-        "keywords": ("pengelolaan terpadu", "pengendalian terpadu", "pengelolaan penyakit terpadu", "integrated management"),
-        "comment": "Tindakan kanonik pengelolaan terpadu.",
-    },
-    "PengendalianVektor": {
-        "label": "Pengendalian vektor",
-        "category": "PengendalianKimiawi",
-        "keywords": ("pengendalian vektor", "mengendalikan vektor", "vektor penyakit", "pengendalian serangga vektor", "vektor virus"),
-        "comment": "Tindakan kanonik pengendalian serangga atau organisme vektor penyakit.",
-    },
-    "KulturMeristem": {
-        "label": "Kultur meristem",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("kultur meristem", "meristem", "eksplan pucuk", "bebas virus"),
-        "comment": "Tindakan kanonik perbanyakan jaringan meristem untuk memperoleh bahan tanam bebas virus.",
-    },
-    "SeleksiBahanTanam": {
-        "label": "Seleksi bahan tanam",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("seleksi bahan tanam", "bahan tanam sehat", "seleksi ketat", "bahan perbanyakan", "bahan tanam bebas"),
-        "comment": "Tindakan kanonik seleksi bahan tanam atau bahan perbanyakan.",
-    },
-    "PenggunaanTanamanBukanInang": {
-        "label": "Penggunaan tanaman bukan inang",
-        "category": "PengendalianKulturTeknis",
-        "keywords": ("bukan inang", "tanaman bukan inang", "tanaman inang alternatif"),
-        "comment": "Tindakan kanonik penggunaan tanaman yang bukan inang patogen.",
-    },
-}
-
-CATEGORY_ACTION_MAP: dict[str, list[str]] = {
-    "varietas tahan": ["PenggunaanVarietasTahan"],
-    "benih sehat": ["PenggunaanBenihSehat"],
-    "perlakuan benih": ["PerlakuanBenih"],
-    "sanitasi": ["SanitasiLahan"],
-    "rotasi tanaman": ["RotasiTanaman"],
-    "sanitasi dan rotasi": ["SanitasiLahan", "RotasiTanaman"],
-    "kultur teknis": ["PenerapanKulturTeknis"],
-    "fungisida nabati": ["PenggunaanPestisidaNabati"],
-    "fungisida sintetik": ["PenggunaanFungisida"],
-    "pestisida nabati": ["PenggunaanPestisidaNabati"],
-    "agens hayati": ["PenggunaanAgensHayati"],
-}
-
-PHASE_DEFS: dict[str, dict[str, str]] = {
-    "FaseMatangSusu": {"label": "Fase matang susu", "class": "FasePemasakan"},
-    "FaseVegetatifUmum": {"label": "Fase vegetatif", "class": "FaseVegetatif"},
-    "FaseGeneratifUmum": {"label": "Fase generatif", "class": "FaseGeneratif"},
-    "FasePembibitanTanaman": {"label": "Fase pembibitan", "class": "FasePembibitan"},
-    "FaseAnakanTanaman": {"label": "Fase anakan", "class": "FaseAnakan"},
-    "FaseMatang": {"label": "Fase matang", "class": "FasePemasakan"},
-    "FasePanenTanaman": {"label": "Fase panen", "class": "FasePanen"},
-    "FasePembungaan": {"label": "Fase pembungaan", "class": "FaseGeneratif"},
-    "FasePembentukanPolong": {"label": "Fase pembentukan polong", "class": "FaseGeneratif"},
-    "FasePengisianPolong": {"label": "Fase pengisian polong", "class": "FaseGeneratif"},
-}
-PHASE_RE = re.compile(
-    r"\bfase\s+(matang\s+susu|vegetatif|generatif|pembibitan|anakan|matang)\b",
-    re.I,
-)
-PHASE_KEY = {
-    "matang susu": "FaseMatangSusu",
-    "vegetatif": "FaseVegetatifUmum",
-    "generatif": "FaseGeneratifUmum",
-    "pembibitan": "FasePembibitanTanaman",
-    "anakan": "FaseAnakanTanaman",
-    "matang": "FaseMatang",
-}
-
-ENV_FACTORS: dict[str, dict] = {
-    "Suhu": {"terms": ("suhu",), "class": "Suhu", "unit": "°C"},
-    "Kelembapan": {"terms": ("kelembapan", "kelembaban"), "class": "KelembapanUdara", "unit": "%"},
-    "CurahHujan": {"terms": ("curah hujan",), "class": "CurahHujan", "unit": "mm"},
-}
-QUALITATIVE_RULES: list[tuple[str, str, str, re.Pattern[str]]] = [
-    ("KondisiKelembapanTinggi", "KelembapanUdara", "Kelembapan tinggi", re.compile(r"kelembap(?:a|e)n\s+(?:yang\s+)?tinggi", re.I)),
-    ("KondisiKelembapanRendah", "KelembapanUdara", "Kelembapan rendah", re.compile(r"kelembap(?:a|e)n\s+(?:yang\s+)?rendah", re.I)),
-    ("KondisiMusimHujan", "Musim", "Musim hujan", re.compile(r"musim\s+hujan", re.I)),
-    ("KondisiMusimKemarau", "Musim", "Musim kemarau", re.compile(r"musim\s+kemarau", re.I)),
-    ("KondisiCurahHujanTinggi", "CurahHujan", "Curah hujan tinggi", re.compile(r"curah\s+hujan\s+(?:yang\s+)?tinggi", re.I)),
-    ("KondisiCurahHujanRendah", "CurahHujan", "Curah hujan rendah", re.compile(r"curah\s+hujan\s+(?:yang\s+)?rendah", re.I)),
-    ("KondisiSuhuTinggi", "Suhu", "Suhu tinggi", re.compile(r"suhu\s+(?:yang\s+)?tinggi", re.I)),
-    ("KondisiSuhuRendah", "Suhu", "Suhu rendah", re.compile(r"suhu\s+(?:yang\s+)?rendah", re.I)),
-]
-
-# Kompatibilitas pipeline enrichment lama: pola kondisi kualitatif tanpa label.
-ENV_PATTERNS: list[tuple[str, str, re.Pattern[str]]] = [
-    (local, cls, pattern) for local, cls, _label, pattern in QUALITATIVE_RULES
-]
-ENV_CONTROL_CONTEXT_RE = re.compile(
-    r"perlakuan\s+(?:panas|air\s+panas|benih)|panas\s+kering|mengeliminasi|membunuh|"
-    r"ruang\s+penyimpanan|selama\s+penyimpanan|penyimpanan\s+diatur|"
-    r"agar\s+perkembangan\s+penyakit\s+lambat|penyembuhan\s+periderm|"
-    r"pengeringan\s+dilakukan|solarisasi|seed\s+treatment|"
-    r"perendaman\s+benih|air\s+panas|direndam|disemprot",
-    re.I,
-)
-ENV_NEGATIVE_CONTEXT_RE = re.compile(
-    r"\bmenurun\b|\bbertahan\b|tidak\s+(?:berkembang|tumbuh)|kurang\s+(?:baik|sesuai)",
-    re.I,
-)
-
-VARIETY_STOPWORDS = {
-    "yang", "dan", "atau", "pada", "untuk", "dengan", "adalah", "dapat", "akan",
-    "lebih", "dari", "ini", "itu", "dalam", "sebagai", "tanaman", "kedelai",
-    "padi", "jagung", "ubi", "kacang", "hijau", "tanah", "kayu", "jalar",
-    "unggul", "lokal", "hanya", "setiap", "beberapa", "lainnya", "lain",
-    "baru", "tersebut", "terkait", "mampu", "memiliki", "terhadap", "penyakit",
-    "tahan", "rentan", "peka", "genjah", "serta", "yaitu", "yakni", "antara",
-    "hasil", "penelitian", "jenis", "secara", "umum", "disebut", "termasuk",
-    "dikenal", "bernama", "misalnya", "contoh", "seperti", "menggunakan",
-    "dipakai", "menanam", "penanaman", "agak", "sangat", "cukup", "paling",
-    "karat", "daun", "bulai", "hawar", "layu", "bakteri", "virus", "jamur",
-    "busuk", "kerdil", "mosaik", "embun", "bercak", "antraknosa",
-    "superelongasi", "sapu", "setan", "titik", "tunas", "pangkal", "pelepah",
-    "blas", "tungro", "kudis", "patogen", "ras", "galur", "isolat", "vektor",
-    "hama", "inang", "balitkabi", "puslitbangtan", "menurut", "juga", "bisa",
-    "harus", "perlu", "banyak", "murah", "mudah", "aman", "cepat", "baik",
-    "tinggi", "rendah", "sedang", "normal", "optimum", "ideal", "varietas",
-    "variety", "toleran", "resistan", "resisten", "ketahanan", "keparahan",
-    "infeksi", "serangan", "kejadian", "gejala", "sumber", "cara", "salah",
-    "satu", "dua", "tiga", "diketahui", "dilaporkan", "dianjurkan",
-    "diperoleh", "ditemukan", "diberikan", "diberi", "boleh", "sekitar",
-    "sebelum", "sesudah", "saat", "ketika", "apabila", "bila", "jika",
-    "karena", "sehingga", "namun", "tetapi", "sedangkan", "telah", "sudah",
-    "masih", "belum", "tanpa", "oleh", "ke", "di", "kepada", "bagi", "buat",
-}
-RESIST_MARKERS = re.compile(r"\b(tahan|resistan|resisten|toleran)\b", re.I)
-VULN_MARKERS = re.compile(r"\b(rentan|peka)\b", re.I)
-VARIETY_PRIMARY_RE = re.compile(r"\bvarietas\b", re.I)
-VARIETY_FALLBACK_RE = re.compile(r"\badalah\s+([A-Z][A-Za-z0-9\-']*(?:\s+[A-Z0-9][A-Za-z0-9\-']*){0,5})", re.UNICODE)
-
+ENV_FACTORS = knowledge.ENV_FACTORS
+QUALITATIVE_RULES = knowledge.QUALITATIVE_RULES
+ENV_PATTERNS = knowledge.ENV_PATTERNS
+ENV_CONTROL_CONTEXT_RE = knowledge.ENV_CONTROL_CONTEXT_RE
+ENV_NEGATIVE_CONTEXT_RE = knowledge.ENV_NEGATIVE_CONTEXT_RE
+VARIETY_STOPWORDS = knowledge.VARIETY_STOPWORDS
+RESIST_MARKERS = knowledge.RESIST_MARKERS
+VULN_MARKERS = knowledge.VULN_MARKERS
+VARIETY_PRIMARY_RE = knowledge.VARIETY_PRIMARY_RE
+VARIETY_FALLBACK_RE = knowledge.VARIETY_FALLBACK_RE
+PLANT_WORDS = knowledge.PLANT_WORDS
 
 def read_csv(path: Path) -> list[dict[str, str]]:
     with open(path, encoding="utf-8-sig", newline="") as handle:
@@ -756,14 +125,8 @@ def disease_part_hint(entry: dict) -> set[str]:
     return {part for word, part in PART_WORDS.items() if word in name}
 
 
-def text_parts(text: str) -> list[str]:
-    value = IMPACT_MARKERS.split(text or "", maxsplit=1)[0]
-    low = value.lower()
-    found: list[str] = []
-    for word, part in PART_WORDS.items():
-        if re.search(r"\b" + re.escape(word), low) and part not in found:
-            found.append(part)
-    return found
+def text_parts(text: str | None) -> list[str]:
+    return knowledge.text_parts(text)
 
 
 def disease_display(entry: dict) -> str:
@@ -824,70 +187,16 @@ DISEASE_LABEL_ALIASES = {
 }
 
 
-def match_canonical_symptoms(text: str) -> list[str]:
-    low = norm(text)
-    found: list[str] = []
-    for local, groups in CANONICAL_SYMPTOM_RULES:
-        if all(any(term in low for term in group) for group in groups):
-            found.append(local)
-    generic_to_specific = {
-        "BercakTanaman": {"BercakDaun"},
-        "BusukTanaman": {"BusukBatang", "BusukAkar", "BusukBuah"},
-        "KlorosisTanaman": {"KlorosisDaun"},
-        "NekrosisTanaman": {"NekrosisDaun"},
-        "BelangTanaman": {"MosaikDaun"},
-        "PertumbuhanAbnormal": {"PertumbuhanTerhambat"},
-    }
-    specific = set().union(*(matches for matches in generic_to_specific.values()))
-    if any(name in found for name in specific):
-        found = [
-            name
-            for name in found
-            if name not in generic_to_specific or not (generic_to_specific[name] & set(found))
-        ]
-    return found
+def match_canonical_symptoms(text: str | None) -> list[str]:
+    return knowledge.match_canonical_symptoms(text)
 
 
-def match_control_actions(text: str, category: str, source: str) -> list[str]:
-    low = norm(text)
-    found: list[str] = []
-    for local, spec in CONTROL_ACTIONS.items():
-        if any(keyword in low for keyword in spec["keywords"]):
-            found.append(local)
-    patterns = (
-        (r"\b(?:varietas|kultivar|galur)\b.*\b(?:tahan|toleran|resisten)\b", "PenggunaanVarietasTahan"),
-        (r"\bvarietas\b.*\btidak\s+membawa\b", "PenggunaanVarietasTahan"),
-        (r"\bmemilih\s+tanaman\b.*\bkerentanan\b", "PenggunaanVarietasTahan"),
-        (r"\btanaman\b.*\b(?:tahan|toleran)\b", "PenggunaanVarietasTahan"),
-        (r"\bbenih\b.*\b(?:sehat|bebas|bersertifikat|tidak\s+membawa)\b", "PenggunaanBenihSehat"),
-        (r"\b(?:bahan\s+tanam|bahan\s+perbanyakan)\b.*\b(?:sehat|bebas|seleksi)\b", "SeleksiBahanTanam"),
-        (r"\b(?:rotasi|pergiliran)\b", "RotasiTanaman"),
-        (r"\b(?:sanitasi|membersihkan|pembersihan)\b.*\b(?:sisa|gulma|tanaman)\b", "SanitasiLahan"),
-        (r"\b(?:tanaman|varietas)\b.*\b(?:bukan\s+inang|inang\s+alternatif)\b", "PenggunaanTanamanBukanInang"),
-        (r"\b(?:pengendalian|mengendalikan)\b.*\bvektor\w*", "PengendalianVektor"),
-        (r"\bvektor\w*\b.*\bdikendalikan\b", "PengendalianVektor"),
-        (r"\b(?:kultur\s+meristem|meristem)\b", "KulturMeristem"),
-        (r"\b(?:pengelolaan|pengendalian)\b.*\bterpadu\b", "PengelolaanTerpadu"),
-        (r"\b(?:1|satu)\s+teknik\s+pengendalian\b", "PengelolaanTerpadu"),
-        (r"\bbeberapa\s+komponen\s+teknologi\b", "PengelolaanTerpadu"),
-        (r"\b(?:pemantulan\s+sinar|mulsa\s+mengkilap)\b", "PenggunaanMulsa"),
-        (r"\b(?:ruang\s+penyimpanan|selama\s+penyimpanan|penyimpanan\s+diatur)\b", "PengaturanSuhuPenyimpanan"),
-    )
-    for pattern, local in patterns:
-        if re.search(pattern, low) and local not in found:
-            found.append(local)
-    if source == "DOC005" and category:
-        fallback = CATEGORY_ACTION_MAP.get(category.strip().lower(), [])
-        if not any(local in found for local in fallback):
-            for local in fallback:
-                if local not in found:
-                    found.append(local)
-    general = {name for name in found if name.startswith("Penerapan")}
-    if general:
-        specific = [name for name in found if not name.startswith("Penerapan")]
-        if specific:
-            found = specific
-    return found
+def match_control_actions(
+    text: str | None,
+    _category: str | None = None,
+    _source: str | None = None,
+) -> list[str]:
+    return knowledge.match_control_actions(text)
 
 
 def normalize_quote(text: str | None) -> str:
@@ -1074,29 +383,12 @@ def parse_env_observations(text: str) -> list[dict]:
     return results
 
 
-def qualitative_matches(text: str) -> list[tuple[str, str, str]]:
-    found: list[tuple[str, str, str]] = []
-    clauses = [
-        clause.strip()
-        for clause in re.split(r"(?<=[.!?;])\s+", text or "")
-        if clause.strip()
-        and not ENV_CONTROL_CONTEXT_RE.search(clause)
-        and not ENV_NEGATIVE_CONTEXT_RE.search(clause)
-    ]
-    for local, cls, label, pattern in QUALITATIVE_RULES:
-        if any(pattern.search(clause) for clause in clauses) and local not in [item[0] for item in found]:
-            found.append((local, cls, label))
-    return found
+def qualitative_matches(text: str | None) -> list[tuple[str, str, str]]:
+    return knowledge.qualitative_matches(text)
 
 
-def extract_phases(text: str) -> list[str]:
-    found: list[str] = []
-    for match in PHASE_RE.finditer(text or ""):
-        key = re.sub(r"\s+", " ", match.group(1).lower())
-        local = PHASE_KEY.get(key)
-        if local and local not in found:
-            found.append(local)
-    return found
+def extract_phases(text: str | None) -> list[str]:
+    return knowledge.extract_phases(text)
 
 
 def _strip_variety_tail(part: str) -> str:
@@ -1122,7 +414,7 @@ def _valid_variety(name: str) -> bool:
 
 def _strip_plant_prefix(name: str) -> str:
     tokens = name.split()
-    plant_words = {"jagung", "kedelai", "padi", "kacang", "hijau", "tanah", "ubi", "kayu", "jalar"}
+    plant_words = PLANT_WORDS
     while tokens and tokens[0].lower() in plant_words and len(tokens) > 1:
         tokens = tokens[1:]
     return " ".join(tokens)
@@ -1140,7 +432,7 @@ def _proper_run(part: str) -> str:
             if not re.match(r"^[A-Z]", tok):
                 continue
             low = tok.lower()
-            if low in VARIETY_STOPWORDS and low not in {"padi", "kedelai", "jagung", "ubi", "kacang", "hijau", "tanah", "kayu", "jalar"}:
+            if low in VARIETY_STOPWORDS and low not in PLANT_WORDS:
                 continue
             started = True
             tokens.append(tok)
@@ -1208,9 +500,21 @@ class Builder:
             self.graph.add((uri, RDFS.label, Literal(text.strip(), lang="id")))
             self.graph.add((uri, SKOS.prefLabel, Literal(text.strip(), lang="id")))
 
-    def alt(self, uri: URIRef, text: str | None) -> None:
+    def alt(self, uri: URIRef, text: str | None, lang: str = "id") -> None:
         if text and text.strip():
-            self.graph.add((uri, SKOS.altLabel, Literal(text.strip(), lang="id")))
+            self.graph.add((uri, SKOS.altLabel, Literal(text.strip(), lang=lang)))
+
+    def pref_label(self, uri: URIRef, text: str | None, lang: str = "id") -> None:
+        if text and text.strip():
+            self.graph.add((uri, SKOS.prefLabel, Literal(text.strip(), lang=lang)))
+
+    def definition(self, uri: URIRef, text: str | None, source: str | None = None) -> None:
+        if text and text.strip():
+            self.graph.add((uri, SKOS.definition, Literal(text.strip(), lang="id")))
+        if source and source.strip():
+            self.graph.add((uri, DCTERMS.source, Literal(source.strip(), lang="id")))
+        if source and source.strip().lower().startswith("glosarium doc006"):
+            self.graph.add((uri, PROV.wasDerivedFrom, KBR["BukuDOC006"]))
 
     def comment(self, uri: URIRef, text: str | None) -> None:
         if text and text.strip():
@@ -1247,6 +551,80 @@ class Builder:
 
     def ext_link(self, uri: URIRef, prop: URIRef, target: URIRef) -> None:
         self.graph.add((uri, prop, target))
+
+
+NON_SYMPTOM_MARKERS = re.compile(
+    r"\b(kelembaban|kelembapan|suhu|angin|curah hujan|iklim|intensitas cahaya|naungan|ph)\b"
+    r"|\b(kejadian penyakit|insidensi|kehilangan hasil|fase (vegetatif|generatif|pembibitan|anakan|matang))\b"
+    r"|\b(hari setelah (infeksi|tanam|inokulasi)|musim|tingkat keparahan|bervariasi antara)\b"
+    r"|\d+\s*%",
+    re.I,
+)
+
+
+def is_non_symptom_text(text: str) -> bool:
+    """Baris sumber yang menjelaskan lingkungan/epidemiologi, bukan gejala visual."""
+    return bool(NON_SYMPTOM_MARKERS.search(text or ""))
+
+
+def symptom_display(text: str | None) -> str:
+    """Label gejala yang bersih: tanpa prefix dan tanpa pemotongan."""
+    return normalize_quote(text)
+
+
+def apply_class_property_definitions(builder: Builder) -> None:
+    for name, (_label, _parent, comment) in tbox.CLASSES.items():
+        text = defs.CLASS_DEFINITIONS.get(name, comment)
+        builder.definition(KBR[name], text, "Dokumentasi TBox")
+    for name, spec in tbox.OBJECT_PROPERTIES.items():
+        text = defs.PROPERTY_DEFINITIONS.get(name, spec.get("comment"))
+        builder.definition(KBR[name], text, "Dokumentasi TBox")
+    for name, spec in tbox.DATA_PROPERTIES.items():
+        text = defs.PROPERTY_DEFINITIONS.get(name, spec.get("comment"))
+        builder.definition(KBR[name], text, "Dokumentasi TBox")
+
+
+def build_category_concepts(builder: Builder) -> None:
+    for local, spec in defs.CATEGORY_CONCEPTS.items():
+        uri = builder.individual(local)
+        builder.graph.add((uri, RDF.type, SKOS.Concept))
+        builder.label(uri, spec["label"])
+        builder.comment(uri, spec["definition"])
+        builder.definition(uri, spec["definition"], "Kurasi pakar")
+        builder.alt(uri, spec["label"].lower())
+
+
+def apply_phase_class_definitions(builder: Builder) -> None:
+    for name in (
+        "FasePembibitan",
+        "FaseVegetatif",
+        "FaseGeneratif",
+        "FaseAnakan",
+        "FasePemasakan",
+        "FasePanen",
+    ):
+        spec = defs.PHASE_DEFINITIONS[name]
+        builder.definition(KBR[name], spec["definition"], "Kurasi pakar")
+        builder.pref_label(KBR[name], spec.get("english"), "en")
+        for synonym in spec.get("synonyms", []):
+            builder.alt(KBR[name], synonym)
+
+
+def ensure_phase_individual(builder: Builder, phase: str) -> URIRef:
+    spec = PHASE_DEFS[phase]
+    uri = builder.ensure_individual(phase, spec["class"])
+    builder.label(uri, spec["label"])
+    builder.comment(uri, "Fase pertumbuhan yang disebut pada sumber.")
+    definition = defs.PHASE_DEFINITIONS.get(phase) or defs.PHASE_DEFINITIONS.get(spec["class"])
+    if definition:
+        builder.definition(uri, definition.get("definition"), "Kurasi pakar")
+        builder.pref_label(uri, definition.get("english"), "en")
+        for synonym in definition.get("synonyms", []):
+            builder.alt(uri, synonym)
+    rank = defs.PHASE_STAGE_ORDER.get(spec["class"])
+    if rank is not None:
+        builder.integer(uri, "urutanFase", rank)
+    return uri
 
 
 def plant_rows_merged() -> list[dict[str, str]]:
@@ -1568,6 +946,14 @@ def build_referensi(builder: Builder) -> None:
         builder.plain(uri, "namaPenulis", ", ".join(info.get("authors") or []))
         builder.plain(uri, "identifierSumber", doc_id)
 
+    doc006 = builder.individual("BukuDOC006", "Buku")
+    builder.label(doc006, "Penyakit-Penyakit Tanaman Hortikultura di Indonesia")
+    builder.comment(doc006, "Referensi glosarium istilah penyakit tanaman (DOC006).")
+    builder.lang(doc006, "judulReferensi", "Penyakit-Penyakit Tanaman Hortikultura di Indonesia")
+    builder.integer(doc006, "tahunTerbit", 1994)
+    builder.plain(doc006, "namaPenulis", "Haryono Semangun")
+    builder.plain(doc006, "identifierSumber", "DOC006")
+
     if not SOURCE_REGISTRY_CSV.exists():
         return
     for row in read_csv(SOURCE_REGISTRY_CSV):
@@ -1627,6 +1013,10 @@ def build_tanaman(builder: Builder) -> None:
                 )
         builder.plain(uri, "namaIlmiah", scientific or None)
         builder.plain(uri, "identifierSumber", ";".join(row["plant_ids"]))
+        spec = defs.PLANT_DEFINITIONS.get(row["local"], {})
+        builder.definition(uri, spec.get("definition"), "Kurasi pakar")
+        for synonym in spec.get("synonyms", []):
+            builder.alt(uri, synonym)
 
 
 def build_bagi_tanaman(builder: Builder) -> None:
@@ -1634,18 +1024,36 @@ def build_bagi_tanaman(builder: Builder) -> None:
         uri = builder.individual(part, "BagianTanaman")
         builder.label(uri, label)
         builder.comment(uri, "Bagian tanaman yang dapat menjadi lokasi gejala.")
+        spec = defs.PART_DEFINITIONS.get(part, {})
+        builder.definition(uri, spec.get("definition"), "Kurasi pakar")
+        builder.pref_label(uri, spec.get("english"), "en")
+        for synonym in spec.get("synonyms", []):
+            builder.alt(uri, synonym)
 
-    for child, parent in PART_OF.items():
+    for child, parent in defs.PART_PARENTS:
         builder.link(KBR[child], "bagianDari", KBR[parent])
 
 
 def build_canonical_symptoms(builder: Builder) -> None:
     for local, spec in CANONICAL_SYMPTOMS.items():
         uri = builder.individual(local, "GejalaKanonik")
+        builder.graph.add((uri, RDF.type, SKOS.Concept))
         builder.label(uri, spec["label"])
         builder.comment(uri, spec["comment"])
         builder.alt(uri, spec["label"].lower())
         builder.plain(uri, "kodeGejala", local)
+
+        definition = defs.SYMPTOM_DEFINITIONS.get(local, {})
+        builder.definition(uri, definition.get("definition"), definition.get("source"))
+        builder.pref_label(uri, definition.get("english"), "en")
+        for synonym in definition.get("synonyms", []):
+            builder.alt(uri, synonym)
+
+        category = defs.SYMPTOM_CATEGORIES.get(local)
+        if category:
+            category_uri = KBR[category]
+            builder.graph.add((uri, SKOS.broader, category_uri))
+            builder.graph.add((category_uri, SKOS.narrower, uri))
 
 
 def build_canonical_controls(builder: Builder) -> None:
@@ -1654,6 +1062,8 @@ def build_canonical_controls(builder: Builder) -> None:
         builder.label(uri, spec["label"])
         builder.comment(uri, spec["comment"])
         builder.lang(uri, "namaPengendalian", spec["label"])
+        builder.definition(uri, defs.CONTROL_DEFINITIONS.get(local, spec["comment"]), "Kurasi pakar")
+        builder.alt(uri, spec["label"].lower())
 
 
 def build_kondisi_katalog(builder: Builder) -> None:
@@ -1661,6 +1071,11 @@ def build_kondisi_katalog(builder: Builder) -> None:
         uri = builder.individual(local, cls)
         builder.label(uri, label)
         builder.comment(uri, "Kondisi lingkungan kualitatif terkait penyakit tanaman.")
+        builder.definition(
+            uri,
+            defs.ENV_DEFINITIONS.get(local),
+            "Kurasi pakar",
+        )
 
 
 def build_penyakit(builder: Builder, entries: list[dict[str, str]], report: dict) -> None:
@@ -1679,6 +1094,21 @@ def build_penyakit(builder: Builder, entries: list[dict[str, str]], report: dict
         builder.comment(uri, "Data penyakit dari sumber; rincian bukti tersedia pada node BuktiSumber.")
         builder.alt(uri, canonical["name_en"] or None)
         builder.plain(uri, "namaInggrisPenyakit", canonical["name_en"] or None)
+        english = canonical.get("name_en") or defs.DISEASE_ENGLISH_NAMES.get(local)
+        if english:
+            builder.pref_label(uri, english, "en")
+            builder.alt(uri, english, "en")
+        plant_names = sorted({PLANT_LABELS.get(e["plant_local"], e["plant_local"]) for e in group})
+        disease_label = canonical.get("label") or canonical["nama"]
+        disease_definition = defs.DISEASE_DEFINITIONS.get(local)
+        if disease_definition:
+            builder.definition(uri, disease_definition, "Kurasi pakar")
+        else:
+            builder.definition(
+                uri,
+                f"Penyakit {disease_label} yang menyerang tanaman {', '.join(plant_names)}.",
+                "Turunan relasi ontology",
+            )
 
         for entry in group:
             if entry is not canonical or entry.get("legacy_local") or entry["nama"] != canonical.get("label"):
@@ -1744,12 +1174,19 @@ def build_patogen(builder: Builder, entries: list[dict[str, str]], records: list
         if taxon not in TAXON_CLASS:
             report["data_quality"]["unknown_pathogens"] += 1
     cache: dict[tuple, URIRef] = {}
+    pathogen_diseases: dict[str, set[str]] = {}
+    pathogen_plants: dict[str, set[str]] = {}
     for record in records:
         entry = entries_by_id[record["disease_id"]]
         row = record["row"]
         key = norm(row.get("scientific_name")) or "unknown"
         disease_uri = KBR[entry["local"]]
         pathogen_uri = KBR[local_by_key[key]]
+        disease_label = entry.get("label") or entry.get("nama") or entry["local"]
+        plant_label = PLANT_LABELS.get(entry.get("plant_local", ""), entry.get("plant_local", ""))
+        pathogen_diseases.setdefault(local_by_key[key], set()).add(disease_label)
+        if plant_label:
+            pathogen_plants.setdefault(local_by_key[key], set()).add(plant_label)
         builder.link(disease_uri, "disebabkanOleh", pathogen_uri)
         reference = "BukuDOC005" if record["source"] == "DOC005" else "BukuDOC002"
         text = record["relation_note"] or row.get("verbatim_text") or row.get("scientific_name") or ""
@@ -1777,6 +1214,23 @@ def build_patogen(builder: Builder, entries: list[dict[str, str]], records: list
             {"disease": entry["local"], "pathogen": local_by_key[key], "taxon": taxon_by_key[key]}
         )
 
+    for key, local in local_by_key.items():
+        row = representative[key]["row"]
+        scientific = row.get("scientific_name") or local
+        taxon = TAXON_CLASS.get(taxon_by_key.get(key, ""), "Patogen")
+        diseases = sorted(pathogen_diseases.get(local, set()))
+        plants = sorted(pathogen_plants.get(local, set()))
+        if diseases and plants:
+            definition = (
+                f"{taxon} {scientific} yang menyebabkan penyakit "
+                f"{', '.join(diseases)} pada tanaman {', '.join(plants)}."
+            )
+        elif diseases:
+            definition = f"{taxon} {scientific} yang menyebabkan penyakit {', '.join(diseases)}."
+        else:
+            definition = f"{taxon} {scientific} yang tercatat pada sumber."
+        builder.definition(KBR[local], definition, "Turunan relasi ontology")
+
 
 def build_gejala(
     builder: Builder,
@@ -1788,9 +1242,20 @@ def build_gejala(
     groups: dict[tuple[str, str], dict] = {}
     unmapped: list[dict] = []
     evidence_cache: dict[tuple, URIRef] = {}
+    def record_canonicals(record: dict) -> list[str]:
+        source_id = (record.get("source_id") or "").strip()
+        found = match_canonical_symptoms(record["text"])
+        if not found:
+            found = list(defs.SYMPTOM_CANONICAL_OVERRIDES.get(source_id, []))
+        return found
+
+    disease_has_canonical: dict[str, bool] = {}
+    for record in records:
+        if record_canonicals(record):
+            disease_has_canonical[record["disease_id"]] = True
     for record in records:
         entry = entries_by_id[record["disease_id"]]
-        canonicals = match_canonical_symptoms(record["text"])
+        canonicals = record_canonicals(record)
         if canonicals:
             for canonical in canonicals:
                 key = (entry["local"], canonical)
@@ -1810,13 +1275,19 @@ def build_gejala(
                     else:
                         group["parts"].update(text_parts(record["text"]))
         else:
+            source_id = (record.get("source_id") or "").strip()
+            if (source_id in defs.NON_SYMPTOM_OVERRIDES or is_non_symptom_text(record["text"])) and disease_has_canonical.get(record["disease_id"]):
+                report["canonical_symptoms"]["skipped_non_symptom"] += 1
+                continue
             unmapped.append(record)
     for (_disease_local, canonical), group in groups.items():
         entry = group["entry"]
+        if not group["parts"] and knowledge.DEFAULT_PART:
+            group["parts"].add(knowledge.DEFAULT_PART)
         local = unique_local("Gejala" + entry["local"] + canonical, "", builder)
         uri = builder.individual(local, *(_part_classes(group["parts"]) or ["Gejala"]))
         symptom_label = CANONICAL_SYMPTOMS[canonical]["label"]
-        builder.label(uri, f"{symptom_label} pada {disease_display(entry)} ({plant_display(entry)})")
+        builder.label(uri, symptom_label)
         builder.link(uri, "memilikiGejalaKanonik", KBR[canonical])
         for part in sorted(group["parts"]):
             if part in PART_LABELS:
@@ -1844,7 +1315,7 @@ def build_gejala(
             builder.lang(uri, "deskripsiGejala", description)
             builder.comment(
                 uri,
-                f"Gejala {symptom_label.lower()} pada tanaman {plant_display(entry)}: {short_label(description)}",
+                f"Gejala {symptom_label.lower()} pada tanaman {plant_display(entry)}: {normalize_quote(description)}",
             )
         else:
             builder.comment(uri, f"Gejala {symptom_label.lower()} pada tanaman {plant_display(entry)}.")
@@ -1854,15 +1325,17 @@ def build_gejala(
     for record in unmapped:
         entry = entries_by_id[record["disease_id"]]
         parts = text_parts(record["text"])
+        if not parts and knowledge.DEFAULT_PART:
+            parts = [knowledge.DEFAULT_PART]
         local = unique_local("Gejala" + entry["local"], "", builder)
         uri = builder.individual(local, *(_part_classes(parts) or ["Gejala"]))
-        builder.label(uri, f"Gejala pada {disease_display(entry)} ({plant_display(entry)}): {short_label(record['text'])}")
+        builder.label(uri, symptom_display(record["text"]))
         for part in parts:
             builder.link(uri, "terdapatPada", KBR[part])
         description = safe_description(record["text"])
         if description:
             builder.lang(uri, "deskripsiGejala", description)
-            builder.comment(uri, f"Gejala pada tanaman {plant_display(entry)}: {short_label(description)}")
+            builder.comment(uri, f"Gejala pada tanaman {plant_display(entry)}: {normalize_quote(description)}")
         else:
             builder.comment(uri, f"Gejala pada tanaman {plant_display(entry)}.")
         reference = "BukuDOC005" if record["source"] == "DOC005" else "BukuDOC002"
@@ -2008,9 +1481,13 @@ def build_varietas(
     report: dict,
 ) -> None:
     entries_by_id = {e["disease_id"]: e for e in entries}
+    disease_labels = {e["local"]: (e.get("label") or e.get("nama") or e["local"]) for e in entries}
     name_local: dict[str, str] = {}
     cache: dict[tuple, URIRef] = {}
     seen_links: set[tuple[str, str, str]] = set()
+    variety_plants: dict[str, str] = {}
+    variety_resistant: dict[str, set[str]] = {}
+    variety_susceptible: dict[str, set[str]] = {}
     for record in records:
         entry = entries_by_id[record["disease_id"]]
         names = extract_varieties(record["text"])
@@ -2041,11 +1518,15 @@ def build_varietas(
             builder.comment(uri, "Varietas tanaman yang disebut sumber.")
             builder.link(KBR[entry["plant_local"]], "memilikiVarietas", uri)
             builder.link(uri, "didukungOleh", evidence)
+            plant_label = PLANT_LABELS.get(entry["plant_local"], entry["plant_local"])
+            variety_plants[local] = plant_label
             if resist and not vuln:
                 builder.link(uri, "tahanTerhadap", KBR[entry["local"]])
+                variety_resistant.setdefault(local, set()).add(disease_labels.get(entry["local"], entry["local"]))
                 report["varieties"]["resistant_links"].append({"variety": local, "disease": entry["local"]})
             elif vuln and not resist:
                 builder.link(uri, "rentanTerhadap", KBR[entry["local"]])
+                variety_susceptible.setdefault(local, set()).add(disease_labels.get(entry["local"], entry["local"]))
                 report["varieties"]["susceptible_links"].append({"variety": local, "disease": entry["local"]})
             key = (local, entry["disease_id"], record.get("source_id", ""))
             if key not in seen_links:
@@ -2053,6 +1534,18 @@ def build_varietas(
                 report["varieties"]["items"].append(
                     {"local": local, "name": name, "plant": entry["plant_local"], "disease": entry["local"]}
                 )
+
+    local_name = {local: name for name, local in name_local.items()}
+    for local, plant_label in variety_plants.items():
+        name = local_name.get(local, local)
+        text = f"Varietas {name} dari tanaman {plant_label}"
+        resistant = sorted(variety_resistant.get(local, set()))
+        susceptible = sorted(variety_susceptible.get(local, set()))
+        if resistant:
+            text += f"; diketahui tahan terhadap penyakit {', '.join(resistant)}"
+        if susceptible:
+            text += f"; diketahui rentan terhadap penyakit {', '.join(susceptible)}"
+        builder.definition(KBR[local], text + ".", "Turunan relasi ontology")
 
 
 def build_fase(
@@ -2063,6 +1556,7 @@ def build_fase(
 ) -> None:
     entries_by_id = {e["disease_id"]: e for e in entries}
     cache: dict[tuple, URIRef] = {}
+
     for record in records:
         entry = entries_by_id[record["disease_id"]]
         phases = extract_phases(record["text"])
@@ -2080,13 +1574,21 @@ def build_fase(
             report,
         )
         for phase in phases:
-            spec = PHASE_DEFS[phase]
-            uri = builder.ensure_individual(phase, spec["class"])
-            builder.label(uri, spec["label"])
-            builder.comment(uri, "Fase pertumbuhan yang disebut pada sumber.")
+            uri = ensure_phase_individual(builder, phase)
             builder.link(KBR[entry["local"]], "menyerangFase", uri)
             builder.link(uri, "didukungOleh", evidence)
             report["phases"]["links"].append({"disease": entry["local"], "phase": phase})
+
+    for phase in (
+        "FasePembibitanTanaman",
+        "FaseVegetatifUmum",
+        "FaseGeneratifUmum",
+        "FaseMatangSusu",
+        "FasePanenTanaman",
+    ):
+        ensure_phase_individual(builder, phase)
+    for left, right in defs.PHASE_CHAIN:
+        builder.link(KBR[left], "diikutiOleh", KBR[right])
 
 
 def build_metadata(builder: Builder, entries: list[dict[str, str]], report: dict) -> None:
@@ -2097,6 +1599,10 @@ def build_metadata(builder: Builder, entries: list[dict[str, str]], report: dict
             by_local[entry["local"]] = entry
 
     cache: dict[tuple, URIRef] = {}
+    metadata_varieties: dict[str, str] = {}
+    metadata_variety_plants: dict[str, str] = {}
+    metadata_variety_resistant: dict[str, set[str]] = {}
+    metadata_variety_susceptible: dict[str, set[str]] = {}
     for row in read_csv(METADATA_CSV):
         disease = (row.get("disease") or "").strip()
         gap = (row.get("gap") or "").strip().lower()
@@ -2146,9 +1652,7 @@ def build_metadata(builder: Builder, entries: list[dict[str, str]], report: dict
 
         if re.search(r"fase\s+(?:[a-z]+\s+){0,3}hingga\s+panen|\bfase\s+panen\b", quote, re.I):
             phase_local = "FasePanenTanaman"
-            phase_uri = builder.ensure_individual(phase_local, PHASE_DEFS[phase_local]["class"])
-            builder.label(phase_uri, PHASE_DEFS[phase_local]["label"])
-            builder.comment(phase_uri, "Fase pertumbuhan yang disebut sumber.")
+            phase_uri = ensure_phase_individual(builder, phase_local)
             builder.link(KBR[disease], "menyerangFase", phase_uri)
             builder.link(phase_uri, "didukungOleh", evidence)
             if not any(
@@ -2167,10 +1671,7 @@ def build_metadata(builder: Builder, entries: list[dict[str, str]], report: dict
             if value not in PHASE_DEFS:
                 builder.errors.append(f"metadata fase tidak dikenal: {value!r} pada {disease}")
                 continue
-            spec = PHASE_DEFS[value]
-            uri = builder.ensure_individual(value, spec["class"])
-            builder.label(uri, spec["label"])
-            builder.comment(uri, "Fase pertumbuhan yang disebut pada sumber.")
+            uri = ensure_phase_individual(builder, value)
             builder.link(KBR[disease], "menyerangFase", uri)
             builder.link(uri, "didukungOleh", evidence)
             builder.link(KBR[disease], "didukungOleh", evidence)
@@ -2192,6 +1693,13 @@ def build_metadata(builder: Builder, entries: list[dict[str, str]], report: dict
             builder.link(KBR[entry["plant_local"]], "memilikiVarietas", uri)
             builder.link(uri, f"{relation}Terhadap", KBR[disease])
             builder.link(uri, "didukungOleh", evidence)
+            metadata_varieties[local] = value
+            metadata_variety_plants[local] = PLANT_LABELS.get(entry["plant_local"], entry["plant_local"])
+            disease_label = entry.get("label") or entry.get("nama") or disease
+            if relation == "tahan":
+                metadata_variety_resistant.setdefault(local, set()).add(disease_label)
+            else:
+                metadata_variety_susceptible.setdefault(local, set()).add(disease_label)
             key = {"local": local, "name": value, "plant": entry["plant_local"], "disease": disease}
             if not any(
                 item.get("local") == local and item.get("disease") == disease
@@ -2209,6 +1717,19 @@ def build_metadata(builder: Builder, entries: list[dict[str, str]], report: dict
                 "evidence": str(evidence).split("#")[-1],
             }
         )
+
+    for local, name in metadata_varieties.items():
+        plant_label = metadata_variety_plants.get(local, "")
+        text = f"Varietas {name}"
+        if plant_label:
+            text += f" dari tanaman {plant_label}"
+        resistant = sorted(metadata_variety_resistant.get(local, set()))
+        susceptible = sorted(metadata_variety_susceptible.get(local, set()))
+        if resistant:
+            text += f"; diketahui tahan terhadap penyakit {', '.join(resistant)}"
+        if susceptible:
+            text += f"; diketahui rentan terhadap penyakit {', '.join(susceptible)}"
+        builder.definition(KBR[local], text + ".", "Turunan relasi ontology")
 
 
 def build_lingkungan(
@@ -2267,6 +1788,12 @@ def build_lingkungan(
                 if obs.get("condition"):
                     builder.lang(uri, "kondisi", obs["condition"])
                     builder.lang(uri, "klasifikasiTurunan", obs["condition"])
+                disease_label = entry.get("label") or entry.get("nama") or entry["local"]
+                builder.definition(
+                    uri,
+                    f"Observasi {obs['factor']} {value_slug(obs)} yang memengaruhi penyakit {disease_label}.",
+                    "Turunan relasi ontology",
+                )
                 observation_cache[key] = uri
                 report["environment"]["numeric"].append(
                     {
@@ -2287,6 +1814,15 @@ def build_lingkungan(
                 uri = builder.ensure_individual(local, cls)
                 builder.label(uri, label)
                 builder.comment(uri, "Kondisi lingkungan kualitatif yang dinyatakan sumber.")
+                if not any(builder.graph.objects(uri, SKOS.definition)):
+                    builder.definition(
+                        uri,
+                        defs.ENV_DEFINITIONS.get(
+                            local,
+                            f"Kondisi lingkungan {label.lower()} yang memengaruhi penyakit tanaman.",
+                        ),
+                        "Kurasi pakar",
+                    )
                 condition_cache[local] = uri
             uri = condition_cache[local]
             builder.link(KBR[entry["local"]], "dipengaruhiOleh", uri)
@@ -2299,7 +1835,14 @@ def build() -> tuple[Graph, dict, list[str], Builder]:
     report: dict = {
         "summary": {},
         "controls": {"disease": [], "chapter": []},
-        "canonical_symptoms": {"used": {}, "total": 0, "canonical_groups": 0, "unmapped": 0},
+        "canonical_symptoms": {
+            "used": {},
+            "total": 0,
+            "canonical_groups": 0,
+            "unmapped": 0,
+            "skipped_non_symptom": 0,
+        },
+        "definitions": {"filled": 0, "missing": 0, "by_type": {}},
         "environment": {"numeric": [], "qualitative": []},
         "varieties": {"items": [], "resistant_links": [], "susceptible_links": []},
         "phases": {"links": []},
@@ -2316,9 +1859,11 @@ def build() -> tuple[Graph, dict, list[str], Builder]:
     }
     builder = Builder()
     tbox.build_tbox(builder.graph)
+    apply_class_property_definitions(builder)
     builder.graph.bind("ptp", KBR)
     builder.graph.bind("prov", PROV)
     builder.graph.bind("skos", SKOS)
+    builder.graph.bind("dcterms", DCTERMS)
 
     entries = penyakit_entries()
     unique_disease_entries = unique_diseases(entries)
@@ -2334,6 +1879,8 @@ def build() -> tuple[Graph, dict, list[str], Builder]:
     build_canonical_symptoms(builder)
     build_canonical_controls(builder)
     build_kondisi_katalog(builder)
+    build_category_concepts(builder)
+    apply_phase_class_definitions(builder)
     build_penyakit(builder, entries, report)
     build_patogen(builder, entries, pathogen_rows, report)
     add_equivalences(builder)
@@ -2346,6 +1893,57 @@ def build() -> tuple[Graph, dict, list[str], Builder]:
     build_fase(builder, entries, all_context_records(symptom_rows, control_rows), report)
     build_metadata(builder, entries, report)
     build_lingkungan(builder, entries, all_context_records(symptom_rows, control_rows), report)
+
+    definition_types = [
+        "GejalaKanonik",
+        "FasePembibitan",
+        "FaseVegetatif",
+        "FaseGeneratif",
+        "FaseAnakan",
+        "FasePemasakan",
+        "FasePanen",
+        "BagianTanaman",
+        "Serealia",
+        "Legum",
+        "UmbiUmbian",
+        "Jamur",
+        "Bakteri",
+        "Virus",
+        "Oomycete",
+        "Fitoplasma",
+        "Nematoda",
+        "PengendalianKulturTeknis",
+        "PengendalianMekanis",
+        "PengendalianBiologis",
+        "PengendalianKimiawi",
+        "PengendalianFisik",
+        "PengendalianTerpadu",
+        "Varietas",
+        "Penyakit",
+        "ObservasiLingkungan",
+        "FaktorRisiko",
+        "Suhu",
+        "KelembapanUdara",
+        "KelembapanTanah",
+        "CurahHujan",
+        "Musim",
+        "Iklim",
+        "KondisiTanah",
+        "TeksturTanah",
+        "IntensitasCahaya",
+        "KetinggianTempat",
+        "KondisiDrainase",
+    ]
+    for type_name in definition_types:
+        nodes = set(builder.graph.subjects(RDF.type, KBR[type_name]))
+        filled = sum(1 for node in nodes if any(builder.graph.objects(node, SKOS.definition)))
+        report["definitions"]["by_type"][type_name] = {
+            "total": len(nodes),
+            "filled": filled,
+            "missing": len(nodes) - filled,
+        }
+        report["definitions"]["filled"] += filled
+        report["definitions"]["missing"] += len(nodes) - filled
 
     report["summary"] = {
         "plants": len(plant_rows_merged()),

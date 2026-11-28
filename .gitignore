@@ -57,3 +57,10 @@ env/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# ==========================================
+# BUILD / GENERATED ONTOLOGY ARTIFACTS
+# ==========================================
+06_backend/target/
+04_ontology/inferred_ontology
+04_ontology/ontology_md_inferred

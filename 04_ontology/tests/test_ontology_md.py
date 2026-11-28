@@ -128,6 +128,18 @@ class TestOntologyMd(unittest.TestCase):
         for subject, _ in subc | subp | exact | close:
             self.assertTrue(str(subject).startswith(PTP))
 
+    def test_diagnosis_results_are_inferred_not_asserted(self) -> None:
+        result_predicates = (
+            "menghasilkanPenyakit",
+            "kandidatKuat",
+            "merekomendasikanPengendalian",
+            "merekomendasikanVarietas",
+            "menandaiRisikoLingkungan",
+        )
+        for predicate in result_predicates:
+            with self.subTest(predicate=predicate):
+                self.assertEqual(list(self.graph.subject_objects(KBR(predicate))), [])
+
     def test_inferred_artifact_available(self) -> None:
         self.assertTrue(INFERRED_ARTIFACT.exists())
         graph = Graph()
@@ -215,13 +227,15 @@ class TestOntologyMd(unittest.TestCase):
             len(self.facts)
             + self.report.get("growth_condition_facts", 0)
             + self.report.get("plant_phase_facts", 0)
-            + self.report.get("external_variety_facts", 0),
+            + self.report.get("external_variety_facts", 0)
+            + self.report.get("external_control_facts", 0),
         )
         self.assertEqual(
             self.report["entities"],
             len(self.entities)
             + self.report.get("plant_phase_entities", 0)
-            + self.report.get("external_variety_entities", 0),
+            + self.report.get("external_variety_entities", 0)
+            + self.report.get("external_control_entities", 0),
         )
         self.assertEqual(self.report["descriptions"], len(self.descriptions))
         self.assertEqual(
@@ -260,11 +274,16 @@ class TestOntologyMd(unittest.TestCase):
         }
         self.assertEqual(len(self.descriptions), self.report["descriptions"])
         for row in self.descriptions:
+            subject = KBR(row["subject_local"])
             key = (
-                KBR(row["subject_local"]),
+                subject,
                 nl(row["literal_value"]),
                 row["literal_lang"] or "id",
             )
+            # Baris deskripsi untuk konsep yang sudah punya skos:definition
+            # sengaja tidak dicerminkan menjadi rdfs:comment.
+            if any(self.graph.objects(subject, SKOS.definition)):
+                continue
             self.assertIn(key, comments, row["subject_local"])
 
     def test_comment_coverage(self) -> None:
@@ -299,7 +318,13 @@ class TestOntologyMd(unittest.TestCase):
         self.assertEqual(len(individuals), self.report["named_individuals"])
         self.assertEqual(len(commented_classes), self.report["classes_with_comment"])
         self.assertEqual(classes - commented_classes, set())
-        self.assertEqual(individuals - commented_individuals, COMMENT_GAPS)
+        uncommented = individuals - commented_individuals
+        defined_without_comment = {
+            name
+            for name in uncommented
+            if any(self.graph.objects(KBR(name), SKOS.definition))
+        }
+        self.assertEqual(uncommented - defined_without_comment, COMMENT_GAPS)
 
     def test_comments_are_indonesian_literals(self) -> None:
         for obj in self.graph.objects(None, RDFS.comment):

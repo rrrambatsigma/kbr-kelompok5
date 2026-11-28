@@ -4,16 +4,22 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import OWL, RDF, RDFS, XSD
 
+import definitions as defs  # noqa: E402
+import knowledge  # noqa: E402
+
 SWRL = Namespace("http://www.w3.org/2003/11/swrl#")
 SWRLA = Namespace("http://swrl.stanford.edu/ontologies/3.3/swrla.owl#")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
+DCTERMS = Namespace("http://purl.org/dc/terms/")
+PROV = Namespace("http://www.w3.org/ns/prov#")
 
 ONTO_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = ONTO_DIR.parent
@@ -35,6 +41,8 @@ DESCRIPTIONS_CSV = TABLE_DIR / "auto" / "DOC002_md" / "DOC002_descriptions.csv"
 EXT_FACTS_CSV = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_facts.csv"
 EXT_ENTITIES_CSV = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_entities.csv"
 EXT_DESCRIPTIONS_CSV = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_descriptions.csv"
+EXT_CONTROL_ENTITIES_CSV = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_controls_entities.csv"
+EXT_CONTROL_FACTS_CSV = TABLE_DIR / "auto" / "EXTERNAL_ENV" / "EXTERNAL_ENV_controls_facts.csv"
 GROWTH_CSV = TABLE_DIR / "curated" / "EXTERNAL_ENV" / "plant_growth_conditions.csv"
 PHASE_CSV = TABLE_DIR / "curated" / "EXTERNAL_ENV" / "plant_growth_phases.csv"
 EXT_VARIETY_CSV = TABLE_DIR / "curated" / "EXTERNAL_ENV" / "external_varieties.csv"
@@ -43,37 +51,16 @@ ALIGNMENTS_CSV = TABLE_DIR / "curated" / "external_ontology" / "alignments.csv"
 EXT_REPORT_JSON = TABLE_DIR / "reports" / "EXTERNAL_ENV" / "external_env_report.json"
 SOURCE_REGISTRY_CSV = PROJECT_ROOT / "01_knowledge_sources" / "external" / "source_registry.csv"
 BASE_TTL = ONTO_DIR / "ontology.ttl"
+DEMO_CASES_TTL = ONTO_DIR / "demo_cases.ttl"
 OUTPUT_TTL = ONTO_DIR / "ontology_md.ttl"
 OUTPUT_OWL = ONTO_DIR / "ontology_md.owl"
 REPORT_JSON = ONTO_DIR / "extraction_report_md.json"
 
-SCOPE_PLANTS = ["Padi", "Kedelai", "Jagung", "UbiJalar", "UbiKayu", "KacangTanah", "KacangHijau"]
+SCOPE_PLANTS = knowledge.PLANT_ORDER
 
 
 def condition_class(local: str, default: str) -> str:
-    if local.startswith("KondisiCahaya"):
-        return "IntensitasCahaya"
-    if local.startswith("KondisiDataran"):
-        return "KetinggianTempat"
-    if local.startswith("KondisiDrainase"):
-        return "KondisiDrainase"
-    if local.startswith(("KondisiTanahGembur", "KondisiTanahBerpasir", "KondisiTanahLiat")):
-        return "TeksturTanah"
-    if local.startswith("KondisiTanah"):
-        return "KondisiTanah"
-    if local.startswith("KondisiKelembapanTanah"):
-        return "KelembapanTanah"
-    if local.startswith("KondisiSuhu"):
-        return "Suhu"
-    if local.startswith("KondisiCurahHujan"):
-        return "CurahHujan"
-    if local.startswith("KondisiKelembapanUdara"):
-        return "KelembapanUdara"
-    if local.startswith("KondisiMusim"):
-        return "Musim"
-    if local.startswith("KondisiIklim"):
-        return "Iklim"
-    return default
+    return knowledge.condition_class(local, default)
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -270,9 +257,12 @@ def plant_phase_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
                 "comment": "Fase pertumbuhan tanaman yang disebut pada sumber.",
             }
         )
+        phase_id = (row.get("phase_id") or "").strip()
+        confidence = (row.get("confidence") or "medium").strip()
+        review_status = (row.get("review_status") or "verified").strip()
         facts.append(
             {
-                "fact_id": (row.get("phase_id") or "").strip(),
+                "fact_id": phase_id,
                 "subject_local": plant,
                 "subject_class": "TanamanPangan",
                 "predicate": "memilikiFasePertumbuhan",
@@ -287,11 +277,52 @@ def plant_phase_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
                 "page": "",
                 "line_start": "",
                 "line_end": "",
-                "confidence": (row.get("confidence") or "medium").strip(),
-                "review_status": (row.get("review_status") or "verified").strip(),
+                "confidence": confidence,
+                "review_status": review_status,
                 "notes": locator,
             }
         )
+        base = {
+            "subject_local": local,
+            "subject_class": phase_class,
+            "source_type": "external_growth_phase",
+            "source_document": source_id,
+            "source_id": source_id,
+            "evidence_quote": quote,
+            "page": "",
+            "line_start": "",
+            "line_end": "",
+            "confidence": confidence,
+            "review_status": review_status,
+            "notes": locator,
+        }
+        for predicate, key, suffix in (
+            ("mulaiFase", "start", "_start"),
+            ("selesaiFase", "end", "_end"),
+        ):
+            value = (row.get(key) or "").strip()
+            if not value:
+                continue
+            facts.append(
+                {
+                    "fact_id": phase_id + suffix,
+                    "predicate": predicate,
+                    "literal_value": value,
+                    "literal_lang": "",
+                    **base,
+                }
+            )
+        unit = (row.get("unit") or "").strip()
+        if unit:
+            facts.append(
+                {
+                    "fact_id": phase_id + "_unit",
+                    "predicate": "satuanFase",
+                    "literal_value": unit,
+                    "literal_lang": "",
+                    **base,
+                }
+            )
     return entities, facts
 
 
@@ -380,20 +411,28 @@ def add_facts(graph: Graph, rows: list[dict[str, str]]) -> None:
         if not literal_value:
             continue
         lang = (row.get("literal_lang") or "").strip() or None
-        if predicate in {"nilaiMin", "nilaiMaks", "nilaiTunggal"}:
+        if predicate in {"nilaiMin", "nilaiMaks", "nilaiTunggal", "mulaiFase", "selesaiFase"}:
             graph.add((subject, prop, Literal(float(literal_value), datatype=XSD.decimal)))
             continue
         graph.add((subject, prop, Literal(literal_value, lang=lang)))
 
 
-def add_descriptions(graph: Graph, rows: list[dict[str, str]]) -> None:
+def add_descriptions(graph: Graph, rows: list[dict[str, str]]) -> int:
+    skipped = 0
     for row in rows:
         subject_local = (row.get("subject_local") or "").strip()
         literal_value = _nl(row.get("literal_value") or "").strip()
         if not subject_local or not literal_value:
             continue
+        subject = KBR[subject_local]
+        # Konsep yang sudah punya definisi tidak perlu komentar kutipan sumber;
+        # kutipan tetap tersimpan pada deskripsi/Bukti.
+        if any(graph.objects(subject, SKOS.definition)):
+            skipped += 1
+            continue
         lang = (row.get("literal_lang") or "").strip() or "id"
-        graph.add((KBR[subject_local], RDFS.comment, Literal(literal_value, lang=lang)))
+        graph.add((subject, RDFS.comment, Literal(literal_value, lang=lang)))
+    return skipped
 
 
 def validate(
@@ -469,61 +508,60 @@ def _local(node) -> str:
     return str(node).split("#")[-1]
 
 
-def add_demo_diagnoses(graph: Graph, report: dict) -> int:
-    diseases = sorted(set(graph.subjects(RDF.type, KBR.Penyakit)), key=_local)
-    count = 0
-    for disease in diseases:
-        plants = sorted(set(graph.objects(disease, KBR.menyerangTanaman)), key=_local)
-        if not plants:
+def apply_entity_definitions(graph: Graph) -> None:
+    """Terapkan definisi entity dari katalog RDF untuk subjek yang sudah ada."""
+    for local, (definition, source) in knowledge.ENTITY_DEFINITIONS.items():
+        node = KBR[local]
+        if (node, RDF.type, OWL.NamedIndividual) not in graph:
             continue
-        plant = plants[0]
-        by_canonical: dict = defaultdict(list)
-        for observation in graph.objects(disease, KBR.memilikiGejala):
-            for canonical in graph.objects(observation, KBR.memilikiGejalaKanonik):
-                by_canonical[canonical].append(observation)
-
-        chosen = []
-        canonical_keys = sorted(by_canonical, key=_local)
-        if canonical_keys:
-            chosen.append(by_canonical[canonical_keys[0]][0])
-            if len(canonical_keys) > 1:
-                for observation in by_canonical[canonical_keys[1]]:
-                    if observation not in chosen:
-                        chosen.append(observation)
-                        break
-
-        environmental_values = []
-        for condition in graph.objects(disease, KBR.dipengaruhiOleh):
-            if (condition, RDF.type, KBR.ObservasiLingkungan) in graph:
-                environmental_values.extend(graph.objects(condition, KBR.klasifikasiTurunan))
-
-        if not chosen and not environmental_values:
+        if any(graph.objects(node, SKOS.definition)):
             continue
+        graph.add((node, SKOS.definition, Literal(definition, lang="id")))
+        if source:
+            graph.add((node, DCTERMS.source, Literal(source, lang="id")))
 
-        disease_label = graph.value(disease, RDFS.label) or _local(disease)
-        plant_label = graph.value(plant, RDFS.label) or _local(plant)
-        local = "Diagnosis" + _local(disease)
-        uri = KBR[local]
-        graph.add((uri, RDF.type, KBR.Diagnosis))
-        graph.add((uri, RDF.type, OWL.NamedIndividual))
-        graph.add((uri, RDFS.label, Literal(f"Kasus demo: {plant_label} - {disease_label}", lang="id")))
-        graph.add((uri, RDFS.comment, Literal("Kasus observasi demo; diagnosis dan rekomendasi dihasilkan oleh Pellet dari SWRL.", lang="id")))
-        graph.add((uri, KBR.memilikiTanaman, plant))
-        for observation in chosen:
-            graph.add((uri, KBR.memilikiObservasi, observation))
 
-        if environmental_values:
-            env_local = "ObservasiLingkungan" + _local(disease)
-            env_uri = KBR[env_local]
-            graph.add((env_uri, RDF.type, KBR.ObservasiLingkungan))
-            graph.add((env_uri, RDF.type, OWL.NamedIndividual))
-            graph.add((env_uri, RDFS.label, Literal(f"Observasi lingkungan demo: {disease_label}", lang="id")))
-            graph.add((env_uri, RDFS.comment, Literal(f"Observasi lingkungan untuk kasus demo {disease_label}.", lang="id")))
-            graph.add((env_uri, KBR.klasifikasiTurunan, environmental_values[0]))
-            graph.add((uri, KBR.memilikiObservasi, env_uri))
-        count += 1
-    report["diagnoses"] = count
-    return count
+def apply_phase_metadata(graph: Graph) -> None:
+    """Terapkan urutan, label Inggris, dan sinonim fase dari katalog RDF."""
+    for node in graph.subjects(RDF.type, OWL.NamedIndividual):
+        types = [
+            str(item).split("#")[-1]
+            for item in graph.objects(node, RDF.type)
+            if isinstance(item, URIRef) and str(item).startswith(str(KBR))
+        ]
+        phase_type = next((item for item in types if item in defs.PHASE_DEFINITIONS), None)
+        if phase_type is None:
+            continue
+        spec = defs.PHASE_DEFINITIONS[phase_type]
+        english = spec.get("english")
+        if english:
+            graph.add((node, SKOS.prefLabel, Literal(english, lang="en")))
+        for synonym in spec.get("synonyms", []):
+            graph.add((node, SKOS.altLabel, Literal(synonym, lang="id")))
+        rank = defs.PHASE_STAGE_ORDER.get(phase_type)
+        if rank is not None:
+            graph.add((node, KBR["urutanFase"], Literal(rank, datatype=XSD.integer)))
+
+
+def add_external_source_links(graph: Graph) -> int:
+    """Hubungkan node bukti ke referensi eksternal yang menyimpan URL."""
+    ref_by_source: dict[str, URIRef] = {}
+    for ref in graph.subjects(KBR["identifierSumber"], None):
+        for value in graph.objects(ref, KBR["identifierSumber"]):
+            text = str(value)
+            if text.startswith(("SRC_EXT_", "SRC_ONTO_")):
+                ref_by_source[text] = ref
+    linked = 0
+    for subject in set(graph.subjects(KBR["dokumenSumber"], None)):
+        for value in graph.objects(subject, KBR["dokumenSumber"]):
+            ref = ref_by_source.get(str(value))
+            if ref is None:
+                continue
+            triple = (subject, PROV.wasDerivedFrom, ref)
+            if triple not in graph:
+                graph.add(triple)
+                linked += 1
+    return linked
 
 
 def build() -> tuple[Graph, dict, list[str]]:
@@ -535,6 +573,9 @@ def build() -> tuple[Graph, dict, list[str]]:
     for triple in base_triples:
         graph.add(triple)
     build_md_tbox(graph)
+    if DEMO_CASES_TTL.exists():
+        graph.parse(DEMO_CASES_TTL, format="turtle")
+    diagnosis_count = len(set(graph.subjects(RDF.type, KBR.Diagnosis)))
 
     internal_entities = read_csv(ENTITIES_CSV)
     internal_facts = read_csv(FACTS_CSV)
@@ -544,13 +585,23 @@ def build() -> tuple[Graph, dict, list[str]]:
     variety_entities, variety_facts = external_variety_rows()
     ext_facts = read_csv_optional(EXT_FACTS_CSV) + growth_facts
     ext_descriptions = read_csv_optional(EXT_DESCRIPTIONS_CSV)
-    entities = internal_entities + ext_entities + phase_entities + variety_entities
-    facts = internal_facts + ext_facts + phase_facts + variety_facts
+    ext_control_entities = read_csv_optional(EXT_CONTROL_ENTITIES_CSV)
+    ext_control_facts = read_csv_optional(EXT_CONTROL_FACTS_CSV)
+    entities = (
+        internal_entities
+        + ext_entities
+        + phase_entities
+        + variety_entities
+        + ext_control_entities
+    )
+    facts = internal_facts + ext_facts + phase_facts + variety_facts + ext_control_facts
     descriptions = read_csv(DESCRIPTIONS_CSV) + ext_descriptions
     add_entities(graph, entities)
     add_facts(graph, facts)
-    add_descriptions(graph, descriptions)
-    diagnosis_count = add_demo_diagnoses(graph, {})
+    external_source_links = add_external_source_links(graph)
+    apply_entity_definitions(graph)
+    apply_phase_metadata(graph)
+    skipped_descriptions = add_descriptions(graph, descriptions)
     swrl_rule_count = add_swrl_rules(graph)
     alignment_counts, alignment_errors = add_external_alignments(graph)
     errors = validate(graph, base_triples, entities, facts, descriptions) + alignment_errors
@@ -588,6 +639,9 @@ def build() -> tuple[Graph, dict, list[str]]:
         "plant_phase_facts": len(phase_facts),
         "external_variety_entities": len(variety_entities),
         "external_variety_facts": len(variety_facts),
+        "external_control_entities": len(ext_control_entities),
+        "external_control_facts": len(ext_control_facts),
+        "external_source_links": external_source_links,
         "swrl_rules": swrl_rule_count,
         "external_alignments": sum(alignment_counts.values()),
         "external_alignments_equivalent_class": alignment_counts.get("equivalentClass", 0),
@@ -599,6 +653,8 @@ def build() -> tuple[Graph, dict, list[str]]:
         "diagnoses": diagnosis_count,
         "entity_counts": dict(sorted(entity_counts.items())),
         "descriptions": len(descriptions),
+        "skipped_descriptions": skipped_descriptions,
+        "definitions_md": sum(1 for _ in graph.subjects(SKOS.definition, None)),
         "internal_descriptions": len(descriptions) - len(ext_descriptions),
         "external_descriptions": len(ext_descriptions),
         "description_counts": dict(sorted(description_counts.items())),

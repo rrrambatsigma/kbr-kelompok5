@@ -24,6 +24,7 @@ PTP = "http://kbr.kelompok5.org/penyakit-tanaman-pangan#"
 KBR = Namespace(PTP)
 PROV = Namespace("http://www.w3.org/ns/prov#")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
+DCTERMS = Namespace("http://purl.org/dc/terms/")
 
 ONTOLOGY_IRI = URIRef("http://kbr.kelompok5.org/penyakit-tanaman-pangan")
 
@@ -445,6 +446,20 @@ OBJECT_PROPERTIES: dict[str, dict] = {
         "domain": "TanamanPangan",
         "range": "Pengendalian",
     },
+    "diikutiOleh": {
+        "label": "diikuti oleh",
+        "comment": "Fase pertumbuhan diikuti oleh fase pertumbuhan berikutnya.",
+        "domain": "FasePertumbuhan",
+        "range": "FasePertumbuhan",
+        "inverse": "didahuluiOleh",
+    },
+    "didahuluiOleh": {
+        "label": "didahului oleh",
+        "comment": "Kebalikan dari diikutiOleh.",
+        "domain": "FasePertumbuhan",
+        "range": "FasePertumbuhan",
+        "inverse": "diikutiOleh",
+    },
     "berkaitanPengendalian": {
         "label": "berkaitan pengendalian",
         "comment": "Superproperti yang menghubungkan entitas dengan tindakan pengendalian.",
@@ -630,6 +645,30 @@ DATA_PROPERTIES: dict[str, dict] = {
         "label": "kode gejala",
         "comment": "Kode stabil konsep gejala kanonik untuk pembeda pada SWRL.",
         "domain": "GejalaKanonik",
+        "range": XSD.string,
+    },
+    "urutanFase": {
+        "label": "urutan fase",
+        "comment": "Urutan fase pertumbuhan dalam siklus tanaman.",
+        "domain": "FasePertumbuhan",
+        "range": XSD.integer,
+    },
+    "mulaiFase": {
+        "label": "mulai fase",
+        "comment": "Nilai awal fase pertumbuhan pada satuan sumber.",
+        "domain": "FasePertumbuhan",
+        "range": XSD.decimal,
+    },
+    "selesaiFase": {
+        "label": "selesai fase",
+        "comment": "Nilai akhir fase pertumbuhan pada satuan sumber.",
+        "domain": "FasePertumbuhan",
+        "range": XSD.decimal,
+    },
+    "satuanFase": {
+        "label": "satuan fase",
+        "comment": "Satuan nilai awal dan akhir fase pertumbuhan.",
+        "domain": "FasePertumbuhan",
         "range": XSD.string,
     },
     "deskripsiPengendalian": {

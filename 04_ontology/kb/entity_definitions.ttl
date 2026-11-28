@@ -1,0 +1,2482 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix kbr: <http://kbr.kelompok5.org/penyakit-tanaman-pangan#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+kbr:Akar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Organ penyerap air dan hara serta penopang tanaman di dalam tanah; tempat munculnya gejala busuk akar."@id .
+
+kbr:AntraknosaUbiKayuBatang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Antraknosa pada tanaman Ubi kayu, disebabkan oleh Collectothricum gloeosporioides, dengan gejala antara lain Pucuk mati."@id .
+
+kbr:AntraknosaUbiKayuDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Antraknosa pada tanaman Ubi kayu, disebabkan oleh Colletotricum spp, dengan gejala antara lain Layu daun."@id .
+
+kbr:BagianTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Bagian tanaman yang dapat menjadi lokasi gejala atau serangan penyakit."@id .
+
+kbr:Bakteri kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Patogen kelompok bakteri."@id .
+
+kbr:Batang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Organ penopang tanaman dan pengangkut air serta hara; tempat munculnya gejala busuk, kerdil, atau bercak batang."@id .
+
+kbr:Begomovirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Begomovirus yang menyebabkan penyakit Cassava Mosaic Begomovirus (CMBs), Tanaman kerdil (stunt) pada tanaman Ubi kayu."@id .
+
+kbr:BelangTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Pola belang atau mottle pada jaringan tanaman tanpa bagian tanaman yang spesifik."@id .
+
+kbr:BercakDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Bercak atau noda berwarna berbeda dari jaringan sehat pada daun; dapat berupa lesi kecil, bulat, atau tidak beraturan."@id .
+
+kbr:BercakDaunBaurUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak daun baur pada tanaman Ubi kayu, disebabkan oleh Cercospora. viscosae, dengan gejala antara lain Bercak daun."@id .
+
+kbr:BercakDaunCoklatUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak daun Coklat pada tanaman Ubi kayu, disebabkan oleh Cercospora henningsii, Cercosporidium henningsii, dengan gejala antara lain Bercak daun."@id .
+
+kbr:BercakDaunPutihUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak daun putih pada tanaman Ubi kayu, disebabkan oleh Phaeoramularia manihotis, dengan gejala antara lain Bercak pada tanaman."@id .
+
+kbr:BercakTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Bercak, noda, lesi, atau bintik pada jaringan tanaman tanpa bagian tanaman yang spesifik."@id .
+
+kbr:Biji kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Unit perbanyakan tanaman yang terbentuk di dalam buah, polong, atau malai; dapat menunjukkan gejala bercak atau perubahan warna."@id .
+
+kbr:BotryodiplodiaSpp kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Botryodiplodia spp yang menyebabkan penyakit Busuk akar dan umbi, Busuk pangkal batang pada tanaman Ubi kayu."@id .
+
+kbr:Buah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Organ hasil perkembangan bunga yang mengandung biji; tempat munculnya gejala busuk atau bercak buah."@id .
+
+kbr:BuktiGejala kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Bukti untuk pengamatan gejala."@id .
+
+kbr:BuktiPatogen kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Bukti untuk hubungan penyakit-patogen."@id .
+
+kbr:BuktiPengendalian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Bukti untuk tindakan pengendalian."@id .
+
+kbr:BuktiPenyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Bukti untuk pernyataan penyakit."@id .
+
+kbr:BuktiSumber kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Node bukti yang menyimpan kutipan dan lokasi sumber."@id .
+
+kbr:Buku kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Referensi berbentuk buku."@id .
+
+kbr:BusukAkar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Jaringan akar membusuk, berwarna coklat sampai hitam, sehingga penyerapan air dan hara terganggu."@id .
+
+kbr:BusukAkarDanUmbiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk akar dan umbi pada tanaman Ubi kayu, disebabkan oleh Botryodiplodia spp, Diplodia spp, Phytophthora spp, Sclerotium rolfsii, dengan gejala antara lain Busuk akar, Pertumbuhan terhambat."@id .
+
+kbr:BusukAkarUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk akar pada tanaman Ubi kayu, disebabkan oleh Polyporus sulphureus, dengan gejala antara lain Busuk akar, Busuk batang, Busuk buah, Klorosis pada tanaman."@id .
+
+kbr:BusukBatang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Jaringan batang atau pelepah membusuk, berwarna coklat sampai hitam, dan dapat menyebabkan tanaman rebah atau mati."@id .
+
+kbr:BusukBuah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Jaringan buah membusuk, biasanya berair, berwarna coklat, dan dapat disertai miselium atau bau."@id .
+
+kbr:BusukPangkalBatangUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk pangkal batang pada tanaman Ubi kayu, disebabkan oleh Botryodiplodia spp, Diplodia spp, Fusarium spp, Phytophthora spp, Sclerotium rolfsii, dengan gejala antara lain Busuk batang, Layu daun."@id .
+
+kbr:BusukTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Pembusukan jaringan tanaman tanpa bagian tanaman yang spesifik."@id .
+
+kbr:BusukUmbiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk Umbi pada tanaman Ubi kayu, disebabkan oleh Fusarium spp, dengan gejala antara lain Busuk pada tanaman, Layu daun."@id .
+
+kbr:CassavaBrownStreakDiseaseCBSDUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Cassava Brown Streak Disease (CBSD) pada tanaman Ubi kayu, disebabkan oleh Ipomovirus, dengan gejala antara lain Bercak daun, Klorosis daun."@id .
+
+kbr:CassavaMosaicBegomovirusCMBsUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Cassava Mosaic Begomovirus (CMBs) pada tanaman Ubi kayu, disebabkan oleh Begomovirus, dengan gejala antara lain Klorosis daun, Mosaik daun."@id .
+
+kbr:CeratocystisFimbriata kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Ceratocystis fimbriata yang menyebabkan penyakit Penyakit busuk hitam (black rot) pada tanaman Ubi jalar."@id .
+
+kbr:CercosporaArachidicola kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercospora arachidicola yang menyebabkan penyakit Penyakit Bercak Daun pada tanaman Kacang tanah."@id .
+
+kbr:CercosporaCanescens kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercospora canescens yang menyebabkan penyakit Penyakit Bercak Daun pada tanaman Kacang hijau."@id .
+
+kbr:CercosporaCruenta kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercospora cruenta yang menyebabkan penyakit Penyakit Bercak Daun pada tanaman Kacang hijau."@id .
+
+kbr:CercosporaHenningsii kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercospora henningsii yang menyebabkan penyakit Bercak daun Coklat pada tanaman Ubi kayu."@id .
+
+kbr:CercosporaKikuchii kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercospora kikuchii yang menyebabkan penyakit Penyakit Bercak Biji Ungu pada tanaman Kedelai."@id .
+
+kbr:CercosporaPersonata kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercospora personata yang menyebabkan penyakit Penyakit Bercak Daun pada tanaman Kacang tanah."@id .
+
+kbr:CercosporaSojina kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercospora sojina yang menyebabkan penyakit Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) pada tanaman Kedelai."@id .
+
+kbr:CercosporaViscosae kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercospora. viscosae yang menyebabkan penyakit Bercak daun baur pada tanaman Ubi kayu."@id .
+
+kbr:CercosporidiumHenningsii kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Cercosporidium henningsii yang menyebabkan penyakit Bercak daun Coklat pada tanaman Ubi kayu."@id .
+
+kbr:CollectothricumGloeosporioides kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Collectothricum gloeosporioides yang menyebabkan penyakit Antraknosa pada tanaman Ubi kayu."@id .
+
+kbr:Colletotrichum kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Colletotrichum yang menyebabkan penyakit Penyakit Antraknosa pada tanaman Kedelai."@id .
+
+kbr:ColletotrichumTruncatum kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Colletotrichum truncatum yang menyebabkan penyakit Penyakit Antraknosa pada tanaman Kedelai."@id .
+
+kbr:ColletotricumSpp kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Colletotricum spp yang menyebabkan penyakit Antraknosa pada tanaman Ubi kayu."@id .
+
+kbr:CorynesporaCassiicola kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Corynespora cassiicola yang menyebabkan penyakit Penyakit Bercak Target pada tanaman Kedelai."@id .
+
+kbr:CowpeaMildMottleVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Cowpea Mild Mottle Virus yang menyebabkan penyakit Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) pada tanaman Kedelai."@id .
+
+kbr:CuacaHangatDanLembapPadaBercakDaunCoklatUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Cuaca hangat dan lembap pada Bercak daun Coklat."@id .
+
+kbr:CuacaHangatDanLembapPadaPenyakitAntraknosaKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Cuaca hangat dan lembap pada Penyakit Antraknosa."@id .
+
+kbr:CuacaMemengaruhiPopulasiBemisiaTabaciPadaPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Cuaca memengaruhi populasi Bemisia tabaci pada Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus)."@id .
+
+kbr:CuacaSejukDanBasahPadaPenyakitLayuFusariumKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Cuaca sejuk dan basah pada Penyakit Layu Fusarium."@id .
+
+kbr:CuacaSejukDanHujanPadaBercakDaunPutihUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Cuaca sejuk dan hujan pada Bercak daun putih."@id .
+
+kbr:CurahHujan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor curah hujan."@id .
+
+kbr:CurahHujanDanKelembapanRelatifPadaAntraknosaUbiKayuBatang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Curah hujan dan kelembapan relatif pada Antraknosa."@id .
+
+kbr:CurahHujanDanKelembapanRelatifPadaAntraknosaUbiKayuDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Curah hujan dan kelembapan relatif pada Antraknosa."@id .
+
+kbr:CurahHujanPadaCassavaBrownStreakDiseaseCBSDUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Curah hujan pada Cassava Brown Streak Disease (CBSD)."@id .
+
+kbr:Daun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Organ fotosintesis tanaman; tempat munculnya gejala seperti klorosis, bercak, hawar, atau lapisan tepung."@id .
+
+kbr:DaunBasahPadaPenyakitHawarDaunJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Daun basah pada Penyakit Hawar Daun."@id .
+
+kbr:DaunBerlubang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Daun berlubang akibat kerusakan jaringan, sering karena serangan hama atau patogen."@id .
+
+kbr:DaunKering kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Daun mengering, rapuh, dan berwarna coklat akibat kehilangan air atau kerusakan jaringan."@id .
+
+kbr:DaunRontok kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Daun gugur atau rontok sebelum waktunya."@id .
+
+kbr:Diagnosis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Catatan proses diagnosis tanaman."@id .
+
+kbr:DiplodiaSpp kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Diplodia spp yang menyebabkan penyakit Busuk akar dan umbi, Busuk pangkal batang pada tanaman Ubi kayu."@id .
+
+kbr:ElsinoeBatatas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Elsinoe batatas yang menyebabkan penyakit Penyakit kudis pada tanaman Ubi jalar."@id .
+
+kbr:ElsinoeBrasiliensis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Elsinoe brasiliensis yang menyebabkan penyakit Superelongasi pada tanaman Ubi kayu."@id .
+
+kbr:ErysiphaeDiffusa kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Erysiphae diffusa yang menyebabkan penyakit Penyakit Embun Tepung (Powdery Mildew) pada tanaman Kedelai."@id .
+
+kbr:ErysiphePolygoni kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Erysiphe polygoni yang menyebabkan penyakit Penyakit Embun Tepung pada tanaman Kacang hijau."@id .
+
+kbr:FaktorLahan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor kondisi lahan."@id .
+
+kbr:FaktorLingkungan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor lingkungan abiotik atau iklim."@id .
+
+kbr:FaktorRisiko kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor lingkungan, budidaya, atau lahan yang memengaruhi penyakit."@id .
+
+kbr:FaseAnakan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id,
+        "Kurasi pakar"@id ;
+    skos:definition "Fase anakan."@id,
+        "Tahap pembentukan tunas atau anakan, terutama pada tanaman seperti padi."@id .
+
+kbr:FaseAnakanTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan tunas atau anakan, terutama pada tanaman seperti padi."@id .
+
+kbr:FaseAwalPertumbuhanUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:FaseGeneratif kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id,
+        "Kurasi pakar"@id ;
+    skos:definition "Fase pertumbuhan generatif."@id,
+        "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FaseGeneratifJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FaseGeneratifUmum kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FaseMatangSusu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap biji mengeras dan berisi cairan seperti susu, menandakan menjelang pemasakan."@id .
+
+kbr:FasePanen kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id,
+        "Kurasi pakar"@id ;
+    skos:definition "Fase menjelang atau saat panen."@id,
+        "Tahap tanaman siap dipanen."@id .
+
+kbr:FasePanenTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap tanaman siap dipanen."@id .
+
+kbr:FasePanenUbiKayuDalam kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap tanaman siap dipanen."@id .
+
+kbr:FasePanenUbiKayuGenjah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap tanaman siap dipanen."@id .
+
+kbr:FasePemasakan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id,
+        "Kurasi pakar"@id ;
+    skos:definition "Fase pemasakan."@id,
+        "Tahap pengisian dan pematangan biji, buah, atau umbi."@id .
+
+kbr:FasePemasakanJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pengisian dan pematangan biji, buah, atau umbi."@id .
+
+kbr:FasePemasakanKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pengisian dan pematangan biji, buah, atau umbi."@id .
+
+kbr:FasePemasakanKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pengisian dan pematangan biji, buah, atau umbi."@id .
+
+kbr:FasePemasakanKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pengisian dan pematangan biji, buah, atau umbi."@id .
+
+kbr:FasePematanganPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pengisian dan pematangan biji, buah, atau umbi."@id .
+
+kbr:FasePembentukanBijiKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePembentukanPolongKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePembentukanUmbiUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePembibitan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id,
+        "Kurasi pakar"@id ;
+    skos:definition "Fase pembibitan."@id,
+        "Tahap awal pertumbuhan sejak benih disemai atau ditanam hingga bibit siap dipindah ke lahan; fokus pada perkecambahan dan pembentukan akar, batang, serta daun muda."@id .
+
+kbr:FasePembibitanTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap awal pertumbuhan sejak benih disemai atau ditanam hingga bibit siap dipindah ke lahan; fokus pada perkecambahan dan pembentukan akar, batang, serta daun muda."@id .
+
+kbr:FasePembungaanKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePembungaanKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePembungaanKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePengisianPolong kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pengisian biji di dalam polong."@id .
+
+kbr:FasePengisianPolongKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePengisianPolongKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePengisianUmbiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FasePerkecambahanJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap awal pertumbuhan sejak benih disemai atau ditanam hingga bibit siap dipindah ke lahan; fokus pada perkecambahan dan pembentukan akar, batang, serta daun muda."@id .
+
+kbr:FasePerkecambahanKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap awal pertumbuhan sejak benih disemai atau ditanam hingga bibit siap dipindah ke lahan; fokus pada perkecambahan dan pembentukan akar, batang, serta daun muda."@id .
+
+kbr:FasePertumbuhan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Tahap perkembangan tanaman yang dapat menjadi periode rentan penyakit."@id .
+
+kbr:FaseReproduktifPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pembentukan bunga, buah, biji, polong, atau umbi yang menentukan hasil panen."@id .
+
+kbr:FaseVegetatif kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id,
+        "Kurasi pakar"@id ;
+    skos:definition "Fase pertumbuhan vegetatif."@id,
+        "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:FaseVegetatifJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:FaseVegetatifKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:FaseVegetatifKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:FaseVegetatifKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:FaseVegetatifPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:FaseVegetatifUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:FaseVegetatifUmum kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tahap pertumbuhan akar, batang, dan daun sebelum tanaman memasuki pembungaan atau pembuahan."@id .
+
+kbr:Fitoplasma kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Patogen kelompok fitoplasma."@id .
+
+kbr:FungiJamur kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Fungi/Jamur yang menyebabkan penyakit Nekrosis pada titik tunas (Cassava bud necrosis) pada tanaman Ubi kayu."@id .
+
+kbr:FusariumOxysporum kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Fusarium oxysporum yang menyebabkan penyakit layu fusarium pada tanaman Ubi jalar."@id .
+
+kbr:FusariumSpp kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Fusarium spp yang menyebabkan penyakit Busuk Umbi, Busuk pangkal batang, Penyakit Layu Fusarium pada tanaman Kedelai, Ubi kayu."@id .
+
+kbr:Gejala kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Pengamatan gejala pada tanaman atau bagian tanaman."@id .
+
+kbr:GejalaAkar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada akar."@id .
+
+kbr:GejalaBatang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada batang."@id .
+
+kbr:GejalaBiji kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada biji."@id .
+
+kbr:GejalaBuah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada buah."@id .
+
+kbr:GejalaDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada daun."@id .
+
+kbr:GejalaKanonik kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Konsep gejala yang dipakai untuk normalisasi pengamatan gejala dari sumber."@id .
+
+kbr:GejalaMalai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada malai."@id .
+
+kbr:GejalaPolong kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada polong."@id .
+
+kbr:GejalaPucuk kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada pucuk atau tunas."@id .
+
+kbr:GejalaUmbi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Gejala yang diamati pada umbi."@id .
+
+kbr:HawarBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar bakteri pada tanaman Ubi kayu, disebabkan oleh Xanthomonas campestris pv. Manihotis, dengan gejala antara lain Klorosis pada tanaman, Pucuk mati."@id .
+
+kbr:HawarDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Glosarium DOC006: Hawar"@id ;
+    skos:definition "Kematian jaringan daun yang meluas cepat, biasanya dimulai dari tepi atau ujung daun sehingga daun tampak coklat dan kering."@id .
+
+kbr:HawarDaunBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar daun bakteri pada tanaman Ubi kayu, disebabkan oleh Xanthomonas Campestrispv. Manihotis, dengan gejala antara lain Bercak daun, Daun rontok, Hawar daun, Layu daun."@id .
+
+kbr:HelminthosporiumMaydis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Helminthosporium maydis yang menyebabkan penyakit Penyakit Hawar Daun pada tanaman Jagung."@id .
+
+kbr:HujanLebatDanAnginKencangPadaPenyakitHawarDaunBakteriPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Hujan lebat dan angin kencang pada Penyakit Hawar Daun Bakteri."@id .
+
+kbr:Iklim kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor iklim umum."@id .
+
+kbr:IklimLembapDanHangatPadaBercakDaunBaurUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Iklim lembap dan hangat pada Bercak daun baur."@id .
+
+kbr:IklimLembapDanSejukPadaBercakDaunPutihUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Iklim lembap dan sejuk pada Bercak daun putih."@id .
+
+kbr:IklimLembapPadaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Iklim lembap pada Nekrosis pada titik tunas (Cassava bud necrosis)."@id .
+
+kbr:IntensitasCahaya kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor intensitas cahaya."@id .
+
+kbr:Ipomovirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Ipomovirus yang menyebabkan penyakit Cassava Brown Streak Disease (CBSD) pada tanaman Ubi kayu."@id .
+
+kbr:Jagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanaman pangan serealia penghasil tongkol jagung yang digunakan sebagai bahan pangan dan pakan."@id .
+
+kbr:Jamur kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Patogen kelompok jamur."@id .
+
+kbr:JurnalIlmiah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Referensi berbentuk artikel jurnal."@id .
+
+kbr:KacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanaman pangan legum berumur pendek penghasil biji kacang hijau yang kaya protein."@id .
+
+kbr:KacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanaman pangan legum penghasil biji kacang tanah yang dibudidayakan untuk pangan dan industri."@id .
+
+kbr:KarantinaTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengisolasi tanaman atau bahan tanam yang terinfeksi untuk mencegah penyebaran penyakit."@id .
+
+kbr:KategoriKelainanBentuk kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kategori gejala yang ditandai perubahan bentuk atau struktur tanaman, seperti malformasi atau patah."@id .
+
+kbr:KategoriLainnya kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kategori gejala yang tidak termasuk kelompok perubahan warna, pertumbuhan, nekrosis, pembusukan, atau kelainan bentuk."@id .
+
+kbr:KategoriNekrosis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kategori gejala yang ditandai kematian jaringan atau bagian tanaman, seperti bercak, hawar, kering, atau lubang."@id .
+
+kbr:KategoriPembusukan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kategori gejala yang ditandai pembusukan jaringan tanaman pada batang, akar, buah, atau bagian lain."@id .
+
+kbr:KategoriPertumbuhan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kategori gejala yang ditandai gangguan pertumbuhan atau perkembangan tanaman, seperti kerdil, terhambat, atau layu."@id .
+
+kbr:KategoriPerubahanWarna kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kategori gejala yang ditandai perubahan warna jaringan tanaman, seperti menguning, memudar, atau belang."@id .
+
+kbr:Kedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanaman pangan legum penghasil biji kedelai yang kaya protein, dibudidayakan sebagai tanaman pangan dan bahan baku olahan."@id .
+
+kbr:KelembapanRelatif98100PersenPadaPenyakitBercakDaunKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan relatif 98–100% pada Penyakit Bercak Daun."@id .
+
+kbr:KelembapanRelatifDiAtas70PersenPadaPenyakitHawarDaunBakteriPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan relatif >70% pada Penyakit Hawar Daun Bakteri."@id .
+
+kbr:KelembapanRelatifDiAtas78PersenPadaPenyakitKaratDaunKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan relatif >78% pada Penyakit Karat Daun."@id .
+
+kbr:KelembapanRelatifDiAtas90PersenPadaPenyakitBercakDaunKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan relatif >90% pada Penyakit Bercak Daun."@id .
+
+kbr:KelembapanRelatifDiAtas90PersenPadaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan relatif >90% pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)."@id .
+
+kbr:KelembapanRelatifPadaPenyakitHawarPelepahDaunPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan relatif pada Penyakit Hawar Pelepah Daun."@id .
+
+kbr:KelembapanRendahDenganDaunBasahTerbatasPadaPenyakitEmbunTepungPowderyMildewKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan rendah dengan daun basah terbatas pada Penyakit Embun Tepung (Powdery Mildew)."@id .
+
+kbr:KelembapanTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor kelembapan tanah."@id .
+
+kbr:KelembapanTanah2875PersenPadaLayuFusariumUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tanah 28–75% pada layu fusarium."@id .
+
+kbr:KelembapanTinggiDanDaunBasahPadaPenyakitBakteriPustulKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi dan daun basah pada Penyakit Bakteri Pustul."@id .
+
+kbr:KelembapanTinggiDanDaunBasahPadaPenyakitBercakTargetKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi dan daun basah pada Penyakit Bercak Target."@id .
+
+kbr:KelembapanTinggiDanSuhuHangatPadaPenyakitBercakBijiUnguKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi dan suhu hangat pada Penyakit Bercak Biji Ungu."@id .
+
+kbr:KelembapanTinggiPadaBusukPangkalBatangUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi pada Busuk pangkal batang."@id .
+
+kbr:KelembapanTinggiPadaHawarBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi pada Hawar bakteri."@id .
+
+kbr:KelembapanTinggiPadaHawarDaunBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi pada Hawar daun bakteri."@id .
+
+kbr:KelembapanTinggiPadaNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi pada Nekrosis pada titik tunas (Cassava bud necrosis)."@id .
+
+kbr:KelembapanTinggiPadaPenyakitBusukPelepahJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi pada Penyakit Busuk Pelepah."@id .
+
+kbr:KelembapanTinggiPadaPenyakitEmbunTepungKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kelembapan tinggi pada Penyakit Embun Tepung."@id .
+
+kbr:KelembapanUdara kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor kelembapan udara."@id .
+
+kbr:KematianTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanaman atau benih mati, tidak tumbuh, atau tidak berkecambah."@id .
+
+kbr:KerdilTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Pertumbuhan tanaman terhambat sehingga ukurannya lebih kecil atau lebih pendek daripada tanaman normal pada umur yang sama."@id .
+
+kbr:KetinggianTempat kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor ketinggian tempat."@id .
+
+kbr:KlorosisDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Glosarium DOC006: Klorosis"@id ;
+    skos:definition "Kurang berkembangnya klorofil pada daun; bagian yang semula hijau tua berubah menjadi hijau muda, kuning, atau putih."@id .
+
+kbr:KlorosisTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Glosarium DOC006: Klorosis"@id ;
+    skos:definition "Klorosis pada jaringan tanaman tanpa bagian tanaman yang spesifik."@id .
+
+kbr:KondisiCahayaRendah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan cahaya rendah yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiCahayaSedang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan cahaya sedang yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiCahayaTinggi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan cahaya tinggi yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiCurahHujanRendah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Curah hujan rendah yang mengurangi percikan air dan penyebaran patogen."@id .
+
+kbr:KondisiCurahHujanSedang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan curah hujan sedang yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiCurahHujanTinggi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Curah hujan tinggi yang meningkatkan percikan air dan penyebaran patogen."@id .
+
+kbr:KondisiDataranRendah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan dataran rendah yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiDataranTinggi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan dataran tinggi yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiDrainase kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor kondisi drainase lahan."@id .
+
+kbr:KondisiDrainaseBaik kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan drainase baik yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiDrainaseBuruk kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan drainase buruk yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiIklimBasah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan iklim basah yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiIklimKering kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan iklim kering yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiKelembapanRendah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kelembapan udara rendah yang dapat menekan perkecambahan spora dan infeksi patogen."@id .
+
+kbr:KondisiKelembapanTanahRendah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan kelembapan tanah rendah yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiKelembapanTanahSedang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan kelembapan tanah sedang yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiKelembapanTanahTinggi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan kelembapan tanah tinggi yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiKelembapanTinggi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kelembapan udara tinggi yang mendukung perkecambahan spora dan infeksi patogen."@id .
+
+kbr:KondisiKelembapanUdaraRendah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan kelembapan udara rendah yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiKelembapanUdaraSedang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan kelembapan udara sedang yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiKelembapanUdaraTinggi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan kelembapan udara tinggi yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiMusimHujan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Musim hujan dengan curah hujan dan kelembapan tinggi yang mendukung perkembangan penyakit."@id .
+
+kbr:KondisiMusimKemarau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Musim kemarau dengan curah hujan rendah yang dapat menekan atau mengubah pola penyakit."@id .
+
+kbr:KondisiSuhuDingin kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan suhu dingin yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiSuhuHangat kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan suhu hangat yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiSuhuRendah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Suhu udara rendah yang dapat mendukung perkembangan patogen tertentu."@id .
+
+kbr:KondisiSuhuSedang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan suhu sedang yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiSuhuTinggi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Suhu udara tinggi yang dapat mendukung atau menekan perkembangan patogen tertentu."@id .
+
+kbr:KondisiTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor kondisi tanah."@id .
+
+kbr:KondisiTanahAsam kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan tanah asam yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiTanahBasa kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan tanah basa yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiTanahBerpasir kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan tanah berpasir yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiTanahGembur kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan tanah gembur yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiTanahLiat kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan tanah liat yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiTanahNetral kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan tanah netral yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiTanahSubur kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Kondisi lingkungan tanah subur yang memengaruhi penyakit tanaman."@id .
+
+kbr:KondisiTropisDenganPadiSepanjangTahunPadaPenyakitKerdilRumputDanKerdilHampaPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Kondisi tropis dengan padi sepanjang tahun pada Penyakit Kerdil Rumput dan Kerdil Hampa."@id .
+
+kbr:Kresek kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Gejala kresek pada daun padi berupa daun menguning, menggulung, dan mengering akibat hawar daun bakteri."@id .
+
+kbr:KulturMeristem kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memperbanyak jaringan meristem untuk memperoleh bahan tanam bebas virus."@id .
+
+kbr:LahanTegalanDiBawahTegakanPohonJatiPadaPenyakitKerdilKedelaiSoybeanStuntVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Kerdil Kedelai (Soybean Stunt Virus)."@id .
+
+kbr:LahanTegalanDiBawahTegakanPohonJatiPadaPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Lahan tegalan di bawah tegakan pohon jati pada Penyakit Mosaik Kedelai (Soybean Mosaic Virus)."@id .
+
+kbr:LayuDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Daun atau tanaman kehilangan turgor sehingga menggantung atau lemas, sering akibat gangguan pada akar atau pembuluh."@id .
+
+kbr:LayuFusariumUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit layu fusarium pada tanaman Ubi jalar, disebabkan oleh Fusarium oxysporum, dengan gejala antara lain Bercak pada tanaman, Busuk pada tanaman, Kematian tanaman, Kerdil tanaman."@id .
+
+kbr:Legum kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kelompok tanaman pangan legum dalam ruang lingkup."@id .
+
+kbr:LekukanPangkalAkar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Lekukan berwarna coklat atau hitam pada pangkal akar."@id .
+
+kbr:MagnaportheGrisea kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Magnaporthe grisea yang menyebabkan penyakit Penyakit Blas pada tanaman Padi."@id .
+
+kbr:Malai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Bunga majemuk pada tanaman seperti padi; tempat munculnya gejala malai kosong, patah, atau bercak."@id .
+
+kbr:MalaiKosong kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Malai tidak terisi bulir atau bulir hampa sehingga malai tampak kosong."@id .
+
+kbr:MalaiPatah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Malai patah karena tidak mampu menopang bulir."@id .
+
+kbr:MiseliumPadaTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanda miselium jamur berupa lapisan atau benang putih pada jaringan tanaman."@id .
+
+kbr:MosaikDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Glosarium DOC006: Mosaik"@id ;
+    skos:definition "Pola belang hijau tua dan hijau muda pada daun akibat terganggunya pembentukan klorofil; bentuk daun dapat sedikit berubah."@id .
+
+kbr:Musim kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor musim."@id .
+
+kbr:MusimDinginRinganPadaPenyakitLayuStewartJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Musim dingin ringan pada Penyakit Layu Stewart."@id .
+
+kbr:MusimHujanPadaBusukPangkalBatangUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Musim hujan pada Busuk pangkal batang."@id .
+
+kbr:MusimHujanPadaHawarBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Musim hujan pada Hawar bakteri."@id .
+
+kbr:MusimHujanPadaHawarDaunBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Musim hujan pada Hawar daun bakteri."@id .
+
+kbr:MusimHujanPadaPenyakitTungroPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Musim hujan pada Penyakit Tungro."@id .
+
+kbr:MusimHujanPadaSuperelongasiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Musim hujan pada Superelongasi."@id .
+
+kbr:MusimKemarauPadaSapuSetanWitchesBroomUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Musim kemarau pada Sapu setan (Witches broom)."@id .
+
+kbr:NekrosisDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Glosarium DOC006: Nekrosis"@id ;
+    skos:definition "Kematian jaringan daun setempat, tampak coklat, kering, atau menghitam."@id .
+
+kbr:NekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Nekrosis pada titik tunas (Cassava bud necrosis) pada tanaman Ubi kayu, disebabkan oleh Fungi/Jamur, dengan gejala antara lain Bercak pada tanaman, Nekrosis pada tanaman."@id .
+
+kbr:NekrosisTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Glosarium DOC006: Nekrosis"@id ;
+    skos:definition "Kematian jaringan tanaman setempat tanpa bagian tanaman yang spesifik."@id .
+
+kbr:Observasi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Observasi yang menjadi masukan proses diagnosis."@id .
+
+kbr:ObservasiLingkungan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Individu observasi kuantitatif atau kualitatif faktor lingkungan."@id .
+
+kbr:ObservasiLingkunganAntraknosaUbiKayuBatang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganAntraknosaUbiKayuDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganBercakDaunBaurUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganBercakDaunCoklatUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganBercakDaunPutihUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganBusukAkarDanUmbiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganBusukAkarUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganBusukPangkalBatangUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganBusukUmbiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganCassavaBrownStreakDiseaseCBSDUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganCassavaMosaicBegomovirusCMBsUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganHawarBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganHawarDaunBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganLayuFusariumUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganNekrosisPadaTitikTunasCassavaBudNecrosisUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitAntraknosaKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBakteriPustulKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakBijiUnguKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakDaunKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakDaunKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakKuningUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBercakTargetKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBusukHitamBlackRotUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitBusukPelepahJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitEmbunTepungKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitEmbunTepungPowderyMildewKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitHawarBakteriBacterialBlightKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitHawarDaunBakteriPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitHawarDaunJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitHawarPelepahDaunPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitKaratDaunJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitKaratDaunKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitKerdilKedelaiSoybeanStuntVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitKerdilRumputDanKerdilHampaPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitLayuBakteriKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitLayuFusariumKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitLayuKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitLayuStewartJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitMosaikKedelaiSoybeanMosaicVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitRebahSemaiKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganPenyakitTungroPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganSapuSetanWitchesBroomUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganSuperelongasiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiLingkunganTanamanKerdilStuntUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan untuk kasus demo diagnosis."@id .
+
+kbr:ObservasiPenyakitBulaiJagungKelembapan90Persen kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi Kelembapan 90Persen yang memengaruhi penyakit Penyakit Bulai."@id .
+
+kbr:ObservasiPenyakitBulaiJagungSuhu24Celsius kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi Suhu 24Celsius yang memengaruhi penyakit Penyakit Bulai."@id .
+
+kbr:ObservasiPenyakitKaratDaunJagungSuhu25Koma2Sampai28Koma8Celsius kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi Suhu 25Koma2Sampai28Koma8Celsius yang memengaruhi penyakit Penyakit Karat Daun."@id .
+
+kbr:Oomycete kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Patogen kelompok oomycete."@id .
+
+kbr:Padi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanaman pangan serealia penghasil beras yang dibudidayakan di lahan sawah atau lahan kering."@id .
+
+kbr:PanenTepatWaktu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Melakukan panen pada waktu yang dianjurkan untuk mengurangi kehilangan hasil dan infeksi pascapanen."@id .
+
+kbr:PantoeaStewartii kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Bakteri Pantoea stewartii yang menyebabkan penyakit Penyakit Layu Stewart pada tanaman Jagung."@id .
+
+kbr:Patogen kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Organisme penyebab penyakit tanaman, seperti jamur, bakteri, virus, atau oomycete."@id .
+
+kbr:PatogenFitoplasma kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Fitoplasma Fitoplasma yang menyebabkan penyakit Sapu setan (Witches broom) pada tanaman Ubi kayu."@id .
+
+kbr:PeanutMottleVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Peanut mottle virus yang menyebabkan penyakit Penyakit Belang (Mottle) pada tanaman Kacang tanah."@id .
+
+kbr:PeanutStripeVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Peanut stripe virus yang menyebabkan penyakit Penyakit Belang (Mottle) pada tanaman Kacang tanah."@id .
+
+kbr:PemangkasanTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memangkas bagian tanaman yang tidak produktif atau terserang untuk mengurangi sumber infeksi."@id .
+
+kbr:PembersihanAlat kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Membersihkan dan mensterilkan alat pertanian agar tidak menyebarkan patogen."@id .
+
+kbr:PemupukanBerimbang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memberikan pupuk secara berimbang sesuai kebutuhan hara tanaman agar tanaman lebih tahan terhadap penyakit."@id .
+
+kbr:PencabutanTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mencabut dan membuang tanaman yang terserang agar tidak menjadi sumber infeksi."@id .
+
+kbr:PenerapanKulturTeknis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menerapkan praktik budidaya yang mendukung kesehatan tanaman, seperti pengolahan tanah, pemupukan, dan pengaturan tanam."@id .
+
+kbr:PenerapanPengendalianBiologis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menerapkan pengendalian biologis dengan memanfaatkan musuh alami atau agens antagonis secara terjadwal."@id .
+
+kbr:PenerapanPengendalianFisik kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menerapkan pengendalian fisik seperti perlakuan panas, radiasi, atau pengaturan suhu."@id .
+
+kbr:PenerapanPengendalianKimiawi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menerapkan pengendalian kimiawi dengan pestisida sesuai sasaran dan dosis anjuran."@id .
+
+kbr:PenerapanPengendalianMekanis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menerapkan pengendalian mekanis dengan tindakan fisik seperti pencabutan, pemangkasan, atau pengumpulan bagian terserang."@id .
+
+kbr:PengairanDanDrainase kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengatur irigasi dan drainase untuk menjaga kelembapan lahan pada tingkat yang tidak mendukung patogen."@id .
+
+kbr:PengaturanJarakTanam kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengatur jarak atau kerapatan tanam agar sirkulasi udara dan cahaya lebih baik."@id .
+
+kbr:PengaturanKelembapan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengatur kelembapan dan sirkulasi udara di sekitar tanaman atau ruang penyimpanan."@id .
+
+kbr:PengaturanSuhuPenyimpanan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengatur suhu ruang penyimpanan agar perkembangan patogen pascapanen terhambat."@id .
+
+kbr:PengaturanWaktuTanam kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengatur waktu tanam agar tanaman terhindar dari periode tekanan penyakit atau vektor."@id .
+
+kbr:PengelolaanGulma kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengendalikan gulma yang dapat menjadi inang alternatif atau pesaing tanaman."@id .
+
+kbr:PengelolaanTerpadu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menerapkan pengelolaan penyakit secara terpadu dengan beberapa komponen teknologi."@id .
+
+kbr:Pengendalian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Tindakan yang direkomendasikan untuk menekan penyakit tanaman."@id .
+
+kbr:PengendalianBiologis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Pengendalian dengan agens hayati atau biopestisida."@id .
+
+kbr:PengendalianFisik kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Pengendalian dengan perlakuan fisik seperti panas atau radiasi."@id .
+
+kbr:PengendalianHamaTerpadu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggabungkan beberapa teknik pengendalian hama dan penyakit secara terpadu."@id .
+
+kbr:PengendalianKimiawi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Pengendalian dengan bahan kimia atau pestisida."@id .
+
+kbr:PengendalianKulturTeknis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Pengendalian melalui praktik budidaya."@id .
+
+kbr:PengendalianMekanis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Pengendalian melalui tindakan fisik-mekanis."@id .
+
+kbr:PengendalianTerpadu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Pengendalian terpadu yang menggabungkan beberapa pendekatan."@id .
+
+kbr:PengendalianVektor kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengendalikan serangga atau organisme vektor yang menularkan patogen."@id .
+
+kbr:PenggunaanAgensHayati kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memanfaatkan organisme antagonis atau agens hayati untuk menekan patogen."@id .
+
+kbr:PenggunaanBacillus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memanfaatkan bakteri Bacillus sebagai agens hayati pengendali patogen."@id .
+
+kbr:PenggunaanBakterisida kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan bakterisida yang sesuai sasaran untuk menekan bakteri patogen."@id .
+
+kbr:PenggunaanBeauveria kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memanfaatkan jamur Beauveria sebagai agens hayati pengendali serangga hama."@id .
+
+kbr:PenggunaanBenihSehat kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan benih sehat, bersertifikat, atau bebas patogen untuk mencegah infeksi awal."@id .
+
+kbr:PenggunaanBiopestisida kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan biopestisida berbahan aktif organisme atau metabolit alami."@id .
+
+kbr:PenggunaanEkstrakTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan ekstrak tanaman yang memiliki senyawa antimikroba atau antijamur."@id .
+
+kbr:PenggunaanFungisida kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan fungisida yang sesuai sasaran untuk menekan pertumbuhan jamur patogen."@id .
+
+kbr:PenggunaanHerbisida kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan herbisida untuk mengendalikan gulma di sekitar pertanaman."@id .
+
+kbr:PenggunaanInsektisida kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan insektisida untuk mengendalikan serangga vektor atau hama."@id .
+
+kbr:PenggunaanMetarhizium kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memanfaatkan jamur Metarhizium sebagai agens hayati pengendali serangga hama."@id .
+
+kbr:PenggunaanMulsa kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menutup permukaan tanah dengan mulsa untuk mengurangi percikan tanah dan menjaga kelembapan."@id .
+
+kbr:PenggunaanPerangkap kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memasang perangkap untuk memantau atau menangkap serangga vektor atau hama."@id .
+
+kbr:PenggunaanPestisidaNabati kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan pestisida nabati berbahan tanaman untuk menekan patogen atau hama."@id .
+
+kbr:PenggunaanPseudomonas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memanfaatkan bakteri Pseudomonas sebagai agens hayati pengendali patogen."@id .
+
+kbr:PenggunaanTanamanBukanInang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menanam tanaman yang bukan inang patogen untuk memutus siklus penyakit."@id .
+
+kbr:PenggunaanTrichoderma kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memanfaatkan jamur Trichoderma sebagai agens hayati pengendali patogen."@id .
+
+kbr:PenggunaanVarietasTahan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan varietas yang dinyatakan tahan atau toleran terhadap penyakit sasaran."@id .
+
+kbr:PengumpulanDanPemusnahan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Mengumpulkan dan memusnahkan bagian tanaman terserang untuk mengurangi sumber inokulum."@id .
+
+kbr:Penyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penyakit tanaman pangan yang tercatat pada sumber."@id .
+
+kbr:PenyakitAntraknosaKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Antraknosa pada tanaman Kedelai, disebabkan oleh Colletotrichum, Colletotrichum truncatum, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun rontok, Kematian tanaman."@id .
+
+kbr:PenyakitBakteri kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penyakit yang disebabkan oleh patogen kelompok bakteri."@id .
+
+kbr:PenyakitBakteriPustulKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bakteri Pustul pada tanaman Kedelai, disebabkan oleh Xanthomonas axonopodis, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun rontok, Klorosis pada tanaman."@id .
+
+kbr:PenyakitBelangMottleKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Belang (Mottle) pada tanaman Kacang tanah, disebabkan oleh Peanut mottle virus, Peanut stripe virus, dengan gejala antara lain Belang pada tanaman, Klorosis daun, Klorosis pada tanaman, Mosaik daun."@id .
+
+kbr:PenyakitBercakBijiUnguKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Biji Ungu pada tanaman Kedelai, disebabkan oleh Cercospora kikuchii, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Hawar daun, Nekrosis daun."@id .
+
+kbr:PenyakitBercakDaunKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Daun pada tanaman Kacang hijau, disebabkan oleh Cercospora canescens, Cercospora cruenta, dengan gejala antara lain Bercak daun, Daun rontok, Pertumbuhan terhambat."@id .
+
+kbr:PenyakitBercakDaunKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Daun pada tanaman Kacang tanah, disebabkan oleh Cercospora arachidicola, Cercospora personata, Puccinia arachidis, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun berlubang, Daun kering."@id .
+
+kbr:PenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot) pada tanaman Kedelai, disebabkan oleh Cercospora sojina, dengan gejala antara lain Bercak daun, Bercak pada tanaman."@id .
+
+kbr:PenyakitBercakKuningUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit bercak kuning pada tanaman Ubi jalar, disebabkan oleh Sweet Potato Chlorotic Fleck Virus, Sweet Potato Feathery Mottle Virus, Sweet Potato Mild Mottle Virus, dengan gejala antara lain Belang pada tanaman, Bercak daun, Bercak pada tanaman, Klorosis daun."@id .
+
+kbr:PenyakitBercakTargetKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bercak Target pada tanaman Kedelai, disebabkan oleh Corynespora cassiicola, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Klorosis pada tanaman."@id .
+
+kbr:PenyakitBlasPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Blas pada tanaman Padi, disebabkan oleh Magnaporthe grisea, Pyricularia grisea, Pyricularia oryzae, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Malai patah."@id .
+
+kbr:PenyakitBulaiJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Bulai pada tanaman Jagung, disebabkan oleh Peronosclerospora maydis, Peronosclerospora sp, dengan gejala antara lain Kerdil tanaman, Klorosis daun, Pertumbuhan terhambat, Tepung pada daun."@id .
+
+kbr:PenyakitBusukHitamBlackRotUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit busuk hitam (black rot) pada tanaman Ubi jalar, disebabkan oleh Ceratocystis fimbriata, dengan gejala antara lain Bercak pada tanaman, Busuk akar, Busuk pada tanaman."@id .
+
+kbr:PenyakitBusukPelepahJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Busuk Pelepah pada tanaman Jagung, disebabkan oleh Rhizoctonia solani, dengan gejala antara lain Bercak pada tanaman, Busuk batang."@id .
+
+kbr:PenyakitEmbunPalsuDownyMildewKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Embun Palsu (Downy mildew) pada tanaman Kedelai, disebabkan oleh Peronospora manshurica, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Klorosis daun, Klorosis pada tanaman."@id .
+
+kbr:PenyakitEmbunTepungKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Embun Tepung pada tanaman Kacang hijau, disebabkan oleh Erysiphe polygoni, dengan gejala antara lain Tepung pada daun."@id .
+
+kbr:PenyakitEmbunTepungPowderyMildewKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Embun Tepung (Powdery Mildew) pada tanaman Kedelai, disebabkan oleh Erysiphae diffusa, dengan gejala antara lain Bercak daun, Tepung pada daun."@id .
+
+kbr:PenyakitFitoplasma kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penyakit yang disebabkan oleh patogen kelompok fitoplasma."@id .
+
+kbr:PenyakitHawarBakteriBacterialBlightKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar Bakteri (Bacterial Blight) pada tanaman Kedelai, disebabkan oleh Pseudomonas syringae, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun berlubang, Daun rontok."@id .
+
+kbr:PenyakitHawarDaunBakteriPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar Daun Bakteri pada tanaman Padi, disebabkan oleh Xanthomonas oryzae, dengan gejala antara lain Bercak daun, Hawar daun, Klorosis daun, Klorosis pada tanaman."@id .
+
+kbr:PenyakitHawarDaunJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar Daun pada tanaman Jagung, disebabkan oleh Helminthosporium maydis, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Hawar daun, Nekrosis daun."@id .
+
+kbr:PenyakitHawarPelepahDaunPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Hawar Pelepah Daun pada tanaman Padi, disebabkan oleh Rhizoctonia solani, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Busuk batang."@id .
+
+kbr:PenyakitJamur kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penyakit yang disebabkan oleh patogen kelompok jamur."@id .
+
+kbr:PenyakitKaratDaunJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Karat Daun pada tanaman Jagung, disebabkan oleh Puccinia polysora, dengan gejala antara lain Bercak pada tanaman, Klorosis daun."@id .
+
+kbr:PenyakitKaratDaunKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Karat Daun pada tanaman Kacang tanah, disebabkan oleh Puccinia arachidis, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Klorosis daun, Klorosis pada tanaman."@id .
+
+kbr:PenyakitKaratDaunKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Karat Daun pada tanaman Kedelai, disebabkan oleh Phakopsora meibomiae, Phakopsora pachyrhizi, Phakopspora pachyrhizi, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Daun kering, Daun rontok."@id .
+
+kbr:PenyakitKerdilKedelaiSoybeanStuntVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Kerdil Kedelai (Soybean Stunt Virus) pada tanaman Kedelai, disebabkan oleh Soybean Stunt Virus, dengan gejala antara lain Kerdil tanaman, Mosaik daun, Pertumbuhan terhambat."@id .
+
+kbr:PenyakitKerdilRumputDanKerdilHampaPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Kerdil Rumput dan Kerdil Hampa pada tanaman Padi, disebabkan oleh Rice grassy stunt virus, Rice ragged stunt virus, dengan gejala antara lain Bercak daun, Kerdil tanaman, Klorosis daun, Pertumbuhan abnormal."@id .
+
+kbr:PenyakitKudisUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit kudis pada tanaman Ubi jalar, disebabkan oleh Elsinoe batatas, Spaceloma batatas, dengan gejala antara lain Bercak daun, Bercak pada tanaman, Klorosis pada tanaman."@id .
+
+kbr:PenyakitLayuBakteriKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Layu Bakteri pada tanaman Kacang tanah, disebabkan oleh Ralstonia solanacearum, dengan gejala antara lain Kematian tanaman, Layu daun."@id .
+
+kbr:PenyakitLayuFusariumKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Layu Fusarium pada tanaman Kedelai, disebabkan oleh Fusarium spp, dengan gejala antara lain Busuk akar, Kematian tanaman, Layu daun, Nekrosis pada tanaman."@id .
+
+kbr:PenyakitLayuKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Layu pada tanaman Kacang hijau, disebabkan oleh Sclerotium rolfsii, dengan gejala antara lain Busuk pada tanaman, Layu daun, Miselium pada tanaman."@id .
+
+kbr:PenyakitLayuStewartJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Layu Stewart pada tanaman Jagung, disebabkan oleh Pantoea stewartii, dengan gejala antara lain Kerdil tanaman, Klorosis daun, Layu daun, Pertumbuhan abnormal."@id .
+
+kbr:PenyakitMosaikKedelaiSoybeanMosaicVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Mosaik Kedelai (Soybean Mosaic Virus) pada tanaman Kedelai, disebabkan oleh Soybean Mosaic Virus, dengan gejala antara lain Belang pada tanaman, Kerdil tanaman, Klorosis daun, Mosaik daun."@id .
+
+kbr:PenyakitOomycete kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penyakit yang disebabkan oleh patogen kelompok oomycete."@id .
+
+kbr:PenyakitRebahKecambahKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Rebah Kecambah pada tanaman Kedelai, disebabkan oleh Rhizoctonia solani, dengan gejala antara lain Bercak pada tanaman, Busuk akar, Busuk batang, Busuk pada tanaman."@id .
+
+kbr:PenyakitRebahSemaiKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Rebah Semai pada tanaman Kedelai, disebabkan oleh Sclerotium rolfsii, dengan gejala antara lain Bercak pada tanaman, Busuk batang, Klorosis daun, Layu daun."@id .
+
+kbr:PenyakitSamarKacangTunggakCowpeaMildMottleVirusKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Samar Kacang Tunggak (Cowpea Mild Mottle Virus) pada tanaman Kedelai, disebabkan oleh Cowpea Mild Mottle Virus, dengan gejala antara lain Kerdil tanaman, Klorosis daun, Mosaik daun, Pertumbuhan abnormal."@id .
+
+kbr:PenyakitTungroPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Tungro pada tanaman Padi, disebabkan oleh Rice tungro bacillifor virus, Rice tungro spherical virus, dengan gejala antara lain Bercak pada tanaman, Kerdil tanaman, Klorosis daun, Pertumbuhan terhambat."@id .
+
+kbr:PenyakitVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penyakit yang disebabkan oleh patogen kelompok virus."@id .
+
+kbr:PerlakuanAirPanas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Merendam benih atau bahan tanam dalam air panas pada suhu dan waktu tertentu untuk membunuh patogen."@id .
+
+kbr:PerlakuanBenih kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memperlakukan benih sebelum tanam, misalnya dengan fungisida atau air panas, untuk mencegah infeksi awal."@id .
+
+kbr:PerlakuanKimiaTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memperlakukan tanah dengan bahan kimia untuk menekan patogen tular tanah."@id .
+
+kbr:PerlakuanRadiasi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggunakan radiasi tertentu untuk menekan patogen pada bahan tanam atau hasil panen."@id .
+
+kbr:PeronosclerosporaMaydis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Peronosclerospora maydis yang menyebabkan penyakit Penyakit Bulai pada tanaman Jagung."@id .
+
+kbr:PeronosclerosporaSp kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Peronosclerospora sp yang menyebabkan penyakit Penyakit Bulai pada tanaman Jagung."@id .
+
+kbr:PeronosporaManshurica kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Oomycete Peronospora manshurica yang menyebabkan penyakit Penyakit Embun Palsu (Downy mildew) pada tanaman Kedelai."@id .
+
+kbr:PertumbuhanAbnormal kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Bentuk atau pola pertumbuhan tanaman tidak normal, misalnya malformasi, deformasi, atau penggulungan."@id .
+
+kbr:PertumbuhanTerhambat kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Laju pertumbuhan tanaman lebih lambat dan ukuran tanaman lebih kecil dibanding tanaman normal."@id .
+
+kbr:PhaeoramulariaManihotis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Phaeoramularia manihotis yang menyebabkan penyakit Bercak daun putih pada tanaman Ubi kayu."@id .
+
+kbr:PhakopsoraMeibomiae kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Phakopsora meibomiae yang menyebabkan penyakit Penyakit Karat Daun pada tanaman Kedelai."@id .
+
+kbr:PhakopsoraPachyrhizi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Phakopsora pachyrhizi yang menyebabkan penyakit Penyakit Karat Daun pada tanaman Kedelai."@id .
+
+kbr:PhakopsporaPachyrhizi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Phakopspora pachyrhizi yang menyebabkan penyakit Penyakit Karat Daun pada tanaman Kedelai."@id .
+
+kbr:PhytophthoraSpp kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Oomycete Phytophthora spp yang menyebabkan penyakit Busuk akar dan umbi, Busuk pangkal batang pada tanaman Ubi kayu."@id .
+
+kbr:Polong kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Buah khas tanaman legum yang membungkus biji; tempat munculnya gejala bercak atau busuk polong."@id .
+
+kbr:PolyporusSulphureus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Polyporus sulphureus yang menyebabkan penyakit Busuk akar pada tanaman Ubi kayu."@id .
+
+kbr:PseudomonasSyringae kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Bakteri Pseudomonas syringae yang menyebabkan penyakit Penyakit Hawar Bakteri (Bacterial Blight) pada tanaman Kedelai."@id .
+
+kbr:PublikasiInstansi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Referensi terbitan instansi."@id .
+
+kbr:PucciniaArachidis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Puccinia arachidis yang menyebabkan penyakit Penyakit Bercak Daun, Penyakit Karat Daun pada tanaman Kacang tanah."@id .
+
+kbr:PucciniaPolysora kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Puccinia polysora yang menyebabkan penyakit Penyakit Karat Daun pada tanaman Jagung."@id .
+
+kbr:Pucuk kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tunas atau bagian ujung tanaman yang sedang tumbuh; tempat munculnya gejala mati pucuk atau klorosis."@id .
+
+kbr:PucukMati kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Pucuk atau tunas mati, mengering, dan berwarna coklat sampai hitam."@id .
+
+kbr:PyriculariaGrisea kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Pyricularia grisea yang menyebabkan penyakit Penyakit Blas pada tanaman Padi."@id .
+
+kbr:PyriculariaOryzae kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Pyricularia oryzae yang menyebabkan penyakit Penyakit Blas pada tanaman Padi."@id .
+
+kbr:RalstoniaSolanacearum kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Bakteri Ralstonia solanacearum yang menyebabkan penyakit Penyakit Layu Bakteri pada tanaman Kacang tanah."@id .
+
+kbr:Referensi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Sumber bibliografis yang mendukung data."@id .
+
+kbr:RhizoctoniaSolani kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Rhizoctonia solani yang menyebabkan penyakit Penyakit Busuk Pelepah, Penyakit Hawar Pelepah Daun, Penyakit Rebah Kecambah pada tanaman Jagung, Kedelai, Padi."@id .
+
+kbr:RiceGrassyStuntVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Rice grassy stunt virus yang menyebabkan penyakit Penyakit Kerdil Rumput dan Kerdil Hampa pada tanaman Padi."@id .
+
+kbr:RiceRaggedStuntVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Rice ragged stunt virus yang menyebabkan penyakit Penyakit Kerdil Rumput dan Kerdil Hampa pada tanaman Padi."@id .
+
+kbr:RiceTungroBacilliforVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Rice tungro bacillifor virus yang menyebabkan penyakit Penyakit Tungro pada tanaman Padi."@id .
+
+kbr:RiceTungroSphericalVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Rice tungro spherical virus yang menyebabkan penyakit Penyakit Tungro pada tanaman Padi."@id .
+
+kbr:RotasiTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menggilir jenis tanaman antar musim untuk memutus siklus hidup patogen di lahan."@id .
+
+kbr:SanitasiLahan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Membersihkan sisa tanaman, gulma, dan sumber inokulum lain dari lahan."@id .
+
+kbr:SapuSetanWitchesBroomUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Sapu setan (Witches broom) pada tanaman Ubi kayu, disebabkan oleh Fitoplasma, dengan gejala antara lain Kerdil tanaman."@id .
+
+kbr:SclerotiumRolfsii kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Sclerotium rolfsii yang menyebabkan penyakit Busuk akar dan umbi, Busuk pangkal batang, Penyakit Layu, Penyakit Rebah Semai pada tanaman Kacang hijau, Kedelai, Ubi kayu."@id .
+
+kbr:SeleksiBahanTanam kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Menyeleksi bahan tanam atau bahan perbanyakan yang sehat dan bebas patogen."@id .
+
+kbr:Serealia kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kelompok tanaman pangan serealia dalam ruang lingkup."@id .
+
+kbr:SolarisasiTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Memanaskan tanah dengan sinar matahari yang ditutup plastik untuk menekan patogen tular tanah."@id .
+
+kbr:SoybeanMosaicVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Soybean Mosaic Virus yang menyebabkan penyakit Penyakit Mosaik Kedelai (Soybean Mosaic Virus) pada tanaman Kedelai."@id .
+
+kbr:SoybeanStuntVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Soybean Stunt Virus yang menyebabkan penyakit Penyakit Kerdil Kedelai (Soybean Stunt Virus) pada tanaman Kedelai."@id .
+
+kbr:SpacelomaBatatas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Jamur Spaceloma batatas yang menyebabkan penyakit Penyakit kudis pada tanaman Ubi jalar."@id .
+
+kbr:Suhu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor suhu lingkungan."@id .
+
+kbr:Suhu2029CPadaPenyakitBercakKuningUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu 20–29°C pada Penyakit bercak kuning."@id .
+
+kbr:Suhu2530CPadaPenyakitBercakDaunKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu 25–30°C pada Penyakit Bercak Daun."@id .
+
+kbr:Suhu2534CPadaPenyakitHawarDaunBakteriPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu 25–34°C pada Penyakit Hawar Daun Bakteri."@id .
+
+kbr:Suhu2537CPadaPenyakitLayuBakteriKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu 25–37°C pada Penyakit Layu Bakteri."@id .
+
+kbr:Suhu2735CPadaPenyakitLayuKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu 27–35°C pada Penyakit Layu."@id .
+
+kbr:SuhuCurahHujanDanAnginPadaCassavaMosaicBegomovirusCMBsUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu, curah hujan, dan angin pada Cassava Mosaic Begomovirus (CMBs)."@id .
+
+kbr:SuhuCurahHujanDanAnginPadaTanamanKerdilStuntUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu, curah hujan, dan angin pada Tanaman kerdil (stunt)."@id .
+
+kbr:SuhuInfeksiOptimalPadaLayuFusariumUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu infeksi optimal pada layu fusarium."@id .
+
+kbr:SuhuLapang2327CPadaPenyakitBusukHitamBlackRotUbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu lapang 23–27°C pada Penyakit busuk hitam (black rot)."@id .
+
+kbr:SuhuMinimal30CPadaPenyakitBusukPelepahJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu ≥30°C pada Penyakit Busuk Pelepah."@id .
+
+kbr:SuhuOptimalPadaHawarBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu optimal pada Hawar bakteri."@id .
+
+kbr:SuhuOptimalPadaPenyakitBercakDaunMataKatakFrogeyeLeafSpotKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu optimal pada Penyakit Bercak Daun Mata Katak (Frogeye Leaf Spot)."@id .
+
+kbr:SuhuPadaCassavaBrownStreakDiseaseCBSDUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Cassava Brown Streak Disease (CBSD)."@id .
+
+kbr:SuhuPadaHawarDaunBakteriUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Hawar daun bakteri."@id .
+
+kbr:SuhuPadaPenyakitBakteriPustulKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Penyakit Bakteri Pustul."@id .
+
+kbr:SuhuPadaPenyakitBercakDaunKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Penyakit Bercak Daun."@id .
+
+kbr:SuhuPadaPenyakitEmbunTepungKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Penyakit Embun Tepung."@id .
+
+kbr:SuhuPadaPenyakitEmbunTepungPowderyMildewKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Penyakit Embun Tepung (Powdery Mildew)."@id .
+
+kbr:SuhuPadaPenyakitHawarDaunJagung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Penyakit Hawar Daun."@id .
+
+kbr:SuhuPadaPenyakitHawarPelepahDaunPadi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Penyakit Hawar Pelepah Daun."@id .
+
+kbr:SuhuPadaPenyakitKaratDaunKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu pada Penyakit Karat Daun."@id .
+
+kbr:SuhuSejukDanHujanSeringPadaPenyakitHawarBakteriBacterialBlightKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Suhu sejuk dan hujan sering pada Penyakit Hawar Bakteri (Bacterial Blight)."@id .
+
+kbr:SuperelongasiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Superelongasi pada tanaman Ubi kayu, disebabkan oleh Elsinoe brasiliensis, dengan gejala antara lain Pertumbuhan abnormal."@id .
+
+kbr:SweetPotatoChloroticFleckVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Sweet Potato Chlorotic Fleck Virus yang menyebabkan penyakit Penyakit bercak kuning pada tanaman Ubi jalar."@id .
+
+kbr:SweetPotatoFeatheryMottleVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Sweet Potato Feathery Mottle Virus yang menyebabkan penyakit Penyakit bercak kuning pada tanaman Ubi jalar."@id .
+
+kbr:SweetPotatoMildMottleVirus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Virus Sweet Potato Mild Mottle Virus yang menyebabkan penyakit Penyakit bercak kuning pada tanaman Ubi jalar."@id .
+
+kbr:TanahBasahPadaPenyakitLayuBakteriKacangTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Tanah basah pada Penyakit Layu Bakteri."@id .
+
+kbr:TanahJenuhAirDanKelembapanTinggiPadaPenyakitLayuKacangHijau kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Tanah jenuh air dan kelembapan tinggi pada Penyakit Layu."@id .
+
+kbr:TanahJenuhAirDanKelembapanTinggiPadaPenyakitRebahSemaiKedelai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Tanah jenuh air dan kelembapan tinggi pada Penyakit Rebah Semai."@id .
+
+kbr:TanahTergenangPadaBusukAkarDanUmbiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Tanah tergenang pada Busuk akar dan umbi."@id .
+
+kbr:TanahTergenangPadaBusukAkarUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Tanah tergenang pada Busuk akar."@id .
+
+kbr:TanahTergenangPadaBusukUmbiUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Observasi lingkungan: Tanah tergenang pada Busuk Umbi."@id .
+
+kbr:TanamanKerdilStuntUbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Penyakit Tanaman kerdil (stunt) pada tanaman Ubi kayu, disebabkan oleh Begomovirus, dengan gejala antara lain Kerdil tanaman, Pertumbuhan terhambat."@id .
+
+kbr:TanamanPangan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Tanaman pangan dalam ruang lingkup knowledge base."@id .
+
+kbr:TeksturTanah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Faktor tekstur tanah."@id .
+
+kbr:TepungDaun kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Glosarium DOC006: Tepung"@id ;
+    skos:definition "Lapisan tepung berwarna putih pada permukaan daun atau bagian hijau, terdiri dari miselium dan konidia jamur."@id .
+
+kbr:UbiJalar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanaman pangan umbi-umbian penghasil umbi akar yang kaya karbohidrat."@id .
+
+kbr:UbiKayu kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Tanaman pangan umbi-umbian penghasil umbi akar yang digunakan sebagai bahan pangan dan industri."@id .
+
+kbr:Umbi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Kurasi pakar"@id ;
+    skos:definition "Organ penyimpanan cadangan makanan pada tanaman tertentu, seperti ubi jalar dan ubi kayu."@id .
+
+kbr:UmbiUmbian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kelompok tanaman pangan umbi-umbian dalam ruang lingkup."@id .
+
+kbr:Varietas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Varietas tanaman yang disebut sumber, termasuk status tahan atau rentan."@id .
+
+kbr:VarietasAbomourow kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Abomourow dari tanaman Ubi jalar; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasAdira1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Adira-1; diketahui tahan terhadap penyakit Hawar daun bakteri."@id .
+
+kbr:VarietasAdira4 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Adira-4; diketahui tahan terhadap penyakit Hawar daun bakteri."@id .
+
+kbr:VarietasAnjasmoro kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Anjasmoro dari tanaman Kedelai; diketahui rentan terhadap penyakit Penyakit Embun Tepung (Powdery Mildew)."@id,
+        "Varietas Anjasmoro dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Karat Daun, Penyakit Rebah Semai."@id .
+
+kbr:VarietasAntin1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Antin 1; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasAsianHoney kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Asian Honey dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Bulai."@id .
+
+kbr:VarietasBadak kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Badak dari tanaman Kacang tanah; diketahui tahan terhadap penyakit Penyakit Bercak Daun."@id .
+
+kbr:VarietasBima1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-1 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima10 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-10 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima11 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-11 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima16 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-16 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima17 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-17 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima18 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-18 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima19URI kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima 19-URI dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima20URI kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima 20 URI dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima4 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-4 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima5 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-5 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima7 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-7 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima8 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-8 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBima9 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bima-9 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBisma kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bisma dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasBison kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bison dari tanaman Kacang tanah; diketahui tahan terhadap penyakit Penyakit Bercak Daun."@id .
+
+kbr:VarietasBondoyudo kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bondoyudo dari tanaman Padi; diketahui tahan terhadap penyakit Penyakit Tungro."@id .
+
+kbr:VarietasBonsasarai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Bonsasarai dari tanaman Ubi jalar; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasCamar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Camar dari tanaman Kacang hijau; diketahui tahan terhadap penyakit Penyakit Embun Tepung."@id .
+
+kbr:VarietasCangkuang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Cangkuang; diketahui rentan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasDarulHidayah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Darul Hidayah; diketahui rentan terhadap penyakit Busuk Umbi."@id .
+
+kbr:VarietasDega1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Dega 1 dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Rebah Semai."@id .
+
+kbr:VarietasDena kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Dena dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasDena1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Dena 1 dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Rebah Semai."@id .
+
+kbr:VarietasDering1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Dering 1 dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Rebah Semai."@id .
+
+kbr:VarietasDevon1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Devon 1 dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Rebah Semai."@id .
+
+kbr:VarietasDomba kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Domba dari tanaman Kacang tanah; diketahui tahan terhadap penyakit Penyakit Bercak Daun."@id .
+
+kbr:VarietasGrobogan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Grobogan dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Rebah Semai."@id .
+
+kbr:VarietasInanwatan4 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Inanwatan-4 dari tanaman Ubi jalar; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasJerapah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Jerapah dari tanaman Kacang tanah; diketahui tahan terhadap penyakit Penyakit Bercak Daun."@id .
+
+kbr:VarietasKaba kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Kaba dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasKalimas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Kalimas dari tanaman Padi; diketahui tahan terhadap penyakit Penyakit Tungro."@id .
+
+kbr:VarietasKelinci kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Kelinci dari tanaman Kacang tanah; diketahui tahan terhadap penyakit Penyakit Bercak Daun."@id .
+
+kbr:VarietasKutilang kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Kutilang dari tanaman Kacang hijau; diketahui tahan terhadap penyakit Penyakit Embun Tepung."@id .
+
+kbr:VarietasKuyage2 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Kuyage-2 dari tanaman Ubi jalar; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasLamuru kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Lamuru dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasMahameru kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Mahameru dari tanaman Kedelai; diketahui rentan terhadap penyakit Penyakit Embun Tepung (Powdery Mildew)."@id .
+
+kbr:VarietasMalang1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Malang-1; diketahui tahan terhadap penyakit Bercak daun Coklat."@id .
+
+kbr:VarietasMalang2 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Malang-2; diketahui tahan terhadap penyakit Bercak daun Coklat."@id .
+
+kbr:VarietasMerpati kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Merpati dari tanaman Kacang hijau; diketahui tahan terhadap penyakit Penyakit Embun Tepung."@id .
+
+kbr:VarietasMouwebsi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Mouwebsi dari tanaman Ubi jalar; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasPalakka kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Palakka dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasPanther kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Panther dari tanaman Kacang tanah; diketahui tahan terhadap penyakit Penyakit Bercak Daun."@id .
+
+kbr:VarietasPapuaPattipi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Papua Pattipi; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasPapuaSalossa kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Papua Salossa; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasPioneer21 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Pioneer 21 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Bulai."@id .
+
+kbr:VarietasPioneer27 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Pioneer 27 dari tanaman Jagung."@id,
+        "Varietas Pioneer 27 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Bulai."@id .
+
+kbr:VarietasSari kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Sari; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasSawentar kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Sawentar; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasSemar10 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Semar-10 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSemar5 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Semar-5 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSemar6 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Semar-6 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSemar7 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Semar-7 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSemar8 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Semar-8 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSemar9 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Semar-9 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSinabung kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Sinabung dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSrikandiKuning1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Srikandi Kuning-1 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSrikandiPutih1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Srikandi Putih-1 dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSukmaraga kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Sukmaraga dari tanaman Jagung; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasSukuh kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Sukuh; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:VarietasTakar1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Takar 1 dari tanaman Kacang tanah; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasTakar2 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Takar 2 dari tanaman Kacang tanah; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasTanggamus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Tanggamus dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasTukadBalian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Tukad Balian dari tanaman Padi; diketahui tahan terhadap penyakit Penyakit Tungro."@id .
+
+kbr:VarietasTukadUnda kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Tukad Unda dari tanaman Padi; diketahui tahan terhadap penyakit Penyakit Tungro."@id .
+
+kbr:VarietasUJ3 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas UJ-3; diketahui tahan terhadap penyakit Hawar daun bakteri."@id .
+
+kbr:VarietasUJ5 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas UJ-5; diketahui tahan terhadap penyakit Hawar daun bakteri."@id .
+
+kbr:VarietasUnggul kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kategori varietas unggul."@id .
+
+kbr:VarietasVima1 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Vima 1 dari tanaman Kacang hijau; diketahui tahan terhadap penyakit Penyakit Embun Tepung."@id .
+
+kbr:VarietasVima2 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Vima 2 dari tanaman Kacang hijau; diketahui tahan terhadap penyakit Penyakit Embun Tepung."@id .
+
+kbr:VarietasVima4 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Vima 4 dari tanaman Kacang hijau; diketahui tahan terhadap penyakit Penyakit Layu."@id .
+
+kbr:VarietasVima5 kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Vima 5 dari tanaman Kacang hijau; diketahui tahan terhadap penyakit Penyakit Layu."@id .
+
+kbr:VarietasWilis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Wilis dari tanaman Kedelai; diketahui tahan terhadap penyakit Penyakit Karat Daun."@id .
+
+kbr:VarietasWonembai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Varietas Wonembai dari tanaman Ubi jalar; diketahui tahan terhadap penyakit Penyakit kudis."@id .
+
+kbr:Virus kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Patogen kelompok virus."@id .
+
+kbr:XanthomonasAxonopodis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Bakteri Xanthomonas axonopodis yang menyebabkan penyakit Penyakit Bakteri Pustul pada tanaman Kedelai."@id .
+
+kbr:XanthomonasCampestrisPvManihotis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Bakteri Xanthomonas campestris pv. Manihotis yang menyebabkan penyakit Hawar bakteri pada tanaman Ubi kayu."@id .
+
+kbr:XanthomonasCampestrispvManihotis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Bakteri Xanthomonas Campestrispv. Manihotis yang menyebabkan penyakit Hawar daun bakteri pada tanaman Ubi kayu."@id .
+
+kbr:XanthomonasOryzae kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Turunan relasi ontology"@id ;
+    skos:definition "Bakteri Xanthomonas oryzae yang menyebabkan penyakit Penyakit Hawar Daun Bakteri pada tanaman Padi."@id .
+
+kbr:bagianDari kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menghubungkan bagian tanaman dengan bagian tanaman induknya (partonomy)."@id .
+
+kbr:berkaitanPengendalian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Superproperti yang menghubungkan entitas dengan tindakan pengendalian."@id .
+
+kbr:catatanKualitas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Catatan kualitas atau keterbatasan kutipan sumber."@id .
+
+kbr:deskripsiGejala kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Deskripsi pengamatan gejala menurut sumber."@id .
+
+kbr:deskripsiPengendalian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Deskripsi tindakan pengendalian menurut sumber."@id .
+
+kbr:deskripsiPenyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penjelasan penyakit menurut sumber."@id .
+
+kbr:deskripsiTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Deskripsi tanaman pangan menurut sumber."@id .
+
+kbr:didahuluiOleh kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari diikutiOleh."@id .
+
+kbr:didukungOleh kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Entitas didukung oleh node bukti sumber."@id .
+
+kbr:diikutiOleh kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menghubungkan fase pertumbuhan dengan fase berikutnya."@id .
+
+kbr:dijelaskanDalam kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari memilikiReferensi."@id .
+
+kbr:dikendalikanDengan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menghubungkan penyakit dengan tindakan pengendalian yang direkomendasikan."@id .
+
+kbr:dipengaruhiOleh kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menghubungkan penyakit dengan faktor risiko atau kondisi lingkungan yang memengaruhinya."@id .
+
+kbr:disebabkanOleh kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menghubungkan penyakit dengan patogen penyebabnya."@id .
+
+kbr:diserangPenyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari menyerangTanaman."@id .
+
+kbr:dokumenSumber kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kode dokumen sumber."@id .
+
+kbr:halamanSumber kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Halaman sumber."@id .
+
+kbr:idBlokSumber kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Identifier blok sumber."@id .
+
+kbr:idChunkSumber kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Identifier chunk sumber."@id .
+
+kbr:identifierSumber kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Identifier baris atau entitas pada sumber."@id .
+
+kbr:judulReferensi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Judul sumber referensi."@id .
+
+kbr:kandidatKuat kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Diagnosis memiliki kandidat penyakit yang didukung minimal dua gejala kanonik berbeda."@id .
+
+kbr:klasifikasiTurunan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Klasifikasi turunan eksplisit, bukan fakta tambahan."@id .
+
+kbr:kodeGejala kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kode stabil konsep gejala kanonik untuk pembeda pada SWRL."@id .
+
+kbr:kondisi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kondisi lingkungan kualitatif yang dinyatakan sumber."@id .
+
+kbr:kutipanNormalisasi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kutipan sumber setelah normalisasi ringan."@id .
+
+kbr:kutipanSumber kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kutipan verbatim dari sumber."@id .
+
+kbr:memengaruhiPenyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari dipengaruhiOleh."@id .
+
+kbr:memilikiGejala kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menghubungkan penyakit dengan pengamatan gejala yang didukung sumber."@id .
+
+kbr:memilikiGejalaKanonik kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Memetakan pengamatan gejala ke konsep gejala kanonik."@id .
+
+kbr:memilikiObservasi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Diagnosis memiliki observasi gejala atau faktor lingkungan."@id .
+
+kbr:memilikiReferensi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penyakit didukung oleh referensi sumber."@id .
+
+kbr:memilikiTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Diagnosis memiliki tanaman yang diamati."@id .
+
+kbr:memilikiVarietas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menghubungkan tanaman pangan dengan varietas yang disebut sumber."@id .
+
+kbr:menandaiRisikoLingkungan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Diagnosis menandai penyakit yang risikonya meningkat oleh kondisi lingkungan."@id .
+
+kbr:mengendalikanPenyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari dikendalikanDengan."@id .
+
+kbr:menghasilkanPenyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Diagnosis atau kandidat diagnosis menghasilkan penyakit."@id .
+
+kbr:menyebabkanPenyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari disebabkanOleh."@id .
+
+kbr:menyerangBagian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Bagian tanaman yang terserang penyakit."@id .
+
+kbr:menyerangFase kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Fase pertumbuhan tanaman yang diserang penyakit."@id .
+
+kbr:menyerangTanaman kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Penyakit menyerang tanaman pangan inang."@id .
+
+kbr:merekomendasikanPengendalian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Diagnosis merekomendasikan tindakan pengendalian."@id .
+
+kbr:merekomendasikanVarietas kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Diagnosis merekomendasikan varietas yang tahan terhadap penyakit kandidat."@id .
+
+kbr:merupakanGejalaDari kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari memilikiGejala."@id .
+
+kbr:merupakanKanonikDari kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari memilikiGejalaKanonik."@id .
+
+kbr:merupakanVarietasDari kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kebalikan dari memilikiVarietas."@id .
+
+kbr:mulaiFase kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Nilai awal fase pertumbuhan pada satuan sumber."@id .
+
+kbr:namaIlmiah kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Nama ilmiah tanaman pangan."@id .
+
+kbr:namaIlmiahPatogen kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Nama ilmiah patogen penyebab penyakit."@id .
+
+kbr:namaInggrisPenyakit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Nama Inggris penyakit bila tersedia di sumber."@id .
+
+kbr:namaPengendalian kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Nama tindakan pengendalian kanonik."@id .
+
+kbr:namaPenulis kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Nama penulis referensi."@id .
+
+kbr:nilaiMaks kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Batas atas nilai observasi lingkungan."@id .
+
+kbr:nilaiMin kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Batas bawah nilai observasi lingkungan."@id .
+
+kbr:nilaiTunggal kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Nilai tunggal observasi lingkungan."@id .
+
+kbr:operatorNilai kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Operator pembanding pada observasi lingkungan."@id .
+
+kbr:pengendalianUmum kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Pengendalian umum pada tingkat tanaman."@id .
+
+kbr:rentanTerhadap kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menyatakan varietas rentan atau peka terhadap penyakit tertentu."@id .
+
+kbr:satuan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Satuan nilai observasi lingkungan."@id .
+
+kbr:satuanFase kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Satuan nilai awal dan akhir fase pertumbuhan."@id .
+
+kbr:selesaiFase kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Nilai akhir fase pertumbuhan pada satuan sumber."@id .
+
+kbr:tahanTerhadap kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menyatakan varietas tahan atau toleran terhadap penyakit tertentu."@id .
+
+kbr:tahunTerbit kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Tahun publikasi referensi."@id .
+
+kbr:terdapatPada kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Menghubungkan pengamatan gejala dengan bagian tanaman tempat gejala diamati."@id .
+
+kbr:tingkatKeparahan kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Kategori keparahan penyakit bila tersedia di sumber."@id .
+
+kbr:urlReferensi kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Tautan sumber referensi bila tersedia."@id .
+
+kbr:urutanFase kbr:knowledgeType "entity_definition" ;
+    dcterms:source "Dokumentasi TBox"@id ;
+    skos:definition "Urutan fase pertumbuhan dalam siklus tanaman."@id .
+

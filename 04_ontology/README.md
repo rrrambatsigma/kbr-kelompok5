@@ -12,26 +12,26 @@ Kacang Hijau**. Tanaman di luar cakupan tidak dibuat sebagai individu.
 
 | Artefak | Isi |
 |---|---|
-| `ontology.ttl` | Turtle kanonik, **16.732 triple**, **1.204 individu** |
-| `ontology.owl` | RDF/XML kanonik untuk Protégé dan owlready2 |
+| `ontology.ttl` | Turtle kanonik, **18.048 triple**, **1.214 individu** |
+| `ontology.owl` | RDF/XML kanonik untuk ProtAcgAc dan owlready2 |
 | `extraction_report.json` | Ringkasan build, tautan, dan data quality |
-| `ontology_md.ttl` | Kanonik + enrichment + SWRL, **19.021 triple** |
+| `ontology_md.ttl` | Kanonik + enrichment + SWRL, **22.183 triple** |
 | `ontology_md.owl` | RDF/XML hasil enrichment + SWRL |
-| `swrl_rules.ttl` | 4 aturan SWRL yang digabung ke `ontology_md` |
+| `ontology_md_inferred.ttl` | Asserted + hasil Pellet, **25.246 triple** |
+| `swrl_rules.ttl` | 7 aturan SWRL yang digabung ke `ontology_md` |
 | `extraction_report_md.json` | Ringkasan build enrichment |
+| `kb/*.ttl` | Katalog RDF: definisi, mapping, entity definitions |
+| `demo_cases.ttl` | Kasus demo diagnosis (input SWRL) |
 
 Ringkasan kanonik:
 
-- **87 kelas**, **29 object property** PTP (+ `prov:wasDerivedFrom` eksternal),
-  **33 data property**.
+- **70 kelas**, **34 object property** PTP, **33 data property**.
 - **7 tanaman**, **53 penyakit**, **78 tautan penyakit-patogen**.
-- **240 baris gejala** menjadi **229 pengamatan gejala**: **171 grup kanonik**
-  dan **58 pengamatan belum dipetakan**.
-- **257 baris pengendalian disease-scope + 45 baris chapter-scope**;
-  **226 tautan `dikendalikanDengan`** dan **37 baris belum dipetakan**.
-- **40 item varietas**, **12 tautan fase pertumbuhan**.
+- **192 pengamatan gejala kanonik**, **0 belum dipetakan**.
+- **257 baris pengendalian disease-scope + 45 baris chapter-scope**.
+- **70 varietas**, **15 tautan fase pertumbuhan**.
 - **3 observasi lingkungan numerik** dan **7 kondisi kualitatif**.
-- **106 node `BuktiSumber`** dan **1.398 tautan `didukungOleh`**.
+- **21 observasi gejala generik** memakai bagian `TidakSpesifik`.
 
 Hasil inferensi Pellet: **PenyakitJamur 26**, **PenyakitBakteri 5**,
 **PenyakitVirus 5**, **PenyakitOomycete 1**, **PenyakitFitoplasma 1**,
@@ -49,6 +49,7 @@ python 03_knowledge_tables/src/build_coverage_matrix.py
 python 04_ontology/build_ontology.py
 python 03_knowledge_tables/src/build_enrichment_facts.py
 python 03_knowledge_tables/src/build_descriptions.py
+python 03_knowledge_tables/src/build_external_controls.py
 python 04_ontology/build_ontology_md.py
 python 04_ontology/materialize_inferred.py
 python 03_knowledge_tables/src/build_kb_completeness_report.py
@@ -57,7 +58,7 @@ cd 04_ontology
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-Test saat ini: **68 lulus** (43 test kanonik + 18 test enrichment + 7 test SWRL),
+Test saat ini: **101 lulus** (kanonik + enrichment + SWRL + reasoning Pellet),
 termasuk reasoning **Pellet** lewat owlready2. Bila Java tidak tersedia, test
 reasoning di-skip. Helper `reasoner_utils.py` menyiapkan Jena ARQ 2.10.0 yang
 kompatibel dengan Java 21; gunakan `KBR_REASONER=hermit` untuk beralih ke HermiT.
@@ -287,29 +288,32 @@ kanonik.
 | `deskripsiTanaman`, `deskripsiPenyakit` di kanonik | diisi di `ontology_md.ttl` dari enrichment |
 | `tingkatKeparahan` di kanonik | diisi di `ontology_md.ttl` bila sumber menyatakan |
 | `namaPengendalian` | sumber tidak punya nama per metode |
-| `urlReferensi` | metadata tidak punya URL |
 | Individu `FaktorBudidaya`/`FaktorLahan` | tidak ada pasangan eksplisit in-scope |
 | `JurnalIlmiah`/`ArtikelIlmiah`/`PublikasiInstansi` | hanya dua buku dalam cakupan |
 | `namaIlmiah` Padi/Jagung/KacangHijau/KacangTanah | scientific name kosong di sumber |
 
 Penyakit tanpa patogen: **0**. Tautan untuk Belang Mottle, Bud Necrosis, dan
 Kerdil Rumput/Hampa sudah diisi; takson patogen yang belum diketahui juga
-**0**. Pengendalian 17 penyakit UbiKayu memakai fallback
-`pengendalianUmum` tingkat tanaman, bukan tautan penyakit-spesifik.
+**0**. Pengendalian 17 penyakit UbiKayu: **16 punya tautan spesifik**;
+`SuperelongasiUbiKayu` memakai fallback `pengendalianUmum` tingkat tanaman.
+Kontrol eksternal tersimpan dengan bukti dan URL referensi.
 
 ## Struktur generator
 
 - `tbox.py` — seluruh kelas, properti, disjointness, domain/range, restriksi,
   nominal, property chain, dan `build_md_tbox()`.
+- `knowledge.py` - loader katalog/mapping RDF (`kb/catalog.ttl`, `kb/mappings.ttl`, `kb/entity_definitions.ttl`).
+- `definitions.py` - loader definisi/sinonim/nama Inggris dari `kb/definitions.ttl`.
 - `build_ontology.py` — baca CSV DOC002/DOC005 → ekstraksi → `Builder` ABox →
   validasi struktural → tulis `ontology.ttl`, `ontology.owl`,
   `extraction_report.json`.
+- `build_external_controls.py` - validasi/ekspor kontrol eksternal UbiKayu dari `curated/EXTERNAL_ENV/external_controls.csv`.
 - `build_ontology_md.py` — baca `ontology.ttl` (hanya baca), tambahkan TBox
   enrichment, entitas, fakta, deskripsi, kondisi tumbuh eksternal, dan SWRL →
   tulis `ontology_md.ttl`, `ontology_md.owl`, `extraction_report_md.json`.
-- `tests/test_ontology.py` — 42 test: snapshot dinamis, IRI hygiene, bukti,
+- `tests/test_ontology.py` — test: snapshot dinamis, IRI hygiene, bukti,
   disjointness, SROIQ(D) termasuk transitive `bagianDari`, build gate, dan Pellet.
-- `tests/test_ontology_md.py` — 17 test enrichment: properti, cakupan tanaman,
+- `tests/test_ontology_md.py` — test enrichment: properti, cakupan tanaman,
   fakta, bahasa literal, konsistensi laporan, deskripsi, kanonik tidak
   tercemari, dan Pellet.
 - `tests/test_swrl_reasoning.py` — 7 test SWRL: rule termuat, kandidat gejala,

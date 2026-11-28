@@ -6,13 +6,13 @@ Sumber baris: `DOC002_descriptions.csv`; seluruh literal verbatim dari sumber.
 |---|---:|
 | BagianTanaman | 9 |
 | FaktorLingkungan | 26 |
-| Gejala | 64 |
+| Gejala | 21 |
 | GejalaAkar | 15 |
-| GejalaBatang | 28 |
+| GejalaBatang | 35 |
 | GejalaBiji | 4 |
-| GejalaBuah | 2 |
-| GejalaDaun | 102 |
-| GejalaMalai | 3 |
+| GejalaBuah | 1 |
+| GejalaDaun | 105 |
+| GejalaMalai | 2 |
 | GejalaPolong | 2 |
 | GejalaPucuk | 4 |
 | GejalaUmbi | 3 |
@@ -28,16 +28,16 @@ Sumber baris: `DOC002_descriptions.csv`; seluruh literal verbatim dari sumber.
 | UmbiUmbian | 2 |
 | Varietas | 47 |
 | owl:Class | 54 |
-| **Total baris** | **460** |
+| **Total baris** | **425** |
 
 | Status verifikasi | Jumlah |
 |---|---:|
-| auto_ok | 334 |
-| needs_review | 126 |
+| auto_ok | 291 |
+| needs_review | 134 |
 
 | Asal baris | Jumlah |
 |---|---:|
-| disalin dari deskripsi kanonik | 264 |
+| disalin dari deskripsi kanonik | 229 |
 | disalin dari fakta enrichment | 60 |
 | kalimat terkait istilah kelas, bukan definisi | 51 |
 | frasa kunci pada kalimat sumber | 49 |
@@ -47,13 +47,14 @@ Sumber baris: `DOC002_descriptions.csv`; seluruh literal verbatim dari sumber.
 | kata kunci, bukan frasa utuh | 5 |
 | bukti tautan kondisi | 1 |
 
-Individu sasaran: 217, terisi: 199, kosong: 18.
+Individu sasaran: 175, terisi: 156, kosong: 19.
 Kelas: 70, terisi: 54, kosong: 16.
 
 ## Individu tanpa deskripsi
 
 | Subjek | Kelas | Frasa pencarian |
 |---|---|---|
+| TidakSpesifik | BagianTanaman | Tidak spesifik |
 | VarietasBima10 | Varietas | Bima-10 |
 | VarietasBima11 | Varietas | Bima-11 |
 | VarietasBima16 | Varietas | Bima-16 |

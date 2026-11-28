@@ -26,8 +26,9 @@ ONTO_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ONTO_DIR))
 
 import build_ontology as bo  # noqa: E402
+import definitions as defs  # noqa: E402
 import tbox  # noqa: E402
-from tbox import KBR, PROV  # noqa: E402
+from tbox import DCTERMS, KBR, PROV, SKOS  # noqa: E402
 
 ARTIFACT = ONTO_DIR / "ontology.ttl"
 OWL_ARTIFACT = ONTO_DIR / "ontology.owl"
@@ -193,9 +194,12 @@ class OntologyArtifactTest(unittest.TestCase):
                 self.assertNotEqual(str(obj), "", f"literal kosong pada {obj}")
 
     def test_literals_are_indonesian_or_typed(self) -> None:
-        for obj in self.graph.objects():
+        for _subj, predicate, obj in self.graph:
             if isinstance(obj, Literal) and obj.language:
-                self.assertEqual(obj.language, "id", f"literal @{obj.language}: {obj}")
+                if predicate in (SKOS.prefLabel, SKOS.altLabel, SKOS.definition):
+                    self.assertIn(obj.language, {"id", "en"}, f"literal @{obj.language}: {obj}")
+                else:
+                    self.assertEqual(obj.language, "id", f"literal @{obj.language}: {obj}")
 
     def test_labels_do_not_expose_internal_pengamatan_wording(self) -> None:
         for predicate in (RDFS.label, KBR["prefLabel"]):
@@ -316,6 +320,11 @@ class OntologyArtifactTest(unittest.TestCase):
         self.assertEqual(len(symptom_observations - mapped), self.report["data_quality"]["unmapped_symptoms"])
         self.assertEqual(len(symptom_observations), self.report["canonical_symptoms"]["total"])
 
+    def test_no_unmapped_symptoms(self) -> None:
+        symptom_observations = set(self.graph.objects(None, KBR["memilikiGejala"]))
+        mapped = set(self.graph.subjects(KBR["memilikiGejalaKanonik"], None))
+        self.assertEqual(symptom_observations - mapped, set())
+
     def test_control_actions_and_categories(self) -> None:
         for action, spec in bo.CONTROL_ACTIONS.items():
             with self.subTest(action=action):
@@ -401,6 +410,337 @@ class OntologyArtifactTest(unittest.TestCase):
                         or (KBR[local], KBR["rentanTerhadap"], disease) in self.graph
                     )
                     self.assertTrue(list(self.graph.objects(KBR[local], KBR["didukungOleh"])))
+
+
+    def test_all_target_concepts_have_definitions(self) -> None:
+        target_types = [
+            "GejalaKanonik",
+            "FasePembibitan",
+            "FaseVegetatif",
+            "FaseGeneratif",
+            "FaseAnakan",
+            "FasePemasakan",
+            "FasePanen",
+            "BagianTanaman",
+            "Serealia",
+            "Legum",
+            "UmbiUmbian",
+            "Jamur",
+            "Bakteri",
+            "Virus",
+            "Oomycete",
+            "Fitoplasma",
+            "Nematoda",
+            "PengendalianKulturTeknis",
+            "PengendalianMekanis",
+            "PengendalianBiologis",
+            "PengendalianKimiawi",
+            "PengendalianFisik",
+            "PengendalianTerpadu",
+            "Varietas",
+            "Penyakit",
+            "ObservasiLingkungan",
+            "FaktorRisiko",
+            "Suhu",
+            "KelembapanUdara",
+            "KelembapanTanah",
+            "CurahHujan",
+            "Musim",
+            "Iklim",
+            "KondisiTanah",
+            "TeksturTanah",
+            "IntensitasCahaya",
+            "KetinggianTempat",
+            "KondisiDrainase",
+        ]
+        for type_name in target_types:
+            for node in self.graph.subjects(RDF.type, KBR[type_name]):
+                if not isinstance(node, URIRef) or not str(node).startswith(tbox.PTP):
+                    continue
+                with self.subTest(type=type_name, node=local(node)):
+                    self.assertTrue(
+                        list(self.graph.objects(node, SKOS.definition)),
+                        f"{type_name} {local(node)} tanpa skos:definition",
+                    )
+
+    def test_gejala_are_skos_concepts(self) -> None:
+        for node in self.graph.subjects(RDF.type, KBR["GejalaKanonik"]):
+            with self.subTest(node=local(node)):
+                self.assertIn((node, RDF.type, SKOS.Concept), self.graph)
+
+    def test_symptom_categories_use_skos_broader(self) -> None:
+        for node in self.graph.subjects(RDF.type, KBR["GejalaKanonik"]):
+            with self.subTest(node=local(node)):
+                categories = list(self.graph.objects(node, SKOS.broader))
+                self.assertTrue(categories)
+                for category in categories:
+                    self.assertIn(local(category), defs.CATEGORY_CONCEPTS)
+                    self.assertIn((category, RDF.type, SKOS.Concept), self.graph)
+
+    def test_phase_chain_is_complete(self) -> None:
+        for left, right in defs.PHASE_CHAIN:
+            with self.subTest(left=left, right=right):
+                self.assertIn((KBR[left], KBR["diikutiOleh"], KBR[right]), self.graph)
+                self.assertIn((KBR[right], KBR["didahuluiOleh"], KBR[left]), self.graph)
+
+    def test_phase_order_values(self) -> None:
+        phase_types = (
+            "FasePembibitan",
+            "FaseVegetatif",
+            "FaseGeneratif",
+            "FaseAnakan",
+            "FasePemasakan",
+            "FasePanen",
+        )
+        for type_name in phase_types:
+            for node in self.graph.subjects(RDF.type, KBR[type_name]):
+                with self.subTest(type=type_name, node=local(node)):
+                    values = list(self.graph.objects(node, KBR["urutanFase"]))
+                    self.assertEqual(len(values), 1)
+                    self.assertEqual(values[0].datatype, XSD.integer)
+                    self.assertGreaterEqual(int(values[0]), 1)
+                    self.assertLessEqual(int(values[0]), 6)
+
+    def test_partonomy_is_transitive(self) -> None:
+        self.assertIn((KBR["bagianDari"], RDF.type, OWL.TransitiveProperty), self.graph)
+        self.assertNotIn(
+            (KBR["Daun"], KBR["bagianDari"], KBR["Batang"]),
+            self.graph,
+            "Daun bagianDari Batang redundan karena bagianDari transitive",
+        )
+        for child, parent in defs.PART_PARENTS:
+            with self.subTest(child=child, parent=parent):
+                self.assertIn((KBR[child], KBR["bagianDari"], KBR[parent]), self.graph)
+
+    def test_no_truncated_or_template_labels(self) -> None:
+        symptom_nodes = set(self.graph.objects(None, KBR["memilikiGejala"]))
+        symptom_nodes |= set(self.graph.subjects(RDF.type, KBR["GejalaKanonik"]))
+        for predicate in (RDFS.label, SKOS.prefLabel):
+            for node in symptom_nodes:
+                for value in self.graph.objects(node, predicate):
+                    text = str(value)
+                    with self.subTest(node=local(node), predicate=local(predicate)):
+                        self.assertFalse(text.endswith("..."), text)
+                        self.assertNotIn(" pada Penyakit ", text)
+
+    def test_non_symptom_rows_not_gejala(self) -> None:
+        texts = {str(value) for value in self.graph.objects(None, KBR["deskripsiGejala"])}
+        for needle in (
+            "Kecepatan angin",
+            "Kejadian penyakit yang disebabkan penyakit bulai",
+        ):
+            with self.subTest(needle=needle):
+                self.assertFalse(any(needle in text for text in texts))
+
+    def test_doc006_reference(self) -> None:
+        book = KBR["BukuDOC006"]
+        self.assertIn((book, RDF.type, KBR["Buku"]), self.graph)
+        self.assertTrue(list(self.graph.objects(book, KBR["judulReferensi"])))
+        self.assertEqual(
+            int(self.graph.value(book, KBR["tahunTerbit"])),
+            1994,
+        )
+
+    def test_controls_have_definitions(self) -> None:
+        for type_name in (name for name in tbox.CLASSES if name.startswith("Pengendalian")):
+            for node in self.graph.subjects(RDF.type, KBR[type_name]):
+                if not isinstance(node, URIRef) or not str(node).startswith(tbox.PTP):
+                    continue
+                with self.subTest(type=type_name, node=local(node)):
+                    self.assertTrue(list(self.graph.objects(node, SKOS.definition)))
+
+    def test_varieties_have_definitions(self) -> None:
+        for node in self.graph.subjects(RDF.type, KBR["Varietas"]):
+            with self.subTest(node=local(node)):
+                self.assertTrue(list(self.graph.objects(node, SKOS.definition)))
+
+    def test_pathogens_have_definitions(self) -> None:
+        for type_name in ("Jamur", "Bakteri", "Virus", "Oomycete", "Fitoplasma", "Nematoda"):
+            for node in self.graph.subjects(RDF.type, KBR[type_name]):
+                with self.subTest(type=type_name, node=local(node)):
+                    self.assertTrue(list(self.graph.objects(node, SKOS.definition)))
+
+    def test_environment_conditions_have_definitions(self) -> None:
+        for type_name in (
+            "ObservasiLingkungan",
+            "FaktorRisiko",
+            "Suhu",
+            "KelembapanUdara",
+            "KelembapanTanah",
+            "CurahHujan",
+            "Musim",
+            "Iklim",
+            "KondisiTanah",
+            "TeksturTanah",
+            "IntensitasCahaya",
+            "KetinggianTempat",
+            "KondisiDrainase",
+        ):
+            for node in self.graph.subjects(RDF.type, KBR[type_name]):
+                if not isinstance(node, URIRef) or not str(node).startswith(tbox.PTP):
+                    continue
+                with self.subTest(type=type_name, node=local(node)):
+                    self.assertTrue(list(self.graph.objects(node, SKOS.definition)))
+
+    def test_class_and_property_definitions(self) -> None:
+        for name in tbox.CLASSES:
+            with self.subTest(class_name=name):
+                self.assertTrue(list(self.graph.objects(KBR[name], SKOS.definition)))
+        for name in tbox.OBJECT_PROPERTIES:
+            with self.subTest(object_property=name):
+                self.assertTrue(list(self.graph.objects(KBR[name], SKOS.definition)))
+        for name in tbox.DATA_PROPERTIES:
+            with self.subTest(data_property=name):
+                self.assertTrue(list(self.graph.objects(KBR[name], SKOS.definition)))
+
+    def test_definition_sources_present(self) -> None:
+        for node in set(self.graph.subjects(SKOS.definition, None)):
+            with self.subTest(node=local(node)):
+                self.assertTrue(list(self.graph.objects(node, DCTERMS.source)))
+
+    def test_disease_english_labels(self) -> None:
+        for node in self.graph.subjects(RDF.type, KBR["Penyakit"]):
+            local_name = local(node)
+            english = [
+                value
+                for value in self.graph.objects(node, SKOS.prefLabel)
+                if isinstance(value, Literal) and value.language == "en"
+            ]
+            with self.subTest(disease=local_name):
+                self.assertTrue(english, f"{local_name} tanpa skos:prefLabel@en")
+
+    def test_disease_definitions_are_informative(self) -> None:
+        for disease in self.diseases:
+            definitions = [str(value) for value in self.graph.objects(disease, SKOS.definition)]
+            with self.subTest(disease=local(disease)):
+                self.assertTrue(definitions)
+                text = definitions[0]
+                self.assertGreater(len(text), 40)
+                self.assertTrue(text.startswith("Penyakit "))
+                self.assertNotIn("Penyakit Penyakit", text)
+                self.assertTrue(
+                    "disebabkan oleh" in text or "gejala" in text,
+                    text,
+                )
+
+
+class OntologyMdDefinitionsTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        artifact = ONTO_DIR / "ontology_md.ttl"
+        if not artifact.exists():
+            raise unittest.SkipTest("ontology_md.ttl belum dibuat")
+        cls.graph = Graph()
+        cls.graph.parse(artifact, format="turtle")
+
+    def test_md_phase_durations(self) -> None:
+        starts = list(self.graph.subject_objects(KBR["mulaiFase"]))
+        ends = list(self.graph.subject_objects(KBR["selesaiFase"]))
+        units = list(self.graph.subject_objects(KBR["satuanFase"]))
+        self.assertTrue(starts)
+        self.assertEqual(len(starts), len(ends))
+        self.assertEqual(len(starts), len(units))
+        for _subject, value in starts + ends:
+            self.assertIsInstance(value, Literal)
+            self.assertEqual(value.datatype, XSD.decimal)
+        for _subject, value in units:
+            self.assertIsInstance(value, Literal)
+            self.assertIsNone(value.language)
+
+    def test_md_phase_orders(self) -> None:
+        phase_types = (
+            "FasePembibitan",
+            "FaseVegetatif",
+            "FaseGeneratif",
+            "FaseAnakan",
+            "FasePemasakan",
+            "FasePanen",
+        )
+        for type_name in phase_types:
+            for node in self.graph.subjects(RDF.type, KBR[type_name]):
+                with self.subTest(type=type_name, node=local(node)):
+                    values = list(self.graph.objects(node, KBR["urutanFase"]))
+                    self.assertEqual(len(values), 1)
+                    self.assertGreaterEqual(int(values[0]), 1)
+                    self.assertLessEqual(int(values[0]), 6)
+
+    def test_ubikayu_diseases_have_controls_or_general(self) -> None:
+        diseases = set(self.graph.subjects(KBR["menyerangTanaman"], KBR["UbiKayu"]))
+        general = set(self.graph.objects(KBR["UbiKayu"], KBR["pengendalianUmum"]))
+        self.assertEqual(len(diseases), 17)
+        for disease in diseases:
+            with self.subTest(disease=local(disease)):
+                controls = list(self.graph.objects(disease, KBR["dikendalikanDengan"]))
+                self.assertTrue(controls or general, f"{local(disease)} tanpa kontrol")
+
+    def test_external_controls_have_source_url(self) -> None:
+        external = [
+            node
+            for node in self.graph.subjects(RDF.type, KBR["BuktiPengendalian"])
+            if any(
+                str(value).startswith("SRC_EXT_")
+                for value in self.graph.objects(node, KBR["dokumenSumber"])
+            )
+        ]
+        self.assertTrue(external)
+        for node in external:
+            with self.subTest(node=local(node)):
+                self.assertTrue(list(self.graph.objects(node, KBR["kutipanSumber"])))
+                self.assertTrue(list(self.graph.objects(node, KBR["identifierSumber"])))
+                references = list(self.graph.objects(node, PROV.wasDerivedFrom))
+                self.assertTrue(references, f"{local(node)} tanpa prov:wasDerivedFrom")
+                self.assertTrue(
+                    any(
+                        list(self.graph.objects(reference, KBR["urlReferensi"]))
+                        for reference in references
+                    ),
+                    f"{local(node)} tanpa URL referensi",
+                )
+
+    def test_md_target_concepts_have_definitions(self) -> None:
+        target_types = [
+            "GejalaKanonik",
+            "FasePembibitan",
+            "FaseVegetatif",
+            "FaseGeneratif",
+            "FaseAnakan",
+            "FasePemasakan",
+            "FasePanen",
+            "BagianTanaman",
+            "Serealia",
+            "Legum",
+            "UmbiUmbian",
+            "Jamur",
+            "Bakteri",
+            "Virus",
+            "Oomycete",
+            "Fitoplasma",
+            "Nematoda",
+            "Varietas",
+            "Penyakit",
+            "ObservasiLingkungan",
+            "FaktorRisiko",
+            "Suhu",
+            "KelembapanUdara",
+            "KelembapanTanah",
+            "CurahHujan",
+            "Musim",
+            "Iklim",
+            "KondisiTanah",
+            "TeksturTanah",
+            "IntensitasCahaya",
+            "KetinggianTempat",
+            "KondisiDrainase",
+        ]
+        for type_name in target_types:
+            for node in self.graph.subjects(RDF.type, KBR[type_name]):
+                if not isinstance(node, URIRef) or not str(node).startswith(tbox.PTP):
+                    continue
+                with self.subTest(type=type_name, node=local(node)):
+                    self.assertTrue(
+                        list(self.graph.objects(node, SKOS.definition)),
+                        f"{type_name} {local(node)} tanpa skos:definition di ontology_md.ttl",
+                    )
 
 
 class OntologyAxiomTest(unittest.TestCase):
